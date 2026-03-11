@@ -1,0 +1,749 @@
+---
+title: "Inteligencia Artificial"
+subtitle: "Panorama de la IA para estudiantes de nivel medio-superior"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    theme: cosmo
+---
+
+# Estructura del Curso
+
+**Total:** 15 sesiones de 30-45 minutos
+
+**Modalidad:** En línea (asíncrona con sesiones en vivo opcionales vía Zoom)
+
+<center>
+<a href="http://www.curso-ia-slp.com" target="_blank" class="btn btn-outline-primary" style="margin: 1rem 0;">www.curso-ia-slp.com</a>
+</center>
+
+
+
+**Requisito:** Asistencia (sin evaluaciones formales ni proyectos finales)
+
+
+**Distribución:**
+
+- **Bloque 1:** Fundamentos + Ética (Sesiones 1-5)
+- **Bloque 2:** Herramientas Prácticas para Estudiantes (Sesiones 6-13)
+- **Bloque 3:** Aplicaciones en Sociedad y Futuro de la IA (Sesiones 14-15)
+
+---
+
+# BLOQUE 1: Fundamentos + Ética
+
+## Sesión 1: ¿Qué es la IA y dónde está en tu vida?
+
+**Duración:** 45 minutos
+
+### Objetivos
+- Comprender qué es la IA y qué NO es
+- Identificar IA en nuestra vida diaria
+- Entender los conceptos básicos que exploraremos
+
+### Contenido clave
+- **Intro general:** Inteligencia Artificial vs. Machine Learning (Aprendizaje de Máquinas) vs. Deep Learning (Aprendizaje Profundo)
+- Ejemplos cotidianos:
+  - Spotify, Netflix, Google Maps
+  - Filtros de Instagram/TikTok
+  - Asistentes de voz (Siri, Alexa)
+- **Tipos de aprendizaje (introductorio):**
+  - `Supervisado`: "Ejemplos con etiquetas"
+  - `No supervisado`: "Encuentra patrones por ti mismo"
+  - `Refuerzo`: "Aprende por ensayo y error"
+
+
+### Actividad
+
+::: {.callout-tip}
+# Reflexionemos
+¿Qué herramientas de IA usas en un día típico?
+¿Sabías que la herramienta usaba IA?
+:::
+
+### Aplicación local
+- Apps de transporte en San Luis Potosí
+- Recomendaciones de Netflix
+
+---
+
+## Sesión 2: ¿Cómo "aprende" una máquina?
+
+**Duración:** 30-35 minutos
+
+### Objetivos
+- Entender la intuición detrás del aprendizaje automático
+- Visualizar cómo las máquinas encuentran patrones
+
+### Contenido clave
+- **La base matemática simple:** El plano cartesiano (x, y)
+- **Intuición:** La máquina encuentra patrones en datos
+- Ejemplos visuales:
+  - Relación altura/peso
+  - Horas de estudio vs. calificación
+- **Demostración:** [Teachable Machine](https://teachablemachine.withgoogle.com/) (clasificar objetos con webcam)
+- **Concepto importante:** La máquina NO "entiende", solo encuentra patrones estadísticos
+
+:::{.callout-tip}
+# ¿Las máquinas realmente "razonan"?
+Una máquina no tiene capacidad de razonamiento autónomo. Sin embargo, es capaz de identificar patrones en una serie de datos, y utilizando modelos estadísticos pre-definidos, producir un resultado lógico (o estadísicamente probable).
+
+Es importante cuestionarnos:
+
+- ¿Lo que es probable, es certero?
+
+- ¿Lo que parece lógico, puede tener fallas?
+
+:::
+
+---
+
+## Sesión 3: Algoritmos de IA - ¿Qué método para qué problema?
+
+**Duración:** 45 minutos
+
+### Objetivos
+- Conocer diferentes algoritmos de IA de forma intuitiva
+- Entender POR QUÉ se elige cada método para diferentes aplicaciones
+
+### Contenido clave: Tabla de Algoritmos y Aplicaciones
+
+| Algoritmo/Método | ¿Qué hace? (intuición) | ¿Dónde se usa? | ¿Por qué este método? |
+|------------------|------------------------|----------------|----------------------|
+| **Regresión lineal** | Traza "la mejor línea" entre puntos | Predecir precios, temperaturas, ventas | Simple y rápido para relaciones lineales (¿recuerdas el plano cartesiano?)|
+| **Árboles de decisión** | Serie de preguntas sí/no | Diagnóstico médico, aprobación de créditos | Fácil de interpretar (puedes ver las reglas) |
+| **K-means (clustering)** | Agrupa puntos similares | Segmentación de clientes por tipo de compras, oagrupar canciones por estilo musical | No necesitas etiquetas previas |
+| **Redes neuronales simples** | Capas de decisiones conectadas | Reconocer números escritos a mano de una imagen | Aprende patrones más complejos que líneas de datos estructurados o imágenes pequeñas |
+| **Redes convolucionales (CNN)** | Detecta características visuales (bordes, formas) | Reconocimiento facial, diagnóstico por imágenes | Especializada en imágenes (píxeles) |
+| **Transformers (LLMs)** | Predice palabras considerando contexto completo | ChatGPT, traducción automática | Entiende relaciones entre palabras distantes |
+| **Reinforcement Learning** | Aprende por ensayo/error con recompensas | Autos autónomos, juegos (AlphaGo) | Ideal cuando no hay datos etiquetados, solo señales de éxito o fallo |
+
+### Ejemplos concretos
+- **Recomendaciones de Netflix:** Clustering (agrupa usuarios similares) + filtros colaborativos
+- **Google Translate:** Transformers (necesita entender gramática y contexto)
+- **Filtros faciales en Instagram:** CNN (detecta cara, ojos, boca en tiempo real)
+- **Filtros de Spam en correos electrónicos:** Árboles de decisión o Naive Bayes (rápido y preciso para texto)
+
+### ⚠️ Casos donde fallan
+- **Regresión lineal:** No funciona si relación no es lineal (intenta una red neuronal 😉)
+- **Árboles de decisión:** Tienden a memorizar los datos del entrenamiento y fallan con nuevos casos (overfitting).
+- **Redes neuronales:** Necesitan MUCHOS datos y además es difícil entender “por qué” llegaron a una respuesta (⬛ caja negra).
+
+:::{.callout-tip}
+# Reflexionar
+¿Podemos pensar en ejemplos de relaciones lineales, y ejemplos de relaciones no-lineales en la vida diaria?
+
+¿Qué pasa cuando un modelo de aprendizaje de máquinas está "saturado" (overfitted)?
+
+¿Podemos confiar en el resultado de un modelo de redes neuronales que fue entrenado con pocos datos?
+:::
+
+---
+
+## Sesión 4: IA Generativa - ChatGPT, Gemini, Perplexity y cómo funcionan
+
+**Duración:** 40 minutos
+
+### Objetivos
+- Entender qué es un modelo de lenguaje grande (LLM)
+- dentificar las limitaciones y riesgos más comunes de la IA generativa.
+- Reconocer las diferencias entre modelos de texto y modelos de imagen.
+
+### Contenido clave
+:::{.callout-note}
+# ¿Qué es un modelo de lenguaje grande (LLM)?
+Red neuronal entrenada con enormes cantidades de texto para aprender patrones de lenguaje y generar respuestas coherentes.
+:::
+
+:::{.callout-note}
+# ¿Cómo "predice" la siguiente palabra? 
+Predice la siguiente palabra u oración basándose en el contexto previo — como un “autocompletado inteligente” que entiende relaciones de largo alcance, no solo la última palabra.
+:::
+
+- **Limitaciones críticas:**
+  - **Alucinaciones:** Puede inventar datos o citas con total confianza.
+  - **Sesgo:** Reproduce los sesgos presentes en los datos con los que fue entrenado.
+  - **No tiene "conocimiento verdadero", depende del contexto:** Su precisión disminuye si la pregunta es ambigua o falta información.
+
+- **IA Generativa en imágenes**
+
+```{=html}
+<iframe src="https://player.vimeo.com/video/1156965510?h=0&autoplay=1&loop=1&autopause=0&muted=1&background=1"
+        style="width: 700px; height: 550px; max-width: 100%;"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture">
+</iframe>
+```
+
+  - ¿Cómo funciona la difusión?
+  - Introducción a modelos de difusión (DALL‑E, Midjourney, Stable Diffusion): crean imágenes desde ruido, refinando iterativamente los detalles hasta formar una escena coherente.
+
+### Demostración en vivo
+- Comparar ChatGPT vs. Google Search para verificar hechos
+- Mostrar ejemplos de alucinaciones "textuales"
+
+### Conexión práctica
+- **Modelos de texto:** ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Perplexity (modelo híbrido Chat + búsqueda).
+- **Modelos de imagen:** DALL‑E, Midjourney, Stable Diffusion.
+- **Mensaje clave:** Los modelos generativos no piensan ni saben; predicen y combinan patrones de lenguaje o píxeles para crear respuestas plausibles.
+
+---
+
+## Sesión 5: Ética y Problemas Reales de la IA
+
+**Duración:** 45 minutos
+
+### Objetivos
+- Reflexionar sobre las implicaciones éticas y riesgos reales de la IA.
+- IIdentificar y analizar sesgos en sistemas de IA con casos locales e internacionales.
+
+### Casos de estudio
+
+:::{.callout-tip}
+# Sesgo algorítmico
+
+1. El sistema [COMPAS](https://www.unesco.org/es/articles/la-historia-del-algoritmo-los-fallos-de-la-inteligencia-artificial), utilizado en Estados Unidos para  predecir reincidencia en delitos, presenta sesgos raciales: los acusados afroamericanos sufren el doble de probabilidades de ser calificados de modo erróneo por el sistema
+
+2. [Amazon Hiring Tool](https://hub.laboratoria.la/10-casos-donde-la-inteligencia-artificial-jugo-en-contra-de-la-diversidad) rechazó CVs de mujeres. Su algoritmo presentaba un sesgo de género al penalizar automáticamente los currículums que contenían términos relacionados con mujeres.
+
+3. Reconocimiento facial: falla hasta 34% más en piel oscura [(MIT/Microsoft)](https://theconversation.com/sombra-aqui-sombra-alla-reconocimiento-facial-discriminatorio-152035).
+
+:::
+
+
+#### Privacidad
+- ¿Quién tiene tus datos?
+- ¿Para qué los usan?
+- Protección de datos en México (INAI)
+
+#### Deepfakes y desinformación
+- Ejemplos reales de videos manipulados
+- Impacto en elecciones, noticias falsas amplificadas por bots IA en redes
+
+#### Impacto en empleos
+- ¿Qué profesiones cambian?
+- ¿Cuáles desaparecen?
+- Impacto en empleos locales
+
+### Debates para discusión
+- "¿Deberías usar ChatGPT para hacer tu tarea?"
+- "¿Es arte lo que genera DALL-E?"
+- "¿Quién es responsable si un auto autónomo causa un accidente?"
+
+### Principios de uso responsable
+- IA como herramienta, no sustituto del pensamiento crítico
+- Siempre verificar información generada por IA
+- Citar cuando uses IA para ideas o contenido
+
+---
+
+# BLOQUE 2: Herramientas Prácticas para Estudiantes
+
+## Sesión 6: IA para Matemáticas - Parte 1: Conceptos y Explicaciones
+
+**Duración:** 30-35 minutos
+
+### Objetivos
+- Usar IA para entender conceptos matemáticos difíciles
+- Aprender a hacer preguntas efectivas a la IA ("prompts")
+
+### Herramientas
+
+#### ChatGPT/Claude para:
+- Explicar conceptos paso a paso (álgebra, cálculo, geometría)
+- Pedir múltiples métodos de resolver un problema
+- Aclarar dudas en lenguaje simple
+- Obtener analogías del mundo real
+
+| Herramienta | Uso principal | Ventaja |
+|-------------|---------------|---------|
+| **ChatGPT/Claude/Gemini** | Explicaciones paso a paso, analogías | Gratuito, lenguaje natural, múltiples enfoques |
+| **Wolfram Alpha** | Cálculos exactos + gráficos | Preciso para álgebra, cálculo, estadística |
+| **Perplexity** | Explicaciones + fuentes verificadas | Combina IA con búsqueda web |
+
+
+### ⚠️ Prompts efectivos vs. inefectivos
+
+**❌ Prompts inefectivos:**
+
+- "Resuélveme este problema: $x^2 + 5x + 6 = 0$"
+- "Dame las derivadas"
+
+**✅ Prompts efectivos:**
+
+- "Explícame cómo resolver ecuaciones cuadráticas paso a paso con un ejemplo. Utiliza la siguiente ecuación en tu ejemplo: $x^2 + 5x + 6 = 0$
+- "Explícame intuitivamente qué es la derivada de $f(x) = x^2$ con una analogía del mundo real"
+- "¿Cuáles son los 3 errores más comunes al calcular integrales indefinidas? Muestra ejemplos"
+
+### Demostración en vivo
+- Comparar explicación de ChatGPT vs. libro de texto
+- Pedir a la IA que explique el mismo concepto de 3 formas diferentes.
+
+:::{callout-tip}
+# Tips para prompts matemáticos
+- Especifica nivel (principiante/avanzado)
+- Pide paso a paso + analogía
+- Pide visualizaciones o gráficos cuando sea posible
+- Siempre pregunta ”¿por qué funciona?” para entender, no solo memorizar
+:::
+
+---
+
+## Sesión 7: IA para Matemáticas - Parte 2: Práctica y Visualización
+
+**Duración:** 30-35 minutos
+
+### Objetivos
+- Generar ejercicios de práctica personalizados
+- Usar IA para visualizar conceptos matemáticos
+
+### Herramientas
+
+#### ChatGPT/Claude para:
+- Generar ejercicios de práctica personalizados por nivel
+- Verificar procedimientos (NO solo dar respuesta)
+- Crear problemas con contexto real
+- Simular tutorías paso a paso
+
+#### Wolfram Alpha:
+- Resolver ecuaciones con pasos detallados
+- Graficar funciones 2D y 3D
+- Explorar conceptos simbólicamente
+
+#### Desmos + IA:
+- Visualizar funciones
+- Explorar transformaciones gráficas
+- Crear simulaciones interactivas
+
+### Actividad práctica
+- Usar ChatGPT para generar 5 ejercicios de trigonometría
+- Resolver uno con ayuda de IA (paso a paso)
+- Comparar con solución tradicional
+
+---
+
+## Sesión 8: IA para Lectura y Comprensión
+
+**Duración:** 30-35 minutos
+
+### Objetivos
+- Usar IA para mejorar comprensión de textos
+- Organizar y resumir información eficientemente
+
+### Herramientas para Reading
+
+#### ChatGPT/Claude:
+- Resumir textos largos (artículos, capítulos)
+- Explicar vocabulario en contexto
+- Generar preguntas de comprensión
+- Traducir y explicar textos complejos (inglés → español)
+- Crear guías de estudio
+
+#### Notion AI:
+- Organizar notas de lectura
+- Crear resúmenes de videos educativos
+- Bases de conocimiento personales
+
+#### Otter.ai:
+- Transcribir y resumir conferencias/videos
+- Buscar dentro de grabaciones
+
+### Actividad práctica
+- Tomar un artículo largo (científico, periodístico)
+- Resumirlo con IA
+- Comparar con resumen manual
+- Generar 5 preguntas de comprensión
+
+---
+
+## Sesión 9: IA para Escritura
+
+**Duración:** 30-35 minutos
+
+### Objetivos
+- Mejorar escritura usando IA como editor/tutor
+- Entender uso ético de IA en escritura
+
+### Herramientas para Writing
+
+#### ChatGPT/Claude:
+- Brainstorming de ideas para ensayos
+- Estructurar argumentos (introducción, desarrollo, conclusión)
+- Parafrasear para claridad (NO para copiar)
+- Sugerir mejoras de estilo
+- Expandir o condensar textos
+
+#### Grammarly:
+- Corrección gramatical y de estilo
+- Sugerencias de tono (formal/informal)
+- Claridad y concisión
+
+#### QuillBot, Wordtune:
+- Reescribir oraciones complejas
+- Sinónimos contextuales
+- Mejorar fluidez
+
+### ⚠️ Uso ético
+
+**Principios:**
+
+- IA como **tutor/editor**, NO como escritor fantasma
+- Siempre citar cuando uses IA para ideas
+- El pensamiento crítico debe ser TUYO
+- No presentar texto generado por IA como propio
+
+**Uso aceptable:**
+
+- ✅ Pedir retroalimentación sobre tu borrador
+- ✅ Mejorar claridad de tus ideas
+- ✅ Corregir gramática
+
+**Uso inaceptable:**
+
+- ❌ Pedir a la IA que escriba tu ensayo completo
+- ❌ Copiar texto generado sin modificar
+- ❌ No mencionar que usaste IA en tu texto
+
+### Actividad práctica
+- Escribir un párrafo sobre un tema de tu interés
+- Usar IA para mejorar (claridad, estructura, vocabulario)
+- Documentar qué cambios sugeridos aceptaste y por qué
+
+---
+
+## Sesión 10: IA para Aprender Idiomas - Parte 1: Listening & Speaking
+
+**Duración:** 30-35 minutos
+
+### Objetivos
+- Practicar comprensión auditiva con herramientas de IA
+- Mejorar pronunciación y conversación
+
+### Herramientas para Listening
+
+#### YouTube + transcripciones automáticas IA:
+- Ver videos en inglés con subtítulos generados
+- Comparar transcripción con audio real
+- Ajustar velocidad de reproducción
+
+#### Otter.ai:
+- Transcribir podcasts/audios para practicar
+- Buscar palabras específicas en grabaciones
+
+### Herramientas para Speaking
+
+#### ChatGPT Voice Mode:
+- Practicar conversación en inglés
+- Simular entrevistas, diálogos cotidianos
+- Recibir correcciones en tiempo real
+
+#### ELSA Speak, Duolingo:
+- Práctica de pronunciación con feedback IA
+- Detección de errores fonéticos específicos
+- Ejercicios personalizados según debilidades
+
+### Actividad práctica
+- Roleplay con ChatGPT (ejemplos):
+  - Pedir comida en restaurante
+  - Hacer pregunta en clase
+  - Entrevista de trabajo simulada
+
+---
+
+## Sesión 11: IA para Aprender Idiomas - Parte 2: Reading & Writing
+
+**Duración:** 30-35 minutos
+
+### Objetivos
+- Mejorar lectura en inglés con apoyo de IA
+- Escribir en inglés con corrección asistida
+
+### Herramientas para Reading en inglés
+
+#### DeepL (mejor que Google Translate):
+- Traducción contextual de textos
+- Explicación de modismos y expresiones
+- Comparar traducciones literales vs. naturales
+
+#### ChatGPT:
+- Explicar gramática difícil (present perfect, subjuntivo)
+- Generar textos adaptados a tu nivel (A2, B1, B2)
+- Crear listas de vocabulario temático
+
+### Herramientas para Writing en inglés
+
+#### ChatGPT:
+- Corregir ensayos en inglés con explicaciones
+- Sugerir vocabulario más avanzado
+- Explicar errores gramaticales
+- Crear flashcards personalizadas
+
+#### Grammarly (inglés):
+- Corrección en tiempo real
+- Sugerencias de vocabulario
+- Detección de tono
+
+### Actividad práctica
+- Escribir párrafo corto en inglés (5-7 oraciones)
+- Usar IA para identificar 3 mejoras específicas
+- Reescribir incorporando sugerencias
+
+---
+
+## Sesión 12: IA para Creatividad - Diseño, Arte y Arquitectura
+
+**Duración:** 40 minutos
+
+### Objetivos
+- Explorar herramientas de IA generativa para creatividad
+- Entender implicaciones éticas del arte generado por IA
+
+### Para Diseñadores/Artistas
+
+#### DALL-E, Midjourney, Adobe Firefly:
+- Generar conceptos visuales
+- Mockups rápidos de ideas
+- Inspiración de paletas de colores
+- Creación de assets gráficos
+
+#### Canva AI:
+- Diseño gráfico asistido
+- Plantillas inteligentes
+- Redimensionamiento automático
+
+### Para Arquitectura
+
+#### Midjourney con prompts arquitectónicos:
+- Visualización de espacios
+- Renderizado rápido de conceptos
+- Exploración de estilos (Bauhaus, Modernismo)
+
+#### ChatGPT:
+- Investigar estilos arquitectónicos históricos
+- Calcular estimados de materiales
+- Generar descripciones de proyectos
+
+### Para Música/Video
+
+#### Suno AI, AIVA:
+- Generación de música por género
+- Composiciones originales
+
+#### RunwayML:
+- Edición de video con IA
+- Efectos especiales automatizados
+
+### ⚠️ Debate ético
+- ¿Quién es el autor? ¿El usuario o la IA?
+- ¿Deberían los artistas de IA recibir copyright?
+- Impacto en artistas tradicionales
+
+### Actividad práctica
+- Generar logo para proyecto ficticio con DALL-E
+- O: Crear portada de libro con Midjourney
+
+---
+
+## Sesión 13: IA para Organización y Productividad Estudiantil
+
+**Duración:** 35-40 minutos
+
+### Objetivos
+- Usar IA para mejorar organización personal
+- Optimizar tiempo de estudio
+
+### Herramientas de organización
+
+#### Notion AI:
+- Tomar notas inteligentes
+- Crear resúmenes automáticos de clases
+- Bases de datos personales
+
+#### ChatGPT:
+- Crear horarios de estudio personalizados
+- Desglosar proyectos grandes en tareas pequeñas
+- Generar planes de estudio para exámenes
+- Técnica Pomodoro personalizada
+
+### Herramientas de investigación
+
+#### Perplexity AI:
+- Búsqueda con fuentes citadas (mejor que ChatGPT para esta tarea)
+- Verificación de información
+- Resúmenes con referencias
+
+#### Consensus, Elicit:
+- Buscar artículos académicos resumidos
+- Revisión de literatura científica
+
+### Herramientas para presentaciones
+
+#### Gamma AI, Beautiful.ai:
+- Crear presentaciones automáticamente desde texto
+- Diseño visual profesional
+- Generación de diapositivas coherentes
+
+### Actividad práctica
+- Crear plan de estudio para un examen ficticio usando ChatGPT
+- Incluir: cronograma, temas prioritarios, técnicas de repaso
+
+---
+
+# BLOQUE 3: Aplicaciones en Sociedad y Futuro
+
+## Sesión 14: IA en Salud, Ciencia y Sociedad
+
+**Duración:** 35-40 minutos
+
+### Objetivos
+- Conocer aplicaciones de IA en medicina y ciencia
+- Entender impacto social de la IA
+
+### Aplicaciones médicas
+
+#### Diagnóstico asistido:
+- Rayos X: detección de neumonía, fracturas
+- Detección de cáncer en mamografías
+- **Algoritmo usado:** CNN (redes convolucionales)
+- **¿Por qué?** Detecta patrones visuales en imágenes médicas
+
+#### Chatbots de salud mental:
+- Woebot, Wysa: apoyo emocional 24/7
+- **Limitaciones:** No sustituyen terapia profesional
+
+#### Predicción de brotes epidemiológicos:
+- Modelos de series temporales + ML
+- Ejemplo: predicción de casos de COVID-19
+
+### Aplicaciones científicas
+
+#### Descubrimiento de medicamentos:
+- AlphaFold de DeepMind (estructura de proteínas)
+- Aceleración de desarrollo de fármacos
+
+#### Predicción de clima y terremotos:
+- Modelos de IA para pronósticos más precisos
+- Alertas tempranas
+
+#### Análisis de datos astronómicos:
+- Detección de exoplanetas
+- Clasificación de galaxias
+
+### Impacto social en México
+
+- Telemedicina en zonas rurales de SLP
+- IA para educación en comunidades remotas
+- Investigación en IPICYT, UNAM
+
+### ⚠️ Casos donde la IA puede fallar
+
+- IBM Watson for Oncology: recomendaciones médicas incorrectas
+- Sesgos en diagnóstico: menor precisión en minorías étnicas
+- Privacidad de datos médicos
+
+---
+
+## Sesión 15: Futuro de la IA y Cómo Seguir Aprendiendo
+
+**Duración:** 40-45 minutos
+
+### Objetivos
+- Vislumbrar tendencias futuras en IA
+- Crear plan personal de aprendizaje continuo
+
+### Tendencias futuras
+
+#### IA multimodal:
+- Modelos que integran texto + imagen + audio simultáneamente
+- Ejemplo: GPT-4V, Gemini
+
+#### Agentes autónomos:
+- IA que completa tareas complejas de forma independiente
+- Ejemplo: AutoGPT, AgentGPT
+
+#### Quantum computing + IA:
+- Computación cuántica para acelerar entrenamiento
+- Aplicaciones futuras
+
+#### IA en metaverso, realidad aumentada/virtual:
+- Ambientes inmersivos con IA
+- NPCs (personajes no jugables) inteligentes
+
+### Recursos para seguir aprendiendo
+
+#### Cursos gratuitos:
+- **Coursera:** "AI For Everyone" (Andrew Ng)
+- **Google:** AI Essentials
+- **Universidad de Helsinki:** Elements of AI
+- **edX:** Diversos cursos introductorios
+
+#### Comunidades:
+- Discord de IA en español
+- Reddit: r/artificial, r/MachineLearning
+
+#### Proyectos prácticos:
+- Hugging Face Spaces: explorar modelos pre-entrenados
+- Kaggle competitions para principiantes
+- Crear portafolio de proyectos personales
+
+### Oportunidades laborales y habilidades
+
+#### Carreras relacionadas:
+- Ciencia de datos
+- Ingeniería de Aprendizaje de Máquicas (Machine Learning Engineering)
+- Ingeniería de Prompts
+- Analista de datos
+
+#### Habilidades complementarias:
+- Python básico (programación)
+- Estadística y matemáticas
+- Pensamiento crítico
+- Comunicación de resultados
+
+### Reflexión final
+
+**Preguntas para reflexionar:**
+
+- ¿Qué área de IA te interesa más? (generativa, visión, NLP, etc.)
+- ¿Cómo podrías usar la IA en tu carrera futura?
+- ¿Qué problema local resolverías con IA?
+
+---
+
+# Notas Pedagógicas
+
+## Principios del curso
+
+1. **Modularidad:** Cada sesión es autocontenida y puede consumirse de forma asíncrona
+2. **Intuición primero:** Conceptos técnicos explicados con analogías del mundo real
+3. **Balance teoría-práctica:** Enfoque en herramientas que los estudiantes pueden usar inmediatamente
+4. **Accesibilidad:** Sin asumir conocimientos previos de programación
+5. **Ética integrada:** Reflexión sobre implicaciones sociales en todas las sesiones relevantes
+
+## Recursos complementarios
+
+### Herramientas gratuitas mencionadas:
+- Teachable Machine, ChatGPT, Claude, Perplexity AI, Gemini
+- DALL-E, Midjourney, Canva AI
+- Wolfram Alpha, Desmos, Notion AI
+- Otter.ai, DeepL, Grammarly
+- Hugging Face Spaces, Kaggle
+
+---
+
+# Recursos Adicionales
+
+## Datasets y herramientas para demostraciones
+
+- **Datos públicos de México:** [datos.gob.mx](https://datos.gob.mx)
+- **Kaggle:** Datasets educativos gratuitos
+- **Google Dataset Search:** Búsqueda de datasets públicos
+- **Teachable Machine:** Clasificación sin código
+- **Google Collab:** Notebooks gratuitos en la nube (si se necesita Python)
+
+---
+
+**Versión del documento:** 1.0 (21 de enero de 2025)
+
