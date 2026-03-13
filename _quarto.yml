@@ -4,7 +4,7 @@ project:
 
 website:
   title: "Curso IA · SLP"
-  site-url: "http://www.curso-ia-slp.com"
+  site-url: "https://www.curso-ia-slp.com"
   description: "Panorama de la Inteligencia Artificial para estudiantes de nivel medio-superior"
 
   navbar:
