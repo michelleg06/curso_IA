@@ -1,0 +1,2388 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Inteligencia Artificial – Curso IA · SLP</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Curso IA · SLP</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./syllabus.html"> 
+<span class="menu-text">Programa</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sesiones" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Sesiones</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-sesiones">    
+        <li class="dropdown-header">— Bloque 1: Fundamentos + Ética —</li>
+        <li>
+    <a class="dropdown-item" href="./sesiones/sesion-01.html">
+ <span class="dropdown-text">S1 · ¿Qué es la IA?</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#estructura-del-curso" id="toc-estructura-del-curso" class="nav-link active" data-scroll-target="#estructura-del-curso"><span class="header-section-number">1</span> Estructura del Curso</a>
+  <ul class="collapse">
+  <li><a href="#cronograma-mayoagosto-2026" id="toc-cronograma-mayoagosto-2026" class="nav-link" data-scroll-target="#cronograma-mayoagosto-2026"><span class="header-section-number">1.1</span> Cronograma Mayo–Agosto 2026</a></li>
+  </ul></li>
+  <li><a href="#bloque-1-fundamentos-ética" id="toc-bloque-1-fundamentos-ética" class="nav-link" data-scroll-target="#bloque-1-fundamentos-ética"><span class="header-section-number">2</span> BLOQUE 1: Fundamentos + Ética</a>
+  <ul class="collapse">
+  <li><a href="#sesión-1-qué-es-la-ia-y-dónde-está-en-tu-vida" id="toc-sesión-1-qué-es-la-ia-y-dónde-está-en-tu-vida" class="nav-link" data-scroll-target="#sesión-1-qué-es-la-ia-y-dónde-está-en-tu-vida"><span class="header-section-number">2.1</span> Sesión 1: ¿Qué es la IA y dónde está en tu vida?</a>
+  <ul class="collapse">
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos"><span class="header-section-number">2.1.1</span> Objetivos</a></li>
+  <li><a href="#contenido-clave" id="toc-contenido-clave" class="nav-link" data-scroll-target="#contenido-clave"><span class="header-section-number">2.1.2</span> Contenido clave</a></li>
+  <li><a href="#actividad" id="toc-actividad" class="nav-link" data-scroll-target="#actividad"><span class="header-section-number">2.1.3</span> Actividad</a></li>
+  <li><a href="#aplicación-local" id="toc-aplicación-local" class="nav-link" data-scroll-target="#aplicación-local"><span class="header-section-number">2.1.4</span> Aplicación local</a></li>
+  </ul></li>
+  <li><a href="#sesión-2-cómo-aprende-una-máquina" id="toc-sesión-2-cómo-aprende-una-máquina" class="nav-link" data-scroll-target="#sesión-2-cómo-aprende-una-máquina"><span class="header-section-number">2.2</span> Sesión 2: ¿Cómo “aprende” una máquina?</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-1" id="toc-objetivos-1" class="nav-link" data-scroll-target="#objetivos-1"><span class="header-section-number">2.2.1</span> Objetivos</a></li>
+  <li><a href="#contenido-clave-1" id="toc-contenido-clave-1" class="nav-link" data-scroll-target="#contenido-clave-1"><span class="header-section-number">2.2.2</span> Contenido clave</a></li>
+  </ul></li>
+  <li><a href="#sesión-3-algoritmos-de-ia---qué-método-para-qué-problema" id="toc-sesión-3-algoritmos-de-ia---qué-método-para-qué-problema" class="nav-link" data-scroll-target="#sesión-3-algoritmos-de-ia---qué-método-para-qué-problema"><span class="header-section-number">2.3</span> Sesión 3: Algoritmos de IA - ¿Qué método para qué problema?</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-2" id="toc-objetivos-2" class="nav-link" data-scroll-target="#objetivos-2"><span class="header-section-number">2.3.1</span> Objetivos</a></li>
+  <li><a href="#contenido-clave-tabla-de-algoritmos-y-aplicaciones" id="toc-contenido-clave-tabla-de-algoritmos-y-aplicaciones" class="nav-link" data-scroll-target="#contenido-clave-tabla-de-algoritmos-y-aplicaciones"><span class="header-section-number">2.3.2</span> Contenido clave: Tabla de Algoritmos y Aplicaciones</a></li>
+  <li><a href="#ejemplos-concretos" id="toc-ejemplos-concretos" class="nav-link" data-scroll-target="#ejemplos-concretos"><span class="header-section-number">2.3.3</span> Ejemplos concretos</a></li>
+  <li><a href="#casos-donde-fallan" id="toc-casos-donde-fallan" class="nav-link" data-scroll-target="#casos-donde-fallan"><span class="header-section-number">2.3.4</span> ⚠️ Casos donde fallan</a></li>
+  </ul></li>
+  <li><a href="#sesión-4-ia-generativa---chatgpt-gemini-perplexity-y-cómo-funcionan" id="toc-sesión-4-ia-generativa---chatgpt-gemini-perplexity-y-cómo-funcionan" class="nav-link" data-scroll-target="#sesión-4-ia-generativa---chatgpt-gemini-perplexity-y-cómo-funcionan"><span class="header-section-number">2.4</span> Sesión 4: IA Generativa - ChatGPT, Gemini, Perplexity y cómo funcionan</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-3" id="toc-objetivos-3" class="nav-link" data-scroll-target="#objetivos-3"><span class="header-section-number">2.4.1</span> Objetivos</a></li>
+  <li><a href="#contenido-clave-2" id="toc-contenido-clave-2" class="nav-link" data-scroll-target="#contenido-clave-2"><span class="header-section-number">2.4.2</span> Contenido clave</a></li>
+  <li><a href="#demostración-en-vivo" id="toc-demostración-en-vivo" class="nav-link" data-scroll-target="#demostración-en-vivo"><span class="header-section-number">2.4.3</span> Demostración en vivo</a></li>
+  <li><a href="#conexión-práctica" id="toc-conexión-práctica" class="nav-link" data-scroll-target="#conexión-práctica"><span class="header-section-number">2.4.4</span> Conexión práctica</a></li>
+  </ul></li>
+  <li><a href="#sesión-5-ética-y-problemas-reales-de-la-ia" id="toc-sesión-5-ética-y-problemas-reales-de-la-ia" class="nav-link" data-scroll-target="#sesión-5-ética-y-problemas-reales-de-la-ia"><span class="header-section-number">2.5</span> Sesión 5: Ética y Problemas Reales de la IA</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-4" id="toc-objetivos-4" class="nav-link" data-scroll-target="#objetivos-4"><span class="header-section-number">2.5.1</span> Objetivos</a></li>
+  <li><a href="#casos-de-estudio" id="toc-casos-de-estudio" class="nav-link" data-scroll-target="#casos-de-estudio"><span class="header-section-number">2.5.2</span> Casos de estudio</a></li>
+  <li><a href="#debates-para-discusión" id="toc-debates-para-discusión" class="nav-link" data-scroll-target="#debates-para-discusión"><span class="header-section-number">2.5.3</span> Debates para discusión</a></li>
+  <li><a href="#principios-de-uso-responsable" id="toc-principios-de-uso-responsable" class="nav-link" data-scroll-target="#principios-de-uso-responsable"><span class="header-section-number">2.5.4</span> Principios de uso responsable</a></li>
+  </ul></li>
+  <li><a href="#sesión-6-en-vivo-ia-en-méxico-investigación-y-aplicaciones-reales" id="toc-sesión-6-en-vivo-ia-en-méxico-investigación-y-aplicaciones-reales" class="nav-link" data-scroll-target="#sesión-6-en-vivo-ia-en-méxico-investigación-y-aplicaciones-reales"><span class="header-section-number">2.6</span> Sesión 6: EN VIVO — IA en México: Investigación y Aplicaciones Reales</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-5" id="toc-objetivos-5" class="nav-link" data-scroll-target="#objetivos-5"><span class="header-section-number">2.6.1</span> Objetivos</a></li>
+  <li><a href="#formato" id="toc-formato" class="nav-link" data-scroll-target="#formato"><span class="header-section-number">2.6.2</span> Formato</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#bloque-2-herramientas-prácticas-para-estudiantes" id="toc-bloque-2-herramientas-prácticas-para-estudiantes" class="nav-link" data-scroll-target="#bloque-2-herramientas-prácticas-para-estudiantes"><span class="header-section-number">3</span> BLOQUE 2: Herramientas Prácticas para Estudiantes</a>
+  <ul class="collapse">
+  <li><a href="#sesión-7-ia-como-tutor-de-lenguaje-lectura-escritura-e-idiomas" id="toc-sesión-7-ia-como-tutor-de-lenguaje-lectura-escritura-e-idiomas" class="nav-link" data-scroll-target="#sesión-7-ia-como-tutor-de-lenguaje-lectura-escritura-e-idiomas"><span class="header-section-number">3.1</span> Sesión 7: IA como Tutor de Lenguaje — Lectura, Escritura e Idiomas</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-6" id="toc-objetivos-6" class="nav-link" data-scroll-target="#objetivos-6"><span class="header-section-number">3.1.1</span> Objetivos</a></li>
+  <li><a href="#herramientas-y-usos" id="toc-herramientas-y-usos" class="nav-link" data-scroll-target="#herramientas-y-usos"><span class="header-section-number">3.1.2</span> Herramientas y usos</a></li>
+  <li><a href="#uso-ético-de-la-ia-en-escritura" id="toc-uso-ético-de-la-ia-en-escritura" class="nav-link" data-scroll-target="#uso-ético-de-la-ia-en-escritura"><span class="header-section-number">3.1.3</span> ⚠️ Uso ético de la IA en escritura</a></li>
+  <li><a href="#actividades-prácticas" id="toc-actividades-prácticas" class="nav-link" data-scroll-target="#actividades-prácticas"><span class="header-section-number">3.1.4</span> Actividades prácticas</a></li>
+  </ul></li>
+  <li><a href="#sesión-8-ia-para-creatividad-arte-música-y-diseño" id="toc-sesión-8-ia-para-creatividad-arte-música-y-diseño" class="nav-link" data-scroll-target="#sesión-8-ia-para-creatividad-arte-música-y-diseño"><span class="header-section-number">3.2</span> Sesión 8: IA para Creatividad — Arte, Música y Diseño</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-7" id="toc-objetivos-7" class="nav-link" data-scroll-target="#objetivos-7"><span class="header-section-number">3.2.1</span> Objetivos</a></li>
+  <li><a href="#hilo-narrativo-puede-una-máquina-ser-creativa" id="toc-hilo-narrativo-puede-una-máquina-ser-creativa" class="nav-link" data-scroll-target="#hilo-narrativo-puede-una-máquina-ser-creativa"><span class="header-section-number">3.2.2</span> Hilo narrativo: ¿Puede una máquina ser creativa?</a></li>
+  <li><a href="#historia-breve-del-arte-generativo" id="toc-historia-breve-del-arte-generativo" class="nav-link" data-scroll-target="#historia-breve-del-arte-generativo"><span class="header-section-number">3.2.3</span> Historia breve del arte generativo</a></li>
+  <li><a href="#cómo-funcionan-los-modelos-de-difusión" id="toc-cómo-funcionan-los-modelos-de-difusión" class="nav-link" data-scroll-target="#cómo-funcionan-los-modelos-de-difusión"><span class="header-section-number">3.2.4</span> ¿Cómo funcionan los modelos de difusión?</a></li>
+  <li><a href="#herramientas-gratuitas-para-explorar-todas-en-el-navegador" id="toc-herramientas-gratuitas-para-explorar-todas-en-el-navegador" class="nav-link" data-scroll-target="#herramientas-gratuitas-para-explorar-todas-en-el-navegador"><span class="header-section-number">3.2.5</span> Herramientas gratuitas para explorar (todas en el navegador)</a></li>
+  <li><a href="#estructura-de-la-sesión-45-min" id="toc-estructura-de-la-sesión-45-min" class="nav-link" data-scroll-target="#estructura-de-la-sesión-45-min"><span class="header-section-number">3.2.6</span> Estructura de la sesión (45 min)</a></li>
+  <li><a href="#el-caso-del-concurso-de-colorado-2022" id="toc-el-caso-del-concurso-de-colorado-2022" class="nav-link" data-scroll-target="#el-caso-del-concurso-de-colorado-2022"><span class="header-section-number">3.2.7</span> El caso del concurso de Colorado (2022)</a></li>
+  <li><a href="#impacto-en-industrias-creativas" id="toc-impacto-en-industrias-creativas" class="nav-link" data-scroll-target="#impacto-en-industrias-creativas"><span class="header-section-number">3.2.8</span> Impacto en industrias creativas</a></li>
+  <li><a href="#recursos-para-explorar-más" id="toc-recursos-para-explorar-más" class="nav-link" data-scroll-target="#recursos-para-explorar-más"><span class="header-section-number">3.2.9</span> Recursos para explorar más</a></li>
+  </ul></li>
+  <li><a href="#sesión-9-ia-para-organización-y-productividad-estudiantil" id="toc-sesión-9-ia-para-organización-y-productividad-estudiantil" class="nav-link" data-scroll-target="#sesión-9-ia-para-organización-y-productividad-estudiantil"><span class="header-section-number">3.3</span> Sesión 9: IA para Organización y Productividad Estudiantil</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-8" id="toc-objetivos-8" class="nav-link" data-scroll-target="#objetivos-8"><span class="header-section-number">3.3.1</span> Objetivos</a></li>
+  <li><a href="#herramientas-de-organización" id="toc-herramientas-de-organización" class="nav-link" data-scroll-target="#herramientas-de-organización"><span class="header-section-number">3.3.2</span> Herramientas de organización</a></li>
+  <li><a href="#herramientas-de-investigación" id="toc-herramientas-de-investigación" class="nav-link" data-scroll-target="#herramientas-de-investigación"><span class="header-section-number">3.3.3</span> Herramientas de investigación</a></li>
+  <li><a href="#herramientas-para-presentaciones" id="toc-herramientas-para-presentaciones" class="nav-link" data-scroll-target="#herramientas-para-presentaciones"><span class="header-section-number">3.3.4</span> Herramientas para presentaciones</a></li>
+  <li><a href="#actividad-práctica" id="toc-actividad-práctica" class="nav-link" data-scroll-target="#actividad-práctica"><span class="header-section-number">3.3.5</span> Actividad práctica</a></li>
+  </ul></li>
+  <li><a href="#sesión-10-ia-como-tutor-académico-matemáticas-y-más" id="toc-sesión-10-ia-como-tutor-académico-matemáticas-y-más" class="nav-link" data-scroll-target="#sesión-10-ia-como-tutor-académico-matemáticas-y-más"><span class="header-section-number">3.4</span> Sesión 10: IA como Tutor Académico — Matemáticas y Más</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-9" id="toc-objetivos-9" class="nav-link" data-scroll-target="#objetivos-9"><span class="header-section-number">3.4.1</span> Objetivos</a></li>
+  <li><a href="#la-diferencia-clave-entender-vs.-copiar" id="toc-la-diferencia-clave-entender-vs.-copiar" class="nav-link" data-scroll-target="#la-diferencia-clave-entender-vs.-copiar"><span class="header-section-number">3.4.2</span> La diferencia clave: entender vs.&nbsp;copiar</a></li>
+  <li><a href="#herramientas-por-materia" id="toc-herramientas-por-materia" class="nav-link" data-scroll-target="#herramientas-por-materia"><span class="header-section-number">3.4.3</span> Herramientas por materia</a></li>
+  <li><a href="#prompts-efectivos-vs.-inefectivos" id="toc-prompts-efectivos-vs.-inefectivos" class="nav-link" data-scroll-target="#prompts-efectivos-vs.-inefectivos"><span class="header-section-number">3.4.4</span> Prompts efectivos vs.&nbsp;inefectivos</a></li>
+  <li><a href="#actividad-práctica-1" id="toc-actividad-práctica-1" class="nav-link" data-scroll-target="#actividad-práctica-1"><span class="header-section-number">3.4.5</span> Actividad práctica</a></li>
+  </ul></li>
+  <li><a href="#sesión-11-en-vivo-ia-en-la-educación-global" id="toc-sesión-11-en-vivo-ia-en-la-educación-global" class="nav-link" data-scroll-target="#sesión-11-en-vivo-ia-en-la-educación-global"><span class="header-section-number">3.5</span> Sesión 11: EN VIVO — IA en la Educación Global</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-10" id="toc-objetivos-10" class="nav-link" data-scroll-target="#objetivos-10"><span class="header-section-number">3.5.1</span> Objetivos</a></li>
+  <li><a href="#formato-1" id="toc-formato-1" class="nav-link" data-scroll-target="#formato-1"><span class="header-section-number">3.5.2</span> Formato</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#bloque-3-creación-aplicaciones-y-futuro" id="toc-bloque-3-creación-aplicaciones-y-futuro" class="nav-link" data-scroll-target="#bloque-3-creación-aplicaciones-y-futuro"><span class="header-section-number">4</span> BLOQUE 3: Creación, Aplicaciones y Futuro</a>
+  <ul class="collapse">
+  <li><a href="#sesión-12-programación-con-ia-tu-primer-vistazo-a-python" id="toc-sesión-12-programación-con-ia-tu-primer-vistazo-a-python" class="nav-link" data-scroll-target="#sesión-12-programación-con-ia-tu-primer-vistazo-a-python"><span class="header-section-number">4.1</span> Sesión 12: Programación con IA — Tu Primer Vistazo a Python</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-11" id="toc-objetivos-11" class="nav-link" data-scroll-target="#objetivos-11"><span class="header-section-number">4.1.1</span> Objetivos</a></li>
+  <li><a href="#por-qué-python" id="toc-por-qué-python" class="nav-link" data-scroll-target="#por-qué-python"><span class="header-section-number">4.1.2</span> ¿Por qué Python?</a></li>
+  <li><a href="#parte-1-las-primeras-líneas-10-min" id="toc-parte-1-las-primeras-líneas-10-min" class="nav-link" data-scroll-target="#parte-1-las-primeras-líneas-10-min"><span class="header-section-number">4.1.3</span> Parte 1: Las primeras líneas (10 min)</a></li>
+  <li><a href="#parte-2-tres-ejemplos-que-impresionan-en-pocas-líneas-15-min" id="toc-parte-2-tres-ejemplos-que-impresionan-en-pocas-líneas-15-min" class="nav-link" data-scroll-target="#parte-2-tres-ejemplos-que-impresionan-en-pocas-líneas-15-min"><span class="header-section-number">4.1.4</span> Parte 2: Tres ejemplos que impresionan en pocas líneas (15 min)</a></li>
+  <li><a href="#parte-3-ia-como-copiloto-de-código-10-min" id="toc-parte-3-ia-como-copiloto-de-código-10-min" class="nav-link" data-scroll-target="#parte-3-ia-como-copiloto-de-código-10-min"><span class="header-section-number">4.1.5</span> Parte 3: IA como copiloto de código (10 min)</a></li>
+  <li><a href="#parte-4-cómo-continuar-5-min" id="toc-parte-4-cómo-continuar-5-min" class="nav-link" data-scroll-target="#parte-4-cómo-continuar-5-min"><span class="header-section-number">4.1.6</span> Parte 4: Cómo continuar (5 min)</a></li>
+  </ul></li>
+  <li><a href="#sesión-13-robótica-e-ia-en-el-mundo-físico" id="toc-sesión-13-robótica-e-ia-en-el-mundo-físico" class="nav-link" data-scroll-target="#sesión-13-robótica-e-ia-en-el-mundo-físico"><span class="header-section-number">4.2</span> Sesión 13: Robótica e IA en el Mundo Físico</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-12" id="toc-objetivos-12" class="nav-link" data-scroll-target="#objetivos-12"><span class="header-section-number">4.2.1</span> Objetivos</a></li>
+  <li><a href="#qué-hace-inteligente-a-un-robot" id="toc-qué-hace-inteligente-a-un-robot" class="nav-link" data-scroll-target="#qué-hace-inteligente-a-un-robot"><span class="header-section-number">4.2.2</span> ¿Qué hace “inteligente” a un robot?</a></li>
+  <li><a href="#caso-principal-boston-dynamics" id="toc-caso-principal-boston-dynamics" class="nav-link" data-scroll-target="#caso-principal-boston-dynamics"><span class="header-section-number">4.2.3</span> Caso principal: Boston Dynamics</a></li>
+  <li><a href="#los-5-niveles-de-autonomía-autos-autónomos" id="toc-los-5-niveles-de-autonomía-autos-autónomos" class="nav-link" data-scroll-target="#los-5-niveles-de-autonomía-autos-autónomos"><span class="header-section-number">4.2.4</span> Los 5 niveles de autonomía — Autos autónomos</a></li>
+  <li><a href="#robótica-en-méxico" id="toc-robótica-en-méxico" class="nav-link" data-scroll-target="#robótica-en-méxico"><span class="header-section-number">4.2.5</span> Robótica en México</a></li>
+  <li><a href="#debate-ético-robots-autónomos-y-responsabilidad" id="toc-debate-ético-robots-autónomos-y-responsabilidad" class="nav-link" data-scroll-target="#debate-ético-robots-autónomos-y-responsabilidad"><span class="header-section-number">4.2.6</span> ⚠️ Debate ético: robots autónomos y responsabilidad</a></li>
+  <li><a href="#recursos-gratuitos" id="toc-recursos-gratuitos" class="nav-link" data-scroll-target="#recursos-gratuitos"><span class="header-section-number">4.2.7</span> Recursos gratuitos</a></li>
+  </ul></li>
+  <li><a href="#sesión-14-ia-en-salud-ciencia-y-sociedad" id="toc-sesión-14-ia-en-salud-ciencia-y-sociedad" class="nav-link" data-scroll-target="#sesión-14-ia-en-salud-ciencia-y-sociedad"><span class="header-section-number">4.3</span> Sesión 14: IA en Salud, Ciencia y Sociedad</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-13" id="toc-objetivos-13" class="nav-link" data-scroll-target="#objetivos-13"><span class="header-section-number">4.3.1</span> Objetivos</a></li>
+  <li><a href="#aplicaciones-médicas" id="toc-aplicaciones-médicas" class="nav-link" data-scroll-target="#aplicaciones-médicas"><span class="header-section-number">4.3.2</span> Aplicaciones médicas</a></li>
+  <li><a href="#aplicaciones-científicas" id="toc-aplicaciones-científicas" class="nav-link" data-scroll-target="#aplicaciones-científicas"><span class="header-section-number">4.3.3</span> Aplicaciones científicas</a></li>
+  <li><a href="#impacto-social-en-méxico" id="toc-impacto-social-en-méxico" class="nav-link" data-scroll-target="#impacto-social-en-méxico"><span class="header-section-number">4.3.4</span> Impacto social en México</a></li>
+  <li><a href="#casos-donde-la-ia-puede-fallar" id="toc-casos-donde-la-ia-puede-fallar" class="nav-link" data-scroll-target="#casos-donde-la-ia-puede-fallar"><span class="header-section-number">4.3.5</span> ⚠️ Casos donde la IA puede fallar</a></li>
+  </ul></li>
+  <li><a href="#sesión-15-en-vivo-ia-política-pública-y-ciudadanía" id="toc-sesión-15-en-vivo-ia-política-pública-y-ciudadanía" class="nav-link" data-scroll-target="#sesión-15-en-vivo-ia-política-pública-y-ciudadanía"><span class="header-section-number">4.4</span> Sesión 15: EN VIVO — IA, Política Pública y Ciudadanía</a>
+  <ul class="collapse">
+  <li><a href="#objetivos-14" id="toc-objetivos-14" class="nav-link" data-scroll-target="#objetivos-14"><span class="header-section-number">4.4.1</span> Objetivos</a></li>
+  <li><a href="#formato-2" id="toc-formato-2" class="nav-link" data-scroll-target="#formato-2"><span class="header-section-number">4.4.2</span> Formato</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#notas-pedagógicas" id="toc-notas-pedagógicas" class="nav-link" data-scroll-target="#notas-pedagógicas"><span class="header-section-number">5</span> Notas Pedagógicas</a>
+  <ul class="collapse">
+  <li><a href="#principios-del-curso" id="toc-principios-del-curso" class="nav-link" data-scroll-target="#principios-del-curso"><span class="header-section-number">5.1</span> Principios del curso</a></li>
+  <li><a href="#recursos-complementarios" id="toc-recursos-complementarios" class="nav-link" data-scroll-target="#recursos-complementarios"><span class="header-section-number">5.2</span> Recursos complementarios</a>
+  <ul class="collapse">
+  <li><a href="#herramientas-gratuitas-mencionadas" id="toc-herramientas-gratuitas-mencionadas" class="nav-link" data-scroll-target="#herramientas-gratuitas-mencionadas"><span class="header-section-number">5.2.1</span> Herramientas gratuitas mencionadas:</a></li>
+  <li><a href="#cursos-gratuitos-para-continuar" id="toc-cursos-gratuitos-para-continuar" class="nav-link" data-scroll-target="#cursos-gratuitos-para-continuar"><span class="header-section-number">5.2.2</span> Cursos gratuitos para continuar:</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#recursos-adicionales" id="toc-recursos-adicionales" class="nav-link" data-scroll-target="#recursos-adicionales"><span class="header-section-number">6</span> Recursos Adicionales</a>
+  <ul class="collapse">
+  <li><a href="#datasets-y-herramientas-para-demostraciones" id="toc-datasets-y-herramientas-para-demostraciones" class="nav-link" data-scroll-target="#datasets-y-herramientas-para-demostraciones"><span class="header-section-number">6.1</span> Datasets y herramientas para demostraciones</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Inteligencia Artificial</h1>
+<p class="subtitle lead">Panorama de la IA para estudiantes de nivel medio-superior</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="estructura-del-curso" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Estructura del Curso</h1>
+<p><strong>Total:</strong> 15 sesiones de 30–45 minutos (3 sesiones en vivo vía Zoom)</p>
+<p><strong>Modalidad:</strong> En línea — sesiones asíncronas grabadas + 3 sesiones en vivo con invitados</p>
+<center>
+<a href="http://www.curso-ia-slp.com" target="_blank" class="btn btn-outline-primary" style="margin: 1rem 0;">www.curso-ia-slp.com</a>
+</center>
+<p><strong>Requisito:</strong> Asistencia (sin evaluaciones formales ni proyectos finales)</p>
+<p><strong>Distribución:</strong></p>
+<ul>
+<li><strong>Bloque 1:</strong> Fundamentos + Ética (Sesiones 1–6)</li>
+<li><strong>Bloque 2:</strong> Herramientas Prácticas para Estudiantes (Sesiones 7–11)</li>
+<li><strong>Bloque 3:</strong> Creación, Aplicaciones y Futuro (Sesiones 12–15)</li>
+</ul>
+<section id="cronograma-mayoagosto-2026" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="cronograma-mayoagosto-2026"><span class="header-section-number">1.1</span> Cronograma Mayo–Agosto 2026</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 25%">
+<col style="width: 29%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>#</th>
+<th>Fecha</th>
+<th>Sesión</th>
+<th>Formato</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>5 mayo</td>
+<td>¿Qué es la IA y dónde está en tu vida?</td>
+<td>Asíncrona</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>12 mayo</td>
+<td>¿Cómo “aprende” una máquina?</td>
+<td>Asíncrona</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>19 mayo</td>
+<td>Algoritmos de IA: ¿qué método para qué problema?</td>
+<td>Asíncrona</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>26 mayo</td>
+<td>IA Generativa: ChatGPT, Gemini, Perplexity y cómo funcionan</td>
+<td>Asíncrona</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>2 junio</td>
+<td>Ética y problemas reales de la IA</td>
+<td>Asíncrona</td>
+</tr>
+<tr class="even">
+<td><strong>6</strong></td>
+<td><strong>9 junio</strong></td>
+<td><strong>EN VIVO: IA en México — investigación y aplicaciones reales</strong></td>
+<td><strong>Zoom · IPICYT</strong></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>16 junio</td>
+<td>IA como tutor de lenguaje: Lectura, Escritura e Idiomas</td>
+<td>Asíncrona</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>23 junio</td>
+<td>IA para Creatividad: Arte, Música y Diseño</td>
+<td>Asíncrona</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>30 junio</td>
+<td>IA para Organización y Productividad Estudiantil</td>
+<td>Asíncrona</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>7 julio</td>
+<td>IA como tutor académico: Matemáticas y más</td>
+<td>Asíncrona</td>
+</tr>
+<tr class="odd">
+<td><strong>11</strong></td>
+<td><strong>14 julio</strong></td>
+<td><strong>EN VIVO: IA en la educación global</strong></td>
+<td><strong>Zoom · Boston College</strong></td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>21 julio</td>
+<td>Programación con IA: tu primer vistazo a Python</td>
+<td>Asíncrona</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>28 julio</td>
+<td>Robótica e IA en el mundo físico</td>
+<td>Asíncrona</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>4 agosto</td>
+<td>IA en Medicina, Ciencia y Sociedad</td>
+<td>Asíncrona</td>
+</tr>
+<tr class="odd">
+<td><strong>15</strong></td>
+<td><strong>11 agosto</strong></td>
+<td><strong>EN VIVO: IA, política pública y ciudadanía</strong></td>
+<td><strong>Zoom · PIT Policy México</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Coordinación con invitados
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Las sesiones en vivo serán grabadas y disponibles para quienes no puedan conectarse en tiempo real.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 21%">
+<col style="width: 51%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Invitado</th>
+<th>Sesión</th>
+<th>Invitar antes del</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IPICYT (San Luis Potosí)</td>
+<td>9 junio</td>
+<td><strong>30 de abril</strong></td>
+</tr>
+<tr class="even">
+<td>Boston College (online)</td>
+<td>14 julio</td>
+<td><strong>2 de junio</strong> — Boston está 2 hrs adelante en verano (EDT vs.&nbsp;CST)</td>
+</tr>
+<tr class="odd">
+<td>PIT Policy México</td>
+<td>11 agosto</td>
+<td><strong>30 de junio</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="bloque-1-fundamentos-ética" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> BLOQUE 1: Fundamentos + Ética</h1>
+<section id="sesión-1-qué-es-la-ia-y-dónde-está-en-tu-vida" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sesión-1-qué-es-la-ia-y-dónde-está-en-tu-vida"><span class="header-section-number">2.1</span> Sesión 1: ¿Qué es la IA y dónde está en tu vida?</h2>
+<p><strong>Duración:</strong> 45 minutos</p>
+<section id="objetivos" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">2.1.1</span> Objetivos</h3>
+<ul>
+<li>Comprender qué es la IA y qué NO es</li>
+<li>Identificar IA en nuestra vida diaria</li>
+<li>Entender los conceptos básicos que exploraremos</li>
+</ul>
+</section>
+<section id="contenido-clave" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="contenido-clave"><span class="header-section-number">2.1.2</span> Contenido clave</h3>
+<ul>
+<li><strong>Intro general:</strong> Inteligencia Artificial vs.&nbsp;Machine Learning (Aprendizaje de Máquinas) vs.&nbsp;Deep Learning (Aprendizaje Profundo)</li>
+<li>Ejemplos cotidianos:
+<ul>
+<li>Spotify, Netflix, Google Maps</li>
+<li>Filtros de Instagram/TikTok</li>
+<li>Asistentes de voz (Siri, Alexa)</li>
+</ul></li>
+<li><strong>Tipos de aprendizaje (introductorio):</strong>
+<ul>
+<li><code>Supervisado</code>: “Ejemplos con etiquetas”</li>
+<li><code>No supervisado</code>: “Encuentra patrones por ti mismo”</li>
+<li><code>Refuerzo</code>: “Aprende por ensayo y error”</li>
+</ul></li>
+</ul>
+</section>
+<section id="actividad" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="actividad"><span class="header-section-number">2.1.3</span> Actividad</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reflexionemos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>¿Qué herramientas de IA usas en un día típico? ¿Sabías que la herramienta usaba IA?</p>
+</div>
+</div>
+</section>
+<section id="aplicación-local" class="level3" data-number="2.1.4">
+<h3 data-number="2.1.4" class="anchored" data-anchor-id="aplicación-local"><span class="header-section-number">2.1.4</span> Aplicación local</h3>
+<ul>
+<li>Apps de transporte en San Luis Potosí</li>
+<li>Recomendaciones de Netflix</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="sesión-2-cómo-aprende-una-máquina" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sesión-2-cómo-aprende-una-máquina"><span class="header-section-number">2.2</span> Sesión 2: ¿Cómo “aprende” una máquina?</h2>
+<p><strong>Duración:</strong> 30-35 minutos</p>
+<section id="objetivos-1" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="objetivos-1"><span class="header-section-number">2.2.1</span> Objetivos</h3>
+<ul>
+<li>Entender la intuición detrás del aprendizaje automático</li>
+<li>Visualizar cómo las máquinas encuentran patrones</li>
+</ul>
+</section>
+<section id="contenido-clave-1" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="contenido-clave-1"><span class="header-section-number">2.2.2</span> Contenido clave</h3>
+<ul>
+<li><strong>La base matemática simple:</strong> El plano cartesiano (x, y)</li>
+<li><strong>Intuición:</strong> La máquina encuentra patrones en datos</li>
+<li>Ejemplos visuales:
+<ul>
+<li>Relación altura/peso</li>
+<li>Horas de estudio vs.&nbsp;calificación</li>
+</ul></li>
+<li><strong>Demostración:</strong> <a href="https://teachablemachine.withgoogle.com/">Teachable Machine</a> (clasificar objetos con webcam)</li>
+<li><strong>Concepto importante:</strong> La máquina NO “entiende”, solo encuentra patrones estadísticos</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Las máquinas realmente “razonan”?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Una máquina no tiene capacidad de razonamiento autónomo. Sin embargo, es capaz de identificar patrones en una serie de datos, y utilizando modelos estadísticos pre-definidos, producir un resultado lógico (o estadísicamente probable).</p>
+<p>Es importante cuestionarnos:</p>
+<ul>
+<li><p>¿Lo que es probable, es certero?</p></li>
+<li><p>¿Lo que parece lógico, puede tener fallas?</p></li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="sesión-3-algoritmos-de-ia---qué-método-para-qué-problema" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sesión-3-algoritmos-de-ia---qué-método-para-qué-problema"><span class="header-section-number">2.3</span> Sesión 3: Algoritmos de IA - ¿Qué método para qué problema?</h2>
+<p><strong>Duración:</strong> 45 minutos</p>
+<section id="objetivos-2" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="objetivos-2"><span class="header-section-number">2.3.1</span> Objetivos</h3>
+<ul>
+<li>Conocer diferentes algoritmos de IA de forma intuitiva</li>
+<li>Entender POR QUÉ se elige cada método para diferentes aplicaciones</li>
+</ul>
+</section>
+<section id="contenido-clave-tabla-de-algoritmos-y-aplicaciones" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="contenido-clave-tabla-de-algoritmos-y-aplicaciones"><span class="header-section-number">2.3.2</span> Contenido clave: Tabla de Algoritmos y Aplicaciones</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 30%">
+<col style="width: 20%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Algoritmo/Método</th>
+<th>¿Qué hace? (intuición)</th>
+<th>¿Dónde se usa?</th>
+<th>¿Por qué este método?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Regresión lineal</strong></td>
+<td>Traza “la mejor línea” entre puntos</td>
+<td>Predecir precios, temperaturas, ventas</td>
+<td>Simple y rápido para relaciones lineales (¿recuerdas el plano cartesiano?)</td>
+</tr>
+<tr class="even">
+<td><strong>Árboles de decisión</strong></td>
+<td>Serie de preguntas sí/no</td>
+<td>Diagnóstico médico, aprobación de créditos</td>
+<td>Fácil de interpretar (puedes ver las reglas)</td>
+</tr>
+<tr class="odd">
+<td><strong>K-means (clustering)</strong></td>
+<td>Agrupa puntos similares</td>
+<td>Segmentación de clientes por tipo de compras, agrupar canciones por estilo musical</td>
+<td>No necesitas etiquetas previas</td>
+</tr>
+<tr class="even">
+<td><strong>Redes neuronales simples</strong></td>
+<td>Capas de decisiones conectadas</td>
+<td>Reconocer números escritos a mano de una imagen</td>
+<td>Aprende patrones más complejos que líneas de datos estructurados o imágenes pequeñas</td>
+</tr>
+<tr class="odd">
+<td><strong>Redes convolucionales (CNN)</strong></td>
+<td>Detecta características visuales (bordes, formas)</td>
+<td>Reconocimiento facial, diagnóstico por imágenes</td>
+<td>Especializada en imágenes (píxeles)</td>
+</tr>
+<tr class="even">
+<td><strong>Transformers (LLMs)</strong></td>
+<td>Predice palabras considerando contexto completo</td>
+<td>ChatGPT, traducción automática</td>
+<td>Entiende relaciones entre palabras distantes</td>
+</tr>
+<tr class="odd">
+<td><strong>Reinforcement Learning</strong></td>
+<td>Aprende por ensayo/error con recompensas</td>
+<td>Autos autónomos, juegos (AlphaGo)</td>
+<td>Ideal cuando no hay datos etiquetados, solo señales de éxito o fallo</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="ejemplos-concretos" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="ejemplos-concretos"><span class="header-section-number">2.3.3</span> Ejemplos concretos</h3>
+<ul>
+<li><strong>Recomendaciones de Netflix:</strong> Clustering (agrupa usuarios similares) + filtros colaborativos</li>
+<li><strong>Google Translate:</strong> Transformers (necesita entender gramática y contexto)</li>
+<li><strong>Filtros faciales en Instagram:</strong> CNN (detecta cara, ojos, boca en tiempo real)</li>
+<li><strong>Filtros de Spam en correos electrónicos:</strong> Árboles de decisión o Naive Bayes (rápido y preciso para texto)</li>
+</ul>
+</section>
+<section id="casos-donde-fallan" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="casos-donde-fallan"><span class="header-section-number">2.3.4</span> ⚠️ Casos donde fallan</h3>
+<ul>
+<li><strong>Regresión lineal:</strong> No funciona si relación no es lineal (intenta una red neuronal 😉)</li>
+<li><strong>Árboles de decisión:</strong> Tienden a memorizar los datos del entrenamiento y fallan con nuevos casos (overfitting).</li>
+<li><strong>Redes neuronales:</strong> Necesitan MUCHOS datos y además es difícil entender “por qué” llegaron a una respuesta (⬛ caja negra).</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reflexionar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>¿Podemos pensar en ejemplos de relaciones lineales, y ejemplos de relaciones no-lineales en la vida diaria?</p>
+<p>¿Qué pasa cuando un modelo de aprendizaje de máquinas está “saturado” (overfitted)?</p>
+<p>¿Podemos confiar en el resultado de un modelo de redes neuronales que fue entrenado con pocos datos?</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="sesión-4-ia-generativa---chatgpt-gemini-perplexity-y-cómo-funcionan" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sesión-4-ia-generativa---chatgpt-gemini-perplexity-y-cómo-funcionan"><span class="header-section-number">2.4</span> Sesión 4: IA Generativa - ChatGPT, Gemini, Perplexity y cómo funcionan</h2>
+<p><strong>Duración:</strong> 40 minutos</p>
+<section id="objetivos-3" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="objetivos-3"><span class="header-section-number">2.4.1</span> Objetivos</h3>
+<ul>
+<li>Entender qué es un modelo de lenguaje grande (LLM)</li>
+<li>Identificar las limitaciones y riesgos más comunes de la IA generativa.</li>
+<li>Reconocer las diferencias entre modelos de texto y modelos de imagen.</li>
+</ul>
+</section>
+<section id="contenido-clave-2" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="contenido-clave-2"><span class="header-section-number">2.4.2</span> Contenido clave</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Qué es un modelo de lenguaje grande (LLM)?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Red neuronal entrenada con enormes cantidades de texto para aprender patrones de lenguaje y generar respuestas coherentes.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Cómo “predice” la siguiente palabra?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Predice la siguiente palabra u oración basándose en el contexto previo — como un “autocompletado inteligente” que entiende relaciones de largo alcance, no solo la última palabra.</p>
+</div>
+</div>
+<ul>
+<li><strong>Limitaciones críticas:</strong>
+<ul>
+<li><strong>Alucinaciones:</strong> Puede inventar datos o citas con total confianza.</li>
+<li><strong>Sesgo:</strong> Reproduce los sesgos presentes en los datos con los que fue entrenado.</li>
+<li><strong>No tiene “conocimiento verdadero”, depende del contexto:</strong> Su precisión disminuye si la pregunta es ambigua o falta información.</li>
+</ul></li>
+<li><strong>IA Generativa en imágenes</strong></li>
+</ul>
+<iframe src="https://player.vimeo.com/video/1156965510?h=0&amp;autoplay=1&amp;loop=1&amp;autopause=0&amp;muted=1&amp;background=1" style="width: 700px; height: 550px; max-width: 100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture">
+</iframe>
+<ul>
+<li>¿Cómo funciona la difusión?</li>
+<li>Introducción a modelos de difusión (DALL‑E, Midjourney, Stable Diffusion): crean imágenes desde ruido, refinando iterativamente los detalles hasta formar una escena coherente.</li>
+</ul>
+</section>
+<section id="demostración-en-vivo" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="demostración-en-vivo"><span class="header-section-number">2.4.3</span> Demostración en vivo</h3>
+<ul>
+<li>Comparar ChatGPT vs.&nbsp;Google Search para verificar hechos</li>
+<li>Mostrar ejemplos de alucinaciones “textuales”</li>
+</ul>
+</section>
+<section id="conexión-práctica" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="conexión-práctica"><span class="header-section-number">2.4.4</span> Conexión práctica</h3>
+<ul>
+<li><strong>Modelos de texto:</strong> ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google), Perplexity (modelo híbrido Chat + búsqueda).</li>
+<li><strong>Modelos de imagen:</strong> DALL‑E, Midjourney, Stable Diffusion.</li>
+<li><strong>Mensaje clave:</strong> Los modelos generativos no piensan ni saben; predicen y combinan patrones de lenguaje o píxeles para crear respuestas plausibles.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="sesión-5-ética-y-problemas-reales-de-la-ia" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sesión-5-ética-y-problemas-reales-de-la-ia"><span class="header-section-number">2.5</span> Sesión 5: Ética y Problemas Reales de la IA</h2>
+<p><strong>Duración:</strong> 45 minutos</p>
+<section id="objetivos-4" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="objetivos-4"><span class="header-section-number">2.5.1</span> Objetivos</h3>
+<ul>
+<li>Reflexionar sobre las implicaciones éticas y riesgos reales de la IA.</li>
+<li>Identificar y analizar sesgos en sistemas de IA con casos locales e internacionales.</li>
+</ul>
+</section>
+<section id="casos-de-estudio" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="casos-de-estudio"><span class="header-section-number">2.5.2</span> Casos de estudio</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sesgo algorítmico
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>El sistema <a href="https://www.unesco.org/es/articles/la-historia-del-algoritmo-los-fallos-de-la-inteligencia-artificial">COMPAS</a>, utilizado en Estados Unidos para predecir reincidencia en delitos, presenta sesgos raciales: los acusados afroamericanos sufren el doble de probabilidades de ser calificados de modo erróneo por el sistema</p></li>
+<li><p><a href="https://hub.laboratoria.la/10-casos-donde-la-inteligencia-artificial-jugo-en-contra-de-la-diversidad">Amazon Hiring Tool</a> rechazó CVs de mujeres. Su algoritmo presentaba un sesgo de género al penalizar automáticamente los currículums que contenían términos relacionados con mujeres.</p></li>
+<li><p>Reconocimiento facial: falla hasta 34% más en piel oscura <a href="https://theconversation.com/sombra-aqui-sombra-alla-reconocimiento-facial-discriminatorio-152035">(MIT/Microsoft)</a>.</p></li>
+</ol>
+</div>
+</div>
+<section id="privacidad" class="level4" data-number="2.5.2.1">
+<h4 data-number="2.5.2.1" class="anchored" data-anchor-id="privacidad"><span class="header-section-number">2.5.2.1</span> Privacidad</h4>
+<ul>
+<li>¿Quién tiene tus datos?</li>
+<li>¿Para qué los usan?</li>
+<li>Protección de datos en México (INAI)</li>
+</ul>
+</section>
+<section id="deepfakes-y-desinformación" class="level4" data-number="2.5.2.2">
+<h4 data-number="2.5.2.2" class="anchored" data-anchor-id="deepfakes-y-desinformación"><span class="header-section-number">2.5.2.2</span> Deepfakes y desinformación</h4>
+<ul>
+<li>Ejemplos reales de videos manipulados</li>
+<li>Impacto en elecciones, noticias falsas amplificadas por bots IA en redes</li>
+</ul>
+</section>
+<section id="impacto-en-empleos" class="level4" data-number="2.5.2.3">
+<h4 data-number="2.5.2.3" class="anchored" data-anchor-id="impacto-en-empleos"><span class="header-section-number">2.5.2.3</span> Impacto en empleos</h4>
+<ul>
+<li>¿Qué profesiones cambian?</li>
+<li>¿Cuáles desaparecen?</li>
+<li>Impacto en empleos locales</li>
+</ul>
+</section>
+</section>
+<section id="debates-para-discusión" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="debates-para-discusión"><span class="header-section-number">2.5.3</span> Debates para discusión</h3>
+<ul>
+<li>“¿Deberías usar ChatGPT para hacer tu tarea?”</li>
+<li>“¿Es arte lo que genera DALL-E?”</li>
+<li>“¿Quién es responsable si un auto autónomo causa un accidente?”</li>
+</ul>
+</section>
+<section id="principios-de-uso-responsable" class="level3" data-number="2.5.4">
+<h3 data-number="2.5.4" class="anchored" data-anchor-id="principios-de-uso-responsable"><span class="header-section-number">2.5.4</span> Principios de uso responsable</h3>
+<ul>
+<li>IA como herramienta, no sustituto del pensamiento crítico</li>
+<li>Siempre verificar información generada por IA</li>
+<li>Citar cuando uses IA para ideas o contenido</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="sesión-6-en-vivo-ia-en-méxico-investigación-y-aplicaciones-reales" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="sesión-6-en-vivo-ia-en-méxico-investigación-y-aplicaciones-reales"><span class="header-section-number">2.6</span> Sesión 6: EN VIVO — IA en México: Investigación y Aplicaciones Reales</h2>
+<p><strong>Duración:</strong> 45–60 minutos · <strong>Formato:</strong> Zoom (grabada)</p>
+<p><strong>Invitado:</strong> Investigador/a del IPICYT (Instituto Potosino de Investigación Científica y Tecnológica), San Luis Potosí</p>
+<section id="objetivos-5" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="objetivos-5"><span class="header-section-number">2.6.1</span> Objetivos</h3>
+<ul>
+<li>Conocer cómo se hace investigación en IA desde México</li>
+<li>Conectar los conceptos del Bloque 1 con trabajo científico real</li>
+<li>Abrir posibilidades de carrera para estudiantes de SLP</li>
+</ul>
+</section>
+<section id="formato" class="level3" data-number="2.6.2">
+<h3 data-number="2.6.2" class="anchored" data-anchor-id="formato"><span class="header-section-number">2.6.2</span> Formato</h3>
+<ul>
+<li><strong>Charla libre</strong> (25–30 min): el/la investigador/a comparte su trabajo, trayectoria y proyectos actuales</li>
+<li><strong>Preguntas abiertas</strong> (15–20 min): los estudiantes pueden enviar preguntas por chat</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Preguntas sugeridas para el/la invitado/a
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>¿En qué proyectos de IA trabaja actualmente el IPICYT?</li>
+<li>¿Cómo es un día típico como investigador/a en IA en México?</li>
+<li>¿Qué estudió y cómo llegó a trabajar con inteligencia artificial?</li>
+<li>¿Qué oportunidades existen para estudiantes de preparatoria que les interesa este campo?</li>
+<li>¿Qué diferencia hay entre investigar IA en México vs.&nbsp;en otros países?</li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+</section>
+</section>
+<section id="bloque-2-herramientas-prácticas-para-estudiantes" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> BLOQUE 2: Herramientas Prácticas para Estudiantes</h1>
+<section id="sesión-7-ia-como-tutor-de-lenguaje-lectura-escritura-e-idiomas" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sesión-7-ia-como-tutor-de-lenguaje-lectura-escritura-e-idiomas"><span class="header-section-number">3.1</span> Sesión 7: IA como Tutor de Lenguaje — Lectura, Escritura e Idiomas</h2>
+<p><strong>Duración:</strong> 40 minutos</p>
+<section id="objetivos-6" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="objetivos-6"><span class="header-section-number">3.1.1</span> Objetivos</h3>
+<ul>
+<li>Usar IA para mejorar comprensión de textos en español e inglés</li>
+<li>Usar IA como editor y tutor de escritura (no como autor)</li>
+<li>Practicar idiomas con herramientas de IA conversacionales</li>
+</ul>
+</section>
+<section id="herramientas-y-usos" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="herramientas-y-usos"><span class="header-section-number">3.1.2</span> Herramientas y usos</h3>
+<section id="para-leer-y-comprender" class="level4" data-number="3.1.2.1">
+<h4 data-number="3.1.2.1" class="anchored" data-anchor-id="para-leer-y-comprender"><span class="header-section-number">3.1.2.1</span> Para leer y comprender</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 72%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Herramienta</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ChatGPT / Claude</strong></td>
+<td>Resumir textos largos, explicar vocabulario en contexto, generar preguntas de comprensión</td>
+</tr>
+<tr class="even">
+<td><strong>Perplexity AI</strong></td>
+<td>Buscar y resumir información con fuentes citadas</td>
+</tr>
+<tr class="odd">
+<td><strong>DeepL</strong></td>
+<td>Traducción contextual superior a Google Translate; explica modismos y expresiones</td>
+</tr>
+<tr class="even">
+<td><strong>Otter.ai</strong></td>
+<td>Transcribir y resumir conferencias o videos</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="para-escribir-mejor" class="level4" data-number="3.1.2.2">
+<h4 data-number="3.1.2.2" class="anchored" data-anchor-id="para-escribir-mejor"><span class="header-section-number">3.1.2.2</span> Para escribir mejor</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 72%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Herramienta</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ChatGPT / Claude</strong></td>
+<td>Brainstorming, estructurar argumentos, sugerir mejoras de estilo, expandir o condensar texto</td>
+</tr>
+<tr class="even">
+<td><strong>Grammarly</strong></td>
+<td>Corrección gramatical, sugerencias de tono (formal/informal), claridad y concisión</td>
+</tr>
+<tr class="odd">
+<td><strong>QuillBot / Wordtune</strong></td>
+<td>Reescribir oraciones complejas, sinónimos contextuales</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="para-aprender-idiomas" class="level4" data-number="3.1.2.3">
+<h4 data-number="3.1.2.3" class="anchored" data-anchor-id="para-aprender-idiomas"><span class="header-section-number">3.1.2.3</span> Para aprender idiomas</h4>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 72%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Herramienta</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ChatGPT Voice Mode</strong></td>
+<td>Practicar conversación en inglés, simular entrevistas y diálogos cotidianos</td>
+</tr>
+<tr class="even">
+<td><strong>ELSA Speak / Duolingo</strong></td>
+<td>Práctica de pronunciación con retroalimentación de IA</td>
+</tr>
+<tr class="odd">
+<td><strong>ChatGPT (texto)</strong></td>
+<td>Explicar gramática difícil, generar textos adaptados a tu nivel (A2, B1, B2), crear flashcards</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="uso-ético-de-la-ia-en-escritura" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="uso-ético-de-la-ia-en-escritura"><span class="header-section-number">3.1.3</span> ⚠️ Uso ético de la IA en escritura</h3>
+<p><strong>IA como tutor/editor, no como autor:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 46%">
+<col style="width: 53%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Uso aceptable</th>
+<th>Uso inaceptable</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>✅ Pedir retroalimentación sobre tu borrador</td>
+<td>❌ Pedir a la IA que escriba tu ensayo completo</td>
+</tr>
+<tr class="even">
+<td>✅ Mejorar claridad de tus propias ideas</td>
+<td>❌ Copiar texto generado sin modificar</td>
+</tr>
+<tr class="odd">
+<td>✅ Corregir gramática</td>
+<td>❌ No mencionar que usaste IA</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="actividades-prácticas" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="actividades-prácticas"><span class="header-section-number">3.1.4</span> Actividades prácticas</h3>
+<ol type="1">
+<li>Tomar un artículo largo (científico o periodístico), resumirlo con IA y comparar con resumen manual</li>
+<li>Escribir un párrafo propio, usar IA para mejorar claridad y documentar qué sugerencias se aceptaron y por qué</li>
+<li>Roleplay en inglés con ChatGPT: ordenar en restaurante, hacer una pregunta en clase, simular entrevista</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="sesión-8-ia-para-creatividad-arte-música-y-diseño" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="sesión-8-ia-para-creatividad-arte-música-y-diseño"><span class="header-section-number">3.2</span> Sesión 8: IA para Creatividad — Arte, Música y Diseño</h2>
+<p><strong>Duración:</strong> 45 minutos</p>
+<section id="objetivos-7" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="objetivos-7"><span class="header-section-number">3.2.1</span> Objetivos</h3>
+<ul>
+<li>Explorar herramientas de IA generativa para expresión creativa</li>
+<li>Comprender cómo funcionan los modelos de difusión</li>
+<li>Reflexionar sobre qué es la creatividad y quién tiene derechos de autoría</li>
+</ul>
+</section>
+<section id="hilo-narrativo-puede-una-máquina-ser-creativa" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="hilo-narrativo-puede-una-máquina-ser-creativa"><span class="header-section-number">3.2.2</span> Hilo narrativo: ¿Puede una máquina ser creativa?</h3>
+<p>Esta sesión no tiene una respuesta correcta. Su objetivo es abrir una pregunta que artistas, filósofos, abogados y programadores todavía están debatiendo.</p>
+</section>
+<section id="historia-breve-del-arte-generativo" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="historia-breve-del-arte-generativo"><span class="header-section-number">3.2.3</span> Historia breve del arte generativo</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 54%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Año</th>
+<th>Hito</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1960s</td>
+<td>Primeros experimentos de arte generativo por computadora (Harold Cohen, AARON)</td>
+</tr>
+<tr class="even">
+<td>2014</td>
+<td>GANs (Redes Generativas Antagónicas) — dos redes compiten para crear imágenes realistas</td>
+</tr>
+<tr class="odd">
+<td>2021</td>
+<td>Modelos de difusión (DALL‑E, Stable Diffusion) — de ruido a imagen coherente</td>
+</tr>
+<tr class="even">
+<td>2022</td>
+<td><em>Théâtre D’Opéra Spatial</em> gana primer lugar en concurso de arte en Colorado — generada con IA</td>
+</tr>
+<tr class="odd">
+<td>2023–2024</td>
+<td>Sora (OpenAI) genera video de alta calidad desde texto; Suno genera música completa</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="cómo-funcionan-los-modelos-de-difusión" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="cómo-funcionan-los-modelos-de-difusión"><span class="header-section-number">3.2.4</span> ¿Cómo funcionan los modelos de difusión?</h3>
+<p>El video de la sesión 4 sirve de referencia directa. La intuición:</p>
+<ol type="1">
+<li>Se toma una imagen real y se le agrega ruido hasta que es completamente aleatoria</li>
+<li>La red aprende a <strong>revertir</strong> ese proceso — a limpiar el ruido paso a paso</li>
+<li>En generación: se empieza con ruido puro y se “limpia” guiado por el texto del prompt</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Analogía
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Es como ver una fotografía borrosa y adivinar qué era. La IA aprendió a hacer eso millones de veces hasta volverse muy buena en ello.</p>
+</div>
+</div>
+</section>
+<section id="herramientas-gratuitas-para-explorar-todas-en-el-navegador" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="herramientas-gratuitas-para-explorar-todas-en-el-navegador"><span class="header-section-number">3.2.5</span> Herramientas gratuitas para explorar (todas en el navegador)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 33%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Herramienta</th>
+<th>Qué hace</th>
+<th>Dónde</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Quick, Draw!</strong></td>
+<td>Red neuronal adivina tus dibujos en tiempo real</td>
+<td>quickdraw.withgoogle.com</td>
+</tr>
+<tr class="even">
+<td><strong>AutoDraw</strong></td>
+<td>IA completa tus garabatos como dibujo profesional</td>
+<td>autodraw.com</td>
+</tr>
+<tr class="odd">
+<td><strong>Blob Opera</strong></td>
+<td>Cuatro voces operísticas generadas por IA</td>
+<td>artsandculture.google.com/experiment/blob-opera</td>
+</tr>
+<tr class="even">
+<td><strong>Google Magenta</strong></td>
+<td>Generación de música en el navegador</td>
+<td>magenta.tensorflow.org/demos</td>
+</tr>
+<tr class="odd">
+<td><strong>Adobe Firefly</strong></td>
+<td>Generación de imágenes desde texto (gratuito con cuenta Adobe)</td>
+<td>firefly.adobe.com</td>
+</tr>
+<tr class="even">
+<td><strong>Suno AI</strong></td>
+<td>Genera canciones completas (con letra y música) desde una descripción</td>
+<td>suno.com</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="estructura-de-la-sesión-45-min" class="level3" data-number="3.2.6">
+<h3 data-number="3.2.6" class="anchored" data-anchor-id="estructura-de-la-sesión-45-min"><span class="header-section-number">3.2.6</span> Estructura de la sesión (45 min)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 57%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tiempo</th>
+<th>Actividad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0–5 min</td>
+<td>Abrir Quick, Draw! — intentar engañar a la red neuronal. ¿Se puede?</td>
+</tr>
+<tr class="even">
+<td>5–10 min</td>
+<td>Cronología visual: del arte generativo de los 60s a Sora (2024)</td>
+</tr>
+<tr class="odd">
+<td>10–18 min</td>
+<td>¿Cómo funciona la difusión? — explicación visual con referencia al video de S4</td>
+</tr>
+<tr class="even">
+<td>18–28 min</td>
+<td>Demo: generar imagen con Adobe Firefly — mostrar 3 iteraciones del mismo prompt refinado</td>
+</tr>
+<tr class="odd">
+<td>28–33 min</td>
+<td>Escuchar fragmento de Blob Opera + canción generada con Suno. ¿Puedes distinguirla de música humana?</td>
+</tr>
+<tr class="even">
+<td>33–42 min</td>
+<td>Debate: el caso del concurso de Colorado (2022). ¿Fue justo? ¿Quién es el autor?</td>
+</tr>
+<tr class="odd">
+<td>42–45 min</td>
+<td>Pregunta de cierre sin respuesta correcta: ¿es la creatividad el proceso o el resultado?</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="el-caso-del-concurso-de-colorado-2022" class="level3" data-number="3.2.7">
+<h3 data-number="3.2.7" class="anchored" data-anchor-id="el-caso-del-concurso-de-colorado-2022"><span class="header-section-number">3.2.7</span> El caso del concurso de Colorado (2022)</h3>
+<p>Jason Allen sometió <em>Théâtre D’Opéra Spatial</em> a un concurso de arte del estado de Colorado usando Midjourney. Ganó primer lugar. Cuando se supo que era IA, generó controversia global.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Para debatir
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>¿Debería haberse descalificado a Allen?</li>
+<li>¿Quién tiene el copyright: Allen (quien escribió el prompt), Midjourney (quien generó la imagen), o los artistas cuyos trabajos entrenaron el modelo?</li>
+<li>¿Cambia tu respuesta si Allen pasó horas refinando el prompt?</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="impacto-en-industrias-creativas" class="level3" data-number="3.2.8">
+<h3 data-number="3.2.8" class="anchored" data-anchor-id="impacto-en-industrias-creativas"><span class="header-section-number">3.2.8</span> Impacto en industrias creativas</h3>
+<ul>
+<li><strong>Diseño gráfico:</strong> Adobe Firefly ya está integrado en Photoshop. Los diseñadores que usan IA son más rápidos.</li>
+<li><strong>Música:</strong> Canciones con voz de artistas famosos generadas sin permiso — ¿es legal? ¿es ético?</li>
+<li><strong>Cine:</strong> VFX generados por IA reducen costos pero eliminan empleos de artistas digitales.</li>
+<li><strong>Arquitectura:</strong> Midjourney para visualizar conceptos de espacios antes de diseñar en CAD.</li>
+</ul>
+</section>
+<section id="recursos-para-explorar-más" class="level3" data-number="3.2.9">
+<h3 data-number="3.2.9" class="anchored" data-anchor-id="recursos-para-explorar-más"><span class="header-section-number">3.2.9</span> Recursos para explorar más</h3>
+<ul>
+<li><a href="https://artsandculture.google.com/experiment">Google Arts &amp; Culture — Experimentos con IA</a></li>
+<li><a href="https://magenta.tensorflow.org/demos">Google Magenta — Demos de música generativa</a></li>
+<li><a href="https://www.elementsofai.com/">Elements of AI — Capítulo sobre IA y creatividad</a> <em>(gratuito en español)</em></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="sesión-9-ia-para-organización-y-productividad-estudiantil" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="sesión-9-ia-para-organización-y-productividad-estudiantil"><span class="header-section-number">3.3</span> Sesión 9: IA para Organización y Productividad Estudiantil</h2>
+<p><strong>Duración:</strong> 35-40 minutos</p>
+<section id="objetivos-8" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="objetivos-8"><span class="header-section-number">3.3.1</span> Objetivos</h3>
+<ul>
+<li>Usar IA para mejorar organización personal</li>
+<li>Optimizar tiempo de estudio</li>
+</ul>
+</section>
+<section id="herramientas-de-organización" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="herramientas-de-organización"><span class="header-section-number">3.3.2</span> Herramientas de organización</h3>
+<section id="notion-ai" class="level4" data-number="3.3.2.1">
+<h4 data-number="3.3.2.1" class="anchored" data-anchor-id="notion-ai"><span class="header-section-number">3.3.2.1</span> Notion AI:</h4>
+<ul>
+<li>Tomar notas inteligentes</li>
+<li>Crear resúmenes automáticos de clases</li>
+<li>Bases de datos personales</li>
+</ul>
+</section>
+<section id="chatgpt" class="level4" data-number="3.3.2.2">
+<h4 data-number="3.3.2.2" class="anchored" data-anchor-id="chatgpt"><span class="header-section-number">3.3.2.2</span> ChatGPT:</h4>
+<ul>
+<li>Crear horarios de estudio personalizados</li>
+<li>Desglosar proyectos grandes en tareas pequeñas</li>
+<li>Generar planes de estudio para exámenes</li>
+<li>Técnica Pomodoro personalizada</li>
+</ul>
+</section>
+</section>
+<section id="herramientas-de-investigación" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="herramientas-de-investigación"><span class="header-section-number">3.3.3</span> Herramientas de investigación</h3>
+<section id="perplexity-ai" class="level4" data-number="3.3.3.1">
+<h4 data-number="3.3.3.1" class="anchored" data-anchor-id="perplexity-ai"><span class="header-section-number">3.3.3.1</span> Perplexity AI:</h4>
+<ul>
+<li>Búsqueda con fuentes citadas (mejor que ChatGPT para esta tarea)</li>
+<li>Verificación de información</li>
+<li>Resúmenes con referencias</li>
+</ul>
+</section>
+<section id="consensus-elicit" class="level4" data-number="3.3.3.2">
+<h4 data-number="3.3.3.2" class="anchored" data-anchor-id="consensus-elicit"><span class="header-section-number">3.3.3.2</span> Consensus, Elicit:</h4>
+<ul>
+<li>Buscar artículos académicos resumidos</li>
+<li>Revisión de literatura científica</li>
+</ul>
+</section>
+</section>
+<section id="herramientas-para-presentaciones" class="level3" data-number="3.3.4">
+<h3 data-number="3.3.4" class="anchored" data-anchor-id="herramientas-para-presentaciones"><span class="header-section-number">3.3.4</span> Herramientas para presentaciones</h3>
+<section id="gamma-ai-beautiful.ai" class="level4" data-number="3.3.4.1">
+<h4 data-number="3.3.4.1" class="anchored" data-anchor-id="gamma-ai-beautiful.ai"><span class="header-section-number">3.3.4.1</span> Gamma AI, Beautiful.ai:</h4>
+<ul>
+<li>Crear presentaciones automáticamente desde texto</li>
+<li>Diseño visual profesional</li>
+<li>Generación de diapositivas coherentes</li>
+</ul>
+</section>
+</section>
+<section id="actividad-práctica" class="level3" data-number="3.3.5">
+<h3 data-number="3.3.5" class="anchored" data-anchor-id="actividad-práctica"><span class="header-section-number">3.3.5</span> Actividad práctica</h3>
+<ul>
+<li>Crear plan de estudio para un examen ficticio usando ChatGPT</li>
+<li>Incluir: cronograma, temas prioritarios, técnicas de repaso</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="sesión-10-ia-como-tutor-académico-matemáticas-y-más" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="sesión-10-ia-como-tutor-académico-matemáticas-y-más"><span class="header-section-number">3.4</span> Sesión 10: IA como Tutor Académico — Matemáticas y Más</h2>
+<p><strong>Duración:</strong> 40 minutos</p>
+<section id="objetivos-9" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="objetivos-9"><span class="header-section-number">3.4.1</span> Objetivos</h3>
+<ul>
+<li>Usar IA para entender conceptos académicos difíciles, no solo obtener respuestas</li>
+<li>Aprender a hacer preguntas efectivas (“prompts”) que generan explicaciones útiles</li>
+<li>Explorar herramientas especializadas para diferentes materias</li>
+</ul>
+</section>
+<section id="la-diferencia-clave-entender-vs.-copiar" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="la-diferencia-clave-entender-vs.-copiar"><span class="header-section-number">3.4.2</span> La diferencia clave: entender vs.&nbsp;copiar</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+El principio central
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La IA es un tutor disponible 24/7 que nunca se cansa de explicar. Úsala para <strong>entender</strong>, no para <strong>sustituir</strong> tu razonamiento.</p>
+</div>
+</div>
+</section>
+<section id="herramientas-por-materia" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3" class="anchored" data-anchor-id="herramientas-por-materia"><span class="header-section-number">3.4.3</span> Herramientas por materia</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 31%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Materia</th>
+<th>Herramienta</th>
+<th>Qué hacer con ella</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Matemáticas</strong></td>
+<td>Wolfram Alpha</td>
+<td>Resolver ecuaciones con pasos detallados, graficar funciones</td>
+</tr>
+<tr class="even">
+<td><strong>Matemáticas</strong></td>
+<td>Desmos</td>
+<td>Visualizar funciones e intuir su comportamiento</td>
+</tr>
+<tr class="odd">
+<td><strong>Matemáticas</strong></td>
+<td>ChatGPT/Claude</td>
+<td>Pedir analogías del mundo real para conceptos abstractos</td>
+</tr>
+<tr class="even">
+<td><strong>Ciencias</strong></td>
+<td>Perplexity</td>
+<td>Investigar fenómenos con fuentes citadas</td>
+</tr>
+<tr class="odd">
+<td><strong>Historia/Español</strong></td>
+<td>ChatGPT/Claude</td>
+<td>Explicar contexto, generar preguntas de reflexión</td>
+</tr>
+<tr class="even">
+<td><strong>Todas</strong></td>
+<td>ChatGPT/Claude</td>
+<td>Generar ejercicios de práctica personalizados por nivel</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="prompts-efectivos-vs.-inefectivos" class="level3" data-number="3.4.4">
+<h3 data-number="3.4.4" class="anchored" data-anchor-id="prompts-efectivos-vs.-inefectivos"><span class="header-section-number">3.4.4</span> Prompts efectivos vs.&nbsp;inefectivos</h3>
+<p><strong>❌ Prompts que no ayudan a aprender:</strong></p>
+<ul>
+<li>“Resuélveme este problema: <span class="math inline">\(x^2 + 5x + 6 = 0\)</span>”</li>
+<li>“Dame las derivadas”</li>
+</ul>
+<p><strong>✅ Prompts que generan comprensión:</strong></p>
+<ul>
+<li>“Explícame cómo resolver ecuaciones cuadráticas paso a paso con un ejemplo. Usa <span class="math inline">\(x^2 + 5x + 6 = 0\)</span> como ejemplo”</li>
+<li>“Explícame intuitivamente qué es la derivada de <span class="math inline">\(f(x) = x^2\)</span> con una analogía del mundo real”</li>
+<li>“¿Cuáles son los 3 errores más comunes al calcular integrales indefinidas? Muestra ejemplos”</li>
+<li>“Soy estudiante de preparatoria y no entiendo la fotosíntesis. Explícamela como si fuera una fábrica”</li>
+</ul>
+</section>
+<section id="actividad-práctica-1" class="level3" data-number="3.4.5">
+<h3 data-number="3.4.5" class="anchored" data-anchor-id="actividad-práctica-1"><span class="header-section-number">3.4.5</span> Actividad práctica</h3>
+<ol type="1">
+<li>Tomar un concepto difícil de cualquier materia</li>
+<li>Escribir un prompt inefectivo y uno efectivo para ese concepto</li>
+<li>Comparar las respuestas — discutir qué hace diferente a cada una</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="sesión-11-en-vivo-ia-en-la-educación-global" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="sesión-11-en-vivo-ia-en-la-educación-global"><span class="header-section-number">3.5</span> Sesión 11: EN VIVO — IA en la Educación Global</h2>
+<p><strong>Duración:</strong> 45–60 minutos · <strong>Formato:</strong> Zoom (grabada)</p>
+<p><strong>Invitado:</strong> Profesor/investigador de Boston College (online)</p>
+<section id="objetivos-10" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="objetivos-10"><span class="header-section-number">3.5.1</span> Objetivos</h3>
+<ul>
+<li>Conocer cómo universidades internacionales están integrando la IA en educación</li>
+<li>Entender qué buscan las universidades en estudiantes interesados en tecnología</li>
+<li>Explorar oportunidades académicas internacionales</li>
+</ul>
+</section>
+<section id="formato-1" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="formato-1"><span class="header-section-number">3.5.2</span> Formato</h3>
+<ul>
+<li><strong>Charla libre</strong> (25–30 min): el/la invitado/a comparte su perspectiva sobre IA en educación superior, investigación actual y el panorama global</li>
+<li><strong>Preguntas abiertas</strong> (15–20 min)</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Preguntas sugeridas para el/la invitado/a
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>¿Cómo está cambiando la IA la forma en que se enseña e investiga en universidades como Boston College?</li>
+<li>¿Qué habilidades buscan en estudiantes que quieren estudiar temas relacionados con tecnología e IA?</li>
+<li>¿Cuál es la diferencia entre hacer investigación en IA en EUA vs.&nbsp;México?</li>
+<li>¿Qué consejo le daría a un estudiante de preparatoria que le interesa este campo?</li>
+<li>¿Hay oportunidades de intercambio o colaboración para estudiantes mexicanos?</li>
+</ul>
+</div>
+</div>
+<hr>
+</section>
+</section>
+</section>
+<section id="bloque-3-creación-aplicaciones-y-futuro" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> BLOQUE 3: Creación, Aplicaciones y Futuro</h1>
+<section id="sesión-12-programación-con-ia-tu-primer-vistazo-a-python" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="sesión-12-programación-con-ia-tu-primer-vistazo-a-python"><span class="header-section-number">4.1</span> Sesión 12: Programación con IA — Tu Primer Vistazo a Python</h2>
+<p><strong>Duración:</strong> 40 minutos</p>
+<section id="objetivos-11" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="objetivos-11"><span class="header-section-number">4.1.1</span> Objetivos</h3>
+<ul>
+<li>Entender por qué Python es el lenguaje de la IA</li>
+<li>Escribir y ejecutar código real en el navegador sin instalar nada</li>
+<li>Usar IA como copiloto para programar — el nuevo modelo de desarrollo</li>
+</ul>
+</section>
+<section id="por-qué-python" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="por-qué-python"><span class="header-section-number">4.1.2</span> ¿Por qué Python?</h3>
+<p>Python es el idioma de la inteligencia artificial. Prácticamente todos los modelos importantes — desde ChatGPT hasta AlphaFold — se construyen con Python. No es el único lenguaje, pero es el más accesible para empezar.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+No necesitas instalar nada
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Usaremos <strong>Google Colab</strong> (colab.google.com) — un cuaderno de Python que corre en el navegador, gratis, con acceso a GPUs de Google.</p>
+</div>
+</div>
+</section>
+<section id="parte-1-las-primeras-líneas-10-min" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="parte-1-las-primeras-líneas-10-min"><span class="header-section-number">4.1.3</span> Parte 1: Las primeras líneas (10 min)</h3>
+<p>Abrir Google Colab y ejecutar:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Tu primera línea de Python</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hola, Inteligencia Artificial"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Python como calculadora inteligente</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">2</span> <span class="op">**</span> <span class="dv">10</span>)       <span class="co"># 2 a la potencia 10 = 1024</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="dv">100</span> <span class="op">/</span> <span class="dv">7</span>)       <span class="co"># división con decimales</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Variables: guardar información</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>nombre <span class="op">=</span> <span class="st">"Claude"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>año <span class="op">=</span> <span class="dv">2024</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Modelo creado en </span><span class="sc">{</span>a<span class="sc">ñ</span>o<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="parte-2-tres-ejemplos-que-impresionan-en-pocas-líneas-15-min" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="parte-2-tres-ejemplos-que-impresionan-en-pocas-líneas-15-min"><span class="header-section-number">4.1.4</span> Parte 2: Tres ejemplos que impresionan en pocas líneas (15 min)</h3>
+<p><strong>Ejemplo 1 — Analizar si un texto es positivo o negativo:</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Análisis de sentimiento: ¿positivo o negativo?</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>analizador <span class="op">=</span> pipeline(<span class="st">"sentiment-analysis"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>textos <span class="op">=</span> [</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Me encanta aprender inteligencia artificial"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Este examen estuvo muy difícil"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"El futuro de la tecnología en México es prometedor"</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>]</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>resultados <span class="op">=</span> analizador(textos)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> texto, resultado <span class="kw">in</span> <span class="bu">zip</span>(textos, resultados):</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"'</span><span class="sc">{</span>texto<span class="sc">}</span><span class="ss">' → </span><span class="sc">{</span>resultado[<span class="st">'label'</span>]<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>resultado[<span class="st">'score'</span>]<span class="sc">:.0%}</span><span class="ss">)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Ejemplo 2 — Detectar el idioma de cualquier texto:</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Detección de idioma en 3 líneas</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langdetect <span class="im">import</span> detect</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>frases <span class="op">=</span> [<span class="st">"Bonjour, comment ça va?"</span>, <span class="st">"Good morning!"</span>, <span class="st">"Buenos días"</span>]</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> frase <span class="kw">in</span> frases:</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"'</span><span class="sc">{</span>frase<span class="sc">}</span><span class="ss">' → idioma: </span><span class="sc">{</span>detect(frase)<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Ejemplo 3 — Graficar datos como lo haría un científico de datos:</strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizar datos en 6 líneas</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>horas_estudio <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>]</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>calificacion  <span class="op">=</span> [<span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">70</span>, <span class="dv">78</span>, <span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">95</span>]</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.plot(horas_estudio, calificacion, marker<span class="op">=</span><span class="st">'o'</span>, color<span class="op">=</span><span class="st">'blue'</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"Horas de estudio"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"Calificación"</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"¿Más estudio = mejor calificación?"</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="parte-3-ia-como-copiloto-de-código-10-min" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="parte-3-ia-como-copiloto-de-código-10-min"><span class="header-section-number">4.1.5</span> Parte 3: IA como copiloto de código (10 min)</h3>
+<p>El modelo de programación ha cambiado. Hoy puedes:</p>
+<ol type="1">
+<li>Describir en español lo que quieres que haga el código</li>
+<li>Pedirle a ChatGPT o Claude que lo escriba</li>
+<li>Entender qué hace cada línea (con ayuda de la misma IA)</li>
+<li>Modificarlo y experimentar</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo de prompt para programar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“Escríbeme un programa en Python que lea una lista de nombres y los ordene alfabéticamente. Explícame cada línea.”</p>
+<p>Esto no es trampa — es la nueva forma de programar. Los desarrolladores profesionales ya usan GitHub Copilot, Cursor y Claude para escribir código más rápido.</p>
+</div>
+</div>
+<p><strong>Mensaje clave:</strong> Entender qué hace el código es más importante que memorizarlo. La IA escribe, tú diriges.</p>
+</section>
+<section id="parte-4-cómo-continuar-5-min" class="level3" data-number="4.1.6">
+<h3 data-number="4.1.6" class="anchored" data-anchor-id="parte-4-cómo-continuar-5-min"><span class="header-section-number">4.1.6</span> Parte 4: Cómo continuar (5 min)</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 40%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Recurso</th>
+<th>Qué ofrece</th>
+<th>Nivel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>CS50P — Harvard</strong> (gratis)</td>
+<td>Curso completo de Python con videos y ejercicios</td>
+<td>Principiante</td>
+</tr>
+<tr class="even">
+<td><strong>Kaggle Python</strong> (gratis)</td>
+<td>Microcurso interactivo en el navegador</td>
+<td>Principiante</td>
+</tr>
+<tr class="odd">
+<td><strong>fast.ai</strong> (gratis)</td>
+<td>Python + Deep Learning desde cero, muy práctico</td>
+<td>Intermedio</td>
+</tr>
+<tr class="even">
+<td><strong>Google Colab</strong></td>
+<td>Entorno para practicar sin instalar nada</td>
+<td>Siempre útil</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="sesión-13-robótica-e-ia-en-el-mundo-físico" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="sesión-13-robótica-e-ia-en-el-mundo-físico"><span class="header-section-number">4.2</span> Sesión 13: Robótica e IA en el Mundo Físico</h2>
+<p><strong>Duración:</strong> 40 minutos</p>
+<section id="objetivos-12" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="objetivos-12"><span class="header-section-number">4.2.1</span> Objetivos</h3>
+<ul>
+<li>Entender cómo la IA toma decisiones en el mundo físico (no solo en pantallas)</li>
+<li>Conocer el papel del Reinforcement Learning en sistemas robóticos reales</li>
+<li>Reflexionar sobre las implicaciones éticas de robots autónomos</li>
+</ul>
+</section>
+<section id="qué-hace-inteligente-a-un-robot" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="qué-hace-inteligente-a-un-robot"><span class="header-section-number">4.2.2</span> ¿Qué hace “inteligente” a un robot?</h3>
+<p>Un robot inteligente combina tres elementos:</p>
+<pre><code>SENSORES → IA (modelo) → ACTUADORES
+(ojos/oídos)  (cerebro)   (manos/pies)</code></pre>
+<ul>
+<li><strong>Sensores:</strong> cámaras, LiDAR, micrófonos, acelerómetros</li>
+<li><strong>Modelo de IA:</strong> procesa la información y decide qué hacer</li>
+<li><strong>Actuadores:</strong> motores, brazos, ruedas que ejecutan la decisión</li>
+</ul>
+<p>La diferencia entre un robot industrial (repite el mismo movimiento) y un robot autónomo (adapta su comportamiento al entorno) es exactamente esta: la IA en el medio.</p>
+</section>
+<section id="caso-principal-boston-dynamics" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="caso-principal-boston-dynamics"><span class="header-section-number">4.2.3</span> Caso principal: Boston Dynamics</h3>
+<p>Boston Dynamics es probablemente la empresa de robótica más conocida del mundo. Sus robots —Spot y Atlas— demuestran lo que el Reinforcement Learning puede lograr en el mundo físico.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Cómo aprendió Spot a caminar?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>No fue programado con instrucciones para cada situación. Spot aprendió por <strong>Reinforcement Learning</strong>:</p>
+<ol type="1">
+<li>En simulación, millones de versiones de Spot intentan caminar</li>
+<li>Las que no caen reciben una “recompensa”</li>
+<li>Las que caen reciben una “penalización”</li>
+<li>Después de millones de intentos simulados, el modelo sabe cómo mantener equilibrio en superficies irregulares, nieve, escaleras, y contra empujones</li>
+</ol>
+<p>El video más famoso: ingenieros empujan a Spot repetidamente y el robot se recupera solo.</p>
+</div>
+</div>
+<p><strong>Videos recomendados (YouTube gratuito — canal Boston Dynamics):</strong> - <em>“Spot’s Got an Arm”</em> — Spot abre puertas y manipula objetos - <em>“Atlas | Partners in Parkour”</em> — Atlas hace acrobacias complejas - <em>“Do You Love Me?”</em> — robots bailando (Reinforcement Learning + planificación de movimiento)</p>
+</section>
+<section id="los-5-niveles-de-autonomía-autos-autónomos" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="los-5-niveles-de-autonomía-autos-autónomos"><span class="header-section-number">4.2.4</span> Los 5 niveles de autonomía — Autos autónomos</h3>
+<p>El caso de los vehículos autónomos ilustra cómo la IA en el mundo físico no es todo o nada:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 17%">
+<col style="width: 20%">
+<col style="width: 40%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Nivel</th>
+<th>Nombre</th>
+<th>Quién controla</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>Sin automatización</td>
+<td>Humano completo</td>
+<td>Auto tradicional</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>Asistencia</td>
+<td>Humano + asistencia parcial</td>
+<td>Control de crucero</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>Automatización parcial</td>
+<td>Humano supervisa</td>
+<td>Tesla Autopilot</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>Automatización condicional</td>
+<td>IA maneja, humano disponible</td>
+<td>Waymo en zonas mapeadas</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>Alta automatización</td>
+<td>IA maneja, sin humano necesario</td>
+<td>Taxis Waymo en San Francisco</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>Automatización total</td>
+<td>IA completa en cualquier condición</td>
+<td>No existe aún</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Qué IA usa un auto autónomo:</strong> - <strong>CNN (visión por computadora):</strong> detecta peatones, señales, carriles, otros autos - <strong>LiDAR + fusión de sensores:</strong> construye mapa 3D del entorno en tiempo real - <strong>Modelos de predicción:</strong> anticipa el comportamiento de peatones y otros vehículos - <strong>Planificación de ruta:</strong> decide la trayectoria óptima considerando todos los factores</p>
+<p>Tesla vs.&nbsp;Waymo — dos filosofías distintas: - <strong>Tesla:</strong> solo cámaras (como los humanos), más barato, datos de millones de conductores - <strong>Waymo:</strong> cámaras + LiDAR + radar, más preciso, más costoso</p>
+</section>
+<section id="robótica-en-méxico" class="level3" data-number="4.2.5">
+<h3 data-number="4.2.5" class="anchored" data-anchor-id="robótica-en-méxico"><span class="header-section-number">4.2.5</span> Robótica en México</h3>
+<p>México no está lejos de esto:</p>
+<ul>
+<li><strong>El Bajío</strong> (Guanajuato, Aguascalientes, SLP) alberga plantas de BMW, GM, Nissan, Honda — con robots industriales de última generación</li>
+<li>El IPICYT y la UNAM tienen laboratorios de robótica e IA aplicada</li>
+<li>La demanda de ingenieros que entiendan IA + manufactura crece cada año en la región</li>
+</ul>
+</section>
+<section id="debate-ético-robots-autónomos-y-responsabilidad" class="level3" data-number="4.2.6">
+<h3 data-number="4.2.6" class="anchored" data-anchor-id="debate-ético-robots-autónomos-y-responsabilidad"><span class="header-section-number">4.2.6</span> ⚠️ Debate ético: robots autónomos y responsabilidad</h3>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Para debatir
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>¿Debería existir un dron de combate autónomo que decida disparar sin intervención humana?</li>
+<li>Si Spot lastima a alguien en un almacén, ¿quién es responsable: Boston Dynamics, la empresa que lo compró, o nadie?</li>
+<li>¿Es ético reemplazar trabajadores de manufactura con robots? ¿Quién debe asumir ese costo social?</li>
+<li>¿Confiarías tu vida a un auto de nivel 4?</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="recursos-gratuitos" class="level3" data-number="4.2.7">
+<h3 data-number="4.2.7" class="anchored" data-anchor-id="recursos-gratuitos"><span class="header-section-number">4.2.7</span> Recursos gratuitos</h3>
+<ul>
+<li><a href="https://www.youtube.com/@BostonDynamics">Canal de YouTube de Boston Dynamics</a></li>
+<li><a href="https://waymo.com/waymo-driver/">Waymo — cómo funciona</a> <em>(en inglés, con videos explicativos)</em></li>
+<li>MIT OpenCourseWare: cursos de introducción a robótica (gratuitos)</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="sesión-14-ia-en-salud-ciencia-y-sociedad" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="sesión-14-ia-en-salud-ciencia-y-sociedad"><span class="header-section-number">4.3</span> Sesión 14: IA en Salud, Ciencia y Sociedad</h2>
+<p><strong>Duración:</strong> 35-40 minutos</p>
+<section id="objetivos-13" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="objetivos-13"><span class="header-section-number">4.3.1</span> Objetivos</h3>
+<ul>
+<li>Conocer aplicaciones de IA en medicina y ciencia</li>
+<li>Entender impacto social de la IA</li>
+</ul>
+</section>
+<section id="aplicaciones-médicas" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="aplicaciones-médicas"><span class="header-section-number">4.3.2</span> Aplicaciones médicas</h3>
+<section id="diagnóstico-asistido" class="level4" data-number="4.3.2.1">
+<h4 data-number="4.3.2.1" class="anchored" data-anchor-id="diagnóstico-asistido"><span class="header-section-number">4.3.2.1</span> Diagnóstico asistido:</h4>
+<ul>
+<li>Rayos X: detección de neumonía, fracturas</li>
+<li>Detección de cáncer en mamografías</li>
+<li><strong>Algoritmo usado:</strong> CNN (redes convolucionales)</li>
+<li><strong>¿Por qué?</strong> Detecta patrones visuales en imágenes médicas</li>
+</ul>
+</section>
+<section id="chatbots-de-salud-mental" class="level4" data-number="4.3.2.2">
+<h4 data-number="4.3.2.2" class="anchored" data-anchor-id="chatbots-de-salud-mental"><span class="header-section-number">4.3.2.2</span> Chatbots de salud mental:</h4>
+<ul>
+<li>Woebot, Wysa: apoyo emocional 24/7</li>
+<li><strong>Limitaciones:</strong> No sustituyen terapia profesional</li>
+</ul>
+</section>
+<section id="predicción-de-brotes-epidemiológicos" class="level4" data-number="4.3.2.3">
+<h4 data-number="4.3.2.3" class="anchored" data-anchor-id="predicción-de-brotes-epidemiológicos"><span class="header-section-number">4.3.2.3</span> Predicción de brotes epidemiológicos:</h4>
+<ul>
+<li>Modelos de series temporales + ML</li>
+<li>Ejemplo: predicción de casos de COVID-19</li>
+</ul>
+</section>
+</section>
+<section id="aplicaciones-científicas" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="aplicaciones-científicas"><span class="header-section-number">4.3.3</span> Aplicaciones científicas</h3>
+<section id="descubrimiento-de-medicamentos" class="level4" data-number="4.3.3.1">
+<h4 data-number="4.3.3.1" class="anchored" data-anchor-id="descubrimiento-de-medicamentos"><span class="header-section-number">4.3.3.1</span> Descubrimiento de medicamentos:</h4>
+<ul>
+<li>AlphaFold de DeepMind (estructura de proteínas)</li>
+<li>Aceleración de desarrollo de fármacos</li>
+</ul>
+</section>
+<section id="predicción-de-clima-y-terremotos" class="level4" data-number="4.3.3.2">
+<h4 data-number="4.3.3.2" class="anchored" data-anchor-id="predicción-de-clima-y-terremotos"><span class="header-section-number">4.3.3.2</span> Predicción de clima y terremotos:</h4>
+<ul>
+<li>Modelos de IA para pronósticos más precisos</li>
+<li>Alertas tempranas</li>
+</ul>
+</section>
+<section id="análisis-de-datos-astronómicos" class="level4" data-number="4.3.3.3">
+<h4 data-number="4.3.3.3" class="anchored" data-anchor-id="análisis-de-datos-astronómicos"><span class="header-section-number">4.3.3.3</span> Análisis de datos astronómicos:</h4>
+<ul>
+<li>Detección de exoplanetas</li>
+<li>Clasificación de galaxias</li>
+</ul>
+</section>
+</section>
+<section id="impacto-social-en-méxico" class="level3" data-number="4.3.4">
+<h3 data-number="4.3.4" class="anchored" data-anchor-id="impacto-social-en-méxico"><span class="header-section-number">4.3.4</span> Impacto social en México</h3>
+<ul>
+<li>Telemedicina en zonas rurales de SLP</li>
+<li>IA para educación en comunidades remotas</li>
+<li>Investigación en IPICYT, UNAM</li>
+</ul>
+</section>
+<section id="casos-donde-la-ia-puede-fallar" class="level3" data-number="4.3.5">
+<h3 data-number="4.3.5" class="anchored" data-anchor-id="casos-donde-la-ia-puede-fallar"><span class="header-section-number">4.3.5</span> ⚠️ Casos donde la IA puede fallar</h3>
+<ul>
+<li>IBM Watson for Oncology: recomendaciones médicas incorrectas</li>
+<li>Sesgos en diagnóstico: menor precisión en minorías étnicas</li>
+<li>Privacidad de datos médicos</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="sesión-15-en-vivo-ia-política-pública-y-ciudadanía" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="sesión-15-en-vivo-ia-política-pública-y-ciudadanía"><span class="header-section-number">4.4</span> Sesión 15: EN VIVO — IA, Política Pública y Ciudadanía</h2>
+<p><strong>Duración:</strong> 45–60 minutos · <strong>Formato:</strong> Zoom (grabada)</p>
+<p><strong>Invitado:</strong> Especialista de PIT Policy México (tecnología de interés público)</p>
+<section id="objetivos-14" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="objetivos-14"><span class="header-section-number">4.4.1</span> Objetivos</h3>
+<ul>
+<li>Entender la IA como asunto ciudadano, no solo tecnológico</li>
+<li>Conocer cómo se regula la IA en México y el mundo</li>
+<li>Explorar carreras en la intersección de tecnología y política pública</li>
+</ul>
+</section>
+<section id="formato-2" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="formato-2"><span class="header-section-number">4.4.2</span> Formato</h3>
+<ul>
+<li><strong>Charla libre</strong> (25–30 min): el/la invitado/a comparte su trabajo en política de IA, casos concretos en México y perspectivas sobre regulación y derechos digitales</li>
+<li><strong>Preguntas abiertas</strong> (15–20 min)</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Preguntas sugeridas para el/la invitado/a
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>¿Qué es la tecnología de interés público y por qué importa?</li>
+<li>¿Cómo se está regulando la IA en México? ¿Qué papel juega el INAI?</li>
+<li>¿Cuáles son los riesgos más urgentes de la IA para la ciudadanía mexicana?</li>
+<li>¿Qué pueden hacer los jóvenes para participar en estas decisiones?</li>
+<li>¿Qué carreras existen en la intersección de tecnología y política pública?</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Contexto para los estudiantes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La Unión Europea aprobó en 2024 la primera ley de IA del mundo (EU AI Act). México aún no tiene legislación específica. Las decisiones que se tomen en los próximos años sobre privacidad, sesgos algorítmicos, vigilancia y derechos digitales afectarán directamente a tu generación — y los ciudadanos informados tienen más herramientas para influir en esas decisiones.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+</section>
+<section id="notas-pedagógicas" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Notas Pedagógicas</h1>
+<section id="principios-del-curso" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="principios-del-curso"><span class="header-section-number">5.1</span> Principios del curso</h2>
+<ol type="1">
+<li><strong>Modularidad:</strong> Cada sesión es autocontenida y puede consumirse de forma asíncrona</li>
+<li><strong>Intuición primero:</strong> Conceptos técnicos explicados con analogías del mundo real</li>
+<li><strong>Balance teoría-práctica:</strong> Enfoque en herramientas que los estudiantes pueden usar inmediatamente</li>
+<li><strong>Accesibilidad:</strong> Sin asumir conocimientos previos de programación</li>
+<li><strong>Ética integrada:</strong> Reflexión sobre implicaciones sociales en todas las sesiones relevantes</li>
+<li><strong>Conexión local:</strong> Ejemplos y aplicaciones relevantes para San Luis Potosí y México</li>
+</ol>
+</section>
+<section id="recursos-complementarios" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="recursos-complementarios"><span class="header-section-number">5.2</span> Recursos complementarios</h2>
+<section id="herramientas-gratuitas-mencionadas" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="herramientas-gratuitas-mencionadas"><span class="header-section-number">5.2.1</span> Herramientas gratuitas mencionadas:</h3>
+<ul>
+<li>Teachable Machine, ChatGPT, Claude, Perplexity AI, Gemini</li>
+<li>DALL-E, Adobe Firefly, Canva AI</li>
+<li>Wolfram Alpha, Desmos, Notion AI</li>
+<li>DeepL, Grammarly, ELSA Speak</li>
+<li>Google Colab, Hugging Face, Kaggle</li>
+<li>Quick Draw!, AutoDraw, Blob Opera, Google Magenta</li>
+</ul>
+</section>
+<section id="cursos-gratuitos-para-continuar" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="cursos-gratuitos-para-continuar"><span class="header-section-number">5.2.2</span> Cursos gratuitos para continuar:</h3>
+<ul>
+<li><strong>CS50P — Harvard:</strong> Introducción a Python</li>
+<li><strong>Elements of AI — Universidad de Helsinki:</strong> Fundamentos de IA en español</li>
+<li><strong>Google AI Essentials:</strong> Conceptos y herramientas de IA</li>
+<li><strong>fast.ai:</strong> Deep Learning práctico desde cero</li>
+<li><strong>Kaggle:</strong> Python, ML y competencias con datos reales</li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+<section id="recursos-adicionales" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Recursos Adicionales</h1>
+<section id="datasets-y-herramientas-para-demostraciones" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="datasets-y-herramientas-para-demostraciones"><span class="header-section-number">6.1</span> Datasets y herramientas para demostraciones</h2>
+<ul>
+<li><strong>Datos públicos de México:</strong> <a href="https://datos.gob.mx">datos.gob.mx</a></li>
+<li><strong>Kaggle:</strong> Datasets educativos gratuitos</li>
+<li><strong>Google Dataset Search:</strong> Búsqueda de datasets públicos</li>
+<li><strong>Teachable Machine:</strong> Clasificación sin código</li>
+<li><strong>Google Colab:</strong> Notebooks gratuitos en la nube</li>
+</ul>
+<hr>
+<p><strong>Versión del documento:</strong> 2.0 (13 de marzo de 2026)</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.curso-ia-slp\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Curso IA · San Luis Potosí · 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
