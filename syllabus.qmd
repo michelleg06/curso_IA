@@ -97,34 +97,60 @@ Las sesiones en vivo serán grabadas y disponibles para quienes no puedan conect
 
 ---
 
-## Sesión 2: ¿Cómo "aprende" una máquina?
+## Sesión 2: Redes Neuronales — ¿Cómo "piensa" la IA?
 
-**Duración:** 30-35 minutos
+**Duración:** 40-45 minutos
+
+> **Nota de diseño:** La Sesión 1 ya cubre los 3 tipos de aprendizaje con animaciones interactivas (regresión lineal, K-Means, refuerzo). Esta sesión profundiza en el mecanismo universal detrás de la IA moderna: las redes neuronales. *No* cubre tipos específicos de redes (CNN, Transformers) — eso es Sesión 3. *No* cubre IA generativa — eso es Sesión 4.
 
 ### Objetivos
-- Entender la intuición detrás del aprendizaje automático
-- Visualizar cómo las máquinas encuentran patrones
+- Entender cómo funciona una red neuronal desde adentro (arquitectura + aprendizaje)
+- Distinguir entre entrenamiento e inferencia
+- Reflexionar críticamente: ¿la IA realmente "entiende" o solo encuentra patrones?
+- Experimentar con una red neuronal en tiempo real sin código
 
 ### Contenido clave
-- **La base matemática simple:** El plano cartesiano (x, y)
-- **Intuición:** La máquina encuentra patrones en datos
-- Ejemplos visuales:
-  - Relación altura/peso
-  - Horas de estudio vs. calificación
-- **Demostración:** [Teachable Machine](https://teachablemachine.withgoogle.com/) (clasificar objetos con webcam)
-- **Concepto importante:** La máquina NO "entiende", solo encuentra patrones estadísticos
+
+#### 1. De la neurona biológica a la neurona artificial
+- Analogía: neuronas del cerebro humano → nodos artificiales
+- Una neurona recibe señales, las pondera, decide si "se activa"
+- Capas: entrada → ocultas → salida
+- Demostración visual: cómo se conectan las capas
+
+#### 2. ¿Cómo aprende una red? (intuición sin fórmulas)
+- **Paso adelante (forward pass):** la red hace una predicción
+- **Error (loss):** ¿qué tan equivocada estuvo?
+- **Retropropagación (backpropagation):** ajusta los pesos para equivocarse menos la próxima vez
+- Analogía: como afinar una guitarra — giras la clavija, escuchas, corriges
+
+#### 3. Entrenamiento vs. Inferencia
+- **Entrenamiento:** la red aprende de ejemplos (puede tomar horas/días)
+- **Inferencia:** la red aplica lo aprendido (milisegundos)
+- Ejemplo concreto: ChatGPT fue entrenado por meses; responde en segundos
+
+#### 4. El momento que cambió todo: ImageNet 2012
+- Antes de 2012: la mejor IA en reconocimiento de imágenes tenía ~26% de error
+- AlexNet (red neuronal profunda): bajó a ~16% — una brecha histórica
+- Esto inició la era del Deep Learning
+
+#### 5. Demo: TensorFlow Playground
+- [playground.tensorflow.org](https://playground.tensorflow.org) — en el navegador, sin instalar nada
+- El estudiante ve en tiempo real cómo la red aprende a separar datos
+- Experimenta: ¿qué pasa si agrego más capas? ¿más neuronas?
 
 :::{.callout-tip}
-# ¿Las máquinas realmente "razonan"?
-Una máquina no tiene capacidad de razonamiento autónomo. Sin embargo, es capaz de identificar patrones en una serie de datos, y utilizando modelos estadísticos pre-definidos, producir un resultado lógico (o estadísicamente probable).
+# ¿Las máquinas realmente "entienden"?
+Una red neuronal no "sabe" lo que es un gato. Aprendió que ciertos patrones de píxeles (bordes, curvas, texturas) corresponden a la etiqueta "gato" porque se lo mostraron millones de veces.
 
-Es importante cuestionarnos:
-
-- ¿Lo que es probable, es certero?
-
-- ¿Lo que parece lógico, puede tener fallas?
-
+Preguntas para reflexionar:
+- ¿Es diferente a cómo aprenden los humanos?
+- Si una IA describe un amanecer de forma poética, ¿"entiende" la belleza?
+- ¿Importa si "entiende" o no, siempre que el resultado sea correcto?
 :::
+
+### Conexión con sesiones anteriores y siguientes
+- **Viene de:** Sesión 1 (tipos de aprendizaje con animaciones — supervisado, no supervisado, refuerzo)
+- **Lleva a:** Sesión 3 (algoritmos específicos: CNN, Transformers, árboles de decisión — *cuándo usar cada uno*)
 
 ---
 

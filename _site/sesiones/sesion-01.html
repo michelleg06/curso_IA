@@ -71,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -453,8 +482,8 @@ Inteligencia Artificial
 <hr>
 </section>
 </section>
-<section id="ia-en-tu-vida-app-por-app" class="level3">
-<h3 class="anchored" data-anchor-id="ia-en-tu-vida-app-por-app">IA en tu vida: app por app</h3>
+<section id="ia-en-tu-vida-recorrido-de-las-apps" class="level3">
+<h3 class="anchored" data-anchor-id="ia-en-tu-vida-recorrido-de-las-apps">IA en tu vida: recorrido de las apps</h3>
 <p>Vamos a hacer un recorrido por las apps que probablemente ya tienes en tu teléfono y ver qué tipo de IA usa cada una.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -566,8 +595,8 @@ Inteligencia Artificial
   </a>
   <div class="app-detail" style="--accent:#fe2c55">
     <h4 class="anchored">TikTok y el algoritmo "Para Ti"</h4>
-    <p>El corazón de TikTok es un sistema de recomendación. Cada vez que interactúas con un video — lo ves completo, lo compartes, lo repites, lo pausas a la mitad — estás dándole información al algoritmo. Esa información entrena un modelo que aprende tus preferencias con una velocidad sorprendente. Estudios han mostrado que en menos de una hora de uso, el algoritmo ya puede predecir con alta precisión qué te va a mantener en la pantalla.</p>
-    <p class="ai-type"><strong>Tipo de IA:</strong> Collaborative filtering + modelos de secuencia — aprende de tus patrones y de los de millones de usuarios similares a ti.</p>
+    <p>El corazón de TikTok es un *sistema de recomendación*. Cada vez que interactúas con un video, ya sea que lo veas completo, lo compartass, lo repitas, o lo pauses a la mitad, estás dándole información al algoritmo. Esa información entrena un modelo que aprende tus preferencias con una velocidad sorprendente. Hay estudios científicos han mostrado que en menos de una hora de uso, el algoritmo ya puede predecir con alta precisión qué te va a mostrar en la pantalla.</p>
+    <p class="ai-type"><strong>Tipo de IA:</strong> Filtro de colaboración + modelos de secuencia $\rightarrow$ aprende de tus patrones y de los de millones de usuarios similares a ti.</p>
   </div>
 </div>
 
@@ -596,7 +625,7 @@ Inteligencia Artificial
   </a>
   <div class="app-detail" style="--accent:#34A853">
     <h4 class="anchored">Google Maps y el tráfico en tiempo real</h4>
-    <p>Cuando Google Maps te dice "hay tráfico en la Avenida Venustiano Carranza, toma los Insurgentes", no está adivinando. Está procesando datos de GPS de millones de usuarios en tiempo real, datos históricos de esa ruta a esa hora, y modelos predictivos entrenados con años de información. El tiempo estimado de llegada es una predicción estadística, no una certeza.</p>
+    <p>Cuando Google Maps te dice "hay tráfico en la Avenida Venustiano Carranza, toma la Insurgentes", no está adivinando. Está procesando datos de GPS de millones de usuarios en tiempo real, datos históricos de esa ruta a esa hora, y modelos predictivos entrenados con años de información. El tiempo estimado de llegada es una predicción estadística, no una certeza.</p>
     <p class="ai-type"><strong>Tipo de IA:</strong> Modelos de predicción de series temporales + optimización de rutas.</p>
   </div>
 </div>
@@ -611,8 +640,8 @@ Inteligencia Artificial
   </a>
   <div class="app-detail" style="--accent:#E1306C">
     <h4 class="anchored">Filtros de Instagram y TikTok</h4>
-    <p>¿Cómo sabe el filtro exactamente dónde están tus ojos, tu nariz, tus mejillas? No está buscando "forma redonda" genérica. Está usando una red neuronal convolucional (CNN) entrenada con millones de imágenes de caras humanas, que aprendió a detectar landmarks faciales — puntos específicos del rostro — con precisión de milímetros, en tiempo real, a 30 fotogramas por segundo.</p>
-    <p class="ai-type"><strong>Tipo de IA:</strong> Redes neuronales convolucionales (CNN) — especializadas en procesar imágenes píxel por píxel.</p>
+    <p>¿Cómo sabe el filtro exactamente dónde están tus ojos, tu nariz, o tus mejillas? No está buscando una "forma redonda" genérica. Está usando una red neuronal convolucional (CNN) entrenada con millones de imágenes de caras humanas, que aprendió a detectar *landmarks* faciales, es dcir, puntos específicos del rostro con precisión de milímetros, en tiempo real, a 30 fotogramas por segundo.</p>
+    <p class="ai-type"><strong>Tipo de IA:</strong> Redes neuronales convolucionales (CNN) especializadas en procesar imágenes píxel por píxel.</p>
   </div>
 </div>
 
@@ -657,34 +686,569 @@ Inteligencia Artificial
 </div>
 <hr>
 </section>
-<section id="cómo-aprende-una-máquina-los-tres-tipos" class="level3">
-<h3 class="anchored" data-anchor-id="cómo-aprende-una-máquina-los-tres-tipos">Cómo aprende una máquina: los tres tipos</h3>
-<p>Ahora que viste dónde está la IA en tu vida, surge la pregunta natural: ¿cómo aprende? No todas las IAs aprenden de la misma manera. Hay tres paradigmas fundamentales.</p>
+<section id="cómo-aprende-una-máquina" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-aprende-una-máquina">¿Cómo aprende una máquina?</h3>
+<p>Ahora que viste dónde está la IA en tu vida, surge la siguiente pregunta: ¿cómo aprende? No todas las IAs aprenden de la misma manera. Hay tres paradigmas fundamentales.</p>
 <section id="aprendizaje-supervisado" class="level4">
 <h4 class="anchored" data-anchor-id="aprendizaje-supervisado">1. Aprendizaje Supervisado</h4>
-<p>Imagina que eres maestro y tienes que enseñarle a un alumno a distinguir fotos de perros y gatos. Le muestras miles de fotos, y debajo de cada una escribes “perro” o “gato”. El alumno estudia esas fotos con sus etiquetas hasta que aprende los patrones que distinguen a uno del otro. Después, cuando le muestras una foto nueva sin etiqueta, puede decirte qué es.</p>
-<p>Eso es aprendizaje supervisado: <strong>datos de entrada + etiquetas correctas = modelo que aprende a clasificar o predecir</strong>.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A["📂 Datos\netiquetados"] --&gt; B["🤖 Modelo\nen entrenamiento"]
-    B --&gt; C["✅ Modelo\nentrenado"]
-    D["❓ Dato\nnuevo"] --&gt; C
-    C --&gt; E["🏷️ Predicción"]
-</pre>
+<p>Imagina que eres maestro y tienes que enseñarle a un alumno a distinguir fotos de perros y gatos. Le muestras miles de fotos, y debajo de cada una escribes “perro” o “gato”. El alumno estudia esas fotos con sus etiquetas hasta que aprende los patrones.</p>
+<p>Eso es aprendizaje supervisado: <strong>datos de entrada + etiquetas correctas = modelo que aprende</strong>.</p>
+<p>Dentro del aprendizaje supervisado, las máquinas resuelven principalmente dos tipos de problemas:</p>
+<ul>
+<li><p><strong>Clasificación:</strong> Predecir una categoría (ej. ¿Es perro o gato? ¿Es spam o correo legítimo?).</p></li>
+<li><p><strong>Regresión:</strong> Predecir un número continuo (ej. ¿Qué calificación sacaré? ¿Cuál será el precio del dólar mañana?).</p></li>
+</ul>
+<p>La <strong>Regresión Lineal</strong> es la técnica más simple y fundamental del Machine Learning. Su objetivo: encontrar la recta que mejor describe la relación entre <strong>x</strong> (entrada) y <strong>y</strong> (salida), para poder hacer predicciones.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p></p></figure><p></p>
+<div class="callout-title-container flex-fill">
+La ecuación de la recta: ŷ = m · x + b <em>(forma pendiente-ordenada)</em>
 </div>
 </div>
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 27%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Símbolo</th>
+<th>Nombre</th>
+<th>En este ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>ŷ</strong></td>
+<td>“y-sombrerito” — <em>valor predecido</em></td>
+<td>calificación <strong>predicha</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>x</strong></td>
+<td>variable de entrada</td>
+<td>horas de estudio</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>m</strong></td>
+<td><strong>pendiente</strong> / <em>slope</em> — elevación sobre avance</td>
+<td>cuánto sube ŷ por cada hora extra de estudio</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>b</strong></td>
+<td><strong>ordenada al origen</strong> / <em>intersección con el eje y</em></td>
+<td>valor de ŷ cuando x = 0</td>
+</tr>
+</tbody>
+</table>
+<p>La máquina no “sabe” <span class="math inline">\(m\)</span> ni <span class="math inline">\(b\)</span> de antemano, los <strong>calcula</strong> a partir de los datos. Eso es el “aprendizaje”.</p>
 </div>
-<p><strong>Ejemplos reales:</strong> - Filtro de spam (etiquetas: spam / no spam) - Detección de cáncer en radiografías (etiquetas: tumor / normal) - Reconocimiento de voz (etiquetas: audio → texto correcto) - Tu filtro facial (etiquetas: millones de fotos con puntos faciales marcados a mano)</p>
+</div>
+<p>Veamos cómo ocurre ese cálculo, paso a paso:</p>
+<div id="lr-wrap" style="margin:1.5rem 0;">
+
+  <!-- ① FASE TABLA -->
+  <div id="lr-tbl-area">
+    <p style="text-align:center;font-size:.82rem;color:#888;margin:.2rem 0 .8rem;font-style:italic;">
+      Datos de 8 estudiantes: cuánto estudiaron y qué calificación obtuvieron
+    </p>
+    <div style="overflow-x:auto;">
+      
+<table class="caption-top" data-quarto-postprocess="true" style="width:100%;max-width:440px;margin:0 auto;border-collapse:collapse;font-size:.88rem;">
+<thead>
+<tr class="header" style="background:#eff6ff;">
+<th data-quarto-table-cell-role="th" style="text-align: left; padding: 8px 12px; border: 1px solid #dbeafe;">Estudiante</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; padding: 8px 12px; border: 1px solid #dbeafe; color: #1d4ed8;">x — Horas de estudio</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; padding: 8px 12px; border: 1px solid #dbeafe; color: #dc2626;">y — Calificación</th>
+</tr>
+</thead>
+<tbody id="lr-tbody">
+</tbody>
+</table>
+
+    </div>
+    <p id="lr-tbl-msg" style="text-align:center;font-size:.85rem;color:#475569;
+       min-height:1.4em;margin:.8rem 0 .4rem;font-weight:500;"></p>
+    <div style="text-align:center;margin-bottom:.4rem;">
+      <button id="lr-go-btn" onclick="lrGoToGraph()" style="display:none;background:#1d4ed8;color:#fff;border:none;border-radius:8px;
+               padding:8px 22px;font-size:.88rem;cursor:pointer;font-weight:600;">
+        ② Graficar estos datos en el plano cartesiano →
+      </button>
+    </div>
+  </div>
+
+  <!-- ② FASE CANVAS -->
+  <div id="lr-graph-area" style="display:none;flex-direction:column;align-items:center;gap:.7rem;">
+    <p style="text-align:center;font-size:.82rem;color:#888;margin:0;font-style:italic;">
+      Cada fila de la tabla se convierte en un punto <strong>(x, y)</strong> en el plano
+    </p>
+    <canvas id="lr-cv" width="460" height="300" style="max-width:100%;border-radius:10px;background:#f8fafc;border:1px solid #e2e8f0;"></canvas>
+
+    <p id="lr-st" style="font-size:.82rem;font-weight:600;color:#1d4ed8;
+       margin:0;min-height:1.3em;text-align:center;"></p>
+
+    <p id="lr-eq" style="font-family:'Courier New',monospace;font-size:1.1rem;font-weight:bold;
+             color:#1565C0;opacity:0;transition:opacity .7s;text-align:center;margin:0;min-height:1.5em;"></p>
+
+    <div id="lr-ui" style="display:none;background:#eff8ff;border:1px solid #bfdbfe;
+         border-radius:10px;padding:.85rem 1.4rem;text-align:center;width:100%;max-width:420px;box-sizing:border-box;">
+      <p style="margin:0 0 .5rem;font-size:.85rem;font-weight:600;color:#1e3a5f;">
+        Paso 3 — 🔮 Mueve el slider: predice calificación según horas de estudio
+      </p>
+      <div style="display:flex;gap:.7rem;align-items:center;justify-content:center;flex-wrap:wrap;">
+        <input type="range" id="lr-sl" min="1" max="10" step=".5" value="5" oninput="lrPred(parseFloat(this.value))" style="width:130px;accent-color:#1565C0;cursor:pointer;">
+        <span id="lr-lbl" style="font-weight:700;min-width:3.5em;font-size:.9rem;color:#334155;">5.0 hrs</span>
+        <span style="color:#94a3b8;font-size:1.1rem;">→</span>
+        <span id="lr-res" style="font-weight:700;font-size:1rem;color:#1565C0;min-width:5em;"></span>
+      </div>
+    </div>
+
+    <button onclick="lrReset()" style="background:transparent;border:1px solid #cbd5e1;border-radius:6px;
+             padding:5px 18px;font-size:.78rem;cursor:pointer;color:#64748b;">
+      ↺ Ver desde el principio
+    </button>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var S=[
+    {n:'Ana',      x:1,y:55},{n:'Carlos',  x:2,y:60},
+    {n:'María',    x:3,y:65},{n:'Diego',   x:4,y:72},
+    {n:'Sofía',    x:5,y:75},{n:'Luis',    x:6,y:82},
+    {n:'Fernanda', x:7,y:88},{n:'Emilio',  x:8,y:90}
+  ];
+  var M=5.23,B=49.86;
+  var W=460,H=300,PL=54,PR=22,PT=18,PB=52;
+  var PW=W-PL-PR,PH=H-PT-PB,XR=[0,9],YR=[38,104];
+
+  function tC(x,y){return{cx:PL+(x-XR[0])/(XR[1]-XR[0])*PW,
+                           cy:H-PB-(y-YR[0])/(YR[1]-YR[0])*PH};}
+
+  var cv,ctx,ph=0,fc=0,sc=[],lp=0,rp=0,px=null,rf=null,lbls=[],lastSh=-1;
+
+  // ─── TABLA ────────────────────────────────────────────────────
+  function buildTable(){
+    var tb=document.getElementById('lr-tbody');
+    if(!tb)return; tb.innerHTML='';
+    S.forEach(function(s,i){
+      setTimeout(function(){
+        var tr=document.createElement('tr');
+        tr.innerHTML=
+          '<td style="padding:6px 12px;border:1px solid #f1f5f9;">'+s.n+'</td>'+
+          '<td style="padding:6px 12px;border:1px solid #f1f5f9;text-align:center;'+
+              'color:#1d4ed8;font-weight:600;font-family:monospace;">'+s.x+' h</td>'+
+          '<td style="padding:6px 12px;border:1px solid #f1f5f9;text-align:center;'+
+              'color:#dc2626;font-weight:600;font-family:monospace;">'+s.y+'</td>';
+        tr.style.cssText='opacity:0;transition:opacity .3s,transform .3s;transform:translateX(-6px);';
+        tb.appendChild(tr);
+        requestAnimationFrame(function(){requestAnimationFrame(function(){
+          tr.style.opacity='1'; tr.style.transform='none';
+        });});
+      },500+i*380);
+    });
+    setTimeout(function(){
+      var m=document.getElementById('lr-tbl-msg');
+      if(m) m.textContent='¿Ves el patrón? Más horas → mayor calificación. La máquina puede aprender esa relación.';
+      var b=document.getElementById('lr-go-btn');
+      if(b) b.style.display='inline-block';
+    },500+S.length*380+300);
+  }
+
+  window.lrGoToGraph=function(){
+    document.getElementById('lr-tbl-area').style.display='none';
+    var ga=document.getElementById('lr-graph-area');
+    ga.style.display='flex';
+    cv=document.getElementById('lr-cv'); if(!cv)return;
+    ctx=cv.getContext('2d');
+    ph=1;fc=0;sc=new Array(S.length).fill(0);lp=0;rp=0;px=null;lbls=[];lastSh=-1;
+    var eq=document.getElementById('lr-eq');
+    if(eq){eq.style.opacity='0';eq.textContent='';}
+    document.getElementById('lr-ui').style.display='none';
+    document.getElementById('lr-st').textContent='';
+    if(rf)cancelAnimationFrame(rf);
+    render(); rf=requestAnimationFrame(loop);
+  };
+
+  window.lrReset=function(){
+    if(rf)cancelAnimationFrame(rf);
+    document.getElementById('lr-graph-area').style.display='none';
+    document.getElementById('lr-tbl-area').style.display='block';
+    document.getElementById('lr-go-btn').style.display='none';
+    document.getElementById('lr-tbl-msg').textContent='';
+    buildTable();
+  };
+
+  // ─── CANVAS ───────────────────────────────────────────────────
+
+  function axes(){
+    ctx.font='11px system-ui,sans-serif';
+    [50,60,70,80,90,100].forEach(function(y){
+      var a=tC(XR[0],y),b=tC(XR[1],y);
+      ctx.strokeStyle='#e2e8f0';ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(a.cx,a.cy);ctx.lineTo(b.cx,b.cy);ctx.stroke();
+      ctx.fillStyle='#94a3b8';ctx.textAlign='right';ctx.fillText(y,PL-8,a.cy+4);
+    });
+    [1,2,3,4,5,6,7,8].forEach(function(x){
+      var a=tC(x,YR[0]),b=tC(x,YR[1]);
+      ctx.strokeStyle='#e2e8f0';ctx.lineWidth=1;
+      ctx.beginPath();ctx.moveTo(a.cx,a.cy);ctx.lineTo(b.cx,b.cy);ctx.stroke();
+      ctx.fillStyle='#94a3b8';ctx.textAlign='center';ctx.fillText(x,a.cx,H-PB+17);
+    });
+    var o=tC(XR[0],YR[0]),r=tC(XR[1],YR[0]),t=tC(XR[0],YR[1]);
+    ctx.strokeStyle='#94a3b8';ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.moveTo(o.cx,o.cy);ctx.lineTo(r.cx,r.cy);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(o.cx,o.cy);ctx.lineTo(t.cx,t.cy);ctx.stroke();
+    ctx.fillStyle='#475569';ctx.font='bold 11px system-ui,sans-serif';
+    ctx.textAlign='center';
+    ctx.fillText('x — Horas de estudio',PL+PW/2,H-4);
+    ctx.save();ctx.translate(13,PT+PH/2);ctx.rotate(-Math.PI/2);
+    ctx.fillText('y — Calificación',0,0);ctx.restore();
+  }
+
+  function pts(){
+    S.forEach(function(d,i){
+      var s=Math.min(sc[i]||0,1);if(s<=0)return;
+      var p=tC(d.x,d.y);
+      ctx.save();ctx.translate(p.cx,p.cy);ctx.scale(s,s);
+      ctx.beginPath();ctx.arc(0,0,6,0,Math.PI*2);
+      ctx.fillStyle='#1d4ed8';ctx.fill();
+      ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();
+      ctx.restore();
+    });
+  }
+
+  function floatLbls(){
+    for(var i=lbls.length-1;i>=0;i--){
+      var l=lbls[i];
+      if(l.a<=0){lbls.splice(i,1);continue;}
+      ctx.save();ctx.globalAlpha=Math.min(1,l.a);
+      var txt=l.n+' ('+l.x+','+l.y+')';
+      ctx.font='bold 9.5px system-ui,sans-serif';
+      var tw=ctx.measureText(txt).width+8;
+      ctx.fillStyle='rgba(239,246,255,.9)';
+      ctx.fillRect(l.cx-tw/2,l.cy-22,tw,13);
+      ctx.fillStyle='#1e40af';ctx.textAlign='center';
+      ctx.fillText(txt,l.cx,l.cy-12);
+      ctx.restore();
+      l.a-=0.013;
+    }
+  }
+
+  function regline(){
+    if(lp<=0)return;
+    var x0=XR[0],x1=XR[0]+(XR[1]-XR[0])*lp;
+    var p0=tC(x0,M*x0+B),p1=tC(x1,M*x1+B);
+    ctx.beginPath();ctx.moveTo(p0.cx,p0.cy);ctx.lineTo(p1.cx,p1.cy);
+    ctx.strokeStyle='#dc2626';ctx.lineWidth=2.5;ctx.setLineDash([]);ctx.stroke();
+  }
+
+  function residuals(){
+    if(rp<=0)return;
+    ctx.setLineDash([4,3]);ctx.lineWidth=1.5;
+    S.forEach(function(d){
+      var yp=M*d.x+B,pt=tC(d.x,d.y),pp=tC(d.x,yp);
+      var cy2=pt.cy+(pp.cy-pt.cy)*rp;
+      ctx.beginPath();ctx.moveTo(pt.cx,pt.cy);ctx.lineTo(pt.cx,cy2);
+      ctx.strokeStyle='rgba(239,68,68,'+Math.min(rp,.75)+')';ctx.stroke();
+    });
+    ctx.setLineDash([]);
+  }
+
+  function predline(){
+    if(px===null)return;
+    var yp=M*px+B,p=tC(px,yp),pb=tC(px,YR[0]),pl=tC(XR[0],yp);
+    ctx.setLineDash([5,4]);ctx.strokeStyle='#d97706';ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.moveTo(p.cx,pb.cy);ctx.lineTo(p.cx,p.cy);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(pl.cx,pl.cy);ctx.lineTo(p.cx,p.cy);ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.beginPath();ctx.arc(p.cx,p.cy,7,0,Math.PI*2);
+    ctx.fillStyle='#f59e0b';ctx.fill();
+    ctx.strokeStyle='#fff';ctx.lineWidth=2;ctx.stroke();
+  }
+
+  function render(){ctx.clearRect(0,0,W,H);axes();pts();floatLbls();regline();residuals();predline();}
+
+  function update(){
+    fc++;
+    var st=document.getElementById('lr-st');if(!st)return;
+    if(ph===1){
+      st.textContent='Paso 1 — Graficando cada fila de la tabla como un punto (x, y)...';
+      var ti=Math.floor(fc/20),sh=Math.min(ti,S.length);
+      for(var i=0;i<sh;i++){
+        sc[i]=Math.min(1,(sc[i]||0)+0.12);
+        if(i>lastSh&&(sc[i]||0)>0.05){
+          lastSh=i;
+          var p=tC(S[i].x,S[i].y);
+          lbls.push({n:S[i].n,x:S[i].x,y:S[i].y,cx:p.cx,cy:p.cy,a:1});
+        }
+      }
+      if(sh>=S.length&&sc.every(function(s){return s>=1;})){ph=2;fc=0;}
+    } else if(ph===2){
+      if(fc===1) st.textContent='¿Ves el patrón? La máquina también lo detecta. Calculando la recta ŷ = m·x + b...';
+      lp=Math.min(1,fc/90);
+      if(lp>=1){ph=3;fc=0;}
+    } else if(ph===3){
+      if(fc===1) st.innerHTML='Paso 3 — <span style="color:#ef4444;font-weight:700;">Errores</span>: distancia vertical de cada punto a la recta. El álgebra minimiza la suma de todos estos errores.';
+      rp=Math.min(1,fc/65);
+      if(rp>=1&&fc>110){ph=4;fc=0;}
+    } else if(ph===4){
+      rp=Math.max(0,rp-0.05);
+      if(fc===1){
+        st.textContent='';
+        var eq=document.getElementById('lr-eq');
+        eq.innerHTML='ŷ\u2009=\u2009<span style="color:#dc2626">5.23</span>\u2009\u00B7\u2009x\u2009+\u2009<span style="color:#dc2626">49.86</span>';
+        eq.style.opacity='1';
+        document.getElementById('lr-ui').style.display='block';
+        lrPred(5);
+      }
+      if(rp<=0)ph=5;
+    }
+  }
+
+  function loop(){update();render();if(ph<5)rf=requestAnimationFrame(loop);}
+
+  window.lrPred=function(v){
+    px=parseFloat(v);
+    document.getElementById('lr-lbl').textContent=px.toFixed(1)+' hrs';
+    document.getElementById('lr-res').textContent='\u2248 '+Math.round(M*px+B)+' pts';
+    if(ph>=4)render();
+  };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){setTimeout(buildTable,200);});
+  else setTimeout(buildTable,200);
+})();
+</script>
+<details style="margin:1.2rem 0 0.5rem;border:1px solid #dbeafe;border-radius:10px;overflow:hidden;">
+<summary style="cursor:pointer;padding:.9rem 1.2rem;font-weight:600;color:#1e40af;
+background:#eff6ff;user-select:none;list-style:none;display:flex;
+justify-content:space-between;align-items:center;">
+<span>🔢 Las matemáticas detrás — ¿De dónde sale la línea roja? (álgebra básica)</span>
+<span style="font-weight:400;color:#94a3b8;font-size:.85rem;">haz clic para ver</span>
+</summary>
+<div style="padding:1.2rem 1.5rem;font-size:.9rem;line-height:1.7;">
+
+<p>La animación usó <strong>Regresión Lineal Simple</strong>: encontrar la recta que pasa <em>lo más cerca posible</em> de todos los puntos. La recta se describe con la <strong>ecuación de la recta en forma pendiente-ordenada</strong>:</p>
+
+<div style="background:#f0f4ff;border-radius:8px;padding:1rem 1.4rem;margin:.8rem 0;font-size:.92rem;line-height:2;">
+  <div style="font-family:'Courier New',monospace;font-size:1.1rem;font-weight:700;text-align:center;margin-bottom:.6rem;">
+    ŷ &nbsp;=&nbsp; <span style="color:#dc2626;">m</span> · x &nbsp;+&nbsp; <span style="color:#dc2626;">b</span>
+  </div>
+  
+<table class="caption-top table" data-quarto-postprocess="true">
+<tbody>
+<tr class="odd">
+<td style="padding: 3px 8px; font-family: monospace; font-weight: 700; color: #1e40af; width: 2.5em">ŷ</td>
+<td style="padding: 3px 8px; color: #475569">"y sombrerito" — la calificación <em>predicha</em> por la máquina</td>
+</tr>
+<tr class="even">
+<td style="padding: 3px 8px; font-family: monospace; font-weight: 700; color: #dc2626">m</td>
+<td style="padding: 3px 8px; color: #475569"><strong>pendiente</strong> (<em>slope</em>) — cuánto sube ŷ por cada hora extra de estudio</td>
+</tr>
+<tr class="odd">
+<td style="padding: 3px 8px; font-family: monospace; font-weight: 700; color: #1e40af">x</td>
+<td style="padding: 3px 8px; color: #475569">horas de estudio (el dato que ya conocemos)</td>
+</tr>
+<tr class="even">
+<td style="padding: 3px 8px; font-family: monospace; font-weight: 700; color: #dc2626">b</td>
+<td style="padding: 3px 8px; color: #475569"><strong>ordenada al origen</strong> (<em>intersección con el eje y</em>) — valor de ŷ cuando x = 0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<p><strong>¿Qué es la pendiente? — "elevación sobre avance"</strong></p>
+<p>En prepa aprendiste que la pendiente es el cociente <em>"cuánto sube / cuánto avanza"</em>:</p>
+
+<div style="background:#fefce8;border-left:3px solid #d97706;border-radius:0 8px 8px 0;
+            padding:.7rem 1.2rem;margin:.5rem 0;font-family:'Courier New',monospace;font-size:.9rem;line-height:2.2;">
+  m &nbsp;=&nbsp; <strong>Δy / Δx</strong> &nbsp;=&nbsp; <strong>elevación / avance</strong><br>
+  <span style="font-size:.8rem;font-family:system-ui;color:#78350f;">
+    Si m = 5.23 → por cada hora más que estudias, tu calificación sube ≈ 5.2 puntos
+  </span>
+</div>
+
+<p><strong>¿Por qué no usamos sólo 2 puntos para calcular m?</strong><br>
+Con 2 puntos siempre puedes trazar exactamente una recta — eso es geometría básica. Pero aquí tenemos 8 estudiantes y <em>ninguna</em> recta pasa exactamente por los 8 puntos. Si eliges a Ana (1 h → 55) y Emilio (8 h → 90), obtienes una pendiente. Si eliges a Carlos y Fernanda, obtienes otra diferente. ¿Cuál es la "correcta"? Ninguna — porque cada par ignora a los demás.<br><br>
+La solución: usar <strong>todos</strong> los puntos a la vez y encontrar la recta que cometa el <em>menor error posible considerando a todos en conjunto</em>. Eso es la fórmula de <strong>Mínimos Cuadrados</strong> — álgebra pura:</p>
+
+<div style="background:#f0f4ff;border-radius:8px;padding:.8rem 1.4rem;margin:.6rem 0;
+            font-family:'Courier New',monospace;font-size:.88rem;line-height:2.2;text-align:center;">
+  m = Σ(xᵢ − x̄)(yᵢ − ȳ) / Σ(xᵢ − x̄)² &nbsp;&nbsp;&nbsp; b = ȳ − m·x̄
+</div>
+
+<p>La Σ (sigma) significa "suma de todos los estudiantes". Suena intimidante, pero es aritmética básica. Veamos cada paso:</p>
+
+<p><strong>Paso 1 — Calcular las medias (promedios):</strong></p>
+<div style="background:#f0f4ff;border-radius:8px;padding:.8rem 1.2rem;margin:.5rem 0;
+            font-family:'Courier New',monospace;font-size:.88rem;line-height:2.2;">
+  x̄ = (1+2+3+4+5+6+7+8) / 8 = 36 / 8 = <strong>4.5</strong><br>
+  ȳ = (55+60+65+72+75+82+88+90) / 8 = 587 / 8 = <strong>73.4</strong>
+</div>
+
+<p><strong>Paso 2 — Tabla de cálculos (un renglón por estudiante):</strong></p>
+<div style="overflow-x:auto;margin:.5rem 0;">
+
+<table class="caption-top table" data-quarto-postprocess="true">
+<thead>
+<tr class="header" style="background:#dbeafe;text-align:center;">
+<th data-quarto-table-cell-role="th" style="padding: 5px 8px; border: 1px solid #bfdbfe; font-family: system-ui">Estudiante</th>
+<th data-quarto-table-cell-role="th" style="padding: 5px 8px; border: 1px solid #bfdbfe">xᵢ</th>
+<th data-quarto-table-cell-role="th" style="padding: 5px 8px; border: 1px solid #bfdbfe">yᵢ</th>
+<th data-quarto-table-cell-role="th" style="padding: 5px 8px; border: 1px solid #bfdbfe">xᵢ − x̄</th>
+<th data-quarto-table-cell-role="th" style="padding: 5px 8px; border: 1px solid #bfdbfe">yᵢ − ȳ</th>
+<th data-quarto-table-cell-role="th" style="padding: 5px 8px; border: 1px solid #bfdbfe">(xᵢ−x̄)(yᵢ−ȳ)</th>
+<th data-quarto-table-cell-role="th" style="padding: 5px 8px; border: 1px solid #bfdbfe">(xᵢ−x̄)²</th>
+</tr>
+</thead>
+<tbody style="text-align:center;">
+<tr class="odd">
+<td style="padding: 4px 8px; border: 1px solid #e2e8f0; font-family: system-ui">Ana</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">1</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">55</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">−3.5</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">−18.4</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">64.4</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">12.25</td>
+</tr>
+<tr class="even" style="background:#fafafa;">
+<td style="padding: 4px 8px; border: 1px solid #e2e8f0; font-family: system-ui">Carlos</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">2</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">60</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">−2.5</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">−13.4</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">33.5</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">6.25</td>
+</tr>
+<tr class="odd">
+<td style="padding: 4px 8px; border: 1px solid #e2e8f0; font-family: system-ui">María</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">3</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">65</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">−1.5</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">−8.4</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">12.6</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">2.25</td>
+</tr>
+<tr class="even" style="background:#fafafa;">
+<td style="padding: 4px 8px; border: 1px solid #e2e8f0; font-family: system-ui">Diego</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">4</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">72</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">−0.5</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">−1.4</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">0.7</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">0.25</td>
+</tr>
+<tr class="odd">
+<td style="padding: 4px 8px; border: 1px solid #e2e8f0; font-family: system-ui">Sofía</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">5</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">75</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">+0.5</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">+1.6</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">0.8</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">0.25</td>
+</tr>
+<tr class="even" style="background:#fafafa;">
+<td style="padding: 4px 8px; border: 1px solid #e2e8f0; font-family: system-ui">Luis</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">6</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">82</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">+1.5</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">+8.6</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">12.9</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">2.25</td>
+</tr>
+<tr class="odd">
+<td style="padding: 4px 8px; border: 1px solid #e2e8f0; font-family: system-ui">Fernanda</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">7</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">88</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">+2.5</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">+14.6</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">36.5</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">6.25</td>
+</tr>
+<tr class="even" style="background:#fafafa;">
+<td style="padding: 4px 8px; border: 1px solid #e2e8f0; font-family: system-ui">Emilio</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">8</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px">90</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">+3.5</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; color: #64748b">+16.6</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">58.1</td>
+<td style="border: 1px solid #e2e8f0; padding: 4px 6px; font-weight: 600">12.25</td>
+</tr>
+<tr class="odd" style="background:#dbeafe;font-weight:700;">
+<td colspan="5" style="text-align: right; padding: 5px 8px; border: 1px solid #bfdbfe; font-family: system-ui;">Σ (suma total):</td>
+<td style="border: 1px solid #bfdbfe; padding: 5px 6px; color: #dc2626">219.5</td>
+<td style="border: 1px solid #bfdbfe; padding: 5px 6px; color: #dc2626">42.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<p><strong>Paso 3 — Sustituir en las fórmulas:</strong></p>
+<div style="background:#f0f4ff;border-radius:8px;padding:.8rem 1.2rem;margin:.5rem 0;
+            font-family:'Courier New',monospace;font-size:.92rem;line-height:2.2;">
+  m = 219.5 / 42.0 = <strong style="color:#dc2626;">5.23</strong><br>
+  b = 73.4 − 5.23 × 4.5 = <strong style="color:#dc2626;">49.86</strong><br>
+  <strong>ŷ = 5.23·x + 49.86</strong>
+</div>
+
+<p style="margin-top:1.2rem;"><strong>Paso 4 — El mismo cálculo en Python</strong>
+<span style="font-size:.8rem;color:#888;">(lo puedes correr gratis en Google Colab)</span></p>
+<pre style="background:#1e1e2e;color:#cdd6f4;padding:1rem 1.2rem;border-radius:8px;
+            font-size:.8rem;overflow-x:auto;line-height:1.7;margin:.5rem 0;"><code><span style="color:#89b4fa">import</span> numpy <span style="color:#89b4fa">as</span> np
+
+<span style="color:#6c7086"># Datos: horas de estudio (x) → calificación (y)</span>
+x = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+y = np.array([55, 60, 65, 72, 75, 82, 88, 90])
+
+<span style="color:#6c7086"># numpy hace exactamente el mismo cálculo algebraico</span>
+m, b = np.polyfit(x, y, 1)
+
+<span style="color:#a6e3a1">print</span>(f<span style="color:#a6d189">"Ecuación: ŷ = {m:.2f}·x + {b:.2f}"</span>)
+<span style="color:#6c7086"># → Ecuación: ŷ = 5.23·x + 49.86</span>
+
+<span style="color:#a6e3a1">print</span>(f<span style="color:#a6d189">"Predicción (6.5 hrs): {m*6.5+b:.1f} pts"</span>)
+<span style="color:#6c7086"># → Predicción (6.5 hrs): 83.9 pts</span></code></pre>
+
+<div style="background:#dcfce7;border-left:4px solid #16a34a;padding:.9rem 1.2rem;
+            border-radius:0 8px 8px 0;margin-top:1.2rem;">
+  <p style="margin:0;font-weight:700;color:#15803d;font-size:.95rem;">
+    ¿Ves? Todo empieza con álgebra fundamental — la misma que ves en prepa.
+  </p>
+  <p style="margin:.4rem 0 0;font-size:.85rem;color:#166534;">
+    Una máquina no hace magia: calcula pendientes, promedios y sumas para minimizar errores.
+    Lo que la hace poderosa es que puede hacer ese cálculo con <em>millones</em> de datos
+    y <em>miles</em> de variables simultáneamente, en fracciones de segundo.
+  </p>
+</div>
+</div>
+</details>
+<p><strong>Ejemplos:</strong></p>
+<ul>
+<li><p><em>Regresión (Predecir un número continuo, como la animación de arriba):</em></p>
+<ul>
+<li><p>Predecir el precio de una casa basado en sus metros cuadrados.</p></li>
+<li><p>Predecir cuánta energía consumirá una ciudad mañana basado en el clima.</p></li>
+<li><p>Estimar a qué hora exacta llegará tu Uber basado en el tráfico.</p></li>
+</ul></li>
+<li><p><em>Clasificación (Categorizar cosas, como el ejemplo de perros vs.&nbsp;gatos):</em></p>
+<ul>
+<li><p>Filtro de spam (etiquetas correctas: spam / no spam).</p></li>
+<li><p>Detección de cáncer en radiografías (etiquetas correctas: tumor / sano).</p></li>
+<li><p>Reconocimiento facial en tu celular (etiquetas correctas: eres tú / no eres tú).</p></li>
+</ul></li>
+</ul>
 </section>
 <section id="aprendizaje-no-supervisado" class="level4">
 <h4 class="anchored" data-anchor-id="aprendizaje-no-supervisado">2. Aprendizaje No Supervisado</h4>
-<p>Ahora imagina que le das al mismo alumno miles de fotos de animales, pero sin ninguna etiqueta. Le dices: “agrúpalas como consideres que van juntas”. El alumno nota que algunas tienen hocico largo, otras tienen bigotes, algunas tienen orejas paradas — y las va agrupando sin que nadie le haya dicho qué buscar.</p>
+<p>Ahora imagina que tienes fotos de animales, pero sin ninguna etiqueta. Le dices a la máquina: “agrúpalas como consideres que van juntas”. Un humano nota que algunas tienen hocico largo, otras tienen bigotes, algunas tienen orejas paradas, y las puede ir agrupando sin que nadie le haya dicho qué buscar. Pero, ¿y una máquina?</p>
 <p>Eso es aprendizaje no supervisado: <strong>datos sin etiquetas → el modelo encuentra estructura por sí mismo</strong>.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
@@ -692,7 +1256,7 @@ Inteligencia Artificial
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
-    A["📂 Datos\nsin etiquetas"] --&gt; B["🤖 Modelo\nbuscando patrones"]
+    A["📂 Datos sin etiquetas"] --&gt; B["🤖 Modelo buscando patrones"]
     B --&gt; C["🔵 Grupo 1"]
     B --&gt; D["🟠 Grupo 2"]
     B --&gt; E["🟢 Grupo 3"]
@@ -702,7 +1266,278 @@ Inteligencia Artificial
 </div>
 </div>
 </div>
-<p><strong>Ejemplos reales:</strong> - Spotify agrupando canciones por similitud sonora (nadie etiquetó “esto suena a reggaetón”) - Amazon detectando segmentos de clientes similares - Netflix identificando “tipos” de espectadores para personalizar portadas</p>
+<p><strong>Ejemplos:</strong></p>
+<ul>
+<li><p>Spotify agrupando canciones por similitud sonora (nadie etiquetó “esto suena a reggaetón”)</p></li>
+<li><p>Amazon detectando segmentos de clientes similares</p></li>
+<li><p>Netflix identificando “tipos” de espectadores para personalizar portadas</p></li>
+</ul>
+<div id="sp-wrap" style="margin:1.5rem 0;">
+  <p style="text-align:center;font-size:.82rem;color:#888;margin:0 0 .6rem;font-style:italic;">
+    Animación: K-Means Clustering — cómo Spotify agrupa canciones sin que nadie le enseñe géneros
+  </p>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:.6rem;">
+    <canvas id="sp-cv" width="460" height="300" style="max-width:100%;border-radius:12px;background:#0f0f0f;
+             border:1px solid #222;box-shadow:0 4px 24px rgba(29,185,84,.15);"></canvas>
+    <p id="sp-st" style="font-size:.83rem;font-weight:600;color:#1d4ed8;
+       margin:0;min-height:1.4em;text-align:center;max-width:460px;"></p>
+    <button onclick="spRestart()" style="background:transparent;border:1px solid #cbd5e1;border-radius:6px;
+             padding:5px 18px;font-size:.78rem;cursor:pointer;color:#64748b;">
+      ↺ Ver animación de nuevo
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var SONGS=[
+    {n:'Bad Bunny',     x:8.5,y:8.8,c:0},
+    {n:'Karol G',       x:8.8,y:8.2,c:0},
+    {n:'J Balvin',      x:7.8,y:8.6,c:0},
+    {n:'Daddy Yankee',  x:9.0,y:9.0,c:0},
+    {n:'Maluma',        x:7.5,y:8.0,c:0},
+    {n:'The Weeknd',    x:6.2,y:5.8,c:1},
+    {n:'Dua Lipa',      x:6.8,y:6.5,c:1},
+    {n:'Harry Styles',  x:5.5,y:5.2,c:1},
+    {n:'Taylor Swift',  x:6.5,y:6.0,c:1},
+    {n:'Doja Cat',      x:5.8,y:6.3,c:1},
+    {n:'Ed Sheeran',    x:3.2,y:3.5,c:2},
+    {n:'Coldplay',      x:4.0,y:4.2,c:2},
+    {n:'Billie Eilish', x:2.5,y:3.0,c:2},
+    {n:'Olivia Rodrigo',x:3.8,y:4.0,c:2},
+    {n:'Adele',         x:2.2,y:2.8,c:2}
+  ];
+  var COLORS=['#FF6B35','#1DB954','#9B8AFF'];
+  var TRUE_C=[{x:8.32,y:8.52},{x:6.16,y:5.96},{x:3.14,y:3.50}];
+  var INIT_C=[{x:7.0,y:5.0},{x:4.0,y:7.0},{x:5.5,y:3.5}];
+  var W=460,H=300,PL=44,PR=18,PT=22,PB=42;
+  var PW=W-PL-PR,PH=H-PT-PB,XR=[1,10],YR=[1,10];
+
+  function tC(x,y){
+    return{cx:PL+(x-XR[0])/(XR[1]-XR[0])*PW,
+           cy:H-PB-(y-YR[0])/(YR[1]-YR[0])*PH};
+  }
+
+  var cv,ctx,ph=0,fc=0,rf=null;
+  var sA=new Array(SONGS.length).fill(0);
+  var sCol=new Array(SONGS.length).fill('#3a3a3a');
+  var cents=INIT_C.map(function(c){return{x:c.x,y:c.y};});
+  var cA=[0,0,0],genAlpha=0,tuAlpha=0,recAlpha=0;
+  var lbls=[],lastSh=-1;
+  var TU={x:6.3,y:5.5};
+
+  function spInit(){
+    cv=document.getElementById('sp-cv');
+    if(!cv)return;
+    ctx=cv.getContext('2d');
+    ph=1;fc=0;
+    sA.fill(0);sCol.fill('#3a3a3a');
+    cents=INIT_C.map(function(c){return{x:c.x,y:c.y};});
+    cA=[0,0,0];genAlpha=0;tuAlpha=0;recAlpha=0;
+    lbls=[];lastSh=-1;
+    if(rf)cancelAnimationFrame(rf);
+    rf=requestAnimationFrame(spLoop);
+  }
+
+  function axes(){
+    /* grid */
+    ctx.strokeStyle='#1c1c2a';ctx.lineWidth=1;
+    [2,4,6,8].forEach(function(v){
+      var a=tC(v,YR[0]),b=tC(v,YR[1]);
+      ctx.beginPath();ctx.moveTo(a.cx,a.cy);ctx.lineTo(b.cx,b.cy);ctx.stroke();
+      var c=tC(XR[0],v),d=tC(XR[1],v);
+      ctx.beginPath();ctx.moveTo(c.cx,c.cy);ctx.lineTo(d.cx,d.cy);ctx.stroke();
+    });
+    /* axis lines */
+    ctx.strokeStyle='#2a2a3a';ctx.lineWidth=1.5;
+    var o=tC(XR[0],YR[0]),r=tC(XR[1],YR[0]),t=tC(XR[0],YR[1]);
+    ctx.beginPath();ctx.moveTo(o.cx,o.cy);ctx.lineTo(r.cx,r.cy);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(o.cx,o.cy);ctx.lineTo(t.cx,t.cy);ctx.stroke();
+    /* labels */
+    ctx.fillStyle='#4a4a5a';ctx.font='10px system-ui,sans-serif';
+    ctx.textAlign='center';
+    ctx.fillText('Baja energía',PL+18,H-5);
+    ctx.fillText('Alta energía',PL+PW-14,H-5);
+    ctx.fillText('Energía →',PL+PW/2,H-5);
+    ctx.save();ctx.translate(11,PT+PH/2);ctx.rotate(-Math.PI/2);
+    ctx.fillText('Ritmo →',0,0);ctx.restore();
+  }
+
+  function drawSongs(){
+    SONGS.forEach(function(s,i){
+      var a=sA[i];if(a<=0)return;
+      var p=tC(s.x,s.y);
+      ctx.save();ctx.globalAlpha=Math.min(a,1);
+      if(sCol[i]!=='#3a3a3a'){ctx.shadowColor=sCol[i];ctx.shadowBlur=9;}
+      ctx.beginPath();ctx.arc(p.cx,p.cy,5,0,Math.PI*2);
+      ctx.fillStyle=sCol[i];ctx.fill();
+      ctx.strokeStyle='rgba(255,255,255,.15)';ctx.lineWidth=1;ctx.stroke();
+      ctx.restore();
+    });
+  }
+
+  function drawCents(){
+    cents.forEach(function(c,i){
+      var a=cA[i];if(a<=0)return;
+      var p=tC(c.x,c.y);
+      ctx.save();ctx.globalAlpha=Math.min(a,1);
+      /* pulsing ring */
+      var ring=8+3*Math.sin(fc*0.1+i*2.1);
+      ctx.beginPath();ctx.arc(p.cx,p.cy,ring,0,Math.PI*2);
+      ctx.strokeStyle=COLORS[i];ctx.lineWidth=1.5;
+      ctx.setLineDash([3,3]);ctx.stroke();ctx.setLineDash([]);
+      /* cross */
+      ctx.strokeStyle=COLORS[i];ctx.lineWidth=2.5;ctx.shadowColor=COLORS[i];ctx.shadowBlur=6;
+      ctx.beginPath();ctx.moveTo(p.cx-9,p.cy);ctx.lineTo(p.cx+9,p.cy);ctx.stroke();
+      ctx.beginPath();ctx.moveTo(p.cx,p.cy-9);ctx.lineTo(p.cx,p.cy+9);ctx.stroke();
+      ctx.restore();
+    });
+  }
+
+  function drawFloatLbls(){
+    for(var i=lbls.length-1;i>=0;i--){
+      var l=lbls[i];
+      if(l.a<=0){lbls.splice(i,1);continue;}
+      ctx.save();ctx.globalAlpha=Math.min(l.a,1);
+      ctx.font='bold 8.5px system-ui,sans-serif';
+      var tw=ctx.measureText(l.n).width+8;
+      /* float up for bottom-half points, down for top-half */
+      var up=(l.cy>H/2);
+      var ty=up?(l.cy-14-l.dy):(l.cy+8+l.dy);
+      ctx.fillStyle='rgba(10,10,18,.9)';
+      ctx.fillRect(l.cx-tw/2,ty,tw,13);
+      ctx.fillStyle='#ccc';ctx.textAlign='center';
+      ctx.fillText(l.n,l.cx,ty+10);
+      ctx.restore();
+      l.a-=0.009;l.dy+=0.3;
+    }
+  }
+
+  function drawGenreLabels(){
+    if(genAlpha<=0)return;
+    var pos=[
+      {x:8.8,y:9.65,label:'\uD83D\uDD25 Reggaet\u00F3n'},
+      {x:6.4, y:7.3, label:'\uD83C\uDFB8 Pop / Dance'},
+      {x:2.8, y:1.85,label:'\uD83C\uDFB9 Ac\u00FAstico / Chill'}
+    ];
+    pos.forEach(function(po,i){
+      var p=tC(po.x,po.y);
+      ctx.save();ctx.globalAlpha=Math.min(genAlpha,1);
+      ctx.font='bold 10px system-ui,sans-serif';
+      var tw=ctx.measureText(po.label).width+12;
+      ctx.fillStyle=COLORS[i]+'22';
+      ctx.fillRect(p.cx-tw/2,p.cy-11,tw,16);
+      ctx.shadowColor=COLORS[i];ctx.shadowBlur=4;
+      ctx.fillStyle=COLORS[i];ctx.textAlign='center';
+      ctx.fillText(po.label,p.cx,p.cy+2);
+      ctx.restore();
+    });
+  }
+
+  function drawTuCancion(){
+    if(tuAlpha<=0)return;
+    var p=tC(TU.x,TU.y);
+    /* connection lines to pop songs */
+    if(recAlpha>0){
+      ctx.save();
+      SONGS.forEach(function(s){
+        if(s.c!==1)return;
+        var sp=tC(s.x,s.y);
+        ctx.globalAlpha=Math.min(recAlpha,0.45);
+        ctx.beginPath();ctx.moveTo(p.cx,p.cy);ctx.lineTo(sp.cx,sp.cy);
+        ctx.strokeStyle=COLORS[1];ctx.lineWidth=1;ctx.setLineDash([3,3]);ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.globalAlpha=Math.min(recAlpha,0.8);
+        ctx.beginPath();ctx.arc(sp.cx,sp.cy,8,0,Math.PI*2);
+        ctx.strokeStyle=COLORS[1];ctx.lineWidth=1.5;ctx.shadowColor=COLORS[1];ctx.shadowBlur=6;
+        ctx.stroke();
+      });
+      ctx.restore();
+    }
+    /* star */
+    ctx.save();ctx.globalAlpha=Math.min(tuAlpha,1);
+    ctx.beginPath();
+    var r1=9,r2=4;
+    for(var j=0;j<10;j++){
+      var r=j%2===0?r1:r2;
+      var ang=Math.PI/5*j-Math.PI/2;
+      if(j===0)ctx.moveTo(p.cx+r*Math.cos(ang),p.cy+r*Math.sin(ang));
+      else ctx.lineTo(p.cx+r*Math.cos(ang),p.cy+r*Math.sin(ang));
+    }
+    ctx.closePath();
+    ctx.fillStyle='#FFD700';ctx.shadowColor='#FFD700';ctx.shadowBlur=14;ctx.fill();
+    ctx.font='bold 8.5px system-ui';ctx.fillStyle='#fff';ctx.textAlign='center';
+    ctx.shadowBlur=0;ctx.fillText('T\u00FA \u266B',p.cx,p.cy+18);
+    ctx.restore();
+  }
+
+  function render(){
+    ctx.fillStyle='#0f0f0f';ctx.fillRect(0,0,W,H);
+    axes();drawSongs();drawCents();drawFloatLbls();drawGenreLabels();drawTuCancion();
+  }
+
+  function spUpdate(){
+    fc++;
+    var st=document.getElementById('sp-st');
+    if(ph===1){
+      if(fc===1&&st)st.textContent='Spotify tiene 100 millones de canciones \u2014 todas sin etiqueta de g\u00E9nero...';
+      var shown=Math.min(Math.floor(fc/13),SONGS.length);
+      for(var i=0;i<shown;i++){
+        sA[i]=Math.min(1,sA[i]+0.1);
+        if(i>lastSh&&sA[i]>0.1){
+          lastSh=i;
+          var p=tC(SONGS[i].x,SONGS[i].y);
+          lbls.push({n:SONGS[i].n,cx:p.cx,cy:p.cy,a:1,dy:0});
+        }
+      }
+      if(shown>=SONGS.length&&sA.every(function(a){return a>=1;})){ph=2;fc=0;}
+    }
+    else if(ph===2){
+      if(fc===1&&st)st.textContent='K-Means: elige 3 centros al azar y los ir\u00E1 ajustando hasta que los grupos converjan...';
+      cA[0]=Math.min(1,fc/18);
+      cA[1]=Math.min(1,(fc-10)/18);
+      cA[2]=Math.min(1,(fc-20)/18);
+      if(cA[2]>=1&&fc>70){ph=3;fc=0;}
+    }
+    else if(ph===3){
+      if(fc===1&&st)st.innerHTML='<span style="color:#FF6B35;font-weight:700;">Iteraci\u00F3n 1</span> \u2014 Asigna cada canci\u00F3n al centro m\u00E1s cercano (mismo color)...';
+      var prog=fc/45;
+      SONGS.forEach(function(s,i){
+        if(prog>i/SONGS.length)sCol[i]=COLORS[s.c];
+      });
+      if(prog>=1&&fc>80){ph=4;fc=0;}
+    }
+    else if(ph===4){
+      if(fc===1&&st)st.innerHTML='<span style="color:#1DB954;font-weight:700;">Iteraci\u00F3n 2</span> \u2014 Los centros se mueven al coraz\u00F3n de su grupo...';
+      var t=Math.min(1,fc/55);
+      cents.forEach(function(c,i){
+        c.x=INIT_C[i].x+(TRUE_C[i].x-INIT_C[i].x)*t;
+        c.y=INIT_C[i].y+(TRUE_C[i].y-INIT_C[i].y)*t;
+      });
+      if(t>=1){ph=5;fc=0;}
+    }
+    else if(ph===5){
+      if(fc===1&&st)st.innerHTML='\u00A1Convergido! Sin que nadie dijera "esto es reggaet\u00F3n" \u2014 <strong style="color:#1DB954">el algoritmo encontr\u00F3 los grupos solo.</strong>';
+      genAlpha=Math.min(1,fc/35);
+      if(genAlpha>=1&&fc>90){ph=6;fc=0;}
+    }
+    else if(ph===6){
+      if(fc===1&&st)st.innerHTML='Escuchas una canci\u00F3n nueva \u2605 \u2014 Spotify la ubica en su grupo y te recomienda canciones similares.';
+      tuAlpha=Math.min(1,fc/25);
+      if(fc>35)recAlpha=Math.min(1,(fc-35)/30);
+      if(recAlpha>=1)ph=7;
+    }
+  }
+
+  function spLoop(){spUpdate();render();if(ph<7)rf=requestAnimationFrame(spLoop);else rf=null;}
+
+  window.spRestart=function(){if(rf)cancelAnimationFrame(rf);spInit();};
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){setTimeout(spInit,400);});
+  else setTimeout(spInit,400);
+})();
+</script>
 </section>
 <section id="aprendizaje-por-refuerzo" class="level4">
 <h4 class="anchored" data-anchor-id="aprendizaje-por-refuerzo">3. Aprendizaje por Refuerzo</h4>
@@ -723,7 +1558,303 @@ Inteligencia Artificial
 </div>
 </div>
 </div>
-<p><strong>Ejemplos reales:</strong> - AlphaGo (DeepMind) aprendió a jugar Go mejor que cualquier humano sin que nadie le enseñara estrategias — solo jugó millones de partidas contra sí mismo - Spot de Boston Dynamics aprendió a caminar en terreno irregular (lo veremos en la Sesión 13) - Los algoritmos de recomendación de TikTok aprenden qué contenido maximiza el tiempo que te quedas en la app</p>
+<p><strong>Ejemplos:</strong></p>
+<ul>
+<li><p>AlphaGo (DeepMind) aprendió a jugar Go mejor que cualquier humano sin que nadie le enseñara estrategias — solo jugó millones de partidas contra sí mismo</p></li>
+<li><p>Spot de Boston Dynamics aprendió a caminar en terreno irregular (lo veremos a detalle en otra sesión)</p></li>
+<li><p>Los algoritmos de recomendación de TikTok aprenden qué contenido maximiza el tiempo que te quedas en la app</p></li>
+</ul>
+<div id="mr-wrap" style="margin:1.5rem 0;">
+  <p style="text-align:center;font-size:.82rem;color:#888;margin:0 0 .6rem;font-style:italic;">
+    Animación: un agente aprende a cruzar el hueco — Aprendizaje por Refuerzo
+  </p>
+  <div style="display:flex;flex-direction:column;align-items:center;gap:.6rem;">
+    <canvas id="mr-cv" width="460" height="240" style="max-width:100%;border-radius:10px;border:1px solid #e2e8f0;"></canvas>
+    <p id="mr-st" style="font-size:.83rem;font-weight:600;color:#1d4ed8;
+       margin:0;min-height:1.4em;text-align:center;max-width:460px;"></p>
+    <button onclick="mrRestart()" style="background:transparent;border:1px solid #cbd5e1;border-radius:6px;
+             padding:5px 18px;font-size:.78rem;cursor:pointer;color:#64748b;">
+      ↺ Ver de nuevo
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ── Pixel sprites 8×10, scale=3 ── */
+  var SC=3, CW=8*SC, CH=10*SC;
+  var FR={
+    stand:[
+      [0,0,1,1,1,1,0,0],[0,1,1,1,1,1,1,0],
+      [0,3,3,2,2,3,0,0],[0,2,2,2,2,2,2,0],
+      [0,2,3,3,3,2,0,0],[0,0,1,4,4,1,0,0],
+      [0,4,4,4,4,4,4,0],[0,4,4,0,0,4,4,0],
+      [0,3,3,0,0,3,3,0],[3,3,3,0,0,3,3,3]
+    ],
+    run1:[
+      [0,0,1,1,1,1,0,0],[0,1,1,1,1,1,1,0],
+      [0,3,3,2,2,3,0,0],[0,2,2,2,2,2,2,0],
+      [0,2,3,3,3,2,0,0],[0,0,1,4,4,1,0,0],
+      [0,4,4,4,4,0,0,0],[0,4,4,4,0,3,0,0],
+      [0,3,3,0,0,3,3,0],[0,3,0,0,0,0,3,0]
+    ],
+    run2:[
+      [0,0,1,1,1,1,0,0],[0,1,1,1,1,1,1,0],
+      [0,3,3,2,2,3,0,0],[0,2,2,2,2,2,2,0],
+      [0,2,3,3,3,2,0,0],[0,0,1,4,4,1,0,0],
+      [0,0,0,4,4,4,4,0],[0,0,3,0,4,4,4,0],
+      [0,3,3,0,0,3,3,0],[0,3,0,0,0,0,3,0]
+    ],
+    jump:[
+      [0,0,1,1,1,1,0,0],[0,1,1,1,1,1,1,0],
+      [0,3,3,2,2,3,0,0],[0,2,2,2,2,2,2,0],
+      [0,2,3,3,3,2,0,0],[1,0,4,4,4,4,0,1],
+      [0,4,4,4,4,4,4,0],[0,4,3,3,3,3,4,0],
+      [0,3,3,0,0,3,3,0],[0,0,0,0,0,0,0,0]
+    ],
+    fall:[
+      [0,0,1,1,1,1,0,0],[0,1,1,1,1,1,1,0],
+      [0,3,3,2,2,3,0,0],[2,2,2,2,2,2,2,2],
+      [0,2,3,3,3,2,0,0],[0,0,1,4,4,1,0,0],
+      [4,4,4,4,4,4,4,4],[0,0,4,4,4,4,0,0],
+      [4,3,0,0,0,0,3,4],[3,0,0,0,0,0,0,3]
+    ]
+  };
+  var CLR={1:'#CC3300',2:'#FFBF9B',3:'#6B3F1B',4:'#2255CC'};
+
+  /* ── Scene constants ── */
+  var W=460,H=240,GY=192,GX1=180,GX2=296;
+
+  /* ── State ── */
+  var cv,ctx,ph=0,fc=0,rf=null;
+  var cx=0,cy=0,vx=0,vy=0;
+  var score=0,attempt=0;
+  var runF=0,runT=0,curFR;
+  var particles=[],msgs=[];
+
+  /* ── Helpers ── */
+  function foot(){return cy+CH;}
+  function center(){return cx+CW/2;}
+  function onGround(){
+    var f=foot(),c=center();
+    return f>=GY && (c<GX1||c>GX2);
+  }
+  function inGap(){return center()>GX1&&center()<GX2;}
+  function reset(){cx=12;cy=GY-CH;vx=0;vy=0;runF=0;runT=0;}
+  function tickRun(){runT++;if(runT%9===0)runF=(runF+1)%2;return runF===0?FR.run1:FR.run2;}
+  function addPart(x,y,col,n){
+    for(var i=0;i<n;i++){
+      var a=Math.PI*2*i/n+Math.random()*.4;
+      particles.push({x:x,y:y,vx:Math.cos(a)*3.5,vy:Math.sin(a)*3.5-1.5,
+                      a:1,col:col,s:3+Math.random()*2});
+    }
+  }
+  function addMsg(t,col,x,y){msgs.push({t:t,col:col,x:x,y:y,a:1});}
+
+  /* ── Drawing ── */
+  function drawScene(){
+    var g=ctx.createLinearGradient(0,0,0,GY);
+    g.addColorStop(0,'#5BB8F5');g.addColorStop(1,'#C8E8FF');
+    ctx.fillStyle=g;ctx.fillRect(0,0,W,GY);
+    /* death zone */
+    ctx.fillStyle='#1a1025';ctx.fillRect(0,GY,W,H-GY);
+    /* gap red glow */
+    var rg=ctx.createLinearGradient(0,GY,0,H);
+    rg.addColorStop(0,'rgba(220,40,40,0.25)');rg.addColorStop(1,'rgba(180,20,20,0.05)');
+    ctx.fillStyle=rg;ctx.fillRect(GX1,GY,GX2-GX1,H-GY);
+    /* platforms */
+    ctx.fillStyle='#4A8A28';ctx.fillRect(0,GY,GX1,7);
+    ctx.fillStyle='#7A5230';ctx.fillRect(0,GY+7,GX1,H-GY-7);
+    ctx.fillStyle='#4A8A28';ctx.fillRect(GX2,GY,W-GX2,7);
+    ctx.fillStyle='#7A5230';ctx.fillRect(GX2,GY+7,W-GX2,H-GY-7);
+    /* brick pattern */
+    ctx.fillStyle='rgba(0,0,0,0.08)';
+    for(var bx=0;bx<W;bx+=32){for(var by=GY+7;by<H;by+=12){
+      ctx.fillRect(bx+(by%24===0?0:16),by,30,10);
+    }}
+    /* clouds */
+    [[70,38,28],[195,25,22],[360,42,32]].forEach(function(c){
+      ctx.fillStyle='rgba(255,255,255,0.88)';
+      ctx.beginPath();ctx.arc(c[0],c[1],c[2],0,Math.PI*2);ctx.fill();
+      ctx.beginPath();ctx.arc(c[0]+c[2],c[1]+6,c[2]*.7,0,Math.PI*2);ctx.fill();
+      ctx.beginPath();ctx.arc(c[0]-c[2]*.7,c[1]+6,c[2]*.6,0,Math.PI*2);ctx.fill();
+    });
+    /* flag */
+    ctx.fillStyle='#555';ctx.fillRect(GX2+62,GY-58,3,58);
+    ctx.fillStyle='#1DB954';
+    ctx.beginPath();ctx.moveTo(GX2+65,GY-58);
+    ctx.lineTo(GX2+65+22,GY-48);ctx.lineTo(GX2+65,GY-38);
+    ctx.closePath();ctx.fill();
+    /* gap danger spikes hint */
+    ctx.fillStyle='rgba(220,40,40,0.4)';
+    for(var sx=GX1+8;sx<GX2-8;sx+=18){
+      ctx.beginPath();ctx.moveTo(sx,H);ctx.lineTo(sx+9,H-14);ctx.lineTo(sx+18,H);ctx.fill();
+    }
+  }
+
+  function drawChar(frame,alpha){
+    if(alpha===undefined)alpha=1;
+    ctx.save();ctx.globalAlpha=alpha;
+    frame.forEach(function(row,r){
+      row.forEach(function(col,c){
+        if(!col)return;
+        ctx.fillStyle=CLR[col];
+        ctx.fillRect(cx+c*SC,cy+r*SC,SC,SC);
+      });
+    });
+    ctx.restore();
+  }
+
+  function drawHUD(){
+    ctx.save();
+    /* attempt */
+    if(attempt>0){
+      ctx.fillStyle='rgba(0,0,0,0.55)';
+      var aw=84;ctx.fillRect(8,8,aw,20);
+      ctx.fillStyle='#fff';ctx.font='bold 11px monospace';ctx.textAlign='left';
+      ctx.fillText('Intento '+attempt+' / 3',14,22);
+    }
+    /* score */
+    ctx.fillStyle='rgba(0,0,0,0.55)';ctx.fillRect(W-96,8,88,20);
+    ctx.fillStyle=score>=0?'#1DB954':'#ef4444';
+    ctx.font='bold 11px monospace';ctx.textAlign='right';
+    ctx.fillText('Puntos: '+(score>=0?'+':'')+score,W-12,22);
+    ctx.restore();
+  }
+
+  function drawParticles(){
+    for(var i=particles.length-1;i>=0;i--){
+      var p=particles[i];
+      p.x+=p.vx;p.y+=p.vy;p.vy+=0.2;p.a-=0.022;
+      if(p.a<=0){particles.splice(i,1);continue;}
+      ctx.save();ctx.globalAlpha=p.a;
+      ctx.fillStyle=p.col;ctx.fillRect(p.x,p.y,p.s,p.s);
+      ctx.restore();
+    }
+  }
+
+  function drawMsgs(){
+    for(var i=msgs.length-1;i>=0;i--){
+      var m=msgs[i];m.y-=0.6;m.a-=0.011;
+      if(m.a<=0){msgs.splice(i,1);continue;}
+      ctx.save();ctx.globalAlpha=m.a;
+      ctx.font='bold 15px system-ui';ctx.textAlign='center';
+      ctx.strokeStyle='rgba(0,0,0,0.7)';ctx.lineWidth=3;
+      ctx.strokeText(m.t,m.x,m.y);
+      ctx.fillStyle=m.col;ctx.fillText(m.t,m.x,m.y);
+      ctx.restore();
+    }
+  }
+
+  function render(){
+    ctx.clearRect(0,0,W,H);
+    drawScene();
+    /* character alpha: fade when falling into gap */
+    var charA=1;
+    if(inGap()&&foot()>GY){charA=Math.max(0,1-(foot()-GY)/45);}
+    drawChar(curFR,charA);
+    drawParticles();drawMsgs();drawHUD();
+  }
+
+  /* ── Update phases ── */
+  function mrUpdate(){
+    fc++;
+    var st=document.getElementById('mr-st');
+
+    if(ph===1){
+      curFR=FR.stand;
+      if(fc===1){attempt=1;reset();
+        if(st)st.textContent='El agente empieza sin saber nada. Intento 1 — ¿puede cruzar el hueco?';}
+      if(fc>70){ph=2;fc=0;}
+    }
+    else if(ph===2){   /* run → attempt 1 */
+      curFR=tickRun();cx+=2.5;
+      if(center()>=GX1-4){ph=3;fc=0;vx=2.6;vy=-8.0;}
+    }
+    else if(ph===3){   /* jump 1 — too short */
+      curFR=vy>1?FR.fall:FR.jump;
+      cx+=vx;cy+=vy;vy+=0.5;
+      if(onGround()){cy=GY-CH;}
+      if(inGap()&&foot()>GY+36){
+        if(st)st.innerHTML='<span style="color:#ef4444">❌ Cayó al hueco — Penalización: −10 pts.</span> El agente registra el error.';
+        score-=10;
+        addPart(center(),GY+10,'#ef4444',10);
+        addMsg('−10 pts','#ef4444',center(),GY+5);
+        ph=4;fc=0;
+      }
+    }
+    else if(ph===4){   /* pause → reset for attempt 2 */
+      curFR=FR.stand;
+      if(fc>90){attempt=2;reset();ph=5;fc=0;
+        if(st)st.innerHTML='<strong>Intento 2:</strong> el agente ajusta — <em>"salté poco, esta vez salto más fuerte"</em>...';}
+    }
+    else if(ph===5){   /* run → attempt 2 */
+      curFR=tickRun();cx+=2.8;
+      if(center()>=GX1-4){ph=6;fc=0;vx=3.1;vy=-8.5;}
+    }
+    else if(ph===6){   /* jump 2 — almost, but still falls */
+      curFR=vy>1?FR.fall:FR.jump;
+      cx+=vx;cy+=vy;vy+=0.5;
+      if(onGround()){cy=GY-CH;}
+      if(inGap()&&foot()>GY+36){
+        if(st)st.innerHTML='<span style="color:#f97316">⚠️ ¡Casi! Cayó cerca del borde — Penalización: −5 pts.</span> Muy cerca...';
+        score-=5;
+        addPart(center(),GY+10,'#f97316',10);
+        addMsg('\u00A1Casi! −5 pts','#f97316',center(),GY+5);
+        ph=7;fc=0;
+      }
+    }
+    else if(ph===7){   /* pause → reset for attempt 3 */
+      curFR=FR.stand;
+      if(fc>90){attempt=3;reset();ph=8;fc=0;
+        if(st)st.innerHTML='<strong>Intento 3:</strong> <em>"necesito más velocidad y ángulo"</em> — el agente aprendió la distancia exacta.';}
+    }
+    else if(ph===8){   /* run → attempt 3 (faster!) */
+      curFR=tickRun();cx+=3.2;
+      if(center()>=GX1-4){ph=9;fc=0;vx=3.8;vy=-9.0;}
+    }
+    else if(ph===9){   /* perfect jump */
+      curFR=vy>1?FR.fall:FR.jump;
+      cx+=vx;cy+=vy;vy+=0.5;
+      /* landed on right platform */
+      if(foot()>=GY&&center()>GX2){
+        cy=GY-CH;vx=0;vy=0;curFR=FR.stand;score+=100;
+        if(st)st.innerHTML='<strong style="color:#1DB954">\u2705 \u00A1Lo logr\u00F3! Recompensa: +100 pts \uD83C\uDF89</strong> — Prueba \u2192 error \u2192 ajuste \u2192 \u00E9xito. Eso es Aprendizaje por Refuerzo.';
+        addPart(center(),cy,'#1DB954',14);
+        addPart(center(),cy,'#FFD700',10);
+        addMsg('+100 pts \uD83C\uDF89','#1DB954',center(),cy-10);
+        ph=10;fc=0;
+      }
+    }
+    else if(ph===10){  /* celebrate */
+      curFR=FR.stand;
+      if(fc%18===0&&fc<130){
+        addPart(cx+CW/2+Math.random()*50-25,cy-10,'#FFD700',6);
+        addPart(cx+CW/2+Math.random()*50-25,cy-10,'#1DB954',6);
+        addPart(cx+CW/2+Math.random()*50-25,cy-10,'#CC3300',5);
+      }
+    }
+  }
+
+  function mrLoop(){mrUpdate();render();if(ph<11)rf=requestAnimationFrame(mrLoop);else rf=null;}
+
+  window.mrRestart=function(){
+    if(rf)cancelAnimationFrame(rf);
+    ph=1;fc=0;score=0;attempt=0;particles=[];msgs=[];
+    curFR=FR.stand;
+    if(cv){reset();rf=requestAnimationFrame(mrLoop);}
+    else{
+      cv=document.getElementById('mr-cv');
+      if(!cv)return;ctx=cv.getContext('2d');reset();
+      rf=requestAnimationFrame(mrLoop);
+    }
+  };
+
+  if(document.readyState==='loading')
+    document.addEventListener('DOMContentLoaded',function(){setTimeout(mrRestart,400);});
+  else setTimeout(mrRestart,400);
+})();
+</script>
 <hr>
 </section>
 </section>
@@ -731,7 +1862,7 @@ Inteligencia Artificial
 <h3 class="anchored" data-anchor-id="demo-teachable-machine">Demo: Teachable Machine</h3>
 <p>Ahora vamos a hacer algo. En lugar de solo escuchar cómo funciona el aprendizaje de máquinas, vamos a construir un modelo en tiempo real, en tu navegador, sin código, gratis.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -740,7 +1871,7 @@ Inteligencia Artificial
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Compartir pantalla y abrir <a href="https://teachablemachine.withgoogle.com">teachablemachine.withgoogle.com</a>. Realizar la demo en vivo mientras el estudiante puede seguirla en paralelo en su propio navegador.</p>
 </div>
@@ -756,7 +1887,7 @@ Inteligencia Artificial
 <li>Prueba el modelo — pon un objeto frente a la cámara y observa cómo el modelo predice en tiempo real</li>
 </ol>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -765,7 +1896,7 @@ Inteligencia Artificial
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Mostrar primero el modelo fallando con ángulos raros o poca luz — no editar ese momento, es el más valioso pedagógicamente. Luego agregar más ejemplos de entrenamiento y mostrar la mejora. Punto clave a decir en cámara: <em>“más datos = mejor modelo, pero también: datos sesgados = modelo sesgado”</em>.</p>
 </div>
@@ -826,9 +1957,9 @@ La idea central
 <h3 class="anchored" data-anchor-id="recursos-para-explorar-más">Recursos para explorar más</h3>
 <ul>
 <li><a href="https://teachablemachine.withgoogle.com">Teachable Machine</a> — el demo que hicimos hoy, para que lo explores por tu cuenta</li>
-<li><a href="https://quickdraw.withgoogle.com">Quick, Draw!</a> — juega a que una red neuronal adivina tus dibujos</li>
+<li><a href="https://quickdraw.withgoogle.com">Quick, Draw!</a> — juega a que una red neuronal adivine tus dibujos</li>
 <li><a href="https://www.elementsofai.com/es">Elements of AI</a> — curso introductorio gratuito en español (Universidad de Helsinki)</li>
-<li><a href="https://experiments.withgoogle.com/collection/ai">Google AI Experiments</a> — colección de demos interactivas gratuitas</li>
+<li><a href="https://experiments.withgoogle.com/collection/ai">Google AI Experiments</a> — colección de demos interactivos y gratuitos</li>
 </ul>
 <hr>
 <div class="callout callout-style-simple callout-note no-icon">
