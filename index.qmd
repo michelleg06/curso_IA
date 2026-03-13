@@ -1,0 +1,73 @@
+---
+title: "Inteligencia Artificial"
+subtitle: "Panorama de la IA para estudiantes de nivel medio-superior"
+format:
+  html:
+    toc: false
+    number-sections: false
+---
+
+## ¿De qué trata este curso?
+
+La inteligencia artificial ya forma parte de tu vida — en el feed de TikTok, en Spotify, en Google Maps, en los filtros de Instagram. Pero, ¿sabes cómo funciona realmente? ¿Y cómo usarla a tu favor?
+
+Este curso te da un panorama de la IA: qué es, qué puede y qué no puede hacer, cómo usarla como herramienta de estudio, y por qué importa entenderla como ciudadano.
+
+**No se requieren conocimientos previos de programación ni matemáticas avanzadas.**
+
+---
+
+## ¿Para quién es?
+
+- Estudiantes de nivel medio-superior (preparatoria) en San Luis Potosí.
+- Cualquier persona curiosa sobre inteligencia artificial, sin importar su área.
+
+---
+
+## Formato
+
+- 15 sesiones de 30–45 minutos.
+- Modalidad en línea — sesiones asíncronas grabadas, a tu ritmo.
+- 3 sesiones en vivo vía Zoom con invitados especiales.
+- Sin evaluaciones formales ni proyectos finales — solo asistencia.
+
+---
+
+## Invitados especiales
+
+A lo largo del curso contaremos con la participación de investigadores y especialistas:
+
+| Sesión | Invitado | Tema |
+|--------|----------|------|
+| S6 — 9 jun | **IPICYT** · San Luis Potosí | IA en México: investigación y aplicaciones reales |
+| S11 — 14 jul | **Boston College** · Online | IA en la educación global |
+| S15 — 11 ago | **PIT Policy México** | IA, política pública y ciudadanía |
+
+---
+
+## Cronograma
+
+| # | Fecha | Sesión |
+|---|-------|--------|
+| 1 | 5 mayo | ¿Qué es la IA y dónde está en tu vida? |
+| 2 | 12 mayo | ¿Cómo "aprende" una máquina? |
+| 3 | 19 mayo | Algoritmos: ¿qué método para qué problema? |
+| 4 | 26 mayo | IA Generativa: ChatGPT, Gemini, Perplexity |
+| 5 | 2 junio | Ética y problemas reales de la IA |
+| **6** | **9 junio** | **EN VIVO: IPICYT — IA en México** |
+| 7 | 16 junio | IA como tutor de lenguaje: Lectura, Escritura e Idiomas |
+| 8 | 23 junio | IA para Creatividad: Arte, Música y Diseño |
+| 9 | 30 junio | IA para Organización y Productividad |
+| 10 | 7 julio | IA como tutor académico: Matemáticas y más |
+| **11** | **14 julio** | **EN VIVO: Boston College — IA en la educación global** |
+| 12 | 21 julio | Programación con IA: tu primer vistazo a Python |
+| 13 | 28 julio | Robótica e IA en el mundo físico |
+| 14 | 4 agosto | IA en Medicina, Ciencia y Sociedad |
+| **15** | **11 agosto** | **EN VIVO: PIT Policy México — IA, política y ciudadanía** |
+
+---
+
+<center>
+<a href="syllabus.qmd" class="btn btn-outline-primary" style="margin: 0.5rem;">Ver programa completo</a>
+<a href="sesiones/sesion-01.qmd" class="btn btn-primary" style="margin: 0.5rem;">Comenzar el curso →</a>
+</center>

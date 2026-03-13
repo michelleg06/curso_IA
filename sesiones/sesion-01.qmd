@@ -1,0 +1,625 @@
+---
+title: "Sesión 1: ¿Qué es la IA y dónde está en tu vida?"
+subtitle: "Bloque 1 — Fundamentos + Ética · 5 de mayo de 2026 · 45 minutos"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+:::{.callout-note appearance="minimal"}
+**Sesión 1 de 15** · Bloque 1: Fundamentos + Ética · [Ver programa completo](../syllabus.qmd)
+:::
+
+---
+
+## Video de la sesión
+
+```{=html}
+<!-- PLACEHOLDER: reemplazar src con el enlace de Vimeo/YouTube una vez grabado -->
+<div style="background:#f0f4f8; border-radius:8px; padding:3rem; text-align:center; color:#666; margin-bottom:2rem;">
+  <p style="font-size:1.2rem;">▶ Video de la sesión próximamente</p>
+  <p style="font-size:0.9rem;">Mientras tanto, puedes leer el contenido completo abajo.</p>
+</div>
+```
+
+---
+
+## Contenido escrito
+
+:::{.callout-caution collapse="true"}
+# 📹 Nota de producción
+El texto a continuación es el contenido completo de la sesión. Sirve como guión de grabación y como material de lectura para los estudiantes. Los bloques de **📹 Nota de producción** son instrucciones para la grabación.
+:::
+
+---
+
+### Introducción
+
+Abre TikTok ahora mismo. Lo que ves en los primeros tres segundos — ese primer video, ese primer audio — lo decidió una inteligencia artificial. No un humano. No un editor. Un algoritmo que lleva semanas observándote: cuánto tiempo te quedas en cada video, qué tipo de contenido pausas, cuándo deslizas rápido, cuándo vuelves a ver algo. Tres segundos de pantalla. Millones de cálculos.
+
+:::{.callout-caution collapse="true"}
+# 📹 Nota de producción
+Mostrar la pantalla de TikTok brevemente → el feed "Para Ti".
+:::
+
+```{=html}
+<div style="margin:2rem 0;">
+  <p style="text-align:center;color:#888;font-size:0.82rem;margin-bottom:1rem;font-style:italic;">
+    ¿Cómo decide TikTok qué mostrarte?
+  </p>
+
+  <div style="display:flex;gap:1.5rem;align-items:center;justify-content:center;flex-wrap:wrap;">
+
+    <!-- Candidatos -->
+    <div>
+      <p style="color:#aaa;font-size:0.75rem;text-align:center;margin-bottom:0.6rem;letter-spacing:.05em;">
+        CANDIDATOS
+      </p>
+      <div id="tt-candidates" style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;width:230px;"></div>
+    </div>
+
+    <!-- Flecha -->
+    <div id="tt-arrow" style="font-size:1.8rem;color:#555;opacity:0;transition:opacity .5s;">→</div>
+
+    <!-- Teléfono -->
+    <div>
+      <p style="color:#aaa;font-size:0.75rem;text-align:center;margin-bottom:0.6rem;letter-spacing:.05em;">
+        PARA TI
+      </p>
+      <div style="width:110px;height:190px;background:#111;border-radius:18px;border:3px solid #333;
+                  display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;">
+        <!-- header -->
+        <div style="position:absolute;top:0;left:0;right:0;padding:6px 8px;
+                    display:flex;justify-content:space-around;font-size:10px;color:#fff;
+                    background:linear-gradient(#111,transparent);z-index:2;">
+          <span style="opacity:.5">Siguiendo</span>
+          <span style="font-weight:bold;border-bottom:2px solid #fff;padding-bottom:2px;">Para Ti</span>
+          <span style="opacity:.5">Buscar</span>
+        </div>
+        <!-- video area -->
+        <div id="tt-phone-content"
+             style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;
+                    font-size:2.2rem;background:#1a1a2e;transition:background .6s;">
+          <span style="opacity:.3;font-size:0.7rem;color:#fff;">esperando...</span>
+        </div>
+        <!-- bottom caption -->
+        <div id="tt-phone-caption"
+             style="position:absolute;bottom:0;left:0;right:0;padding:8px;
+                    background:linear-gradient(transparent,#000a);color:#fff;font-size:9px;opacity:0;transition:opacity .5s;">
+          @algoritmo · este video lo elegí para ti en &lt;50ms
+        </div>
+        <!-- right actions -->
+        <div style="position:absolute;right:4px;bottom:30px;display:flex;flex-direction:column;gap:8px;align-items:center;">
+          <div style="font-size:14px;">❤️</div>
+          <div style="font-size:14px;">💬</div>
+          <div style="font-size:14px;">↗️</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timer y botón -->
+  <p id="tt-status" style="text-align:center;color:#888;font-size:0.78rem;margin-top:0.8rem;min-height:1.2em;"></p>
+  <div style="text-align:center;margin-top:0.4rem;">
+    <button id="tt-btn" onclick="ttRestart()"
+            style="background:#fe2c55;color:#fff;border:none;border-radius:6px;
+                   padding:6px 18px;font-size:0.82rem;cursor:pointer;">
+      Repetir
+    </button>
+  </div>
+</div>
+
+<script>
+(function(){
+  const videos = [
+    { label:"Fútbol",   emoji:"⚽", score:0, target:42, bg:"#1a1a2e" },
+    { label:"Música",   emoji:"🎵", score:0, target:78, bg:"#16213e" },
+    { label:"Cocina",   emoji:"🍳", score:0, target:31, bg:"#0f3460" },
+    { label:"Memes",    emoji:"😂", score:0, target:95, bg:"#2d1b69" },
+    { label:"Noticias", emoji:"📰", score:0, target:55, bg:"#1a1a2e" },
+    { label:"Baile",    emoji:"💃", score:0, target:67, bg:"#16213e" },
+  ];
+
+  function buildCards(){
+    const grid = document.getElementById('tt-candidates');
+    grid.innerHTML = '';
+    videos.forEach((v,i) => {
+      grid.innerHTML += `
+        <div id="tt-card-${i}" style="background:#1e1e2e;border-radius:8px;padding:8px 6px;
+             border:2px solid #333;transition:border-color .4s,transform .3s;">
+          <div style="font-size:1.4rem;text-align:center;">${v.emoji}</div>
+          <div style="font-size:10px;color:#ccc;text-align:center;margin:2px 0;">${v.label}</div>
+          <div style="background:#333;border-radius:3px;height:5px;margin-top:4px;overflow:hidden;">
+            <div id="tt-bar-${i}" style="height:100%;width:0%;background:#fe2c55;transition:width .05s;border-radius:3px;"></div>
+          </div>
+          <div id="tt-score-${i}" style="font-size:10px;color:#fe2c55;text-align:right;margin-top:2px;">0%</div>
+        </div>`;
+    });
+  }
+
+  function animateScores(cb){
+    const steps = 60;
+    let tick = 0;
+    const id = setInterval(()=>{
+      tick++;
+      videos.forEach((v,i)=>{
+        v.score = Math.min(v.target, Math.round(v.target * tick / steps + (Math.random()*4-2)));
+        v.score = Math.max(0, Math.min(100, v.score));
+        document.getElementById(`tt-bar-${i}`).style.width = v.score + '%';
+        document.getElementById(`tt-score-${i}`).textContent = v.score + '%';
+      });
+      if(tick >= steps){ clearInterval(id); cb(); }
+    }, 30);
+  }
+
+  function highlightWinner(){
+    const winIdx = videos.reduce((best,v,i)=>v.target>videos[best].target?i:best,0);
+    videos.forEach((_,i)=>{
+      const card = document.getElementById(`tt-card-${i}`);
+      if(i===winIdx){
+        card.style.borderColor='#fe2c55';
+        card.style.transform='scale(1.06)';
+      } else {
+        card.style.opacity='0.4';
+      }
+    });
+    return winIdx;
+  }
+
+  function showOnPhone(idx){
+    document.getElementById('tt-arrow').style.opacity='1';
+    const phone = document.getElementById('tt-phone-content');
+    phone.style.background = videos[idx].bg;
+    phone.innerHTML = `<span style="font-size:2.4rem;">${videos[idx].emoji}</span>`;
+    setTimeout(()=>{
+      document.getElementById('tt-phone-caption').style.opacity='1';
+    }, 400);
+  }
+
+  function setStatus(txt){ document.getElementById('tt-status').textContent = txt; }
+
+  window.ttRestart = function(){
+    videos.forEach(v=>{ v.score=0; });
+    document.getElementById('tt-arrow').style.opacity='0';
+    document.getElementById('tt-phone-content').style.background='#1a1a2e';
+    document.getElementById('tt-phone-content').innerHTML=
+      '<span style="opacity:.3;font-size:0.7rem;color:#fff;">esperando...</span>';
+    document.getElementById('tt-phone-caption').style.opacity='0';
+    setStatus('');
+    buildCards();
+    setTimeout(run, 200);
+  };
+
+  function run(){
+    setStatus('Evaluando candidatos...');
+    animateScores(()=>{
+      setStatus('Seleccionando el más relevante para ti...');
+      setTimeout(()=>{
+        const w = highlightWinner();
+        setTimeout(()=>{
+          showOnPhone(w);
+          setStatus(`✓ Decisión tomada en < 50 milisegundos · ${videos[w].label} ganó con ${videos[w].target}%`);
+        }, 500);
+      }, 600);
+    });
+  }
+
+  buildCards();
+  setTimeout(run, 600);
+})();
+</script>
+```
+
+Pero TikTok no está solo. Cada vez que abres Spotify en modo aleatorio, una IA decidió qué canción reproducir a continuación. Cuando escribes una dirección en Google Maps, una IA calculó no solo la ruta más corta sino la que tiene menos tráfico en ese momento. Cuando Gmail mueve un correo directamente a tu carpeta de spam, una IA leyó ese mensaje y decidió que no merecía tu atención.
+
+Vivimos rodeados de inteligencia artificial. Pero muy pocos sabemos realmente qué es, cómo funciona, y — lo más importante — qué puede y qué no puede hacer.
+
+Eso es exactamente lo que vamos a explorar en este curso. Y empezamos hoy con la pregunta más fundamental: **¿qué es la inteligencia artificial?**
+
+---
+
+### ¿Qué es la Inteligencia Artificial?
+
+Empecemos con una definición sencilla:
+
+:::{.callout-note}
+# Inteligencia Artificial
+Sistemas computacionales diseñados para realizar tareas que, si las hiciera un humano, diríamos que requieren inteligencia: como reconocer imágenes, entender lenguaje, tomar decisiones o predecir resultados.
+:::
+
+Pero antes de avanzar, necesitamos aclarar algunos malentendidos muy comunes.
+
+#### Lo que la IA NO es
+
+La IA no es magia. No es una entidad consciente que "piensa" o "siente". No es el robot humanoide de las películas de ciencia ficción que tiene deseos propios. No es un sistema que entiende el mundo como lo entendemos nosotros.
+
+La IA es, en esencia, matemáticas muy sofisticadas aplicadas a muchísimos datos.
+
+:::{.callout-caution collapse="true"}
+# 📹   Nota de producción
+Pausa. Dejar que esa idea aterrice. Repetir en cámara: *"matemáticas muy sofisticadas aplicadas a muchísimos datos"*.
+:::
+
+Eso no la hace menos impresionante; al contrario. Lo impresionante es que con matemáticas y datos se pueden lograr cosas que parecen mágicas. Pero cuando entiendes el mecanismo, puedes usarla mejor, cuestionarla mejor y no dejarte engañar por ella. Porque, y recuerda este mensaje, la IA se puede equivocar. Es tu trabajo aprender a discernir entre una alucinación e información que te puede apoyar.
+
+#### IA, Machine Learning y Deep Learning — ¿cuál es la diferencia?
+
+Escuchas estos tres términos constantemente y a veces se usan como si fueran lo mismo. No lo son. Son conceptos anidados, como muñecas rusas:
+
+```{=html}
+<svg viewBox="0 0 480 300" style="max-width:480px; display:block; margin:2rem auto; font-family:sans-serif;">
+  <!-- IA — círculo exterior -->
+  <ellipse cx="240" cy="155" rx="225" ry="135" fill="#e3f2fd" stroke="#1565C0" stroke-width="2.5"/>
+  <text x="42" y="52" font-size="15" fill="#1565C0" font-weight="bold">Inteligencia Artificial</text>
+  <text x="42" y="70" font-size="11" fill="#1976D2">Sistemas que realizan tareas asociadas con inteligencia</text>
+  <!-- ML — círculo medio -->
+  <ellipse cx="265" cy="175" rx="155" ry="95" fill="#fff8e1" stroke="#F57F17" stroke-width="2.5"/>
+  <text x="138" y="108" font-size="14" fill="#E65100" font-weight="bold">Machine Learning</text>
+  <text x="138" y="125" font-size="11" fill="#EF6C00">Modelos que aprenden patrones desde datos</text>
+  <!-- Deep Learning — círculo interior -->
+  <ellipse cx="290" cy="195" rx="88" ry="58" fill="#fce4ec" stroke="#C62828" stroke-width="2.5"/>
+  <text x="242" y="182" font-size="13" fill="#B71C1C" font-weight="bold">Deep Learning</text>
+  <text x="232" y="199" font-size="11" fill="#C62828">Redes neuronales</text>
+  <text x="248" y="215" font-size="11" fill="#C62828">profundas</text>
+</svg>
+```
+
+- **Inteligencia Artificial:** Es el campo de la informática que estudia y desarrolla sistemas capaces de realizar tareas que normalmente requieren inteligencia humana, como razonar, aprender, percibir, comprender lenguaje o tomar decisiones. Estos sistemas pueden implementarse mediante reglas explícitas, modelos estadísticos o métodos de aprendizaje automático. *Ejemplo:* un filtro de spam basado en reglas como “si el correo contiene ‘premio gratis’, marcar como spam” puede considerarse una forma muy simple de IA basada en reglas.
+
+- **Machine Learning: ** (Aprendizaje de Máquinas) Es un subcampo de la Inteligencia Artificial en el que los sistemas aprenden patrones a partir de datos en lugar de depender exclusivamente de reglas programadas por humanos. En lugar de decirle explícitamente qué hacer en cada caso, se entrena un modelo con ejemplos para que aprenda a generalizar y hacer predicciones o decisiones sobre nuevos datos. Hoy en día, la mayor parte de los sistemas de IA modernos se basan en machine learning.
+
+- **Deep Learning:** (Aprendizaje Profundo) Es un subcampo del machine learning que utiliza redes neuronales artificiales con múltiples capas para aprender representaciones complejas de los datos. Estas redes permiten resolver tareas difíciles como:
+
+  - reconocimiento de imágenes
+
+  - reconocimiento de voz
+
+  - procesamiento del lenguaje natural
+
+  - generación de texto o imágenes
+  
+  Muchos sistemas actuales —como modelos de lenguaje grandes (LLMs)— se basan en deep learning, o aprendizaje profundo.
+
+Cuando alguien dice "IA", casi siempre se refiere a Machine Learning o Deep Learning. Pero ahora ya sabes que son cosas distintas con distintos niveles de complejidad.
+
+---
+
+### IA en tu vida: app por app
+
+Vamos a hacer un recorrido por las apps que probablemente ya tienes en tu teléfono y ver qué tipo de IA usa cada una.
+
+:::{.callout-caution collapse="true"}
+# 📹 Nota de producción
+Dejar que las cards carguen en pantalla. Hablar de cada app mientras se señala su card. Las cards flotan automáticamente — no hace falta hacer nada extra.
+:::
+
+```{=html}
+<style>
+/* ── Card + texto en dos columnas ── */
+.app-row {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin: 1.6rem 0;
+}
+.app-card {
+  flex: 0 0 130px;
+  display: block;
+  background: #fff;
+  border-radius: 14px;
+  padding: 1rem 0.7rem 0.9rem;
+  text-align: center;
+  border-top: 4px solid var(--accent, #888);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.app-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.13);
+}
+.app-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 0.5rem;
+  animation: float-icon 3.2s ease-in-out infinite;
+}
+.app-icon img { width: 100%; height: 100%; object-fit: contain; }
+
+.app-row:nth-child(2) .app-icon { animation-delay: -0.55s; }
+.app-row:nth-child(3) .app-icon { animation-delay: -1.1s;  }
+.app-row:nth-child(4) .app-icon { animation-delay: -1.65s; }
+.app-row:nth-child(5) .app-icon { animation-delay: -2.2s;  }
+.app-row:nth-child(6) .app-icon { animation-delay: -2.75s; }
+
+@keyframes float-icon {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-6px); }
+}
+.app-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem;
+  color: #222;
+}
+.app-desc {
+  font-size: 0.68rem;
+  color: #666;
+  margin: 0 0 0.55rem;
+  line-height: 1.4;
+}
+.ai-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  padding: 3px 8px;
+  border-radius: 20px;
+  background: var(--accent, #888);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+/* Texto al lado derecho */
+.app-detail { flex: 1; padding-top: 0.2rem; }
+.app-detail h4 { margin: 0 0 0.4rem; font-size: 1rem; }
+.app-detail p  { margin: 0 0 0.4rem; font-size: 0.92rem; line-height: 1.6; }
+.app-detail .ai-type {
+  font-size: 0.78rem;
+  color: #555;
+  border-left: 3px solid var(--accent, #888);
+  padding-left: 0.6rem;
+  margin-top: 0.5rem;
+}
+/* Responsive: apilar en pantallas pequeñas */
+@media (max-width: 560px) {
+  .app-row { flex-direction: column; }
+  .app-card { flex: unset; width: 100%; }
+}
+</style>
+
+<!-- TikTok -->
+<div class="app-row">
+  <a class="app-card" href="https://www.tiktok.com" target="_blank" rel="noopener" style="--accent:#fe2c55">
+    <div class="app-icon"><img src="https://cdn.simpleicons.org/tiktok/fe2c55" alt="TikTok"></div>
+    <p class="app-name">TikTok</p>
+    <p class="app-desc">Aprende tus preferencias en menos de una hora</p>
+    <span class="ai-badge">Filtrado colaborativo</span>
+  </a>
+  <div class="app-detail" style="--accent:#fe2c55">
+    <h4>TikTok y el algoritmo "Para Ti"</h4>
+    <p>El corazón de TikTok es un sistema de recomendación. Cada vez que interactúas con un video — lo ves completo, lo compartes, lo repites, lo pausas a la mitad — estás dándole información al algoritmo. Esa información entrena un modelo que aprende tus preferencias con una velocidad sorprendente. Estudios han mostrado que en menos de una hora de uso, el algoritmo ya puede predecir con alta precisión qué te va a mantener en la pantalla.</p>
+    <p class="ai-type"><strong>Tipo de IA:</strong> Collaborative filtering + modelos de secuencia — aprende de tus patrones y de los de millones de usuarios similares a ti.</p>
+  </div>
+</div>
+
+<!-- Spotify -->
+<div class="app-row">
+  <a class="app-card" href="https://www.spotify.com" target="_blank" rel="noopener" style="--accent:#1DB954">
+    <div class="app-icon"><img src="https://cdn.simpleicons.org/spotify/1DB954" alt="Spotify"></div>
+    <p class="app-name">Spotify</p>
+    <p class="app-desc">Analiza audio e historial para recomendar música</p>
+    <span class="ai-badge">Audio + ML</span>
+  </a>
+  <div class="app-detail" style="--accent:#1DB954">
+    <h4>Spotify y las recomendaciones musicales</h4>
+    <p>Spotify usa dos tipos de análisis simultáneamente: analiza el audio de las canciones (tempo, tonalidad, energía, instrumentación) y analiza el comportamiento de millones de usuarios para detectar que "las personas que escuchan X también escuchan Y". Tu Wrapped anual y tu Discover Weekly son productos directos de Machine Learning.</p>
+    <p class="ai-type"><strong>Tipo de IA:</strong> Análisis de audio con redes neuronales + filtrado colaborativo.</p>
+  </div>
+</div>
+
+<!-- Google Maps -->
+<div class="app-row">
+  <a class="app-card" href="https://maps.google.com" target="_blank" rel="noopener" style="--accent:#34A853">
+    <div class="app-icon"><img src="https://cdn.simpleicons.org/googlemaps/34A853" alt="Google Maps"></div>
+    <p class="app-name">Google Maps</p>
+    <p class="app-desc">Predice tráfico y optimiza rutas en tiempo real</p>
+    <span class="ai-badge">Predicción temporal</span>
+  </a>
+  <div class="app-detail" style="--accent:#34A853">
+    <h4>Google Maps y el tráfico en tiempo real</h4>
+    <p>Cuando Google Maps te dice "hay tráfico en la Avenida Venustiano Carranza, toma los Insurgentes", no está adivinando. Está procesando datos de GPS de millones de usuarios en tiempo real, datos históricos de esa ruta a esa hora, y modelos predictivos entrenados con años de información. El tiempo estimado de llegada es una predicción estadística, no una certeza.</p>
+    <p class="ai-type"><strong>Tipo de IA:</strong> Modelos de predicción de series temporales + optimización de rutas.</p>
+  </div>
+</div>
+
+<!-- Instagram -->
+<div class="app-row">
+  <a class="app-card" href="https://www.instagram.com" target="_blank" rel="noopener" style="--accent:#E1306C">
+    <div class="app-icon"><img src="https://cdn.simpleicons.org/instagram/E1306C" alt="Instagram"></div>
+    <p class="app-name">Instagram</p>
+    <p class="app-desc">Detecta tu rostro con precisión de milímetros</p>
+    <span class="ai-badge">CNN — Visión</span>
+  </a>
+  <div class="app-detail" style="--accent:#E1306C">
+    <h4>Filtros de Instagram y TikTok</h4>
+    <p>¿Cómo sabe el filtro exactamente dónde están tus ojos, tu nariz, tus mejillas? No está buscando "forma redonda" genérica. Está usando una red neuronal convolucional (CNN) entrenada con millones de imágenes de caras humanas, que aprendió a detectar landmarks faciales — puntos específicos del rostro — con precisión de milímetros, en tiempo real, a 30 fotogramas por segundo.</p>
+    <p class="ai-type"><strong>Tipo de IA:</strong> Redes neuronales convolucionales (CNN) — especializadas en procesar imágenes píxel por píxel.</p>
+  </div>
+</div>
+
+<!-- Gmail -->
+<div class="app-row">
+  <a class="app-card" href="https://mail.google.com" target="_blank" rel="noopener" style="--accent:#EA4335">
+    <div class="app-icon"><img src="https://cdn.simpleicons.org/gmail/EA4335" alt="Gmail"></div>
+    <p class="app-name">Gmail</p>
+    <p class="app-desc">Clasifica miles de millones de correos como spam</p>
+    <span class="ai-badge">Clasificador de texto</span>
+  </a>
+  <div class="app-detail" style="--accent:#EA4335">
+    <h4>Gmail y el filtro de spam</h4>
+    <p>Cada correo que llega a tu bandeja de entrada pasa por un clasificador de texto. Este modelo fue entrenado con miles de millones de correos etiquetados como "spam" o "no spam", y aprendió a reconocer patrones: remitentes desconocidos, ciertos tipos de enlaces, frases características del spam, formato inusual. Cuando marcas algo como "no es spam", estás re-entrenando el modelo.</p>
+    <p class="ai-type"><strong>Tipo de IA:</strong> Clasificadores de texto — árboles de decisión, Naive Bayes, o redes neuronales para casos más complejos.</p>
+  </div>
+</div>
+
+<!-- DiDi + Uber -->
+<div class="app-row">
+  <div style="display:flex; gap:0.5rem; flex: 0 0 auto;">
+    <a class="app-card" href="https://web.didiglobal.com/mx" target="_blank" rel="noopener" style="--accent:#FF6B01; flex:0 0 110px;">
+      <div class="app-icon">
+        <img src="img/didi.svg" alt="DiDi"
+             onerror="this.outerHTML='<div style=\'width:48px;height:48px;border-radius:50%;background:#FF6B01;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin:auto;\'>🚗</div>'">
+      </div>
+      <p class="app-name">DiDi</p>
+      <p class="app-desc">Viajes en SLP y México</p>
+      <span class="ai-badge">Precio dinámico</span>
+    </a>
+    <a class="app-card" href="https://www.uber.com/mx" target="_blank" rel="noopener" style="--accent:#000000; flex:0 0 110px;">
+      <div class="app-icon"><img src="https://cdn.simpleicons.org/uber/000000" alt="Uber"></div>
+      <p class="app-name">Uber</p>
+      <p class="app-desc">Optimización de rutas en tiempo real</p>
+      <span class="ai-badge">Precio dinámico</span>
+    </a>
+  </div>
+  <div class="app-detail" style="--accent:#FF6B01">
+    <h4>DiDi y Uber: precios que piensa la IA</h4>
+    <p>El precio que te muestra DiDi o Uber cuando pides un viaje no es fijo. Es calculado dinámicamente por un modelo que considera: demanda actual en tu zona, oferta de conductores disponibles, hora del día, clima y eventos locales. A las 2 AM del viernes sube el precio porque el modelo detecta alta demanda y poca oferta. La ruta que le sugiere al conductor también es optimizada en tiempo real, y el tiempo estimado de llegada es una predicción de Machine Learning.</p>
+    <p class="ai-type"><strong>Tipo de IA:</strong> Optimización dinámica de precios + predicción de demanda geoespacial.</p>
+  </div>
+</div>
+```
+
+---
+
+### Cómo aprende una máquina: los tres tipos
+
+Ahora que viste dónde está la IA en tu vida, surge la pregunta natural: ¿cómo aprende? No todas las IAs aprenden de la misma manera. Hay tres paradigmas fundamentales.
+
+#### 1. Aprendizaje Supervisado
+
+Imagina que eres maestro y tienes que enseñarle a un alumno a distinguir fotos de perros y gatos. Le muestras miles de fotos, y debajo de cada una escribes "perro" o "gato". El alumno estudia esas fotos con sus etiquetas hasta que aprende los patrones que distinguen a uno del otro. Después, cuando le muestras una foto nueva sin etiqueta, puede decirte qué es.
+
+Eso es aprendizaje supervisado: **datos de entrada + etiquetas correctas = modelo que aprende a clasificar o predecir**.
+
+```{mermaid}
+flowchart LR
+    A["📂 Datos\netiquetados"] --> B["🤖 Modelo\nen entrenamiento"]
+    B --> C["✅ Modelo\nentrenado"]
+    D["❓ Dato\nnuevo"] --> C
+    C --> E["🏷️ Predicción"]
+```
+
+**Ejemplos reales:**
+- Filtro de spam (etiquetas: spam / no spam)
+- Detección de cáncer en radiografías (etiquetas: tumor / normal)
+- Reconocimiento de voz (etiquetas: audio → texto correcto)
+- Tu filtro facial (etiquetas: millones de fotos con puntos faciales marcados a mano)
+
+#### 2. Aprendizaje No Supervisado
+
+Ahora imagina que le das al mismo alumno miles de fotos de animales, pero sin ninguna etiqueta. Le dices: "agrúpalas como consideres que van juntas". El alumno nota que algunas tienen hocico largo, otras tienen bigotes, algunas tienen orejas paradas — y las va agrupando sin que nadie le haya dicho qué buscar.
+
+Eso es aprendizaje no supervisado: **datos sin etiquetas → el modelo encuentra estructura por sí mismo**.
+
+```{mermaid}
+flowchart LR
+    A["📂 Datos\nsin etiquetas"] --> B["🤖 Modelo\nbuscando patrones"]
+    B --> C["🔵 Grupo 1"]
+    B --> D["🟠 Grupo 2"]
+    B --> E["🟢 Grupo 3"]
+```
+
+**Ejemplos reales:**
+- Spotify agrupando canciones por similitud sonora (nadie etiquetó "esto suena a reggaetón")
+- Amazon detectando segmentos de clientes similares
+- Netflix identificando "tipos" de espectadores para personalizar portadas
+
+#### 3. Aprendizaje por Refuerzo
+
+Este es el más intuitivo de todos porque así aprenden los humanos muchas cosas. Piensa en cómo aprendiste a andar en bicicleta: nadie te explicó las ecuaciones de equilibrio. Intentaste. Te caíste. Ajustaste. Intentaste de nuevo. Con el tiempo, tu cuerpo encontró la estrategia que funciona.
+
+El aprendizaje por refuerzo funciona igual: un agente de IA toma acciones en un entorno, recibe recompensas cuando hace algo bien y penalizaciones cuando se equivoca, y con millones de intentos aprende la estrategia óptima.
+
+```{mermaid}
+flowchart LR
+    A["🤖 Agente"] -->|"toma acción"| B["🌍 Entorno"]
+    B -->|"nueva situación"| A
+    B -->|"recompensa o penalización"| A
+```
+
+**Ejemplos reales:**
+- AlphaGo (DeepMind) aprendió a jugar Go mejor que cualquier humano sin que nadie le enseñara estrategias — solo jugó millones de partidas contra sí mismo
+- Spot de Boston Dynamics aprendió a caminar en terreno irregular (lo veremos en la Sesión 13)
+- Los algoritmos de recomendación de TikTok aprenden qué contenido maximiza el tiempo que te quedas en la app
+
+---
+
+### Demo: Teachable Machine
+
+Ahora vamos a hacer algo. En lugar de solo escuchar cómo funciona el aprendizaje de máquinas, vamos a construir un modelo en tiempo real, en tu navegador, sin código, gratis.
+
+:::{.callout-caution collapse="true"}
+# 📹 Nota de producción
+Compartir pantalla y abrir [teachablemachine.withgoogle.com](https://teachablemachine.withgoogle.com). Realizar la demo en vivo mientras el estudiante puede seguirla en paralelo en su propio navegador.
+:::
+
+**Pasos:**
+
+1. Entra a [teachablemachine.withgoogle.com](https://teachablemachine.withgoogle.com)
+2. Selecciona **"Image Project"** → **"Standard image model"**
+3. Verás dos clases (puedes agregar más). Nombra la Clase 1 y la Clase 2 con dos objetos distintos que tengas cerca — por ejemplo: **"libro"** y **"celular"**
+4. En cada clase, haz clic en **"Webcam"** y graba unos 50–80 ejemplos del objeto frente a la cámara, moviéndolo ligeramente para darle variación
+5. Haz clic en **"Train Model"** y espera unos segundos
+6. Prueba el modelo — pon un objeto frente a la cámara y observa cómo el modelo predice en tiempo real
+
+:::{.callout-caution collapse="true"}
+# 📹 Nota de producción
+Mostrar primero el modelo fallando con ángulos raros o poca luz — no editar ese momento, es el más valioso pedagógicamente. Luego agregar más ejemplos de entrenamiento y mostrar la mejora. Punto clave a decir en cámara: *"más datos = mejor modelo, pero también: datos sesgados = modelo sesgado"*.
+:::
+
+**Lo que esto demuestra:**
+
+- No programaste ninguna regla ("si hay rectángulo negro y texto, es libro"). La máquina encontró los patrones sola.
+- La cantidad de datos importa: con pocos ejemplos, el modelo se confunde fácilmente.
+- Los datos de entrenamiento determinan el comportamiento: si solo le enseñaste el libro desde un ángulo, fallará desde otro.
+
+Esta última idea es fundamental y la vamos a ver una y otra vez durante el curso.
+
+---
+
+### Actividad de reflexión
+
+:::{.callout-tip}
+# Para pensar (5 minutos)
+
+Ahora que terminaste la sesión, responde para ti mismo estas preguntas:
+
+1. **¿Qué herramientas de IA usaste hoy** antes de entrar a esta sesión? Sé específico — no solo "el celular", sino qué apps y en qué momento.
+
+2. **¿Cuál de los tres tipos de aprendizaje** usó alguna de esas herramientas? ¿Puedes identificarlo?
+
+3. **¿Hay algo que antes pensabas que era "magia"** de la tecnología que ahora tiene una explicación diferente?
+
+No hay respuestas correctas o incorrectas. El objetivo es que empieces a ver el mundo con otros ojos.
+:::
+
+---
+
+### La idea central de esta sesión
+
+Si tuvieras que quedarte con una sola cosa de hoy, sería esta:
+
+:::{.callout-important}
+# La idea central
+La inteligencia artificial no es magia ni consciencia. Es reconocimiento de patrones a escala masiva. Cuando entiendes eso, puedes usarla con criterio, cuestionarla con fundamento, y no dejarte engañar por sus errores.
+:::
+
+En la próxima sesión vamos a profundizar en exactamente cómo una máquina "ve" esos patrones — con matemáticas simples, visualizaciones, y otra demostración interactiva.
+
+---
+
+### Recursos para explorar más
+
+- [Teachable Machine](https://teachablemachine.withgoogle.com) — el demo que hicimos hoy, para que lo explores por tu cuenta
+- [Quick, Draw!](https://quickdraw.withgoogle.com) — juega a que una red neuronal adivina tus dibujos
+- [Elements of AI](https://www.elementsofai.com/es) — curso introductorio gratuito en español (Universidad de Helsinki)
+- [Google AI Experiments](https://experiments.withgoogle.com/collection/ai) — colección de demos interactivas gratuitas
+
+---
+
+:::{.callout-note appearance="minimal"}
+[← Inicio del curso](../index.qmd) · **Sesión 1 de 15** · Sesión 2: ¿Cómo aprende una máquina? → *(próximamente)*
+:::

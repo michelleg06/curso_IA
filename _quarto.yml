@@ -1,0 +1,64 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Curso IA · SLP"
+  site-url: "http://www.curso-ia-slp.com"
+  description: "Panorama de la Inteligencia Artificial para estudiantes de nivel medio-superior"
+
+  navbar:
+    left:
+      - text: "Inicio"
+        href: index.qmd
+      - text: "Programa"
+        href: syllabus.qmd
+      - text: "Sesiones"
+        menu:
+          - text: "— Bloque 1: Fundamentos + Ética —"
+          - text: "S1 · ¿Qué es la IA?"
+            href: sesiones/sesion-01.qmd
+          # Las siguientes sesiones se activarán conforme se publiquen:
+          # - text: "S2 · ¿Cómo aprende una máquina?"
+          #   href: sesiones/sesion-02.qmd
+          # - text: "S3 · Algoritmos"
+          #   href: sesiones/sesion-03.qmd
+          # - text: "S4 · IA Generativa"
+          #   href: sesiones/sesion-04.qmd
+          # - text: "S5 · Ética y sesgos"
+          #   href: sesiones/sesion-05.qmd
+          # - text: "S6 · EN VIVO: IPICYT"
+          #   href: sesiones/sesion-06.qmd
+          # - text: "— Bloque 2: Herramientas Prácticas —"
+          # - text: "S7 · IA para Lenguaje"
+          #   href: sesiones/sesion-07.qmd
+          # - text: "S8 · IA para Creatividad"
+          #   href: sesiones/sesion-08.qmd
+          # - text: "S9 · IA para Organización"
+          #   href: sesiones/sesion-09.qmd
+          # - text: "S10 · IA como Tutor Académico"
+          #   href: sesiones/sesion-10.qmd
+          # - text: "S11 · EN VIVO: Boston College"
+          #   href: sesiones/sesion-11.qmd
+          # - text: "— Bloque 3: Creación, Aplicaciones y Futuro —"
+          # - text: "S12 · Programación con IA"
+          #   href: sesiones/sesion-12.qmd
+          # - text: "S13 · Robótica"
+          #   href: sesiones/sesion-13.qmd
+          # - text: "S14 · IA en Medicina y Sociedad"
+          #   href: sesiones/sesion-14.qmd
+          # - text: "S15 · EN VIVO: PIT Policy México"
+          #   href: sesiones/sesion-15.qmd
+
+  page-footer:
+    left: "Curso IA · San Luis Potosí · 2026"
+    right:
+      - icon: github
+        href: https://github.com
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    number-sections: false
