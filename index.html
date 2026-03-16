@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Inteligencia Artificial – Curso IA · SLP</title>
+<title>Intro a la IA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./assets/logo.svg" rel="icon" type="image/svg+xml">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -69,6 +70,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="styles/sesion.css">
 </head>
 
 <body class="nav-fixed fullcontent quarto-light">
@@ -78,8 +80,11 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./assets/logo.svg" alt="Intro a la IA" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Curso IA · SLP</span>
+    <span class="navbar-title">Intro a la IA</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -116,196 +121,395 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Inteligencia Artificial</h1>
-<p class="subtitle lead">Panorama de la IA para estudiantes de nivel medio-superior</p>
-</div>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
+<style>
+  /* ================================================
+     LANDING PAGE — Curso IA · SLP
+     Paleta coherente con tema Quarto Cosmo
+  ================================================ */
+
+  /* Reset body para la landing */
+  body {
+    background: #ffffff !important;
+    color: #1a365d;
+  }
+
+  /* El navbar cosmo ya es blanco — solo refinamos */
+  .navbar {
+    border-bottom: 1px solid #e2e8f0 !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+
+  .page-layout-custom {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* ---- HERO ---- */
+  .lp-hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #ffffff;
+    text-align: center;
+    padding: 5rem 1.5rem 6rem;
+  }
+
+  /* Canvas de red neuronal */
+  #lp-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .lp-hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 700px;
+  }
+
+  /* Animaciones de entrada escalonadas */
+  .lp-eyebrow  { animation: lp-up 0.7s 0.1s ease-out both; }
+  .lp-title    { animation: lp-up 0.7s 0.25s ease-out both; }
+  .lp-subtitle { animation: lp-up 0.7s 0.42s ease-out both; }
+  .lp-ctas     { animation: lp-up 0.7s 0.58s ease-out both; }
+
+  @keyframes lp-up {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .lp-eyebrow {
+    font-size: 0.71rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #2780e3;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+  }
+
+  .lp-title {
+    font-size: clamp(3rem, 8vw, 5.2rem);
+    font-weight: 900;
+    line-height: 1.06;
+    margin-bottom: 1.4rem;
+    color: #1a365d;
+    letter-spacing: -0.025em;
+  }
+
+  .lp-title .lp-accent {
+    background: linear-gradient(125deg, #2780e3 0%, #0ea5e9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .lp-subtitle {
+    font-size: clamp(1rem, 2.3vw, 1.18rem);
+    color: #64748b;
+    max-width: 440px;
+    margin: 0 auto 2.6rem;
+    line-height: 1.65;
+  }
+
+  .lp-ctas {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .lp-btn-primary {
+    background: #2780e3;
+    color: #fff !important;
+    padding: 0.82rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none !important;
+    display: inline-block;
+    transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+    box-shadow: 0 2px 8px rgba(39, 128, 227, 0.3);
+  }
+  .lp-btn-primary:hover {
+    background: #1a6fc4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(39, 128, 227, 0.38);
+    color: #fff !important;
+    text-decoration: none !important;
+  }
+
+  .lp-btn-ghost {
+    background: transparent;
+    color: #1a365d !important;
+    padding: 0.82rem 2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none !important;
+    display: inline-block;
+    border: 1.5px solid #cbd5e1;
+    transition: border-color 0.15s, color 0.15s, transform 0.15s;
+  }
+  .lp-btn-ghost:hover {
+    border-color: #2780e3;
+    color: #2780e3 !important;
+    transform: translateY(-2px);
+    text-decoration: none !important;
+  }
+
+  /* Indicador scroll */
+  .lp-scroll {
+    position: absolute;
+    bottom: 1.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    opacity: 0.3;
+    animation: lp-bounce 2.4s ease-in-out infinite, lp-up 1s 1s ease-out both;
+  }
+  .lp-scroll-line {
+    width: 1px;
+    height: 34px;
+    background: linear-gradient(to bottom, #2780e3, transparent);
+    margin: 0 auto;
+  }
+  @keyframes lp-bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50%       { transform: translateX(-50%) translateY(7px); }
+  }
+
+  /* ---- STATS STRIP ---- */
+  .lp-stats {
+    background: #f0f7ff;
+    border-top: 1px solid #dbeafe;
+    border-bottom: 1px solid #dbeafe;
+    padding: 2.8rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .lp-stat {
+    text-align: center;
+    padding: 0.5rem 2.8rem;
+  }
+
+  .lp-stat + .lp-stat {
+    border-left: 1px solid #dbeafe;
+  }
+
+  .lp-stat-num {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #2780e3;
+    line-height: 1;
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .lp-stat-label {
+    font-size: 0.71rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+  }
+
+  /* Mobile */
+  @media (max-width: 580px) {
+    .lp-stat + .lp-stat {
+      border-left: none;
+      border-top: 1px solid #dbeafe;
+    }
+    .lp-stat { padding: 1rem 2rem; width: 50%; }
+  }
+</style>
+
+<!-- HERO -->
+<section class="lp-hero">
+  <canvas id="lp-canvas"></canvas>
+
+  <div class="lp-hero-content">
+    <p class="lp-eyebrow">San Luis Potosí · 2026 </p>
+    <h1 class="lp-title">
+      La IA ya está<br>
+      <span class="lp-accent">en tu vida.</span>
+    </h1>
+    <p class="lp-subtitle">
+      Entiéndela. Úsala.<br>No te dejes llevar por ella.
+    </p>
+    <div class="lp-ctas">
+      <a href="./sesiones/sesion-01.html" class="lp-btn-primary">Comenzar ahora →</a>
+      <a href="./syllabus.html" class="lp-btn-ghost">Ver programa</a>
+    </div>
   </div>
-  
 
-
-</header>
-
-
-<section id="de-qué-trata-este-curso" class="level2">
-<h2 class="anchored" data-anchor-id="de-qué-trata-este-curso">¿De qué trata este curso?</h2>
-<p>La inteligencia artificial ya forma parte de tu vida — en el feed de TikTok, en Spotify, en Google Maps, en los filtros de Instagram. Pero, ¿sabes cómo funciona realmente? ¿Y cómo usarla a tu favor?</p>
-<p>Este curso te da un panorama de la IA: qué es, qué puede y qué no puede hacer, cómo usarla como herramienta de estudio, y por qué importa entenderla como ciudadano.</p>
-<p><strong>No se requieren conocimientos previos de programación ni matemáticas avanzadas.</strong></p>
-<hr>
-</section>
-<section id="para-quién-es" class="level2">
-<h2 class="anchored" data-anchor-id="para-quién-es">¿Para quién es?</h2>
-<ul>
-<li>Estudiantes de nivel medio-superior (preparatoria) en San Luis Potosí.</li>
-<li>Cualquier persona curiosa sobre inteligencia artificial, sin importar su área.</li>
-</ul>
-<hr>
-</section>
-<section id="formato" class="level2">
-<h2 class="anchored" data-anchor-id="formato">Formato</h2>
-<ul>
-<li>15 sesiones de 30–45 minutos.</li>
-<li>Modalidad en línea — sesiones asíncronas grabadas, a tu ritmo.</li>
-<li>3 sesiones en vivo vía Zoom con invitados especiales.</li>
-<li>Sin evaluaciones formales ni proyectos finales — solo asistencia.</li>
-</ul>
-<hr>
-</section>
-<section id="invitados-especiales" class="level2">
-<h2 class="anchored" data-anchor-id="invitados-especiales">Invitados especiales</h2>
-<p>A lo largo del curso contaremos con la participación de investigadores y especialistas:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 41%">
-<col style="width: 25%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Sesión</th>
-<th>Invitado</th>
-<th>Tema</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>S6 — 9 jun</td>
-<td><strong>IPICYT</strong> · San Luis Potosí</td>
-<td>IA en México: investigación y aplicaciones reales</td>
-</tr>
-<tr class="even">
-<td>S11 — 14 jul</td>
-<td><strong>Boston College</strong> · Online</td>
-<td>IA en la educación global</td>
-</tr>
-<tr class="odd">
-<td>S15 — 11 ago</td>
-<td><strong>PIT Policy México</strong></td>
-<td>IA, política pública y ciudadanía</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-<section id="cronograma" class="level2">
-<h2 class="anchored" data-anchor-id="cronograma">Cronograma</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 38%">
-<col style="width: 44%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>#</th>
-<th>Fecha</th>
-<th>Sesión</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>5 mayo</td>
-<td>¿Qué es la IA y dónde está en tu vida?</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>12 mayo</td>
-<td>¿Cómo “aprende” una máquina?</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>19 mayo</td>
-<td>Algoritmos: ¿qué método para qué problema?</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>26 mayo</td>
-<td>IA Generativa: ChatGPT, Gemini, Perplexity</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>2 junio</td>
-<td>Ética y problemas reales de la IA</td>
-</tr>
-<tr class="even">
-<td><strong>6</strong></td>
-<td><strong>9 junio</strong></td>
-<td><strong>EN VIVO: IPICYT — IA en México</strong></td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td>16 junio</td>
-<td>IA como tutor de lenguaje: Lectura, Escritura e Idiomas</td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td>23 junio</td>
-<td>IA para Creatividad: Arte, Música y Diseño</td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td>30 junio</td>
-<td>IA para Organización y Productividad</td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td>7 julio</td>
-<td>IA como tutor académico: Matemáticas y más</td>
-</tr>
-<tr class="odd">
-<td><strong>11</strong></td>
-<td><strong>14 julio</strong></td>
-<td><strong>EN VIVO: Boston College — IA en la educación global</strong></td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td>21 julio</td>
-<td>Programación con IA: tu primer vistazo a Python</td>
-</tr>
-<tr class="odd">
-<td>13</td>
-<td>28 julio</td>
-<td>Robótica e IA en el mundo físico</td>
-</tr>
-<tr class="even">
-<td>14</td>
-<td>4 agosto</td>
-<td>IA en Medicina, Ciencia y Sociedad</td>
-</tr>
-<tr class="odd">
-<td><strong>15</strong></td>
-<td><strong>11 agosto</strong></td>
-<td><strong>EN VIVO: PIT Policy México — IA, política y ciudadanía</strong></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<center>
-<a href="./syllabus.html" class="btn btn-outline-primary" style="margin: 0.5rem;">Ver programa completo</a> <a href="./sesiones/sesion-01.html" class="btn btn-primary" style="margin: 0.5rem;">Comenzar el curso →</a>
-</center>
-
-
+  <div class="lp-scroll">
+    <div class="lp-scroll-line"></div>
+  </div>
 </section>
 
-</main> <!-- /main -->
+<!-- STATS CON COUNT-UP -->
+<section class="lp-stats">
+  <div class="lp-stat">
+    <span class="lp-stat-num" data-target="15">0</span>
+    <span class="lp-stat-label">Sesiones</span>
+  </div>
+  <div class="lp-stat">
+    <span class="lp-stat-num" data-target="3">0</span>
+    <span class="lp-stat-label">Sesiones en vivo</span>
+  </div>
+  <div class="lp-stat">
+    <span class="lp-stat-num" data-target="0">0</span>
+    <span class="lp-stat-label">Requisitos previos</span>
+  </div>
+  <div class="lp-stat">
+    <span class="lp-stat-num">100%</span>
+    <span class="lp-stat-label">En línea</span>
+  </div>
+</section>
+
+<script>
+/* ── Red neuronal animada en canvas ── */
+(function () {
+  const canvas = document.getElementById('lp-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+
+  const N = 42;          // partículas
+  const LINK_DIST = 130; // distancia máxima de conexión
+  const SPEED = 0.35;    // velocidad de movimiento
+
+  let W, H, pts;
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function rand(a, b) { return a + Math.random() * (b - a); }
+
+  function make() {
+    return {
+      x:  rand(0, W),
+      y:  rand(0, H),
+      vx: rand(-SPEED, SPEED),
+      vy: rand(-SPEED, SPEED),
+      r:  rand(1.5, 3),
+    };
+  }
+
+  function init() {
+    resize();
+    pts = Array.from({ length: N }, make);
+  }
+
+  function tick() {
+    pts.forEach(p => {
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < 0 || p.x > W) p.vx *= -1;
+      if (p.y < 0 || p.y > H) p.vy *= -1;
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+
+    /* conexiones */
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i + 1; j < pts.length; j++) {
+        const dx = pts[i].x - pts[j].x;
+        const dy = pts[i].y - pts[j].y;
+        const d  = Math.sqrt(dx * dx + dy * dy);
+        if (d < LINK_DIST) {
+          const a = (1 - d / LINK_DIST) * 0.13;
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x, pts[i].y);
+          ctx.lineTo(pts[j].x, pts[j].y);
+          ctx.strokeStyle = `rgba(39,128,227,${a})`;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+    }
+
+    /* nodos */
+    pts.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(39,128,227,0.22)';
+      ctx.fill();
+    });
+  }
+
+  function loop() { tick(); draw(); requestAnimationFrame(loop); }
+
+  window.addEventListener('resize', () => {
+    resize();
+    pts = Array.from({ length: N }, make);
+  });
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => { init(); loop(); });
+  } else {
+    init(); loop();
+  }
+})();
+
+/* ── Count-up animado al entrar en pantalla ── */
+(function () {
+  function countUp(el) {
+    const target = parseInt(el.dataset.target, 10);
+    if (isNaN(target) || target === 0) return;
+    const duration = 1400;
+    const start = performance.now();
+    function step(now) {
+      const t = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - t, 3); // cubic ease-out
+      el.textContent = Math.round(ease * target);
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  const section = document.querySelector('.lp-stats');
+  if (!section) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('[data-target]').forEach(countUp);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  observer.observe(section);
+})();
+</script>
+
+
+
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -709,7 +913,7 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>Curso IA · San Luis Potosí · 2026</p>
+<p>Intro a la IA · San Luis Potosí · 2026</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;
