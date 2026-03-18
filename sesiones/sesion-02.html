@@ -349,137 +349,250 @@ ul.task-list li input[type="checkbox"] {
 }
 .formula-full-box strong { color: #93c5fd; }
 
-/* ---- Predicción de siguiente palabra ---- */
-.token-demo {
-  background: linear-gradient(135deg, #f8fbff 0%, #eef7ff 100%);
+/* ---- Hoja de ruta ---- */
+.sesion-mapa {
+  background: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
   border: 1px solid #dbeafe;
   border-radius: 18px;
-  padding: 1.35rem;
+  padding: 1.15rem;
   margin: 1rem 0 1.4rem;
 }
-.token-demo-eyebrow {
-  font-size: 0.68rem;
+.sesion-mapa-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1a365d;
+  margin: 0 0 0.35rem;
+}
+.sesion-mapa-copy {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0 0 0.95rem;
+}
+.sesion-mapa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+.sesion-mapa-card {
+  background: rgba(255,255,255,0.88);
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  padding: 0.9rem;
+}
+.sesion-mapa-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 999px;
+  background: #2780e3;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+.sesion-mapa-card h5 {
+  font-size: 0.86rem;
+  color: #1a365d;
+  margin: 0 0 0.25rem;
+}
+.sesion-mapa-card p {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---- Secuencia: de imagen a plano ---- */
+.plano-secuencia {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  margin: 1rem 0 1.25rem;
+}
+.plano-card {
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  padding: 0.95rem;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.05);
+}
+.plano-step {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2780e3;
+  margin-bottom: 0.45rem;
+}
+.plano-card h5 {
+  font-size: 0.88rem;
+  color: #1a365d;
+  margin: 0 0 0.35rem;
+}
+.plano-copy {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0.55rem 0 0;
+}
+.plano-mini {
+  min-height: 132px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #f8fafc 0%, #eff6ff 100%);
+  border: 1px solid #e2e8f0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.plano-mini svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.metric-list {
+  display: grid;
+  gap: 0.45rem;
+  width: 100%;
+}
+.metric-chip {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.78rem;
+  color: #1a365d;
+  font-weight: 600;
+}
+.metric-chip span:last-child {
+  font-family: 'Courier New', monospace;
+  color: #2780e3;
+}
+.plano-note {
+  background: #eff6ff;
+  border-left: 3px solid #2780e3;
+  border-radius: 0 10px 10px 0;
+  padding: 0.8rem 1rem;
+  font-size: 0.86rem;
+  color: #1a365d;
+  line-height: 1.6;
+  margin: 0.9rem 0 1.1rem;
+}
+
+/* ---- Ciclo de aprendizaje ---- */
+.learning-loop {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  margin: 1rem 0 1.15rem;
+}
+.learning-step {
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  padding: 0.9rem;
+}
+.learning-step-num {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #2780e3;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.45rem;
+}
+.learning-step h5 {
+  font-size: 0.86rem;
+  color: #1a365d;
+  margin: 0 0 0.25rem;
+}
+.learning-step p {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ---- Transferencia: imagen y texto ---- */
+.transfer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1rem 0 1.3rem;
+}
+.transfer-card {
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+.transfer-kicker {
+  font-size: 0.66rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #2780e3;
   margin-bottom: 0.35rem;
 }
-.token-demo-title {
-  font-size: 1.05rem;
-  font-weight: 700;
+.transfer-card h4 {
+  font-size: 0.96rem;
   color: #1a365d;
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.3rem;
 }
-.token-demo-copy {
-  font-size: 0.88rem;
+.transfer-card > p {
+  font-size: 0.82rem;
   color: #64748b;
-  margin: 0 0 1rem;
-  line-height: 1.6;
+  line-height: 1.55;
+  margin: 0 0 0.8rem;
 }
-.token-sentence {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-  margin-bottom: 1rem;
-}
-.token-chip {
-  display: inline-flex;
-  align-items: center;
-  min-height: 2.2rem;
-  padding: 0.45rem 0.8rem;
-  background: #ffffff;
-  border: 1px solid #dbeafe;
-  border-radius: 999px;
-  color: #1a365d;
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-}
-.token-chip.active {
-  background: #eff6ff;
-  border-color: #60a5fa;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(39, 128, 227, 0.12);
-}
-.token-chip.target {
-  border-style: dashed;
-  color: #2780e3;
-}
-.token-chip.revealed {
-  background: linear-gradient(135deg, #1a365d, #2780e3);
-  border-color: transparent;
-  color: #ffffff;
-}
-.token-candidates {
+.transfer-flow {
   display: grid;
-  gap: 0.7rem;
+  gap: 0.55rem;
 }
-.token-candidate {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+.transfer-row {
+  background: #f8fbff;
+  border: 1px solid #dbeafe;
   border-radius: 12px;
-  padding: 0.75rem 0.9rem;
+  padding: 0.7rem 0.8rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.65rem;
+  align-items: start;
 }
-.token-candidate-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.45rem;
-}
-.token-word {
-  font-weight: 700;
+.transfer-row strong {
   color: #1a365d;
+  font-size: 0.8rem;
 }
-.token-score {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #64748b;
-  font-family: 'Courier New', monospace;
+.transfer-row span {
+  color: #475569;
+  font-size: 0.79rem;
+  line-height: 1.5;
 }
-.token-meter {
-  height: 10px;
-  background: #e2e8f0;
+.transfer-row-num {
+  width: 1.45rem;
+  height: 1.45rem;
   border-radius: 999px;
-  overflow: hidden;
-}
-.token-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #94a3b8, #cbd5e1);
-  border-radius: 999px;
-  transition: width 0.45s ease, background 0.35s ease;
-}
-.token-candidate.is-leading {
-  border-color: #60a5fa;
-  box-shadow: 0 10px 22px rgba(39, 128, 227, 0.1);
-}
-.token-candidate.is-leading .token-fill {
-  background: linear-gradient(90deg, #2780e3, #0ea5e9);
-}
-.token-controls {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-.token-play-btn {
-  padding: 0.55rem 1.25rem;
   background: #2780e3;
   color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 700;
-  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 0.75rem;
+  font-weight: 800;
 }
-.token-play-btn:hover:not(:disabled) { background: #1a6fc4; }
-.token-play-btn:disabled { background: #94a3b8; cursor: default; }
-.token-status {
-  font-size: 0.84rem;
-  color: #64748b;
+.transfer-note {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 0.8rem 0.9rem;
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.55;
+  margin-top: 0.8rem;
 }
 
 /* ---- Escala compacta ---- */
@@ -1298,11 +1411,15 @@ ul.task-list li input[type="checkbox"] {
 }
 
 @media (max-width: 580px) {
+  .sesion-mapa-grid      { grid-template-columns: 1fr; }
   .feature-flow         { grid-template-columns: 1fr; }
   .feature-arrow        { transform: rotate(90deg); }
   .neurona-lab-grid     { grid-template-columns: 1fr; }
+  .plano-secuencia      { grid-template-columns: 1fr; }
   .limite-grid          { grid-template-columns: 1fr; }
   .red-legend           { grid-template-columns: 1fr; }
+  .learning-loop        { grid-template-columns: 1fr; }
+  .transfer-grid        { grid-template-columns: 1fr; }
   .reto-pistas-grid    { grid-template-columns: 1fr; }
   .impacto-stats-grid  { grid-template-columns: repeat(2, 1fr); }
   .reto-resultado-wrap { flex-wrap: wrap; }
@@ -1311,7 +1428,6 @@ ul.task-list li input[type="checkbox"] {
   .train-visual        { grid-template-columns: 1fr; }
   .gancho-ecuacion     { gap: 0.5rem; }
   .calc-datos          { gap: 0.35rem; }
-  .token-chip          { font-size: 0.84rem; }
 }
 
 /* ================================================
@@ -1796,87 +1912,6 @@ ul.task-list li input[type="checkbox"] {
     entries.forEach(function (e) { e.slider.addEventListener('input', update); });
     update();
 
-    /* ── Predicción de siguiente palabra ── */
-    var tokenBtn = document.getElementById('token-play-btn');
-    var tokenRunning = false;
-    var tokenFrames = [
-      {
-        status: 'La red lee el contexto y empieza a repartir puntajes.',
-        active: ['token-1', 'token-2'],
-        scores: { neuronales: 28, sociales: 34, secretas: 18 },
-        reveal: ''
-      },
-      {
-        status: 'La palabra "redes" empuja más fuerte a la opción correcta.',
-        active: ['token-1', 'token-2', 'token-3', 'token-4'],
-        scores: { neuronales: 57, sociales: 26, secretas: 13 },
-        reveal: ''
-      },
-      {
-        status: 'La opción con mejor puntaje gana.',
-        active: ['token-1', 'token-2', 'token-3', 'token-4'],
-        scores: { neuronales: 91, sociales: 9, secretas: 4 },
-        reveal: 'neuronales'
-      }
-    ];
-
-    function setTokenFrame(frame) {
-      ['token-1', 'token-2', 'token-3', 'token-4'].forEach(function(id) {
-        var chip = document.getElementById(id);
-        if (!chip) return;
-        chip.classList.toggle('active', frame.active.indexOf(id) !== -1);
-      });
-
-      ['neuronales', 'sociales', 'secretas'].forEach(function(word) {
-        var fill = document.getElementById('cand-' + word);
-        var score = document.getElementById('score-' + word);
-        var card = document.getElementById('candidate-' + word);
-        if (fill) fill.style.width = frame.scores[word] + '%';
-        if (score) score.textContent = frame.scores[word] + '%';
-        if (card) card.classList.toggle('is-leading', word === 'neuronales' && frame.scores[word] >= 50);
-      });
-
-      var status = document.getElementById('token-status');
-      if (status) status.textContent = frame.status;
-
-      var target = document.getElementById('token-target');
-      if (target) {
-        if (frame.reveal) {
-          target.textContent = frame.reveal;
-          target.classList.add('revealed');
-        } else {
-          target.textContent = '___';
-          target.classList.remove('revealed');
-        }
-      }
-    }
-
-    if (tokenBtn) {
-      tokenBtn.addEventListener('click', function() {
-        if (tokenRunning) return;
-        tokenRunning = true;
-        tokenBtn.disabled = true;
-        tokenBtn.textContent = 'Pensando...';
-        setTokenFrame({
-          status: 'Preparando el contexto...',
-          active: ['token-1'],
-          scores: { neuronales: 0, sociales: 0, secretas: 0 },
-          reveal: ''
-        });
-
-        tokenFrames.forEach(function(frame, idx) {
-          setTimeout(function() {
-            setTokenFrame(frame);
-            if (idx === tokenFrames.length - 1) {
-              tokenRunning = false;
-              tokenBtn.disabled = false;
-              tokenBtn.textContent = '↺ Ver otra vez';
-            }
-          }, 700 * (idx + 1));
-        });
-      });
-    }
-
     /* ── Entrenamiento animado ── */
     var trainRunning = false;
     var trainBtn = document.getElementById('train-play-btn');
@@ -1897,11 +1932,11 @@ ul.task-list li input[type="checkbox"] {
       if (btn) btn.disabled = true;
       if (errorBar) { errorBar.style.width = '85%'; errorBar.style.background = '#dc2626'; }
       if (errorPct) errorPct.textContent = '85%';
-      if (predEl)   { predEl.textContent = '❌ sociales'; predEl.className = 'train-pred wrong'; }
+      if (predEl)   { predEl.textContent = '❌ no gato'; predEl.className = 'train-pred wrong'; }
       if (cicloEl)  cicloEl.textContent = '0';
 
       var step = 0, total = 80;
-      var w = [0.80, 0.60, 0.40];
+      var w = [0.30, 0.45, 0.25];
       var iv = setInterval(function() {
         step++;
         var p     = step / total;
@@ -1911,9 +1946,9 @@ ul.task-list li input[type="checkbox"] {
         if (errorPct) errorPct.textContent = error + '%';
         if (cicloEl)  cicloEl.textContent  = Math.round(p * 10000).toLocaleString('es-MX');
         if (predEl) {
-          if      (p < 0.4)  { predEl.textContent = '❌ sociales';     predEl.className = 'train-pred wrong'; }
-          else if (p < 0.75) { predEl.textContent = '🤔 neuronales';   predEl.className = 'train-pred maybe'; }
-          else               { predEl.textContent = '✅ neuronales';    predEl.className = 'train-pred correct'; }
+          if      (p < 0.4)  { predEl.textContent = '❌ no gato';    predEl.className = 'train-pred wrong'; }
+          else if (p < 0.75) { predEl.textContent = '🤔 quizá gato'; predEl.className = 'train-pred maybe'; }
+          else               { predEl.textContent = '✅ gato';       predEl.className = 'train-pred correct'; }
         }
         // Peso jiggle: cada ~6 pasos los pesos se ajustan un poco
         if (step % 6 === 0) {
@@ -1922,7 +1957,7 @@ ul.task-list li input[type="checkbox"] {
           ['tp1','tp2','tp3'].forEach(function(id, i) {
             var el = document.getElementById(id);
             if (!el) return;
-            el.textContent = ['tema = ','contexto = ','palabra previa = '][i] + w[i].toFixed(2);
+            el.textContent = ['orejas = ','bigotes = ','ojos = '][i] + w[i].toFixed(2);
             el.classList.remove('jiggling');
             void el.offsetWidth;
             el.classList.add('jiggling');
@@ -1953,9 +1988,13 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 <section id="introducción" class="level3">
 <h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
-<p>En la sesión pasada vimos que una máquina podía aprender con una recta. Hoy damos el siguiente paso: <strong>¿qué pasa cuando una recta ya no basta?</strong> Ahí es donde aparecen las redes neuronales.</p>
-<p>Las redes neuronales son el tipo de algoritmo de <strong>machine learning</strong> que hace posible la IA más impactante de hoy: desde ChatGPT y Claude hasta los carros autónomos y los robots industriales. En todos esos casos hay una red neuronal —o varias— reconociendo patrones, tomando decisiones o generando respuestas.</p>
-<p>Se definen como <strong>sistemas computacionales inspirados en el cerebro humano</strong>: conjuntos de nodos (neuronas artificiales) organizados en capas que, al entrenarse con datos, ajustan sus conexiones para resolver tareas cada vez más complejas; es decir, hacer inferencia estadística para darnos una respuesta.</p>
+<p>En la sesión pasada vimos que una máquina puede aprender a trazar una recta que separa datos. Pero, ¿qué pasa cuando el problema es más complicado? Por ejemplo: ¿cómo distingue tu teléfono tu cara de la de otra persona, o cómo sabe Spotify qué canción quieres escuchar después? Para eso no basta una recta. Ahí entran las <strong>redes neuronales</strong>.</p>
+<p>Esta sesión va a usar dos ejemplos concretos:</p>
+<ul>
+<li><strong>imágenes</strong>, para entender cómo una red detecta patrones visuales;</li>
+<li><strong>LLMs</strong>, para entender cómo un modelo usa contexto para predecir la siguiente palabra.</li>
+</ul>
+<p>La idea no es memorizar definiciones, sino construir una intuición clara de tres cosas: qué hace una neurona, por qué una sola neurona no basta y qué diferencia hay entre <strong>entrenar</strong> una red y <strong>usar</strong> una red ya entrenada.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1967,17 +2006,40 @@ Conceptos clave
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Una <strong>neurona artificial</strong> recibe señales (de datos), les asigna pesos (importancia) y produce una salida.</li>
-<li>Una <strong>red neuronal</strong> conecta muchas neuronas en capas para resolver tareas complejas que requieren más entradas que, por ejemplo, “horas de estudio” para predecir una calificación.</li>
-<li><strong>Entrenamiento</strong> e <strong>inferencia</strong> son etapas distintas: aprender puede tomar días o semanas; responder toma milisegundos.</li>
+<li>Una <strong>neurona artificial</strong> recibe números, les asigna pesos y produce una salida.</li>
+<li>Una <strong>red neuronal</strong> conecta muchas neuronas en capas para resolver patrones que ya no se pueden visualizar con una sola línea.</li>
+<li><strong>Entrenamiento</strong> e <strong>inferencia</strong> son etapas distintas: durante el entrenamiento la red ajusta sus pesos; durante la inferencia usa esos pesos ya fijos para responder casos nuevos.</li>
 </ul>
 </div>
+</div>
+<div class="sesion-mapa">
+  <h4 class="sesion-mapa-title anchored">Ruta de la sesión</h4>
+  <p class="sesion-mapa-copy">Vamos a seguir la siguiente secuencia y luego ubicarla en dos ejemplos: reconocer una imagen y predecir texto.</p>
+  <div class="sesion-mapa-grid">
+    <div class="sesion-mapa-card">
+      <span class="sesion-mapa-step">1</span>
+      <h5 class="anchored">Una neurona</h5>
+      <p>Recibe señales, les asigna un peso y decide si la evidencia es suficiente.</p>
+    </div>
+    <div class="sesion-mapa-card">
+      <span class="sesion-mapa-step">2</span>
+      <h5 class="anchored">Muchas imágenes</h5>
+      <p>Convertimos cada imagen en números y entendemos de dónde salen los puntos de una gráfica.</p>
+    </div>
+    <div class="sesion-mapa-card">
+      <span class="sesion-mapa-step">3</span>
+      <h5 class="anchored">Red completa</h5>
+      <p>Vemos cómo aprende corrigiendo pesos y cómo la misma lógica aparece en un modelo de texto.</p>
+    </div>
+  </div>
 </div>
 <hr>
 </section>
 <section id="una-neurona-la-unidad-mínima" class="level3">
 <h3 class="anchored" data-anchor-id="una-neurona-la-unidad-mínima">Una neurona: la unidad mínima</h3>
-<p>Imagina que una computadora recibe una imagen y quiere decidir si ahí hay un gato. No “ve” como tú. Lo que hace es convertir la imagen en señales y combinarlas.</p>
+<p>Imagina que una computadora recibe una imagen y quiere decidir si ahí hay un gato. No “ve” como tú. Lo que hace es convertir esa imagen en señales numéricas y combinarlas.</p>
+<p>Los rasgos que evalúa son señales numéricas: ¿qué tan marcadas están las orejas? ¿hay bigotes? ¿los ojos están al frente? Cada señal llega con un <strong>peso</strong>: un número que le dice a la neurona cuánta importancia darle. La neurona los suma y, si el total supera cierto umbral, se activa. Si no, no.</p>
+<p>En el interactivo de abajo puedes ajustar esos pesos tú mismo y ver cómo cambia la decisión de la neurona.</p>
 <div class="feature-flow">
   <div class="feature-photo-card">
     <p class="feature-card-label">Entrada</p>
@@ -2078,7 +2140,7 @@ Conceptos clave
       </div>
 
       <div class="formula-full-box" id="neurona-formula-main">z = 0.5 + 0.5 + 0.5 - 1.4 = 0.1</div>
-      <p class="neurona-formula-note">La fórmula completa es: <strong>z = w₁x₁ + w₂x₂ + w₃x₃ + b</strong>. Aquí los tres <strong>x</strong> valen 1.</p>
+      <p class="neurona-formula-note">La fórmula completa es: <strong>z = w₁x₁ + w₂x₂ + w₃x₃ + b</strong>. Aquí los tres <strong>x</strong> valen 1 porque asumimos que los tres rasgos están presentes. Los <strong>w</strong> son los pesos que tú controlas con los deslizadores.</p>
     </div>
 
     <div>
@@ -2154,11 +2216,89 @@ Conceptos clave
 </details>
 <hr>
 </section>
-<section id="cuando-una-recta-no-basta" class="level3">
-<h3 class="anchored" data-anchor-id="cuando-una-recta-no-basta">Cuando una recta no basta</h3>
-<p>Ya vimos que una neurona recibe señales —como “orejas”, “bigotes” y “ojos”—, les asigna pesos y produce una salida. Eso funciona bien cuando el problema es simple. Pero no todos los problemas lo son.</p>
-<p>Cuando una neurona toma una decisión, lo que hace en el fondo es trazar una <strong>frontera de decisión</strong>: la línea imaginaria que separa los casos de una clase de los de otra. Piénsalo como una regla: “si los valores caen de este lado, es gato; si caen del otro, no lo es”.</p>
-<p>El problema surge cuando los datos no se pueden separar con una sola línea.</p>
+<section id="de-una-imagen-a-los-puntos-de-una-gráfica" class="level3">
+<h3 class="anchored" data-anchor-id="de-una-imagen-a-los-puntos-de-una-gráfica">De una imagen a los puntos de una gráfica</h3>
+<p>Acabas de ver cómo una sola neurona evalúa tres rasgos de una imagen. Pero ¿de dónde vienen esos rasgos? Cuando nosotros miramos una foto, la interpretamos de golpe. Una computadora no puede hacer eso. Lo que hace es desglosar la imagen en píxeles y convertir cada píxel en un número: así traduce lo visual al único lenguaje que entiende.</p>
+<p>Ahora imagina que haces eso con miles de imágenes y para cada una mides solo dos cosas. <strong>Cada punto en la gráfica representa una imagen resumida con esas dos mediciones.</strong> Por ejemplo:</p>
+<ul>
+<li>qué tanto se parecen a “orejas puntiagudas”;</li>
+<li>qué tanto se parecen a “bigotes”;</li>
+</ul>
+<p>entonces cada imagen queda representada por un par de números. Y con dos números, puedes colocar cada imagen como un punto en una gráfica. <strong>Eso es exactamente lo que pasó en la sesión anterior: cada punto era una imagen resumida con dos mediciones.</strong></p>
+<p>Sigue el recorrido de esta imagen de gato, paso a paso:</p>
+<div class="plano-secuencia">
+  <div class="plano-card">
+    <p class="plano-step">Escena 1</p>
+    <h5 class="anchored">Partimos de una imagen</h5>
+    <div class="plano-mini">
+      <svg viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="10" y="10" width="100" height="100" rx="18" fill="#ffffff" stroke="#cbd5e1"></rect>
+        <ellipse cx="60" cy="78" rx="22" ry="14" fill="#94a3b8" opacity="0.22"></ellipse>
+        <circle cx="60" cy="56" r="24" fill="#64748b" opacity="0.35"></circle>
+        <polygon points="39,48 33,26 48,41" fill="#475569"></polygon>
+        <polygon points="81,48 87,26 72,41" fill="#475569"></polygon>
+        <ellipse cx="49" cy="55" rx="5" ry="6" fill="#1e293b"></ellipse>
+        <ellipse cx="71" cy="55" rx="5" ry="6" fill="#1e293b"></ellipse>
+        <line x1="34" y1="65" x2="52" y2="66" stroke="#1e293b" stroke-width="2" stroke-linecap="round"></line>
+        <line x1="86" y1="65" x2="68" y2="66" stroke="#1e293b" stroke-width="2" stroke-linecap="round"></line>
+      </svg>
+    </div>
+    <p class="plano-copy">La computadora no entiende "gato". Solo ve píxeles con valores numéricos. Para razonar sobre la imagen, primero necesita resumirla en algo manejable.</p>
+  </div>
+  <div class="plano-card">
+    <p class="plano-step">Escena 2</p>
+    <h5 class="anchored">La convertimos en rasgos</h5>
+    <div class="plano-mini">
+      <div class="metric-list">
+        <div class="metric-chip"><span>orejas puntiagudas</span><span>0.9</span></div>
+        <div class="metric-chip"><span>bigotes visibles</span><span>0.8</span></div>
+        <div class="metric-chip"><span>ojos frontales</span><span>0.7</span></div>
+      </div>
+    </div>
+    <p class="plano-copy">Cada número va de 0 a 1: 0 = el rasgo no aparece, 1 = está muy marcado. Las orejas puntiagudas tienen 0.9 —casi al máximo— y los bigotes 0.8.</p>
+  </div>
+  <div class="plano-card">
+    <p class="plano-step">Escena 3</p>
+    <h5 class="anchored">Elegimos dos ejes</h5>
+    <div class="plano-mini">
+      <svg viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="20" y1="96" x2="104" y2="96" stroke="#cbd5e1" stroke-width="2"></line>
+        <line x1="20" y1="96" x2="20" y2="18" stroke="#cbd5e1" stroke-width="2"></line>
+        <text x="64" y="112" text-anchor="middle" fill="#94a3b8" font-size="8">bigotes</text>
+        <text x="9" y="58" text-anchor="middle" fill="#94a3b8" font-size="8" transform="rotate(-90,9,58)">orejas</text>
+        <circle cx="76" cy="32" r="7" fill="#2780e3"></circle>
+        <text x="84" y="29" fill="#1a365d" font-size="8">(0.8, 0.9)</text>
+      </svg>
+    </div>
+    <p class="plano-copy">Usamos esos dos números como ejes. Bigotes=0.8 en horizontal, orejas=0.9 en vertical. Eso es exactamente el punto (0.8, 0.9) que ves marcado en la gráfica.</p>
+  </div>
+  <div class="plano-card">
+    <p class="plano-step">Escena 4</p>
+    <h5 class="anchored">Muchas imágenes, muchos puntos</h5>
+    <div class="plano-mini">
+      <svg viewbox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="18" y1="96" x2="104" y2="96" stroke="#cbd5e1" stroke-width="2"></line>
+        <line x1="18" y1="96" x2="18" y2="16" stroke="#cbd5e1" stroke-width="2"></line>
+        <circle cx="38" cy="78" r="5" fill="#22c55e"></circle>
+        <circle cx="48" cy="66" r="5" fill="#22c55e"></circle>
+        <circle cx="58" cy="72" r="5" fill="#22c55e"></circle>
+        <circle cx="74" cy="42" r="5" fill="#2780e3"></circle>
+        <circle cx="88" cy="30" r="5" fill="#2780e3"></circle>
+        <circle cx="98" cy="24" r="5" fill="#2780e3"></circle>
+        <line x1="28" y1="76" x2="96" y2="28" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"></line>
+      </svg>
+    </div>
+    <p class="plano-copy">Repetimos el proceso con cientos de imágenes. Azul = gato, verde = no gato. Con suficientes puntos, la neurona puede trazar una línea que separe ambos grupos.</p>
+  </div>
+</div>
+<div class="plano-note">
+  <strong>Ésta es la traducción importante:</strong> imagen → números → punto. La gráfica no es otro tema. Es la misma información, pero vista desde arriba para entender si una sola regla basta.
+</div>
+</section>
+<section id="cuando-una-sola-línea-sí-basta-y-cuando-ya-no" class="level3">
+<h3 class="anchored" data-anchor-id="cuando-una-sola-línea-sí-basta-y-cuando-ya-no">Cuando una sola línea sí basta, y cuando ya no</h3>
+<p>Imagina que ya tienes todos los puntos en la gráfica. La pregunta ahora es: ¿se pueden separar con una sola regla? A veces sí: trazas una línea y los gatos quedan de un lado, el resto del otro. Pero a veces los puntos están tan mezclados que ninguna línea recta puede separarlos sin cometer errores.</p>
+<p>Eso es exactamente el límite de una sola neurona: solo puede trazar una <strong>frontera de decisión</strong> recta. Cuando el problema es más enredado, necesitamos combinar varias neuronas.</p>
 <div class="limite-grid">
   <div class="limite-card">
     <p class="limite-kicker">Caso fácil</p>
@@ -2166,8 +2306,8 @@ Conceptos clave
     <svg viewbox="0 0 180 155" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <line x1="24" y1="10" x2="24" y2="122" stroke="#cbd5e1" stroke-width="2"></line>
       <line x1="24" y1="122" x2="164" y2="122" stroke="#cbd5e1" stroke-width="2"></line>
-      <text x="94" y="136" text-anchor="middle" fill="#94a3b8" font-size="9">Característica 1</text>
-      <text x="10" y="68" text-anchor="middle" fill="#94a3b8" font-size="9" transform="rotate(-90,10,68)">Característica 2</text>
+      <text x="94" y="136" text-anchor="middle" fill="#94a3b8" font-size="9">bigotes</text>
+      <text x="10" y="68" text-anchor="middle" fill="#94a3b8" font-size="9" transform="rotate(-90,10,68)">orejas</text>
       <circle cx="56" cy="94" r="7" fill="#22c55e"></circle>
       <circle cx="72" cy="76" r="7" fill="#22c55e"></circle>
       <circle cx="92" cy="86" r="7" fill="#22c55e"></circle>
@@ -2176,12 +2316,14 @@ Conceptos clave
       <circle cx="146" cy="28" r="7" fill="#2780e3"></circle>
       <line class="limite-line" x1="36" y1="92" x2="152" y2="24" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"></line>
       <text x="105" y="20" fill="#f59e0b" font-size="8" font-weight="700">frontera de decisión</text>
+      <text x="118" y="64" fill="#2780e3" font-size="8.5" font-weight="700">gatos</text>
+      <text x="44" y="106" fill="#22c55e" font-size="8.5" font-weight="700">no gatos</text>
       <circle cx="30" cy="148" r="5" fill="#22c55e"></circle>
-      <text x="38" y="152" fill="#64748b" font-size="9">Clase A</text>
-      <circle cx="80" cy="148" r="5" fill="#2780e3"></circle>
-      <text x="88" y="152" fill="#64748b" font-size="9">Clase B</text>
+      <text x="38" y="152" fill="#22c55e" font-size="10" font-weight="700">no gato</text>
+      <circle cx="85" cy="148" r="5" fill="#2780e3"></circle>
+      <text x="93" y="152" fill="#2780e3" font-size="10" font-weight="700">gato</text>
     </svg>
-    <p class="limite-copy">Los dos grupos están claramente separados. Una sola frontera de decisión los divide sin problema.</p>
+    <p class="limite-copy">Cada punto azul es una imagen de un gato; cada punto verde, de un no-gato. Todos los gatos tienen muchas orejas y bigotes, y quedan arriba a la derecha. La línea los divide perfectamente: la neurona siempre acierta.</p>
   </div>
 
   <div class="limite-card">
@@ -2190,22 +2332,29 @@ Conceptos clave
     <svg viewbox="0 0 180 155" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <line x1="24" y1="10" x2="24" y2="122" stroke="#cbd5e1" stroke-width="2"></line>
       <line x1="24" y1="122" x2="164" y2="122" stroke="#cbd5e1" stroke-width="2"></line>
-      <text x="94" y="136" text-anchor="middle" fill="#94a3b8" font-size="9">Característica 1</text>
-      <text x="10" y="68" text-anchor="middle" fill="#94a3b8" font-size="9" transform="rotate(-90,10,68)">Característica 2</text>
+      <text x="94" y="136" text-anchor="middle" fill="#94a3b8" font-size="9">bigotes</text>
+      <text x="10" y="68" text-anchor="middle" fill="#94a3b8" font-size="9" transform="rotate(-90,10,68)">orejas</text>
       <circle cx="56" cy="94" r="7" fill="#22c55e"></circle>
       <circle cx="132" cy="36" r="7" fill="#22c55e"></circle>
       <circle cx="56" cy="36" r="7" fill="#2780e3"></circle>
       <circle cx="132" cy="94" r="7" fill="#2780e3"></circle>
       <line class="limite-line delay" x1="38" y1="98" x2="150" y2="42" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 6"></line>
       <text x="105" y="38" fill="#f59e0b" font-size="8" font-weight="700">frontera de decisión</text>
+      <text x="36" y="32" fill="#2780e3" font-size="8" font-weight="700">gato</text>
+      <text x="35" y="108" fill="#22c55e" font-size="8" font-weight="700">no gato</text>
+      <circle cx="132" cy="36" r="11" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 2"></circle>
+      <circle cx="132" cy="94" r="11" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 2"></circle>
+      <text x="145" y="33" fill="#dc2626" font-size="10" font-weight="900">✗</text>
+      <text x="145" y="91" fill="#dc2626" font-size="10" font-weight="900">✗</text>
       <circle cx="30" cy="148" r="5" fill="#22c55e"></circle>
-      <text x="38" y="152" fill="#64748b" font-size="9">Clase A</text>
-      <circle cx="80" cy="148" r="5" fill="#2780e3"></circle>
-      <text x="88" y="152" fill="#64748b" font-size="9">Clase B</text>
+      <text x="38" y="152" fill="#22c55e" font-size="10" font-weight="700">no gato</text>
+      <circle cx="85" cy="148" r="5" fill="#2780e3"></circle>
+      <text x="93" y="152" fill="#2780e3" font-size="10" font-weight="700">gato</text>
     </svg>
-    <p class="limite-copy">Los grupos están mezclados en esquinas opuestas. Cualquier línea recta deja puntos del lado equivocado. Aquí necesitamos combinar varias neuronas.</p>
+    <p class="limite-copy">Hay gatos con pocas orejas y no-gatos con muchas. Sin importar cómo traces la línea, siempre quedarán puntos del lado equivocado —los marcados con ✗. No hay solución con una sola regla recta.</p>
   </div>
 </div>
+<p>Estos dos casos no son excepciones raras: en el mundo, la mayoría de los problemas interesantes se parecen más al caso difícil que al fácil. Los patrones reales son complicados y se mezclan. Por eso no basta con una neurona, necesitamos varias trabajando juntas.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2216,21 +2365,21 @@ Importante
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Cuando un problema ya no cabe en una sola frontera de decisión, conectamos varias neuronas. Eso es el inicio de una red neuronal.</p>
+<p>El salto clave de esta sesión es éste: <strong>cuando una sola frontera no alcanza, conectamos varias neuronas</strong>. Eso es exactamente lo que hace una red neuronal.</p>
 </div>
 </div>
 <hr>
 </section>
 <section id="de-varias-neuronas-a-una-red" class="level3">
 <h3 class="anchored" data-anchor-id="de-varias-neuronas-a-una-red">De varias neuronas a una red</h3>
-<p>Retomemos el gato. Una sola neurona miraba orejas, bigotes y ojos por separado y decidía: ¿es gato o no? Eso funciona para patrones sencillos. Pero ¿qué pasa cuando la pregunta es más difícil, como reconocer un gato siamés entre cien razas distintas, o detectar spam en miles de correos cada segundo?</p>
-<p>Para eso conectamos varias neuronas en capas. Cada capa tiene una función distinta:</p>
+<p>Ya vimos que una sola neurona no siempre alcanza. La solución es encadenarlas: la salida de unas se convierte en la entrada de otras. Así la red puede construir ideas más complejas a partir de señales simples.</p>
+<p>Para eso organizamos neuronas en capas:</p>
 <ul>
 <li>La <strong>capa de entrada</strong> recibe las señales directas: en nuestro ejemplo, “orejas”, “bigotes” y “ojos”.</li>
-<li>Las <strong>capas ocultas</strong> —llamadas así porque no las “vemos” desde fuera— toman esas señales y las combinan para construir conceptos más abstractos. Aquí la red aprende sola a detectar, por ejemplo, “cara de felino” o “silueta con orejas puntiagudas”, sin que nadie le diga explícitamente cómo hacerlo.</li>
+<li>Las <strong>capas ocultas</strong> combinan esas señales para detectar patrones más abstractos. En lugar de preguntar “¿hay orejas?”, preguntan cosas como “¿hay cara felina?” o “¿la silueta es de un animal?”.</li>
 <li>La <strong>capa de salida</strong> toma esos conceptos combinados y produce la respuesta final.</li>
 </ul>
-<p>Una red neuronal, en esencia, no calcula muchas operaciones distintas. Calcula la misma operación muchas veces, a distintos niveles de abstracción. A más capas, mayor profundidad — de ahí viene el nombre <strong>aprendizaje profundo</strong> o <strong>deep learning</strong>.</p>
+<p>Entre más capas tenga la red, más complejas pueden ser las ideas que construye. Una red con muchas capas puede reconocer una cara en una foto, entender un idioma o generar texto. De ahí viene la palabra <strong>deep</strong> (profundo) en <strong>deep learning</strong>: hace referencia a la profundidad de esas capas.</p>
 <div class="red-stage-card">
   <svg viewbox="0 0 760 250" xmlns="http://www.w3.org/2000/svg" aria-label="Red neuronal simple">
     <defs>
@@ -2293,7 +2442,7 @@ Importante
     </div>
     <div class="red-legend-item">
       <h5 class="anchored">Capas ocultas</h5>
-      <p>Combinan señales para detectar patrones más complejos.</p>
+      <p>Construyen ideas intermedias: de "orejas + bigotes" pasan a "cara felina".</p>
     </div>
     <div class="red-legend-item">
       <h5 class="anchored">Salida</h5>
@@ -2305,80 +2454,34 @@ Importante
 </section>
 <section id="entrenamiento-vs-inferencia" class="level3">
 <h3 class="anchored" data-anchor-id="entrenamiento-vs-inferencia">Entrenamiento vs inferencia</h3>
-<p>Ya sabemos qué hace una red neuronal: combinar señales en capas para llegar a una respuesta. Pero eso describe solo la mitad del proceso. La pregunta clave es: ¿cómo llega la red a tener los pesos correctos en primer lugar?</p>
-<p>Aquí entra una distinción que muchas personas confunden: <strong>aprender</strong> los pesos y <strong>usar</strong> esos pesos ya aprendidos son dos cosas completamente distintas.</p>
-<div class="vs-wrap">
-  <div class="vs-card persona">
-    <p class="vs-label">Inferencia</p>
-    <span class="vs-icon">⚡</span>
-    <h4 class="vs-title anchored">Generar una respuesta, dado que ya se ha entrenado la red</h4>
-    <ul class="vs-list">
-      <li>Entra un ejemplo nuevo (un gato siamés)</li>
-      <li>La red usa los pesos que ya tiene (bigotes, orejas puntiagudas, ojos)</li>
-      <li>Devuelve una respuesta en milisegundos: ¡es gato!</li>
-    </ul>
+<p>Hasta aquí hemos visto cómo funciona una red. Ahora viene una distinción clave: <strong>aprender</strong> a hacer algo es muy distinto a <strong>ya saber hacerlo</strong>.</p>
+<ul>
+<li>Durante el <strong>entrenamiento</strong>: la red todavía no sabe nada. Recibe ejemplos, comete errores y ajusta sus pesos una y otra vez hasta que mejora.</li>
+<li>Durante la <strong>inferencia</strong>: la red ya aprendió. Sus pesos están fijos y solo los usa para responder.</li>
+</ul>
+<p>Piénsalo así: entrenar es como estudiar para un examen; la inferencia es ya estar respondiendo el examen. El proceso de entrenamiento sigue siempre el mismo ciclo:</p>
+<div class="learning-loop">
+  <div class="learning-step">
+    <p class="learning-step-num">Paso 1</p>
+    <h5 class="anchored">Pase hacia adelante</h5>
+    <p>La entrada atraviesa la red capa por capa y produce una predicción inicial.</p>
   </div>
-  <div class="vs-divider">vs</div>
-  <div class="vs-card red">
-    <p class="vs-label">Entrenamiento</p>
-    <span class="vs-icon">🏋️</span>
-    <h4 class="vs-title anchored">Aprender los pesos</h4>
-    <ul class="vs-list">
-      <li>La red prueba y se equivoca miles o millones de veces</li>
-      <li>Mide su error</li>
-      <li>Ajusta sus conexiones poco a poco</li>
-    </ul>
+  <div class="learning-step">
+    <p class="learning-step-num">Paso 2</p>
+    <h5 class="anchored">Error</h5>
+    <p>Comparamos esa predicción con la respuesta correcta y medimos qué tan mal salió.</p>
   </div>
-</div>
-<section id="inferencia-responder-con-pesos-ya-aprendidos" class="level4">
-<h4 class="anchored" data-anchor-id="inferencia-responder-con-pesos-ya-aprendidos">Inferencia: responder con pesos ya aprendidos</h4>
-<p>Cuando escribes en ChatGPT, lo que ves es inferencia: la red ya fue entrenada y ahora solo usa sus pesos para elegir la salida más probable.</p>
-<div class="token-demo">
-  <p class="token-demo-eyebrow">Inferencia</p>
-  <h4 class="token-demo-title anchored">ChatGPT elige la siguiente palabra</h4>
-  <p class="token-demo-copy">La red toma el contexto, calcula puntajes y selecciona la opción que mejor encaja en ese momento.</p>
-
-  <div class="token-sentence">
-    <span class="token-chip" id="token-1">Hoy</span>
-    <span class="token-chip" id="token-2">hablamos</span>
-    <span class="token-chip" id="token-3">de</span>
-    <span class="token-chip" id="token-4">redes</span>
-    <span class="token-chip target" id="token-target">___</span>
+  <div class="learning-step">
+    <p class="learning-step-num">Paso 3</p>
+    <h5 class="anchored">Ajuste</h5>
+    <p>La red cambia un poco sus pesos para reducir ese error la próxima vez.</p>
   </div>
-
-  <div class="token-candidates">
-    <div class="token-candidate" id="candidate-neuronales">
-      <div class="token-candidate-head">
-        <span class="token-word">neuronales</span>
-        <span class="token-score" id="score-neuronales">0%</span>
-      </div>
-      <div class="token-meter"><div class="token-fill" id="cand-neuronales"></div></div>
-    </div>
-    <div class="token-candidate" id="candidate-sociales">
-      <div class="token-candidate-head">
-        <span class="token-word">sociales</span>
-        <span class="token-score" id="score-sociales">0%</span>
-      </div>
-      <div class="token-meter"><div class="token-fill" id="cand-sociales"></div></div>
-    </div>
-    <div class="token-candidate" id="candidate-secretas">
-      <div class="token-candidate-head">
-        <span class="token-word">secretas</span>
-        <span class="token-score" id="score-secretas">0%</span>
-      </div>
-      <div class="token-meter"><div class="token-fill" id="cand-secretas"></div></div>
-    </div>
-  </div>
-
-  <div class="token-controls">
-    <button class="token-play-btn" id="token-play-btn">▶ Ver decisión</button>
-    <span class="token-status" id="token-status">Haz clic para ver cómo el contexto empuja a una opción.</span>
+  <div class="learning-step">
+    <p class="learning-step-num">Paso 4</p>
+    <h5 class="anchored">Repetición</h5>
+    <p>Ese ciclo ocurre miles o millones de veces hasta que el error baja.</p>
   </div>
 </div>
-<p>Esto ocurre rápido porque la red <strong>ya aprendió antes</strong>. En este momento no está reentrenándose: solo está calculando una respuesta.</p>
-</section>
-<section id="entrenamiento-aprender-corrigiendo-pesos" class="level4">
-<h4 class="anchored" data-anchor-id="entrenamiento-aprender-corrigiendo-pesos"><strong>Entrenamiento: aprender corrigiendo pesos</strong></h4>
 <p>El entrenamiento es el proceso largo: probar, equivocarse, medir error y ajustar pesos una y otra vez.</p>
 <div class="train-wrap">
   <p class="train-eyebrow">Entrenamiento</p>
@@ -2386,8 +2489,8 @@ Importante
 
   <div class="train-visual">
     <div class="train-panel">
-      <p class="train-panel-label">Palabra elegida</p>
-      <p class="train-pred wrong" id="train-pred">❌ sociales</p>
+      <p class="train-panel-label">Clase predicha</p>
+      <p class="train-pred wrong" id="train-pred">❌ no gato</p>
     </div>
     <div class="train-panel">
       <p class="train-panel-label">Qué tan equivocada está</p>
@@ -2401,9 +2504,9 @@ Importante
 
   <div class="train-pesos-wrap">
     <span class="train-pesos-label">pesos:</span>
-    <span class="train-peso" id="tp1">tema = 0.80</span>
-    <span class="train-peso" id="tp2">contexto = 0.60</span>
-    <span class="train-peso" id="tp3">palabra previa = 0.40</span>
+    <span class="train-peso" id="tp1">orejas = 0.30</span>
+    <span class="train-peso" id="tp2">bigotes = 0.45</span>
+    <span class="train-peso" id="tp3">ojos = 0.25</span>
   </div>
 
   <div class="train-controls">
@@ -2428,44 +2531,71 @@ Si escuchas la palabra “backpropagation” por ahí
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>No necesitas aprender el concepto para desarrollar la intuición de esta sesión: la red usa el “error” para corregir sus conexiones internas.</p>
+<p>Por ahora basta con esta intuición: cuando la red se equivoca, usa ese error para corregir sus conexiones internas hacia atrás, capa por capa. En eso consiste el concepto.</p>
 </div>
 </div>
 <hr>
 </section>
-</section>
-<section id="un-poco-de-historia-2012-cuando-todo-despegó" class="level3">
-<h3 class="anchored" data-anchor-id="un-poco-de-historia-2012-cuando-todo-despegó">Un poco de historia: 2012, cuando todo despegó</h3>
-<p>Para entender por qué vivimos en la era de la IA, hay que ir a 2012.</p>
-<p>Cada año se celebraba una competencia llamada <strong>ImageNet</strong>: equipos de investigación de todo el mundo entrenaban algoritmos para clasificar más de un millón de imágenes en 1,000 categorías (perros, aviones, sillas, gatos…). Era, en ese momento, el campeonato mundial de visión por computadora. Durante años, las mejoras eran graduales: pasar de 30% de error a 28% era motivo de celebración.</p>
-<p>Entonces llegó un equipo de la Universidad de Toronto —Alex Krizhevsky, Ilya Sutskever y el reconocido investigador Geoffrey Hinton— con una red neuronal profunda que llamaron <strong>AlexNet</strong>. Su error fue de 16%, cuando el segundo lugar se quedó en 26%. Una caída de 10 puntos que nadie esperaba.</p>
-<p>Las redes neuronales no nacieron ese día. Lo que pasó fue que por primera vez se juntaron los tres ingredientes que las hacían posibles a gran escala:</p>
-<div class="tres-piezas-wrap">
-  <p class="tres-piezas-titulo">ImageNet 2012 · El punto de inflexión</p>
-  <div class="tres-piezas-grid">
-    <div class="pieza izq">
-      <span class="pieza-emoji">🗂️</span>
-      más datos
+<section id="la-misma-idea-en-imágenes-y-en-llms" class="level3">
+<h3 class="anchored" data-anchor-id="la-misma-idea-en-imágenes-y-en-llms">La misma idea, en imágenes y en LLMs</h3>
+<p>Una vez que entiendes el caso de imágenes, puedes aplicar la misma intuición a un LLM. La tarea es distinta, pero la lógica es la misma: <strong>reciben una entrada, calculan patrones internos y producen la salida más probable</strong>.</p>
+<p>Por ejemplo: si le escribes a ChatGPT “La capital de México es…”, la red toma todo ese contexto, calcula qué palabras son más probables a continuación y elige la mejor. No “sabe” geografía; aprendió patrones en millones de textos que la llevan a esa respuesta.</p>
+<div class="transfer-grid">
+  <div class="transfer-card">
+    <p class="transfer-kicker">Ejemplo 1</p>
+    <h4 class="anchored">Predicción en imágenes</h4>
+    <p>La entrada es una imagen. La salida puede ser una clase: "gato", "perro", "spam visual", "tumor", etc.</p>
+    <div class="transfer-flow">
+      <div class="transfer-row">
+        <span class="transfer-row-num">1</span>
+        <div><strong>Entrada</strong><br><span>Píxeles o rasgos visuales de una imagen.</span></div>
+      </div>
+      <div class="transfer-row">
+        <span class="transfer-row-num">2</span>
+        <div><strong>Capas ocultas</strong><br><span>La red combina señales y detecta bordes, formas y patrones más complejos.</span></div>
+      </div>
+      <div class="transfer-row">
+        <span class="transfer-row-num">3</span>
+        <div><strong>Puntajes</strong><br><span>La red calcula qué tan compatible es la imagen con cada posible clase.</span></div>
+      </div>
+      <div class="transfer-row">
+        <span class="transfer-row-num">4</span>
+        <div><strong>Salida</strong><br><span>Elige la clase con mejor puntaje.</span></div>
+      </div>
     </div>
-    <div class="pieza-plus">+</div>
-    <div class="pieza mid">
-      <span class="pieza-emoji">🎮</span>
-      más cómputo
-    </div>
-    <div class="pieza-plus">+</div>
-    <div class="pieza der">
-      <span class="pieza-emoji">🧠</span>
-      mejor arquitectura
-    </div>
-    <div class="pieza-boom">AlexNet</div>
   </div>
-  <p class="vs-nota">El error bajó de 26% a 16% en un solo año. A partir de ahí, el deep learning dejó de verse como curiosidad académica y pasó a ser el motor de la IA moderna.</p>
+  <div class="transfer-card">
+    <p class="transfer-kicker">Ejemplo 2</p>
+    <h4 class="anchored">Predicción en un LLM</h4>
+    <p>La entrada es texto previo. La salida no es una etiqueta, sino la siguiente palabra o token más probable.</p>
+    <div class="transfer-flow">
+      <div class="transfer-row">
+        <span class="transfer-row-num">1</span>
+        <div><strong>Entrada</strong><br><span>Un contexto como: "Hoy hablamos de redes ..."</span></div>
+      </div>
+      <div class="transfer-row">
+        <span class="transfer-row-num">2</span>
+        <div><strong>Capas ocultas</strong><br><span>La red combina las palabras previas para construir una representación del contexto.</span></div>
+      </div>
+      <div class="transfer-row">
+        <span class="transfer-row-num">3</span>
+        <div><strong>Puntajes</strong><br><span>Asigna probabilidades a muchas palabras posibles: "neuronales", "sociales", "secretas"...</span></div>
+      </div>
+      <div class="transfer-row">
+        <span class="transfer-row-num">4</span>
+        <div><strong>Salida</strong><br><span>Elige la siguiente palabra y repite el proceso una y otra vez.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="transfer-note">
+  <strong>Algo importante:</strong> un LLM no mira solo la última palabra. Considera todo el contexto acumulado. Por eso la palabra siguiente depende de toda la secuencia anterior, no de una sola pista aislada.
 </div>
 <hr>
 </section>
 <section id="tu-laboratorio-final" class="level3">
 <h3 class="anchored" data-anchor-id="tu-laboratorio-final">Tu laboratorio final</h3>
-<p>Aquí ya no se trata de memorizar definiciones. Se trata de mirar una red pequeña en acción y ver cuándo una sola capa deja de bastar.</p>
+<p>Aquí ya no se trata de memorizar definiciones. Se trata de comprobar con tus ojos cuándo una red pequeña basta y cuándo ya no.</p>
 <div class="demo-wrap">
   <div class="demo-shell demo-tone-unsupervised is-active">
     <div class="demo-shell-head">
@@ -2483,38 +2613,38 @@ Si escuchas la palabra “backpropagation” por ahí
       <div class="demo-stage-live">
         <div class="reto-tf-objetivo">
           <p class="reto-tf-objetivo-label">Qué queremos aprender</p>
-          <p>Cuando el patrón se complica, una red pequeña deja de ser suficiente. Entonces necesitas más capacidad: más neuronas, más capas o ambas.</p>
+          <p>Cuando el patrón se complica, una sola frontera deja de funcionar. Entonces necesitas más capacidad: más neuronas, más capas o ambas.</p>
         </div>
         <div class="playground-mission-grid">
           <div class="playground-mission-card">
             <span class="nn-column-label">Paso 1</span>
-            <h5 class="anchored">Empieza fácil</h5>
-            <p>Prueba una base de datos sencilla y mira cómo una red pequeña la separa.</p>
+            <h5 class="anchored">Empieza con una línea</h5>
+            <p>Elige un patrón sencillo y una red mínima. Observa cómo una sola frontera separa los datos.</p>
           </div>
           <div class="playground-mission-card">
             <span class="nn-column-label">Paso 2</span>
             <h5 class="anchored">Complica el patrón</h5>
-            <p>Cambia a círculos o espirales y detecta el momento en que la red falla.</p>
+            <p>Cambia a círculos o espirales y detecta el momento exacto en que esa frontera deja de bastar.</p>
           </div>
           <div class="playground-mission-card">
             <span class="nn-column-label">Paso 3</span>
             <h5 class="anchored">Hazla crecer</h5>
-            <p>Agrega neuronas o capas poco a poco y observa si el error baja.</p>
+            <p>Agrega neuronas o capas poco a poco y observa si la nueva frontera se ajusta mejor.</p>
           </div>
         </div>
         <div class="lab-card">
           <div class="lab-card-grid">
             <div class="lab-card-section">
-              <h5 class="anchored">Qué mover</h5>
-              <p>Capas, neuronas y tipo de datos.</p>
+              <h5 class="anchored">Configuración inicial</h5>
+              <p>Empieza con una sola capa oculta y pocas neuronas. No cambies todo a la vez.</p>
             </div>
             <div class="lab-card-section">
-              <h5 class="anchored">Qué mirar</h5>
-              <p>La frontera de decisión y la curva de error.</p>
+              <h5 class="anchored">Qué ver</h5>
+              <p>La frontera de decisión, los puntos mal clasificados y la curva de error.</p>
             </div>
             <div class="lab-card-section">
               <h5 class="anchored">Qué aprender</h5>
-              <p>Más complejidad en la red significa más poder para modelar patrones difíciles.</p>
+              <p>La arquitectura importa porque determina qué patrones puede representar la red.</p>
             </div>
           </div>
         </div>
@@ -2530,19 +2660,31 @@ Si escuchas la palabra “backpropagation” por ahí
   </div>
 </div>
 <hr>
+<details class="expand-section">
+  <summary class="expand-summary">
+    <span>Opcional: por qué 2012 importa tanto</span>
+    <span class="expand-summary-hint">historia</span>
+  </summary>
+  <div class="expand-body">
+    <p>En 2012, una red llamada AlexNet bajó el error en un concurso de reconocimiento de imágenes del 26% al 16%. Puede sonar como un detalle técnico, pero fue un golpe en la mesa: demostró que con suficientes datos y poder de cómputo, el deep learning podía superar a cualquier método anterior.</p>
+    <p>Ese momento abrió el camino al reconocimiento facial en tu teléfono, a los sistemas de diagnóstico médico por imagen y, con el tiempo, a los modelos de lenguaje que usamos hoy. 2012 no fue el inicio de las redes neuronales, pero sí la prueba de que eran el camino.</p>
+  </div>
+</details>
+<hr>
 </section>
 <section id="las-máquinas-realmente-entienden" class="level3">
 <h3 class="anchored" data-anchor-id="las-máquinas-realmente-entienden">¿Las máquinas realmente “entienden”?</h3>
-<p>Ya sabes cómo funciona una red: recibe señales, ajusta pesos y produce una salida. Puede reconocer gatos, clasificar correos y generar texto. Pero hay una pregunta que incluso los propios investigadores debaten: ¿eso es “entender”?</p>
-<p>La respuesta corta es: <strong>no</strong>. ChatGPT no te está entendiendo. No tiene recuerdos, intención ni experiencia. Pero sí puede detectar regularidades de manera sorprendentemente eficaz.</p>
+<p>Ya sabes cómo funciona una red: recibe señales, ajusta pesos y produce una salida. Puede reconocer imágenes y generar texto. Pero queda una pregunta abierta: ¿eso cuenta como entender?</p>
+<p>La respuesta corta es: <strong>no</strong>. ChatGPT puede escribirte una disculpa muy sentida… pero no siente nada mientras lo hace. No tiene recuerdos entre conversaciones, ni intención, ni experiencia propia. Lo que tiene es una habilidad enorme para detectar patrones en el lenguaje y producir texto que suena coherente.</p>
 <div class="debate-card">
-  <h4 class="anchored">Pregunta abierta</h4>
-  <p>Si una máquina se vuelve excelente para acertar en una tarea, ¿eso cuenta como entender o solo como reconocer patrones muy bien?</p>
+  <h4 class="anchored">Para reflexionar</h4>
+  <p>Si una máquina puede escribirte una disculpa que te hace sentir mejor, ¿importa que no sienta nada al hacerlo? ¿Dónde está la diferencia entre "entender" y "simular entender muy bien"?</p>
 </div>
 <hr>
 </section>
 <section id="para-cerrar-la-sesión" class="level3">
 <h3 class="anchored" data-anchor-id="para-cerrar-la-sesión">Para cerrar la sesión</h3>
+<p>Pasaste de entender una sola neurona a ver cómo esa lógica escala hasta modelos que generan texto. Ese es el meollo del asunto: pequeñas operaciones matemáticas, repetidas millones de veces, producen comportamientos que parecen inteligentes.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2553,7 +2695,7 @@ Idea central
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Una neurona artificial recibe señales, les asigna pesos y produce una salida. Una red neuronal conecta muchas de esas neuronas para resolver patrones que ya no caben en una sola recta. La IA moderna impresiona porque es capaz de repetir esta lógica a gran escala.</p>
+<p>Una neurona artificial recibe señales, les asigna pesos y produce una salida. Una red neuronal conecta muchas de esas neuronas para resolver patrones que ya no caben en una sola frontera. Durante el entrenamiento ajusta pesos; durante la inferencia usa esos pesos para responder. Esa misma lógica aparece tanto en modelos de imagen como en LLMs.</p>
 </div>
 </div>
 <hr>
