@@ -1,0 +1,107 @@
+---
+title: "Sesión 6: EN VIVO: IA en México: Investigación y Aplicaciones"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+```{=html}
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 1 · Fundamentos + Ética</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-6"></div>
+    </div>
+    <span class="sesion-progress-label">6 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip">📅 9 de junio de 2026</span>
+    <span class="sesion-meta-chip">⏱ 60 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+
+<div class="sesion-outline">
+  <p class="sesion-outline-kicker">Sesión Zoom</p>
+  <h2 class="sesion-outline-title">Contenedor base de la sesión en vivo</h2>
+  <p class="sesion-outline-copy">Esta página queda lista para alojar la grabación del Zoom, la agenda de la conversación con IPICYT y el material de seguimiento posterior.</p>
+  <div class="sesion-outline-grid">
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">01</span>
+      <h3>Antes del Zoom</h3>
+      <p>Contexto, invitado/a y preguntas guía.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">02</span>
+      <h3>Durante la sesión</h3>
+      <p>Charla principal y preguntas abiertas de estudiantes.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">03</span>
+      <h3>Después del Zoom</h3>
+      <p>Grabación, resumen y recursos compartidos.</p>
+    </div>
+  </div>
+</div>
+```
+
+## Video / grabación
+
+```{=html}
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Grabación del Zoom — próximamente</p>
+  <p>Cuando termine la sesión en vivo, aquí se insertará el replay correspondiente.</p>
+</div>
+```
+
+## Propósito de la sesión
+
+- Conocer cómo se hace investigación en IA desde México.
+- Conectar los conceptos del Bloque 1 con trabajo científico real.
+- Abrir posibilidades de carrera para estudiantes de San Luis Potosí.
+
+## Agenda tentativa
+
+1. Bienvenida y presentación de la persona invitada.
+2. Charla libre sobre proyectos, trayectoria y aplicaciones actuales.
+3. Preguntas abiertas de estudiantes.
+4. Cierre con ideas de seguimiento y recursos.
+
+## Preguntas guía
+
+- ¿En qué proyectos de IA trabaja actualmente el IPICYT?
+- ¿Qué estudió y cómo llegó a trabajar con inteligencia artificial?
+- ¿Qué oportunidades hay para estudiantes de preparatoria en este campo?
+- ¿Qué diferencia hay entre investigar IA en México y en otros países?
+
+## Material que se añadirá después
+
+- Grabación de Zoom.
+- Resumen con ideas clave de la charla.
+- Recursos o instituciones mencionadas por la persona invitada.
+
+::: {.callout-note}
+# Estado de esta página
+Esta sesión en vivo quedó publicada como placeholder funcional. La siguiente iteración natural es agregar la grabación y el resumen posterior.
+:::
+
+```{=html}
+<nav class="sesion-nav">
+  <a href="sesion-05.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S5: Ética y problemas reales</span>
+  </a>
+  <div class="sesion-nav-center">
+    <span class="sesion-nav-progress">Sesión 6 de 15</span>
+  </div>
+  <a href="sesion-07.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S7: Tutor de Lenguaje</span>
+  </a>
+</nav>
+```

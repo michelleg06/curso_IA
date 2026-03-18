@@ -1,0 +1,116 @@
+---
+title: "Sesión 13: Robótica e IA en el Mundo Físico"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+```{=html}
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 3 · Creación, Aplicaciones y Futuro</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-13"></div>
+    </div>
+    <span class="sesion-progress-label">13 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip">📅 28 de julio de 2026</span>
+    <span class="sesion-meta-chip">⏱ 40 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+
+<div class="sesion-outline">
+  <p class="sesion-outline-kicker">Del software al mundo físico</p>
+  <h2 class="sesion-outline-title">Arquitectura base de la sesión</h2>
+  <p class="sesion-outline-copy">Esta página deja el andamio para conectar percepción, acción y aprendizaje por refuerzo en robots, drones y vehículos autónomos.</p>
+  <div class="sesion-outline-grid">
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">01</span>
+      <h3>Apertura</h3>
+      <p>Ejemplos de robots y autos que perciben, deciden y actúan.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">02</span>
+      <h3>Conceptos clave</h3>
+      <p>Sensores, recompensa, simulación, autonomía y control.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">03</span>
+      <h3>Actividad</h3>
+      <p>Explicación visual de niveles de autonomía y aprendizaje por refuerzo.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">04</span>
+      <h3>Cierre</h3>
+      <p>Debate sobre confianza, seguridad y responsabilidad.</p>
+    </div>
+  </div>
+</div>
+```
+
+## Video de la sesión
+
+```{=html}
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video de la sesión — en desarrollo</p>
+  <p>Aquí se insertará la grabación principal cuando el guion final esté listo.</p>
+</div>
+```
+
+## Objetivos de aprendizaje
+
+- Entender cómo la IA toma decisiones en el mundo físico.
+- Conocer el papel del aprendizaje por refuerzo en la robótica.
+- Reflexionar sobre implicaciones éticas de robots autónomos.
+
+## Contenido previsto
+
+### Apertura
+
+- Se añadirá una entrada breve con ejemplos de robótica y autonomía en acción.
+
+### Desarrollo principal
+
+- Aquí irá la explicación base sobre sensores, políticas, recompensas y control.
+
+### Actividad o demo
+
+- Este bloque servirá para insertar una visualización o explicación paso a paso.
+
+### Cierre
+
+- Se integrará una síntesis final con preguntas sobre seguridad y responsabilidad.
+
+## Recursos y materiales por incorporar
+
+- Caso Spot de Boston Dynamics.
+- Tabla de niveles de autonomía en vehículos.
+- Preguntas de debate sobre robots y sistemas autónomos.
+
+::: {.callout-note}
+# Estado de esta página
+La sesión ya quedó publicada con estructura base, navegación y placeholders. Falta integrar el guion final, la actividad y los recursos visuales.
+:::
+
+```{=html}
+<nav class="sesion-nav">
+  <a href="sesion-12.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S12: Programación con IA</span>
+  </a>
+  <div class="sesion-nav-center">
+    <span class="sesion-nav-progress">Sesión 13 de 15</span>
+  </div>
+  <a href="sesion-14.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S14: IA en Salud y Ciencia</span>
+  </a>
+</nav>
+```

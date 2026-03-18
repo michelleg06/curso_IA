@@ -1,0 +1,116 @@
+---
+title: "Sesión 14: IA en Salud, Ciencia y Sociedad"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+```{=html}
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 3 · Creación, Aplicaciones y Futuro</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-14"></div>
+    </div>
+    <span class="sesion-progress-label">14 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip">📅 4 de agosto de 2026</span>
+    <span class="sesion-meta-chip">⏱ 40 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+
+<div class="sesion-outline">
+  <p class="sesion-outline-kicker">Impacto aplicado</p>
+  <h2 class="sesion-outline-title">Arquitectura base de la sesión</h2>
+  <p class="sesion-outline-copy">Esta página deja listo el espacio para conectar aplicaciones médicas y científicas con sus beneficios, límites, riesgos y efectos sociales.</p>
+  <div class="sesion-outline-grid">
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">01</span>
+      <h3>Apertura</h3>
+      <p>Casos de diagnóstico, salud mental y ciencia acelerada por IA.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">02</span>
+      <h3>Conceptos clave</h3>
+      <p>Diagnóstico por imagen, series temporales, AlphaFold y apoyo clínico.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">03</span>
+      <h3>Actividad</h3>
+      <p>Revisar un caso de éxito y un caso de falla para compararlos.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">04</span>
+      <h3>Cierre</h3>
+      <p>Discusión sobre confianza, regulación y acceso desigual.</p>
+    </div>
+  </div>
+</div>
+```
+
+## Video de la sesión
+
+```{=html}
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video de la sesión — en desarrollo</p>
+  <p>Aquí se insertará la grabación principal cuando el guion final esté listo.</p>
+</div>
+```
+
+## Objetivos de aprendizaje
+
+- Conocer aplicaciones de IA en medicina y ciencia.
+- Entender el impacto social de la IA en México.
+- Evaluar beneficios y riesgos en contextos sensibles.
+
+## Contenido previsto
+
+### Apertura
+
+- Se añadirá una entrada breve con ejemplos de salud, ciencia y aplicaciones sociales.
+
+### Desarrollo principal
+
+- Aquí quedará la explicación base sobre diagnósticos, modelos científicos y riesgos clínicos.
+
+### Actividad o demo
+
+- Este bloque servirá para insertar un análisis comparado de aciertos y fallas.
+
+### Cierre
+
+- Se integrará una síntesis final sobre acceso, regulación y confianza.
+
+## Recursos y materiales por incorporar
+
+- Bloque para AlphaFold, telemedicina y ejemplos locales.
+- Caso de falla clínica para análisis crítico.
+- Preguntas sobre privacidad y regulación de datos médicos.
+
+::: {.callout-note}
+# Estado de esta página
+La sesión ya quedó publicada con estructura base, navegación y placeholders. Falta integrar el guion final, la actividad y los recursos visuales.
+:::
+
+```{=html}
+<nav class="sesion-nav">
+  <a href="sesion-13.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S13: Robótica e IA</span>
+  </a>
+  <div class="sesion-nav-center">
+    <span class="sesion-nav-progress">Sesión 14 de 15</span>
+  </div>
+  <a href="sesion-15.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S15: EN VIVO: Política Pública</span>
+  </a>
+</nav>
+```

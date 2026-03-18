@@ -95,6 +95,58 @@
   width: 13.34%;
 }
 
+.sesion-progress-fill-3 {
+  width: 20%;
+}
+
+.sesion-progress-fill-4 {
+  width: 26.67%;
+}
+
+.sesion-progress-fill-5 {
+  width: 33.34%;
+}
+
+.sesion-progress-fill-6 {
+  width: 40%;
+}
+
+.sesion-progress-fill-7 {
+  width: 46.67%;
+}
+
+.sesion-progress-fill-8 {
+  width: 53.34%;
+}
+
+.sesion-progress-fill-9 {
+  width: 60%;
+}
+
+.sesion-progress-fill-10 {
+  width: 66.67%;
+}
+
+.sesion-progress-fill-11 {
+  width: 73.34%;
+}
+
+.sesion-progress-fill-12 {
+  width: 80%;
+}
+
+.sesion-progress-fill-13 {
+  width: 86.67%;
+}
+
+.sesion-progress-fill-14 {
+  width: 93.34%;
+}
+
+.sesion-progress-fill-15 {
+  width: 100%;
+}
+
 .sesion-progress-label {
   font-size: 0.72rem;
   font-weight: 700;
@@ -157,6 +209,78 @@
   margin: 0;
   color: #94a3b8;
   font-size: 0.88rem;
+}
+
+/* ---- Skeleton architecture ---- */
+
+.sesion-outline {
+  background: linear-gradient(135deg, #f8fbff 0%, #eef6ff 100%);
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  padding: 1.2rem 1.25rem;
+  margin: 0 0 2rem;
+}
+
+.sesion-outline-kicker {
+  margin: 0 0 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2780e3;
+}
+
+.sesion-outline-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  color: #1a365d;
+}
+
+.sesion-outline-copy {
+  margin: 0 0 1rem;
+  color: #475569;
+  line-height: 1.65;
+  font-size: 0.9rem;
+}
+
+.sesion-outline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+
+.sesion-outline-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  padding: 0.9rem;
+}
+
+.sesion-outline-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 999px;
+  background: #2780e3;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  margin-bottom: 0.55rem;
+}
+
+.sesion-outline-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.88rem;
+  color: #1a365d;
+}
+
+.sesion-outline-card p {
+  margin: 0;
+  font-size: 0.81rem;
+  line-height: 1.55;
+  color: #475569;
 }
 
 /* ---- Mermaid diagrams ---- */

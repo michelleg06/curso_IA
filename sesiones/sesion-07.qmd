@@ -1,0 +1,116 @@
+---
+title: "Sesión 7: IA como Tutor de Lenguaje: Lectura, Escritura e Idiomas"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+```{=html}
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 2 · Herramientas Prácticas</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-7"></div>
+    </div>
+    <span class="sesion-progress-label">7 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip">📅 16 de junio de 2026</span>
+    <span class="sesion-meta-chip">⏱ 40 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+
+<div class="sesion-outline">
+  <p class="sesion-outline-kicker">Herramientas de lenguaje</p>
+  <h2 class="sesion-outline-title">Arquitectura base de la sesión</h2>
+  <p class="sesion-outline-copy">Esta página deja listo el espacio para integrar ejemplos de lectura asistida, edición responsable y práctica de idiomas con IA.</p>
+  <div class="sesion-outline-grid">
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">01</span>
+      <h3>Apertura</h3>
+      <p>Escenario cotidiano de lectura, resumen y reescritura con autoría propia.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">02</span>
+      <h3>Conceptos clave</h3>
+      <p>Comprensión, retroalimentación, traducción, tono y práctica oral.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">03</span>
+      <h3>Actividad</h3>
+      <p>Prompts de lectura, corrección y conversación.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">04</span>
+      <h3>Cierre</h3>
+      <p>Criterios de uso ético para tareas, ensayos e idiomas.</p>
+    </div>
+  </div>
+</div>
+```
+
+## Video de la sesión
+
+```{=html}
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video de la sesión — en desarrollo</p>
+  <p>Aquí se insertará la grabación principal cuando el guion final esté listo.</p>
+</div>
+```
+
+## Objetivos de aprendizaje
+
+- Usar IA para mejorar comprensión de textos en español e inglés.
+- Usar IA como editor, nunca como autor.
+- Practicar idiomas con herramientas conversacionales de IA.
+
+## Contenido previsto
+
+### Apertura
+
+- Se añadirá un ejemplo breve de lectura o escritura donde la IA ayude sin reemplazar la voz del estudiante.
+
+### Desarrollo principal
+
+- Aquí irá la explicación base sobre lectura, corrección, traducción y práctica oral.
+
+### Actividad o demo
+
+- Este bloque servirá para insertar prompts concretos de comprensión, edición y conversación.
+
+### Cierre
+
+- Se integrará una síntesis sobre uso ético y límites en tareas escolares.
+
+## Recursos y materiales por incorporar
+
+- Comparativa entre ChatGPT, Perplexity, Grammarly y herramientas de idiomas.
+- Ejemplos de prompts para leer mejor y escribir con claridad.
+- Mini guía de usos permitidos y no permitidos en trabajos escolares.
+
+::: {.callout-note}
+# Estado de esta página
+La sesión ya quedó publicada con estructura base, navegación y placeholders. Falta integrar el guion final, la actividad y los recursos visuales.
+:::
+
+```{=html}
+<nav class="sesion-nav">
+  <a href="sesion-06.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S6: EN VIVO: IA en México</span>
+  </a>
+  <div class="sesion-nav-center">
+    <span class="sesion-nav-progress">Sesión 7 de 15</span>
+  </div>
+  <a href="sesion-08.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S8: IA para Creatividad</span>
+  </a>
+</nav>
+```

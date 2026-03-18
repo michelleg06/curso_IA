@@ -1,0 +1,116 @@
+---
+title: "Sesión 5: Ética y Problemas Reales de la IA"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+```{=html}
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 1 · Fundamentos + Ética</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-5"></div>
+    </div>
+    <span class="sesion-progress-label">5 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip">📅 2 de junio de 2026</span>
+    <span class="sesion-meta-chip">⏱ 45 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+
+<div class="sesion-outline">
+  <p class="sesion-outline-kicker">Riesgos y decisiones</p>
+  <h2 class="sesion-outline-title">Arquitectura base de la sesión</h2>
+  <p class="sesion-outline-copy">Esta página deja el esqueleto para trabajar casos reales, sesgos algorítmicos, privacidad, deepfakes y preguntas de responsabilidad pública.</p>
+  <div class="sesion-outline-grid">
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">01</span>
+      <h3>Apertura</h3>
+      <p>Un caso detonador para mostrar que los errores de IA afectan personas reales.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">02</span>
+      <h3>Conceptos clave</h3>
+      <p>Sesgo, privacidad, vigilancia, autoría y uso responsable.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">03</span>
+      <h3>Actividad</h3>
+      <p>Debate guiado o análisis de casos con posturas encontradas.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">04</span>
+      <h3>Cierre</h3>
+      <p>Marco ético básico para el resto del curso.</p>
+    </div>
+  </div>
+</div>
+```
+
+## Video de la sesión
+
+```{=html}
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video de la sesión — en desarrollo</p>
+  <p>Aquí se insertará la grabación principal cuando el guion final esté listo.</p>
+</div>
+```
+
+## Objetivos de aprendizaje
+
+- Reflexionar sobre implicaciones éticas y riesgos reales de la IA.
+- Analizar sesgo algorítmico con casos locales e internacionales.
+- Discutir privacidad, deepfakes e impacto en empleos.
+
+## Contenido previsto
+
+### Apertura
+
+- Se incorporará un caso real para mostrar por qué la ética no es un tema secundario.
+
+### Desarrollo principal
+
+- Aquí irá la explicación base con ejemplos de sesgo, vigilancia y responsabilidad.
+
+### Actividad o demo
+
+- Este bloque servirá para una dinámica de debate o análisis guiado.
+
+### Cierre
+
+- Se añadirá una síntesis sobre uso responsable y criterios mínimos de evaluación ética.
+
+## Recursos y materiales por incorporar
+
+- Ficha de casos COMPAS, Amazon Hiring y reconocimiento facial.
+- Preguntas de debate para trabajo individual o grupal.
+- Espacio para ejemplos locales y conexión con México.
+
+::: {.callout-note}
+# Estado de esta página
+La sesión ya quedó publicada con estructura base, navegación y placeholders. Falta integrar el guion final, la actividad y los recursos visuales.
+:::
+
+```{=html}
+<nav class="sesion-nav">
+  <a href="sesion-04.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S4: IA Generativa</span>
+  </a>
+  <div class="sesion-nav-center">
+    <span class="sesion-nav-progress">Sesión 5 de 15</span>
+  </div>
+  <a href="sesion-06.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S6: EN VIVO: IA en México</span>
+  </a>
+</nav>
+```

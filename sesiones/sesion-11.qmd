@@ -1,0 +1,106 @@
+---
+title: "Sesión 11: EN VIVO: IA en la Educación Global"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+```{=html}
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 2 · Herramientas Prácticas</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-11"></div>
+    </div>
+    <span class="sesion-progress-label">11 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip">📅 14 de julio de 2026</span>
+    <span class="sesion-meta-chip">⏱ 60 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+
+<div class="sesion-outline">
+  <p class="sesion-outline-kicker">Sesión Zoom</p>
+  <h2 class="sesion-outline-title">Contenedor base de la sesión en vivo</h2>
+  <p class="sesion-outline-copy">Esta página queda lista para alojar la grabación del Zoom, la agenda de la conversación con Boston College y el material de seguimiento posterior.</p>
+  <div class="sesion-outline-grid">
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">01</span>
+      <h3>Antes del Zoom</h3>
+      <p>Contexto, invitado/a y preguntas guía.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">02</span>
+      <h3>Durante la sesión</h3>
+      <p>Charla principal y preguntas abiertas de estudiantes.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">03</span>
+      <h3>Después del Zoom</h3>
+      <p>Grabación, resumen y enlaces compartidos.</p>
+    </div>
+  </div>
+</div>
+```
+
+## Video / grabación
+
+```{=html}
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Grabación del Zoom — próximamente</p>
+  <p>Cuando termine la sesión en vivo, aquí se insertará el replay correspondiente.</p>
+</div>
+```
+
+## Propósito de la sesión
+
+- Conocer cómo universidades internacionales integran la IA en educación.
+- Explorar oportunidades académicas internacionales para estudiantes de San Luis Potosí.
+- Conectar el bloque práctico con contextos universitarios globales.
+
+## Agenda tentativa
+
+1. Bienvenida y contexto de la sesión internacional.
+2. Charla libre sobre IA en educación superior e investigación actual.
+3. Preguntas abiertas de estudiantes.
+4. Cierre con rutas académicas y recursos sugeridos.
+
+## Preguntas guía
+
+- ¿Cómo está cambiando la IA la forma de enseñar e investigar en Boston College?
+- ¿Qué habilidades buscan en estudiantes interesados en tecnología e IA?
+- ¿Hay oportunidades de intercambio o colaboración para estudiantes mexicanos?
+
+## Material que se añadirá después
+
+- Grabación de Zoom.
+- Resumen de ideas clave sobre educación global.
+- Enlaces a programas o iniciativas mencionadas.
+
+::: {.callout-note}
+# Estado de esta página
+Esta sesión en vivo quedó publicada como placeholder funcional. La siguiente iteración natural es agregar la grabación y el resumen posterior.
+:::
+
+```{=html}
+<nav class="sesion-nav">
+  <a href="sesion-10.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S10: Tutor Académico</span>
+  </a>
+  <div class="sesion-nav-center">
+    <span class="sesion-nav-progress">Sesión 11 de 15</span>
+  </div>
+  <a href="sesion-12.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S12: Programación con IA</span>
+  </a>
+</nav>
+```

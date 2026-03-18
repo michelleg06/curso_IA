@@ -1,0 +1,116 @@
+---
+title: "Sesión 8: IA para Creatividad: Arte, Música y Diseño"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+```{=html}
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 2 · Herramientas Prácticas</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-8"></div>
+    </div>
+    <span class="sesion-progress-label">8 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip">📅 23 de junio de 2026</span>
+    <span class="sesion-meta-chip">⏱ 45 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+
+<div class="sesion-outline">
+  <p class="sesion-outline-kicker">Expresión creativa</p>
+  <h2 class="sesion-outline-title">Arquitectura base de la sesión</h2>
+  <p class="sesion-outline-copy">Este andamio deja preparado el espacio para trabajar imagen, música y diseño generados con IA junto con el debate sobre autoría y creatividad.</p>
+  <div class="sesion-outline-grid">
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">01</span>
+      <h3>Apertura</h3>
+      <p>Ejemplos sorpresa de arte, música y diseño generados con IA.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">02</span>
+      <h3>Conceptos clave</h3>
+      <p>Prompts, difusión, iteración, estilo y autoría.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">03</span>
+      <h3>Actividad</h3>
+      <p>Comparar resultados de distintas herramientas creativas.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">04</span>
+      <h3>Cierre</h3>
+      <p>Debate sobre copyright, concursos y valor humano en la creación.</p>
+    </div>
+  </div>
+</div>
+```
+
+## Video de la sesión
+
+```{=html}
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video de la sesión — en desarrollo</p>
+  <p>Aquí se insertará la grabación principal cuando el guion final esté listo.</p>
+</div>
+```
+
+## Objetivos de aprendizaje
+
+- Explorar herramientas de IA generativa para expresión creativa.
+- Comprender cómo funcionan los modelos de difusión a nivel intuitivo.
+- Reflexionar sobre creatividad, autoría y derechos en la era de la IA.
+
+## Contenido previsto
+
+### Apertura
+
+- Se añadirá una entrada breve con ejemplos visuales o sonoros para captar el contraste entre creación humana y generativa.
+
+### Desarrollo principal
+
+- Aquí quedará la explicación base sobre prompts, difusión y decisiones creativas.
+
+### Actividad o demo
+
+- Este bloque servirá para insertar una comparación entre herramientas o resultados.
+
+### Cierre
+
+- Se integrará una síntesis final con preguntas sobre autoría, criterio y uso ético.
+
+## Recursos y materiales por incorporar
+
+- Bloque para Quick Draw!, Blob Opera, Firefly o Suno.
+- Caso Colorado 2022 para discusión.
+- Galería de resultados con prompts breves y claros.
+
+::: {.callout-note}
+# Estado de esta página
+La sesión ya quedó publicada con estructura base, navegación y placeholders. Falta integrar el guion final, la actividad y los recursos visuales.
+:::
+
+```{=html}
+<nav class="sesion-nav">
+  <a href="sesion-07.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S7: Tutor de Lenguaje</span>
+  </a>
+  <div class="sesion-nav-center">
+    <span class="sesion-nav-progress">Sesión 8 de 15</span>
+  </div>
+  <a href="sesion-09.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S9: IA para Organización</span>
+  </a>
+</nav>
+```

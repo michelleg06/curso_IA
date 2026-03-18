@@ -1,0 +1,116 @@
+---
+title: "Sesión 4: IA Generativa: ChatGPT, Gemini, Perplexity"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+```{=html}
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 1 · Fundamentos + Ética</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-4"></div>
+    </div>
+    <span class="sesion-progress-label">4 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip">📅 26 de mayo de 2026</span>
+    <span class="sesion-meta-chip">⏱ 40 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+
+<div class="sesion-outline">
+  <p class="sesion-outline-kicker">Modelos generativos</p>
+  <h2 class="sesion-outline-title">Arquitectura base de la sesión</h2>
+  <p class="sesion-outline-copy">Este andamio deja listo el espacio para explicar qué hace un LLM, cómo se diferencia de un buscador y por qué texto e imagen no se generan del mismo modo.</p>
+  <div class="sesion-outline-grid">
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">01</span>
+      <h3>Apertura</h3>
+      <p>Comparación inicial entre buscador, chatbot y modelo generativo.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">02</span>
+      <h3>Conceptos clave</h3>
+      <p>LLMs, contexto, tokens, alucinaciones y modelos de difusión.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">03</span>
+      <h3>Actividad</h3>
+      <p>Comparar prompts y respuestas entre distintas herramientas.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">04</span>
+      <h3>Cierre</h3>
+      <p>Criterios para usar IA generativa con juicio crítico.</p>
+    </div>
+  </div>
+</div>
+```
+
+## Video de la sesión
+
+```{=html}
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video de la sesión — en desarrollo</p>
+  <p>Aquí se insertará la grabación principal cuando el guion final esté listo.</p>
+</div>
+```
+
+## Objetivos de aprendizaje
+
+- Entender qué es un modelo de lenguaje grande (LLM).
+- Identificar limitaciones como alucinaciones, sesgos y cortes de conocimiento.
+- Reconocer diferencias entre generación de texto e imagen.
+
+## Contenido previsto
+
+### Apertura
+
+- Se añadirá una comparación corta entre buscar información y conversar con un modelo.
+
+### Desarrollo principal
+
+- Aquí quedará la explicación base sobre texto generativo, imagen generativa y sus límites.
+
+### Actividad o demo
+
+- Este espacio servirá para insertar ejemplos de prompts y comparación de resultados.
+
+### Cierre
+
+- Se integrará una síntesis breve sobre uso crítico y verificación.
+
+## Recursos y materiales por incorporar
+
+- Comparativa entre ChatGPT, Gemini y Perplexity.
+- Galería breve de prompts buenos vs. vagos.
+- Espacio para un ejemplo visual de imagen generada.
+
+::: {.callout-note}
+# Estado de esta página
+La sesión ya quedó publicada con estructura base, navegación y placeholders. Falta integrar el guion final, la actividad y los recursos visuales.
+:::
+
+```{=html}
+<nav class="sesion-nav">
+  <a href="sesion-03.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S3: Algoritmos de IA</span>
+  </a>
+  <div class="sesion-nav-center">
+    <span class="sesion-nav-progress">Sesión 4 de 15</span>
+  </div>
+  <a href="sesion-05.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S5: Ética y problemas reales</span>
+  </a>
+</nav>
+```

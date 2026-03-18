@@ -1,0 +1,107 @@
+---
+title: "Sesión 15: EN VIVO: IA, Política Pública y Ciudadanía"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+```{=html}
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 3 · Creación, Aplicaciones y Futuro</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-15"></div>
+    </div>
+    <span class="sesion-progress-label">15 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip">📅 11 de agosto de 2026</span>
+    <span class="sesion-meta-chip">⏱ 60 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+
+<div class="sesion-outline">
+  <p class="sesion-outline-kicker">Sesión Zoom</p>
+  <h2 class="sesion-outline-title">Contenedor base de la sesión en vivo</h2>
+  <p class="sesion-outline-copy">Esta página queda lista para alojar la grabación final del curso, la agenda del Zoom y el cierre sobre ciudadanía, regulación y futuro.</p>
+  <div class="sesion-outline-grid">
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">01</span>
+      <h3>Antes del Zoom</h3>
+      <p>Contexto, invitado/a y preguntas guía.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">02</span>
+      <h3>Durante la sesión</h3>
+      <p>Charla principal y preguntas abiertas de estudiantes.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">03</span>
+      <h3>Después del Zoom</h3>
+      <p>Grabación, resumen final y recursos sobre regulación y derechos digitales.</p>
+    </div>
+  </div>
+</div>
+```
+
+## Video / grabación
+
+```{=html}
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Grabación del Zoom — próximamente</p>
+  <p>Cuando termine la sesión en vivo, aquí se insertará el replay correspondiente.</p>
+</div>
+```
+
+## Propósito de la sesión
+
+- Entender la IA como asunto ciudadano, no solo tecnológico.
+- Conocer cómo se regula la IA en México y el mundo.
+- Explorar carreras en la intersección de tecnología y política pública.
+
+## Agenda tentativa
+
+1. Bienvenida y cierre del recorrido del curso.
+2. Charla sobre regulación, ciudadanía y derechos digitales.
+3. Preguntas abiertas de estudiantes.
+4. Cierre con rutas profesionales y participación pública.
+
+## Preguntas guía
+
+- ¿Cómo se está regulando la IA en México? ¿Qué papel juega el INAI?
+- ¿Cuáles son los riesgos más urgentes de la IA para la ciudadanía mexicana?
+- ¿Qué pueden hacer los jóvenes para participar en estas decisiones?
+- ¿Qué carreras existen en la intersección de tecnología y política pública?
+
+## Material que se añadirá después
+
+- Grabación de Zoom.
+- Resumen del cierre del curso.
+- Recursos sobre regulación, derechos digitales y participación pública.
+
+::: {.callout-note}
+# Estado de esta página
+Esta sesión en vivo quedó publicada como placeholder funcional. La siguiente iteración natural es agregar la grabación y el resumen posterior.
+:::
+
+```{=html}
+<nav class="sesion-nav">
+  <a href="sesion-14.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S14: IA en Salud y Ciencia</span>
+  </a>
+  <div class="sesion-nav-center">
+    <span class="sesion-nav-progress">Sesión 15 de 15</span>
+  </div>
+  <a href="../syllabus.html" class="sesion-nav-btn next">
+    <span class="nav-label">Programa →</span>
+    <span class="nav-title">Volver al programa</span>
+  </a>
+</nav>
+```

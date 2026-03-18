@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sesión 3: Algoritmos de IA: ¿qué método para qué problema? – Intro a la IA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/logo.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../styles/sesion.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/logo.svg" alt="Intro a la IA" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Intro a la IA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">Programa</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sesiones" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Sesiones</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-sesiones">    
+        <li class="dropdown-header">— Bloque 1: Fundamentos + Ética —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-01.html">
+ <span class="dropdown-text">S1 · ¿Qué es la IA?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-02.html">
+ <span class="dropdown-text">S2 · Redes Neuronales — ¿Cómo ‘piensa’ la IA?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-03.html">
+ <span class="dropdown-text">S3 · Algoritmos de IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-04.html">
+ <span class="dropdown-text">S4 · IA Generativa</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-05.html">
+ <span class="dropdown-text">S5 · Ética y problemas reales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-06.html">
+ <span class="dropdown-text">S6 · EN VIVO: IA en México</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 2: Herramientas Prácticas —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-07.html">
+ <span class="dropdown-text">S7 · Tutor de Lenguaje</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-08.html">
+ <span class="dropdown-text">S8 · IA para Creatividad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-09.html">
+ <span class="dropdown-text">S9 · IA para Organización</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-10.html">
+ <span class="dropdown-text">S10 · Tutor Académico</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-11.html">
+ <span class="dropdown-text">S11 · EN VIVO: Educación Global</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 3: Creación, Aplicaciones y Futuro —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-12.html">
+ <span class="dropdown-text">S12 · Programación con IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-13.html">
+ <span class="dropdown-text">S13 · Robótica e IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-14.html">
+ <span class="dropdown-text">S14 · IA en Salud, Ciencia y Sociedad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-15.html">
+ <span class="dropdown-text">S15 · EN VIVO: Política Pública</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#video-algoritmos-de-ia-qué-método-para-qué-problema" id="toc-video-algoritmos-de-ia-qué-método-para-qué-problema" class="nav-link active" data-scroll-target="#video-algoritmos-de-ia-qué-método-para-qué-problema">Video: Algoritmos de IA — ¿qué método para qué problema?</a></li>
+  <li><a href="#texto-algoritmos-de-ia-qué-método-para-qué-problema" id="toc-texto-algoritmos-de-ia-qué-método-para-qué-problema" class="nav-link" data-scroll-target="#texto-algoritmos-de-ia-qué-método-para-qué-problema">Texto: Algoritmos de IA — ¿qué método para qué problema?</a></li>
+  <li><a href="#actividad-problema-método-límite" id="toc-actividad-problema-método-límite" class="nav-link" data-scroll-target="#actividad-problema-método-límite">Actividad: Problema → Método → Límite</a></li>
+  <li><a href="#cierre" id="toc-cierre" class="nav-link" data-scroll-target="#cierre">Cierre</a></li>
+  <li><a href="#para-reflexionar" id="toc-para-reflexionar" class="nav-link" data-scroll-target="#para-reflexionar">Para reflexionar</a></li>
+  <li><a href="#recursos-para-explorar-más" id="toc-recursos-para-explorar-más" class="nav-link" data-scroll-target="#recursos-para-explorar-más">Recursos para explorar más</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sesión 3: Algoritmos de IA: ¿qué método para qué problema?</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 1 · Fundamentos + Ética</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-3"></div>
+    </div>
+    <span class="sesion-progress-label">3 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip">📅 19 de mayo de 2026</span>
+    <span class="sesion-meta-chip">⏱ 45 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+<style>
+/* ================================================
+   SESIÓN 03 — estilos custom
+================================================ */
+
+/* ---- Familia cards (las 6 familias de algoritmos) ---- */
+.algo-family-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.4rem 0;
+}
+.algo-family-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.1rem 1rem;
+  transition: box-shadow 0.2s;
+}
+.algo-family-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+.algo-family-card.is-new { border-color: #93c5fd; }
+.algo-family-card.is-known { border-color: #d1fae5; }
+.algo-family-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+.algo-family-emoji { font-size: 1.6rem; }
+.algo-family-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0;
+}
+.algo-family-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+  margin-left: auto;
+}
+.badge-new { background: #dbeafe; color: #1d4ed8; }
+.badge-known { background: #d1fae5; color: #065f46; }
+.algo-family-analogy {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.55;
+  margin-bottom: 0.5rem;
+}
+.algo-family-limit {
+  font-size: 0.78rem;
+  color: #92400e;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+}
+.algo-family-limit strong { display: block; margin-bottom: 0.15rem; }
+
+/* ---- Mini lab links (demos externos) ---- */
+.demo-externo {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: #f0f9ff;
+  border: 1.5px solid #bae6fd;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  margin: 1.2rem 0;
+  text-decoration: none;
+}
+.demo-externo-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+.demo-externo-body { flex: 1; }
+.demo-externo-kicker {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0369a1;
+  margin-bottom: 0.2rem;
+}
+.demo-externo-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0c4a6e;
+  margin: 0 0 0.3rem;
+}
+.demo-externo-copy {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0;
+}
+.demo-externo-copy a { color: #0369a1; font-weight: 600; }
+
+/* ---- Actividad interactiva (card matching) ---- */
+.match-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+.match-card {
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.match-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-bottom: 0.45rem;
+}
+.match-card-emoji { font-size: 1.4rem; flex-shrink: 0; }
+.match-card-title {
+  font-size: 0.87rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0;
+  line-height: 1.35;
+}
+.match-card-context {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+.match-algo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.3rem;
+}
+.match-algo-btn {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  padding: 0.3rem 0.25rem;
+  font-size: 0.68rem;
+  cursor: pointer;
+  transition: all 0.14s;
+  text-align: center;
+  line-height: 1.3;
+}
+.match-algo-btn:hover { background: #dbeafe; border-color: #93c5fd; }
+.match-algo-btn.is-selected { background: #2780e3; color: #fff; border-color: #2780e3; }
+.match-card.match-correct { border-color: #22c55e; background: #f0fdf4; }
+.match-card.match-incorrect { border-color: #ef4444; background: #fef2f2; }
+.match-feedback {
+  margin-top: 0.7rem;
+  font-size: 0.77rem;
+  line-height: 1.55;
+}
+.match-feedback-ok { color: #16a34a; font-weight: 600; display: block; margin-bottom: 0.2rem; }
+.match-feedback-err { color: #dc2626; font-weight: 600; display: block; margin-bottom: 0.2rem; }
+.match-feedback-limit { color: #92400e; }
+
+/* ---- Tabla comparativa ---- */
+.tabla-comparativa {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  margin: 1.2rem 0;
+}
+.tabla-comparativa th {
+  background: #1a365d;
+  color: #fff;
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  font-weight: 600;
+}
+.tabla-comparativa td {
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+}
+.tabla-comparativa tr:nth-child(even) td { background: #f8fafc; }
+.tabla-comparativa tr:hover td { background: #eff6ff; }
+.tag-nuevo {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 0.1rem 0.4rem;
+  border-radius: 99px;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+}
+.tag-conocido {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  background: #d1fae5;
+  color: #065f46;
+  padding: 0.1rem 0.4rem;
+  border-radius: 99px;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+}
+</style>
+<section id="video-algoritmos-de-ia-qué-método-para-qué-problema" class="level2">
+<h2 class="anchored" data-anchor-id="video-algoritmos-de-ia-qué-método-para-qué-problema">Video: Algoritmos de IA — ¿qué método para qué problema?</h2>
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video de la sesión — en desarrollo</p>
+  <p>Aquí se insertará la grabación principal cuando el guion final esté listo.</p>
+</div>
+<hr>
+</section>
+<section id="texto-algoritmos-de-ia-qué-método-para-qué-problema" class="level2">
+<h2 class="anchored" data-anchor-id="texto-algoritmos-de-ia-qué-método-para-qué-problema">Texto: Algoritmos de IA — ¿qué método para qué problema?</h2>
+<hr>
+<section id="introducción" class="level3">
+<h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
+<p>Son las 11 de la noche. Abres WhatsApp para mandarle un mensaje a alguien y el teclado ya te propone la siguiente palabra antes de que termines de escribir. Minutos después entras a Instagram y la app detecta tu cara automáticamente para etiquetarte en una foto. Antes de dormir revisas Spotify: el algoritmo ya preparó una playlist nueva que, de alguna forma, suena exactamente como lo que quieres escuchar ahora mismo. A las 11:03 tu app de noticias muestra un artículo que encaja perfecto con algo que buscaste esta mañana.</p>
+<p>Cuatro apps. Cuatro tipos de IA distintos.</p>
+<p>Esto no es casualidad. El sistema que predice tu siguiente palabra en WhatsApp es completamente diferente al que detecta tu cara en Instagram. El que agrupa tu música según tu estado de ánimo no tiene nada que ver con el que ordena tus noticias. Cada uno fue diseñado para resolver un <strong>tipo distinto de problema</strong>..</p>
+<p>En las sesiones anteriores viste cómo aprende una máquina: ajustando una recta a partir de datos (regresión lineal en S1), agrupando sin etiquetas (K-Means en S1), aprendiendo por ensayo y error (refuerzo en S1), y construyendo redes neuronales capa por capa (S2). Hoy vamos a organizar todo eso — más algunos métodos nuevos — dentro de un mapa que te permita responder la pregunta clave:</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pregunta clave
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>¿Qué familia de algoritmos tiene más sentido aplicar — y por qué?</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="por-qué-no-existe-un-solo-algoritmo-para-todo" class="level3">
+<h3 class="anchored" data-anchor-id="por-qué-no-existe-un-solo-algoritmo-para-todo">¿Por qué no existe un solo algoritmo para todo?</h3>
+<p>Imagina que eres carpintero y tienes un solo instrumento: un martillo. Puedes usarlo para clavar, para romper, para golpear. Pero si necesitas cortar una tabla, lijar una superficie o atornillar, el martillo no sirve de nada — o peor, arruina el trabajo.</p>
+<p>Los algoritmos de IA funcionan igual. Cada familia fue diseñada para resolver un tipo específico de problema. Forzar un método donde no encaja tiene consecuencias:</p>
+<ul>
+<li>Un modelo de regresión intentando clasificar imágenes como “spam / no spam” producirá caos.</li>
+<li>Un algoritmo de agrupamiento (K-Means) al que le pides predecir el precio del dólar mañana no tiene idea de qué hacer.</li>
+<li>Usar un transformer gigante para predecir si una persona pagará su crédito es caro, lento e innecesario.</li>
+</ul>
+<p><strong>La buena noticia:</strong> no necesitas memorizar decenas de algoritmos. Necesitas aprender a <strong>hacer dos preguntas</strong> que clasifican casi cualquier problema.</p>
+<hr>
+</section>
+<section id="el-mapa-de-métodos-dos-preguntas-que-clasifican-todo" class="level3">
+<h3 class="anchored" data-anchor-id="el-mapa-de-métodos-dos-preguntas-que-clasifican-todo">El mapa de métodos: dos preguntas que clasifican todo</h3>
+<p>Antes de elegir un algoritmo, pregúntate:</p>
+<p><strong>Pregunta 1: ¿Tienes respuestas correctas etiquetadas en tus datos?</strong></p>
+<ul>
+<li>Si <strong>sí</strong> — alguien ya etiquetó los datos con la respuesta correcta (ej. “este correo es spam”, “este tumor es maligno”). Eso se llama <strong>aprendizaje supervisado</strong>.</li>
+<li>Si <strong>no</strong> — los datos no tienen etiqueta, o el sistema aprende solo probando en un entorno. Puede ser <strong>no supervisado</strong> o <strong>por refuerzo</strong>.</li>
+</ul>
+<p><strong>Pregunta 2 (solo si respondiste sí): ¿Qué forma tiene la salida?</strong></p>
+<ul>
+<li>¿Un número continuo? → <strong>Regresión</strong></li>
+<li>¿Una categoría? → depende si los datos son texto, imagen o números estructurados</li>
+</ul>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TD
+    Q1{"¿Tienes respuestas etiquetadas?"}
+    Q1 --&gt;|"Sí — supervisado"| Q2{"¿Qué salida necesitas?"}
+    Q1 --&gt;|"No"| Q3{"¿Buscas gruposo aprendes actuando?"}
+
+    Q2 --&gt;|"Predecir un número"| R["📈 Regresión lineal\n(ya la conoces)"]
+    Q2 --&gt;|"Predecir una categoría"| Q4{"¿Qué tipo de datos?"}
+
+    Q4 --&gt;|"Texto / secuencias"| TR["💬 Transformers (nuevo)"]
+    Q4 --&gt;|"Imágenes"| C["👁 CNN (nuevo)"]
+    Q4 --&gt;|"Datos estructurados"| T["🌳 Árbol de decisión (nuevo)"]
+
+    Q3 --&gt;|"Buscar grupos"| K["🔵 K-Means (ya lo conoces)"]
+    Q3 --&gt;|"Aprender actuando"| RL["🎮 Refuerzo (ya lo conoces)"]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Este mapa es tu brújula. Cuando tengas un problema que crees que la IA puede resolver, empieza siempre desde arriba.</p>
+<hr>
+</section>
+<section id="las-6-familias-de-algoritmos" class="level3">
+<h3 class="anchored" data-anchor-id="las-6-familias-de-algoritmos">Las 6 familias de algoritmos</h3>
+<p>A continuación, un recorrido por las seis familias del mapa. Las tres que ya conoces de sesiones anteriores van en versión rápida. Las tres nuevas llevan más espacio.</p>
+<hr>
+<section id="regresión-lineal-ya-la-conoces" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="regresión-lineal-ya-la-conoces">Regresión lineal — ya la conoces</h4>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Repaso rápido — S1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En la sesión 1 ajustaste una recta (<code>ŷ = m·x + b</code>) para predecir calificaciones según horas de estudio. Eso es regresión lineal: encontrar los números <code>m</code> y <code>b</code> que mejor explican los datos.</p>
+</div>
+</div>
+<p><strong>Cuándo usarla:</strong> cuando quieres predecir un número continuo a partir de variables de entrada.</p>
+<p><strong>Ejemplos nuevos:</strong> - Predecir cuántos minutos tardará tu DiDi en llegar basándose en la distancia, hora del día y tráfico actual. - Estimar cuántas vistas tendrá un video de TikTok según su duración, hora de publicación y número de seguidores.</p>
+<p><strong>Su límite:</strong> Solo captura relaciones lineales. Si la relación real es una curva, la recta se queda corta. Existen versiones más avanzadas (regresión polinomial, regresión con regularización) para esos casos.</p>
+<hr>
+</section>
+<section id="árbol-de-decisión-el-juego-de-las-20-preguntas" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="árbol-de-decisión-el-juego-de-las-20-preguntas">Árbol de decisión — el juego de las 20 preguntas</h4>
+<p>¿Alguna vez jugaste “Adivina el personaje”? Alguien piensa en una persona y tú tienes que adivinarla haciendo preguntas de sí o no: “¿Es hombre?”, “¿Es mayor de 40 años?”, “¿Es famoso por el deporte?”. Con suficientes preguntas bien elegidas llegas a la respuesta.</p>
+<p>Un árbol de decisión hace exactamente eso, pero con datos.</p>
+<p>El algoritmo analiza el conjunto de entrenamiento y descubre cuál es la pregunta más útil para hacer primero — la que mejor <strong>divide</strong> los datos entre las posibles categorías. Luego hace la siguiente pregunta más útil, y así recursivamente, hasta llegar a una clasificación.</p>
+<p><strong>Ejemplo:</strong> Supón que quieres construir un clasificador de spam. El árbol podría aprender preguntas como:</p>
+<ol type="1">
+<li><p>¿Contiene la frase “haz clic aquí para ganar”? → Si sí → spam</p></li>
+<li><p>¿El remitente está en tus contactos? → Si no → probablemente spam</p></li>
+<li><p>¿El asunto tiene más de 3 signos de exclamación? → Si sí → spam</p></li>
+</ol>
+<p>Nadie le programó esas reglas. El árbol las <strong>aprendió</strong> del historial de correos etiquetados.</p>
+<figure style="margin:1.4rem 0;" class="figure">
+  <svg viewbox="0 0 580 295" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:560px;display:block;margin:0 auto;" role="img" aria-label="Árbol de decisión para clasificar spam en tres preguntas">
+    <defs>
+      <marker id="dtarr" markerwidth="7" markerheight="7" refx="6" refy="3.5" orient="auto">
+        <polygon points="0 0, 7 3.5, 0 7" fill="#cbd5e1"></polygon>
+      </marker>
+    </defs>
+    <line x1="280" y1="54" x2="72" y2="101" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#dtarr)"></line>
+    <line x1="280" y1="54" x2="400" y2="101" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#dtarr)"></line>
+    <line x1="400" y1="136" x2="262" y2="187" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#dtarr)"></line>
+    <line x1="400" y1="136" x2="469" y2="187" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#dtarr)"></line>
+    <line x1="470" y1="222" x2="387" y2="257" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#dtarr)"></line>
+    <line x1="470" y1="222" x2="513" y2="257" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#dtarr)"></line>
+    <rect x="140" y="70" width="24" height="14" rx="7" fill="#dcfce7"></rect>
+    <text x="152" y="77" text-anchor="middle" dominant-baseline="middle" font-size="9" font-weight="700" fill="#15803d" font-family="system-ui,sans-serif">Sí</text>
+    <rect x="305" y="153" width="24" height="14" rx="7" fill="#dcfce7"></rect>
+    <text x="317" y="160" text-anchor="middle" dominant-baseline="middle" font-size="9" font-weight="700" fill="#15803d" font-family="system-ui,sans-serif">Sí</text>
+    <rect x="412" y="231" width="24" height="14" rx="7" fill="#dcfce7"></rect>
+    <text x="424" y="238" text-anchor="middle" dominant-baseline="middle" font-size="9" font-weight="700" fill="#15803d" font-family="system-ui,sans-serif">Sí</text>
+    <rect x="329" y="70" width="24" height="14" rx="7" fill="#f1f5f9"></rect>
+    <text x="341" y="77" text-anchor="middle" dominant-baseline="middle" font-size="9" font-weight="700" fill="#475569" font-family="system-ui,sans-serif">No</text>
+    <rect x="424" y="153" width="24" height="14" rx="7" fill="#f1f5f9"></rect>
+    <text x="436" y="160" text-anchor="middle" dominant-baseline="middle" font-size="9" font-weight="700" fill="#475569" font-family="system-ui,sans-serif">No</text>
+    <rect x="480" y="231" width="24" height="14" rx="7" fill="#f1f5f9"></rect>
+    <text x="492" y="238" text-anchor="middle" dominant-baseline="middle" font-size="9" font-weight="700" fill="#475569" font-family="system-ui,sans-serif">No</text>
+    <rect x="150" y="10" width="260" height="44" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"></rect>
+    <text x="280" y="26" text-anchor="middle" dominant-baseline="middle" font-size="10.5" font-weight="700" fill="#1d4ed8" font-family="system-ui,sans-serif">¿Contiene "haz clic para ganar"?</text>
+    <text x="280" y="43" text-anchor="middle" dominant-baseline="middle" font-size="9" fill="#6b7280" font-family="system-ui,sans-serif">Pregunta 1 de 3</text>
+    <rect x="303" y="101" width="194" height="35" rx="9" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"></rect>
+    <text x="400" y="119" text-anchor="middle" dominant-baseline="middle" font-size="10.5" font-weight="700" fill="#1d4ed8" font-family="system-ui,sans-serif">¿Remitente en contactos?</text>
+    <rect x="382" y="187" width="176" height="35" rx="9" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"></rect>
+    <text x="470" y="205" text-anchor="middle" dominant-baseline="middle" font-size="10.5" font-weight="700" fill="#1d4ed8" font-family="system-ui,sans-serif">¿Más de 3 signos "!"?</text>
+    <rect x="10" y="101" width="120" height="35" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"></rect>
+    <text x="70" y="119" text-anchor="middle" dominant-baseline="middle" font-size="12" font-weight="700" fill="#dc2626" font-family="system-ui,sans-serif">🚨 Spam</text>
+    <rect x="325" y="257" width="120" height="32" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"></rect>
+    <text x="385" y="273" text-anchor="middle" dominant-baseline="middle" font-size="12" font-weight="700" fill="#dc2626" font-family="system-ui,sans-serif">🚨 Spam</text>
+    <rect x="185" y="187" width="150" height="35" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"></rect>
+    <text x="260" y="205" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="700" fill="#16a34a" font-family="system-ui,sans-serif">✅ No es spam</text>
+    <rect x="455" y="257" width="115" height="32" rx="9" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"></rect>
+    <text x="513" y="273" text-anchor="middle" dominant-baseline="middle" font-size="10.5" font-weight="600" fill="#475569" font-family="system-ui,sans-serif">🤔 Revisar</text>
+  </svg>
+  <figcaption style="text-align:center;font-size:0.78rem;color:#94a3b8;margin-top:0.5rem;">El árbol aprendió estas tres preguntas solo — nadie las programó a mano.</figcaption>
+</figure>
+<p><strong>Cuándo usarlo:</strong> cuando tienes datos estructurados (tablas con columnas y filas), necesitas clasificar en categorías, y quieres que el modelo sea explicable — es decir, poder decirle al usuario exactamente por qué tomó una decisión.</p>
+<p><strong>Su límite:</strong> Si los datos de prueba son muy distintos a los de entrenamiento, el árbol falla. También puede “memorizar” demasiado los datos de entrenamiento sin generalizar bien — eso se llama <strong>sobreajuste</strong> (<em>overfitting</em>). Las versiones mejoradas (Random Forest, Gradient Boosting) solucionan esto con decenas de árboles trabajando juntos.</p>
+<div class="demo-externo">
+  <span class="demo-externo-icon">🌳</span>
+  <div class="demo-externo-body">
+    <p class="demo-externo-kicker">Mini lab — árboles de decisión</p>
+    <h5 class="demo-externo-title anchored">R2D3: Una introducción visual al machine learning</h5>
+    <p class="demo-externo-copy">
+      Uno de los mejores recursos para entender árboles de decisión de forma visual.
+      Usa datos de departamentos en San Francisco y Nueva York.
+      No necesitas ningún conocimiento previo, solo desplázate lentamente y observa cómo el árbol construye sus preguntas paso a paso.<br><br>
+      <a href="https://r2d3.us/visual-intro-to-machine-learning-part-1/" target="_blank" rel="noopener">→ Abrir R2D3 (inglés, visual, gratuito)</a>
+    </p>
+  </div>
+</div>
+<hr>
+</section>
+<section id="k-means-ya-lo-conoces" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="k-means-ya-lo-conoces">K-Means — ya lo conoces</h4>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Repaso rápido — S1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En la sesión 1 viste cómo K-Means agrupa canciones sin etiquetas: propone centros al azar, asigna cada punto al centro más cercano, mueve los centros, y repite hasta que los grupos se estabilizan.</p>
+</div>
+</div>
+<p><strong>Cuándo usarlo:</strong> cuando no tienes etiquetas y quieres descubrir la estructura natural de tus datos. Segmentación de clientes, agrupación de noticias por tema, detección de perfiles de usuario.</p>
+<p><strong>Su límite:</strong> tú tienes que decirle cuántos grupos quieres (<code>k</code>). El algoritmo no lo decide solo. Si eliges un <code>k</code> incorrecto, los grupos no tendrán sentido. Existen métodos para estimar el mejor <code>k</code>, pero siguen siendo heurísticos.</p>
+<hr>
+</section>
+<section id="redes-neuronales-convolucionales-cnn-cómo-ve-la-ia" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="redes-neuronales-convolucionales-cnn-cómo-ve-la-ia">Redes neuronales convolucionales (CNN) — cómo ve la IA</h4>
+<p>Cuando ves una fotografía de un gato, tu cerebro no la analiza píxel por píxel. Detecta bordes, luego formas, luego texturas, luego el objeto completo, todo en capas progresivas de abstracción. Las redes convolucionales hacen algo muy parecido.</p>
+<p>Una CNN pasa la imagen por una serie de <strong>filtros</strong> (pequeñas matrices matemáticas) que aprenden a detectar características en orden de complejidad:</p>
+<ul>
+<li><strong>Capa 1:</strong> bordes horizontales, verticales, diagonales</li>
+<li><strong>Capa 2:</strong> esquinas, curvas, líneas dobles</li>
+<li><strong>Capa 3:</strong> texturas (pelo, plumas, piel)</li>
+<li><strong>Capa 4:</strong> partes (ojo, oreja, pata)</li>
+<li><strong>Capa final:</strong> el objeto completo (gato, perro, persona)</li>
+</ul>
+<p>Ninguna de esas características fue programada manualmente. La red las <strong>aprendió</strong> ajustando los filtros con millones de imágenes etiquetadas y retropropagación (backpropagation, que se mencionó brevemente en la S2).</p>
+<div class="algo-family-grid">
+  <div class="algo-family-card is-new">
+    <div class="algo-family-header">
+      <span class="algo-family-emoji">👁</span>
+      <h5 class="algo-family-title anchored">Capa 1 — Bordes</h5>
+    </div>
+    <p class="algo-family-analogy">Detecta cambios bruscos de color en la imagen: una línea vertical entre el fondo claro y el pelo oscuro de un gato.</p>
+  </div>
+  <div class="algo-family-card is-new">
+    <div class="algo-family-header">
+      <span class="algo-family-emoji">🔵</span>
+      <h5 class="algo-family-title anchored">Capa 2 — Formas</h5>
+    </div>
+    <p class="algo-family-analogy">Combina los bordes detectados para reconocer esquinas, curvas y formas simples: la punta de una oreja, el contorno de un ojo.</p>
+  </div>
+  <div class="algo-family-card is-new">
+    <div class="algo-family-header">
+      <span class="algo-family-emoji">🐾</span>
+      <h5 class="algo-family-title anchored">Capa final — Objeto</h5>
+    </div>
+    <p class="algo-family-analogy">Combina todas las características detectadas en capas anteriores y decide: es un gato, no un perro ni una persona.</p>
+  </div>
+</div>
+<p><strong>Cuándo usarlas:</strong> casi cualquier tarea con imágenes o video — reconocimiento facial, detección de objetos, moderación de contenido, diagnóstico médico por radiografías.</p>
+<p><strong>Ejemplos que ya usas:</strong></p>
+<ul>
+<li><p>Face ID de tu iPhone o la detección automática de caras en Instagram</p></li>
+<li><p>El filtro de contenido violento en TikTok</p></li>
+<li><p>Los asistentes de diagnóstico por imagen en hospitales</p></li>
+</ul>
+<p><strong>Su límite:</strong> necesitan <strong>enormes</strong> cantidades de imágenes etiquetadas para funcionar bien (decenas de miles a millones). También son costosas de entrenar en tiempo y computación. Y si les das una imagen ligeramente distorsionada (un pixel cambiado estratégicamente — lo que se llama <em>adversarial attack</em>), pueden fallar de forma sorprendente.</p>
+<div class="demo-externo">
+  <span class="demo-externo-icon">🎨</span>
+  <div class="demo-externo-body">
+    <p class="demo-externo-kicker">Demo — clasifica imágenes sin código</p>
+    <h5 class="demo-externo-title anchored">Teachable Machine de Google — entrenamiento de imágenes</h5>
+    <p class="demo-externo-copy">
+      Ya usaste Teachable Machine en la sesión 1. Esta vez vuelve con otro enfoque: cuando entrenas tu clasificador de imágenes, lo que está ocurriendo internamente es una CNN pequeña aprendiendo qué características distinguen tus clases. Prueba con menos fotos y observa cuándo el modelo empieza a fallar, ese es el límite de los datos que mencionamos arriba.<br><br>
+      <a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener">→ Abrir Teachable Machine</a>
+    </p>
+  </div>
+</div>
+<hr>
+</section>
+<section id="transformers-el-cerebro-detrás-de-chatgpt" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="transformers-el-cerebro-detrás-de-chatgpt">Transformers — el cerebro detrás de ChatGPT</h4>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿No habíamos dicho que ChatGPT usa redes neuronales?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sí. Los transformers <strong>son</strong> redes neuronales: usan las mismas neuronas artificiales, pesos y entrenamiento por retropropagación que viste en la S2. Lo que cambia es la <strong>arquitectura</strong>: cómo están organizadas esas neuronas y qué mecanismo usan para procesar información.</p>
+<p>La jerarquía es:</p>
+<ul>
+<li><p><strong>Red neuronal</strong> → categoría general (cualquier modelo con capas de neuronas conectadas)</p>
+<ul>
+<li><p><strong>CNN</strong> → subtype especializado en imágenes (detecta bordes, formas, objetos)</p></li>
+<li><p><strong>Transformer</strong> → subtipo especializado en texto y secuencias (entiende el contexto completo de una oración)</p></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p>Cuando alguien te manda un mensaje que dice “¿ya llegaste?”, tú entiendes instantáneamente que “ya” implica que había un plan previo, que “llegaste” se refiere a un lugar específico del contexto de su conversación, y que la persona probablemente te está esperando. Procesas todas esas relaciones entre palabras de forma paralela, en fracción de segundo.</p>
+<p>Eso es exactamente lo que los transformers intentan hacer — y lo logran con un mecanismo llamado <strong>atención</strong> (<em>attention</em>).</p>
+<p>La idea central: en lugar de leer una oración de izquierda a derecha (como lo hacían las redes anteriores), un transformer mira <strong>todas las palabras al mismo tiempo</strong> y calcula qué tan relacionada está cada palabra con las demás. Esta capacidad de capturar dependencias largas. Entender que “ella” en el final de un párrafo se refiere a “María” mencionada hace cinco oraciones, es lo que los hace tan poderosos para lenguaje.</p>
+<p><strong>¿Qué aprenden?</strong></p>
+<p>Un transformer se entrena con cantidades enormes de texto. Su tarea durante el entrenamiento es simple: predecir la siguiente palabra en una oración. Pero para hacerlo bien con miles de millones de oraciones, debe aprender gramática, hechos del mundo, razonamiento básico, y hasta tono y estilo. Eso es lo que está dentro de ChatGPT, Google Translate, Copilot y los modelos de lenguaje modernos.</p>
+<p><strong>Cuándo usarlos:</strong> traducción automática, generación de texto, resumen de documentos, chatbots, asistentes de código, análisis de sentimiento.</p>
+<p><strong>Su límite:</strong> son <strong>extremadamente costosos</strong> de entrenar desde cero. GPT-4 costó decenas de millones de dólares en cómputo. También pueden “alucinar” (inventar respuestas falsas con total confianza), y capturan los sesgos del texto con el que fueron entrenados. La siguiente sesión está dedicada exactamente a este mundo.</p>
+<div class="demo-externo">
+  <span class="demo-externo-icon">💬</span>
+  <div class="demo-externo-body">
+    <p class="demo-externo-kicker">Mini lab — cómo piensa un transformer</p>
+    <h5 class="demo-externo-title anchored">Transformer Explainer — GPT-2 en vivo en tu navegador</h5>
+    <p class="demo-externo-copy">
+      Escribe una frase y observa cómo el modelo la procesa internamente: tokenización, embeddings, capas de atención y la distribución de probabilidad sobre la siguiente palabra.
+      Puedes pasar el cursor sobre los tokens para ver qué tan "relacionados" considera el modelo que están entre sí — eso es el mecanismo de atención.<br><br>
+      No es necesario entender cada detalle técnico. Solo observa cómo el modelo conecta palabras y elige su siguiente token.<br><br>
+      <a href="https://poloclub.github.io/transformer-explainer/" target="_blank" rel="noopener">→ Abrir Transformer Explainer (inglés, interactivo, gratuito)</a>
+    </p>
+  </div>
+</div>
+<hr>
+</section>
+<section id="aprendizaje-por-refuerzo-ya-lo-conoces" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="aprendizaje-por-refuerzo-ya-lo-conoces">Aprendizaje por refuerzo — ya lo conoces</h4>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Repaso rápido — S1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En la sesión 1 viste a Mario aprendiendo a saltar: el agente toma acciones, recibe recompensas si le va bien y penalizaciones si falla, y ajusta su política. Sin datos etiquetados — solo prueba y error en un entorno.</p>
+</div>
+</div>
+<p><strong>Cuándo usarlo:</strong> cuando no tienes un conjunto de datos etiquetados y el sistema puede aprender actuando en un simulador: videojuegos, robótica, optimización de rutas, sistemas de trading, control de plantas industriales.</p>
+<p><strong>Su límite:</strong> necesita un <strong>simulador</strong> donde probar millones de veces sin consecuencias reales. Transferir lo aprendido en simulación al mundo físico (el llamado <em>sim-to-real gap</em>) sigue siendo uno de los problemas más difíciles de la robótica moderna.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="actividad-problema-método-límite" class="level2">
+<h2 class="anchored" data-anchor-id="actividad-problema-método-límite">Actividad: Problema → Método → Límite</h2>
+<p>Ahora te toca a ti. A continuación hay seis problemas que nos podemos encontrar en el día a día. Para cada uno, elige la familia de algoritmos que mejor encaja usando lo que viste en el mapa de métodos. Cuando hayas asignado todos, verifica tus respuestas.</p>
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-ranking" id="match-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Actividad — mapa de métodos</p>
+        <h4 class="demo-title anchored">¿Qué método usarías para cada problema?</h4>
+        <p class="demo-copy">Asigna una familia de algoritmos a cada escenario. Recuerda las dos preguntas del mapa: ¿tienes respuestas etiquetadas? ¿qué tipo de salida necesitas?</p>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual" style="padding:1.2rem 0.5rem;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;font-size:0.75rem;">
+              <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;padding:0.5rem;text-align:center;">🚗 DiDi</div>
+              <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:0.5rem;text-align:center;">📧 Spam</div>
+              <div style="background:#fdf4ff;border:1px solid #e9d5ff;border-radius:8px;padding:0.5rem;text-align:center;">🎵 Spotify</div>
+              <div style="background:#fef3c7;border:1px solid #fde68a;border-radius:8px;padding:0.5rem;text-align:center;">📸 Video</div>
+              <div style="background:#f0f9ff;border:1px solid #bae6fd;border-radius:8px;padding:0.5rem;text-align:center;">🌐 Traducción</div>
+              <div style="background:#fdf2f8;border:1px solid #f9a8d4;border-radius:8px;padding:0.5rem;text-align:center;">🎮 Bot</div>
+            </div>
+          </div>
+          <p class="demo-preview-title">Vista previa de la actividad</p>
+          <p class="demo-preview-copy">Seis problemas esperan tu clasificación. Abre la actividad para empezar.</p>
+        </div>
+      </div>
+
+      <div class="demo-stage-live">
+        <div id="match-cards" class="match-grid"></div>
+      </div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5 class="anchored">Qué estás viendo</h5>
+        <p id="match-seeing">6 problemas del mundo actual. Tu tarea es asignar la familia de IA más apropiada a cada uno.</p>
+      </div>
+      <div class="demo-insight">
+        <h5 class="anchored">Qué significa</h5>
+        <p id="match-meaning">El objetivo no es memorizar nombres — es aprender a reconocer qué tipo de problema pide qué tipo de solución.</p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <p id="match-status" class="demo-status">Asigna un método a cada problema para continuar.</p>
+      <div class="demo-actions">
+        <button id="match-verify" class="demo-btn demo-btn-primary" disabled="">Verificar respuestas</button>
+        <button id="match-reset" class="btn-restart" disabled="">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const problems = [
+    {
+      id: 'p1', emoji: '🚗',
+      scenario: '¿Cuánto tarda tu DiDi en llegar?',
+      context: 'Tienes el historial de miles de viajes: distancia, hora del día, tráfico y tiempo real de llegada.',
+      correct: 'regression',
+      limit: 'Solo funciona bien cuando la relación entre las variables es aproximadamente lineal o cuasi-lineal.'
+    },
+    {
+      id: 'p2', emoji: '📧',
+      scenario: '¿Es spam este mensaje?',
+      context: 'Tienes millones de mensajes ya etiquetados como "spam" o "no spam".',
+      correct: 'tree',
+      limit: 'Se confunde con mensajes muy distintos a los que vio durante el entrenamiento (datos fuera de distribución).'
+    },
+    {
+      id: 'p3', emoji: '🎵',
+      scenario: '¿Qué tipo de oyente eres en Spotify?',
+      context: 'Solo tienes el historial de reproducción de miles de usuarios, sin categorías predefinidas.',
+      correct: 'kmeans',
+      limit: 'Tú debes decidir cuántos grupos quieres — el algoritmo no elige ese número por sí solo.'
+    },
+    {
+      id: 'p4', emoji: '📸',
+      scenario: '¿Este video tiene contenido inapropiado?',
+      context: 'Tienes millones de frames de video etiquetados como "apropiado" o "inapropiado".',
+      correct: 'cnn',
+      limit: 'Necesita enormes cantidades de imágenes etiquetadas y puede ser engañada por ataques adversariales.'
+    },
+    {
+      id: 'p5', emoji: '🌐',
+      scenario: '¿Cómo traduzco este tuit al inglés?',
+      context: 'Tienes pares de oraciones en español e inglés como datos de entrenamiento.',
+      correct: 'transformer',
+      limit: 'Extremadamente costoso de entrenar desde cero. Puede alucinar y captura sesgos del texto de entrenamiento.'
+    },
+    {
+      id: 'p6', emoji: '🎮',
+      scenario: '¿Cómo aprende un bot a jugar Free Fire?',
+      context: 'No hay datos etiquetados. El bot solo puede probar acciones y recibir puntos si le va bien en partida.',
+      correct: 'rl',
+      limit: 'Necesita un simulador y millones de intentos. Transferirlo al mundo real (sim-to-real gap) es difícil.'
+    }
+  ];
+
+  const algorithms = [
+    { id: 'regression', label: 'Regresión', emoji: '📈' },
+    { id: 'tree',       label: 'Árbol decis.', emoji: '🌳' },
+    { id: 'kmeans',     label: 'K-Means', emoji: '🔵' },
+    { id: 'cnn',        label: 'CNN', emoji: '👁' },
+    { id: 'transformer',label: 'Transformer', emoji: '💬' },
+    { id: 'rl',         label: 'Refuerzo', emoji: '🎮' }
+  ];
+
+  const selections = {};
+
+  // Activar el shell inmediatamente (sin botón de inicio)
+  document.getElementById('match-shell').classList.add('is-active');
+
+  // Build cards
+  const container = document.getElementById('match-cards');
+  problems.forEach(function (p) {
+    const card = document.createElement('div');
+    card.className = 'match-card';
+    card.id = 'card-' + p.id;
+    card.innerHTML =
+      '<div class="match-card-header">' +
+        '<span class="match-card-emoji">' + p.emoji + '</span>' +
+        '<h5 class="match-card-title">' + p.scenario + '</h5>' +
+      '</div>' +
+      '<p class="match-card-context">' + p.context + '</p>' +
+      '<div class="match-algo-grid" id="algo-grid-' + p.id + '">' +
+        algorithms.map(function (a) {
+          return '<button class="match-algo-btn" data-problem="' + p.id + '" data-algo="' + a.id + '">' +
+            a.emoji + ' ' + a.label + '</button>';
+        }).join('') +
+      '</div>' +
+      '<div class="match-feedback" id="feedback-' + p.id + '" hidden></div>';
+    container.appendChild(card);
+  });
+
+  // Selection handler
+  container.addEventListener('click', function (e) {
+    const btn = e.target.closest('.match-algo-btn');
+    if (!btn) return;
+    const prob = btn.dataset.problem;
+    const algo = btn.dataset.algo;
+
+    document.querySelectorAll('[data-problem="' + prob + '"]').forEach(function (b) {
+      b.classList.remove('is-selected');
+    });
+    btn.classList.add('is-selected');
+    selections[prob] = algo;
+
+    const remaining = problems.filter(function (p) { return !selections[p.id]; }).length;
+    const verifyBtn = document.getElementById('match-verify');
+    verifyBtn.disabled = remaining > 0;
+    document.getElementById('match-status').textContent = remaining > 0
+      ? 'Falta asignar ' + remaining + ' problema' + (remaining > 1 ? 's' : '') + '.'
+      : '¡Todos asignados! Verifica tus respuestas cuando estés listo.';
+  });
+
+  // Verify
+  document.getElementById('match-verify').addEventListener('click', function () {
+    let correct = 0;
+    problems.forEach(function (p) {
+      const card = document.getElementById('card-' + p.id);
+      const feedback = document.getElementById('feedback-' + p.id);
+      const isCorrect = selections[p.id] === p.correct;
+      if (isCorrect) correct++;
+
+      card.classList.remove('match-correct', 'match-incorrect');
+      card.classList.add(isCorrect ? 'match-correct' : 'match-incorrect');
+
+      const correctAlgo = algorithms.find(function (a) { return a.id === p.correct; });
+      feedback.hidden = false;
+      feedback.innerHTML = isCorrect
+        ? '<span class="match-feedback-ok">✅ Correcto — ' + correctAlgo.emoji + ' ' + correctAlgo.label + '</span>' +
+          '<span class="match-feedback-limit">⚠️ Su límite: ' + p.limit + '</span>'
+        : '<span class="match-feedback-err">❌ Era: ' + correctAlgo.emoji + ' ' + correctAlgo.label + '</span>' +
+          '<span class="match-feedback-limit">⚠️ Su límite: ' + p.limit + '</span>';
+    });
+
+    const pct = Math.round((correct / problems.length) * 100);
+    document.getElementById('match-seeing').textContent =
+      'Respondiste correctamente ' + correct + ' de ' + problems.length + ' problemas (' + pct + '%).';
+    document.getElementById('match-meaning').textContent = correct >= 5
+      ? 'Excelente — ya tienes el mapa de métodos muy claro. Recuerda los límites de cada familia.'
+      : correct >= 3
+      ? 'Buen intento. Revisa los problemas incorrectos y vuelve al diagrama de las dos preguntas.'
+      : 'Regresa al mapa de métodos y practica las dos preguntas desde arriba. La clasificación se vuelve intuitiva con práctica.';
+
+    document.getElementById('match-verify').disabled = true;
+    document.getElementById('match-reset').disabled = false;
+  });
+
+  // Reset
+  document.getElementById('match-reset').addEventListener('click', function () {
+    problems.forEach(function (p) {
+      const card = document.getElementById('card-' + p.id);
+      card.classList.remove('match-correct', 'match-incorrect');
+      const feedback = document.getElementById('feedback-' + p.id);
+      feedback.hidden = true;
+      document.querySelectorAll('[data-problem="' + p.id + '"]').forEach(function (b) {
+        b.classList.remove('is-selected');
+      });
+    });
+    Object.keys(selections).forEach(function (k) { delete selections[k]; });
+    document.getElementById('match-verify').disabled = true;
+    document.getElementById('match-reset').disabled = true;
+    document.getElementById('match-status').textContent = 'Asigna un método a cada problema para continuar.';
+    document.getElementById('match-seeing').textContent = '6 problemas reales del mundo actual. Tu tarea es asignar la familia de IA más apropiada a cada uno.';
+    document.getElementById('match-meaning').textContent = 'El objetivo no es memorizar nombres — es aprender a reconocer qué tipo de problema pide qué tipo de solución.';
+  });
+})();
+</script>
+<hr>
+</section>
+<section id="cierre" class="level2">
+<h2 class="anchored" data-anchor-id="cierre">Cierre</h2>
+<section id="tabla-comparativa" class="level3">
+<h3 class="anchored" data-anchor-id="tabla-comparativa">Tabla comparativa</h3>
+<p>Aquí está el mapa completo en una sola vista:</p>
+<table class="tabla-comparativa caption-top table" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Familia</th>
+<th data-quarto-table-cell-role="th">Tipo de problema</th>
+<th data-quarto-table-cell-role="th">Analogía</th>
+<th data-quarto-table-cell-role="th">App que la usa</th>
+<th data-quarto-table-cell-role="th">Límite clave</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Regresión lineal</strong> <span class="tag-conocido">S1</span></td>
+<td>Predecir un número continuo</td>
+<td>Estimar calificación según horas de estudio</td>
+<td>DiDi (tiempo de llegada), Google Maps</td>
+<td>Solo relaciones lineales</td>
+</tr>
+<tr class="even">
+<td><strong>Árbol de decisión</strong> <span class="tag-nuevo">nuevo</span></td>
+<td>Clasificar en categorías con datos estructurados</td>
+<td>El juego de las 20 preguntas</td>
+<td>Filtros de spam, diagnóstico médico básico</td>
+<td>Sobreajuste; falla con datos muy diferentes</td>
+</tr>
+<tr class="odd">
+<td><strong>K-Means</strong> <span class="tag-conocido">S1</span></td>
+<td>Agrupar sin etiquetas</td>
+<td>Spotify agrupando música sin decirle los géneros</td>
+<td>Mercado Libre (segmentación), Netflix (perfiles)</td>
+<td>Tú decides cuántos grupos quieres</td>
+</tr>
+<tr class="even">
+<td><strong>CNN</strong> <span class="tag-nuevo">nuevo</span></td>
+<td>Clasificar imágenes o video</td>
+<td>Capas de filtros que ven bordes → formas → objetos</td>
+<td>Face ID, filtros de Instagram, moderación TikTok</td>
+<td>Necesita millones de imágenes etiquetadas</td>
+</tr>
+<tr class="odd">
+<td><strong>Transformer</strong> <span class="tag-nuevo">nuevo</span></td>
+<td>Entender o generar texto y secuencias</td>
+<td>Autocomplete que entiende el contexto completo</td>
+<td>ChatGPT, Google Translate, GitHub Copilot</td>
+<td>Muy caro de entrenar; puede alucinar</td>
+</tr>
+<tr class="even">
+<td><strong>Refuerzo</strong> <span class="tag-conocido">S1</span></td>
+<td>Aprender a actuar por ensayo y error</td>
+<td>Aprender a patinar cayéndose mil veces</td>
+<td>Bots de videojuegos, robots, sistemas de control</td>
+<td>Necesita simulador; sim-to-real gap</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+La idea central de esta sesión
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El algoritmo correcto no es el más complejo ni el más famoso — es el que mejor encaja con el tipo de problema que tienes. Un transformer no es mejor que un árbol de decisión en absoluto: son herramientas para trabajos distintos. La habilidad no es saber todos los algoritmos de memoria; es saber hacer las dos preguntas del mapa.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="para-reflexionar" class="level2">
+<h2 class="anchored" data-anchor-id="para-reflexionar">Para reflexionar</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Para pensar en casa
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ahora que terminaste la sesión, responde para ti mismo estas preguntas:</p>
+<ol type="1">
+<li><p><strong>Elige una app que usas todos los días.</strong> ¿Qué tipo de problema resuelve su IA? Usa el mapa de las dos preguntas para ubicarla.</p></li>
+<li><p><strong>Piensa en un problema que quisieras resolver con IA</strong> — puede ser algo de tu escuela, tu hobby o algo que veas en tu comunidad. ¿Qué familia usarías? ¿Qué datos necesitarías?</p></li>
+<li><p><strong>Los límites importan.</strong> Si tuvieras que explicarle a alguien por qué los transformers no son la solución a todo (LLMs, ChatGPT), ¿qué le dirías?</p></li>
+</ol>
+<p>No hay respuestas correctas o incorrectas. El objetivo es que el mapa empiece a vivir en tu cabeza, no solo en esta página.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="recursos-para-explorar-más" class="level2">
+<h2 class="anchored" data-anchor-id="recursos-para-explorar-más">Recursos para explorar más</h2>
+<ul>
+<li><a href="https://r2d3.us/visual-intro-to-machine-learning-part-1/">R2D3 — Visual intro to machine learning</a> — el mejor scrollytelling sobre árboles de decisión que existe; sin código, en inglés con visulaes que se explican solos</li>
+<li><a href="https://mlu-explain.github.io/">MLU-Explain</a> — ensayos visuales e interactivos sobre algoritmos clave, de Amazon Machine Learning University</li>
+<li><a href="https://poloclub.github.io/transformer-explainer/">Transformer Explainer</a> — GPT-2 en vivo en tu navegador; observa el mecanismo de atención en acción</li>
+<li><a href="https://www.naftaliharris.com/blog/visualizing-k-means-clustering/">Visualizing K-Means</a> — demo interactiva del clustering paso a paso</li>
+<li><a href="https://playground.tensorflow.org/">TensorFlow Playground</a> — experimenta con redes neuronales cambiando parámetros en tiempo real</li>
+<li><a href="https://www.elementsofai.com/es">Elements of AI</a> — curso introductorio gratuito en español (Universidad de Helsinki), cubre varios de los algoritmos de esta sesión</li>
+</ul>
+<hr>
+<nav class="sesion-nav">
+  <a href="sesion-02.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S2: Redes neuronales — ¿Cómo "piensa" la IA?</span>
+  </a>
+  <div class="sesion-nav-center">
+    <span class="sesion-nav-progress">Sesión 3 de 15</span>
+  </div>
+  <a href="sesion-04.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S4: IA Generativa</span>
+  </a>
+</nav>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.curso-ia-slp\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Intro a la IA · San Luis Potosí · 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,116 @@
+---
+title: "Sesión 9: IA para Organización y Productividad Estudiantil"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+```{=html}
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 2 · Herramientas Prácticas</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-9"></div>
+    </div>
+    <span class="sesion-progress-label">9 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip">📅 30 de junio de 2026</span>
+    <span class="sesion-meta-chip">⏱ 35 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+
+<div class="sesion-outline">
+  <p class="sesion-outline-kicker">Productividad con criterio</p>
+  <h2 class="sesion-outline-title">Arquitectura base de la sesión</h2>
+  <p class="sesion-outline-copy">Esta página queda lista para integrar organización escolar, búsqueda con fuentes y preparación de materiales de estudio apoyados por IA.</p>
+  <div class="sesion-outline-grid">
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">01</span>
+      <h3>Apertura</h3>
+      <p>Pasar de una semana caótica a un plan de estudio claro y realista.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">02</span>
+      <h3>Conceptos clave</h3>
+      <p>Planificación, priorización, búsqueda con fuentes y automatización ligera.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">03</span>
+      <h3>Actividad</h3>
+      <p>Construir un plan de estudio paso a paso con apoyo de IA.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">04</span>
+      <h3>Cierre</h3>
+      <p>Checklist para usar IA sin delegar criterio ni verificación.</p>
+    </div>
+  </div>
+</div>
+```
+
+## Video de la sesión
+
+```{=html}
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video de la sesión — en desarrollo</p>
+  <p>Aquí se insertará la grabación principal cuando el guion final esté listo.</p>
+</div>
+```
+
+## Objetivos de aprendizaje
+
+- Usar IA para mejorar organización personal y académica.
+- Crear planes de estudio personalizados con IA.
+- Buscar y verificar información académica eficientemente.
+
+## Contenido previsto
+
+### Apertura
+
+- Se añadirá un caso breve de organización estudiantil con prioridades, tiempos y entregas.
+
+### Desarrollo principal
+
+- Aquí quedará la explicación base sobre agendas, investigación con fuentes y productividad responsable.
+
+### Actividad o demo
+
+- Este bloque servirá para insertar una práctica guiada de planificación o búsqueda con citas.
+
+### Cierre
+
+- Se integrará una síntesis con reglas de verificación y uso académico responsable.
+
+## Recursos y materiales por incorporar
+
+- Plantilla de plan de estudio o agenda semanal.
+- Ejemplos con Notion AI, Perplexity, Consensus o Gamma.
+- Sección para prácticas de verificación de fuentes.
+
+::: {.callout-note}
+# Estado de esta página
+La sesión ya quedó publicada con estructura base, navegación y placeholders. Falta integrar el guion final, la actividad y los recursos visuales.
+:::
+
+```{=html}
+<nav class="sesion-nav">
+  <a href="sesion-08.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S8: IA para Creatividad</span>
+  </a>
+  <div class="sesion-nav-center">
+    <span class="sesion-nav-progress">Sesión 9 de 15</span>
+  </div>
+  <a href="sesion-10.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S10: Tutor Académico</span>
+  </a>
+</nav>
+```

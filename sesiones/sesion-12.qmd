@@ -1,0 +1,116 @@
+---
+title: "Sesión 12: Programación con IA: tu Primer Vistazo a Python"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+---
+
+```{=html}
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 3 · Creación, Aplicaciones y Futuro</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-12"></div>
+    </div>
+    <span class="sesion-progress-label">12 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip">📅 21 de julio de 2026</span>
+    <span class="sesion-meta-chip">⏱ 40 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+
+<div class="sesion-outline">
+  <p class="sesion-outline-kicker">Código inicial</p>
+  <h2 class="sesion-outline-title">Arquitectura base de la sesión</h2>
+  <p class="sesion-outline-copy">Este andamio deja listo el espacio para introducir Python, Google Colab y el uso de IA como copiloto de programación con criterio.</p>
+  <div class="sesion-outline-grid">
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">01</span>
+      <h3>Apertura</h3>
+      <p>Qué cambia cuando pasas de usar IA a construir con ella.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">02</span>
+      <h3>Conceptos clave</h3>
+      <p>Variables, impresión, sintaxis mínima y cuadernos en Colab.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">03</span>
+      <h3>Actividad</h3>
+      <p>Primer bloque de código y una mini modificación guiada.</p>
+    </div>
+    <div class="sesion-outline-card">
+      <span class="sesion-outline-step">04</span>
+      <h3>Cierre</h3>
+      <p>Ruta de continuación para quien quiera profundizar en Python.</p>
+    </div>
+  </div>
+</div>
+```
+
+## Video de la sesión
+
+```{=html}
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video de la sesión — en desarrollo</p>
+  <p>Aquí se insertará la grabación principal cuando el guion final esté listo.</p>
+</div>
+```
+
+## Objetivos de aprendizaje
+
+- Entender por qué Python es el lenguaje de la IA.
+- Escribir y ejecutar código real en el navegador con Google Colab.
+- Usar IA como copiloto para programar con criterio.
+
+## Contenido previsto
+
+### Apertura
+
+- Se añadirá una entrada breve para conectar programación, construcción y herramientas de IA.
+
+### Desarrollo principal
+
+- Aquí quedará la explicación base sobre Colab, sintaxis mínima y lectura de código.
+
+### Actividad o demo
+
+- Este bloque servirá para insertar el primer ejercicio y su modificación guiada.
+
+### Cierre
+
+- Se integrará una síntesis final con rutas de continuación para aprender Python.
+
+## Recursos y materiales por incorporar
+
+- Notebook base en Google Colab.
+- Ejemplos mínimos de Python para principiantes.
+- Enlaces a CS50P, Kaggle Learn o fast.ai.
+
+::: {.callout-note}
+# Estado de esta página
+La sesión ya quedó publicada con estructura base, navegación y placeholders. Falta integrar el guion final, la actividad y los recursos visuales.
+:::
+
+```{=html}
+<nav class="sesion-nav">
+  <a href="sesion-11.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S11: EN VIVO: Educación Global</span>
+  </a>
+  <div class="sesion-nav-center">
+    <span class="sesion-nav-progress">Sesión 12 de 15</span>
+  </div>
+  <a href="sesion-13.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S13: Robótica e IA</span>
+  </a>
+</nav>
+```
