@@ -1,0 +1,542 @@
+/* ================================================
+   SESIÓN 05 — Ética y Problemas Reales de la IA
+================================================ */
+
+/* Tone: ethics (amber — señal de precaución) */
+.demo-tone-ethics {
+  --demo-accent: #d97706;
+  --demo-accent-soft: rgba(217, 119, 6, 0.10);
+  --demo-accent-strong: rgba(217, 119, 6, 0.20);
+}
+
+/* ---- Case study cards ---- */
+.caso-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.4rem 0;
+}
+
+.caso-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.1rem 1rem;
+  transition: box-shadow 0.2s;
+}
+.caso-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+
+.caso-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+.caso-card-emoji { font-size: 1.6rem; line-height: 1; }
+.caso-card-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0;
+}
+.caso-card-badge {
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+  margin-left: auto;
+  background: #fef3c7;
+  color: #92400e;
+  white-space: nowrap;
+}
+.caso-card-body {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 0.4rem;
+}
+.caso-card-key {
+  font-size: 0.78rem;
+  color: #dc2626;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 0.45rem 0.65rem;
+  margin-top: 0.55rem;
+  line-height: 1.5;
+}
+
+/* ---- Bias demo preview ---- */
+.bias-preview-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.5rem 0.25rem;
+}
+.bias-preview-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.bias-preview-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #64748b;
+  min-width: 52px;
+}
+.bias-preview-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  border: 1.5px solid #cbd5e1;
+  flex-shrink: 0;
+}
+.bias-preview-dot.hired { background: #dcfce7; border-color: #86efac; }
+.bias-preview-dot.fn    { background: #fff7ed; border-color: #fdba74; }
+.bias-preview-dot.sm { width: 10px; height: 10px; }
+.bias-preview-legend {
+  display: flex;
+  gap: 0.85rem;
+  font-size: 0.68rem;
+  color: #94a3b8;
+  align-items: center;
+  margin-top: 0.3rem;
+}
+.bias-preview-legend span {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* ---- Bias demo live ---- */
+.bias-group-label {
+  font-size: 0.71rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #64748b;
+  margin: 0.9rem 0 0.45rem;
+}
+
+.bias-candidates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.bias-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f1f5f9;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.38rem 0.55rem;
+  min-width: 66px;
+  text-align: center;
+  transition: background 0.18s, border-color 0.18s;
+}
+.bias-chip-name {
+  font-weight: 600;
+  color: #1a365d;
+  font-size: 0.71rem;
+  margin-bottom: 0.18rem;
+  white-space: nowrap;
+}
+.bias-chip-model {
+  color: #64748b;
+  font-size: 0.67rem;
+}
+.bias-chip-real {
+  color: #94a3b8;
+  font-size: 0.67rem;
+}
+.bias-chip.is-false-negative .bias-chip-real {
+  color: #15803d;
+  font-weight: 700;
+}
+.bias-chip.is-hired {
+  background: #dcfce7;
+  border-color: #86efac;
+}
+.bias-chip.is-hired .bias-chip-name { color: #15803d; }
+.bias-chip.is-false-negative {
+  background: #fff7ed;
+  border-color: #fdba74;
+}
+.bias-chip.is-false-negative .bias-chip-name { color: #c2410c; }
+.bias-chip.is-rejected {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+  opacity: 0.65;
+}
+.bias-fn-badge {
+  font-size: 0.58rem;
+  background: #fed7aa;
+  color: #7c2d12;
+  border-radius: 4px;
+  padding: 0.05rem 0.28rem;
+  margin-top: 0.12rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.bias-threshold-control {
+  margin: 1.1rem 0 0.5rem;
+  background: #f0f7ff;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  padding: 0.85rem 1rem 0.65rem;
+}
+.bias-threshold-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1a365d;
+  margin-bottom: 0.55rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bias-threshold-value {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #2780e3;
+  font-variant-numeric: tabular-nums;
+}
+.bias-threshold-slider {
+  width: 100%;
+  accent-color: #2780e3;
+  cursor: pointer;
+  margin-bottom: 0.2rem;
+}
+.bias-threshold-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.63rem;
+  color: #94a3b8;
+  padding: 0 2px;
+}
+
+.bias-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+.bias-stat-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.75rem 0.7rem;
+  text-align: center;
+}
+.bias-stat-card.is-group-a { border-color: #93c5fd; background: #eff6ff; }
+.bias-stat-card.is-group-b { border-color: #fcd34d; background: #fffbeb; }
+.bias-stat-label {
+  font-size: 0.67rem;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.bias-stat-num {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #1a365d;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+  font-variant-numeric: tabular-nums;
+}
+.bias-stat-sub {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  min-height: 1em;
+}
+.bias-fn-alert {
+  grid-column: 1 / -1;
+  background: #fff7ed;
+  border: 1.5px solid #fdba74;
+  border-radius: 10px;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.81rem;
+  color: #92400e;
+  text-align: center;
+  line-height: 1.5;
+}
+.bias-fn-alert strong { color: #c2410c; }
+
+/* ---- Privacy comparison cards ---- */
+.privacidad-compare {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+.priv-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1rem 1.05rem;
+}
+.priv-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 0.6rem;
+}
+.priv-card-flag { font-size: 1.4rem; }
+.priv-card-header h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0;
+}
+.priv-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.priv-list li {
+  font-size: 0.81rem;
+  color: #475569;
+  padding: 0.22rem 0 0.22rem 1rem;
+  position: relative;
+  line-height: 1.55;
+}
+.priv-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: #94a3b8;
+  font-weight: 900;
+}
+.priv-list li strong { color: #1a365d; }
+
+/* ---- Deepfake quiz ---- */
+.df-quiz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+  gap: 0.85rem;
+  margin: 1.2rem 0;
+}
+.df-quiz-card {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.df-quiz-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,0.07); }
+.df-quiz-thumb {
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+}
+.df-quiz-body { padding: 0.75rem 0.85rem; }
+.df-quiz-question {
+  font-size: 0.85rem;
+  color: #1a365d;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+.df-quiz-desc {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-bottom: 0.65rem;
+  line-height: 1.55;
+}
+.df-quiz-answer {
+  padding: 0.6rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.77rem;
+  line-height: 1.6;
+}
+.df-quiz-answer.fake { background: #fef2f2; color: #991b1b; border-left: 3px solid #ef4444; }
+
+/* ---- Jobs risk table ---- */
+.jobs-risk-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.83rem;
+  margin: 1rem 0 1.2rem;
+}
+.jobs-risk-table th {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+  border-bottom: 1.5px solid #e2e8f0;
+  font-weight: 600;
+}
+.jobs-risk-table td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: top;
+  color: #1a365d;
+  line-height: 1.5;
+}
+.jobs-risk-table tr:last-child td { border-bottom: none; }
+.jobs-risk-table td:first-child { font-size: 0.81rem; }
+.jobs-risk-table td:nth-child(2) { font-size: 0.78rem; color: #475569; }
+.jobs-risk-table td:last-child { font-size: 0.78rem; color: #64748b; }
+.risk-badge {
+  display: inline-block;
+  font-size: 0.64rem;
+  font-weight: 700;
+  padding: 0.18rem 0.55rem;
+  border-radius: 99px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.risk-high   { background: #fee2e2; color: #991b1b; }
+.risk-medium { background: #fef3c7; color: #92400e; }
+.risk-low    { background: #dcfce7; color: #166534; }
+
+/* ---- Debate scenario ---- */
+.debate-scenario {
+  background: #f0f7ff;
+  border: 1.5px solid #bfdbfe;
+  border-radius: 14px;
+  padding: 1.1rem 1.15rem;
+  margin: 1.2rem 0;
+}
+.debate-scenario-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+.debate-scenario-icon { font-size: 2rem; line-height: 1; flex-shrink: 0; margin-top: 0.1rem; }
+.debate-scenario-kicker {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #2780e3;
+  margin-bottom: 0.25rem;
+}
+.debate-scenario-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0;
+}
+.debate-scenario-body {
+  font-size: 0.86rem;
+  color: #334155;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ---- Stakeholder cards ---- */
+.stakeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+  gap: 0.9rem;
+  margin: 1.1rem 0 1.4rem;
+}
+.stakeholder-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.stakeholder-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
+.stakeholder-card.tone-pro     { border-top: 3px solid #22c55e; }
+.stakeholder-card.tone-con     { border-top: 3px solid #ef4444; }
+.stakeholder-card.tone-neutral { border-top: 3px solid #f59e0b; }
+.stakeholder-card.tone-mixed   { border-top: 3px solid #8b5cf6; }
+.stakeholder-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  padding: 0.85rem 0.95rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+.stakeholder-card-icon { font-size: 1.7rem; line-height: 1; flex-shrink: 0; }
+.stakeholder-card-name {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: #1a365d;
+  margin-bottom: 0.1rem;
+}
+.stakeholder-card-role {
+  font-size: 0.71rem;
+  color: #94a3b8;
+}
+.stakeholder-card-body {
+  padding: 0.8rem 0.95rem;
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.65;
+}
+.stakeholder-card-body p { margin: 0 0 0.5rem; }
+.stakeholder-card-body p:last-child { margin-bottom: 0; }
+.stakeholder-card-body strong { color: #1a365d; }
+
+/* ---- Ethics checklist ---- */
+.etica-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0.9rem 0 0.5rem;
+}
+.etica-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+.etica-checklist li:last-child { border-bottom: none; padding-bottom: 0; }
+.etica-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  color: inherit;
+  font-weight: 800;
+  font-size: 0.82rem;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(255,255,255,0.4);
+}
+.etica-text h5 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem;
+}
+.etica-text p {
+  font-size: 0.8rem;
+  margin: 0;
+  line-height: 1.55;
+  opacity: 0.85;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 580px) {
+  .caso-grid,
+  .privacidad-compare,
+  .df-quiz-grid,
+  .stakeholder-grid { grid-template-columns: 1fr; }
+  .bias-stats-grid { grid-template-columns: 1fr; }
+  .jobs-risk-table th:nth-child(4),
+  .jobs-risk-table td:nth-child(4) { display: none; }
+  .stakeholder-grid { grid-template-columns: 1fr; }
+}

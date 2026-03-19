@@ -1,0 +1,224 @@
+/* ================================================
+   SESIÓN 03 — estilos custom
+================================================ */
+
+/* ---- Familia cards (las 6 familias de algoritmos) ---- */
+.algo-family-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.4rem 0;
+}
+.algo-family-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1.1rem 1rem;
+  transition: box-shadow 0.2s;
+}
+.algo-family-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+.algo-family-card.is-new { border-color: #93c5fd; }
+.algo-family-card.is-known { border-color: #d1fae5; }
+.algo-family-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+.algo-family-emoji { font-size: 1.6rem; }
+.algo-family-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0;
+}
+.algo-family-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+  margin-left: auto;
+}
+.badge-new { background: #dbeafe; color: #1d4ed8; }
+.badge-known { background: #d1fae5; color: #065f46; }
+.algo-family-analogy {
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.55;
+  margin-bottom: 0.5rem;
+}
+.algo-family-limit {
+  font-size: 0.78rem;
+  color: #92400e;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+}
+.algo-family-limit strong { display: block; margin-bottom: 0.15rem; }
+
+/* ---- Árbol de decisión (figura) ---- */
+.decision-tree-figure {
+  margin: 1.4rem 0;
+}
+.decision-tree-svg {
+  width: 100%;
+  max-width: 560px;
+  display: block;
+  margin: 0 auto;
+}
+.decision-tree-caption {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin-top: 0.5rem;
+}
+
+/* ---- Actividad interactiva (card matching) ---- */
+.match-preview-visual {
+  padding: 1.2rem 0.5rem;
+}
+.match-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+.match-preview-pill {
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 0.5rem;
+  text-align: center;
+}
+.match-preview-pill-didi {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+.match-preview-pill-spam {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+.match-preview-pill-spotify {
+  background: #fdf4ff;
+  border-color: #e9d5ff;
+}
+.match-preview-pill-video {
+  background: #fef3c7;
+  border-color: #fde68a;
+}
+.match-preview-pill-translate {
+  background: #f0f9ff;
+  border-color: #bae6fd;
+}
+.match-preview-pill-bot {
+  background: #fdf2f8;
+  border-color: #f9a8d4;
+}
+
+.match-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+.match-card {
+  background: #fff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+.match-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-bottom: 0.45rem;
+}
+.match-card-emoji { font-size: 1.4rem; flex-shrink: 0; }
+.match-card-title {
+  font-size: 0.87rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0;
+  line-height: 1.35;
+}
+.match-card-context {
+  font-size: 0.78rem;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+.match-algo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.3rem;
+}
+.match-algo-btn {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  padding: 0.3rem 0.25rem;
+  font-size: 0.68rem;
+  cursor: pointer;
+  transition: all 0.14s;
+  text-align: center;
+  line-height: 1.3;
+}
+.match-algo-btn:hover { background: #dbeafe; border-color: #93c5fd; }
+.match-algo-btn.is-selected { background: #2780e3; color: #fff; border-color: #2780e3; }
+.match-card.match-correct { border-color: #22c55e; background: #f0fdf4; }
+.match-card.match-incorrect { border-color: #ef4444; background: #fef2f2; }
+.match-feedback {
+  margin-top: 0.7rem;
+  font-size: 0.77rem;
+  line-height: 1.55;
+}
+.match-feedback-ok { color: #16a34a; font-weight: 600; display: block; margin-bottom: 0.2rem; }
+.match-feedback-err { color: #dc2626; font-weight: 600; display: block; margin-bottom: 0.2rem; }
+.match-feedback-limit { color: #92400e; }
+
+/* ---- Tabla comparativa ---- */
+.tabla-comparativa {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  margin: 1.2rem 0;
+}
+.tabla-comparativa th {
+  background: #1a365d;
+  color: #fff;
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  font-weight: 600;
+}
+.tabla-comparativa td {
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+}
+.tabla-comparativa tr:nth-child(even) td { background: #f8fafc; }
+.tabla-comparativa tr:hover td { background: #eff6ff; }
+.tag-nuevo {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 0.1rem 0.4rem;
+  border-radius: 99px;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+}
+.tag-conocido {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  background: #d1fae5;
+  color: #065f46;
+  padding: 0.1rem 0.4rem;
+  border-radius: 99px;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+}
