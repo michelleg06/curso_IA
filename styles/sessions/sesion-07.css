@@ -1,0 +1,660 @@
+/* ================================================
+   SESIÓN 07 — IA como Tutor de Lenguaje
+   Lectura, Escritura e Idiomas
+================================================ */
+
+/* Tone: emerald (aprendizaje, lenguaje) */
+.demo-tone-lang {
+  --demo-accent: #059669;
+  --demo-accent-soft: rgba(5, 150, 105, 0.10);
+  --demo-accent-strong: rgba(5, 150, 105, 0.20);
+}
+
+/* ---- Tutor vs. Autor distinction ---- */
+.tutor-vs-autor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+
+.tva-col {
+  border-radius: 14px;
+  padding: 1rem 1.05rem;
+  border: 1.5px solid;
+}
+
+.tva-col-bad {
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+
+.tva-col-good {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.tva-col-kicker {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 0.4rem;
+}
+
+.tva-col-bad .tva-col-kicker { color: #dc2626; }
+.tva-col-good .tva-col-kicker { color: #16a34a; }
+
+.tva-col h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0 0 0.55rem;
+}
+
+.tva-prompt {
+  font-size: 0.8rem;
+  font-family: 'Courier New', monospace;
+  border-radius: 8px;
+  padding: 0.4rem 0.65rem;
+  margin: 0 0 0.45rem;
+  line-height: 1.5;
+}
+
+.tva-col-bad .tva-prompt {
+  background: #fff5f5;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+}
+
+.tva-col-good .tva-prompt {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #166534;
+}
+
+.tva-consequence {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .tutor-vs-autor { grid-template-columns: 1fr; }
+}
+
+/* ---- Reading types cards ---- */
+.reading-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+
+.reading-type-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1rem;
+  transition: box-shadow 0.2s;
+}
+
+.reading-type-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+
+.reading-type-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.5rem;
+}
+
+.reading-type-emoji { font-size: 1.4rem; line-height: 1; }
+
+.reading-type-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0;
+}
+
+.reading-type-prompt {
+  font-size: 0.78rem;
+  font-family: 'Courier New', monospace;
+  background: #f0fdf4;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  padding: 0.38rem 0.6rem;
+  color: #065f46;
+  margin: 0.4rem 0;
+  line-height: 1.45;
+}
+
+.reading-type-body {
+  font-size: 0.81rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---- Reading demo live stage ---- */
+.rd-text-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  font-size: 0.86rem;
+  line-height: 1.75;
+  color: #334155;
+  margin-bottom: 0.85rem;
+}
+
+.rd-text-label {
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 0 0 0.45rem;
+  display: block;
+}
+
+.rd-prompt-btns {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.rd-prompt-btn {
+  background: #f0fdf4;
+  border: 1.5px solid #a7f3d0;
+  border-radius: 99px;
+  padding: 0.38rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #065f46;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.rd-prompt-btn:hover { background: #d1fae5; border-color: #059669; }
+.rd-prompt-btn.is-active { background: #d1fae5; border-color: #059669; }
+.rd-prompt-btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.rd-result-area {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  min-height: 100px;
+  transition: border-color 0.2s;
+}
+
+.rd-result-area.has-content { border-color: #a7f3d0; }
+
+.rd-result-eyebrow {
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #059669;
+  margin: 0 0 0.4rem;
+  display: block;
+}
+
+.rd-result-text {
+  font-size: 0.86rem;
+  line-height: 1.72;
+  color: #334155;
+  margin: 0;
+  min-height: 2.5em;
+  white-space: pre-line;
+}
+
+.rd-result-text.is-empty { color: #94a3b8; font-style: italic; }
+
+/* Preview chips for reading demo */
+.rd-preview-chips {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+
+.rd-preview-chip {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 99px;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #065f46;
+}
+
+/* ---- Writing support cards ---- */
+.writing-support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+
+.writing-support-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1rem;
+  transition: box-shadow 0.2s;
+}
+
+.writing-support-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.06); }
+
+.ws-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.5rem;
+}
+
+.ws-emoji { font-size: 1.3rem; line-height: 1; }
+
+.ws-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0;
+}
+
+.ws-prompt {
+  font-size: 0.78rem;
+  font-family: 'Courier New', monospace;
+  background: #f0fdf4;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  padding: 0.38rem 0.6rem;
+  color: #065f46;
+  margin: 0.4rem 0;
+  line-height: 1.45;
+}
+
+.ws-desc {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.58;
+  margin: 0;
+}
+
+/* ---- Idiom cards ---- */
+.idiom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.9rem;
+  margin: 1.2rem 0;
+}
+
+.idiom-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+}
+
+.idiom-kicker {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #059669;
+  margin: 0 0 0.3rem;
+}
+
+.idiom-prompt {
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  background: #f0fdf4;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  padding: 0.38rem 0.65rem;
+  color: #065f46;
+  line-height: 1.45;
+  margin: 0.3rem 0 0.4rem;
+  display: block;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.idiom-desc {
+  font-size: 0.79rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.52;
+}
+
+/* ---- Prompt library demo ---- */
+.pl-tabs {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.pl-tab-btn {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 99px;
+  padding: 0.38rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #475569;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+
+.pl-tab-btn:hover { border-color: #059669; color: #059669; }
+.pl-tab-btn.is-active {
+  background: #ecfdf5;
+  border-color: #059669;
+  color: #065f46;
+}
+
+.pl-cards {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.pl-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.18s;
+}
+
+.pl-card:hover { border-color: #6ee7b7; }
+
+.pl-card-header {
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.pl-card-meta {
+  flex: 1;
+}
+
+.pl-card-prompt {
+  font-size: 0.86rem;
+  font-family: 'Courier New', monospace;
+  color: #1a365d;
+  font-weight: 600;
+  line-height: 1.45;
+  margin: 0 0 0.2rem;
+}
+
+.pl-card-use {
+  font-size: 0.74rem;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.pl-toggle {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #059669;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 99px;
+  padding: 0.22rem 0.7rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: background 0.15s;
+  user-select: none;
+}
+
+.pl-toggle:hover { background: #d1fae5; }
+.pl-card.is-open .pl-toggle { background: #d1fae5; }
+
+.pl-output {
+  display: none;
+  border-top: 1px solid #e2e8f0;
+  padding: 0.75rem 1rem;
+  background: #f8fafc;
+}
+
+.pl-output.is-open { display: block; }
+
+.pl-output-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #059669;
+  margin: 0 0 0.35rem;
+  display: block;
+}
+
+.pl-output-text {
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: #334155;
+  margin: 0;
+  white-space: pre-line;
+}
+
+/* Preview columns */
+.pl-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.pl-preview-col {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 10px;
+  padding: 0.55rem 0.6rem;
+  text-align: center;
+}
+
+.pl-preview-col-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #065f46;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.pl-preview-col-count {
+  font-size: 0.65rem;
+  color: #047857;
+}
+
+/* ---- Language tools comparison ---- */
+.tools7-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(238px, 1fr));
+  gap: 0.9rem;
+  margin: 1.2rem 0;
+}
+
+.tool7-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 1rem;
+  transition: box-shadow 0.2s;
+}
+
+.tool7-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+
+.tool7-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.65rem;
+  padding-bottom: 0.55rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.tool7-logo { font-size: 1.4rem; }
+
+.tool7-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0;
+}
+
+.tool7-maker {
+  font-size: 0.7rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.tool7-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 0.42rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  flex-wrap: wrap;
+}
+
+.tool7-label {
+  font-weight: 700;
+  color: #1a365d;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-size: 0.76rem;
+}
+
+.tool7-value { color: #475569; flex: 1; }
+
+.tool7-tag {
+  display: inline-block;
+  font-size: 0.61rem;
+  font-weight: 700;
+  padding: 0.1rem 0.45rem;
+  border-radius: 99px;
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  white-space: nowrap;
+  margin-top: 0.1rem;
+}
+
+.tool7-free { background: #eff6ff; color: #1d4ed8; border-color: #93c5fd; }
+
+/* ---- Ethics traffic-light cards ---- */
+.ethics7-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+
+.ethics7-card {
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  border: 2px solid;
+}
+
+.ethics7-card-verde   { background: #f0fdf4; border-color: #86efac; }
+.ethics7-card-amarillo { background: #fefce8; border-color: #fde047; }
+.ethics7-card-rojo    { background: #fef2f2; border-color: #fca5a5; }
+
+.ethics7-card-kicker {
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 0.25rem;
+  display: block;
+}
+
+.ethics7-card-verde   .ethics7-card-kicker { color: #16a34a; }
+.ethics7-card-amarillo .ethics7-card-kicker { color: #a16207; }
+.ethics7-card-rojo    .ethics7-card-kicker { color: #dc2626; }
+
+.ethics7-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a365d;
+  margin: 0 0 0.65rem;
+}
+
+.ethics7-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.ethics7-card li {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-bottom: 0.35rem;
+  color: #334155;
+}
+
+.ethics7-card li:last-child { margin-bottom: 0; }
+
+/* ---- Ethics guide table ---- */
+.ethics7-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2rem 0;
+  font-size: 0.88rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1.5px solid #e2e8f0;
+}
+
+.ethics7-table th {
+  padding: 0.65rem 1rem;
+  text-align: left;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.ethics7-table th:first-child {
+  background: #f0fdf4;
+  color: #16a34a;
+  border-bottom: 2px solid #86efac;
+  border-right: 1px solid #e2e8f0;
+}
+
+.ethics7-table th:last-child {
+  background: #fef2f2;
+  color: #dc2626;
+  border-bottom: 2px solid #fca5a5;
+}
+
+.ethics7-table td {
+  padding: 0.62rem 1rem;
+  vertical-align: top;
+  border-bottom: 1px solid #f1f5f9;
+  line-height: 1.58;
+}
+
+.ethics7-table td:first-child {
+  color: #166534;
+  border-right: 1px solid #f1f5f9;
+  background: #fafffe;
+}
+
+.ethics7-table td:last-child {
+  color: #9f1239;
+  background: #fffafa;
+}
+
+.ethics7-table tr:last-child td { border-bottom: none; }

@@ -187,10 +187,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#video-de-la-sesión" id="toc-video-de-la-sesión" class="nav-link active" data-scroll-target="#video-de-la-sesión">Video de la sesión</a></li>
-  <li><a href="#objetivos-de-aprendizaje" id="toc-objetivos-de-aprendizaje" class="nav-link" data-scroll-target="#objetivos-de-aprendizaje">Objetivos de aprendizaje</a></li>
-  <li><a href="#contenido-previsto" id="toc-contenido-previsto" class="nav-link" data-scroll-target="#contenido-previsto">Contenido previsto</a></li>
-  <li><a href="#recursos-y-materiales-por-incorporar" id="toc-recursos-y-materiales-por-incorporar" class="nav-link" data-scroll-target="#recursos-y-materiales-por-incorporar">Recursos y materiales por incorporar</a></li>
+  <li><a href="#video-ia-como-tutor-de-lenguaje" id="toc-video-ia-como-tutor-de-lenguaje" class="nav-link active" data-scroll-target="#video-ia-como-tutor-de-lenguaje">Video: IA como Tutor de Lenguaje</a></li>
+  <li><a href="#texto-ia-como-tutor-de-lenguaje" id="toc-texto-ia-como-tutor-de-lenguaje" class="nav-link" data-scroll-target="#texto-ia-como-tutor-de-lenguaje">Texto: IA como Tutor de Lenguaje</a></li>
+  <li><a href="#actividad-biblioteca-de-prompts" id="toc-actividad-biblioteca-de-prompts" class="nav-link" data-scroll-target="#actividad-biblioteca-de-prompts">Actividad: Biblioteca de Prompts</a></li>
   </ul>
 </nav>
     </div>
@@ -232,90 +231,560 @@ ul.task-list li input[type="checkbox"] {
     <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
+<link rel="stylesheet" href="../styles/sessions/sesion-07.css">
+<script src="../interactives/sesion-07.js" defer=""></script>
+<section id="video-ia-como-tutor-de-lenguaje" class="level2">
+<h2 class="anchored" data-anchor-id="video-ia-como-tutor-de-lenguaje">Video: IA como Tutor de Lenguaje</h2>
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video: IA como Tutor de Lenguaje</p>
+</div>
+<hr>
+</section>
+<section id="texto-ia-como-tutor-de-lenguaje" class="level2">
+<h2 class="anchored" data-anchor-id="texto-ia-como-tutor-de-lenguaje">Texto: IA como Tutor de Lenguaje</h2>
+<hr>
+<section id="introducción" class="level3">
+<h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
+<p>Imagina que tienes que leer un artículo académico sobre política monetaria para mañana. El texto tiene veinte páginas, está lleno de términos que no reconoces y sientes que llevas media hora leyendo el mismo párrafo sin entender nada. Antes de la IA, tus opciones eran limitadas: buscar en Google palabra por palabra, pedirle a alguien que te explicara, o avanzar a ciegas.</p>
+<p>Hoy puedes copiar el párrafo que no entiendes, pegarlo en una herramienta conversacional como ChatGPT o Gemini y escribir: <em>“Explícame esto como si tuviera 15 años.”</em> En treinta segundos tienes una explicación con analogías cotidianas.</p>
+<p>Ese es el poder de la IA como tutor de lenguaje. Pero hay una distinción crítica que vale la pena establecer desde el principio:</p>
+<div class="tutor-vs-autor">
+  <div class="tva-col tva-col-bad">
+    <p class="tva-col-kicker">❌ Usar la IA como autor</p>
+    <h5 class="anchored">La IA produce el trabajo</h5>
+    <p class="tva-prompt">"Escríbeme un ensayo sobre el cambio climático de 500 palabras."</p>
+    <p class="tva-consequence">El texto resultante no es tuyo. No aprendiste nada. Si lo entregas como propio en un contexto académico, es una forma de deshonestidad intelectual, y también te priva del aprendizaje que tenías que hacer.</p>
+  </div>
+  <div class="tva-col tva-col-good">
+    <p class="tva-col-kicker">✅ Usar la IA como tutor</p>
+    <h5 class="anchored">La IA potencia tu trabajo</h5>
+    <p class="tva-prompt">"¿Este argumento tiene lógica? ¿Qué le falta? No lo reescribas."</p>
+    <p class="tva-consequence">Tu texto sigue siendo tuyo. La IA actúa como un editor o un asesor que señala qué mejorar sin hacerlo por ti. Sigues siendo el autor responsable del resultado final.</p>
+  </div>
+</div>
+<p>Esta distinción no es una regla arbitraria: es la diferencia entre desarrollar una habilidad y saltártela. Hoy vamos a explorar cómo usar la IA en el segundo modo — el que te hace mejor lector/a, mejor escritor/a y mejor estudiante de idiomas.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+La pregunta central de esta sesión
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>¿Cómo uso la IA para aprender, sin que aprenda por mí?</p>
+</div>
+</div>
+<p>Esta sesión desarrolla tres ejes: <strong>lectura</strong>, <strong>escritura</strong> e <strong>idiomas</strong>. En los tres, el patrón es el mismo: tú aportas el contenido, el contexto y el criterio; la IA aporta velocidad, explicaciones y retroalimentación inmediata.</p>
+<hr>
+</section>
+<section id="lectura-asistida-con-ia" class="level3">
+<h3 class="anchored" data-anchor-id="lectura-asistida-con-ia">Lectura asistida con IA</h3>
+<p>Leer implica varias acciones: identificar ideas principales, distinguir argumentos de ejemplos, hacer preguntas al autor y conectar lo que lees con lo que ya sabes. La IA puede ayudarte a entrar al texto más rápido, pero la comprensión sigue teniendo que ser tuya.</p>
+<section id="tres-maneras-de-usar-ia-para-leer-mejor" class="level4">
+<h4 class="anchored" data-anchor-id="tres-maneras-de-usar-ia-para-leer-mejor">Tres maneras de usar IA para leer mejor</h4>
+<div class="reading-types-grid">
+  <div class="reading-type-card">
+    <div class="reading-type-header">
+      <span class="reading-type-emoji">🔬</span>
+      <h5 class="reading-type-title anchored">Simplificar vocabulario</h5>
+    </div>
+    <p class="reading-type-prompt">Explícame este texto como si tuviera 15 años: [pega el párrafo]</p>
+    <p class="reading-type-body">Para textos con términos técnicos o académicos densos. La IA los parafrasea con analogías cotidianas. Luego puedes volver al texto original con una nueva perspectiva, y mayor claridad.</p>
+  </div>
+  <div class="reading-type-card">
+    <div class="reading-type-header">
+      <span class="reading-type-emoji">📌</span>
+      <h5 class="reading-type-title anchored">Extraer la idea central</h5>
+    </div>
+    <p class="reading-type-prompt">¿Cuál es la idea principal de este párrafo? Dame solo un enunciado: [pega el párrafo]</p>
+    <p class="reading-type-body">Útil antes de un examen o al hacer un resumen. Obliga al modelo a sintetizar y te da un punto de partida para comparar con tu propia lectura.</p>
+  </div>
+  <div class="reading-type-card">
+    <div class="reading-type-header">
+      <span class="reading-type-emoji">🧪</span>
+      <h5 class="reading-type-title anchored">Estudiar activamente</h5>
+    </div>
+    <p class="reading-type-prompt">Haz 3 preguntas de comprensión sobre este texto para que yo las responda: [pega el texto]</p>
+    <p class="reading-type-body">En lugar de releer pasivamente, te toca responder. <a href="https://www.science.org/doi/10.1126/science.1152408">Un estudio en Science</a> encontró que, una vez que aprendiste algo, ser evaluado sobre ello repetidamente consolida el aprendizaje mucho más que volver a estudiarlo, y que los propios estudiantes subestiman ese efecto.</p>
+  </div>
+</div>
+<p>La clave está en que el modelo trabaja sobre <em>tu</em> texto, con <em>tus</em> preguntas. No produce contenido nuevo que reemplaza lo que tienes que aprender. Tú todavía tienes que leer, pensar y responder.</p>
+<p>Dos ideas de investigación respaldan bien este tipo de uso: la <strong>práctica de recuperación</strong> mejora la retención a largo plazo, y la <strong>autoexplicación</strong> ayuda a construir comprensión más profunda. Por eso conviene pedirle al modelo no solo que simplifique, sino también que te haga preguntas o que te obligue a explicar con tus propias palabras lo que entendiste. Véase <a href="https://www.science.org/doi/10.1126/science.1152408">Roediger y Karpicke (2006)</a> y <a href="https://doi.org/10.1207/s15516709cog1302_1">Chi et al.&nbsp;(1989)</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Simplificar no es comprender
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si una explicación “para 15 años” te ayuda a entrar al tema, bien. Pero el aprendizaje no termina ahí: vuelve al texto original y verifica si ya puedes identificar la idea principal, los conceptos clave y la evidencia del autor.</p>
+</div>
+</div>
+</section>
+<section id="demo-tipos-de-prompt-para-el-mismo-texto" class="level4">
+<h4 class="anchored" data-anchor-id="demo-tipos-de-prompt-para-el-mismo-texto"><strong>Demo: tipos de prompt para el mismo texto</strong></h4>
+<p>El siguiente demo muestra un texto académico y tres tipos de prompt distintos. Ejecuta el demo y compara las respuestas: el mismo texto produce resultados completamente distintos según cómo preguntes.</p>
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-lang" id="rd-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Demo interactivo</p>
+        <h4 class="demo-title anchored">El mismo texto, tres tipos de prompt distintos</h4>
+        <p class="demo-copy">Un texto sobre fotosíntesis — denso, académico. Elige un tipo de prompt y observa cómo cambia completamente la respuesta del modelo. El texto no cambia. Solo cambia cómo preguntas.</p>
+      </div>
+    </div>
 
-<div class="sesion-outline">
-  <p class="sesion-outline-kicker">Herramientas de lenguaje</p>
-  <h2 class="sesion-outline-title anchored">Arquitectura base de la sesión</h2>
-  <p class="sesion-outline-copy">Esta página deja listo el espacio para integrar ejemplos de lectura asistida, edición responsable y práctica de idiomas con IA.</p>
-  <div class="sesion-outline-grid">
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">01</span>
-      <h3 class="anchored">Apertura</h3>
-      <p>Escenario cotidiano de lectura, resumen y reescritura con autoría propia.</p>
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div class="rd-preview-chips">
+              <span class="rd-preview-chip">Simplifica</span>
+              <span class="rd-preview-chip">Resume en puntos</span>
+              <span class="rd-preview-chip">Preguntas de comprensión</span>
+            </div>
+          </div>
+          <p class="demo-preview-copy">Tres tipos de prompt para el mismo texto. Inicia el demo para elegir y ver la respuesta animada.</p>
+        </div>
+      </div>
+      <div class="demo-stage-live">
+        <!-- Populated by sesion-07.js initReadingDemo() -->
+      </div>
     </div>
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">02</span>
-      <h3 class="anchored">Conceptos clave</h3>
-      <p>Comprensión, retroalimentación, traducción, tono y práctica oral.</p>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5 class="anchored">Qué estás viendo</h5>
+        <p id="rd-seeing">Inicia el demo para explorar los distintos tipos de prompt.</p>
+      </div>
+      <div class="demo-insight">
+        <h5 class="anchored">Qué significa</h5>
+        <p id="rd-meaning">El tipo de prompt determina qué tipo de ayuda obtienes. Aprender a pedir ayuda es la mitad del trabajo.</p>
+      </div>
     </div>
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">03</span>
-      <h3 class="anchored">Actividad</h3>
-      <p>Prompts de lectura, corrección y conversación.</p>
-    </div>
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">04</span>
-      <h3 class="anchored">Cierre</h3>
-      <p>Criterios de uso ético para tareas, ensayos e idiomas.</p>
+
+    <div class="demo-footer">
+      <p id="rd-status" class="demo-status">Inicia el demo para explorar cómo cambia la respuesta según el prompt.</p>
+      <div class="demo-actions">
+        <button id="rd-start" class="demo-btn demo-btn-primary">Iniciar demo</button>
+        <button id="rd-reset" class="btn-restart" disabled="">Reiniciar</button>
+      </div>
     </div>
   </div>
 </div>
-<section id="video-de-la-sesión" class="level2">
-<h2 class="anchored" data-anchor-id="video-de-la-sesión">Video de la sesión</h2>
-<div class="video-placeholder">
-  <span class="vp-icon">▶</span>
-  <p class="vp-title">Video de la sesión — en desarrollo</p>
-  <p>Aquí se insertará la grabación principal cuando el guion final esté listo.</p>
+<hr>
+</section>
+</section>
+<section id="escritura-sin-delegar-la-autoría" class="level3">
+<h3 class="anchored" data-anchor-id="escritura-sin-delegar-la-autoría">Escritura sin delegar la autoría</h3>
+<p>Escribir bien es difícil. No porque las palabras sean difíciles de escribir, sino porque escribir es pensar. Cuando redactas un argumento, te ves forzado/a a articular lo que crees y por qué. Cuando delegas eso a la IA, pierdes precisamente esa oportunidad.</p>
+<p>El rol de la IA en la escritura es el de <strong>editor con retroalimentación</strong>, no el de autor. La diferencia práctica es la pregunta que le haces:</p>
+<div class="writing-support-grid">
+  <div class="writing-support-card">
+    <div class="ws-header">
+      <span class="ws-emoji">🔎</span>
+      <h5 class="ws-title anchored">Retroalimentación sin reescritura</h5>
+    </div>
+    <p class="ws-prompt">Revisa este párrafo y dime qué mejorarías — sin reescribirlo: [pega tu párrafo]</p>
+    <p class="ws-desc">El modelo señala los problemas específicos: transiciones débiles, enunciados demasiado largos, cierre inconcluso. Tú decides qué cambiar y cómo. La voz sigue siendo la tuya.</p>
+  </div>
+  <div class="writing-support-card">
+    <div class="ws-header">
+      <span class="ws-emoji">🧱</span>
+      <h5 class="ws-title anchored">Revisión lógica del argumento</h5>
+    </div>
+    <p class="ws-prompt">¿El argumento de este texto tiene lógica? ¿Qué le falta? No lo reescribas: [pega tu texto]</p>
+    <p class="ws-desc">Útil antes de entregar un ensayo. El modelo puede detectar afirmaciones sin evidencia, saltos lógicos o conclusiones que no siguen de las premisas.</p>
+  </div>
+  <div class="writing-support-card">
+    <div class="ws-header">
+      <span class="ws-emoji">✏️</span>
+      <h5 class="ws-title anchored">Lista de errores sin corrección</h5>
+    </div>
+    <p class="ws-prompt">Haz una lista de los errores de gramática o puntuación de este texto. Solo la lista, sin correcciones: [pega tu texto]</p>
+    <p class="ws-desc">Tú ves la lista de errores y los corriges manualmente. Así aprendes de los patrones de error propios en lugar de dejar que la IA simplemente los arregle y tú nunca los notes.</p>
+  </div>
 </div>
+<p>Hay una pregunta que muchos estudiantes se hacen: <em>¿cuándo termina el “apoyo” y empieza la trampa?</em> Una regla práctica es esta: si la IA detecta problemas, te propone opciones o te da retroalimentación, sigue siendo apoyo. Si la IA redacta las ideas centrales, organiza el argumento por ti o produce el texto final que vas a entregar, ya dejó de ser tutor y pasó a ser autor.</p>
+<p>Esta lógica también coincide con lo que sabemos sobre la retroalimentación útil: ayuda más cuando orienta qué mejorar que cuando sustituye el trabajo intelectual del estudiante. Véase <a href="https://doi.org/10.3102/003465430298487">Hattie y Timperley (2007)</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Prueba de autoría
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Una forma práctica de verificar si el trabajo es realmente tuyo: léelo en voz alta y pregúntate si podrías defenderlo en una conversación. Si no puedes explicar el argumento con tus propias palabras, probablemente no lo entendiste, y probablemente la IA lo escribió por ti.</p>
+</div>
+</div>
+<hr>
 </section>
-<section id="objetivos-de-aprendizaje" class="level2">
-<h2 class="anchored" data-anchor-id="objetivos-de-aprendizaje">Objetivos de aprendizaje</h2>
+<section id="práctica-de-idiomas" class="level3">
+<h3 class="anchored" data-anchor-id="práctica-de-idiomas">Práctica de Idiomas</h3>
+<p>Aprender un idioma requiere práctica constante, retroalimentación inmediata y el espacio psicológico para equivocarse sin miedo al juicio. La IA cumple las tres condiciones muy bien: está disponible en cualquier momento, corrige en el acto y no te juzga por cometer el mismo error cinco veces.</p>
+<section id="tres-usos-concretos-para-practicar-idiomas" class="level4">
+<h4 class="anchored" data-anchor-id="tres-usos-concretos-para-practicar-idiomas">Tres usos concretos para practicar idiomas</h4>
+<div class="idiom-grid">
+  <div class="idiom-card">
+    <p class="idiom-kicker">Para conversación</p>
+    <code class="idiom-prompt">Practiquemos inglés. Yo escribo, tú me corriges si me equivoco y explicas por qué.</code>
+    <p class="idiom-desc">El modelo responde en el idioma que practicas, señala errores específicos y explica la regla. Puedes practicar diez minutos al día con cualquier tema.</p>
+  </div>
+  <div class="idiom-card">
+    <p class="idiom-kicker">Para vocabulario natural</p>
+    <code class="idiom-prompt">¿Cómo se dice "no tengo ni idea" en inglés informal? Dame un ejemplo en contexto.</code>
+    <p class="idiom-desc">Los diccionarios dan traducciones literales. La IA puede darte la expresión que usaría un hablante nativo en una conversación, con contexto y advertencias sobre registro.</p>
+  </div>
+  <div class="idiom-card">
+    <p class="idiom-kicker">Para preparar un examen oral</p>
+    <code class="idiom-prompt">Hazme 5 preguntas de práctica sobre [tema] en inglés para que yo las responda.</code>
+    <p class="idiom-desc">En lugar de leer apuntes, practicas respondiendo en el idioma objetivo. El modelo puede revisar tus respuestas y decirte qué mejorar.</p>
+  </div>
+</div>
+<p>Dos advertencias importantes sobre la IA y los idiomas: primero, los modelos pueden cometer errores sutiles de uso, especialmente en expresiones idiomáticas o en diferencias de registro formal e informal. Cuando el contexto sea importante, contrasta con diccionarios, corpus, profesores, materiales oficiales o hablantes competentes. Segundo, la práctica con IA no reemplaza la práctica con personas reales. El objetivo es aumentar el tiempo de práctica, no sustituir la interacción humana.</p>
+<p>La razón para usar prompts de corrección y explicación no es solo intuición: la investigación sobre <strong>retroalimentación correctiva</strong> en aprendizaje de lenguas muestra efectos positivos y duraderos cuando la retroalimentación obliga al estudiante a notar y corregir sus errores. Véase <a href="https://www.cambridge.org/core/journals/studies-in-second-language-acquisition/article/oral-feedback-in-classroom-sla/4999EE1C8379B2BF026B148EAF373CA1">Lyster y Saito (2010)</a>.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="actividad-biblioteca-de-prompts" class="level2">
+<h2 class="anchored" data-anchor-id="actividad-biblioteca-de-prompts">Actividad: Biblioteca de Prompts</h2>
+<p>Tienes aquí 9 prompts organizados en tres categorías: Lectura, Escritura e Idiomas. Cada uno está diseñado para mantenerte como autor: la IA apoya, no reemplaza.</p>
+<p>Abre la biblioteca, explora las categorías y elige al menos dos prompts que puedas usar esta semana en algo que estés estudiando o trabajando.</p>
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-lang" id="pl-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Actividad interactiva</p>
+        <h4 class="demo-title anchored">Biblioteca de prompts: Lectura · Escritura · Idiomas</h4>
+        <p class="demo-copy">9 prompts listos para usar, organizados por categoría. Cada uno incluye para qué sirve y un ejemplo de respuesta ilustrativa. Copia el que necesites, pega tu texto y envíalo a ChatGPT, Gemini o Perplexity.</p>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div class="pl-preview-grid">
+              <div class="pl-preview-col">
+                <span class="pl-preview-col-label">📚 Lectura</span>
+                <span class="pl-preview-col-count">3 prompts</span>
+              </div>
+              <div class="pl-preview-col">
+                <span class="pl-preview-col-label">✏️ Escritura</span>
+                <span class="pl-preview-col-count">3 prompts</span>
+              </div>
+              <div class="pl-preview-col">
+                <span class="pl-preview-col-label">🌐 Idiomas</span>
+                <span class="pl-preview-col-count">3 prompts</span>
+              </div>
+            </div>
+          </div>
+          <p class="demo-preview-copy">Inicia la biblioteca para explorar y copiar los prompts.</p>
+        </div>
+      </div>
+      <div class="demo-stage-live">
+        <!-- Populated by sesion-07.js initPromptLibrary() -->
+      </div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5 class="anchored">Qué estás viendo</h5>
+        <p id="pl-seeing">Inicia la biblioteca para explorar los prompts por categoría.</p>
+      </div>
+      <div class="demo-insight">
+        <h5 class="anchored">Qué significa</h5>
+        <p id="pl-meaning">La diferencia entre un resultado genérico y uno útil suele ser cómo lo pides. Estos prompts están diseñados para mantenerte en control.</p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <p id="pl-status" class="demo-status">Inicia la biblioteca para ver los prompts.</p>
+      <div class="demo-actions">
+        <button id="pl-start" class="demo-btn demo-btn-primary">Abrir biblioteca</button>
+        <button id="pl-reset" class="btn-restart" disabled="">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<section id="qué-herramienta-conviene-para-qué-tarea" class="level3">
+<h3 class="anchored" data-anchor-id="qué-herramienta-conviene-para-qué-tarea">Qué herramienta conviene para qué tarea</h3>
+<p>No todas las herramientas sirven para lo mismo. La forma más útil de elegir no es por marca, sino por <strong>tipo de tarea</strong>: conversar, estudiar un PDF, corregir un texto en español, practicar inglés o verificar una duda lingüística.</p>
+<div class="tools7-grid">
+  <div class="tool7-card">
+    <div class="tool7-header">
+      <span class="tool7-logo">💬</span>
+      <div>
+        <p class="tool7-name">Tutor conversacional general</p>
+        <p class="tool7-maker">ChatGPT · Gemini · Claude</p>
+      </div>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Sirve para:</span>
+      <span class="tool7-value">hacer preguntas, pedir explicaciones, practicar conversación, recibir retroalimentación inicial</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Fortaleza:</span>
+      <span class="tool7-value">flexibilidad: un mismo chat puede servir para lectura, escritura o idiomas</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Ojo:</span>
+      <span class="tool7-value">son buenos para conversar, pero no siempre citan fuentes ni siguen reglas normativas del español</span>
+    </div>
+  </div>
+
+  <div class="tool7-card">
+    <div class="tool7-header">
+      <span class="tool7-logo">📚</span>
+      <div>
+        <p class="tool7-name">Lectura con fuentes</p>
+        <p class="tool7-maker">NotebookLM · Perplexity</p>
+      </div>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Sirve para:</span>
+      <span class="tool7-value">estudiar documentos largos, hacer preguntas sobre tus fuentes, generar guías de estudio y respuestas con citas</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Fortaleza:</span>
+      <span class="tool7-value">reduce el riesgo de inventar porque trabaja sobre materiales concretos y te deja verificar de dónde salió la respuesta</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Ojo:</span>
+      <span class="tool7-value">ideal para estudiar textos y apuntes, menos útil si lo que quieres es conversación libre o corrección fina de estilo</span>
+    </div>
+  </div>
+
+  <div class="tool7-card">
+    <div class="tool7-header">
+      <span class="tool7-logo">✍️</span>
+      <div>
+        <p class="tool7-name">Escritura en español</p>
+        <p class="tool7-maker">LanguageTool · DeepL Write · RAE · FundéuRAE</p>
+      </div>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Sirve para:</span>
+      <span class="tool7-value">corregir ortografía y puntuación, detectar errores de estilo y resolver dudas normativas del español</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Fortaleza:</span>
+      <span class="tool7-value">es la combinación más útil si escribes trabajos en español y quieres apoyo sin depender de una sola IA generalista</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Ojo:</span>
+      <span class="tool7-value">una IA puede sugerir mejor redacción; RAE y Fundéu ayudan más cuando la duda es de uso correcto</span>
+    </div>
+  </div>
+
+  <div class="tool7-card">
+    <div class="tool7-header">
+      <span class="tool7-logo">🇬🇧</span>
+      <div>
+        <p class="tool7-name">Escritura y práctica en inglés</p>
+        <p class="tool7-maker">Grammarly · Cambridge Write &amp; Improve</p>
+      </div>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Sirve para:</span>
+      <span class="tool7-value">revisar gramática, claridad y registro, y practicar escritura con retroalimentación iterativa</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Fortaleza:</span>
+      <span class="tool7-value">útil cuando tu meta no es traducir, sino escribir mejor en inglés</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Ojo:</span>
+      <span class="tool7-value">no es ideal para estudiar contenidos largos con fuentes citadas</span>
+    </div>
+  </div>
+
+  <div class="tool7-card">
+    <div class="tool7-header">
+      <span class="tool7-logo">🧭</span>
+      <div>
+        <p class="tool7-name">Vocabulario y traducción en contexto</p>
+        <p class="tool7-maker">WordReference · Reverso Context · DeepL</p>
+      </div>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Sirve para:</span>
+      <span class="tool7-value">consultar significados, equivalencias, expresiones idiomáticas y ejemplos de uso cotidiano</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Fortaleza:</span>
+      <span class="tool7-value">evita depender de una única respuesta "generada"; puedes comparar varias opciones y ver contexto</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Ojo:</span>
+      <span class="tool7-value">poder traducir una frase no significa que podrás usarla en una conversación de manera natural, eso requiere práctica</span>
+    </div>
+  </div>
+
+  <div class="tool7-card">
+    <div class="tool7-header">
+      <span class="tool7-logo">🇲🇽</span>
+      <div>
+        <p class="tool7-name">Recursos útiles si cursas la materia de Lengua en español</p>
+        <p class="tool7-maker">UNAM · RAE · FundéuRAE · LanguageTool</p>
+      </div>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Sirve para:</span>
+      <span class="tool7-value">redacción académica, citas, dudas normativas y revisión de textos que no pasan primero por el inglés</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Fortaleza:</span>
+      <span class="tool7-value">te da un ecosistema más cercano a lo que realmente escribes y entregas en tu escuela o universidad</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Ojo:</span>
+      <span class="tool7-value">estos recursos no sustituyen el criterio del profesor ni la rúbrica específica de tu curso</span>
+    </div>
+  </div>
+</div>
+<p>La elección de IA o herramienta de apoyo depende de tres preguntas: ¿necesitas conversación o fuentes?, ¿estás escribiendo en español o en inglés (u otro idioma)?, y ¿tu problema es de comprensión, corrección o vocabulario? Esa lógica te ayuda más que memorizar nombres apps.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Regla práctica para elegir
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si quieres conversar o pedir explicaciones, usa un tutor conversacional. Si quieres estudiar un PDF o un conjunto de apuntes, usa una herramienta basada en fuentes. Si tienes una duda de corrección en español, combina IA con recursos normativos como RAE o Fundéu.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="uso-ético-qué-está-permitido-y-qué-no" class="level3">
+<h3 class="anchored" data-anchor-id="uso-ético-qué-está-permitido-y-qué-no">Uso ético: qué está permitido y qué no</h3>
+<p>No existe una regla universal para todos los contextos de uso de la IA. Lo que sí existe son criterios para reflexionar sobre cómo la usamos. La pregunta clave es: <em>¿esto que le he pedido a la IA me ayuda a aprender o reemplaza el aprendizaje que tenía que ocurrir?</em></p>
+<div class="ethics7-cards">
+  <div class="ethics7-card ethics7-card-verde">
+    <span class="ethics7-card-kicker">✅ Permitido</span>
+    <p class="ethics7-card-title">Adelante</p>
+    <ul>
+      <li>Pedirle que explique un concepto difícil con otras palabras</li>
+      <li>Recibir retroalimentación sobre la estructura de tu ensayo</li>
+      <li>Practicar conversación en otro idioma como si fuera un interlocutor</li>
+      <li>Generar preguntas de comprensión para estudiar activamente</li>
+      <li>Detectar una lista de errores de gramática para que tú los corrijas</li>
+      <li>Verificar si tu argumento tiene lógica antes de entregarlo</li>
+    </ul>
+  </div>
+  <div class="ethics7-card ethics7-card-amarillo">
+    <span class="ethics7-card-kicker">⚠️ Reflexiona</span>
+    <p class="ethics7-card-title">Depende del contexto</p>
+    <ul>
+      <li>Pedirle que sugiera una estructura para un texto que tú vas a escribir</li>
+      <li>Pedirle opciones de redacción para una idea que ya es tuya</li>
+      <li>Ayudarte a reorganizar párrafos que ya redactaste</li>
+      <li>Pedirle que proponga ejemplos para ilustrar tu argumento</li>
+    </ul>
+  </div>
+  <div class="ethics7-card ethics7-card-rojo">
+    <span class="ethics7-card-kicker">🚫 No lo hagas</span>
+    <p class="ethics7-card-title">Fuera de límites</p>
+    <ul>
+      <li>Copiar la respuesta del modelo y presentarla como tu trabajo</li>
+      <li>Pedirle que escriba tu ensayo y entregarlo como propio</li>
+      <li>Usarla para responder por ti en un examen o evaluación</li>
+      <li>Pedirle las respuestas a preguntas de comprensión sin intentarlas tú primero</li>
+      <li>Pedirle que construya el argumento y afirmar que las ideas son tuyas</li>
+    </ul>
+  </div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cuando tengas dudas, pregunta primero
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Si no estás seguro de si cierta forma de usar la IA está permitida en un contexto específico (examen, tarea, proyecto), la respuesta correcta no es “lo hago y espero que no se den cuenta”. Es preguntar directamente. Las reglas varían mucho según la institución, el profesor y el tipo de evaluación.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="la-idea-central-de-esta-sesión" class="level3">
+<h3 class="anchored" data-anchor-id="la-idea-central-de-esta-sesión">La idea central de esta sesión</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Idea Central
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La IA puede ser el mejor tutor de lenguaje que hayas tenido, o puede convertirse en la razón por la que nunca desarrolles las habilidades que necesitas para desenvolverte en el mundo académico y laboral. La diferencia no está en la herramienta: está en qué le pides y para qué.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="recursos-para-explorar-más" class="level3">
+<h3 class="anchored" data-anchor-id="recursos-para-explorar-más">Recursos para explorar más</h3>
 <ul>
-<li>Usar IA para mejorar comprensión de textos en español e inglés.</li>
-<li>Usar IA como editor, nunca como autor.</li>
-<li>Practicar idiomas con herramientas conversacionales de IA.</li>
+<li><a href="https://notebooklm.google.com/">NotebookLM</a> — para estudiar PDFs, apuntes y fuentes subidas por ti con preguntas y citas</li>
+<li><a href="https://chatgpt.com/">ChatGPT</a> — tutor conversacional general para explicación, retroalimentación y práctica</li>
+<li><a href="https://gemini.google.com/">Gemini</a> — alternativa generalista, útil si ya trabajas en el ecosistema de Google</li>
+<li><a href="https://www.perplexity.ai/">Perplexity</a> — búsqueda y síntesis con fuentes citadas</li>
+<li><a href="https://languagetool.org/es">LanguageTool</a> — corrección y revisión de textos en español</li>
+<li><a href="https://www.deepl.com/write">DeepL Write</a> — mejora de redacción en español e inglés</li>
+<li><a href="https://www.rae.es/dpd/">RAE: Diccionario panhispánico de dudas</a> — referencia normativa para dudas de uso del español</li>
+<li><a href="https://www.fundeu.es/dudas/">FundéuRAE</a> — recomendaciones claras sobre uso actual del español</li>
+<li><a href="https://www.wordreference.com/">WordReference</a> — diccionario bilingüe y foros de uso</li>
+<li><a href="https://context.reverso.net/translation/">Reverso Context</a> — ejemplos de traducción en contexto</li>
+<li><a href="https://www.grammarly.com/">Grammarly</a> — corrección especializada para textos en inglés</li>
+<li><a href="https://www.cambridgeenglish.org/es/learning-english/free-resources/write-and-improve/">Cambridge Write &amp; Improve</a> — práctica guiada de escritura en inglés</li>
+<li><a href="https://www.duolingo.com/">Duolingo</a> — práctica breve y frecuente de idiomas</li>
+<li><a href="https://www.languagereactor.com/">Language Reactor</a> — apoyo para aprender idiomas con series, videos y subtítulos</li>
+<li><a href="https://recursoseducativos.unam.mx/handle/123456789/27425">UNAM: Andamiajes para la escritura académica</a> — recurso útil si escribes trabajos académicos en español</li>
+<li><a href="https://recursoseducativos.unam.mx/handle/123456789/23428">UNAM: ¿Cómo citar bibliografía?</a> — guía breve para referencias y citas</li>
+<li><a href="https://www.elementsofai.com/es">Elements of AI</a> — curso gratuito en español sobre IA, con contexto de uso ético</li>
 </ul>
-</section>
-<section id="contenido-previsto" class="level2">
-<h2 class="anchored" data-anchor-id="contenido-previsto">Contenido previsto</h2>
-<section id="apertura" class="level3">
-<h3 class="anchored" data-anchor-id="apertura">Apertura</h3>
-<ul>
-<li>Se añadirá un ejemplo breve de lectura o escritura donde la IA ayude sin reemplazar la voz del estudiante.</li>
-</ul>
-</section>
-<section id="desarrollo-principal" class="level3">
-<h3 class="anchored" data-anchor-id="desarrollo-principal">Desarrollo principal</h3>
-<ul>
-<li>Aquí irá la explicación base sobre lectura, corrección, traducción y práctica oral.</li>
-</ul>
-</section>
-<section id="actividad-o-demo" class="level3">
-<h3 class="anchored" data-anchor-id="actividad-o-demo">Actividad o demo</h3>
-<ul>
-<li>Este bloque servirá para insertar prompts concretos de comprensión, edición y conversación.</li>
-</ul>
-</section>
-<section id="cierre" class="level3">
-<h3 class="anchored" data-anchor-id="cierre">Cierre</h3>
-<ul>
-<li>Se integrará una síntesis sobre uso ético y límites en tareas escolares.</li>
-</ul>
-</section>
-</section>
-<section id="recursos-y-materiales-por-incorporar" class="level2">
-<h2 class="anchored" data-anchor-id="recursos-y-materiales-por-incorporar">Recursos y materiales por incorporar</h2>
-<ul>
-<li>Comparativa entre ChatGPT, Perplexity, Grammarly y herramientas de idiomas.</li>
-<li>Ejemplos de prompts para leer mejor y escribir con claridad.</li>
-<li>Mini guía de usos permitidos y no permitidos en trabajos escolares.</li>
-</ul>
+<hr>
 <nav class="sesion-nav">
   <a href="sesion-06.html" class="sesion-nav-btn prev">
     <span class="nav-label">← Anterior</span>
     <span class="nav-title">S6: EN VIVO: IA en México</span>
   </a>
   <div class="sesion-nav-center">
+    <div class="sesion-nav-dots">
+      <span class="sesion-nav-dot published" title="Sesión 1"></span>
+      <span class="sesion-nav-dot published" title="Sesión 2"></span>
+      <span class="sesion-nav-dot published" title="Sesión 3"></span>
+      <span class="sesion-nav-dot published" title="Sesión 4"></span>
+      <span class="sesion-nav-dot published" title="Sesión 5"></span>
+      <span class="sesion-nav-dot" title="Sesión 6"></span>
+      <span class="sesion-nav-dot active" title="Sesión 7"></span>
+      <span class="sesion-nav-dot" title="Sesión 8"></span>
+      <span class="sesion-nav-dot" title="Sesión 9"></span>
+      <span class="sesion-nav-dot" title="Sesión 10"></span>
+      <span class="sesion-nav-dot" title="Sesión 11"></span>
+      <span class="sesion-nav-dot" title="Sesión 12"></span>
+      <span class="sesion-nav-dot" title="Sesión 13"></span>
+      <span class="sesion-nav-dot" title="Sesión 14"></span>
+      <span class="sesion-nav-dot" title="Sesión 15"></span>
+    </div>
     <span class="sesion-nav-progress">Sesión 7 de 15</span>
   </div>
   <a href="sesion-08.html" class="sesion-nav-btn next">
@@ -325,6 +794,7 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

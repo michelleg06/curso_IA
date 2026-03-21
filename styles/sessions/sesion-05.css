@@ -270,6 +270,65 @@
 }
 .bias-fn-alert strong { color: #c2410c; }
 
+/* ---- Fairness metrics explainer ---- */
+.fairness-mini {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0 1.1rem;
+}
+
+.fairness-mini-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.85rem 0.9rem;
+}
+
+.fairness-mini-card.is-demo {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+}
+
+.fairness-mini-card.is-opportunity {
+  border-color: #fde68a;
+  background: #fffbeb;
+}
+
+.fairness-mini-card.is-predictive {
+  border-color: #c4b5fd;
+  background: #f5f3ff;
+}
+
+.fairness-mini-card.is-errors {
+  border-color: #fca5a5;
+  background: #fef2f2;
+}
+
+.fairness-mini-title {
+  margin: 0 0 0.28rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #1a365d;
+}
+
+.fairness-mini-copy {
+  margin: 0;
+  font-size: 0.74rem;
+  line-height: 1.55;
+  color: #475569;
+}
+
+.fairness-mini-label {
+  display: inline-block;
+  margin-top: 0.45rem;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
 /* ---- Privacy comparison cards ---- */
 .privacidad-compare {
   display: grid;

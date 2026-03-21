@@ -261,8 +261,8 @@ La distinción crucial
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Google busca</strong> documentos que ya existen en internet. <strong>ChatGPT genera</strong> una respuesta nueva al instante, token por token, basándose en patrones aprendidos durante su entrenamiento.</p>
-<p>Uno es un índice. El otro es un modelo generativo.</p>
+<p><strong>Un buscador clásico</strong> te devuelve documentos que ya existen. <strong>Un modelo generativo</strong> redacta una respuesta nueva token por token basándose en patrones aprendidos durante su entrenamiento.</p>
+<p>En 2026 muchas herramientas mezclan ambas cosas, pero la diferencia conceptual sigue siendo útil: una prioriza recuperar fuentes; la otra prioriza generar una salida.</p>
 </div>
 </div>
 <p>Ambos pueden equivocarse, pero se equivocan de formas distintas. Google puede devolverte información desactualizada o un sitio poco confiable. ChatGPT puede inventarse datos con total confianza. Y ese segundo tipo de error tiene nombre propio: <strong>alucinación</strong>.</p>
@@ -270,7 +270,7 @@ La distinción crucial
 </section>
 <section id="qué-es-un-modelo-de-lenguaje-grande-llm" class="level3">
 <h3 class="anchored" data-anchor-id="qué-es-un-modelo-de-lenguaje-grande-llm">¿Qué es un modelo de lenguaje grande (LLM)?</h3>
-<p>Un LLM (<em>Large Language Model</em>) es un sistema entrenado con cantidades masivas de texto — artículos, libros, páginas web, código, conversaciones — para aprender a predecir qué fragmento de texto viene después de otro.</p>
+<p>Un LLM (<em>Large Language Model</em>) es un sistema entrenado con cantidades masivas de texto — artículos, libros, páginas web, código, conversaciones — para estimar qué fragmento de texto es más plausible después de otro en un contexto dado.</p>
 <p>No aprende hechos como tal. Aprende <strong>patrones estadísticos entre fragmentos de texto</strong>. Si vio millones de veces que después de “el agua hierve a” viene “100 grados Celsius”, aprenderá a predecir eso. Si vio pocas veces (o ninguna) que un dato es falso, puede predecir ese dato incorrecto con la misma confianza que uno correcto.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -282,7 +282,7 @@ La idea crucial
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Un LLM no “sabe” cosas. Predice qué texto es estadísticamente probable en un contexto dado. A veces eso coincide con la verdad. A veces no.</p>
+<p>Un LLM no verifica automáticamente si algo es verdad. Genera la continuación más plausible en un contexto dado. A veces eso coincide con la verdad. A veces no.</p>
 </div>
 </div>
 <p>Esta distinción explica por qué los modelos generativos son tan útiles y, al mismo tiempo, tan peligrosos si no los usas con criterio.</p>
@@ -357,11 +357,11 @@ La idea crucial
 <ol type="1">
 <li>Toma el texto que ya existe (tu prompt + lo que ha generado hasta ahora).</li>
 <li>Asigna una probabilidad a cada token que podría seguir — una palabra, una sílaba, un signo de puntuación — basándose en todo lo que ya existe en el texto.</li>
-<li>Elige uno — generalmente el más probable, aunque no siempre el primero en la lista, para que las respuestas no sean siempre idénticas.</li>
+<li>Selecciona o muestrea una opción entre las más plausibles. Esa elección depende tanto del contexto como de la configuración del sistema, que puede hacerlo más conservador o más creativo.</li>
 <li>Lo agrega al texto.</li>
 <li>Repite.</li>
 </ol>
-<p>Eso es todo. No hay “entendimiento” ni “intención”. Es una función matemática muy sofisticada que, dado un texto de entrada, calcula qué texto tiene más probabilidad de aparecer después.</p>
+<p>Eso es el mecanismo base. No hay un chequeo interno de verdad detrás de cada frase. Hay un proceso matemático muy sofisticado que, dado un texto de entrada, calcula qué continuaciones encajan mejor con los patrones que aprendió.</p>
 <div class="demo-wrap">
   <div class="demo-shell demo-tone-gen" id="pred-shell">
     <div class="demo-shell-head">
@@ -543,7 +543,7 @@ Sesgos del entrenamiento
 </figure>
 </div></li>
 </ol>
-<p>El proceso no “dibuja” — elimina ruido de manera controlada hasta que lo que queda es coherente con la descripción.</p>
+<p>El proceso no “dibuja”, elimina ruido de manera controlada hasta que lo que queda es coherente con la descripción.</p>
 <p>Si quieres profundizar en cómo funciona este proceso:</p>
 <a href="https://jalammar.github.io/illustrated-stable-diffusion/" target="_blank" rel="noopener" class="resource-card">
   <div class="resource-card-icon">🎨</div>
@@ -645,7 +645,7 @@ Sesgos del entrenamiento
 </section>
 <section id="chatgpt-gemini-y-perplexity-cuándo-usar-cada-uno" class="level2">
 <h2 class="anchored" data-anchor-id="chatgpt-gemini-y-perplexity-cuándo-usar-cada-uno">ChatGPT, Gemini y Perplexity: ¿cuándo usar cada uno?</h2>
-<p>Las tres herramientas usan LLMs, pero representan enfoques distintos. Conocer las diferencias te permite elegir la que mejor se adapta a cada tarea.</p>
+<p>Las tres herramientas usan modelos generativos, pero no están pensadas para exactamente el mismo tipo de tarea. La comparación útil no es “cuál es mejor en general”, sino “qué modo de trabajo me conviene para este problema”.</p>
 <div class="tools-grid">
 
   <!-- ChatGPT -->
@@ -660,20 +660,20 @@ Sesgos del entrenamiento
     <div class="tool-card-body">
       <div class="tool-row">
         <span class="tool-row-label">Mejor para</span>
-        <span class="tool-row-value">Redactar, resumir, programar, analizar documentos, generar ideas.</span>
+        <span class="tool-row-value">Borradores, explicaciones, lluvia de ideas, análisis de documentos y trabajo iterativo.</span>
       </div>
       <div class="tool-row">
         <span class="tool-row-label">Fortaleza</span>
-        <span class="tool-row-value">Contexto largo, razonamiento paso a paso, amplio ecosistema de plugins.</span>
-        <span class="tool-tag tag-strength">Razonamiento</span>
+        <span class="tool-row-value">Conversación flexible: puedes refinar la instrucción varias veces, cambiar el tono y pedir nuevas versiones.</span>
+        <span class="tool-tag tag-strength">Iteración</span>
       </div>
       <div class="tool-row">
-        <span class="tool-row-label">Alucinaciones</span>
-        <span class="tool-row-value">Moderadas. Pueden reducirse activando búsqueda web (GPT-4o).</span>
+        <span class="tool-row-label">Límite principal</span>
+        <span class="tool-row-value">Puede sonar muy convincente incluso cuando se equivoca. No debe usarse como verificador de hechos por sí solo.</span>
       </div>
       <div class="tool-row">
-        <span class="tool-row-label">Acceso gratuito</span>
-        <span class="tool-row-value">Sí, con limitaciones en el modelo más potente.</span>
+        <span class="tool-row-label">Regla práctica</span>
+        <span class="tool-row-value">Úsalo para pensar, redactar y reorganizar ideas; luego verifica por separado los hechos importantes.</span>
       </div>
     </div>
   </div>
@@ -690,20 +690,20 @@ Sesgos del entrenamiento
     <div class="tool-card-body">
       <div class="tool-row">
         <span class="tool-row-label">Mejor para</span>
-        <span class="tool-row-value">Preguntas con imágenes, integración con Google Workspace, búsquedas recientes.</span>
+        <span class="tool-row-value">Tareas integradas con el ecosistema de Google y consultas que combinan texto con otros formatos.</span>
       </div>
       <div class="tool-row">
         <span class="tool-row-label">Fortaleza</span>
-        <span class="tool-row-value">Multimodal nativo: entiende texto, imágenes, audio y video en la misma conversación.</span>
-        <span class="tool-tag tag-multi">Multimodal</span>
+        <span class="tool-row-value">Suele encajar bien cuando ya trabajas entre Drive, Docs, Gmail o herramientas de Google.</span>
+        <span class="tool-tag tag-multi">Ecosistema</span>
       </div>
       <div class="tool-row">
-        <span class="tool-row-label">Alucinaciones</span>
-        <span class="tool-row-value">Moderadas. Mejor acceso a información reciente gracias a su integración con Google Search.</span>
+        <span class="tool-row-label">Límite principal</span>
+        <span class="tool-row-value">Que una herramienta tenga acceso a servicios o búsqueda no elimina por sí sola los errores: sigue haciendo falta revisar resultados clave.</span>
       </div>
       <div class="tool-row">
-        <span class="tool-row-label">Acceso gratuito</span>
-        <span class="tool-row-value">Sí, con modelos básicos. Los modelos más potentes requieren Gemini Advanced (pago).</span>
+        <span class="tool-row-label">Regla práctica</span>
+        <span class="tool-row-value">Úsalo cuando la tarea ya vive en tu flujo con Google o cuando te conviene trabajar con varios formatos en una misma conversación.</span>
       </div>
     </div>
   </div>
@@ -720,20 +720,20 @@ Sesgos del entrenamiento
     <div class="tool-card-body">
       <div class="tool-row">
         <span class="tool-row-label">Mejor para</span>
-        <span class="tool-row-value">Verificar datos recientes, investigar temas con fuentes citadas.</span>
+        <span class="tool-row-value">Preguntas recientes, investigación rápida y respuestas que desde el inicio muestren fuentes.</span>
       </div>
       <div class="tool-row">
         <span class="tool-row-label">Fortaleza</span>
-        <span class="tool-row-value">Busca en internet en tiempo real y cita las fuentes de cada afirmación.</span>
+        <span class="tool-row-value">Te obliga a mirar documentos y enlaces, no solo la respuesta final del modelo.</span>
         <span class="tool-tag tag-search">Búsqueda + fuentes</span>
       </div>
       <div class="tool-row">
-        <span class="tool-row-label">Alucinaciones</span>
-        <span class="tool-row-value">Menores, porque ancla sus respuestas en documentos reales y verificables.</span>
+        <span class="tool-row-label">Límite principal</span>
+        <span class="tool-row-value">Citar una fuente no garantiza que la interpretación sea correcta. Hay que abrir el documento y comprobar que sí respalda la afirmación.</span>
       </div>
       <div class="tool-row">
-        <span class="tool-row-label">Acceso gratuito</span>
-        <span class="tool-row-value">Sí, con límite de consultas diarias en el plan gratuito.</span>
+        <span class="tool-row-label">Regla práctica</span>
+        <span class="tool-row-value">Úsalo cuando importa la actualidad o cuando necesitas una ruta clara para verificar una afirmación en fuentes reales.</span>
       </div>
     </div>
   </div>
@@ -741,7 +741,7 @@ Sesgos del entrenamiento
 </div>
 
 <div class="tools-note">
-  <strong>El ecosistema es más amplio:</strong> además de estas tres herramientas, existen otros modelos relevantes — Claude (Anthropic), Llama (Meta), Mistral — cada uno con distintas fortalezas. La comparativa de arriba se centra en las herramientas de uso más común para estudiantes en 2026.
+  <strong>La lección no depende de una marca:</strong> el criterio importante es distinguir entre herramientas orientadas a conversar, herramientas orientadas a trabajar dentro de un ecosistema y herramientas orientadas a responder con fuentes visibles. Los nombres comerciales pueden cambiar; esa lógica de uso no.
 </div>
 <hr>
 <section id="criterios-para-usar-ia-generativa-con-juicio-crítico" class="level3">

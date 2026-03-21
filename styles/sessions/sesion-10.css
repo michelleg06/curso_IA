@@ -1,0 +1,504 @@
+/* ================================================
+   SESION 10 - IA para estudiar matematicas
+   Enfoque: casos concretos, evidencia y verificacion
+================================================ */
+
+.math-headlines {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+
+.math-headline-card {
+  background: linear-gradient(180deg, #f8fffe 0%, #ffffff 100%);
+  border: 1.5px solid #99f6e4;
+  border-radius: 18px;
+  padding: 1.1rem 1.15rem;
+  box-shadow: 0 10px 26px rgba(13, 148, 136, 0.08);
+}
+
+.math-headline-kicker {
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0f766e;
+  background: #ccfbf1;
+  border: 1px solid #5eead4;
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  margin-bottom: 0.55rem;
+}
+
+.math-headline-card h4 {
+  font-size: 0.98rem;
+  color: #1f2937;
+  margin: 0 0 0.45rem;
+}
+
+.math-headline-card p {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0 0 0.45rem;
+}
+
+.math-headline-source a {
+  font-weight: 600;
+  color: #0f766e;
+}
+
+.math-headline-shot {
+  color: #0f766e;
+  background: #f0fdfa;
+  border-radius: 10px;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid #99f6e4;
+}
+
+.math-split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0;
+}
+
+.math-split-card {
+  border-radius: 18px;
+  padding: 1rem 1.05rem;
+  border: 1.5px solid;
+}
+
+.math-split-good {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.math-split-risk {
+  background: #fff7ed;
+  border-color: #fdba74;
+}
+
+.math-split-tag {
+  display: inline-block;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.12rem 0.5rem;
+  margin-bottom: 0.45rem;
+}
+
+.math-split-good .math-split-tag {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.math-split-risk .math-split-tag {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.math-split-card h4 {
+  font-size: 0.95rem;
+  color: #1f2937;
+  margin: 0 0 0.45rem;
+}
+
+.math-split-card ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.math-split-card li {
+  font-size: 0.81rem;
+  line-height: 1.65;
+  color: #475569;
+  margin-bottom: 0.35rem;
+}
+
+.math-tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+  margin: 1.2rem 0;
+}
+
+.math-tool-card {
+  background: #ffffff;
+  border: 1.5px solid #dbeafe;
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(30, 64, 175, 0.06);
+}
+
+.math-tool-icon {
+  font-size: 1.45rem;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.math-tool-card h4 {
+  font-size: 0.94rem;
+  color: #1f2937;
+  margin: 0 0 0.4rem;
+}
+
+.math-tool-card p {
+  font-size: 0.8rem;
+  line-height: 1.62;
+  margin: 0 0 0.35rem;
+}
+
+.math-tool-best {
+  color: #334155;
+}
+
+.math-tool-risk {
+  color: #64748b;
+}
+
+.study-strategy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.9rem;
+  margin: 1.2rem 0;
+}
+
+.study-strategy-card {
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  border: 1.5px solid #cbd5e1;
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.study-strategy-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: #0f766e;
+  color: #ffffff;
+  font-size: 0.86rem;
+  font-weight: 700;
+  margin-bottom: 0.55rem;
+}
+
+.study-strategy-card h4 {
+  font-size: 0.94rem;
+  color: #1f2937;
+  margin: 0 0 0.4rem;
+}
+
+.study-strategy-card p {
+  font-size: 0.8rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0 0 0.45rem;
+}
+
+.study-strategy-use {
+  color: #0f766e;
+  background: #f0fdfa;
+  border: 1px solid #99f6e4;
+  border-radius: 10px;
+  padding: 0.5rem 0.6rem;
+}
+
+.study-strategy-source a {
+  font-weight: 600;
+  color: #0f766e;
+}
+
+.math-case {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1.1rem 0;
+}
+
+.math-case-pane {
+  border-radius: 18px;
+  padding: 1rem 1.05rem;
+  border: 1.5px solid;
+}
+
+.math-case-pane-wrong {
+  background: #fff1f2;
+  border-color: #fda4af;
+}
+
+.math-case-pane-right {
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+
+.math-case-label {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.math-case-pane-wrong .math-case-label {
+  color: #be123c;
+}
+
+.math-case-pane-right .math-case-label {
+  color: #1d4ed8;
+}
+
+.math-case-pane p,
+.math-case-pane li {
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #334155;
+  margin-top: 0;
+}
+
+.math-case-pane ul {
+  margin: 0;
+  padding-left: 1rem;
+}
+
+@media (max-width: 640px) {
+  .math-headlines,
+  .math-split,
+  .math-tools-grid,
+  .study-strategy-grid,
+  .math-case {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================================
+   HEADLINE IMAGE
+================================================ */
+
+.math-headline-img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  margin-top: 0.55rem;
+  border: 1px solid #ccfbf1;
+  object-fit: cover;
+  max-height: 140px;
+}
+
+/* ================================================
+   CHAT WINDOW (estilo ChatGPT)
+================================================ */
+
+.chat-window {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 1.2rem 0;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+}
+
+.chat-topbar {
+  background: #f9fafb;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.65rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.chat-dots {
+  display: flex;
+  gap: 0.28rem;
+}
+
+.chat-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+}
+
+.chat-dots span:nth-child(1) { background: #fca5a5; }
+.chat-dots span:nth-child(2) { background: #fde68a; }
+.chat-dots span:nth-child(3) { background: #86efac; }
+
+.chat-topbar-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #374151;
+  letter-spacing: -0.01em;
+}
+
+.chat-body {
+  padding: 1.1rem 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.chat-msg {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+
+.chat-msg-user {
+  flex-direction: row-reverse;
+}
+
+.chat-avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #10a37f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.chat-bubble {
+  max-width: 76%;
+  border-radius: 16px;
+  padding: 0.75rem 0.95rem;
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+.chat-bubble p {
+  margin: 0 0 0.4rem;
+}
+
+.chat-bubble p:last-child {
+  margin: 0;
+}
+
+.chat-bubble-user {
+  background: #f3f4f6;
+  color: #1f2937;
+  border-radius: 16px 16px 4px 16px;
+}
+
+.chat-bubble-ai {
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  color: #374151;
+  border-radius: 16px 16px 16px 4px;
+}
+
+.chat-math {
+  font-family: "Courier New", monospace;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.35rem 0.65rem;
+  display: block;
+  margin: 0.3rem 0 0.5rem;
+  color: #1e40af;
+}
+
+/* Error highlight inside a chat bubble */
+.chat-bubble-error {
+  background: #fff1f2;
+  border-color: #fecdd3;
+}
+
+/* ---- Análisis debajo del chat ---- */
+
+.chat-analysis {
+  background: #f8fafc;
+  border-top: 1.5px solid #e2e8f0;
+  padding: 1rem 1.1rem;
+}
+
+.chat-analysis-tag {
+  display: inline-block;
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.chat-analysis-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.chat-analysis-list li {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  font-size: 0.82rem;
+  color: #374151;
+  line-height: 1.65;
+}
+
+.chat-analysis-icon {
+  flex-shrink: 0;
+  font-size: 0.92rem;
+  margin-top: 0.05rem;
+}
+
+/* ---- Cuadro de verificación ---- */
+
+.chat-verify {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  margin-top: 0.85rem;
+}
+
+.chat-verify-tag {
+  display: inline-block;
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #16a34a;
+  margin-bottom: 0.5rem;
+}
+
+.chat-verify-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.chat-verify-list li {
+  font-size: 0.82rem;
+  color: #166534;
+  line-height: 1.65;
+  margin-bottom: 0.3rem;
+}
+
+.chat-verify-list li:last-child {
+  margin-bottom: 0;
+}
+
+.chat-verify-list code {
+  font-family: "Courier New", monospace;
+  background: #dcfce7;
+  border-radius: 4px;
+  padding: 0.1rem 0.35rem;
+  font-size: 0.78rem;
+}
