@@ -1,0 +1,1014 @@
+/* ================================================
+   SESIÓN 12 — Programación con IA: Python
+   Paleta: Python blue #3776AB + Python yellow #FFD43B
+   Code theme: Catppuccin Mocha
+================================================ */
+
+/* ---- Python branding ---- */
+
+.py-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #3776AB;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+.py-logo {
+  height: 22px;
+  vertical-align: middle;
+}
+
+.py-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+/* ---- Progression bar (usuario → constructor) ---- */
+
+.py-progression {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.py-prog-step {
+  flex: 1;
+  min-width: 100px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.75rem 0.85rem;
+  text-align: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.py-prog-step.active {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-color: #3776AB;
+}
+
+.py-prog-step-icon {
+  font-size: 1.4rem;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.py-prog-step-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1f2937;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.py-prog-step-desc {
+  font-size: 0.7rem;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.py-prog-step.active .py-prog-step-label {
+  color: #1d4ed8;
+}
+
+.py-prog-arrow {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  padding: 0 0.1rem;
+}
+
+@media (max-width: 540px) {
+  .py-prog-arrow { display: none; }
+  .py-prog-step { min-width: 80px; }
+}
+
+/* ================================================
+   COLAB WINDOW MOCKUP
+================================================ */
+
+.colab-window {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 1.2rem 0;
+  box-shadow: 0 8px 28px rgba(55, 118, 171, 0.1);
+}
+
+.colab-topbar {
+  background: #f8f9fa;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.5rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.colab-topbar-dots {
+  display: flex;
+  gap: 0.28rem;
+  flex-shrink: 0;
+}
+
+.colab-topbar-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+}
+
+.colab-topbar-dots span:nth-child(1) { background: #fca5a5; }
+.colab-topbar-dots span:nth-child(2) { background: #fde68a; }
+.colab-topbar-dots span:nth-child(3) { background: #86efac; }
+
+.colab-logo-img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.colab-filename {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #374151;
+  flex: 1;
+}
+
+.colab-ram-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #6ee7b7;
+  border-radius: 6px;
+  padding: 0.12rem 0.45rem;
+  flex-shrink: 0;
+}
+
+.colab-toolbar {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.4rem 0.9rem;
+  border-bottom: 1px solid #f1f5f9;
+  background: #fdfdfd;
+  overflow-x: auto;
+}
+
+.colab-toolbar-btn {
+  font-size: 0.72rem;
+  color: #64748b;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.colab-toolbar-btn:hover {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+}
+
+.colab-body {
+  padding: 0.6rem 0;
+}
+
+.colab-cell {
+  display: flex;
+  align-items: stretch;
+  border-left: 3px solid transparent;
+  margin: 0.2rem 0.6rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.colab-cell:hover {
+  border-left-color: #3776AB;
+}
+
+.colab-cell-gutter {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.55rem 0.45rem 0.55rem 0.3rem;
+  flex-shrink: 0;
+}
+
+.colab-run-btn {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: #3776AB;
+  color: #fff;
+  border: none;
+  font-size: 0.58rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  flex-shrink: 0;
+  padding-left: 2px;
+}
+
+.colab-cell-content {
+  flex: 1;
+  background: #1e1e2e;
+  border-radius: 8px;
+  padding: 0.7rem 0.85rem;
+}
+
+.colab-cell-content pre {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 0.82rem;
+  line-height: 1.65;
+  color: #cdd6f4;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.colab-output {
+  margin: 0.1rem 0.6rem 0.3rem 3.7rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 0 0 8px 8px;
+  padding: 0.5rem 0.8rem;
+}
+
+.colab-output-line {
+  font-family: "Courier New", monospace;
+  font-size: 0.82rem;
+  color: #334155;
+  line-height: 1.55;
+}
+
+.colab-output-line.error {
+  color: #dc2626;
+}
+
+.colab-text-cell {
+  margin: 0.2rem 0.6rem 0.2rem 3.7rem;
+  padding: 0.55rem 0.85rem;
+  border-left: 3px solid #FFD43B;
+  background: #fffbeb;
+  border-radius: 0 8px 8px 0;
+}
+
+.colab-text-cell p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.colab-add-cell {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  padding: 0.65rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.colab-add-btn {
+  font-size: 0.72rem;
+  color: #64748b;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 0.25rem 0.75rem;
+  cursor: default;
+}
+
+/* ================================================
+   CONCEPT CARDS (4 piezas de Python)
+================================================ */
+
+.py-concept-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.9rem;
+  margin: 1.2rem 0;
+}
+
+.py-concept-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(55, 118, 171, 0.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.py-concept-card-top {
+  padding: 0.85rem 0.9rem 0.6rem;
+}
+
+.py-concept-kicker {
+  display: inline-block;
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: #eff6ff;
+  color: #3776AB;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  padding: 0.12rem 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.py-concept-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 0.35rem;
+}
+
+.py-concept-desc {
+  font-size: 0.79rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.py-concept-code {
+  background: #1e1e2e;
+  padding: 0.7rem 0.9rem;
+  margin-top: auto;
+}
+
+.py-concept-code pre {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: #cdd6f4;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.py-concept-output {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem 0.65rem;
+  background: #1e1e2e;
+  border-top: 1px solid #313244;
+}
+
+.py-concept-output-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #a6e3a1;
+  font-family: "Courier New", monospace;
+  flex-shrink: 0;
+}
+
+.py-concept-output-text {
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  color: #cdd6f4;
+  opacity: 0.85;
+}
+
+/* ================================================
+   CODE ANNOTATOR (interactive)
+================================================ */
+
+.ca-wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  margin: 1.2rem 0;
+  align-items: start;
+}
+
+.code-annotator {
+  background: #1e1e2e;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1.5px solid #313244;
+}
+
+.ca-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 0.9rem;
+  background: #181825;
+  border-bottom: 1px solid #313244;
+}
+
+.ca-dots {
+  display: flex;
+  gap: 0.28rem;
+  flex-shrink: 0;
+}
+
+.ca-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: block;
+}
+
+.ca-dots span:nth-child(1) { background: #f38ba8; }
+.ca-dots span:nth-child(2) { background: #f9e2af; }
+.ca-dots span:nth-child(3) { background: #a6e3a1; }
+
+.ca-filename {
+  font-family: "Courier New", monospace;
+  font-size: 0.72rem;
+  color: #a6adc8;
+  font-weight: 600;
+  flex: 1;
+}
+
+.ca-hint {
+  font-size: 0.65rem;
+  color: #6c7086;
+  font-style: italic;
+}
+
+.ca-body {
+  padding: 0.5rem 0;
+}
+
+.code-line {
+  display: flex;
+  align-items: stretch;
+  cursor: pointer;
+  transition: background 0.12s;
+  border-left: 3px solid transparent;
+}
+
+.code-line:hover {
+  background: rgba(137, 180, 250, 0.06);
+  border-left-color: #3776AB;
+}
+
+.code-line.is-active {
+  background: rgba(137, 180, 250, 0.12);
+  border-left-color: #FFD43B;
+}
+
+.ln {
+  width: 2.4rem;
+  flex-shrink: 0;
+  font-family: "Courier New", monospace;
+  font-size: 0.75rem;
+  color: #6c7086;
+  text-align: right;
+  padding: 0.28rem 0.65rem 0.28rem 0;
+  user-select: none;
+  line-height: 1.6;
+}
+
+.code-text {
+  flex: 1;
+  font-family: "Courier New", monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #cdd6f4;
+  padding: 0.28rem 0.9rem 0.28rem 0;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+/* Syntax highlight classes */
+.cc { color: #7f849c; font-style: italic; }   /* comment */
+.ck { color: #cba6f7; }                         /* keyword */
+.cs { color: #a6e3a1; }                         /* string */
+.cf { color: #89b4fa; }                         /* function */
+.cn { color: #fab387; }                         /* number */
+.co { color: #89dceb; }                         /* operator */
+.cv { color: #cdd6f4; }                         /* variable */
+.cm { color: #f9e2af; }                         /* method/attr */
+
+.ca-output {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 0.9rem;
+  background: #181825;
+  border-top: 1px solid #313244;
+}
+
+.ca-output-label {
+  font-family: "Courier New", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #a6e3a1;
+  flex-shrink: 0;
+}
+
+.ca-output-text {
+  font-family: "Courier New", monospace;
+  font-size: 0.82rem;
+  color: #cdd6f4;
+}
+
+/* ---- Note panel (right column) ---- */
+
+.ca-note-panel {
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1rem 1.05rem;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: border-color 0.2s;
+}
+
+.ca-note-panel.has-content {
+  border-color: #FFD43B;
+  background: #fffbeb;
+}
+
+.ca-note-line-num {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d97706;
+  margin-bottom: 0.5rem;
+}
+
+.ca-note-panel p {
+  font-size: 0.82rem;
+  color: #374151;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.ca-note-placeholder {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.ca-note-placeholder span {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ================================================
+   IA COMO COPILOTO — 3 modos
+================================================ */
+
+.copilot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.9rem;
+  margin: 1.2rem 0;
+}
+
+.copilot-card {
+  border-radius: 18px;
+  padding: 1rem 1.05rem;
+  border: 1.5px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.copilot-card-safe    { background: #f0fdf4; border-color: #86efac; }
+.copilot-card-debug   { background: #eff6ff; border-color: #93c5fd; }
+.copilot-card-gen     { background: #fffbeb; border-color: #fde68a; }
+
+.copilot-tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.12rem 0.5rem;
+}
+
+.copilot-card-safe  .copilot-tag { background: #dcfce7; color: #166534; }
+.copilot-card-debug .copilot-tag { background: #dbeafe; color: #1e40af; }
+.copilot-card-gen   .copilot-tag { background: #fef9c3; color: #92400e; }
+
+.copilot-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.copilot-desc {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.copilot-prompt {
+  font-family: "Courier New", monospace;
+  font-size: 0.76rem;
+  color: #334155;
+  background: rgba(255,255,255,0.7);
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+  margin-top: 0.25rem;
+  line-height: 1.5;
+  border: 1px solid rgba(0,0,0,0.07);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ================================================
+   BROKEN CODE — actividad
+================================================ */
+
+.py-broken-wrap {
+  margin: 1.2rem 0;
+}
+
+.py-broken-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.py-broken-label {
+  display: inline-block;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+}
+
+.py-reveal-btn {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #3776AB;
+  background: #eff6ff;
+  border: 1.5px solid #3776AB;
+  border-radius: 8px;
+  padding: 0.3rem 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.py-reveal-btn:hover {
+  background: #dbeafe;
+}
+
+.py-error-output {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background: #1e1e2e;
+  border-top: 1px solid #313244;
+  padding: 0.5rem 0.9rem;
+}
+
+.py-error-label {
+  font-family: "Courier New", monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #f38ba8;
+  flex-shrink: 0;
+}
+
+.py-error-text {
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+  color: #f38ba8;
+  line-height: 1.5;
+}
+
+.py-bug-reveal {
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  margin-top: 0.65rem;
+  display: none;
+}
+
+.py-bug-reveal-kicker {
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #d97706;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.py-bug-reveal p {
+  font-size: 0.82rem;
+  color: #374151;
+  line-height: 1.65;
+  margin: 0 0 0.3rem;
+}
+
+.py-bug-reveal p:last-child { margin-bottom: 0; }
+
+/* ================================================
+   ROUTE CARDS — rutas para seguir
+================================================ */
+
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.9rem;
+  margin: 1.2rem 0;
+}
+
+.route-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1rem 1.05rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.route-card:hover {
+  box-shadow: 0 6px 22px rgba(55, 118, 171, 0.12);
+  border-color: #3776AB;
+}
+
+.route-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.route-logo {
+  height: 28px;
+  width: auto;
+  max-width: 60px;
+  object-fit: contain;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.route-logo-emoji {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.route-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.route-org {
+  font-size: 0.7rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.route-desc {
+  font-size: 0.79rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.route-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.2rem;
+}
+
+.route-tag {
+  font-size: 0.63rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.1rem 0.45rem;
+}
+
+.route-tag-free     { background: #f0fdf4; color: #16a34a; border: 1px solid #86efac; }
+.route-tag-es       { background: #eff6ff; color: #1d4ed8; border: 1px solid #93c5fd; }
+.route-tag-beginner { background: #faf5ff; color: #7c3aed; border: 1px solid #d8b4fe; }
+.route-tag-browser  { background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; }
+
+/* ================================================
+   ML OUTPUT ANNOTATION BLOCK
+================================================ */
+
+.ml-output-wrap {
+  border: 1.5px solid #e2e8f0;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 0.8rem 0 1.2rem;
+}
+
+.ml-output-header {
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.ml-output-block {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.ml-output-block:last-child {
+  border-bottom: none;
+}
+
+.ml-output-raw {
+  background: #1e1e2e;
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid #313244;
+}
+
+.ml-output-line {
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  color: #cdd6f4;
+  line-height: 1.7;
+  display: block;
+  white-space: pre;
+}
+
+.ml-output-note {
+  background: #fffbeb;
+  padding: 0.75rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.ml-note-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d97706;
+  display: block;
+}
+
+.ml-output-note p,
+.ml-output-note {
+  font-size: 0.79rem;
+  color: #374151;
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .ml-output-block {
+    grid-template-columns: 1fr;
+  }
+  .ml-output-raw {
+    border-right: none;
+    border-bottom: 1px solid #313244;
+  }
+  .ml-output-raw .ml-output-line {
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+}
+
+/* ================================================
+   TRAIN / TEST SPLIT VISUALIZER
+================================================ */
+
+.split-vis {
+  margin: 1.2rem 0;
+}
+
+.split-vis-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.55rem;
+  display: block;
+}
+
+.split-bar {
+  display: flex;
+  height: 52px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1.5px solid #e2e8f0;
+}
+
+.split-train {
+  width: 75%;
+  background: linear-gradient(90deg, #3776AB 0%, #4a9fd4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0 0.8rem;
+  text-align: center;
+}
+
+.split-test {
+  width: 25%;
+  background: linear-gradient(90deg, #FFD43B 0%, #f59e0b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1e3a5f;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0 0.5rem;
+  text-align: center;
+}
+
+.split-legend {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.split-legend-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.split-legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.split-legend-dot.train { background: #3776AB; }
+.split-legend-dot.test  { background: #FFD43B; border: 1px solid #d97706; }
+
+/* ================================================
+   RESPONSIVE OVERRIDES
+================================================ */
+
+@media (max-width: 640px) {
+  .py-concept-grid,
+  .copilot-grid,
+  .route-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ca-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .ca-hint { display: none; }
+}

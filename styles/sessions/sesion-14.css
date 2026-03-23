@@ -1,0 +1,932 @@
+/* ================================================
+   sesión-14 — IA en Salud, Ciencia y Sociedad
+   Paleta: deep navy + cornflower blue + emerald (éxito) + rose (falla)
+================================================ */
+
+/* ================================================
+   APP GRID — tres dominios de IA médica
+================================================ */
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+  margin: 1.2rem 0;
+}
+
+.app-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1.1rem 1.05rem 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.app-card:hover {
+  box-shadow: 0 6px 22px rgba(55, 90, 170, 0.1);
+  border-color: #93c5fd;
+}
+
+.app-icon {
+  font-size: 1.75rem;
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.app-title {
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.app-desc {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}
+
+.app-example {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #1d4ed8;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+/* ================================================
+   STORY CARD — AlphaFold (image left + content right)
+================================================ */
+
+.story-card {
+  display: flex;
+  gap: 1.5rem;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-left: 4px solid #3b82f6;
+  border-radius: 12px;
+  padding: 1.4rem 1.5rem;
+  margin: 0.5rem 0 1.8rem;
+  align-items: flex-start;
+}
+
+.story-img-placeholder {
+  flex-shrink: 0;
+  width: 110px;
+  height: 145px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.story-img-alphafold {
+  background: linear-gradient(160deg, #0f1b3d 0%, #1e3a6e 45%, #3b5fa0 80%, #6495ed 100%);
+}
+
+.sip-emoji {
+  font-size: 1.8rem;
+  display: block;
+  line-height: 1;
+}
+
+.sip-journal {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sip-year {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.story-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.story-kicker {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #3b82f6;
+  margin: 0;
+}
+
+.story-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.story-source {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0;
+  font-style: italic;
+}
+
+.story-body {
+  font-size: 0.84rem;
+  color: #374151;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ================================================
+   CASO FLIPPER — tab switcher + panels
+================================================ */
+
+.caso-flipper {
+  margin: 1.2rem 0;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+
+.caso-tabs {
+  display: flex;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+  gap: 0;
+}
+
+.caso-tab {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.caso-tab:hover {
+  color: #1f2937;
+  background: #e8edf4;
+}
+
+.caso-tab.active[data-variant="success"] {
+  color: #15803d;
+  background: #f0fdf4;
+  border-bottom-color: #22c55e;
+}
+
+.caso-tab.active[data-variant="failure"] {
+  color: #be123c;
+  background: #fff1f2;
+  border-bottom-color: #fb7185;
+}
+
+.caso-panel {
+  padding: 1.4rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.caso-panel[hidden] {
+  display: none;
+}
+
+.caso-label {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.15rem 0.65rem;
+  width: fit-content;
+}
+
+.caso-label-success {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.caso-label-failure {
+  background: #ffe4e6;
+  color: #be123c;
+  border: 1px solid #fda4af;
+}
+
+.caso-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.caso-subtitle {
+  font-size: 0.76rem;
+  color: #64748b;
+  margin: 0;
+  font-style: italic;
+}
+
+.caso-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 0.4rem 0;
+}
+
+.caso-fact {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.8rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.caso-fact-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  display: block;
+}
+
+.caso-fact-value {
+  font-size: 0.82rem;
+  color: #374151;
+  line-height: 1.65;
+}
+
+.caso-insight {
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  font-size: 0.84rem;
+  line-height: 1.7;
+  margin-top: 0.2rem;
+}
+
+.caso-insight-success {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  color: #166534;
+}
+
+.caso-insight-failure {
+  background: #fff1f2;
+  border: 1.5px solid #fda4af;
+  color: #881337;
+}
+
+/* ================================================
+   PREGUNTA GRID — 4 preguntas difíciles
+================================================ */
+
+.pregunta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin: 1.2rem 0;
+}
+
+.pregunta-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1.1rem 1.05rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.pregunta-card:hover {
+  box-shadow: 0 6px 20px rgba(55, 90, 170, 0.09);
+  border-color: #c7d2fe;
+}
+
+.pregunta-icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.1rem;
+}
+
+.pregunta-title {
+  font-size: 0.91rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1.35;
+}
+
+.pregunta-body {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ================================================
+   IA COMO COPILOTO — 3 modos (same names as sesion-12)
+================================================ */
+
+.copilot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.9rem;
+  margin: 1.2rem 0;
+}
+
+.copilot-card {
+  border-radius: 18px;
+  padding: 1rem 1.05rem;
+  border: 1.5px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.copilot-card-safe  { background: #f0fdf4; border-color: #86efac; }
+.copilot-card-debug { background: #eff6ff; border-color: #93c5fd; }
+.copilot-card-gen   { background: #fffbeb; border-color: #fde68a; }
+
+.copilot-tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.12rem 0.5rem;
+}
+
+.copilot-card-safe  .copilot-tag { background: #dcfce7; color: #166534; }
+.copilot-card-debug .copilot-tag { background: #dbeafe; color: #1e40af; }
+.copilot-card-gen   .copilot-tag { background: #fef9c3; color: #92400e; }
+
+.copilot-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.copilot-desc {
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.copilot-prompt {
+  font-family: "Courier New", monospace;
+  font-size: 0.76rem;
+  color: #334155;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  padding: 0.45rem 0.6rem;
+  margin-top: 0.25rem;
+  line-height: 1.5;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ================================================
+   ROUTE CARDS — rutas para seguir (same names as sesion-12)
+================================================ */
+
+.route-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.9rem;
+  margin: 1.2rem 0;
+}
+
+.route-card {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 1rem 1.05rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.route-card:hover {
+  box-shadow: 0 6px 22px rgba(55, 90, 170, 0.12);
+  border-color: #6495ed;
+}
+
+a.route-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.route-card .route-name {
+  color: #1d4ed8;
+}
+
+a.route-card:hover .route-name {
+  text-decoration: underline;
+}
+
+.route-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.route-logo-emoji {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.route-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.route-org {
+  font-size: 0.7rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.route-desc {
+  font-size: 0.79rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+  flex: 1;
+}
+
+.route-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-top: 0.2rem;
+}
+
+.route-tag {
+  font-size: 0.63rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.1rem 0.45rem;
+}
+
+.route-tag-free     { background: #f0fdf4; color: #16a34a; border: 1px solid #86efac; }
+.route-tag-es       { background: #eff6ff; color: #1d4ed8; border: 1px solid #93c5fd; }
+.route-tag-beginner { background: #faf5ff; color: #7c3aed; border: 1px solid #d8b4fe; }
+.route-tag-browser  { background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; }
+
+/* ================================================
+   RESPONSIVE
+================================================ */
+
+@media (max-width: 680px) {
+  .app-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .caso-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pregunta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .story-card {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .story-img-placeholder {
+    width: 100%;
+    height: 110px;
+  }
+
+  .caso-tabs {
+    flex-direction: column;
+  }
+
+  .caso-tab {
+    border-bottom: none;
+    border-left: 3px solid transparent;
+    text-align: left;
+  }
+
+  .caso-tab.active[data-variant="success"] {
+    border-bottom: none;
+    border-left-color: #22c55e;
+  }
+
+  .caso-tab.active[data-variant="failure"] {
+    border-bottom: none;
+    border-left-color: #fb7185;
+  }
+}
+
+@media (max-width: 680px) {
+  .route-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .route-grid,
+  .copilot-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================================================
+   TYPOLOGY TABLE — AI en medicina (2×2)
+================================================ */
+
+.typology-wrap {
+  margin: 1.2rem 0 1.8rem;
+  overflow-x: auto;
+}
+
+.typology-outer {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1.5px solid #e2e8f0;
+}
+
+.typology {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.typology-corner {
+  background: #f8fafc;
+  width: 110px;
+  min-width: 90px;
+}
+
+.typology-colhead {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.65rem 1rem;
+  text-align: left;
+  border-bottom: 1.5px solid #e2e8f0;
+}
+
+.typology-col-admin {
+  background: #f0f9ff;
+  color: #0369a1;
+}
+
+.typology-col-diag {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.typology-rowhead {
+  background: #f8fafc;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.8rem 0.6rem;
+  border-top: 1px solid #f1f5f9;
+  vertical-align: middle;
+  line-height: 1.6;
+}
+
+.typology-cell {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #f1f5f9;
+  vertical-align: top;
+}
+
+.typology-list {
+  margin: 0;
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  list-style: disc;
+}
+
+.typology-list li {
+  font-size: 0.79rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.typology-tag {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.06rem 0.4rem;
+  margin-left: 0.2rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.typology-tag-success {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.typology-tag-failure {
+  background: #ffe4e6;
+  color: #be123c;
+  border: 1px solid #fda4af;
+}
+
+.typology-tag-mx {
+  background: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fcd34d;
+}
+
+.typology-tag-science {
+  background: #eef2ff;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
+}
+
+a.typology-tag {
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+a.typology-tag:hover {
+  opacity: 0.72;
+}
+
+a.usecase-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+a.usecase-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+  border-color: #cbd5e1;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+a.usecase-card .usecase-title {
+  color: #1d4ed8;
+}
+
+a.usecase-card:hover .usecase-title {
+  text-decoration: underline;
+}
+
+/* ================================================
+   USE CASE MINI-CARDS — below typology table
+================================================ */
+
+.usecase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
+  margin: 1rem 0 0;
+}
+
+.usecase-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid;
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  scroll-margin-top: 1rem;
+}
+
+.usecase-card-mx      { border-left-color: #f59e0b; }
+.usecase-card-success { border-left-color: #22c55e; }
+.usecase-card-failure { border-left-color: #f43f5e; }
+.usecase-card-science { border-left-color: #6366f1; }
+
+.usecase-meta {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  display: block;
+}
+
+.usecase-title {
+  font-size: 0.87rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.usecase-desc {
+  font-size: 0.77rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.typology-source {
+  font-size: 0.68rem;
+  color: #94a3b8;
+  font-style: italic;
+  margin: 0.45rem 0 0;
+  text-align: right;
+}
+
+/* ================================================
+   IAC FRAMEWORK — 3 pasos
+================================================ */
+
+.iac-framework {
+  display: flex;
+  gap: 0.75rem;
+  margin: 1.2rem 0 0.6rem;
+}
+
+.iac-step {
+  flex: 1;
+  border-radius: 16px;
+  padding: 1.1rem 1rem;
+  border: 1.5px solid;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.iac-step-inform  { background: #fff1f2; border-color: #fda4af; }
+.iac-step-assess  { background: #fffbeb; border-color: #fcd34d; }
+.iac-step-consent { background: #f0fdf4; border-color: #86efac; }
+
+.iac-step-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.iac-step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.74rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.iac-step-inform  .iac-step-num { background: #be123c; color: #fff; }
+.iac-step-assess  .iac-step-num { background: #b45309; color: #fff; }
+.iac-step-consent .iac-step-num { background: #15803d; color: #fff; }
+
+.iac-step-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.iac-step-inform  .iac-step-title { color: #9f1239; }
+.iac-step-assess  .iac-step-title { color: #92400e; }
+.iac-step-consent .iac-step-title { color: #14532d; }
+
+.iac-step-body {
+  font-size: 0.79rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.iac-step-inform  .iac-step-body { color: #881337; }
+.iac-step-assess  .iac-step-body { color: #78350f; }
+.iac-step-consent .iac-step-body { color: #166534; }
+
+.iac-step-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.28rem;
+  margin-top: 0.1rem;
+}
+
+.iac-item {
+  font-size: 0.6rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.12rem 0.45rem;
+}
+
+.iac-step-inform  .iac-item { background: #fecdd3; color: #9f1239; border: 1px solid #fda4af; }
+.iac-step-assess  .iac-item { background: #fef9c3; color: #92400e; border: 1px solid #fde68a; }
+.iac-step-consent .iac-item { background: #dcfce7; color: #15803d; border: 1px solid #86efac; }
+
+.iac-attribution {
+  font-size: 0.75rem;
+  color: #64748b;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  margin-top: 0.6rem;
+  line-height: 1.65;
+}
+
+.iac-attribution a { color: #1d4ed8; }
+
+/* ================================================
+   CASO MEXICO — tab + label + insight
+================================================ */
+
+.caso-tab.active[data-variant="mexico"] {
+  color: #b45309;
+  background: #fffbeb;
+  border-bottom-color: #fbbf24;
+}
+
+.caso-label-mexico {
+  background: #fffbeb;
+  color: #b45309;
+  border: 1px solid #fcd34d;
+}
+
+.caso-insight-mexico {
+  background: #fffbeb;
+  border: 1.5px solid #fcd34d;
+  color: #78350f;
+}
+
+/* ================================================
+   RESPONSIVE — new components
+================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 680px) {
+  .iac-framework {
+    flex-direction: column;
+  }
+
+  .caso-tab.active[data-variant="mexico"] {
+    border-bottom: none;
+    border-left-color: #fbbf24;
+  }
+
+  .usecase-grid {
+    grid-template-columns: 1fr;
+  }
+}
