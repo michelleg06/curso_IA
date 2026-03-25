@@ -159,10 +159,10 @@ function initConceptDemo() {
       layer.classList.remove("is-active");
       layer.setAttribute("aria-pressed", "false");
     });
-    setText("concept-status", "Vista previa lista. Haz clic en “Abrir mapa”.");
+    setText("concept-status", "Haz clic en “Abrir mapa”.");
     setInsights(
       "concept",
-      "Tres conceptos anidados todavía resumidos como vista previa. El mapa interactivo aparece al abrir el bloque.",
+      "El mapa interactivo aparece al abrir el bloque.",
       "La idea central es jerárquica: deep learning vive dentro de machine learning, y machine learning vive dentro de IA."
     );
   }
@@ -340,7 +340,7 @@ function initAppTour() {
   function resetPreview() {
     activeApp = apps[0];
     deactivateShell("apps");
-    setText("apps-status", "Vista previa lista. Haz clic en “Abrir recorrido”.");
+    setText("apps-status", "Haz clic en “Abrir recorrido”.");
     setInsights(
       "apps",
       "Un catálogo de apps cotidianas que todavía está cerrado. Al abrirlo podrás comparar cómo usa IA cada una.",
@@ -473,7 +473,7 @@ function initTikTokDemo() {
     deactivateShell("tt");
     renderCards();
     resetPhone();
-    setText("tt-status", "Vista previa lista. Haz clic en “Ver animación”.");
+    setText("tt-status", "Haz clic en “Ver animación”.");
     setInsights(
       "tt",
       "Una bandeja de candidatos esperando ser evaluados. El teléfono sigue vacío porque TikTok todavía no ha elegido qué mostrar primero.",
@@ -880,7 +880,7 @@ function initRegressionDemo() {
     deactivateShell("lr");
     renderRows();
     renderRegression();
-    setText("lr-status", "Vista previa lista. Haz clic en “Entrar al reto”.");
+    setText("lr-status", "Haz clic en “Entrar al reto”.");
     setInsights(
       "lr",
       "Vas a ver el mismo problema que enfrenta el modelo: un conjunto de puntos y una recta que todavía no encaja bien.",
@@ -1057,7 +1057,7 @@ function initKMeansDemo() {
     deactivateShell("km");
     renderClusterPlot();
     setHTML("km-tags", "");
-    setText("km-status", "Vista previa lista. Haz clic en “Ver animación”.");
+    setText("km-status", "Haz clic en “Ver animación”.");
     setInsights(
       "km",
       "Una nube de canciones sin etiquetas visibles. Cada punto representa una canción descrita por dos características numéricas.",
@@ -1718,10 +1718,10 @@ function initRLDemo() {
     resetCharacter();
     deactivateShell("rl");
     renderScene();
-    setText("rl-status", "Vista previa lista. Haz clic en “Ver animación”.");
+    setText("rl-status", "Haz clic en “Ver animación”.");
     setInsights(
       "rl",
-      "Un agente frente a un hueco y una meta. En esta vista previa todavía no hay aprendizaje, solo un problema por resolver.",
+      "Un agente frente a un hueco y una meta. Se empieza solo con un problema por resolver.",
       "La gracia del bloque está en ver cómo cambian las acciones y recompensas entre intentos, no solo en mirar al personaje moverse."
     );
     updateMetrics(
