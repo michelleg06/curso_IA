@@ -225,8 +225,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="sesion-progress-label">1 de 15</span>
   </div>
   <div class="sesion-meta">
-    <span class="sesion-meta-chip">📅 5 de mayo de 2026</span>
-    <span class="sesion-meta-chip">⏱ 45 minutos</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 5 de mayo de 2026</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 45 minutos</span>
     <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
@@ -246,7 +246,63 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 <section id="introducción" class="level3">
 <h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
-<p>Abre TikTok ahora mismo. Lo que ves en los primeros tres segundos (ese primer video, ese primer audio) lo decidió una inteligencia artificial. No un humano. No un editor. Un algoritmo que lleva semanas observándote: cuánto tiempo te quedas en cada video, qué tipo de contenido pausas, cuándo deslizas rápido, cuándo vuelves a ver algo. Tres segundos de pantalla. Millones de cálculos.</p>
+<div class="intro-two-col">
+  <div class="intro-text-col">
+    <p>Abre TikTok ahora mismo. Lo que ves en los primeros tres segundos (ese primer video, ese primer audio) lo decidió una inteligencia artificial. No fue un humano. No fue un editor. Fue un algoritmo que lleva semanas observándote: cuánto tiempo te quedas en cada video, qué tipo de contenido pausas, cuándo deslizas rápido, cuándo vuelves a ver algo. Tres segundos en la pantalla. Millones de cálculos.</p>
+    <p>TikTok no es la única aplicación que usa Inteligencia Artificial. Cada vez que abres Spotify en modo aleatorio, una IA decidió qué canción reproducir a continuación. Cuando escribes una dirección en Google Maps, una IA calculó no solo la ruta más corta sino la que tiene menos tráfico en ese momento. Cuando Gmail mueve un correo directamente a tu carpeta de spam, una IA leyó ese mensaje y decidió que no merecía tu atención.</p>
+    <p>Vivimos rodeados de inteligencia artificial. Pero muy pocos sabemos realmente qué es, cómo funciona, y qué puede y qué no puede hacer.</p>
+    <p>Eso es exactamente lo que vamos a explorar en este curso. Y empezamos en esta primera sesión con la pregunta más fundamental…</p>
+  </div>
+  <div class="intro-phone-col">
+    <div class="intro-phone-frame">
+      <div class="intro-phone-topbar">
+        <span>Siguiendo</span>
+        <strong>Para ti</strong>
+        <span>🔍</span>
+      </div>
+      <div class="intro-phone-feed-wrap">
+        <div class="intro-phone-feed" aria-hidden="true">
+          <div class="intro-feed-item">
+            <div class="intro-feed-side"><span>❤</span><span>💬</span><span>↗</span></div>
+            <div class="intro-feed-info">
+              <p class="intro-feed-user">@bailarina_mx</p>
+              <p class="intro-feed-caption">este baile me tiene 💀💀</p>
+            </div>
+          </div>
+          <div class="intro-feed-item">
+            <div class="intro-feed-side"><span>❤</span><span>💬</span><span>↗</span></div>
+            <div class="intro-feed-info">
+              <p class="intro-feed-user">@chef_slp</p>
+              <p class="intro-feed-caption">pasta en 5 min que quedó 🔥</p>
+            </div>
+          </div>
+          <div class="intro-feed-item">
+            <div class="intro-feed-side"><span>❤</span><span>💬</span><span>↗</span></div>
+            <div class="intro-feed-info">
+              <p class="intro-feed-user">@futbol_mexico</p>
+              <p class="intro-feed-caption">GOL DEL AÑO 😱😱</p>
+            </div>
+          </div>
+          <div class="intro-feed-item">
+            <div class="intro-feed-side"><span>❤</span><span>💬</span><span>↗</span></div>
+            <div class="intro-feed-info">
+              <p class="intro-feed-user">@memes_reales</p>
+              <p class="intro-feed-caption">no hay como Soraya para expresarme 🫢</p>
+            </div>
+          </div>
+          <div class="intro-feed-item">
+            <div class="intro-feed-side"><span>❤</span><span>💬</span><span>↗</span></div>
+            <div class="intro-feed-info">
+              <p class="intro-feed-user">@gamer_potosino</p>
+              <p class="intro-feed-caption">¡ámonos! 🎯🎯</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div hidden="" aria-hidden="true"><!-- DEMO COMENTADO — mover a sección de tipos de ML una vez revisada -->
 <div class="demo-wrap">
   <div class="demo-shell demo-tone-ranking" id="tt-shell">
     <div class="demo-shell-head">
@@ -267,6 +323,7 @@ ul.task-list li input[type="checkbox"] {
 
     <div class="demo-stage">
       <div class="demo-stage-preview">
+        <!-- COMMENTED OUT: old skeleton preview (phone shell + loading slabs)
         <div class="demo-preview-card">
           <div class="demo-preview-visual tt-preview-stack">
             <div class="demo-phone-preview">
@@ -279,6 +336,57 @@ ul.task-list li input[type="checkbox"] {
           <p class="demo-preview-title">Vista previa del ranking</p>
           <p class="demo-preview-copy">Selecciona un perfil arriba, luego inicia la animación para ver cómo el algoritmo puntúa y ordena los candidatos según las señales de ese usuario.</p>
         </div>
+        -->
+
+        <!-- NEW: populated TikTok preview — phone + candidate cards -->
+        <div class="tt-preview-layout">
+          <div class="tt-preview-candidates">
+            <p class="tt-preview-hint">Videos candidatos</p>
+            <div class="tt-preview-candidate-card">
+              <span class="tt-preview-candidate-emoji">🎵</span>
+              <span class="tt-preview-candidate-label">Baile viral</span>
+              <span class="tt-preview-score-pill">?</span>
+            </div>
+            <div class="tt-preview-candidate-card">
+              <span class="tt-preview-candidate-emoji">🍳</span>
+              <span class="tt-preview-candidate-label">Receta rápida</span>
+              <span class="tt-preview-score-pill">?</span>
+            </div>
+            <div class="tt-preview-candidate-card">
+              <span class="tt-preview-candidate-emoji">⚽</span>
+              <span class="tt-preview-candidate-label">Gol del día</span>
+              <span class="tt-preview-score-pill">?</span>
+            </div>
+            <div class="tt-preview-candidate-card">
+              <span class="tt-preview-candidate-emoji">😂</span>
+              <span class="tt-preview-candidate-label">Meme trending</span>
+              <span class="tt-preview-score-pill">?</span>
+            </div>
+          </div>
+
+          <div class="demo-phone-preview">
+            <div class="tt-phone-screen">
+              <div class="tt-phone-topbar">
+                <span>Siguiendo</span>
+                <strong>Para ti</strong>
+                <span>🔍</span>
+              </div>
+              <div class="tt-preview-video-area">
+                <span class="tt-preview-video-emoji">🤔</span>
+                <p class="tt-preview-video-msg">¿Qué va primero?</p>
+              </div>
+              <div class="tt-phone-actions">
+                <span>❤</span>
+                <span>💬</span>
+                <span>↗</span>
+              </div>
+              <div class="tt-phone-caption">
+                <span class="tt-preview-deciding">⟳ el algoritmo está decidiendo…</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="tt-preview-copy-below">Selecciona un perfil arriba, luego inicia la animación para ver cómo el algoritmo puntúa y ordena los candidatos según las señales de ese usuario.</p>
       </div>
 
       <div class="demo-stage-live">
@@ -325,109 +433,191 @@ ul.task-list li input[type="checkbox"] {
     </div>
   </div>
 </div>
-<p>TikTok no está solo. Cada vez que abres Spotify en modo aleatorio, una IA decidió qué canción reproducir a continuación. Cuando escribes una dirección en Google Maps, una IA calculó no solo la ruta más corta sino la que tiene menos tráfico en ese momento. Cuando Gmail mueve un correo directamente a tu carpeta de spam, una IA leyó ese mensaje y decidió que no merecía tu atención.</p>
-<p>Vivimos rodeados de inteligencia artificial. Pero muy pocos sabemos realmente qué es, cómo funciona, y, <em>lo más importante</em>, qué puede y qué no puede hacer.</p>
-<p>Eso es exactamente lo que vamos a explorar en este curso. Y empezamos hoy con la pregunta más fundamental: <strong>¿qué es la inteligencia artificial?</strong></p>
+</div><!-- end demo comentado -->
 <hr>
 </section>
 <section id="qué-es-la-inteligencia-artificial" class="level3">
 <h3 class="anchored" data-anchor-id="qué-es-la-inteligencia-artificial">¿Qué es la Inteligencia Artificial?</h3>
-<p>Empecemos con una definición sencilla:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>Todo el mundo habla de inteligencia artificial, pero casi nadie la define igual. Para algunos es ciencia ficción; para otros, la tecnología detrás de sus apps favoritas. Hay un chiste entre investigadores de la informática que lo explica bien: <em>“la IA es lo que las computadoras todavía no pueden hacer”</em>. Es decir que, en cuanto las computadoras resuelven un problema, el método deja de llamarse IA y se convierte en tecnología normal. El GPS era IA; ahora es solo un elemento de tu mapa digital. El corrector ortográfico era IA; ahora es solo es parte de tu procesador de palabras. Por eso el término se mueve constantemente, y por eso tanta gente lo usa para cosas distintas. Empecemos por ponernos de acuerdo:</p>
+<div class="ai-definition">
+  <div class="ai-def-icon">🤖</div>
+  <div class="ai-def-body">
+    <span class="ai-def-kicker">Definición</span>
+    <h5 class="ai-def-term anchored">Inteligencia Artificial</h5>
+    <p class="ai-def-copy">La inteligencia artificial es un conjunto de tecnologías que permite a las computadoras aprender de datos, identificar patrones y realizar tareas que antes requerían capacidades humanas, como comprender lenguaje, analizar información, reconocer imágenes, tomar decisiones o generar sugerencias.</p>
+  </div>
 </div>
-<div class="callout-title-container flex-fill">
-Inteligencia Artificial
+<p>Y ahora, armados de una definición sencilla de la IA, enfoquémonos en lo que <strong>no</strong> es la inteligencia artificial. En particular, aclaremos algunos mitos sobre el tema:</p>
+<section id="mitos-y-realidades-sobre-la-inteligencia-artificial" class="level4">
+<h4 class="anchored" data-anchor-id="mitos-y-realidades-sobre-la-inteligencia-artificial"><strong>Mitos y realidades sobre la inteligencia artificial</strong></h4>
+<div class="ia-myths" aria-label="Mitos y realidades sobre la inteligencia artificial">
+  <details class="ia-myth">
+    <summary class="ia-myth-summary">
+      <span class="ia-myth-kicker">Mito</span>
+      <span class="ia-myth-title">La IA es magia 🔮</span>
+      <span class="ia-myth-hint"> Realidad</span>
+    </summary>
+    <div class="ia-myth-body">
+      <p><strong>Realidad:</strong> La IA puede parecer sorprendente, pero no funciona como por arte de magia. En realidad, opera con modelos matemáticos entrenados con grandes cantidades de datos para detectar patrones y estimar respuestas probables.</p>
+    </div>
+  </details>
+
+  <details class="ia-myth">
+    <summary class="ia-myth-summary">
+      <span class="ia-myth-kicker">Mito</span>
+      <span class="ia-myth-title">La IA piensa y siente como una persona 🧠</span>
+      <span class="ia-myth-hint">Realidad</span>
+    </summary>
+    <div class="ia-myth-body">
+      <p><strong>Realidad:</strong> Aunque los sistemas de inteligencia artificial pueden procesar y producir texto emocional, o mantener conversaciones convincentes, no tienen conciencia, intenciones ni emociones propias. Las películas de robots humanoides que adquieren consciencia y emociones son, en efecto, ciencia ficción.</p>
+    </div>
+  </details>
+
+  <details class="ia-myth">
+    <summary class="ia-myth-summary">
+      <span class="ia-myth-kicker">Mito</span>
+      <span class="ia-myth-title">La IA siempre sabe de lo que habla 🤓</span>
+      <span class="ia-myth-hint">Realidad</span>
+    </summary>
+    <div class="ia-myth-body">
+      <p><strong>Realidad:</strong> Un sistema de IA puede generar explicaciones fluidas sin comprender el mundo como lo hace un ser humano. No tiene experiencia, sentido común, ni criterio propio; por eso a veces responde con seguridad incluso cuando se equivoca.</p>
+    </div>
+  </details>
+
+  <details class="ia-myth">
+    <summary class="ia-myth-summary">
+      <span class="ia-myth-kicker">Mito</span>
+      <span class="ia-myth-title">La IA siempre es neutral y correcta ✅</span>
+      <span class="ia-myth-hint">Realidad</span>
+    </summary>
+    <div class="ia-myth-body">
+      <p><strong>Realidad:</strong> La calidad de una IA depende de sus datos, su diseño y el contexto en el que se usa. Si los datos contienen errores o sesgos, el sistema puede repetirlos. Por eso la IA no reemplaza el juicio humano: necesita supervisión, verificación y preguntas críticas.</p>
+    </div>
+  </details>
 </div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Sistemas computacionales diseñados para realizar tareas que, si las hiciera un humano, diríamos que requieren inteligencia: como reconocer imágenes, entender lenguaje, tomar decisiones o predecir resultados.</p>
-</div>
-</div>
-<p>Empecemos aclarando algunos malentendidos comunes.</p>
-<section id="lo-que-la-ia-no-es" class="level4">
-<h4 class="anchored" data-anchor-id="lo-que-la-ia-no-es"><strong>Lo que la IA NO es</strong></h4>
-<p>La IA no es magia. No es una entidad consciente que “piensa” o “siente”. No es el robot humanoide de las películas de ciencia ficción que tiene deseos propios. No es un sistema que entiende el mundo como lo entendemos nosotros.</p>
-<p>La IA es, en esencia, matemáticas muy sofisticadas aplicadas a muchísimos datos.</p>
-<p>Eso no la hace menos impresionante; al contrario. Lo impresionante es que con matemáticas y datos se pueden lograr cosas que parecen mágicas. Pero cuando entiendes el mecanismo, puedes usarla mejor, cuestionarla mejor y no dejarte engañar por ella. Porque, y recuerda este mensaje, la IA se puede equivocar. Tu trabajo es aprender a distinguir entre una alucinación y una respuesta útil.</p>
 </section>
-<section id="la-sorpresa-de-esta-sesión" class="level4">
-<h4 class="anchored" data-anchor-id="la-sorpresa-de-esta-sesión"><strong>La sorpresa de esta sesión</strong></h4>
-<p>Aquí va el giro importante: si alguna vez viste la fórmula de la recta <code>y = mx + b</code> en álgebra, ya viste una de las ideas más simples y potentes del aprendizaje de máquinas (de la IA). Es decir, todo empieza con un simple Plano Cartesiano.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="del-mito-al-mecanismo" class="level4">
+<h4 class="anchored" data-anchor-id="del-mito-al-mecanismo"><strong>Del mito al mecanismo</strong></h4>
+<p>Ahora que ya sabes lo que la inteligencia artificial <strong>no</strong> es, veamos lo que <strong>sí</strong> es, y cómo opera. Dos rasgos distinguen a un sistema de IA de un programa computacional convencional:</p>
+<div class="ai-properties">
+  <div class="ai-prop">
+    <div class="ai-prop-icon-wrap ai-prop-icon-wrap-blue" aria-hidden="true">
+      <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+    </div>
+    <div class="ai-prop-content">
+      <strong class="ai-prop-name">Autonomía</strong>
+      <p class="ai-prop-copy">Puede actuar sin instrucciones constantes.</p>
+    </div>
+  </div>
+  <div class="ai-prop">
+    <div class="ai-prop-icon-wrap ai-prop-icon-wrap-teal" aria-hidden="true">
+      <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+    </div>
+    <div class="ai-prop-content">
+      <strong class="ai-prop-name">Adaptabilidad</strong>
+      <p class="ai-prop-copy">Mejora con la experiencia, no con reprogramación manual.</p>
+    </div>
+  </div>
 </div>
-<div class="callout-title-container flex-fill">
-La idea clave
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>La forma más simple de la IA no empieza con robots. Empieza con una recta en un plano cartesiano.</p>
-</div>
-</div>
-<p>Eso es justo lo que quiero que te lleves hoy. Antes de hablar de modelos enormes o de ChatGPT, vamos a hablar algo mucho más simple: la <strong>pendiente</strong> y la <strong>intersección</strong>. O dicho de forma más coloquial: <strong>cuánto sube una recta cuando avanzas una unidad a la derecha</strong>.</p>
-<p>Aquí, “aprender” (del concepto de aprendizaje de máquinas en la IA) no significa pensar ni sentir. Significa encontrar dos números correctos:</p>
-<ul>
-<li><strong>m</strong>: la pendiente, o cuánto sube la recta por cada paso a la derecha.</li>
-<li><strong>b</strong>: la intersección con el eje y, o dónde arranca la recta cuando <code>x = 0</code>.</li>
-</ul>
-<p>Imagina que quieres predecir la calificación de un estudiante en tu escuela. Cada estudiante te dice, más o menos, cuántas horas estudio para su examen.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-La ecuación de la recta: ŷ = m · x + b <em>(forma pendiente-ordenada)</em>
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<p>Aquí viene una sorpresa. Lo que te parece fácil a ti es, computacionalmente, lo más difícil. Levantar un vaso de agua no requiere ningún pensamiento consciente — pero implica percepción tridimensional, calibración de fuerza, correcciones de postura en tiempo real: millones de años de evolución comprimidos en un gesto. Jugar ajedrez, en cambio, parece exigir inteligencia elevada, pero para una computadora es relativamente sencillo: seguir reglas y explorar millones de movimientos por segundo. Por ejemplo, <strong>Deep Blue</strong> - la supercomputadora diseñada por IBM para jugadar ajedrez - venció al campeón mundial en 1997. El problema más difícil para esta IA resultó ser el mover las piezas físicamente sin tirar el tablero. Por eso la autonomía — actuar en entornos físicos complejos sin instrucciones constantes — sigue siendo uno de los problemas más difíciles en el campo de la IA.</p>
+<p>¿Y cómo consigue esos dos rasgos? La respuesta es siempre la misma: <strong>ecuaciones matemáticas aplicadas a muchísimos datos</strong>. Una ecuación es una regla de cálculo — a partir de lo que ya conoces, produce algo que todavía no sabes. Cuando buscas la mejor ruta en Google Maps, una ecuación estima el tiempo de llegada a partir del tráfico actual. Cuando Spotify te sugiere una canción, otra ecuación calcula qué tan probable es que te guste según lo que has escuchado antes. Los datos son la materia prima: entre más ejemplos tenga la ecuación — más rutas recorridas, más canciones escuchadas — más precisos se vuelven sus cálculos.</p>
+<p>Una IA puede ser tan sencilla como una ecuación con dos variables, o tan compleja como miles de millones de variables entrelazadas. Lo que cambia con la complejidad es el tamaño del problema, no el mecanismo. En todos los casos, la lógica es la misma: una regla matemática y suficientes datos para que esa regla funcione bien.</p>
+</section>
+<section id="spoiler-alert-ya-sabes-programar-una-ia" class="level4">
+<h4 class="anchored" data-anchor-id="spoiler-alert-ya-sabes-programar-una-ia">Spoiler alert: <span class="spoiler-circle">¡ya sabes programar una IA!</span></h4>
+<p>Piensa en esto. Si estudias 0 horas para un examen, ¿cuánto crees que sacarías? Quizás un 60. ¿Y con 2 horas, un 70? ¿Con 4 horas, un 80?</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 45%">
-<col style="width: 27%">
-<col style="width: 27%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: center;">Símbolo</th>
-<th>Nombre</th>
-<th>En este ejemplo</th>
+<th style="text-align: center;">Horas de estudio</th>
+<th style="text-align: center;">Calificación esperada</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><strong>ŷ</strong></td>
-<td>“y-sombrerito” — <em>valor predecido</em></td>
-<td>calificación <strong>predicha</strong></td>
+<td style="text-align: center;">0 h</td>
+<td style="text-align: center;">60</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;"><strong>x</strong></td>
-<td>variable de entrada</td>
-<td>horas de estudio</td>
+<td style="text-align: center;">2 h</td>
+<td style="text-align: center;">70</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;"><strong>m</strong></td>
-<td><strong>pendiente</strong> / <em>slope</em></td>
-<td>cuánto sube ŷ por cada hora extra de estudio</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><strong>b</strong></td>
-<td><strong>ordenada al origen</strong> / <em>intersección con el eje y</em></td>
-<td>valor de ŷ cuando x = 0</td>
+<td style="text-align: center;">4 h</td>
+<td style="text-align: center;">80</td>
 </tr>
 </tbody>
 </table>
-<p>En esta versión sencilla, la máquina “aprende” cuando logra calcular esos dos números a partir de los datos.</p>
+<p>¿Ves el patrón? Cada hora extra de estudio sube 5 puntos a tu calificación en el examen. Al principio, cuando no estudiaste nada, te sacaste un 60. Pero, poco a poco, fuiste esforzándote, estudiante un poco más, y subiendo tu calificación. Este patrón se puede resumir en una regla lógica a partir de datos. Y esta regla tiene nombre:</p>
+<div class="key-moment">
+  <p class="key-moment-eyebrow">La idea clave de esta sesión</p>
+  <p class="key-moment-headline">La IA más simple<br>empieza con una recta.</p>
+  <p class="key-moment-formula">ŷ&nbsp;=&nbsp;<span>m</span>&nbsp;·&nbsp;x&nbsp;+&nbsp;<span>b</span></p>
+  <p class="key-moment-sub">Esto es lo que verás funcionar en los próximos minutos.</p>
 </div>
-</div>
-<p>Ahora te toca a ti primero: intenta encontrar la recta antes que la máquina.</p>
+<p>Es la <strong>ecuación de la recta</strong>, la misma que viste en secundaria en un plano cartesiano. En machine learning se le conoce como <strong>regresión lineal</strong> — pero es exactamente la misma idea. Los dos números que acabas de intuir describen la lógica de la ecuación de la recta:</p>
+<ul>
+<li><strong>m = 5</strong> — la pendiente: cuánto sube la calificación por cada hora extra de estudio.</li>
+<li><strong>b = 60</strong> — la intersección: la calificación inicial, cuando no estudiaste nada.</li>
+</ul>
+<p>Hasta aquí, tú encontraste <code>m</code> y <code>b</code> observando tres filas. Pero imagina que hay 500 estudiantes y todos con datos distintos y un poco “ruidosos” — ya no es tan fácil distinguir el patrón a simple vista. Una máquina aprende esos valores de la siguiente manera:</p>
+<div id="learn-list-mount" class="learn-list"></div>
+<p><strong>Ahora te toca a ti:</strong> intenta ajustar una recta antes que la máquina.</p>
+<p>Iniciaremos este reto con datos concretos: <strong>8</strong> estudiantes, cada uno con horas de estudio y calificación distintas.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Estudiante</th>
+<th style="text-align: center;">x — Horas</th>
+<th style="text-align: center;">y — Calificación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ana</td>
+<td style="text-align: center;">1 h</td>
+<td style="text-align: center;">55</td>
+</tr>
+<tr class="even">
+<td>Carlos</td>
+<td style="text-align: center;">2 h</td>
+<td style="text-align: center;">60</td>
+</tr>
+<tr class="odd">
+<td>María</td>
+<td style="text-align: center;">3 h</td>
+<td style="text-align: center;">65</td>
+</tr>
+<tr class="even">
+<td>Diego</td>
+<td style="text-align: center;">4 h</td>
+<td style="text-align: center;">72</td>
+</tr>
+<tr class="odd">
+<td>Sofía</td>
+<td style="text-align: center;">5 h</td>
+<td style="text-align: center;">75</td>
+</tr>
+<tr class="even">
+<td>Luis</td>
+<td style="text-align: center;">6 h</td>
+<td style="text-align: center;">82</td>
+</tr>
+<tr class="odd">
+<td>Fernanda</td>
+<td style="text-align: center;">7 h</td>
+<td style="text-align: center;">88</td>
+</tr>
+<tr class="even">
+<td>Emilio</td>
+<td style="text-align: center;">8 h</td>
+<td style="text-align: center;">90</td>
+</tr>
+</tbody>
+</table>
+<p>En el reto verás estos mismos datos como puntos azules en un plano cartesiano. Tu tarea será encontrar una recta que se acerque lo mejor posible a todos los puntos.</p>
 <div class="demo-wrap">
-  <div class="demo-shell demo-tone-supervised" id="lr-shell">
+  <div class="demo-shell demo-tone-supervised demo-shell-live-only" id="lr-shell">
     <div class="demo-shell-head">
       <div class="demo-shell-copy">
         <p class="demo-eyebrow">Álgebra + Machine Learning</p>
@@ -465,12 +655,6 @@ La ecuación de la recta: ŷ = m · x + b <em>(forma pendiente-ordenada)</em>
           </div>
 
           <div class="lr-side">
-            <div class="lr-challenge-card">
-              <p class="lr-card-kicker">Tu turno</p>
-              <h5 class="anchored">¿Qué tan buena puede quedar tu recta?</h5>
-              <p>Mueve <strong>m</strong> y <strong>b</strong>. Tu meta no es adivinar “la respuesta correcta”, sino lograr que la línea recta pase cerca de los puntos.</p>
-            </div>
-
             <div class="demo-slider-card lr-fit-card">
               <p>Los dos números que la máquina va a aprender</p>
               <div class="lr-slider-block">
@@ -495,7 +679,7 @@ La ecuación de la recta: ŷ = m · x + b <em>(forma pendiente-ordenada)</em>
                 <strong id="lr-rise-value">+3.4 pts</strong>
               </div>
               <div class="lr-mini-card">
-                <span class="lr-mini-label">Error medio</span>
+                <span class="lr-mini-label">Error promedio</span>
                 <strong id="lr-error-value">—</strong>
               </div>
               <div class="lr-mini-card">
@@ -504,28 +688,11 @@ La ecuación de la recta: ŷ = m · x + b <em>(forma pendiente-ordenada)</em>
               </div>
             </div>
 
-            <div class="lr-rise-card">
+            <div class="lr-rise-card" id="lr-rise-card" hidden="">
               <p class="lr-card-kicker">Elevación sobre pendiente</p>
-              <p>En palabras simples: cuando estudias <strong>1 hora</strong> más (mueves la recta 1h a la derecha), la recta sube <strong id="lr-rise-chip">+3.4 puntos</strong>.</p>
-              <p class="lr-rise-note">Ese “sube / avanza” es exactamente la pendiente que ya conocías de álgebra.</p>
+              <p>En palabras simples: cuando estudias <strong>1 hora</strong> más (mueves la recta 1h a la derecha), la recta (tu calificación) sube <strong id="lr-rise-chip">+3.4 puntos</strong>.</p>
+              <p class="lr-rise-note">Ese “sube / avanza” es exactamente la pendiente que ya conocías de tus clases de álgebra.</p>
             </div>
-
-            <div class="demo-table-shell">
-              
-<table class="caption-top" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Estudiante</th>
-<th class="demo-th-center" data-quarto-table-cell-role="th">x — Horas</th>
-<th class="demo-th-center" data-quarto-table-cell-role="th">y — Calificación</th>
-</tr>
-</thead>
-<tbody id="lr-tbody">
-</tbody>
-</table>
-
-            </div>
-            <p class="demo-mini-note">Los puntos azules son los datos recopilados. La línea azul es tu intento.</p>
           </div>
         </div>
       </div>
@@ -545,13 +712,12 @@ La ecuación de la recta: ŷ = m · x + b <em>(forma pendiente-ordenada)</em>
     <div class="demo-footer">
       <p id="lr-status" class="demo-status"></p>
       <div class="demo-actions">
-        <button id="lr-start" class="demo-btn demo-btn-primary">Entrar al reto</button>
         <button id="lr-auto" class="demo-btn demo-btn-secondary" disabled="">Ahora deja que la máquina aprenda</button>
         <button id="lr-reset" class="btn-restart" disabled="">Reiniciar</button>
       </div>
     </div>
   </div>
-
+<!--
   <details class="foldout foldout-panel">
     <summary class="foldout-summary">
       <span>🔢 Laboratorio corto — de dónde sale la línea azul</span>
@@ -561,12 +727,12 @@ La ecuación de la recta: ŷ = m · x + b <em>(forma pendiente-ordenada)</em>
       <div class="lab-card">
         <div class="lab-card-grid">
           <div class="lab-card-section">
-            <h5 class="anchored">La idea</h5>
+            <h5>La idea</h5>
             <p>La regresión lineal simple busca la recta que deja los errores verticales entre los datos reales y la predicción <em>lo más pequeños posible</em>.</p>
             <p class="formula-inline">ŷ = m · x + b</p>
           </div>
           <div class="lab-card-section">
-            <h5 class="anchored">Qué significan</h5>
+            <h5>Qué significan</h5>
             <ul>
               <li><strong>m</strong>: cuánto sube la predicción por cada hora extra.</li>
               <li><strong>b</strong>: valor estimado cuando x = 0.</li>
@@ -574,7 +740,7 @@ La ecuación de la recta: ŷ = m · x + b <em>(forma pendiente-ordenada)</em>
             </ul>
           </div>
           <div class="lab-card-section">
-            <h5 class="anchored">La traducción importante</h5>
+            <h5>La traducción importante</h5>
             <p>Aquí aprender no significa “pensar”. Significa encontrar los números <strong>m</strong> y <strong>b</strong> que mejor explican los datos.</p>
             <p class="formula-inline">ŷ = 5.23 · x + 49.86</p>
           </div>
@@ -599,18 +765,19 @@ print(f"ŷ = {m:.2f}·x + {b:.2f}")</code></pre>
       </div>
     </div>
   </details>
+-->
 </div>
-<p>Eso que acabas de hacer también es machine learning en miniatura: probaste valores, miraste errores y buscaste una mejor recta. La máquina hace exactamente esa idea, pero más rápido, con más datos y con modelos mucho más complejos.</p>
+<p>Esto que acabas de hacer es machine learning en miniatura: probaste distintos valores para <code>m</code> y <code>b</code>, observaste el error promedio, y buscaste una recta que minimizara este error. La máquina hace exactamente lo mismo, pero más rápido, con más datos y con modelos mucho más complejos.</p>
 </section>
 <section id="ia-machine-learning-y-deep-learning-cuál-es-la-diferencia" class="level4">
 <h4 class="anchored" data-anchor-id="ia-machine-learning-y-deep-learning-cuál-es-la-diferencia"><strong>IA, Machine Learning y Deep Learning: ¿cuál es la diferencia?</strong></h4>
-<p>Ahora que ya viste una recta “aprender” a partir de datos, ubiquemos dónde cabe eso dentro de un mapa general. Cuando hablamos de IA, escuchamos tres términos constantemente: inteligencia artificial, machine learning (aprendizaje de máquinas), y deep learning (aprendizaje profundo). A veces, se usan como si fueran lo mismo… Pero no lo son:</p>
+<p>La recta que ajustaste es un modelo de machine learning. Pero espera — ¿machine learning es lo mismo que inteligencia artificial? ¿Y el deep learning que todos mencionan, qué es? Entender la diferencia entre estos conceptos nos ayudará a saber qué tipo de IA está detrás de cada herramienta, cuántos datos necesita, y qué tan lejos puede llegar. Los tres términos se usan como sinónimos constantemente, aunque no siempre es así. Lee la jerarquía de conceptos explicada acá abajo para saber un poco más de inteligencia artificial.</p>
 <div class="demo-wrap">
-  <div class="demo-shell demo-tone-ranking concept-shell" id="concept-shell">
+  <div class="demo-shell demo-tone-ranking concept-shell demo-shell-live-only" id="concept-shell">
     <div class="demo-shell-head">
       <div class="demo-shell-copy">
         <p class="demo-eyebrow">Jerarquía de conceptos</p>
-        <h4 class="demo-title anchored">IA, Machine Learning y Deep Learning no son sinónimos</h4>
+        <h4 class="demo-title anchored">IA, Machine Learning y Deep Learning</h4>
       </div>
     </div>
 
@@ -621,7 +788,7 @@ print(f"ŷ = {m:.2f}·x + {b:.2f}")</code></pre>
             <div class="concept-preview-stack">
               <div class="concept-preview-layer">
                 <strong>Inteligencia Artificial</strong>
-                <span>El paraguas general</span>
+                <span>El término paraguas</span>
               </div>
               <div class="concept-preview-layer">
                 <strong>Machine Learning</strong>
@@ -646,7 +813,7 @@ print(f"ŷ = {m:.2f}·x + {b:.2f}")</code></pre>
             <button type="button" class="concept-layer concept-layer-ia" data-ring="ia" aria-pressed="false">
               <span class="concept-layer-kicker">Campo más amplio</span>
               <span class="concept-layer-title">Inteligencia Artificial</span>
-              <span class="concept-layer-note">Sistemas que realizan tareas asociadas con inteligencia</span>
+              <span class="concept-layer-note">Sistemas que realizan tareas asociadas con inteligencia humana</span>
             </button>
 
             <button type="button" class="concept-layer concept-layer-ml" data-ring="ml" aria-pressed="false">
@@ -683,32 +850,24 @@ print(f"ŷ = {m:.2f}·x + {b:.2f}")</code></pre>
     <div class="demo-footer">
       <p id="concept-status" class="demo-status"></p>
       <div class="demo-actions">
-        <button id="concept-start" class="demo-btn demo-btn-primary">Abrir mapa</button>
         <button id="concept-reset" class="btn-restart" disabled="">Reiniciar</button>
       </div>
     </div>
   </div>
 </div>
-<p>Lectura rápida:</p>
-<ul>
-<li><strong>IA:</strong> el campo amplio que reúne sistemas capaces de resolver tareas asociadas con inteligencia.</li>
-<li><strong>Machine Learning:</strong> la parte de la IA que aprende patrones a partir de datos.</li>
-<li><strong>Deep Learning:</strong> la parte del machine learning que usa redes neuronales profundas para tareas complejas como lenguaje, imagen y voz.</li>
-</ul>
-<p>Cuando alguien dice “IA”, casi siempre se refiere a Machine Learning o Deep Learning. Pero ahora ya sabes que son cosas distintas con distintos niveles de complejidad.</p>
+<p>La regresión lineal que programaste es machine learning (ML): encontró las ecuaciones por sí sola, a partir de datos. Es así como la IA consigue la <strong>adaptabilidad</strong> que vimos antes. El deep learning hace lo mismo, pero con redes de millones de nodos — eso es lo que le da a la IA la capacidad de ver imágenes, entender voz, y enfrentarse a los problemas que parecen “fáciles” para los humanos pero son computacionalmente complejos. Ahora que ya vimos el mapa y que tenemos más claridad sobre estos conceptos, veamos cómo aparece cada campo en las apps que ya usas todos los días.</p>
 <hr>
 </section>
 </section>
-<section id="ia-en-tu-vida-recorrido-de-las-apps" class="level3">
-<h3 class="anchored" data-anchor-id="ia-en-tu-vida-recorrido-de-las-apps">IA en tu vida: recorrido de las apps</h3>
-<p>Volvamos a las apps del inicio, pero ahora con un enfoque más claro: ya sabes que “IA” puede referirse a estrategias distintas, y que una parte de ella incluso empieza con las matemáticas que ves en un a clase de álgebra de tu preparatoria.</p>
+<section id="la-ia-en-tu-vida-diaria-recorrido-de-apps" class="level3">
+<h3 class="anchored" data-anchor-id="la-ia-en-tu-vida-diaria-recorrido-de-apps">La IA en tu vida diaria: recorrido de apps</h3>
+<p>Volvamos a las apps del inicio, pero ahora con un enfoque más claro: ya sabes que “IA” puede referirse a distintas estrategias computacionales, y que una parte de ella incluso empieza con las matemáticas que ves en un a clase de álgebra de tu secundaria y/o preparatoria.</p>
 <div class="demo-wrap">
-  <div class="demo-shell demo-tone-ranking app-tour-shell" id="apps-shell">
+  <div class="demo-shell demo-tone-ranking app-tour-shell demo-shell-live-only" id="apps-shell">
     <div class="demo-shell-head">
       <div class="demo-shell-copy">
         <p class="demo-eyebrow">Recorrido de apps</p>
         <h4 class="demo-title anchored">La IA cotidiana se ve distinta según la app, pero responde al mismo patrón</h4>
-        <p class="demo-copy">En lugar de seis bloques separados, ahora puedes recorrer un solo catálogo y comparar qué cambia entre recomendación, clasificación, visión, predicción y optimización.</p>
       </div>
     </div>
 
@@ -737,12 +896,12 @@ print(f"ŷ = {m:.2f}·x + {b:.2f}")</code></pre>
               <span>Clasificación de texto</span>
             </div>
             <div class="app-tour-preview-card">
-              <strong>DiDi / Uber</strong>
+              <strong>Uber</strong>
               <span>Optimización dinámica</span>
             </div>
           </div>
           <p class="demo-preview-title">Vista previa del recorrido</p>
-          <p class="demo-preview-copy">Abre el bloque para comparar apps reales con una misma interfaz y así detectar mejor qué problema resuelve la IA en cada caso.</p>
+          <p class="demo-preview-copy">Abre el bloque para comparar las apps con una misma interfaz y así detectar mejor qué problema resuelve la IA en cada caso.</p>
         </div>
       </div>
 
@@ -768,7 +927,6 @@ print(f"ŷ = {m:.2f}·x + {b:.2f}")</code></pre>
     <div class="demo-footer">
       <p id="apps-status" class="demo-status"></p>
       <div class="demo-actions">
-        <button id="apps-start" class="demo-btn demo-btn-primary">Abrir recorrido</button>
         <button id="apps-reset" class="btn-restart" disabled="">Reiniciar</button>
       </div>
     </div>
@@ -779,319 +937,129 @@ print(f"ŷ = {m:.2f}·x + {b:.2f}")</code></pre>
 <section id="cómo-más-puede-aprender-una-máquina" class="level3">
 <h3 class="anchored" data-anchor-id="cómo-más-puede-aprender-una-máquina">¿Cómo más puede aprender una máquina?</h3>
 <p>Ya viste el caso más fácil de explicar: <strong>aprendizaje supervisado</strong>. Le damos al modelo ejemplos donde sí conocemos la respuesta correcta, y el sistema intenta encontrar un patrón que conecte entrada y salida.</p>
-<p>En la recta de arriba, eso significó ajustar <code>m</code> y <code>b</code>. En otros casos, el mismo paradigma sirve para dos problemas muy comunes:</p>
-<ul>
-<li><strong>Regresión:</strong> predecir un número continuo.</li>
-<li><strong>Clasificación:</strong> predecir una categoría.</li>
-</ul>
-<p><strong>Ejemplos rápidos de regresión:</strong></p>
-<ul>
-<li>Predecir el precio de una casa basado en sus metros cuadrados.</li>
-<li>Predecir cuánta energía consumirá una ciudad mañana basado en el clima.</li>
-<li>Estimar a qué hora exacta llegará tu Uber basado en el tráfico.</li>
-</ul>
-<p><strong>Ejemplos rápidos de clasificación:</strong></p>
-<ul>
-<li>Filtro de spam (etiquetas correctas: spam / no spam).</li>
-<li>Detección de cáncer en radiografías (etiquetas correctas: tumor / sano).</li>
-<li>Reconocimiento facial en tu celular (etiquetas correctas: eres tú / no eres tú).</li>
-</ul>
-<p>Pero no toda la IA aprende con respuestas correctas. Hay otros dos paradigmas importantes.</p>
-<section id="aprendizaje-no-supervisado" class="level4">
-<h4 class="anchored" data-anchor-id="aprendizaje-no-supervisado"><strong>2. Aprendizaje No Supervisado</strong></h4>
-<p>Ahora imagina que tienes fotos de animales, pero sin ninguna etiqueta. Le dices a la máquina: “agrúpalas como consideres que van juntas”. Un humano nota que algunos tienen hocico largo, otros tienen bigotes, algunos tienen orejas paradas, y las puede ir agrupando sin que nadie le haya dicho qué buscar. Pero, ¿y una máquina?</p>
-<p>Eso es aprendizaje no supervisado: <strong>datos sin etiquetas → el modelo encuentra estructura por sí mismo</strong>.</p>
-<figure class="flowchart-figure figure">
-  <svg viewbox="0 0 760 250" xmlns="http://www.w3.org/2000/svg" class="flowchart-svg" role="img" aria-label="Diagrama de aprendizaje no supervisado: datos sin etiquetas pasan a un modelo que encuentra patrones y forma tres grupos">
-    <defs>
-      <marker id="fcarr-unsup" markerwidth="8" markerheight="8" refx="7" refy="4" orient="auto">
-        <polygon points="0 0, 8 4, 0 8" fill="#cbd5e1"></polygon>
-      </marker>
-    </defs>
-
-    <line class="fc-line" x1="200" y1="126" x2="292" y2="126" marker-end="url(#fcarr-unsup)"></line>
-    <line class="fc-line" x1="468" y1="126" x2="560" y2="55" marker-end="url(#fcarr-unsup)"></line>
-    <line class="fc-line" x1="468" y1="126" x2="560" y2="126" marker-end="url(#fcarr-unsup)"></line>
-    <line class="fc-line" x1="468" y1="126" x2="560" y2="197" marker-end="url(#fcarr-unsup)"></line>
-
-    <rect x="24" y="92" width="176" height="68" rx="12" class="fc-node-source"></rect>
-    <text x="112" y="121" text-anchor="middle" class="fc-node-title fc-node-title-blue">📂 Datos sin etiquetas</text>
-    <text x="112" y="141" text-anchor="middle" class="fc-node-subtitle">ejemplos mezclados, sin respuesta</text>
-
-    <rect x="292" y="92" width="176" height="68" rx="12" class="fc-node-process"></rect>
-    <text x="380" y="121" text-anchor="middle" class="fc-node-title">🤖 Modelo buscando patrones</text>
-    <text x="380" y="141" text-anchor="middle" class="fc-node-subtitle">encuentra similitudes y separa grupos</text>
-
-    <rect x="560" y="20" width="168" height="52" rx="12" class="fc-node-source"></rect>
-    <text x="644" y="50" text-anchor="middle" class="fc-node-title">🔵 Grupo 1</text>
-
-    <rect x="560" y="100" width="168" height="52" rx="12" class="fc-node-caution"></rect>
-    <text x="644" y="130" text-anchor="middle" class="fc-node-title">🟠 Grupo 2</text>
-
-    <rect x="560" y="180" width="168" height="52" rx="12" class="fc-node-success"></rect>
-    <text x="644" y="210" text-anchor="middle" class="fc-node-title">🟢 Grupo 3</text>
-  </svg>
-</figure>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li><p>Spotify agrupando canciones por similitud sonora (nadie etiquetó “esto suena a reggaetón”)</p></li>
-<li><p>Amazon detectando segmentos de clientes similares</p></li>
-<li><p>Netflix identificando “tipos” de espectadores para personalizar portadas</p></li>
-</ul>
-<div class="demo-wrap">
-  <div class="demo-shell demo-tone-unsupervised" id="km-shell">
-    <div class="demo-shell-head">
-      <div class="demo-shell-copy">
-        <p class="demo-eyebrow">Aprendizaje no supervisado</p>
-        <h4 class="demo-title anchored">K-means: agrupar canciones sin etiquetas</h4>
-      </div>
-    </div>
-
-    <div class="demo-stage">
-      <div class="demo-stage-preview">
-        <div class="demo-preview-card">
-          <div class="demo-preview-visual">
-            <div class="demo-plot-frame demo-plot-frame-preview">
-              <div class="km-cluster-tags">
-                <span class="km-cluster-tag">Puntos sin etiqueta</span>
-                <span class="km-cluster-tag">Centros iniciales</span>
-                <span class="km-cluster-tag">Grupos emergentes</span>
-              </div>
-            </div>
-          </div>
-          <p class="demo-preview-title">Vista previa del clustering</p>
-          <p class="demo-preview-copy">Primero solo hay canciones como puntos en una nube. Después el algoritmo propone centros y reorganiza los grupos hasta estabilizarlos.</p>
-        </div>
-      </div>
-
-      <div class="demo-stage-live">
-        <div class="demo-plot-frame" id="km-plot"></div>
-        <div id="km-tags" class="km-cluster-tags km-cluster-tags-live"></div>
-      </div>
-    </div>
-
-    <div class="demo-insights">
-      <div class="demo-insight">
-        <h5 class="anchored">Qué estás viendo</h5>
-        <p id="km-seeing"></p>
-      </div>
-      <div class="demo-insight">
-        <h5 class="anchored">Qué significa</h5>
-        <p id="km-meaning"></p>
-      </div>
-    </div>
-
-    <div class="demo-footer">
-      <p id="km-status" class="demo-status"></p>
-      <div class="demo-actions">
-        <button id="km-start" class="demo-btn demo-btn-primary">Ver animación</button>
-        <button id="km-reset" class="btn-restart" disabled="">Reiniciar</button>
-      </div>
-    </div>
+<p>En la recta de arriba, eso significó ajustar <code>m</code> y <code>b</code>. El mismo paradigma sirve para dos problemas muy comunes:</p>
+<div class="supervised-pair">
+  <div class="supervised-card">
+    <p class="supervised-card-type">Regresión</p>
+    <p class="supervised-card-def">Predecir un <strong>número continuo</strong></p>
+    <ul class="supervised-card-examples">
+      <li>Precio de una casa según sus metros cuadrados</li>
+      <li>Cuánta energía consumirá una ciudad mañana</li>
+      <li>La hora exacta en que llega tu Uber</li>
+    </ul>
+  </div>
+  <div class="supervised-card">
+    <p class="supervised-card-type">Clasificación</p>
+    <p class="supervised-card-def">Predecir una <strong>categoría</strong></p>
+    <ul class="supervised-card-examples">
+      <li>Filtro de spam (¿correo basura o no?)</li>
+      <li>Detección de tumor en una radiografía (¿tumor, o no tumor?)</li>
+      <li>Reconocimiento facial en tu celular (¿eres tú, o no eres tú?)</li>
+    </ul>
   </div>
 </div>
-</section>
-<section id="aprendizaje-por-refuerzo" class="level4">
-<h4 class="anchored" data-anchor-id="aprendizaje-por-refuerzo"><strong>3. Aprendizaje por Refuerzo</strong></h4>
-<p>Este es el más intuitivo de todos porque así aprenden los humanos muchas cosas. Piensa en cómo aprendiste a andar en bicicleta: nadie te explicó las ecuaciones de equilibrio. Intentaste. Te caíste. Ajustaste. Intentaste de nuevo. Con el tiempo, tu cuerpo encontró la estrategia que funciona.</p>
-<p>El aprendizaje por refuerzo funciona igual: un agente de IA toma acciones en un entorno, recibe recompensas cuando hace algo bien y penalizaciones cuando se equivoca, y con millones de intentos aprende la estrategia óptima.</p>
-<figure class="flowchart-figure figure">
-  <svg viewbox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" class="flowchart-svg" role="img" aria-label="Diagrama de aprendizaje por refuerzo: un agente actúa en un entorno y recibe nueva situación, recompensa o penalización">
-    <defs>
-      <marker id="fcarr-rl" markerwidth="8" markerheight="8" refx="7" refy="4" orient="auto">
-        <polygon points="0 0, 8 4, 0 8" fill="#cbd5e1"></polygon>
-      </marker>
-    </defs>
-
-    <line class="fc-line" x1="254" y1="98" x2="466" y2="98" marker-end="url(#fcarr-rl)"></line>
-    <path class="fc-line" d="M466 128 C 420 176, 300 176, 254 128" marker-end="url(#fcarr-rl)"></path>
-    <path class="fc-line" d="M466 144 C 414 214, 306 214, 254 144" marker-end="url(#fcarr-rl)"></path>
-
-    <rect x="54" y="64" width="200" height="70" rx="12" class="fc-node-source"></rect>
-    <text x="154" y="95" text-anchor="middle" class="fc-node-title fc-node-title-blue">🤖 Agente</text>
-    <text x="154" y="116" text-anchor="middle" class="fc-node-subtitle">toma una acción</text>
-
-    <rect x="466" y="64" width="200" height="70" rx="12" class="fc-node-caution"></rect>
-    <text x="566" y="95" text-anchor="middle" class="fc-node-title">🌍 Entorno</text>
-    <text x="566" y="116" text-anchor="middle" class="fc-node-subtitle">responde y cambia la situación</text>
-
-    <rect x="328" y="74" width="78" height="22" rx="11" class="fc-pill-no"></rect>
-    <text x="367" y="88" text-anchor="middle" class="fc-label-soft">toma acción</text>
-
-    <rect x="300" y="158" width="134" height="24" rx="12" class="fc-pill-no"></rect>
-    <text x="367" y="173" text-anchor="middle" class="fc-label-soft">nueva situación</text>
-
-    <rect x="278" y="202" width="178" height="24" rx="12" class="fc-pill-yes"></rect>
-    <text x="367" y="217" text-anchor="middle" class="fc-label">recompensa o penalización</text>
-  </svg>
-</figure>
-<p><strong>Ejemplos:</strong></p>
-<ul>
-<li><p>AlphaGo (DeepMind) aprendió a jugar Go mejor que cualquier humano sin que nadie le enseñara estrategias — solo jugó millones de partidas contra sí mismo</p></li>
-<li><p>Spot de Boston Dynamics aprendió a caminar en terreno irregular (lo veremos a detalle en otra sesión)</p></li>
-<li><p>OpenAI Five aprendió a jugar Dota 2 a nivel profesional coordinando 5 agentes en equipo, sin que nadie le enseñara tácticas, solo jugando millones de partidas contra sí mismo</p></li>
-</ul>
-<div class="demo-wrap">
-  <div class="demo-shell demo-tone-rl" id="rl-shell">
-    <div class="demo-shell-head">
-      <div class="demo-shell-copy">
-        <p class="demo-eyebrow">Aprendizaje por refuerzo</p>
-        <h4 class="demo-title anchored">Mario aprende a saltar</h4>
-        <p class="demo-copy">Un agente aprende a jugar Mario, repitiendo las acciones y observando cuáles le resultan y cuales no.</p>
-      </div>
-    </div>
-
-    <div class="demo-stage">
-      <div class="demo-stage-preview">
-        <div class="demo-preview-card">
-          <div class="demo-preview-visual">
-            <div class="rl-panel rl-panel-preview">
-              <h5 class="anchored">La mecánica</h5>
-              <div class="rl-metrics">
-                <div class="rl-metric"><span class="rl-metric-label">Estado</span><span class="rl-metric-value">Agente + hueco + meta</span></div>
-                <div class="rl-metric"><span class="rl-metric-label">Acción</span><span class="rl-metric-value">Correr o saltar</span></div>
-                <div class="rl-metric"><span class="rl-metric-label">Recompensa</span><span class="rl-metric-value">Positiva o negativa</span></div>
-              </div>
-            </div>
-          </div>
-          <p class="demo-preview-title">Vista previa del ciclo de refuerzo</p>
-          <p class="demo-preview-copy">Verás tres intentos. Lo importante no es solo si cruza o no, sino cómo la recompensa modifica la política del agente.</p>
-        </div>
-      </div>
-
-      <div class="demo-stage-live">
-        <div class="rl-layout">
-          <div class="demo-plot-frame rl-canvas-frame">
-            <canvas id="rl-canvas" class="rl-canvas" width="460" height="240"></canvas>
-          </div>
-          <div class="rl-panel">
-            <h5 class="anchored">Panel del agente</h5>
-            <div class="rl-metrics">
-              <div class="rl-metric">
-                <span class="rl-metric-label">Intento</span>
-                <span id="rl-attempt-value" class="rl-metric-value"></span>
-              </div>
-              <div class="rl-metric">
-                <span class="rl-metric-label">Estado actual</span>
-                <span id="rl-state-value" class="rl-metric-value"></span>
-              </div>
-              <div class="rl-metric">
-                <span class="rl-metric-label">Acción</span>
-                <span id="rl-action-value" class="rl-metric-value"></span>
-              </div>
-              <div class="rl-metric">
-                <span class="rl-metric-label">Recompensa</span>
-                <span id="rl-reward-value" class="rl-metric-value"></span>
-              </div>
-              <div class="rl-metric">
-                <span class="rl-metric-label">Puntos acumulados</span>
-                <span id="rl-total-value" class="rl-metric-value"></span>
-              </div>
-              <div class="rl-metric">
-                <span class="rl-metric-label">Política</span>
-                <span id="rl-policy-value" class="rl-metric-value"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="demo-insights">
-      <div class="demo-insight">
-        <h5 class="anchored">Qué estás viendo</h5>
-        <p id="rl-seeing"></p>
-      </div>
-      <div class="demo-insight">
-        <h5 class="anchored">Qué significa</h5>
-        <p id="rl-meaning"></p>
-      </div>
-    </div>
-
-    <div class="demo-footer">
-      <p id="rl-status" class="demo-status"></p>
-      <div class="demo-actions">
-        <button id="rl-start" class="demo-btn demo-btn-primary">Ver animación</button>
-        <button id="rl-reset" class="btn-restart" disabled="">Reiniciar</button>
-      </div>
-    </div>
+<p>El aprendizaje supervisado es solo uno de tres grandes paradigmas. Los otros dos los verás en profundidad en la Sesión 3:</p>
+<div class="paradigm-cards">
+  <div class="paradigm-card paradigm-card-seen">
+    <span class="paradigm-card-badge badge-seen">Visto hoy</span>
+    <p class="paradigm-card-name">Supervisado</p>
+    <p class="paradigm-card-desc">Datos con etiquetas → el modelo aprende a predecir.</p>
+  </div> 
+  <div class="paradigm-card paradigm-card-coming">
+    <span class="paradigm-card-badge badge-coming">Sesión 3</span>
+    <p class="paradigm-card-name">No supervisado</p>
+    <p class="paradigm-card-desc">Sin etiquetas → el modelo agrupa datos por similitud.</p>
+  </div>
+  <div class="paradigm-card paradigm-card-coming">
+    <span class="paradigm-card-badge badge-coming">Sesión 3</span>
+    <p class="paradigm-card-name">Por refuerzo</p>
+    <p class="paradigm-card-desc">Sin etiquetas → el modelo aprende por ensayo, error y recompensa.</p>
   </div>
 </div>
+<p>La Sesión 2 te lleva al mecanismo interno: cómo funcionan las redes neuronales. En la Sesión 3 verás las otras dos familias en acción.</p>
 <hr>
-</section>
-</section>
-<section id="demo-teachable-machine" class="level3">
-<h3 class="anchored" data-anchor-id="demo-teachable-machine">Demo: Teachable Machine</h3>
-<p>Ahora vamos a hacer algo. En lugar de solo escuchar cómo funciona el aprendizaje de máquinas, vamos a construir un modelo en tiempo real, en tu navegador, sin código, gratis.</p>
-<p><strong>Pasos:</strong></p>
-<ol type="1">
-<li>Entra a <a href="https://teachablemachine.withgoogle.com">teachablemachine.withgoogle.com</a></li>
-<li>Selecciona <strong>“Image Project”</strong> → <strong>“Standard image model”</strong></li>
-<li>Verás dos clases (puedes agregar más). Nombra la Clase 1 y la Clase 2 con dos objetos distintos que tengas cerca — por ejemplo: <strong>“libro”</strong> y <strong>“celular”</strong></li>
-<li>En cada clase, haz clic en <strong>“Webcam”</strong> y graba unos 50–80 ejemplos del objeto frente a la cámara, moviéndolo ligeramente para darle variación</li>
-<li>Haz clic en <strong>“Train Model”</strong> y espera unos segundos</li>
-<li>Prueba el modelo — pon un objeto frente a la cámara y observa cómo el modelo predice en tiempo real</li>
+<span class="reflexion-kicker">Reflexión · 5 min</span>
+<h3 class="reflexion-heading anchored">Actividad de reflexión</h3>
+<ol class="reflexion-list">
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">01</span>
+    <p class="reflexion-q"><strong>¿Qué herramientas de IA usaste hoy</strong> antes de entrar a esta sesión? Sé específico — no solo "el celular", sino qué apps y en qué momento.</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">02</span>
+    <p class="reflexion-q"><strong>¿En qué momento de la sesión te cayó el veinte</strong> de que una parte del machine learning empieza con matemáticas que ya conocías?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">03</span>
+    <p class="reflexion-q"><strong>¿Cuál de los tres tipos de aprendizaje</strong> puedes reconocer ahora en alguna app que uses seguido?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">04</span>
+    <p class="reflexion-q"><strong>¿Hay algo que antes pensabas que era "magia"</strong> de la tecnología que ahora tiene una explicación diferente?</p>
+  </li>
 </ol>
-<p><strong>Lo que esto demuestra:</strong></p>
-<ul>
-<li>No programaste ninguna regla (“si hay rectángulo negro y texto, es libro”). La máquina encontró los patrones sola.</li>
-<li>La cantidad de datos importa: con pocos ejemplos, el modelo se confunde fácilmente.</li>
-<li>Los datos de entrenamiento determinan el comportamiento: si solo le enseñaste el libro desde un ángulo, fallará desde otro.</li>
-</ul>
-<p>Esta última idea es fundamental y la vamos a ver una y otra vez durante el curso.</p>
-<hr>
-</section>
-<section id="actividad-de-reflexión" class="level3">
-<h3 class="anchored" data-anchor-id="actividad-de-reflexión">Actividad de reflexión</h3>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Para pensar (5 minutos)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Ahora que terminaste la sesión, responde para ti mismo estas preguntas:</p>
-<ol type="1">
-<li><p><strong>¿Qué herramientas de IA usaste hoy</strong> antes de entrar a esta sesión? Sé específico — no solo “el celular”, sino qué apps y en qué momento.</p></li>
-<li><p><strong>¿En qué momento de la sesión te cayó el veinte</strong> de que una parte del machine learning empieza con matemáticas que ya conocías?</p></li>
-<li><p><strong>¿Cuál de los tres tipos de aprendizaje</strong> puedes reconocer ahora en alguna app que uses seguido?</p></li>
-<li><p><strong>¿Hay algo que antes pensabas que era “magia”</strong> de la tecnología que ahora tiene una explicación diferente?</p></li>
-</ol>
-<p>No hay respuestas correctas o incorrectas. El objetivo es que empieces a ver el mundo con otros ojos.</p>
-</div>
-</div>
+<p class="reflexion-close">No hay respuestas correctas o incorrectas. El objetivo es que empieces a ver el mundo con otros ojos.</p>
 <hr>
 </section>
 <section id="la-idea-central-de-esta-sesión" class="level3">
 <h3 class="anchored" data-anchor-id="la-idea-central-de-esta-sesión">La idea central de esta sesión</h3>
-<p>Si tuvieras que quedarte con una sola cosa de hoy, sería esta:</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-La idea central
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>La inteligencia artificial no es magia ni consciencia. En su versión más simple, puede empezar con algo tan familiar como una recta: datos, error, pendiente e intersección. Cuando entiendes eso, la IA deja de verse como magia inexplicable y empieza a verse como matemáticas aplicadas a reconocer patrones.</p>
-</div>
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 1</span>
+  <p class="central-idea-text">La inteligencia artificial no es magia ni consciencia. En su versión más simple, puede empezar con algo tan familiar como una recta: <strong>datos, error, pendiente e intersección</strong>. Cuando entiendes eso, la IA deja de verse como magia inexplicable y empieza a verse como <strong>matemáticas aplicadas a reconocer patrones</strong>.</p>
 </div>
 <hr>
 </section>
 <section id="recursos-para-explorar-más-sobre-el-tema" class="level3">
 <h3 class="anchored" data-anchor-id="recursos-para-explorar-más-sobre-el-tema">Recursos para explorar más sobre el tema</h3>
-<ul>
-<li><a href="https://teachablemachine.withgoogle.com">Teachable Machine</a> — el demo que hicimos hoy, para que lo explores por tu cuenta</li>
-<li><a href="https://quickdraw.withgoogle.com">Quick, Draw!</a> — juega a que una red neuronal adivine tus dibujos</li>
-<li><a href="https://www.elementsofai.com/es">Elements of AI</a> — curso introductorio gratuito en español (Universidad de Helsinki)</li>
-<li><a href="https://experiments.withgoogle.com/collection/ai">Google AI Experiments</a> — colección de demos interactivos y gratuitos</li>
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://teachablemachine.withgoogle.com" target="_blank" rel="noopener">Teachable Machine <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Entrena tu propio modelo directamente en el navegador — sin código.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://quickdraw.withgoogle.com" target="_blank" rel="noopener">Quick, Draw! <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Juega a que una red neuronal adivine tus dibujos.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.elementsofai.com/es" target="_blank" rel="noopener">Elements of AI <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Curso introductorio gratuito en español — Universidad de Helsinki.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://experiments.withgoogle.com/collection/ai" target="_blank" rel="noopener">Google AI Experiments <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Colección de demos interactivos y gratuitos de Google.</p>
+  </li>
 </ul>
 <hr>
+<script type="module">
+import { annotate } from 'https://unpkg.com/rough-notation/lib/rough-notation.esm.js';
+
+function initAnnotations() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const defTerm      = document.querySelector('.ai-def-term');
+  const formula      = document.querySelector('.key-moment-formula');
+  const spoilerCirc  = document.querySelector('.spoiler-circle');
+
+  const items = [];
+  if (defTerm)     items.push({ el: defTerm,     ann: annotate(defTerm,     { type: 'underline', color: '#2780e3', strokeWidth: 2,   animationDuration: 500, padding: 2 }) });
+  if (formula)     items.push({ el: formula,     ann: annotate(formula,     { type: 'bracket',   color: '#0ea5e9', strokeWidth: 3, animationDuration: 600, brackets: ['left','right'], padding: 10 }) });
+  if (spoilerCirc) items.push({ el: spoilerCirc, ann: annotate(spoilerCirc, { type: 'circle',    color: '#2780e3', strokeWidth: 2.5, animationDuration: 700, padding: 6 }) });
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const item = items.find(i => i.el === entry.target);
+      if (item) { item.ann.show(); obs.unobserve(entry.target); }
+    });
+  }, { threshold: 0.6 });
+
+  items.forEach(i => obs.observe(i.el));
+}
+
+document.readyState === 'loading'
+  ? document.addEventListener('DOMContentLoaded', initAnnotations)
+  : initAnnotations();
+</script>
 <nav class="sesion-nav">
   <a href="../index.html" class="sesion-nav-btn prev">
     <span class="nav-label">← Inicio</span>

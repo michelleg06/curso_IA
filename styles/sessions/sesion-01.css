@@ -326,7 +326,7 @@
 
 .app-tour-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(260px, 0.92fr);
   gap: 1rem;
 }
 
@@ -358,10 +358,6 @@
   min-width: 0;
 }
 
-[data-app="instagram"] .app-tour-card-head {
-  gap: 0;
-}
-
 .app-tour-card:hover,
 .app-tour-card:focus-visible {
   border-color: rgba(14, 165, 233, 0.34);
@@ -380,17 +376,19 @@
   width: 44px;
   height: 44px;
   border-radius: 14px;
-  background: #f8fafc;
-  border: 1px solid #e2e8f0;
+  background: var(--logo-bg, #f8fafc);
+  border: 1px solid var(--logo-border, #e2e8f0);
   display: grid;
   place-items: center;
   overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .app-tour-logo img {
   width: 70%;
   height: 70%;
   object-fit: contain;
+  filter: drop-shadow(0 1px 1px rgba(15, 23, 42, 0.08));
 }
 
 .app-tour-logo-fallback {
@@ -401,7 +399,8 @@
   font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.06em;
-  color: var(--c-navy);
+  color: var(--logo-fallback-color, var(--c-navy));
+  background: var(--logo-fallback-bg, transparent);
 }
 
 .app-tour-logo.has-fallback img {
@@ -439,6 +438,21 @@
   background: linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(248,251,255,0.96) 100%);
   padding: 1rem 1.05rem;
   min-height: 100%;
+}
+
+.app-tour-family-pill {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 0.34rem 0.72rem;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  color: #1d4ed8;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 /* Fila superior del detalle: tipo + pill en fila con wrap */
@@ -677,6 +691,7 @@
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 0.2rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
 }
@@ -728,7 +743,7 @@
 }
 
 .concept-layer:not(.is-active) {
-  opacity: 0.9;
+  opacity: 0.84;
 }
 
 .concept-layer.is-active.concept-layer-ia {
@@ -755,15 +770,23 @@
 }
 
 .concept-layer-title {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 0.18rem 0;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.2;
 }
 
+.concept-layer.is-active .concept-layer-title {
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+}
+
 .concept-layer-note {
-  font-size: 0.82rem;
-  line-height: 1.45;
-  max-width: 24ch;
+  display: none;
 }
 
 .concept-map-hint {
@@ -943,11 +966,6 @@
   .concept-layer-title {
     font-size: 0.94rem;
   }
-
-  .concept-layer-note {
-    font-size: 0.78rem;
-    max-width: 100%;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -963,4 +981,518 @@
   .app-tour-card:hover {
     transform: none !important;
   }
+}
+
+/* ================================================
+   TIKTOK PREVIEW — populated phone + candidate cards
+================================================ */
+
+.tt-preview-layout {
+  display: flex;
+  gap: 1.4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.tt-preview-candidates {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.tt-preview-hint {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin: 0 0 0.25rem;
+}
+
+.tt-preview-candidate-card {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.45rem 0.7rem;
+  min-width: 152px;
+}
+
+.tt-preview-candidate-emoji {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.tt-preview-candidate-label {
+  flex: 1;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.tt-preview-score-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  background: #f1f5f9;
+  border-radius: 999px;
+  padding: 0.18rem 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+/* Phone screen interior — preview state */
+.tt-preview-video-area {
+  position: absolute;
+  inset: 2.2rem 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: radial-gradient(circle at top, rgba(34, 211, 238, 0.18), transparent 30%),
+              linear-gradient(180deg, #0f172a 0%, #111827 100%);
+}
+
+.tt-preview-video-emoji {
+  font-size: 2.2rem;
+  opacity: 0.6;
+}
+
+.tt-preview-video-msg {
+  margin: 0;
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-style: italic;
+  text-align: center;
+}
+
+.tt-preview-deciding {
+  font-size: 0.58rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
+}
+
+.tt-preview-copy-below {
+  margin: 0.85rem auto 0;
+  max-width: 40ch;
+  text-align: center;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--c-muted);
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .tt-preview-layout {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .tt-preview-candidates {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .tt-preview-candidate-card {
+    min-width: 0;
+  }
+}
+
+/* ============================================================
+   INTRO — two-column text + looping phone animation
+============================================================ */
+
+.intro-two-col {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: center;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.intro-text-col p {
+  line-height: 1.78;
+  margin-bottom: 1rem;
+}
+
+.intro-text-col p:last-child {
+  margin-bottom: 0;
+}
+
+.intro-phone-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Phone shell */
+.intro-phone-frame {
+  width: 155px;
+  background: #0f0f0f;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.38),
+    0 0 0 2px #2a2a2a,
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+
+/* Status bar / topbar — floats over feed */
+.intro-phone-topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.55rem 0.75rem 0.35rem;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, transparent 100%);
+  color: #fff;
+  font-size: 0.58rem;
+  font-weight: 600;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+}
+
+.intro-phone-topbar strong {
+  font-size: 0.62rem;
+  padding-bottom: 2px;
+  border-bottom: 2px solid #fff;
+}
+
+/* Feed viewport — clips the scroll animation */
+.intro-phone-feed-wrap {
+  height: 260px;
+  overflow: hidden;
+}
+
+/* Animated strip of video items */
+.intro-phone-feed {
+  display: flex;
+  flex-direction: column;
+  animation: tt-scroll 20s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-phone-feed { animation-play-state: paused; }
+}
+
+/* Single video item */
+.intro-feed-item {
+  width: 155px;
+  height: 260px;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0.7rem 0.65rem 0.7rem;
+}
+
+/* Center emoji */
+/* Right-side action icons */
+.intro-feed-side {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 2.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.82rem;
+}
+
+/* Bottom caption area */
+.intro-feed-info {
+  position: relative;
+  z-index: 1;
+  padding-right: 1.6rem;
+}
+
+.intro-feed-user {
+  margin: 0 0 0.1rem;
+  font-size: 0.61rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+}
+
+.intro-feed-caption {
+  margin: 0;
+  font-size: 0.57rem;
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  line-height: 1.45;
+  font-family: 'Atkinson Hyperlegible', system-ui, sans-serif;
+}
+
+/* Per-item GIF backgrounds — dark bottom overlay keeps text readable */
+.intro-feed-item:nth-child(1) {
+  background-image:
+    linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.75) 100%),
+    url('../../assets/intro-feed/dance.gif');
+  background-size: cover;
+  background-position: center;
+  background-color: #3b1f7a;
+}
+.intro-feed-item:nth-child(2) {
+  background-image:
+    linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.75) 100%),
+    url('../../assets/intro-feed/food.gif');
+  background-size: cover;
+  background-position: center;
+  background-color: #7c2d12;
+}
+.intro-feed-item:nth-child(3) {
+  background-image:
+    linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.75) 100%),
+    url('../../assets/intro-feed/soccer.gif');
+  background-size: cover;
+  background-position: center;
+  background-color: #14532d;
+}
+.intro-feed-item:nth-child(4) {
+  background-image:
+    linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.75) 100%),
+    url('../../assets/intro-feed/laugh.gif');
+  background-size: cover;
+  background-position: center;
+  background-color: #1e3a5f;
+}
+.intro-feed-item:nth-child(5) {
+  background-image:
+    linear-gradient(to bottom, transparent 45%, rgba(0,0,0,0.75) 100%),
+    url('../../assets/intro-feed/gaming.gif');
+  background-size: cover;
+  background-position: center;
+  background-color: #6b0030;
+}
+
+/*
+  translateY percentages are relative to the element's own height.
+  Feed = 5 items × 260px = 1300px.  -20% = -260px = one item.
+*/
+@keyframes tt-scroll {
+  0%,  17% { transform: translateY(0);    }   /* pause — item 1 */
+  20%, 37% { transform: translateY(-20%); }   /* pause — item 2 */
+  40%, 57% { transform: translateY(-40%); }   /* pause — item 3 */
+  60%, 77% { transform: translateY(-60%); }   /* pause — item 4 */
+  80%, 97% { transform: translateY(-80%); }   /* pause — item 5 */
+  100%     { transform: translateY(0);    }   /* instant loop reset */
+}
+
+@media (max-width: 640px) {
+  .intro-two-col {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .intro-phone-col { order: -1; }
+}
+
+/* ============================================================
+   LEARN LIST — 4-step "how ML learns" vertical sequence
+   Numbers mirror .reflexion-num style
+============================================================ */
+
+.learn-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 1.5rem 0;
+}
+
+.learn-item {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid #f1f5f9;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.learn-num {
+  flex-shrink: 0;
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--c-primary);
+  opacity: 0.22;
+  min-width: 2.4rem;
+  text-align: right;
+  user-select: none;
+}
+
+.learn-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.learn-title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.learn-caption {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: #64748b;
+}
+
+.learn-chart {
+  flex-shrink: 0;
+  display: block;
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .learn-item { flex-wrap: wrap; }
+  .learn-chart { width: 100%; max-width: 220px; }
+}
+
+/* ============================================================
+   SUPERVISED PAIR — two-column regression / classification cards
+============================================================ */
+
+.supervised-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 1.75rem 0;
+}
+
+@media (max-width: 600px) {
+  .supervised-pair { grid-template-columns: 1fr; }
+}
+
+.supervised-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.4rem 1.5rem;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+}
+
+.supervised-card-type {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-primary);
+}
+
+.supervised-card-def {
+  margin: 0 0 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.4;
+}
+
+.supervised-card-examples {
+  margin: 0;
+  padding-left: 1.1rem;
+  list-style: disc;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.supervised-card-examples li {
+  font-size: 0.84rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   PARADIGM CARDS — 3-column grid with stagger reveal
+============================================================ */
+
+.paradigm-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+  margin: 1.75rem 0 2rem;
+}
+
+@media (max-width: 680px) {
+  .paradigm-cards { grid-template-columns: 1fr; }
+}
+
+.paradigm-card {
+  border-radius: 16px;
+  padding: 1.4rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.paradigm-card:nth-child(2) { transition-delay: 0.12s; }
+.paradigm-card:nth-child(3) { transition-delay: 0.24s; }
+
+.paradigm-card-seen {
+  background: #eff6ff;
+  border: 2px solid var(--c-primary);
+}
+
+.paradigm-card-coming {
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+}
+
+.paradigm-card-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border-radius: 100px;
+  padding: 0.2em 0.7em;
+  align-self: flex-start;
+  margin-bottom: 0.1rem;
+}
+
+.badge-seen {
+  background: var(--c-primary);
+  color: #fff;
+}
+
+.badge-coming {
+  background: #e2e8f0;
+  color: #64748b;
+}
+
+.paradigm-card-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.paradigm-card-desc {
+  margin: 0;
+  font-size: 0.84rem;
+  color: #475569;
+  line-height: 1.55;
 }

@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sesión 8: IA para Creatividad: Arte, Música y Diseño – Intro a la IA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/logo.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles/sesion.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/logo.svg" alt="Intro a la IA" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Intro a la IA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">Programa</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sesiones" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Sesiones</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-sesiones">    
+        <li class="dropdown-header">— Bloque 1: Fundamentos + Ética —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-01.html">
+ <span class="dropdown-text">S1 · ¿Qué es la IA?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-02.html">
+ <span class="dropdown-text">S2 · Redes Neuronales — ¿Cómo ‘piensa’ la IA?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-03.html">
+ <span class="dropdown-text">S3 · Algoritmos de IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-04.html">
+ <span class="dropdown-text">S4 · IA Generativa</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-05.html">
+ <span class="dropdown-text">S5 · Ética y problemas reales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-06.html">
+ <span class="dropdown-text">S6 · EN VIVO: IA en México</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 2: Herramientas Prácticas —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-07.html">
+ <span class="dropdown-text">S7 · Tutor de Lenguaje</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-08.html">
+ <span class="dropdown-text">S8 · IA para Creatividad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-09.html">
+ <span class="dropdown-text">S9 · IA para Organización</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-10.html">
+ <span class="dropdown-text">S10 · Tutor Académico</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-11.html">
+ <span class="dropdown-text">S11 · EN VIVO: Educación Global</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 3: Creación, Aplicaciones y Futuro —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-12.html">
+ <span class="dropdown-text">S12 · Programación con IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-13.html">
+ <span class="dropdown-text">S13 · Robótica e IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-14.html">
+ <span class="dropdown-text">S14 · IA en Salud, Ciencia y Sociedad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-15.html">
+ <span class="dropdown-text">S15 · EN VIVO: Política Pública</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#video-ia-para-creatividad" id="toc-video-ia-para-creatividad" class="nav-link active" data-scroll-target="#video-ia-para-creatividad">Video: IA para Creatividad</a></li>
+  <li><a href="#texto-ia-para-creatividad" id="toc-texto-ia-para-creatividad" class="nav-link" data-scroll-target="#texto-ia-para-creatividad">Texto: IA para Creatividad</a></li>
+  <li><a href="#actividad-explorador-de-herramientas-creativas" id="toc-actividad-explorador-de-herramientas-creativas" class="nav-link" data-scroll-target="#actividad-explorador-de-herramientas-creativas">Actividad: Explorador de herramientas creativas</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sesión 8: IA para Creatividad: Arte, Música y Diseño</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 2 · Herramientas Prácticas</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-8"></div>
+    </div>
+    <span class="sesion-progress-label">8 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip">📅 23 de junio de 2026</span>
+    <span class="sesion-meta-chip">⏱ 45 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+<link rel="stylesheet" href="../styles/sessions/sesion-08.css">
+<script src="../interactives/sesion-08.js" defer=""></script>
+<section id="video-ia-para-creatividad" class="level2">
+<h2 class="anchored" data-anchor-id="video-ia-para-creatividad">Video: IA para Creatividad</h2>
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video: IA para Creatividad: Arte, Música y Diseño</p>
+</div>
+<hr>
+</section>
+<section id="texto-ia-para-creatividad" class="level2">
+<h2 class="anchored" data-anchor-id="texto-ia-para-creatividad">Texto: IA para Creatividad</h2>
+<hr>
+<section id="introducción" class="level3">
+<h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
+<p>En agosto de 2022, Jason Allen presentó una obra en la Feria Estatal de Colorado, en la categoría de arte digital emergente. La imagen se llamaba <em>Théâtre D’Opéra Spatial</em>: una escena de ópera de ciencia ficción, con personajes de espaldas mirando hacia una apertura luminosa, tonos dorados y una atmósfera casi cinematográfica. Ganó el primer lugar.</p>
+<p>Cuando se supo que Allen la había creado con Midjourney —un modelo generativo de imágenes— la reacción fue inmediata. “El arte ha muerto”, escribió alguien en redes. “Estamos a punto de ver el fin de la creatividad humana.” Allen respondió que había pasado horas ajustando los prompts, iterando versiones, eligiendo entre cientos de variaciones y editando el resultado final. “¿Eso no es arte?”, preguntó.</p>
+<p>Ese debate aún no tiene respuesta definitiva. Lo que sí podemos hacer es entender qué está pasando técnicamente, qué herramientas existen hoy, y qué preguntas hacernos sobre el futuro de la creatividad en un mundo con IA.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+La pregunta central de esta sesión
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cuando una IA genera algo que consideramos bello o expresivo, ¿quién o qué está siendo creativo?</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="el-proceso-creativo-con-ia" class="level3">
+<h3 class="anchored" data-anchor-id="el-proceso-creativo-con-ia">El proceso creativo con IA</h3>
+<p>En esta sesión no solo nos preguntaremos <em>qué herramientas existen</em>, sino <em>en qué parte del proceso creativo ayuda realmente la IA</em>. Nos enfocaremos en establecer un <strong>objetivo</strong>, diseñar un proceso iterativo de <strong>selección</strong> y desarrollar <strong>criterio</strong>.</p>
+<div class="creative-process-grid">
+  <div class="creative-process-card">
+    <span class="creative-process-step">1</span>
+    <h5 class="anchored">Definir el objetivo</h5>
+    <p>¿Qué pieza quieres crear, para quién, en qué contexto y con qué restricción? </p>
+  </div>
+  <div class="creative-process-card">
+    <span class="creative-process-step">2</span>
+    <h5 class="anchored">Generar variantes</h5>
+    <p>La IA puede producir rápidamente muchas opciones iniciales. Su valor aquí no es “acertar a la primera”, sino ampliar el espacio de posibilidades.</p>
+  </div>
+  <div class="creative-process-card">
+    <span class="creative-process-step">3</span>
+    <h5 class="anchored">Seleccionar con criterio</h5>
+    <p>No todo lo que se ve impresionante funciona. El trabajo creativo está en distinguir entre lo vistoso, lo coherente y lo que nos ayuda a cumplir con el objetivo.</p>
+  </div>
+  <div class="creative-process-card">
+    <span class="creative-process-step">4</span>
+    <h5 class="anchored">Refinar</h5>
+    <p>La siguiente versión no sale sola: alguien tiene que decidir qué corregir, qué mantener y qué eliminar. Iterar es el centro del proceso.</p>
+  </div>
+  <div class="creative-process-card">
+    <span class="creative-process-step">5</span>
+    <h5 class="anchored">Ser transparente sobre su uso</h5>
+    <p>Si la pieza entra en un concurso, se publica o se vende, se tiene que ser transparente sobre qué parte fue generada con IA, qué parte fue editada (con o sin IA) y qué decisiones tomó la persona autora.</p>
+  </div>
+</div>
+<p>La creatividad no desaparece al usar la IA. La IA puede ayudarte a producir borradores o explorar estilos. Pero la parte creativa más valiosa sigue estando en formular un buen objetivo, descartar lo genérico, detectar lo que no funciona y decidir qué vale la pena conservar.</p>
+<hr>
+</section>
+<section id="arte-generativo-del-objetivo-a-la-iteración" class="level3">
+<h3 class="anchored" data-anchor-id="arte-generativo-del-objetivo-a-la-iteración">Arte generativo: del objetivo a la iteración</h3>
+<p>La mejor manera de entender esto es dejar de pensar en prompts como fórmulas matemáticas y empezar a verlos como <strong>borradores de dirección creativa</strong>. Un buen resultado rara vez sale del primer intento. Lo normal es empezar con una idea general, ver qué falla y usar esa información para mejorar el producto.</p>
+<section id="demo-laboratorio-de-iteración-visual" class="level4">
+<h4 class="anchored" data-anchor-id="demo-laboratorio-de-iteración-visual"><strong>Demo: laboratorio de iteración visual</strong></h4>
+<p>En este demo no vas a “armar” un prompt desde cero. Vas a recorrer un proceso de creación: elegir un objetivo, ver cómo cambia el resultado a lo largo de tres rondas de refinamiento y observar cómo una decisión humana mueve la pieza de una variante genérica a una propuesta más sólida.</p>
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-creative" id="it-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Demo interactivo</p>
+        <h4 class="demo-title anchored">Del objetivo a la iteración: cómo mejora una idea visual</h4>
+        <p class="demo-copy">Sigue un caso concreto: un cartel para un festival de cine. Cada ronda muestra el prompt, el resultado y la decisión humana que empuja la siguiente versión.</p>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div class="it-preview-stack">
+              <span class="it-preview-frame">Objetivo</span>
+              <span class="it-preview-arrow">→</span>
+              <span class="it-preview-frame">Variantes</span>
+              <span class="it-preview-arrow">→</span>
+              <span class="it-preview-frame">Selección</span>
+              <span class="it-preview-arrow">→</span>
+              <span class="it-preview-frame">Refinamiento</span>
+            </div>
+          </div>
+          <p class="demo-preview-copy">Un objetivo creativo, tres rondas de iteración. Inicia el demo para seguir el proceso.</p>
+        </div>
+      </div>
+      <div class="demo-stage-live">
+        <!-- Populated by sesion-08.js initCreativeIteration() -->
+      </div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5 class="anchored">Qué estás viendo</h5>
+        <p id="it-seeing">Inicia el demo para explorar cómo una idea mejora a través de varias rondas.</p>
+      </div>
+      <div class="demo-insight">
+        <h5 class="anchored">Qué significa</h5>
+        <p id="it-meaning">La creatividad con IA no está en hacer clic en “generar”, sino en decidir qué problema intentas resolver y cómo corriges la siguiente versión.</p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <p id="it-status" class="demo-status">Inicia el demo para recorrer el proceso de iteración.</p>
+      <div class="demo-actions">
+        <button id="it-start" class="demo-btn demo-btn-primary">Iniciar demo</button>
+        <button id="it-reset" class="btn-restart" disabled="">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<p>Una persona creativa no se distingue solo por imaginar una idea, sino por detectar cuándo algo todavía se siente genérico, confuso o falto de propósito o contexto. La IA acelera la producción de variantes; el criterio humano decide cuál merece ser presentada al mundo.</p>
+<hr>
+</section>
+</section>
+<section id="música-generativa-dirigir-no-es-lo-mismo-que-componer" class="level3">
+<h3 class="anchored" data-anchor-id="música-generativa-dirigir-no-es-lo-mismo-que-componer">Música generativa: dirigir no es lo mismo que componer</h3>
+<p>Con música generativa ocurre algo parecido. Pedir <em>“haz una canción triste”</em> produce cualquier cosa. Dirigir creativamente una pieza implica mucho más: decidir género, energía, textura, instrumentación, tono de la voz, estructura y contexto. La IA puede generar material; la dirección artística sigue siendo una tarea humana.</p>
+<div class="music8-compare">
+  <div class="music8-card">
+    <span class="music8-kicker">1 · Prompt ambiguo</span>
+    <h5 class="anchored">"Haz una canción triste"</h5>
+    <p>El resultado puede sonar emocional, pero también genérico. No queda claro para quién es, qué atmósfera buscas ni qué papel cumple la música.</p>
+  </div>
+  <div class="music8-card">
+    <span class="music8-kicker">2 · Prompt dirigido</span>
+    <h5 class="anchored">"Bolero lento con trompeta y voz íntima sobre extrañar una ciudad"</h5>
+    <p>Aquí ya hay dirección: género, instrumentación, tono emocional y tema. El sistema tiene más información para acercarse a una intención concreta.</p>
+  </div>
+  <div class="music8-card">
+    <span class="music8-kicker">3 · Decisión humana</span>
+    <h5 class="anchored">Elegir, recortar, reescribir, descartar</h5>
+    <p>La parte creativa no termina al generar. Alguien tiene que decidir si el coro funciona, si la letra suena falsa, si la voz encaja y si la pieza sirve para el proyecto.</p>
+  </div>
+</div>
+<div class="music8-players">
+  <p class="music8-player-intro">Escucha la diferencia: el mismo tema con distintos niveles de dirección creativa.</p>
+  <div class="music8-player-row">
+    <div class="music8-player-card">
+      <span class="music8-kicker">1 · Prompt ambiguo</span>
+      <p class="music8-player-label">"Haz una canción triste"</p>
+      <audio controls="" class="music8-audio">
+        <source src="../assets/sesion-08/audio/01-prompt-ambiguo.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+    <div class="music8-player-card">
+      <span class="music8-kicker">2 · Prompt dirigido</span>
+      <p class="music8-player-label">"Bolero lento con trompeta y voz íntima sobre extrañar una ciudad"</p>
+      <audio controls="" class="music8-audio">
+        <source src="../assets/sesion-08/audio/02-prompt-dirigido.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+    <div class="music8-player-card">
+      <span class="music8-kicker">3 · Con iteración</span>
+      <p class="music8-player-label">"+ tempo (70bpm) · + trompeta con sordina · + ciudad lluviosa de noche · + sintetizador análogo · + contraste melancólico/bailable"</p>
+      <audio controls="" class="music8-audio">
+        <source src="../assets/sesion-08/audio/03-con-iteracion.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+  <p class="music8-player-note">🎵 Pistas generadas con <a href="https://suno.com" target="_blank" rel="noopener">Suno</a>.</p>
+</div>
+<hr>
+</section>
+<section id="diseño-con-ia-acelerar-no-es-resolver-el-objetivo" class="level3">
+<h3 class="anchored" data-anchor-id="diseño-con-ia-acelerar-no-es-resolver-el-objetivo">Diseño con IA: acelerar no es resolver el objetivo</h3>
+<p>En diseño, la IA puede ayudarte a producir borradores, extender imágenes, proponer paletas o generar variantes de layout. Pero una pieza visual no funciona porque “se ve impresionante”, funciona si responde al objetivo. Imagínate un diseño de logo 3D que en pantalla causa gran impacto, pero al momento de repartirlo en folletos pierde impacto y, pero aún, legibilidad. Por eso, en diseño, la pregunta crucial no es <em>“¿se ve cool?”</em> sino <em>“¿cumple su propósito?”</em></p>
+<div class="design8-grid">
+  <div class="design8-card">
+    <h5 class="anchored"><strong>Propósito</strong></h5>
+    <p>¿La pieza informa, persuade, vende, orienta o solo decora? Una imagen espectacular puede fracasar si no comunica su objetivo.</p>
+  </div>
+  <div class="design8-card">
+    <h5 class="anchored"><strong>Público</strong></h5>
+    <p>Diseñar para niños, estudiantes universitarios o clientes de lujo no exige la misma estética, tono ni nivel de complejidad visual.</p>
+  </div>
+  <div class="design8-card">
+    <h5 class="anchored"><strong>Legibilidad</strong></h5>
+    <p>Si el cartel no se entiende en dos segundos o la interfaz confunde, la pieza no resolvió el problema aunque la imagen sea llamativa.</p>
+  </div>
+  <div class="design8-card">
+    <h5 class="anchored"><strong>Consistencia</strong></h5>
+    <p>Una campaña o marca necesita coherencia entre versiones. Aquí la edición, la selección y el criterio pesan más que la primera generación.</p>
+  </div>
+</div>
+<p>Para estudiantes de diseño, esto deja una lección clara: la IA automatiza parte de la ejecución, pero no reemplaza la comprensión del problema, la lectura del contexto, la conversación con clientes o usuarios y la capacidad de argumentar por qué una solución es mejor que otra.</p>
+<section id="ia-para-diseño-perspectiva-internacional" class="level4">
+<h4 class="anchored" data-anchor-id="ia-para-diseño-perspectiva-internacional"><strong>IA para Diseño: perspectiva internacional</strong></h4>
+<p>Investigadores y profesionales del diseño llevan tiempo documentando cómo la IA está cambiando el proceso creativo. Estas dos referencias sintetizan bien el debate actual.</p>
+<div class="ref8-block">
+  <a href="https://www.smashingmagazine.com/2025/08/prompting-design-act-brief-guide-iterate-ai/" target="_blank" rel="noopener" class="ref8-card">
+    <div class="ref8-img-wrap">
+      <img src="../assets/sesion-08/ref-smashing.png" alt="Captura del artículo de Smashing Magazine: Prompting Is A Design Act" class="ref8-img">
+    </div>
+    <div class="ref8-body">
+      <span class="ref8-source">Smashing Magazine · Lyndon Cerejo · Ago 2025</span>
+      <h5 class="ref8-title anchored">Prompting Is A Design Act: How To Brief, Guide And Iterate With AI</h5>
+      <p class="ref8-summary">Escribir un buen prompt no es solo escribir instrucciones: es un acto creativo equivalente a redactar un informe. Requiere definir el rol de la IA, el contexto del encargo, las restricciones del proyecto y el resultado esperado. Lo que hace que los diseñadores sean buenos —criterio, empatía, capacidad de iterar— es exactamente lo que produce buenos prompts. La habilidad técnica de usar la herramienta importa menos que saber qué se quiere de ella.</p>
+      <span class="ref8-link">Leer artículo →</span>
+    </div>
+  </a>
+  <div class="ref8-flow">
+    <span class="ref8-flow-intro">Estructura de un buen prompt de diseño</span>
+    <div class="ref8-flow-steps">
+      <div class="ref8-flow-step ref8-step-human"><span class="ref8-flow-dot"></span>Objetivo</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-human"><span class="ref8-flow-dot"></span>Contexto</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-human"><span class="ref8-flow-dot"></span>Restricciones</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-ai"><span class="ref8-flow-dot"></span>Resultado</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-human"><span class="ref8-flow-dot"></span>Evaluar</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-both"><span class="ref8-flow-dot"></span>Iterar</div>
+    </div>
+    <div class="ref8-flow-legend">
+      <span class="ref8-legend-item ref8-step-human"><span class="ref8-flow-dot"></span>Decisión humana</span>
+      <span class="ref8-legend-item ref8-step-ai"><span class="ref8-flow-dot"></span>IA genera</span>
+      <span class="ref8-legend-item ref8-step-both"><span class="ref8-flow-dot"></span>Ambos</span>
+    </div>
+  </div>
+</div>
+<div class="ref8-block">
+  <a href="https://www.belmont.edu/stories/articles/2025/ai-in-design.html" target="_blank" rel="noopener" class="ref8-card">
+    <div class="ref8-img-wrap">
+      <img src="../assets/sesion-08/ref-belmont.png" alt="Captura del artículo de Belmont University: AI in Design" class="ref8-img">
+    </div>
+    <div class="ref8-body">
+      <span class="ref8-source">Belmont University · Watkins College of Art · Sep 2025</span>
+      <h5 class="ref8-title anchored">AI in Design: Practical Workflows, Ethics and Portfolio Tips from Agency Leaders</h5>
+      <p class="ref8-summary">Un grupo de directores de agencias creativas en EE.UU. han documentado cómo la IA entra en seis momentos clave del proceso de diseño: investigación, planeación, conceptualización, producción, distribución y validación. En cada etapa, la IA puede acelerar la ejecución, pero las decisiones de dirección —qué problema resolver, qué ruta tomar, qué vale la pena presentar— siguen siendo humanas. El resultado es una figura laboral nueva: el diseñador como director creativo que utiliza herramientas tecnológicas.</p>
+      <span class="ref8-link">Leer artículo →</span>
+    </div>
+  </a>
+  <div class="ref8-flow">
+    <span class="ref8-flow-intro">El diseñador como director creativo: fases del proceso</span>
+    <div class="ref8-flow-steps">
+      <div class="ref8-flow-step ref8-step-both"><span class="ref8-flow-dot"></span>Investigar</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-human"><span class="ref8-flow-dot"></span>Planear</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-human"><span class="ref8-flow-dot"></span>Conceptualizar</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-ai"><span class="ref8-flow-dot"></span>Ejecutar</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-ai"><span class="ref8-flow-dot"></span>Multiplicar</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-human"><span class="ref8-flow-dot"></span>Validar</div>
+    </div>
+    <div class="ref8-flow-legend">
+      <span class="ref8-legend-item ref8-step-human"><span class="ref8-flow-dot"></span>Decisión humana</span>
+      <span class="ref8-legend-item ref8-step-ai"><span class="ref8-flow-dot"></span>IA acelera</span>
+      <span class="ref8-legend-item ref8-step-both"><span class="ref8-flow-dot"></span>Ambos</span>
+    </div>
+  </div>
+</div>
+<hr>
+</section>
+</section>
+</section>
+<section id="actividad-explorador-de-herramientas-creativas" class="level2">
+<h2 class="anchored" data-anchor-id="actividad-explorador-de-herramientas-creativas">Actividad: Explorador de herramientas creativas</h2>
+<p>Ahora sí tiene sentido mirar herramientas concretas. Después de entender el proceso, el criterio de comparación cambia: no se trata solo de “cuál genera cosas bonitas”, sino de en qué parte del flujo creativo ayuda cada una.</p>
+<p>Explora cada categoría y presta atención a tres preguntas: para qué sirve cada herramienta, qué tipo de objetivo aprovecha mejor y qué tan útil es para idear, iterar o editar.</p>
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-creative" id="ct-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Actividad interactiva</p>
+        <h4 class="demo-title anchored">Herramientas creativas con IA: Imagen · Música · Diseño</h4>
+        <p class="demo-copy">9 herramientas organizadas en 3 categorías. Cada ficha muestra para qué sirve, un ejemplo de prompt y las condiciones de acceso. Explora las categorías para comparar opciones.</p>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div class="pa-preview-parts">
+              <span class="pa-preview-part">🎨 Imagen</span>
+              <span class="pa-preview-part">🎵 Música</span>
+              <span class="pa-preview-part">✏️ Diseño</span>
+            </div>
+          </div>
+          <p class="demo-preview-copy">3 herramientas por categoría. Inicia el explorador para ver las fichas.</p>
+        </div>
+      </div>
+      <div class="demo-stage-live">
+        <!-- Populated by sesion-08.js initCreativeTools() -->
+      </div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5 class="anchored">Qué estás viendo</h5>
+        <p id="ct-seeing">Inicia el explorador para ver las herramientas por categoría.</p>
+      </div>
+      <div class="demo-insight">
+        <h5 class="anchored">Qué significa</h5>
+        <p id="ct-meaning">La barrera de entrada a la creación con IA es muy baja hoy. Lo que sigue siendo difícil es desarrollar criterio para saber cuándo un resultado es bueno.</p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <p id="ct-status" class="demo-status">Inicia el explorador para comparar herramientas creativas.</p>
+      <div class="demo-actions">
+        <button id="ct-start" class="demo-btn demo-btn-primary">Abrir explorador</button>
+        <button id="ct-reset" class="btn-restart" disabled="">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<section id="el-caso-colorado-cuando-la-ia-gana-un-concurso-de-arte" class="level3">
+<h3 class="anchored" data-anchor-id="el-caso-colorado-cuando-la-ia-gana-un-concurso-de-arte">El caso Colorado: cuando la IA gana un concurso de arte</h3>
+<p>Volvamos al punto de partida. En 2022, Jason Allen no ocultó que usó Midjourney —lo declaró en su formulario de inscripción como “Jason Allen via Midjourney”. La feria no tenía reglas sobre IA. Ganó con las reglas existentes.</p>
+<div class="colorado-case">
+  <span class="colorado-kicker">📍 Caso de estudio · Colorado, agosto 2022</span>
+  <p class="colorado-headline">Théâtre D'Opéra Spatial: el primer gran debate sobre autoría y arte generativo</p>
+  <p class="colorado-body">Jason Allen pasó semanas generando imágenes con Midjourney, eligiendo entre cientos de variantes, ajustando prompts y refinando el resultado. La imagen final la imprimió en lienzo de alta calidad y la presentó en la categoría "Arte Digital Emergente" de la Colorado State Fair. El jurado, sin saber el origen, le otorgó el primer lugar.</p>
+  <p class="colorado-body">Cuando Allen publicó en Twitter que había ganado con IA, la reacción fue intensa. Artistas digitales profesionales denunciaron que el concurso debería haber tenido reglas explícitas. Otros argumentaron que Allen hizo un trabajo creativo genuino al seleccionar, iterar y curar el resultado. La controversia llevó a muchos concursos a actualizar sus bases para incluir o prohibir explícitamente el uso de IA.</p>
+  <p class="colorado-body">El caso no tiene una respuesta correcta concreta. Tiene, en cambio, varias preguntas que todavía estamos aprendiendo a responder.</p>
+</div>
+<figure class="colorado-figure figure">
+  <img src="../assets/sesion-08/colorado.webp" alt="Théâtre D'Opéra Spatial (2022), Jason Allen via Midjourney. Ganadora del primer lugar en arte digital emergente, Colorado State Fair." class="colorado-img figure-img" onerror="this.closest('figure').style.display='none'">
+  <figcaption class="colorado-caption">
+    <em>Théâtre D'Opéra Spatial</em> (2022) · Jason Allen via Midjourney.
+    <a href="https://www.nytimes.com/2022/09/02/technology/ai-artificial-intelligence-artists.html" target="_blank" rel="noopener">Cobertura en The New York Times →</a>
+  </figcaption>
+</figure>
+<section id="las-perspectivas-del-debate" class="level4">
+<h4 class="anchored" data-anchor-id="las-perspectivas-del-debate"><strong>Las perspectivas del debate</strong></h4>
+<p>El caso <em>Colorado</em> presenta un debate que se repite en concursos de escritura, fotografía, composición musical y diseño. Cada posición tiene argumentos legítimos:</p>
+<div class="stakeholder8-grid">
+  <div class="stakeholder8-card">
+    <div class="stakeholder8-header">
+      <span class="stakeholder8-emoji">🎨</span>
+      <p class="stakeholder8-role">Artista digital profesional</p>
+    </div>
+    <span class="stakeholder8-position">"Competencia desleal"</span>
+    <p class="stakeholder8-arg">Pasé años aprendiendo a usar herramientas de diseño, desarrollar un estilo propio y construir mi técnica. Que alguien gane con un prompt de texto en el mismo concurso le quita el sentido a la categoría. Los concursos deberían tener divisiones separadas.</p>
+  </div>
+  <div class="stakeholder8-card">
+    <div class="stakeholder8-header">
+      <span class="stakeholder8-emoji">💻</span>
+      <p class="stakeholder8-role">Usuario de herramientas IA</p>
+    </div>
+    <span class="stakeholder8-position">"El prompt es el trabajo creativo"</span>
+    <p class="stakeholder8-arg">Generé cientos de imágenes antes de elegir una. Cada decisión —qué pedir, qué descartar, cómo editar el resultado— fue mía. Un fotógrafo no construye su cámara; un diseñador no programa su software. La herramienta no define el mérito.</p>
+  </div>
+  <div class="stakeholder8-card">
+    <div class="stakeholder8-header">
+      <span class="stakeholder8-emoji">⚖️</span>
+      <p class="stakeholder8-role">Organizador de concurso</p>
+    </div>
+    <span class="stakeholder8-position">"Las reglas no anticiparon esto"</span>
+    <p class="stakeholder8-arg">Nuestras bases definen categorías por técnica: óleo, acuarela, arte digital. No teníamos una  categoría para "imagen generada por IA". Allen no mintió sobre la herramienta. Pero nuestras reglas no estaban diseñadas para este caso. Actualizamos las bases para el siguiente año.</p>
+  </div>
+  <div class="stakeholder8-card">
+    <div class="stakeholder8-header">
+      <span class="stakeholder8-emoji">📸</span>
+      <p class="stakeholder8-role">Fotógrafo profesional</p>
+    </div>
+    <span class="stakeholder8-position">"Esto ya ocurrió antes con la fotografía"</span>
+    <p class="stakeholder8-arg">En el siglo XIX, los pintores decían que la fotografía no era arte porque la máquina hacía el trabajo. Con el tiempo, la fotografía desarrolló su propia estética y criterios propios. La IA generativa probablemente recorra el mismo camino.</p>
+  </div>
+  <div class="stakeholder8-card">
+    <div class="stakeholder8-header">
+      <span class="stakeholder8-emoji">🏛️</span>
+      <p class="stakeholder8-role">Institución cultural</p>
+    </div>
+    <span class="stakeholder8-position">"Necesitamos nuevas categorías, no prohibiciones"</span>
+    <p class="stakeholder8-arg">Prohibir la IA en todos los concursos es como prohibir los sintetizadores en la música. Lo que nos debemos preguntar no es si "¿se usó IA?", sino "¿qué decisiones creativas tomó la persona que firmó la obra?" Eso es lo que debería evaluarse.</p>
+  </div>
+  <div class="stakeholder8-card">
+    <div class="stakeholder8-header">
+      <span class="stakeholder8-emoji">🎓</span>
+      <p class="stakeholder8-role">Estudiante de artes visuales</p>
+    </div>
+    <span class="stakeholder8-position">"¿Para qué aprendo técnica si la IA la reemplaza?"</span>
+    <p class="stakeholder8-arg">Entiendo que la técnica siempre fue un medio, no un fin. Pero si el mercado empieza a preferir imágenes generadas, ¿sigue valiendo la pena invertir años en aprender a dibujar o a pintar? Esa pregunta me preocupa genuinamente.</p>
+  </div>
+</div>
+<p>No hay una posición correcta en este debate. Sin embargo, es importante reflexionar bajo qué condiciones, con qué transparencia y en qué contextos es legítimo usar IA generativa en una práctica creativa.</p>
+<hr>
+</section>
+</section>
+<section id="autoría-y-derechos-de-autor" class="level3">
+<h3 class="anchored" data-anchor-id="autoría-y-derechos-de-autor">Autoría y derechos de autor</h3>
+<p>El caso <em>Colorado</em> abre también una pregunta legal que los tribunales de varios países están respondiendo activamente: ¿a quién pertenece una imagen generada con IA?</p>
+<div class="copyright8-compare">
+  <div class="cr8-col cr8-col-humano">
+    <span class="cr8-col-kicker">🧑 Obra humana</span>
+    <h5 class="anchored">Marco legal establecido</h5>
+    <ul>
+      <li>El artisa/autor tiene derechos de autor desde que la obra se crea</li>
+      <li>Puede registrarla, licenciarla y recibir regalías</li>
+      <li>La protección dura décadas después de la muerte del autor</li>
+      <li>Aplica a pintura, fotografía, música, texto y diseño</li>
+      <li>El uso de herramientas no elimina la autoría (un fotógrafo sigue siendo autor aunque use una cámara automática)</li>
+    </ul>
+  </div>
+  <div class="cr8-col cr8-col-ia">
+    <span class="cr8-col-kicker">🤖 Obra generada con IA</span>
+    <h5 class="anchored">Marco legal en construcción</h5>
+    <ul>
+      <li>En EE.UU., la Oficina de Derechos de Autor ha rechazado registros de obras "meramente generadas por IA"</li>
+      <li>Obras con "contribución humana suficiente" pueden calificar para protección parcial</li>
+      <li>El umbral de "contribución humana" no está bien definido todavía</li>
+      <li>Los datos de entrenamiento de los modelos son objeto de demandas activas</li>
+      <li>México, la UE y otros países aún están desarrollando marcos regulatorios propios que todavía no están consolidados</li>
+    </ul>
+  </div>
+</div>
+<p>La pregunta de los <strong>datos de entrenamiento</strong> es particularmente relevante: los modelos se entrenaron con imágenes tomadas de internet, muchas de ellas obra de artistas que no dieron permiso explícito. Varias demandas colectivas —incluyendo la de Getty Images contra Stability AI— argumentan que esto constituye infracción de derechos de autor a escala masiva. Los resultados de esas demandas definirán el marco legal de las próximas décadas.</p>
+<p>Para uso personal o educativo, estas preguntas son menos urgentes. Para uso comercial —vender imágenes generadas, usarlas en publicidad, presentarlas en concursos— conviene informarse sobre el marco legal local, y estar conscientes de que puede cambiar de un momento a otro.</p>
+<hr>
+</section>
+<section id="la-idea-central-de-esta-sesión" class="level3">
+<h3 class="anchored" data-anchor-id="la-idea-central-de-esta-sesión">La idea central de esta sesión</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Idea Central
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>La IA generativa ha democratizado el acceso a herramientas de creación visual, musical y de diseño. Pero esa democratización viene con preguntas sin respuesta: sobre autoría, sobre derechos, sobre qué significa “crear” y qué valor tiene lo que los humanos hacemos cuando las máquinas pueden producir resultados formalmente similares. Usar estas herramientas con criterio requiere entender tanto su funcionamiento técnico como las implicaciones éticas de su uso.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="recursos-para-explorar-más" class="level3">
+<h3 class="anchored" data-anchor-id="recursos-para-explorar-más">Recursos para explorar más</h3>
+<ul>
+<li><a href="https://www.midjourney.com/">Midjourney</a> — generación de imágenes artísticas vía Discord y web</li>
+<li><a href="https://firefly.adobe.com/">Adobe Firefly</a> — generación e edición de imágenes para flujos de trabajo de diseño</li>
+<li><a href="https://chatgpt.com/">DALL·E 3 en ChatGPT</a> — generación de imágenes integrada en ChatGPT</li>
+<li><a href="https://suno.com/">Suno</a> — generación de canciones completas con letra, melodía y producción</li>
+<li><a href="https://www.udio.com/">Udio</a> — composición musical generativa con mayor control de estilo</li>
+<li><a href="https://www.canva.com/ai-image-generator/">Canva IA</a> — diseño visual con generación de imágenes integrada</li>
+<li><a href="https://help.runwayml.com/hc/en-us/articles/42460036199443-Text-to-Video-Prompting-Guide">Runway: guía de prompting para video</a> — útil para ver cómo cambian los prompts cuando, además de imagen, importa el movimiento</li>
+<li><a href="https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw">Blob Opera</a> — forma accesible de experimentar con armonía y juego vocal asistido por IA</li>
+<li><a href="https://www.smashingmagazine.com/2025/08/prompting-design-act-brief-guide-iterate-ai/">Smashing Magazine: Prompting Is A Design Act</a> — cómo las habilidades de diseño se transfieren directamente al trabajo con IA generativa (Lyndon Cerejo, 2025)</li>
+<li><a href="https://www.belmont.edu/stories/articles/2025/ai-in-design.html">Belmont University: AI in Design — Practical Workflows, Ethics and Portfolio Tips</a> — perspectiva de directores de agencias creativas sobre el rol del diseñador en la era de la IA (2025)</li>
+<li><a href="https://observatorio.tec.mx/edu-news/el-rol-de-la-ia-generativa-en-el-proceso-creativo/">Observatorio Tec: el rol de la IA generativa en la creatividad</a> — buena lectura para pensar la IA como apoyo dentro del proceso creativo, no como sustituto</li>
+<li><a href="https://www.copyright.gov/ai/">U.S. Copyright Office: Copyright and Artificial Intelligence</a> — posición oficial de EE.UU. sobre obras generadas con IA</li>
+<li><a href="https://newsroom.gettyimages.com/en/getty-images/getty-images-statement">Demanda de Getty Images contra Stability AI</a> — comunicado sobre la demanda por datos de entrenamiento</li>
+</ul>
+<hr>
+<nav class="sesion-nav">
+  <a href="sesion-07.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S7: Tutor de Lenguaje</span>
+  </a>
+  <div class="sesion-nav-center">
+    <div class="sesion-nav-dots">
+      <span class="sesion-nav-dot published" title="Sesión 1"></span>
+      <span class="sesion-nav-dot published" title="Sesión 2"></span>
+      <span class="sesion-nav-dot published" title="Sesión 3"></span>
+      <span class="sesion-nav-dot published" title="Sesión 4"></span>
+      <span class="sesion-nav-dot published" title="Sesión 5"></span>
+      <span class="sesion-nav-dot" title="Sesión 6"></span>
+      <span class="sesion-nav-dot published" title="Sesión 7"></span>
+      <span class="sesion-nav-dot active" title="Sesión 8"></span>
+      <span class="sesion-nav-dot" title="Sesión 9"></span>
+      <span class="sesion-nav-dot" title="Sesión 10"></span>
+      <span class="sesion-nav-dot" title="Sesión 11"></span>
+      <span class="sesion-nav-dot" title="Sesión 12"></span>
+      <span class="sesion-nav-dot" title="Sesión 13"></span>
+      <span class="sesion-nav-dot" title="Sesión 14"></span>
+      <span class="sesion-nav-dot" title="Sesión 15"></span>
+    </div>
+    <span class="sesion-nav-progress">Sesión 8 de 15</span>
+  </div>
+  <a href="sesion-09.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S9: IA para Organización</span>
+  </a>
+</nav>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.curso-ia-slp\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Intro a la IA · San Luis Potosí · 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

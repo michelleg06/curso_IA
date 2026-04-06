@@ -93,12 +93,12 @@ function initConceptDemo() {
       eyebrow: "Campo más amplio",
       title: "Inteligencia Artificial",
       body:
-        "Incluye cualquier técnica que haga que un sistema resuelva tareas asociadas con inteligencia: seguir reglas, planear, reconocer patrones o tomar decisiones.",
-      chips: ["Sistemas expertos", "Ajedrez programado", "Ruteo con reglas", "Asistentes virtuales"],
+        "Incluye cualquier técnica que haga que un sistema resuelva tareas asociadas con inteligencia humana: seguir reglas, planear, reconocer patrones o tomar decisiones.",
+      chips: ["Sistemas expertos", "Ajedrez programado", "Asistentes virtuales"],
       seeing:
         "La capa exterior contiene a las demás. IA es el paraguas general: no todo lo que está aquí aprende de datos.",
       meaning:
-        "Este nivel recuerda que la IA es más amplia que machine learning. También puede incluir reglas explícitas, búsqueda y lógica."
+        "Este nivel nos recuerda que la IA no es solamente machine learning; es decir, aprendizaje basado en datos. También puede incluir reglas explícitas, búsqueda y lógica."
     },
     ml: {
       tone: "ml",
@@ -108,9 +108,9 @@ function initConceptDemo() {
         "Aquí el sistema aprende patrones a partir de ejemplos en vez de depender solo de reglas escritas por humanos.",
       chips: ["Filtro de spam", "Predicción de tráfico", "Recomendadores", "Detección de fraude"],
       seeing:
-        "La capa media representa los sistemas que aprenden desde datos. Sigue dentro de IA, pero ya depende de entrenamiento.",
+        "La capa media representa los sistemas que aprenden a partir de (grandes) datos. Sigue siendo inteligencia artificial, pero depende de un entrenamiento riguroso basado en datos.",
       meaning:
-        "Cuando hoy decimos “IA” en una app cotidiana, muchas veces en realidad hablamos de machine learning."
+        "Cuando hablamos de la “IA” en una app cotidiana, muchas veces en realidad nos referimos al machine learning."
     },
     dl: {
       tone: "dl",
@@ -122,7 +122,7 @@ function initConceptDemo() {
       seeing:
         "La capa más interna es la más específica: redes profundas que aprenden representaciones cada vez más abstractas.",
       meaning:
-        "Deep learning explica gran parte de los avances recientes, pero sigue siendo solo una parte de machine learning."
+        "El Deep learning - o aprendizaje profundo - explica gran parte de los avances tecnológicos recientes, pero sigue siendo solo una parte del machine learning."
     }
   };
 
@@ -140,7 +140,7 @@ function initConceptDemo() {
         ${item.chips.map((chip) => `<span class="concept-chip">${chip}</span>`).join("")}
       </div>
     `;
-    setText("concept-status", `${item.title} — selección activa.`);
+    setText("concept-status", `${item.title}`);
     setInsights("concept", item.seeing, item.meaning);
   }
 
@@ -151,20 +151,6 @@ function initConceptDemo() {
       layer.setAttribute("aria-pressed", active ? "true" : "false");
     });
     renderPanel(key);
-  }
-
-  function resetPreview() {
-    deactivateShell("concept");
-    document.querySelectorAll(".concept-layer").forEach((layer) => {
-      layer.classList.remove("is-active");
-      layer.setAttribute("aria-pressed", "false");
-    });
-    setText("concept-status", "Haz clic en “Abrir mapa”.");
-    setInsights(
-      "concept",
-      "El mapa interactivo aparece al abrir el bloque.",
-      "La idea central es jerárquica: deep learning vive dentro de machine learning, y machine learning vive dentro de IA."
-    );
   }
 
   function start() {
@@ -179,9 +165,8 @@ function initConceptDemo() {
     });
   });
 
-  $("concept-start")?.addEventListener("click", start);
-  $("concept-reset")?.addEventListener("click", resetPreview);
-  resetPreview();
+  $("concept-reset")?.addEventListener("click", start);
+  start();
 }
 
 function initAppTour() {
@@ -189,24 +174,34 @@ function initAppTour() {
     {
       id: "tiktok",
       name: "TikTok",
-      short: "Ordena candidatos según señales de atención.",
-      logo: "https://cdn.simpleicons.org/tiktok/111827",
+      short: "Ordena videos según señales de atención.",
+      aiFamily: "IA - Machine Learning",
+      logo: "https://cdn.simpleicons.org/tiktok/FFFFFF",
+      logoBg: "linear-gradient(135deg, #111111 0%, #25f4ee 18%, #111111 52%, #fe2c55 100%)",
+      logoBorder: "rgba(17, 17, 17, 0.18)",
+      fallbackBg: "linear-gradient(135deg, #111111 0%, #25f4ee 18%, #111111 52%, #fe2c55 100%)",
+      fallbackColor: "#ffffff",
       fallback: "TT",
       kind: "Recomendación",
       aiType: "Ranking + modelos de secuencia",
       detail:
-        "Cada interacción funciona como señal: tiempo de visualización, repetición, compartir, deslizar rápido o detenerse. El sistema usa esas señales para ordenar candidatos antes de mostrar el siguiente video.",
+        "Cada interacción funciona como una señal: tiempo de visualización, repetición, compartir, deslizar rápido o detenerse. El sistema usa esas señales para ordenar candidatos antes de mostrar el siguiente video.",
       cues: ["tiempo de vista", "volver a ver", "compartidos", "tasa de omisión"],
       seeing:
-        "Una app centrada en feed corto donde la IA decide qué video aparece primero.",
+        "Una app centrada en feed (Para ti) donde la IA decide qué video aparece primero.",
       meaning:
-        "No se trata de una sola recomendación aislada, sino de un problema continuo de ranking."
+        "No se trata de una recomendación aislada, sino de un problema continuo de ranking (categorización)."
     },
     {
       id: "spotify",
       name: "Spotify",
       short: "Combina audio, historial y comportamiento colectivo.",
-      logo: "https://cdn.simpleicons.org/spotify/111827",
+      aiFamily: "IA - Machine Learning",
+      logo: "https://cdn.simpleicons.org/spotify/FFFFFF",
+      logoBg: "#1db954",
+      logoBorder: "rgba(29, 185, 84, 0.28)",
+      fallbackBg: "#1db954",
+      fallbackColor: "#ffffff",
       fallback: "SP",
       kind: "Descubrimiento musical",
       aiType: "Análisis de audio + filtrado colaborativo",
@@ -216,13 +211,18 @@ function initAppTour() {
       seeing:
         "Una plataforma musical donde cada canción puede sugerir la siguiente sin intervención humana directa.",
       meaning:
-        "La recomendación mezcla contenido y comportamiento: lo que suena parecido y lo que suele gustar junto."
+        "La recomendación mezcla contenido y comportamiento: lo que suena parecido y lo que suele gustar al mismo tiempo."
     },
     {
       id: "maps",
       name: "Google Maps",
       short: "Predice tráfico y evalúa rutas en tiempo real.",
-      logo: "https://cdn.simpleicons.org/googlemaps/111827",
+      aiFamily: "IA - Machine Learning",
+      logo: "../assets/google-maps-pin.svg",
+      logoBg: "linear-gradient(135deg, #ffffff 0%, #eef6ff 100%)",
+      logoBorder: "rgba(66, 133, 244, 0.24)",
+      fallbackBg: "linear-gradient(135deg, #dbeafe 0%, #dcfce7 100%)",
+      fallbackColor: "#2563eb",
       fallback: "GM",
       kind: "Predicción",
       aiType: "Series temporales + optimización",
@@ -230,15 +230,20 @@ function initAppTour() {
         "El tiempo estimado de llegada no es una certeza: es una predicción basada en GPS, patrones históricos, incidentes actuales y modelos que ajustan el tráfico esperado por zona y horario.",
       cues: ["GPS", "histórico por hora", "incidentes", "ETA"],
       seeing:
-        "Una app de navegación donde el valor útil no es solo el mapa, sino la predicción de lo que pasará en la ruta.",
+        "Una app de navegación donde se hace una predicción de lo que pasará en una ruta establecida en un mapa digital.",
       meaning:
-        "La IA aquí anticipa condiciones futuras para ayudarte a decidir ahora."
+        "La IA aquí anticipa condiciones futuras para ayudarte a decidir en el instante."
     },
     {
       id: "instagram",
       name: "Instagram",
-      short: "Detecta landmarks faciales en tiempo real.",
-      logo: "https://cdn.simpleicons.org/instagram/111827",
+      short: "Detecta (landmarks) puntos faciales en tiempo real.",
+      aiFamily: "IA - Deep Learning",
+      logo: "https://cdn.simpleicons.org/instagram/FFFFFF",
+      logoBg: "linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%)",
+      logoBorder: "rgba(221, 42, 123, 0.24)",
+      fallbackBg: "linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%)",
+      fallbackColor: "#ffffff",
       fallback: "IG",
       kind: "Visión por computadora",
       aiType: "Redes convolucionales",
@@ -246,15 +251,20 @@ function initAppTour() {
         "Los filtros detectan puntos concretos del rostro para ubicar ojos, nariz, mejillas o boca cuadro por cuadro. Esa detección ocurre en milisegundos y permite superponer efectos con precisión.",
       cues: ["landmarks", "detección facial", "seguimiento", "render en vivo"],
       seeing:
-        "Una cámara social donde el filtro parece decorativo, pero debajo hay un modelo de visión muy concreto.",
+        "Una cámara social donde el filtro parece decorativo, pero debajo hay un modelo de visión muy complejo.",
       meaning:
-        "El sistema no entiende “una cara” como un humano: estima patrones visuales y posiciones."
+        "El sistema estima patrones visuales y posiciones en una imagen."
     },
     {
       id: "gmail",
       name: "Gmail",
       short: "Clasifica correos útiles, sospechosos o spam.",
-      logo: "https://cdn.simpleicons.org/gmail/111827",
+      aiFamily: "IA - Machine Learning",
+      logo: "../assets/gmail-icon-2020.svg",
+      logoBg: "linear-gradient(135deg, #ffffff 0%, #fff7f7 100%)",
+      logoBorder: "rgba(234, 67, 53, 0.22)",
+      fallbackBg: "#fef2f2",
+      fallbackColor: "#b91c1c",
       fallback: "GM",
       kind: "Clasificación de texto",
       aiType: "Modelos supervisados de texto",
@@ -270,12 +280,17 @@ function initAppTour() {
       id: "ride",
       name: "Uber",
       short: "Ajusta precio, oferta y tiempo estimado.",
-      logo: "https://cdn.simpleicons.org/uber/111827",
+      aiFamily: "IA - Machine Learning",
+      logo: "https://cdn.simpleicons.org/uber/FFFFFF",
+      logoBg: "#111111",
+      logoBorder: "rgba(15, 23, 42, 0.24)",
+      fallbackBg: "#111111",
+      fallbackColor: "#ffffff",
       fallback: "UB",
       kind: "Optimización dinámica",
       aiType: "Predicción geoespacial + pricing",
       detail:
-        "Uber ajusta precios y tiempos en tiempo real usando demanda, disponibilidad de conductores, clima, zona y eventos locales. La IA no solo estima cuánto tardará el viaje: también decide cuánto cuesta en ese momento.",
+        "Uber ajusta precios y tiempos en tiempo real usando demanda local, disponibilidad de conductores, clima, zona y eventos locales. La IA no solo estima cuánto tardará el viaje: también decide cuánto cuesta en ese momento.",
       cues: ["demanda", "conductores", "clima", "precio dinámico"],
       seeing:
         "Una app de movilidad donde la cifra que ves cambia según el contexto de la ciudad.",
@@ -288,6 +303,7 @@ function initAppTour() {
 
   function detailMarkup(app) {
     return `
+      <div class="app-tour-family-pill">${app.aiFamily}</div>
       <div class="app-tour-detail-top">
         <p class="app-tour-detail-kicker">${app.kind}</p>
         <span class="app-tour-type-pill">${app.aiType}</span>
@@ -308,7 +324,10 @@ function initAppTour() {
         (app) => `
           <button type="button" class="app-tour-card${app.id === activeApp.id ? " is-active" : ""}" data-app="${app.id}" aria-pressed="${app.id === activeApp.id ? "true" : "false"}">
             <div class="app-tour-card-head">
-              <span class="app-tour-logo">
+              <span
+                class="app-tour-logo"
+                style="--logo-bg:${app.logoBg}; --logo-border:${app.logoBorder}; --logo-fallback-bg:${app.fallbackBg}; --logo-fallback-color:${app.fallbackColor};"
+              >
                 <img data-logo src="${app.logo}" alt="${app.name}">
                 <span class="app-tour-logo-fallback" aria-hidden="true">${app.fallback}</span>
               </span>
@@ -332,20 +351,9 @@ function initAppTour() {
 
   function renderDetail() {
     setHTML("app-tour-detail", detailMarkup(activeApp));
-    setText("apps-status", `${activeApp.name} — seleccionada.`);
+    setText("apps-status", `${activeApp.name}`);
     setInsights("apps", activeApp.seeing, activeApp.meaning);
     setupLogoFallback(document);
-  }
-
-  function resetPreview() {
-    activeApp = apps[0];
-    deactivateShell("apps");
-    setText("apps-status", "Haz clic en “Abrir recorrido”.");
-    setInsights(
-      "apps",
-      "Un catálogo de apps cotidianas que todavía está cerrado. Al abrirlo podrás comparar cómo usa IA cada una.",
-      "La misma tecnología “IA” aparece con funciones distintas: recomendación, clasificación, visión, predicción u optimización."
-    );
   }
 
   function start() {
@@ -354,9 +362,8 @@ function initAppTour() {
     renderDetail();
   }
 
-  $("apps-start")?.addEventListener("click", start);
-  $("apps-reset")?.addEventListener("click", resetPreview);
-  resetPreview();
+  $("apps-reset")?.addEventListener("click", () => { activeApp = apps[0]; start(); });
+  start();
 }
 
 function initTikTokDemo() {
@@ -610,22 +617,8 @@ function initRegressionDemo() {
   let predictionVisible = false;
   let mode = "preview";
   let controlsLocked = false;
-
-  function renderRows() {
-    const tbody = $("lr-tbody");
-    if (!tbody) return;
-    tbody.innerHTML = students
-      .map(
-        (student) => `
-          <tr>
-            <td>${student.name}</td>
-            <td class="demo-value-x">${student.x} h</td>
-            <td class="demo-value-y">${student.y}</td>
-          </tr>
-        `
-      )
-      .join("");
-  }
+  let triangleVisible = false;
+  let hasInteracted = false;
 
   function meanAbsoluteError(slopeValue, interceptValue) {
     return d3.mean(students, (student) => Math.abs(student.y - (slopeValue * student.x + interceptValue)));
@@ -633,7 +626,7 @@ function initRegressionDemo() {
 
   function feedbackLabel(error) {
     if (error < 3.2) return "Casi perfecto";
-    if (error < 5.5) return "Buen ojo";
+    if (error < 5.5) return "Vas muy cerca";
     if (error < 8.5) return "Vas cerca";
     return "Sigue ajustando";
   }
@@ -722,22 +715,22 @@ function initRegressionDemo() {
               strokeWidth: 1.5
             })
           : null,
-        Plot.link(triangle.segments, {
+        triangleVisible ? Plot.link(triangle.segments, {
           x1: "x1",
           y1: "y1",
           x2: "x2",
           y2: "y2",
           stroke: "#f59e0b",
           strokeWidth: 2.2
-        }),
-        Plot.text(triangle.labels, {
+        }) : null,
+        triangleVisible ? Plot.text(triangle.labels, {
           x: "x",
           y: "y",
           text: "text",
           fill: "#b45309",
           fontSize: 11,
           fontWeight: 700
-        }),
+        }) : null,
         Plot.dot(students, {
           x: "x",
           y: "y",
@@ -769,26 +762,27 @@ function initRegressionDemo() {
   function updateManualMessage() {
     const error = meanAbsoluteError(currentSlope, currentIntercept);
     const feedback = feedbackLabel(error);
+    if (error < 5.5) triangleVisible = true;
 
-    setText("lr-status", `Reto — mueve m y b. Error medio: ${error.toFixed(1)} pts. ${feedback}.`);
+    setText("lr-status", `Reto: mueve m y b. Error promedio: ${error.toFixed(1)} pts. ${feedback}.`);
 
     if (error < 3.2) {
       setInsights(
         "lr",
-        "Tu línea ya atraviesa muy bien la nube de puntos. El triángulo naranja te recuerda cuánto sube la recta por cada hora extra.",
-        "Ese es el corazón del modelo: pendiente e intersección. Aquí “aprender” significa encontrar números que reduzcan el error."
+        "Tu línea ya atraviesa muy bien la nube de puntos. El triángulo naranja te recuerda cuánto sube la recta (calificación) por cada hora extra de estudio.",
+        "Este proceso es funamental: pendiente e intersección. Aquí “aprender” significa encontrar los números que minimicen el error entre una línea y una nube de puntos."
       );
     } else if (error < 5.5) {
       setInsights(
         "lr",
-        "La recta ya empieza a seguir la tendencia general de los puntos, aunque todavía no es la mejor posible.",
-        "Vas descubriendo la lógica del ajuste: si la pendiente o el arranque se pasan, el error aumenta."
+        "La recta ya empieza a seguir la tendencia general de los puntos, aunque todavía no llega a su ubicación final.",
+        "Vas descubriendo la lógica del ajuste: si la pendiente o el arranque (inicio) se pasan, el error aumenta."
       );
     } else {
       setInsights(
         "lr",
-        "Los puntos azules son datos reales. La línea azul es tu hipótesis actual sobre cómo se relacionan horas y calificación.",
-        "Machine learning empieza así: propones una relación, mides error y ajustas. No hay magia; hay álgebra y prueba de hipótesis."
+        "Los puntos azules son datos de estudiantes que hemos recopilado. La línea azul es tu hipótesis actual sobre cómo se relacionan las horas de estudio con la calificación obtenida en un examen.",
+        "Machine learning empieza así: propones una relación, mides el error y ajustas. No hay magia; hay álgebra y prueba de hipótesis."
       );
     }
   }
@@ -854,39 +848,22 @@ function initRegressionDemo() {
     controlsLocked = false;
     residualsVisible = false;
     predictionVisible = false;
+    triangleVisible = false;
+    hasInteracted = false;
     predictionX = 5;
     currentSlope = startSlope;
     currentIntercept = startIntercept;
-    renderRows();
+    $("lr-rise-card")?.setAttribute("hidden", "hidden");
     renderRegression();
-    setText("lr-status", "Reto — ajusta tu recta antes que la máquina.");
+    setText("lr-status", "Reto: ajusta una recta antes que la máquina.");
     setInsights(
       "lr",
-      "Los puntos azules son estudiantes reales. La línea azul es tu primer intento de explicar la relación entre horas y calificación.",
-      "Aquí está el golpe pedagógico: machine learning puede empezar con algo que ya conoces de álgebra, `y = mx + b`."
+      "Los puntos azules son estudiantes. La línea azul es tu primer intento de explicar la relación entre horas de estudio y calificación.",
+      "Este es el meollo del asunto: el aprendizaje de una máquina (machine learning) puede empezar con algo que ya conoces de álgebra, `y = mx + b`."
     );
     updateManualMessage();
   }
 
-  function resetPreview() {
-    runId += 1;
-    mode = "preview";
-    currentSlope = startSlope;
-    currentIntercept = startIntercept;
-    residualsVisible = false;
-    predictionVisible = false;
-    predictionX = 5;
-    controlsLocked = false;
-    deactivateShell("lr");
-    renderRows();
-    renderRegression();
-    setText("lr-status", "Haz clic en “Entrar al reto”.");
-    setInsights(
-      "lr",
-      "Vas a ver el mismo problema que enfrenta el modelo: un conjunto de puntos y una recta que todavía no encaja bien.",
-      "La idea central es que “aprender” aquí significa ajustar pendiente e intersección hasta bajar el error."
-    );
-  }
 
   async function autoFit() {
     const token = ++runId;
@@ -895,66 +872,82 @@ function initRegressionDemo() {
     controlsLocked = true;
     predictionVisible = false;
     residualsVisible = false;
+    triangleVisible = false;
     renderRegression();
 
-    setText("lr-status", "Paso 1 — La máquina mira tu recta y empieza a medir qué tan lejos queda de los datos.");
+    // Paso 1 — Mide el error
+    setText("lr-status", "Paso 1 — Mide el error: la máquina calcula qué tan lejos queda la recta de cada punto.");
     setInsights(
       "lr",
-      "La recta todavía es la tuya. Lo que cambia ahora es que el sistema convierte la diferencia entre línea y puntos en un error medible.",
-      "Eso hace posible el aprendizaje: si puedes medir error, puedes intentar reducirlo."
+      "La recta todavía es la tuya. Ahora el sistema convierte la diferencia entre la línea y los puntos en un número medible.",
+      "Si puedes medir el error, puedes intentar reducirlo. Eso es lo que hace posible el aprendizaje."
     );
-    await wait(800);
-
+    await wait(600);
+    if (token !== runId) return;
     residualsVisible = true;
     renderRegression();
+    await wait(1500);
+
+    // Paso 2 — Empieza a ajustar
     if (token !== runId) return;
-    setText("lr-status", "Paso 2 — Ahora ajusta m y b para bajar ese error.");
+    setText("lr-status", "Paso 2 — Ajusta m y b: la recta empieza a inclinarse hacia los datos.");
     setInsights(
       "lr",
-      "Todavía no apareció nada mágico: solo una línea que se va moviendo para acercarse mejor al patrón de los puntos.",
-      "Aprender, en este ejemplo, significa cambiar dos números hasta encontrar una recta mejor."
+      "Todavía no hay nada extraordinario: solo una línea que se mueve para acercarse mejor al patrón de los puntos.",
+      "Aprender, en este ejemplo, significa cambiar dos números —m y b— hasta encontrar una recta que reduzca el error."
     );
-    await wait(900);
+    await wait(1200);
 
+    // Animación de ajuste — con pausa de "Paso 3" a mitad
     if (token !== runId) return;
     residualsVisible = false;
     const initialSlope = currentSlope;
     const initialIntercept = currentIntercept;
-    const steps = prefersReducedMotion() ? 1 : 24;
+    const steps = prefersReducedMotion() ? 1 : 36;
+    const midStep = Math.floor(steps / 2);
     for (let step = 0; step <= steps; step += 1) {
       if (token !== runId) return;
       currentSlope = d3.interpolateNumber(initialSlope, learnedSlope)(step / steps);
       currentIntercept = d3.interpolateNumber(initialIntercept, learnedIntercept)(step / steps);
       renderRegression();
+      if (step === midStep) {
+        setText("lr-status", "Paso 3 — Reduce el error: la recta se acerca cada vez más a los puntos…");
+      }
       await wait(55);
     }
 
+    // Paso 4 — Error mínimo, resultado final
     if (token !== runId) return;
     mode = "machine";
     controlsLocked = true;
     residualsVisible = true;
+    triangleVisible = true;
     predictionVisible = true;
     predictionX = 5;
+    $("lr-rise-card")?.removeAttribute("hidden");
     renderRegression();
-    setText("lr-status", "Resultado — la máquina encontró la mejor recta aproximada y ahora puede predecir casos nuevos.");
+    setText("lr-status", "Paso 4 — ¡Error minimizado! La máquina encontró la mejor recta aproximada y ya puede predecir.");
     setInsights(
       "lr",
-      "La línea final no pasa por todos los puntos, pero sí captura muy bien la tendencia general. El punto amarillo ya es una predicción nueva.",
-      "Aquí está el punch: aprender no fue magia. Fue ajustar números conocidos de álgebra hasta reducir el error."
+      "La línea final no pasa por todos los puntos, pero sí captura muy bien la tendencia general. El punto amarillo es una predicción nueva.",
+      "Aprender no fue magia. Fue ajustar dos números —m y b— hasta reducir el error. Eso es machine learning (o aprendizaje de máquinas)."
     );
   }
 
   function handleManualChange() {
     if (mode !== "manual" || controlsLocked) return;
+    if (!hasInteracted) {
+      hasInteracted = true;
+      $("lr-rise-card")?.removeAttribute("hidden");
+    }
     currentSlope = Number($("lr-slope-slider")?.value ?? startSlope);
     currentIntercept = Number($("lr-intercept-slider")?.value ?? startIntercept);
     renderRegression();
     updateManualMessage();
   }
 
-  $("lr-start")?.addEventListener("click", enterChallenge);
   $("lr-auto")?.addEventListener("click", autoFit);
-  $("lr-reset")?.addEventListener("click", resetPreview);
+  $("lr-reset")?.addEventListener("click", enterChallenge);
   $("lr-slope-slider")?.addEventListener("input", handleManualChange);
   $("lr-intercept-slider")?.addEventListener("input", handleManualChange);
   $("lr-predict-slider")?.addEventListener("input", (event) => {
@@ -962,8 +955,7 @@ function initRegressionDemo() {
     renderRegression();
   });
   window.addEventListener("resize", () => renderRegression());
-  renderRows();
-  resetPreview();
+  enterChallenge();
 }
 
 function initKMeansDemo() {
@@ -1057,7 +1049,7 @@ function initKMeansDemo() {
     deactivateShell("km");
     renderClusterPlot();
     setHTML("km-tags", "");
-    setText("km-status", "Haz clic en “Ver animación”.");
+    setText("km-status", "");
     setInsights(
       "km",
       "Una nube de canciones sin etiquetas visibles. Cada punto representa una canción descrita por dos características numéricas.",
@@ -1718,7 +1710,7 @@ function initRLDemo() {
     resetCharacter();
     deactivateShell("rl");
     renderScene();
-    setText("rl-status", "Haz clic en “Ver animación”.");
+    setText("rl-status", "");
     setInsights(
       "rl",
       "Un agente frente a un hueco y una meta. Se empieza solo con un problema por resolver.",
@@ -1768,11 +1760,156 @@ function initRLDemo() {
   resetPreview();
 }
 
+// ── Learn List: step-by-step cartesian plane visualization ──
+// Built via JS innerHTML to bypass Pandoc's HTML-attribute mangling of {=html} blocks.
+function initLearnList() {
+  const mount = document.getElementById("learn-list-mount");
+  if (!mount) return;
+
+  // SVG coordinate system — viewBox "0 0 200 155"
+  // Axis origin SVG (42, 125).
+  // x: hours 0-5  →  SVG x = 42 + h*27.6   (0h→42, 2h→97, 4h→152, 5h→180)
+  // y: grade 55-88 →  SVG y = 125 - (g-55)*3.33  (60→108, 70→75, 80→42, 85→25)
+  // The 3 data points from the table: (0h,60) (2h,70) (4h,80) — all on y=5x+60.
+
+  const base = `
+    <rect width="200" height="155" fill="#f8fafc"/>
+    <line x1="42" y1="108" x2="180" y2="108" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="42" y1="75"  x2="180" y2="75"  stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="42" y1="42"  x2="180" y2="42"  stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="97"  y1="15" x2="97"  y2="125" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="152" y1="15" x2="152" y2="125" stroke="#e2e8f0" stroke-width="1"/>
+    <line x1="42" y1="125" x2="183" y2="125" stroke="#64748b" stroke-width="1.5"/>
+    <line x1="42" y1="125" x2="42"  y2="13"  stroke="#64748b" stroke-width="1.5"/>
+    <line x1="42"  y1="125" x2="42"  y2="129" stroke="#64748b" stroke-width="1.5"/>
+    <text x="42"  y="138" text-anchor="middle" font-size="9" fill="#475569">0</text>
+    <line x1="97"  y1="125" x2="97"  y2="129" stroke="#64748b" stroke-width="1.5"/>
+    <text x="97"  y="138" text-anchor="middle" font-size="9" fill="#475569">2</text>
+    <line x1="152" y1="125" x2="152" y2="129" stroke="#64748b" stroke-width="1.5"/>
+    <text x="152" y="138" text-anchor="middle" font-size="9" fill="#475569">4</text>
+    <text x="111" y="150" text-anchor="middle" font-size="8" fill="#64748b" font-style="italic">horas de estudio</text>
+    <line x1="42" y1="108" x2="38" y2="108" stroke="#64748b" stroke-width="1.5"/>
+    <text x="36" y="111" text-anchor="end" font-size="9" fill="#475569">60</text>
+    <line x1="42" y1="75"  x2="38" y2="75"  stroke="#64748b" stroke-width="1.5"/>
+    <text x="36" y="78"  text-anchor="end" font-size="9" fill="#475569">70</text>
+    <line x1="42" y1="42"  x2="38" y2="42"  stroke="#64748b" stroke-width="1.5"/>
+    <text x="36" y="45"  text-anchor="end" font-size="9" fill="#475569">80</text>
+    <text x="13" y="75" text-anchor="middle" font-size="8" fill="#64748b" font-style="italic" transform="rotate(-90 13 75)">calificación</text>
+    <circle cx="42"  cy="108" r="5" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="97"  cy="75"  r="5" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="152" cy="42"  r="5" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>`;
+
+  const svgWrap = (inner) =>
+    `<svg class="learn-chart" viewBox="0 0 200 155" role="img">${base}${inner}</svg>`;
+
+  const steps = [
+    {
+      num: "01",
+      title: "Los datos en el plano cartesiano",
+      caption: "Cada fila de la tabla es un punto: x = horas estudiadas, y = calificación obtenida.",
+      chart: svgWrap(`
+        <text x="52"  y="105" font-size="8" fill="#2780e3" font-weight="600">(0, 60)</text>
+        <text x="100" y="70"  font-size="8" fill="#2780e3" font-weight="600">(2, 70)</text>
+        <text x="155" y="37"  font-size="8" fill="#2780e3" font-weight="600">(4, 80)</text>`),
+    },
+    {
+      num: "02",
+      title: "Una recta al azar — con error",
+      caption: "La máquina empieza con una línea plana (m=0). Las barras rojas muestran cuánto se equivoca.",
+      chart: svgWrap(`
+        <line x1="42" y1="75" x2="180" y2="75" stroke="#f97316" stroke-width="2" stroke-dasharray="6 3"/>
+        <line x1="42"  cy="108" x2="42"  y2="75" stroke="#ef4444" stroke-width="2"/>
+        <line x1="42"  y1="108" x2="42"  y2="75" stroke="#ef4444" stroke-width="2"/>
+        <line x1="152" y1="42"  x2="152" y2="75" stroke="#ef4444" stroke-width="2"/>
+        <text x="50"  y="94"  font-size="8" fill="#ef4444" font-weight="600">error</text>
+        <text x="156" y="61"  font-size="8" fill="#ef4444" font-weight="600">error</text>`),
+    },
+    {
+      num: "03",
+      title: "Ajusta m y b — la recta se inclina",
+      caption: "Cambia m (pendiente) y b (arranque). El error se reduce, la recta se acerca a los datos.",
+      chart: svgWrap(`
+        <line x1="42" y1="75" x2="180" y2="75" stroke="#f97316" stroke-width="1" stroke-dasharray="4 3" opacity="0.3"/>
+        <line x1="42" y1="97" x2="180" y2="51" stroke="#f97316" stroke-width="2" stroke-dasharray="6 3"/>`),
+    },
+    {
+      num: "04",
+      title: "ŷ = 5x + 60 — error mínimo",
+      caption: "La recta pasa exactamente por los tres puntos. La máquina encontró m = 5 y b = 60.",
+      chart: svgWrap(`
+        <line x1="42" y1="108" x2="180" y2="21" stroke="#22c55e" stroke-width="2.5"/>
+        <text x="98" y="53" font-size="9" fill="#22c55e" font-weight="700">ŷ = 5x + 60 ✓</text>`),
+    },
+  ];
+
+  mount.innerHTML = steps
+    .map(
+      (s) => `
+    <div class="learn-item">
+      <span class="learn-num" aria-hidden="true">${s.num}</span>
+      <div class="learn-text">
+        <p class="learn-title">${s.title}</p>
+        <p class="learn-caption">${s.caption}</p>
+      </div>
+      ${s.chart}
+    </div>`
+    )
+    .join("\n");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  initLearnList();
   initConceptDemo();
   initAppTour();
   initTikTokDemo();
   initRegressionDemo();
   initKMeansDemo();
   initRLDemo();
+  initScrollReveal();
 });
+
+/* ---- Scroll-reveal: fade-up for demos + content components ---- */
+function initScrollReveal() {
+  if (prefersReducedMotion()) return;
+
+  // Fade-up reveal for demos and standalone content components
+  const revealTargets = document.querySelectorAll(
+    ".demo-wrap, .ai-definition, .ai-properties, .key-moment, " +
+    ".flowchart-figure, .ia-myth, .resource-card, .app-row, .paradigm-card"
+  );
+  if (revealTargets.length) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+    revealTargets.forEach((el) => {
+      el.classList.add("will-reveal");
+      revealObserver.observe(el);
+    });
+  }
+
+  // Auto-play: trigger start button when demo scrolls into view
+  const autoPlayWrappers = document.querySelectorAll(".demo-wrap[data-autoplay]");
+  if (autoPlayWrappers.length) {
+    const playObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const startBtn = entry.target.querySelector(".demo-btn-primary:not([disabled])");
+            if (startBtn) startBtn.click();
+            playObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.32 }
+    );
+    autoPlayWrappers.forEach((wrap) => playObserver.observe(wrap));
+  }
+}

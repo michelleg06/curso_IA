@@ -252,6 +252,11 @@ ul.task-list li input[type="checkbox"] {
 <p>Son las 11 de la noche. Abres WhatsApp para mandarle un mensaje a alguien y el teclado ya te propone la siguiente palabra antes de que termines de escribir. Minutos después entras a Instagram y la app detecta tu cara automáticamente para etiquetarte en una foto. Antes de dormir revisas Spotify: el algoritmo ya preparó una playlist nueva que, de alguna forma, suena exactamente como lo que quieres escuchar ahora mismo. A las 11:03 tu app de noticias muestra un artículo que encaja perfecto con algo que buscaste esta mañana.</p>
 <p>Cuatro apps. Cuatro tipos de IA distintos.</p>
 <p>Esto no es casualidad. El sistema que predice tu siguiente palabra en WhatsApp es completamente diferente al que detecta tu cara en Instagram. El que agrupa tu música según tu estado de ánimo no tiene nada que ver con el que ordena tus noticias. Cada uno fue diseñado para resolver un <strong>tipo distinto de problema</strong>..</p>
+<!-- TODO S3: This intro references K-Means and RL as having been introduced in S1.
+     The K-Means (km-shell) and Mario RL (rl-shell) demos are currently hidden in S1
+     inside a {.content-hidden} block. When migrating those demos here, update this
+     paragraph to remove the "(K-Means en S1)" and "(refuerzo en S1)" references,
+     and instead introduce them here as new interactives. -->
 <p>En las sesiones anteriores viste cómo aprende una máquina: ajustando una recta a partir de datos (regresión lineal en S1), agrupando sin etiquetas (K-Means en S1), aprendiendo por ensayo y error (refuerzo en S1), y construyendo redes neuronales capa por capa (S2). Hoy vamos a organizar todo eso — más algunos métodos nuevos — dentro de un mapa que te permita responder la pregunta clave:</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -468,6 +473,11 @@ Repaso rápido — S1
   <span class="resource-card-arrow">→</span>
 </a>
 <hr>
+<!-- TODO S3: Migrate K-Means demo (id="km-shell") from sesion-01.qmd here.
+     It is currently wrapped in {.content-hidden} in S1 (after the paradigm-cards block).
+     Move the full demo-wrap div + supporting JS/CSS here, then update the callout
+     below to say "vamos a ver" instead of "viste en S1". Also update the SVG flowchart
+     "ya lo conoces" label for K-Means (if present). -->
 </section>
 <section id="k-means-ya-lo-conoces" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="k-means-ya-lo-conoces">K-Means — ya lo conoces</h4>
@@ -582,6 +592,11 @@ Repaso rápido — S1
   <span class="resource-card-arrow">→</span>
 </a>
 <hr>
+<!-- TODO S3: Migrate RL Mario demo (id="rl-shell") from sesion-01.qmd here.
+     It is currently wrapped in {.content-hidden} in S1 (after the K-Means demo).
+     Move the full demo-wrap div + canvas + supporting JS/CSS here, then update
+     the callout below to say "vamos a ver" instead of "viste en S1". Also update
+     the SVG flowchart "ya lo conoces" label for refuerzo (if present). -->
 </section>
 <section id="aprendizaje-por-refuerzo-ya-lo-conoces" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="aprendizaje-por-refuerzo-ya-lo-conoces">Aprendizaje por refuerzo — ya lo conoces</h4>
