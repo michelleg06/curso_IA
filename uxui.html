@@ -150,7 +150,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="./sesiones/sesion-11.html">
- <span class="dropdown-text">S11 · EN VIVO: Educación Global</span></a>
+ <span class="dropdown-text">S11 · EN VIVO: Política Pública</span></a>
   </li>  
         <li class="dropdown-header">— Bloque 3: Creación, Aplicaciones y Futuro —</li>
         <li>
@@ -167,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="./sesiones/sesion-15.html">
- <span class="dropdown-text">S15 · EN VIVO: Política Pública</span></a>
+ <span class="dropdown-text">S15 · EN VIVO: Educación Global</span></a>
   </li>  
     </ul>
   </li>
@@ -203,9 +203,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#a.-frontmatter" id="toc-a.-frontmatter" class="nav-link" data-scroll-target="#a.-frontmatter">A. Frontmatter</a></li>
   <li><a href="#b.-session-banner" id="toc-b.-session-banner" class="nav-link" data-scroll-target="#b.-session-banner">B. Session Banner</a></li>
   <li><a href="#c.-page-assets" id="toc-c.-page-assets" class="nav-link" data-scroll-target="#c.-page-assets">C. Page Assets</a></li>
-  <li><a href="#d.-video-placeholder" id="toc-d.-video-placeholder" class="nav-link" data-scroll-target="#d.-video-placeholder">D. Video Placeholder</a></li>
-  <li><a href="#e.-text-content-section" id="toc-e.-text-content-section" class="nav-link" data-scroll-target="#e.-text-content-section">E. Text Content Section</a></li>
-  <li><a href="#f.-reflection-and-closure" id="toc-f.-reflection-and-closure" class="nav-link" data-scroll-target="#f.-reflection-and-closure">F. Reflection and Closure</a></li>
+  <li><a href="#d.-opening-capsule-sequence" id="toc-d.-opening-capsule-sequence" class="nav-link" data-scroll-target="#d.-opening-capsule-sequence">D. Opening Capsule Sequence</a></li>
+  <li><a href="#e.-videotext-complement-disclaimer" id="toc-e.-videotext-complement-disclaimer" class="nav-link" data-scroll-target="#e.-videotext-complement-disclaimer">E. Video/Text Complement Disclaimer</a></li>
+  <li><a href="#f.-text-content-section" id="toc-f.-text-content-section" class="nav-link" data-scroll-target="#f.-text-content-section">F. Text Content Section</a></li>
+  <li><a href="#g.-reflection-and-closure" id="toc-g.-reflection-and-closure" class="nav-link" data-scroll-target="#g.-reflection-and-closure">G. Reflection and Closure</a></li>
   </ul></li>
   <li><a href="#visual-language" id="toc-visual-language" class="nav-link" data-scroll-target="#visual-language">Visual Language</a>
   <ul class="collapse">
@@ -219,6 +220,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#intro-hook-with-a-familiar-interface" id="toc-intro-hook-with-a-familiar-interface" class="nav-link" data-scroll-target="#intro-hook-with-a-familiar-interface">1. Intro hook with a familiar interface</a></li>
   <li><a href="#definition-card-after-the-hook" id="toc-definition-card-after-the-hook" class="nav-link" data-scroll-target="#definition-card-after-the-hook">2. Definition card after the hook</a></li>
+  <li><a href="#repeated-headers-create-cohesion" id="toc-repeated-headers-create-cohesion" class="nav-link" data-scroll-target="#repeated-headers-create-cohesion">2.5. Repeated headers create cohesion</a></li>
   <li><a href="#key-moment-block" id="toc-key-moment-block" class="nav-link" data-scroll-target="#key-moment-block">3. “Key moment” block</a></li>
   <li><a href="#demo-shell-pattern" id="toc-demo-shell-pattern" class="nav-link" data-scroll-target="#demo-shell-pattern">4. Demo shell pattern</a></li>
   <li><a href="#qué-estás-viendo-qué-significa" id="toc-qué-estás-viendo-qué-significa" class="nav-link" data-scroll-target="#qué-estás-viendo-qué-significa">5. “Qué estás viendo / Qué significa”</a></li>
@@ -314,20 +316,33 @@ ul.task-list li input[type="checkbox"] {
 <p>Near the top, the page links: - the session-specific stylesheet in <code>styles/sessions/</code> - the session-specific JS in <code>interactives/</code></p>
 <p>Pattern: - keep shared global styling in <code>styles/sesion.css</code> - keep session-specific additions in <code>styles/sessions/sesion-XX.css</code> - keep per-session interactivity in <code>interactives/sesion-XX.js</code></p>
 </section>
-<section id="d.-video-placeholder" class="level3">
-<h3 class="anchored" data-anchor-id="d.-video-placeholder">D. Video Placeholder</h3>
-<p>If no video exists yet, keep a polished placeholder instead of omitting the section.</p>
-<p>Purpose: - preserves the future content structure - avoids a broken or incomplete feeling</p>
+<section id="d.-opening-capsule-sequence" class="level3">
+<h3 class="anchored" data-anchor-id="d.-opening-capsule-sequence">D. Opening Capsule Sequence</h3>
+<p>Session 1 now uses a specific opening sequence that should be treated as a repeated course-wide convention.</p>
+<p>Canonical order: - <code>## Introducción a la IA</code> - opening video capsule or placeholder - the complement/disclaimer note - <code>### Introducción</code> - the written teaching sequence</p>
+<p>This order matters because it makes the first learning unit feel consistent from session to session.</p>
+<p>If a session has a real video: - embed it in the opening capsule slot</p>
+<p>If a session does not yet have a real video: - keep the same opening slot - use a polished placeholder instead of omitting the section - preserve the complement/disclaimer note anyway so the learning logic stays consistent</p>
 </section>
-<section id="e.-text-content-section" class="level3">
-<h3 class="anchored" data-anchor-id="e.-text-content-section">E. Text Content Section</h3>
-<p>After the video area, the page shifts to full text and interactive content.</p>
+<section id="e.-videotext-complement-disclaimer" class="level3">
+<h3 class="anchored" data-anchor-id="e.-videotext-complement-disclaimer">E. Video/Text Complement Disclaimer</h3>
+<p>This note should be standardized across sessions.</p>
+<p>Requirements: - same class: <code>capsule-complement-note</code> - same structural placement, between the opening capsule and the written introduction - ideally the exact same wording</p>
+<p>Reference wording from Session 1:</p>
+<p>“Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!”</p>
+<p>Purpose: - tells students the video and text are complementary, not redundant - reduces confusion about why both exist - creates a repeated course rhythm students can trust</p>
+</section>
+<section id="f.-text-content-section" class="level3">
+<h3 class="anchored" data-anchor-id="f.-text-content-section">F. Text Content Section</h3>
+<p>After the opening capsule and disclaimer, the page shifts to full text and interactive content.</p>
 <p>Typical order in Session 1: - introduction hook - core definition - myth correction / conceptual clarification - key explanatory sequence - interactive demos - reflection - central idea - resources - next/previous navigation</p>
 </section>
-<section id="f.-reflection-and-closure" class="level3">
-<h3 class="anchored" data-anchor-id="f.-reflection-and-closure">F. Reflection and Closure</h3>
+<section id="g.-reflection-and-closure" class="level3">
+<h3 class="anchored" data-anchor-id="g.-reflection-and-closure">G. Reflection and Closure</h3>
 <p>Every session should end with: - a reflection block - a central idea block - a curated resources list - previous/next session nav</p>
 <p>Purpose: - reflection consolidates learning - the central idea compresses the session into one memorable takeaway - resources extend learning without cluttering the body</p>
+<p>Non-negotiable closing conventions: - the heading must be exactly <code>### La idea central de esta sesión</code> - the summary block must use the <code>central-idea</code> class - the resources heading must be exactly <code>### Recursos para explorar más sobre el tema</code> - the resources block must use the <code>resource-list</code> class</p>
+<p>These four items should be standardized across all sessions even if the inner text and links change.</p>
 </section>
 </section>
 <section id="visual-language" class="level2">
@@ -373,6 +388,12 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="definition-card-after-the-hook">2. Definition card after the hook</h3>
 <p>Definitions should not open the page. They should stabilize language after relevance has been established.</p>
 </section>
+<section id="repeated-headers-create-cohesion" class="level3">
+<h3 class="anchored" data-anchor-id="repeated-headers-create-cohesion">2.5. Repeated headers create cohesion</h3>
+<p>Session 1 now relies more strongly on repeated headers and repeated content transitions. These should be preserved across the course wherever the same structural role exists.</p>
+<p>Important repeated headers: - <code>## Introducción a la IA</code> - <code>### Introducción</code> - <code>### La idea central de esta sesión</code> - <code>### Recursos para explorar más sobre el tema</code></p>
+<p>This consistency helps students quickly understand where they are in the learning arc of each session.</p>
+</section>
 <section id="key-moment-block" class="level3">
 <h3 class="anchored" data-anchor-id="key-moment-block">3. “Key moment” block</h3>
 <p>This is a signature teaching move.</p>
@@ -405,13 +426,17 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Add the session banner at the top of every session.</li>
 <li>Standardize the page asset block that links session CSS and JS.</li>
-<li>Keep the video placeholder section if no video exists yet.</li>
+<li>Standardize the opening capsule sequence:</li>
+<li><code>## Introducción a la IA</code></li>
+<li>video embed or polished placeholder</li>
+<li>the exact complement/disclaimer note using <code>capsule-complement-note</code></li>
+<li><code>### Introducción</code></li>
 <li>Standardize section rhythm with <code>---</code> separators between major phases.</li>
 <li>Use the same interactive shell pattern for demos.</li>
 <li>Add “Qué estás viendo” and “Qué significa” to interactive sections where missing.</li>
 <li>Add the reflection block near the end of each session.</li>
-<li>Add the “La idea central de esta sesión” block near the end.</li>
-<li>Add the resources section in the same visual style.</li>
+<li>Add the exact heading <code>### La idea central de esta sesión</code> near the end using <code>central-idea</code>.</li>
+<li>Add the exact heading <code>### Recursos para explorar más sobre el tema</code> using <code>resource-list</code>.</li>
 <li>Add the previous/next session navigation footer.</li>
 <li>Maintain consistent wording for time/progress metadata.</li>
 <li>Keep Quarto TOC settings aligned with Session 1.</li>
@@ -480,7 +505,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="recommended-migration-strategy-for-sessions-215">Recommended Migration Strategy for Sessions 2–15</h2>
 <section id="pass-1-safe-structural-alignment" class="level3">
 <h3 class="anchored" data-anchor-id="pass-1-safe-structural-alignment">Pass 1: Safe structural alignment</h3>
-<p>Apply these to every session: - top banner - stylesheet and JS asset block - video placeholder structure if needed - reflection block - central idea block - resources block - session navigation block</p>
+<p>Apply these to every session: - top banner - stylesheet and JS asset block - opening capsule sequence: - <code>## Introducción a la IA</code> - video embed or placeholder - the exact complement/disclaimer note - <code>### Introducción</code> - reflection block - central idea block with exact heading and <code>central-idea</code> - resources block with exact heading and <code>resource-list</code> - session navigation block</p>
 </section>
 <section id="pass-2-demo-shell-normalization" class="level3">
 <h3 class="anchored" data-anchor-id="pass-2-demo-shell-normalization">Pass 2: Demo-shell normalization</h3>
@@ -497,10 +522,10 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 <p>Update these session <code>.qmd</code> files so they match the UX/UI and pedagogical style of <code>sesion-01.qmd</code>.</p>
 <p>Goals: - preserve each session’s actual content and learning objectives - align the visual structure, pacing, and interaction grammar with Session 1 - standardize what is safe to standardize - skip or flag anything that requires manual pedagogical judgment</p>
-<p>Apply these patterns from <code>sesion-01.qmd</code>: - session banner with block, progress, date, duration, and syllabus link - session-specific CSS/JS include block - polished video placeholder if needed - strong opening hook before formal definition - clear content rhythm with separators and section hierarchy - “key moment” style concept-compression block where appropriate - demo-shell structure for interactives: <code>.demo-wrap</code> -&gt; <code>.demo-shell</code> -&gt; head -&gt; preview/live -&gt; insights -&gt; footer - “Qué estás viendo / Qué significa” explanatory pair for interactive sections - reflection block near the end - “La idea central de esta sesión” block - resources list - previous/next session navigation</p>
+<p>Apply these patterns from <code>sesion-01.qmd</code>: - session banner with block, progress, date, duration, and syllabus link - session-specific CSS/JS include block - opening capsule sequence in this order: - <code>## Introducción a la IA</code> - video embed or polished placeholder - the exact complement/disclaimer note in <code>capsule-complement-note</code> - <code>### Introducción</code> - strong opening hook before formal definition - clear content rhythm with separators and section hierarchy - “key moment” style concept-compression block where appropriate - demo-shell structure for interactives: <code>.demo-wrap</code> -&gt; <code>.demo-shell</code> -&gt; head -&gt; preview/live -&gt; insights -&gt; footer - “Qué estás viendo / Qué significa” explanatory pair for interactive sections - reflection block near the end - exact heading <code>### La idea central de esta sesión</code> using the <code>central-idea</code> class - exact heading <code>### Recursos para explorar más sobre el tema</code> using the <code>resource-list</code> class - previous/next session navigation</p>
 <p>Do standardize: - structure - layout conventions - visual hierarchy - recurring UI components - spacing rhythm - card language - footer patterns</p>
 <p>Do not blindly standardize: - examples - metaphors - datasets - logos - interactive logic - diagrams whose content needs redesign - sections intentionally hidden for later sessions</p>
-<p>Important implementation rules: - prefer plain Markdown for simple tables and setup lists - only use custom cards when they add pedagogical value - keep mobile stacking logical - use plain ASCII quotes inside raw HTML - avoid broken HTML comments and unclosed <code>:::</code> - preserve accessibility labels and reduced-motion behavior</p>
+<p>Important implementation rules: - prefer plain Markdown for simple tables and setup lists - only use custom cards when they add pedagogical value - keep mobile stacking logical - preserve repeated course headers exactly where they serve the same structural role - preserve the complement/disclaimer note and its <code>capsule-complement-note</code> class - preserve the exact heading <code>La idea central de esta sesión</code> - preserve the <code>central-idea</code> class for that block - preserve the exact heading <code>Recursos para explorar más sobre el tema</code> - preserve the <code>resource-list</code> class for that block - use plain ASCII quotes inside raw HTML - avoid broken HTML comments and unclosed <code>:::</code> - preserve accessibility labels and reduced-motion behavior</p>
 <p>When in doubt: - choose clarity over decoration - choose a reusable structure over one-off styling - choose teaching value over visual novelty</p>
 <hr>
 </section>
