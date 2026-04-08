@@ -113,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../sesiones/sesion-02.html">
- <span class="dropdown-text">S2 · Redes Neuronales — ¿Cómo ‘piensa’ la IA?</span></a>
+ <span class="dropdown-text">S2 · Redes Neuronales Artificiales</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../sesiones/sesion-03.html">
@@ -125,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../sesiones/sesion-05.html">
- <span class="dropdown-text">S5 · Ética y problemas reales</span></a>
+ <span class="dropdown-text">S5 · Ética en la IA</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../sesiones/sesion-06.html">
@@ -188,9 +188,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#introducción-a-la-ia" id="toc-introducción-a-la-ia" class="nav-link active" data-scroll-target="#introducción-a-la-ia">Introducción a la IA</a></li>
-  <li><a href="#actividad-problema-método-límite" id="toc-actividad-problema-método-límite" class="nav-link" data-scroll-target="#actividad-problema-método-límite">Actividad: Problema → Método → Límite</a></li>
-  <li><a href="#cierre" id="toc-cierre" class="nav-link" data-scroll-target="#cierre">Cierre</a></li>
-  <li><a href="#para-reflexionar" id="toc-para-reflexionar" class="nav-link" data-scroll-target="#para-reflexionar">Para reflexionar</a></li>
+  <li><a href="#actividad" id="toc-actividad" class="nav-link" data-scroll-target="#actividad">Actividad</a></li>
   </ul>
 </nav>
     </div>
@@ -227,12 +225,13 @@ ul.task-list li input[type="checkbox"] {
     <span class="sesion-progress-label">3 de 15</span>
   </div>
   <div class="sesion-meta">
-    <span class="sesion-meta-chip">📅 19 de mayo de 2026</span>
-    <span class="sesion-meta-chip">⏱ 45 minutos</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 19 de mayo de 2026</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 45 minutos</span>
     <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
 <link rel="stylesheet" href="../styles/sessions/sesion-03.css">
+<script type="module" src="../interactives/sesion-03.js"></script>
 <section id="introducción-a-la-ia" class="level2">
 <h2 class="anchored" data-anchor-id="introducción-a-la-ia">Introducción a la IA</h2>
 <div class="video-placeholder">
@@ -241,59 +240,98 @@ ul.task-list li input[type="checkbox"] {
   <p>Aquí se insertará la grabación principal cuando el guion final esté listo.</p>
 </div>
 <hr>
-<p class="capsule-complement-note">
-Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!
-</p>
+<p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
+<hr>
 <section id="introducción" class="level3">
 <h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
-<p>Son las 11 de la noche. Abres WhatsApp para mandarle un mensaje a alguien y el teclado ya te propone la siguiente palabra antes de que termines de escribir. Minutos después entras a Instagram y la app detecta tu cara automáticamente para etiquetarte en una foto. Antes de dormir revisas Spotify: el algoritmo ya preparó una playlist nueva que, de alguna forma, suena exactamente como lo que quieres escuchar ahora mismo. A las 11:03 tu app de noticias muestra un artículo que encaja perfecto con algo que buscaste esta mañana.</p>
-<p>Cuatro apps. Cuatro tipos de IA distintos.</p>
-<p>Esto no es casualidad. El sistema que predice tu siguiente palabra en WhatsApp es completamente diferente al que detecta tu cara en Instagram. El que agrupa tu música según tu estado de ánimo no tiene nada que ver con el que ordena tus noticias. Cada uno fue diseñado para resolver un <strong>tipo distinto de problema</strong>..</p>
-<!-- TODO S3: This intro references K-Means and RL as having been introduced in S1.
-     The K-Means (km-shell) and Mario RL (rl-shell) demos are currently hidden in S1
-     inside a {.content-hidden} block. When migrating those demos here, update this
-     paragraph to remove the "(K-Means en S1)" and "(refuerzo en S1)" references,
-     and instead introduce them here as new interactives. -->
-<p>En las sesiones anteriores viste cómo aprende una máquina: ajustando una recta a partir de datos (regresión lineal en S1), agrupando sin etiquetas (K-Means en S1), aprendiendo por ensayo y error (refuerzo en S1), y construyendo redes neuronales capa por capa (S2). Hoy vamos a organizar todo eso — más algunos métodos nuevos — dentro de un mapa que te permita responder la pregunta clave:</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Pregunta clave
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>¿Qué familia de algoritmos tiene más sentido aplicar — y por qué?</p>
-</div>
+<p>Ya exploraste qué es la IA y cómo aprende una red neuronal. Hoy la pregunta cambia: no <em>cómo</em> aprende, sino <em>cuándo</em> usas qué método —y por qué.</p>
+<div class="intro-two-col">
+  <div class="intro-text-col">
+    <p>Un carpintero no llega a la obra solo con un martillo. Un médico no hace el mismo análisis para identificar enfermedades distintas. Con la IA pasa igual: hay cientos de algoritmos, pero solo necesitas conocer seis familias de algoritmos para resolver la mayoría de los problemas.</p>
+    <p>El secreto no está en aprender a reconocer el tipo de problema antes de elegir la herramienta que vas a usar. ¿Necesitas predecir un número? ¿Clasificar imágenes? ¿Encontrar grupos en datos sin etiquetas? Para cada pregunta existe una familia de métodos algorítmicos diseñada para responderla.</p>
+    <p>En esta sesión haremos un recorrido por el mapa de las familias algorítmicas más comunes.</p>
+  </div>
+  <div class="intro-maletin-col">
+    <div class="maletin-wrap">
+      <div class="maletin-handle"></div>
+      <div class="maletin-case">
+        <div class="maletin-lid">
+          <span class="maletin-lid-label">IA · 6 familias</span>
+        </div>
+        <div class="maletin-clasp-bar">
+          <span class="maletin-clasp-dot"></span>
+        </div>
+        <div class="maletin-grid">
+          <div class="maletin-tool" style="--i:0">
+            <span class="maletin-icon">📈</span>
+            <span class="maletin-label">Regresión</span>
+          </div>
+          <div class="maletin-tool" style="--i:1">
+            <span class="maletin-icon">🌳</span>
+            <span class="maletin-label">Árbol</span>
+          </div>
+          <div class="maletin-tool" style="--i:2">
+            <span class="maletin-icon">🔵</span>
+            <span class="maletin-label">K-Means</span>
+          </div>
+          <div class="maletin-tool" style="--i:3">
+            <span class="maletin-icon">👁</span>
+            <span class="maletin-label">CNN</span>
+          </div>
+          <div class="maletin-tool" style="--i:4">
+            <span class="maletin-icon">💬</span>
+            <span class="maletin-label">Transformer</span>
+          </div>
+          <div class="maletin-tool" style="--i:5">
+            <span class="maletin-icon">🎮</span>
+            <span class="maletin-label">Refuerzo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="maletin-note">Seis herramientas. Un mapa para saber cuándo usar cada una.</p>
+  </div>
 </div>
 <hr>
 </section>
 <section id="por-qué-no-existe-un-solo-algoritmo-para-todo" class="level3">
 <h3 class="anchored" data-anchor-id="por-qué-no-existe-un-solo-algoritmo-para-todo">¿Por qué no existe un solo algoritmo para todo?</h3>
-<p>Imagina que eres carpintero y tienes un solo instrumento: un martillo. Puedes usarlo para clavar, para romper, para golpear. Pero si necesitas cortar una tabla, lijar una superficie o atornillar, el martillo no sirve de nada — o peor, arruina el trabajo.</p>
+<p>Imagina que eres carpintero y tienes un solo instrumento: un martillo. Puedes usarlo para clavar, para romper, para golpear. Pero si necesitas cortar una tabla, lijar una superficie o atornillar, el martillo no sirve de nada, o peor, arruina el trabajo.</p>
 <p>Los algoritmos de IA funcionan igual. Cada familia fue diseñada para resolver un tipo específico de problema. Forzar un método donde no encaja tiene consecuencias:</p>
 <ul>
-<li>Un modelo de regresión intentando clasificar imágenes como “spam / no spam” producirá caos.</li>
-<li>Un algoritmo de agrupamiento (K-Means) al que le pides predecir el precio del dólar mañana no tiene idea de qué hacer.</li>
-<li>Usar un transformer gigante para predecir si una persona pagará su crédito es caro, lento e innecesario.</li>
+<li>Un modelo de regresión intentando clasificar correos como “spam / no spam” se equivocará constantemente.</li>
+<li>Un algoritmo de agrupamiento como K-Means no sabe predecir el precio del dólar mañana.</li>
+<li>Usar un transformer gigante para decidir si una persona pagará su crédito es caro, lento e innecesario.</li>
 </ul>
-<p><strong>La buena noticia:</strong> no necesitas memorizar decenas de algoritmos. Necesitas aprender a <strong>hacer dos preguntas</strong> que clasifican casi cualquier problema.</p>
+<p>La buena noticia es que no necesitas memorizar decenas de nombres. Solo necesitas aprender a hacer dos preguntas.</p>
 <hr>
 </section>
 <section id="el-mapa-de-métodos-dos-preguntas-que-clasifican-todo" class="level3">
 <h3 class="anchored" data-anchor-id="el-mapa-de-métodos-dos-preguntas-que-clasifican-todo">El mapa de métodos: dos preguntas que clasifican todo</h3>
 <p>Antes de elegir un algoritmo, pregúntate:</p>
+<div class="two-question-grid">
+  <article class="two-question-card">
+    <span class="two-question-num">01</span>
+    <h4 class="anchored">¿Tus datos ya tienen respuestas correctas?</h4>
+    <p>Si alguien ya etiquetó los ejemplos con la respuesta correcta, estás en aprendizaje supervisado.</p>
+  </article>
+  <article class="two-question-card">
+    <span class="two-question-num">02</span>
+    <h4 class="anchored">¿Qué forma tiene la salida?</h4>
+    <p>Puede ser un número, una categoría, un grupo emergente o una acción dentro de un entorno.</p>
+  </article>
+</div>
 <p><strong>Pregunta 1: ¿Tienes respuestas correctas etiquetadas en tus datos?</strong></p>
 <ul>
-<li>Si <strong>sí</strong> — alguien ya etiquetó los datos con la respuesta correcta (ej. “este correo es spam”, “este tumor es maligno”). Eso se llama <strong>aprendizaje supervisado</strong>.</li>
-<li>Si <strong>no</strong> — los datos no tienen etiqueta, o el sistema aprende solo probando en un entorno. Puede ser <strong>no supervisado</strong> o <strong>por refuerzo</strong>.</li>
+<li>Si <strong>sí</strong>, alguien ya etiquetó los ejemplos con la respuesta correcta. Eso se llama <strong>aprendizaje supervisado</strong>.</li>
+<li>Si <strong>no</strong>, los datos no tienen etiqueta o el sistema aprende actuando en un entorno. Puede ser <strong>no supervisado</strong> o <strong>por refuerzo</strong>.</li>
 </ul>
-<p><strong>Pregunta 2 (solo si respondiste sí): ¿Qué forma tiene la salida?</strong></p>
+<p><strong>Pregunta 2: ¿Qué forma tiene la salida?</strong></p>
 <ul>
 <li>¿Un número continuo? → <strong>Regresión</strong></li>
-<li>¿Una categoría? → depende si los datos son texto, imagen o números estructurados</li>
+<li>¿Una categoría? → depende de si trabajas con texto, imágenes o datos estructurados</li>
+<li>¿Grupos emergentes? → <strong>Clustering</strong></li>
+<li>¿Una acción que cambia el entorno? → <strong>Refuerzo</strong></li>
 </ul>
 <figure class="flowchart-figure figure">
   <svg viewbox="0 0 860 480" xmlns="http://www.w3.org/2000/svg" class="flowchart-svg" role="img" aria-label="Mapa de decisión para elegir un algoritmo de inteligencia artificial según si hay etiquetas, el tipo de salida y el tipo de datos">
@@ -336,8 +374,7 @@ Pregunta clave
     <text x="345" y="239" text-anchor="middle" class="fc-label-soft">categoría</text>
 
     <rect x="30" y="258" width="180" height="54" rx="12" class="fc-node-neutral"></rect>
-    <text x="120" y="288" text-anchor="middle" class="fc-node-title">📈 Regresión lineal</text>
-    <text x="120" y="306" text-anchor="middle" class="fc-node-subtitle">ya la conoces</text>
+    <text x="120" y="295" text-anchor="middle" class="fc-node-title">📈 Regresión lineal</text>
 
     <rect x="220" y="258" width="250" height="68" rx="12" class="fc-node-question"></rect>
     <text x="345" y="286" text-anchor="middle" class="fc-node-title fc-node-title-blue">¿Qué tipo de datos?</text>
@@ -349,12 +386,10 @@ Pregunta clave
     <text x="660" y="319" text-anchor="middle" class="fc-label-soft">aprender actuando</text>
 
     <rect x="610" y="258" width="170" height="54" rx="12" class="fc-node-source"></rect>
-    <text x="695" y="288" text-anchor="middle" class="fc-node-title fc-node-title-blue">🔵 K-Means</text>
-    <text x="695" y="306" text-anchor="middle" class="fc-node-subtitle">ya lo conoces</text>
+    <text x="695" y="295" text-anchor="middle" class="fc-node-title fc-node-title-blue">🔵 K-Means</text>
 
     <rect x="610" y="338" width="170" height="54" rx="12" class="fc-node-caution"></rect>
-    <text x="695" y="368" text-anchor="middle" class="fc-node-title">🎮 Refuerzo</text>
-    <text x="695" y="386" text-anchor="middle" class="fc-node-subtitle">ya lo conoces</text>
+    <text x="695" y="372" text-anchor="middle" class="fc-node-title">🎮 Refuerzo</text>
 
     <rect x="90" y="356" width="46" height="18" rx="9" class="fc-pill-no"></rect>
     <text x="113" y="368" text-anchor="middle" class="fc-label-soft">texto</text>
@@ -364,57 +399,80 @@ Pregunta clave
     <text x="455" y="368" text-anchor="middle" class="fc-label-soft">datos estructurados</text>
 
     <rect x="28" y="394" width="170" height="54" rx="12" class="fc-node-violet"></rect>
-    <text x="113" y="424" text-anchor="middle" class="fc-node-title">💬 Transformers</text>
-    <text x="113" y="442" text-anchor="middle" class="fc-node-subtitle">nuevo</text>
+    <text x="113" y="428" text-anchor="middle" class="fc-node-title">💬 Transformers</text>
 
     <rect x="215" y="394" width="170" height="54" rx="12" class="fc-node-success"></rect>
-    <text x="300" y="424" text-anchor="middle" class="fc-node-title">👁 CNN</text>
-    <text x="300" y="442" text-anchor="middle" class="fc-node-subtitle">nuevo</text>
+    <text x="300" y="428" text-anchor="middle" class="fc-node-title">👁 CNN</text>
 
     <rect x="402" y="394" width="170" height="54" rx="12" class="fc-node-source"></rect>
-    <text x="487" y="424" text-anchor="middle" class="fc-node-title fc-node-title-blue">🌳 Árbol de decisión</text>
-    <text x="487" y="442" text-anchor="middle" class="fc-node-subtitle">nuevo</text>
+    <text x="487" y="428" text-anchor="middle" class="fc-node-title fc-node-title-blue">🌳 Árbol de decisión</text>
   </svg>
 </figure>
 <p>Este mapa es tu brújula. Cuando tengas un problema que crees que la IA puede resolver, empieza siempre desde arriba.</p>
+<div class="worked-example">
+  <p class="worked-example-label">Ejemplo paso a paso</p>
+  <div class="worked-example-steps">
+    <div class="worked-step">
+      <span class="worked-step-num">Problema</span>
+      <p>"Quiero predecir cuánto tardará un pedido de DiDi."</p>
+    </div>
+    <div class="worked-step">
+      <span class="worked-step-num">Pregunta 1</span>
+      <p><strong>¿Tienes respuestas etiquetadas?</strong> Sí — un historial de tiempos de entrega de los últimos años.</p>
+    </div>
+    <div class="worked-step">
+      <span class="worked-step-num">Pregunta 2</span>
+      <p><strong>¿Qué forma tiene la salida?</strong> Un número continuo (minutos).</p>
+    </div>
+    <div class="worked-step worked-step-result">
+      <span class="worked-step-num">Familia</span>
+      <p><strong>Regresión lineal.</strong> Predice un número a partir de datos etiquetados.</p>
+    </div>
+  </div>
+</div>
 <hr>
 </section>
 <section id="las-6-familias-de-algoritmos" class="level3">
 <h3 class="anchored" data-anchor-id="las-6-familias-de-algoritmos">Las 6 familias de algoritmos</h3>
-<p>A continuación, un recorrido por las seis familias del mapa. Las tres que ya conoces de sesiones anteriores van en versión rápida. Las tres nuevas llevan más espacio.</p>
-<hr>
-<section id="regresión-lineal-ya-la-conoces" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="regresión-lineal-ya-la-conoces">Regresión lineal — ya la conoces</h4>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>A continuación, haremos un recorrido por las seis familias del mapa. La idea es aprender a reconocer el tipo de problema que podemos encontrar, el tipo de salida (respuesta) que necesitamos y las limitaciones de cada método.</p>
+<section id="regresión-lineal" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="regresión-lineal">Regresión lineal</h4>
+<p>La regresión lineal surgió de una pregunta simple: si ya tienes ejemplos pasados junto con su resultado, ¿puedes encontrar la recta que mejor los resuma, y luego usarla para predecir casos nuevos? El método no memoriza los datos: aprende los dos números que describen esa recta y con ellos generaliza.</p>
+<div class="family-quickfacts">
+  <div class="family-quickfacts-head">
+    <span class="family-icon">📈</span>
+    <div>
+      <h4 class="family-title anchored">Cuando la salida es un número continuo</h4>
+    </div>
+  </div>
+  <div class="family-facts-grid">
+    <article class="family-fact">
+      <span class="family-fact-label">¿Para qué sirve?</span>
+      <p>Predecir un valor continuo a partir de datos variables de entrada.</p>
+    </article>
+    <article class="family-fact">
+      <span class="family-fact-label">¿Dónde lo ves?</span>
+      <p>Tiempo de llegada en DiDi, vistas estimadas de un video, consumo eléctrico esperado.</p>
+    </article>
+    <article class="family-fact">
+      <span class="family-fact-label">¿Cuál es su limitación?</span>
+      <p>Funciona mejor cuando la relación se parece a una recta. Si el patrón observado de la relación entre los datos de entrada es curvo, la recta se queda corta.</p>
+    </article>
+  </div>
 </div>
-<div class="callout-title-container flex-fill">
-Repaso rápido — S1
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>En la sesión 1 ajustaste una recta (<code>ŷ = m·x + b</code>) para predecir calificaciones según horas de estudio. Eso es regresión lineal: encontrar los números <code>m</code> y <code>b</code> que mejor explican los datos.</p>
-</div>
-</div>
-<p><strong>Cuándo usarla:</strong> cuando quieres predecir un número continuo a partir de variables de entrada.</p>
-<p><strong>Ejemplos nuevos:</strong> - Predecir cuántos minutos tardará tu DiDi en llegar basándose en la distancia, hora del día y tráfico actual. - Estimar cuántas vistas tendrá un video de TikTok según su duración, hora de publicación y número de seguidores.</p>
-<p><strong>Su límite:</strong> Solo captura relaciones lineales. Si la relación real es una curva, la recta se queda corta. Existen versiones más avanzadas (regresión polinomial, regresión con regularización) para esos casos.</p>
 <hr>
 </section>
 <section id="árbol-de-decisión-el-juego-de-las-20-preguntas" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="árbol-de-decisión-el-juego-de-las-20-preguntas">Árbol de decisión — el juego de las 20 preguntas</h4>
-<p>¿Alguna vez jugaste “Adivina el personaje”? Alguien piensa en una persona y tú tienes que adivinarla haciendo preguntas de sí o no: “¿Es hombre?”, “¿Es mayor de 40 años?”, “¿Es famoso por el deporte?”. Con suficientes preguntas bien elegidas llegas a la respuesta.</p>
-<p>Un árbol de decisión hace exactamente eso, pero con datos.</p>
-<p>El algoritmo analiza el conjunto de entrenamiento y descubre cuál es la pregunta más útil para hacer primero — la que mejor <strong>divide</strong> los datos entre las posibles categorías. Luego hace la siguiente pregunta más útil, y así recursivamente, hasta llegar a una clasificación.</p>
-<p><strong>Ejemplo:</strong> Supón que quieres construir un clasificador de spam. El árbol podría aprender preguntas como:</p>
+<p>¿Alguna vez jugaste “Adivina el personaje”? Alguien piensa en una persona y tú tienes que adivinar quién es haciendo preguntas que se puedan responder con un sí o un no: “¿Es hombre?”, “¿Es mayor de 40 años?”, “¿Es famoso?”. Con suficientes preguntas bien elegidas llegas a la respuesta.</p>
+<p>Un árbol de decisión hace exactamente eso, pero con datos. El algoritmo analiza el conjunto de entrenamiento y descubre cuál es la pregunta más útil para hacer primero, la que mejor divide los datos entre varias posibles categorías. Luego hace la siguiente pregunta capaz de dividir los datos categoricamente, y así sucesivamente, hasta llegar a una clasificación.</p>
+<p><strong>Ejemplo:</strong> supón que quieres construir un clasificador de spam. El árbol podría aprender preguntas como:</p>
 <ol type="1">
-<li><p>¿Contiene la frase “haz clic aquí para ganar”? → Si sí → spam</p></li>
-<li><p>¿El remitente está en tus contactos? → Si no → probablemente spam</p></li>
-<li><p>¿El asunto tiene más de 3 signos de exclamación? → Si sí → spam</p></li>
+<li>¿Contiene la frase “haz clic aquí para ganar”? → sí, es spam</li>
+<li>¿El remitente está en tus contactos? → no, probablemente no es spam</li>
+<li>¿El asunto tiene más de 3 signos de exclamación? → sí, es spam</li>
 </ol>
-<p>Nadie le programó esas reglas. El árbol las <strong>aprendió</strong> del historial de correos etiquetados.</p>
+<p>Nadie le programó esas reglas. El árbol las aprendió del historial de correos etiquetados (es decir, ya catalogados como spam).</p>
 <figure class="decision-tree-figure figure">
   <svg viewbox="0 0 580 295" xmlns="http://www.w3.org/2000/svg" class="decision-tree-svg" role="img" aria-label="Árbol de decisión para clasificar spam en tres preguntas">
     <defs>
@@ -456,169 +514,361 @@ Repaso rápido — S1
     <rect x="455" y="257" width="115" height="32" rx="9" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"></rect>
     <text x="513" y="273" text-anchor="middle" dominant-baseline="middle" font-size="10.5" font-weight="600" fill="#475569" font-family="system-ui,sans-serif">🤔 Revisar</text>
   </svg>
-  <figcaption class="decision-tree-caption">El árbol aprendió estas tres preguntas solo — nadie las programó a mano.</figcaption>
+  <figcaption class="decision-tree-caption">El árbol aprendió estas preguntas solo. Nadie escribió las reglas a mano.</figcaption>
 </figure>
-<p><strong>Cuándo usarlo:</strong> cuando tienes datos estructurados (tablas con columnas y filas), necesitas clasificar en categorías, y quieres que el modelo sea explicable — es decir, poder decirle al usuario exactamente por qué tomó una decisión.</p>
-<p><strong>Su límite:</strong> Si los datos de prueba son muy distintos a los de entrenamiento, el árbol falla. También puede “memorizar” demasiado los datos de entrenamiento sin generalizar bien — eso se llama <strong>sobreajuste</strong> (<em>overfitting</em>). Las versiones mejoradas (Random Forest, Gradient Boosting) solucionan esto con decenas de árboles trabajando juntos.</p>
-<a href="https://r2d3.us/visual-intro-to-machine-learning-part-1/" target="_blank" rel="noopener" class="resource-card">
-  <span class="resource-card-icon">🌳</span>
-  <div class="resource-card-body">
-    <p class="resource-card-kicker">Mini lab — árboles de decisión</p>
-    <h5 class="resource-card-title anchored">R2D3: Una introducción visual al machine learning</h5>
-    <p class="resource-card-copy">Uno de los mejores recursos para entender árboles de decisión de forma visual. Usa datos de departamentos en San Francisco y Nueva York. No necesitas ningún conocimiento previo, solo desplázate lentamente y observa cómo el árbol construye sus preguntas paso a paso.</p>
+<div class="family-quickfacts">
+  <div class="family-quickfacts-head">
+    <span class="family-icon">🌳</span>
+    <div>
+      <h4 class="family-title anchored">Cuando quieres clasificar datos estructurados</h4>
+    </div>
   </div>
-  <span class="resource-card-arrow">→</span>
-</a>
-<hr>
-<!-- TODO S3: Migrate K-Means demo (id="km-shell") from sesion-01.qmd here.
-     It is currently wrapped in {.content-hidden} in S1 (after the paradigm-cards block).
-     Move the full demo-wrap div + supporting JS/CSS here, then update the callout
-     below to say "vamos a ver" instead of "viste en S1". Also update the SVG flowchart
-     "ya lo conoces" label for K-Means (if present). -->
-</section>
-<section id="k-means-ya-lo-conoces" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="k-means-ya-lo-conoces">K-Means — ya lo conoces</h4>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+  <div class="family-facts-grid">
+    <article class="family-fact">
+      <span class="family-fact-label">¿Para qué sirve?</span>
+      <p>Clasificaciones explicables con datos en forma de tabla: filas, columnas y variables claras.</p>
+    </article>
+    <article class="family-fact">
+      <span class="family-fact-label">¿Dónde lo ves?</span>
+      <p>Filtros de spam, decisiones de crédito, triage básico, detección de fraude simple.</p>
+    </article>
+    <article class="family-fact">
+      <span class="family-fact-label">¿Cuál es su límite?</span>
+      <p>Puede sobreajustarse y fallar cuando los datos nuevos son muy distintos a los del entrenamiento.</p>
+    </article>
+  </div>
 </div>
-<div class="callout-title-container flex-fill">
-Repaso rápido — S1
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>En la sesión 1 viste cómo K-Means agrupa canciones sin etiquetas: propone centros al azar, asigna cada punto al centro más cercano, mueve los centros, y repite hasta que los grupos se estabilizan.</p>
-</div>
-</div>
-<p><strong>Cuándo usarlo:</strong> cuando no tienes etiquetas y quieres descubrir la estructura natural de tus datos. Segmentación de clientes, agrupación de noticias por tema, detección de perfiles de usuario.</p>
-<p><strong>Su límite:</strong> tú tienes que decirle cuántos grupos quieres (<code>k</code>). El algoritmo no lo decide solo. Si eliges un <code>k</code> incorrecto, los grupos no tendrán sentido. Existen métodos para estimar el mejor <code>k</code>, pero siguen siendo heurísticos.</p>
 <hr>
 </section>
-<section id="redes-neuronales-convolucionales-cnn-cómo-ve-la-ia" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="redes-neuronales-convolucionales-cnn-cómo-ve-la-ia">Redes neuronales convolucionales (CNN) — cómo ve la IA</h4>
-<p>Cuando ves una fotografía de un gato, tu cerebro no la analiza píxel por píxel. Detecta bordes, luego formas, luego texturas, luego el objeto completo, todo en capas progresivas de abstracción. Las redes convolucionales hacen algo muy parecido.</p>
-<p>Una CNN pasa la imagen por una serie de <strong>filtros</strong> (pequeñas matrices matemáticas) que aprenden a detectar características en orden de complejidad:</p>
-<ul>
-<li><strong>Capa 1:</strong> bordes horizontales, verticales, diagonales</li>
-<li><strong>Capa 2:</strong> esquinas, curvas, líneas dobles</li>
-<li><strong>Capa 3:</strong> texturas (pelo, plumas, piel)</li>
-<li><strong>Capa 4:</strong> partes (ojo, oreja, pata)</li>
-<li><strong>Capa final:</strong> el objeto completo (gato, perro, persona)</li>
-</ul>
-<p>Ninguna de esas características fue programada manualmente. La red las <strong>aprendió</strong> ajustando los filtros con millones de imágenes etiquetadas y retropropagación (backpropagation, que se mencionó brevemente en la S2).</p>
-<div class="algo-family-grid">
-  <div class="algo-family-card is-new">
-    <div class="algo-family-header">
-      <span class="algo-family-emoji">👁</span>
-      <h5 class="algo-family-title anchored">Capa 1 — Bordes</h5>
+<section id="k-means" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="k-means">K-Means</h4>
+<p>El problema que dio origen al clustering fue este: tienes miles de canciones, compras o registros de pacientes, y nadie los etiquetó. No hay respuestas correctas. ¿Puedes descubrir grupos naturales solo mirando qué tan parecidos son los datos entre sí? K-Means responde esa pregunta: propone centros iniciales, asigna cada punto al más cercano, mueve esos centros y repite hasta que los grupos se estabilizan.</p>
+<div class="family-quickfacts">
+  <div class="family-quickfacts-head">
+    <span class="family-icon">🔵</span>
+    <div>
+      <h4 class="family-title anchored">Cuando quieres descubrir grupos sin etiquetas</h4>
     </div>
-    <p class="algo-family-analogy">Detecta cambios bruscos de color en la imagen: una línea vertical entre el fondo claro y el pelo oscuro de un gato.</p>
   </div>
-  <div class="algo-family-card is-new">
-    <div class="algo-family-header">
-      <span class="algo-family-emoji">🔵</span>
-      <h5 class="algo-family-title anchored">Capa 2 — Formas</h5>
-    </div>
-    <p class="algo-family-analogy">Combina los bordes detectados para reconocer esquinas, curvas y formas simples: la punta de una oreja, el contorno de un ojo.</p>
-  </div>
-  <div class="algo-family-card is-new">
-    <div class="algo-family-header">
-      <span class="algo-family-emoji">🐾</span>
-      <h5 class="algo-family-title anchored">Capa final — Objeto</h5>
-    </div>
-    <p class="algo-family-analogy">Combina todas las características detectadas en capas anteriores y decide: es un gato, no un perro ni una persona.</p>
+  <div class="family-facts-grid">
+    <article class="family-fact">
+      <span class="family-fact-label">¿Para qué sirve?</span>
+      <p>Encontrar estructura natural en datos sin respuestas correctas predefinidas.</p>
+    </article>
+    <article class="family-fact">
+      <span class="family-fact-label">¿Dónde lo ves?</span>
+      <p>Segmentación de usuarios, agrupación de canciones, organización de noticias o clientes similares.</p>
+    </article>
+    <article class="family-fact">
+      <span class="family-fact-label">¿Cuál es su límite?</span>
+      <p>Tú decides cuántos grupos quieres (`k`). Si eliges mal ese número, los grupos pierden sentido.</p>
+    </article>
   </div>
 </div>
-<p><strong>Cuándo usarlas:</strong> casi cualquier tarea con imágenes o video — reconocimiento facial, detección de objetos, moderación de contenido, diagnóstico médico por radiografías.</p>
-<p><strong>Ejemplos que ya usas:</strong></p>
-<ul>
-<li><p>Face ID de tu iPhone o la detección automática de caras en Instagram</p></li>
-<li><p>El filtro de contenido violento en TikTok</p></li>
-<li><p>Los asistentes de diagnóstico por imagen en hospitales</p></li>
-</ul>
-<p><strong>Su límite:</strong> necesitan <strong>enormes</strong> cantidades de imágenes etiquetadas para funcionar bien (decenas de miles a millones). También son costosas de entrenar en tiempo y computación. Y si les das una imagen ligeramente distorsionada (un pixel cambiado estratégicamente — lo que se llama <em>adversarial attack</em>), pueden fallar de forma sorprendente.</p>
-<a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener" class="resource-card">
-  <span class="resource-card-icon">🎨</span>
-  <div class="resource-card-body">
-    <p class="resource-card-kicker">Demo — clasifica imágenes sin código</p>
-    <h5 class="resource-card-title anchored">Teachable Machine de Google — entrenamiento de imágenes</h5>
-    <p class="resource-card-copy">Ya usaste Teachable Machine en la sesión 1. Esta vez vuelve con otro enfoque: cuando entrenas tu clasificador de imágenes, lo que está ocurriendo internamente es una CNN pequeña aprendiendo qué características distinguen tus clases. Prueba con menos fotos y observa cuándo el modelo empieza a fallar, ese es el límite de los datos que mencionamos arriba.</p>
+<div class="demo-wrap" data-autoplay="">
+  <div class="demo-shell demo-tone-unsupervised" id="km-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Aprendizaje no supervisado</p>
+        <h4 class="demo-title anchored">K-Means: agrupar canciones sin etiquetas</h4>
+        <p class="demo-copy">Observa cómo el algoritmo toma una nube de canciones, propone centros iniciales y reorganiza grupos hasta encontrar una estructura estable.</p>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div class="demo-plot-frame demo-plot-frame-preview">
+              <div class="km-cluster-tags">
+                <span class="km-cluster-tag">Puntos sin etiqueta</span>
+                <span class="km-cluster-tag">Centros iniciales</span>
+                <span class="km-cluster-tag">Grupos emergentes</span>
+              </div>
+            </div>
+          </div>
+          <p class="demo-preview-title">Vista previa del clustering</p>
+          <p class="demo-preview-copy">Primero solo hay canciones como puntos en una nube. Después el algoritmo propone centros y reorganiza los grupos hasta estabilizarlos.</p>
+        </div>
+      </div>
+
+      <div class="demo-stage-live">
+        <div class="demo-plot-frame" id="km-plot"></div>
+        <div id="km-tags" class="km-cluster-tags km-cluster-tags-live"></div>
+      </div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5 class="anchored">Qué estás viendo</h5>
+        <p id="km-seeing"></p>
+      </div>
+      <div class="demo-insight">
+        <h5 class="anchored">Qué significa</h5>
+        <p id="km-meaning"></p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <p id="km-status" class="demo-status"></p>
+      <div class="demo-actions">
+        <button id="km-start" class="demo-btn demo-btn-primary">Ver animación</button>
+        <button id="km-reset" class="btn-restart" disabled="">Reiniciar</button>
+      </div>
+    </div>
   </div>
-  <span class="resource-card-arrow">→</span>
-</a>
+</div>
+<hr>
+</section>
+<section id="redes-neuronales-convolucionales-cnn" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="redes-neuronales-convolucionales-cnn">Redes neuronales convolucionales (CNN)</h4>
+<p>Cuando ves una fotografía de un gato, tu cerebro no la analiza píxel por píxel. Detecta bordes, luego formas, luego texturas y después el objeto completo. Las redes convolucionales hacen algo parecido: aprenden filtros que encuentran características visuales cada vez más complejas.</p>
+<svg viewbox="0 0 500 56" xmlns="http://www.w3.org/2000/svg" class="cnn-flow-svg" role="img" aria-label="Una CNN procesa imágenes en capas: imagen cruda, bordes, formas, objeto clasificado">
+  <defs>
+    <marker id="cnn-arr" markerwidth="7" markerheight="7" refx="6" refy="3.5" orient="auto">
+      <polygon points="0 0, 7 3.5, 0 7" fill="#c4875d"></polygon>
+    </marker>
+  </defs>
+  <rect x="0" y="8" width="86" height="40" rx="8" fill="#fdf4ee" stroke="#c4875d" stroke-width="1.5"></rect>
+  <text x="43" y="32" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="700" fill="#7c4824" font-family="system-ui,sans-serif">Imagen</text>
+  <line x1="86" y1="28" x2="120" y2="28" stroke="#c4875d" stroke-width="1.5" marker-end="url(#cnn-arr)"></line>
+  <rect x="122" y="8" width="84" height="40" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"></rect>
+  <text x="164" y="24" text-anchor="middle" dominant-baseline="middle" font-size="10.5" font-weight="700" fill="#1d4ed8" font-family="system-ui,sans-serif">Bordes</text>
+  <text x="164" y="40" text-anchor="middle" dominant-baseline="middle" font-size="8.5" fill="#64748b" font-family="system-ui,sans-serif">Capa 1</text>
+  <line x1="206" y1="28" x2="240" y2="28" stroke="#c4875d" stroke-width="1.5" marker-end="url(#cnn-arr)"></line>
+  <rect x="242" y="8" width="84" height="40" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"></rect>
+  <text x="284" y="24" text-anchor="middle" dominant-baseline="middle" font-size="10.5" font-weight="700" fill="#1d4ed8" font-family="system-ui,sans-serif">Formas</text>
+  <text x="284" y="40" text-anchor="middle" dominant-baseline="middle" font-size="8.5" fill="#64748b" font-family="system-ui,sans-serif">Capa 2</text>
+  <line x1="326" y1="28" x2="360" y2="28" stroke="#c4875d" stroke-width="1.5" marker-end="url(#cnn-arr)"></line>
+  <rect x="362" y="8" width="90" height="40" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"></rect>
+  <text x="407" y="24" text-anchor="middle" dominant-baseline="middle" font-size="10.5" font-weight="700" fill="#16a34a" font-family="system-ui,sans-serif">Objeto</text>
+  <text x="407" y="40" text-anchor="middle" dominant-baseline="middle" font-size="8.5" fill="#64748b" font-family="system-ui,sans-serif">Clasificación</text>
+</svg>
+<div class="family-quickfacts">
+  <div class="family-quickfacts-head">
+    <span class="family-icon">👁</span>
+    <div>
+      <h4 class="family-title anchored">Cuando el problema principal es visual</h4>
+    </div>
+  </div>
+  <div class="family-facts-grid">
+    <article class="family-fact">
+      <span class="family-fact-label">¿Para qué sirve?</span>
+      <p>Clasificar o detectar patrones en imágenes y video.</p>
+    </article>
+    <article class="family-fact">
+      <span class="family-fact-label">¿Dónde lo ves?</span>
+      <p>Face ID, filtros de Instagram, moderación de contenido, asistentes de diagnóstico por imagen.</p>
+    </article>
+    <article class="family-fact">
+      <span class="family-fact-label">¿Cuál es su límite?</span>
+      <p>Necesita enormes cantidades de imágenes etiquetadas y mucho cómputo. También puede fallar ante distorsiones inesperadas.</p>
+    </article>
+  </div>
+</div>
 <hr>
 </section>
 <section id="transformers-el-cerebro-detrás-de-chatgpt" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="transformers-el-cerebro-detrás-de-chatgpt">Transformers — el cerebro detrás de ChatGPT</h4>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-¿No habíamos dicho que ChatGPT usa redes neuronales?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Sí. Los transformers <strong>son</strong> redes neuronales: usan las mismas neuronas artificiales, pesos y entrenamiento por retropropagación que viste en la S2. Lo que cambia es la <strong>arquitectura</strong>: cómo están organizadas esas neuronas y qué mecanismo usan para procesar información.</p>
-<p>La jerarquía es:</p>
-<ul>
-<li><p><strong>Red neuronal</strong> → categoría general (cualquier modelo con capas de neuronas conectadas)</p>
-<ul>
-<li><p><strong>CNN</strong> → subtype especializado en imágenes (detecta bordes, formas, objetos)</p></li>
-<li><p><strong>Transformer</strong> → subtipo especializado en texto y secuencias (entiende el contexto completo de una oración)</p></li>
-</ul></li>
-</ul>
-</div>
-</div>
-<p>Cuando alguien te manda un mensaje que dice “¿ya llegaste?”, tú entiendes instantáneamente que “ya” implica que había un plan previo, que “llegaste” se refiere a un lugar específico del contexto de su conversación, y que la persona probablemente te está esperando. Procesas todas esas relaciones entre palabras de forma paralela, en fracción de segundo.</p>
-<p>Eso es exactamente lo que los transformers intentan hacer — y lo logran con un mecanismo llamado <strong>atención</strong> (<em>attention</em>).</p>
-<p>La idea central: en lugar de leer una oración de izquierda a derecha (como lo hacían las redes anteriores), un transformer mira <strong>todas las palabras al mismo tiempo</strong> y calcula qué tan relacionada está cada palabra con las demás. Esta capacidad de capturar dependencias largas. Entender que “ella” en el final de un párrafo se refiere a “María” mencionada hace cinco oraciones, es lo que los hace tan poderosos para lenguaje.</p>
-<p><strong>¿Qué aprenden?</strong></p>
-<p>Un transformer se entrena con cantidades enormes de texto. Su tarea durante el entrenamiento es simple: predecir la siguiente palabra en una oración. Pero para hacerlo bien con miles de millones de oraciones, debe aprender gramática, hechos del mundo, razonamiento básico, y hasta tono y estilo. Eso es lo que está dentro de ChatGPT, Google Translate, Copilot y los modelos de lenguaje modernos.</p>
-<p><strong>Cuándo usarlos:</strong> traducción automática, generación de texto, resumen de documentos, chatbots, asistentes de código, análisis de sentimiento.</p>
-<p><strong>Su límite:</strong> son <strong>extremadamente costosos</strong> de entrenar desde cero. GPT-4 costó decenas de millones de dólares en cómputo. También pueden “alucinar” (inventar respuestas falsas con total confianza), y capturan los sesgos del texto con el que fueron entrenados. La siguiente sesión está dedicada exactamente a este mundo.</p>
-<a href="https://poloclub.github.io/transformer-explainer/" target="_blank" rel="noopener" class="resource-card">
-  <span class="resource-card-icon">💬</span>
-  <div class="resource-card-body">
-    <p class="resource-card-kicker">Mini lab — cómo piensa un transformer</p>
-    <h5 class="resource-card-title anchored">Transformer Explainer — GPT-2 en vivo en tu navegador</h5>
-    <p class="resource-card-copy">Escribe una frase y observa cómo el modelo la procesa internamente: tokenización, embeddings, capas de atención y la distribución de probabilidad sobre la siguiente palabra. Puedes pasar el cursor sobre los tokens para ver qué tan "relacionados" considera el modelo que están entre sí: eso es el mecanismo de atención. No es necesario entender cada detalle técnico. Solo observa cómo el modelo conecta palabras y elige su siguiente token.</p>
+<blockquote class="blockquote">
+<p>¿No habíamos dicho que ChatGPT usa redes neuronales? Sí. Los transformers son redes neuronales. Comparten las mismas ideas de pesos, neuronas y entrenamiento por retropropagación que viste en la sesión 2. Lo que cambia es la arquitectura: cómo están organizadas esas neuronas y qué mecanismo usan para procesar secuencias completas.</p>
+</blockquote>
+<p>Cuando alguien te manda un mensaje que dice “¿ya llegaste?”, entiendes que hay un plan previo, un lugar implícito y una intención en la pregunta. Un transformer intenta hacer algo parecido con texto: mira muchas palabras al mismo tiempo y calcula qué tan relacionadas están entre sí. Ese mecanismo se llama <strong>atención</strong>.</p>
+<p>En lugar de leer una oración solo de izquierda a derecha, el modelo compara palabras entre sí y aprende dependencias largas. Por eso puede traducir, resumir, completar texto o responder preguntas con mucho más contexto que modelos anteriores.</p>
+<svg viewbox="0 0 500 90" class="transformer-attention-svg" role="img" aria-label="Diagrama de atención: cada palabra se conecta con las demás con arcos de intensidad variable">
+  <!-- Word labels -->
+  <g font-family="inherit" font-size="12" text-anchor="middle" fill="#374151">
+    <text x="50" y="72">¿ya</text>
+    <text x="150" y="72">llegaste</text>
+    <text x="250" y="72">al</text>
+    <text x="350" y="72">lugar</text>
+    <text x="450" y="72">?</text>
+  </g>
+  <!-- Word nodes -->
+  <g fill="#fdf4ee" stroke="#c4875d" stroke-width="1.5">
+    <circle cx="50" cy="55" r="14"></circle>
+    <circle cx="150" cy="55" r="14"></circle>
+    <circle cx="250" cy="55" r="14"></circle>
+    <circle cx="350" cy="55" r="14"></circle>
+    <circle cx="450" cy="55" r="14"></circle>
+  </g>
+  <!-- Attention arcs: strong connections to "llegaste" -->
+  <!-- ¿ya → llegaste (strong) -->
+  <path d="M 50 41 Q 100 10 150 41" fill="none" stroke="#c4875d" stroke-width="2.5" stroke-dasharray="0" opacity="0.85"></path>
+  <!-- lugar → llegaste (strong) -->
+  <path d="M 350 41 Q 250 5 150 41" fill="none" stroke="#c4875d" stroke-width="2" opacity="0.7"></path>
+  <!-- ¿ya → lugar (medium) -->
+  <path d="M 50 41 Q 200 -5 350 41" fill="none" stroke="#c4875d" stroke-width="1.2" opacity="0.4"></path>
+  <!-- al → llegaste (weak) -->
+  <path d="M 250 41 Q 200 22 150 41" fill="none" stroke="#c4875d" stroke-width="1" opacity="0.3"></path>
+  <!-- ? → llegaste (weak) -->
+  <path d="M 450 41 Q 300 8 150 41" fill="none" stroke="#c4875d" stroke-width="1" opacity="0.25"></path>
+  <!-- Legend -->
+  <text x="250" y="88" font-size="10" text-anchor="middle" fill="#9ca3af" font-family="inherit">arco más grueso = mayor atención entre palabras</text>
+</svg>
+<div class="family-quickfacts">
+  <div class="family-quickfacts-head">
+    <span class="family-icon">💬</span>
+    <div>
+      <h4 class="family-title anchored">Cuando importa el contexto de una secuencia</h4>
+    </div>
   </div>
-  <span class="resource-card-arrow">→</span>
-</a>
-<hr>
-<!-- TODO S3: Migrate RL Mario demo (id="rl-shell") from sesion-01.qmd here.
-     It is currently wrapped in {.content-hidden} in S1 (after the K-Means demo).
-     Move the full demo-wrap div + canvas + supporting JS/CSS here, then update
-     the callout below to say "vamos a ver" instead of "viste en S1". Also update
-     the SVG flowchart "ya lo conoces" label for refuerzo (if present). -->
-</section>
-<section id="aprendizaje-por-refuerzo-ya-lo-conoces" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="aprendizaje-por-refuerzo-ya-lo-conoces">Aprendizaje por refuerzo — ya lo conoces</h4>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+  <div class="family-facts-grid">
+    <article class="family-fact">
+      <span class="family-fact-label">¿Para qué sirve?</span>
+      <p>Traducción, generación de texto, resumen, chatbots, asistentes de código y otras tareas de lenguaje.</p>
+    </article>
+    <article class="family-fact">
+      <span class="family-fact-label">¿Dónde lo ves?</span>
+      <p>ChatGPT, Google Translate, Copilot, asistentes que completan frases o redactan respuestas.</p>
+    </article>
+    <article class="family-fact">
+      <span class="family-fact-label">¿Cuál es su límite?</span>
+      <p>Es costoso de entrenar, puede alucinar y hereda sesgos del texto con el que aprendió.</p>
+    </article>
+  </div>
 </div>
-<div class="callout-title-container flex-fill">
-Repaso rápido — S1
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>En la sesión 1 viste a Mario aprendiendo a saltar: el agente toma acciones, recibe recompensas si le va bien y penalizaciones si falla, y ajusta su política. Sin datos etiquetados — solo prueba y error en un entorno.</p>
-</div>
-</div>
-<p><strong>Cuándo usarlo:</strong> cuando no tienes un conjunto de datos etiquetados y el sistema puede aprender actuando en un simulador: videojuegos, robótica, optimización de rutas, sistemas de trading, control de plantas industriales.</p>
-<p><strong>Su límite:</strong> necesita un <strong>simulador</strong> donde probar millones de veces sin consecuencias reales. Transferir lo aprendido en simulación al mundo físico (el llamado <em>sim-to-real gap</em>) sigue siendo uno de los problemas más difíciles de la robótica moderna.</p>
 <hr>
 </section>
+<section id="aprendizaje-por-refuerzo" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="aprendizaje-por-refuerzo">Aprendizaje por refuerzo</h4>
+<p>El aprendizaje por refuerzo surgió de un problema distinto a todos los demás: ¿qué pasa cuando no tienes datos etiquetados de ningún tipo, pero sí puedes dejar que el sistema actúe, observe las consecuencias y corrija? No se trata de predecir un número ni de clasificar una imagen —se trata de aprender a tomar decisiones. La lógica es simple y poderosa: un agente actúa, el entorno responde y una recompensa o penalización va moldeando la política que el agente repite después.</p>
+<div class="fc-diagram fc-diagram-rl" aria-label="Diagrama de aprendizaje por refuerzo: un agente actúa sobre un entorno y recibe nueva situación y recompensa">
+  <div class="fc-d-node fc-d-agent">
+    <div class="fc-d-icon">🤖</div>
+    <div>
+      <div class="fc-d-title">Agente</div>
+      <div class="fc-d-sub">elige una acción</div>
+    </div>
+  </div>
+  <div class="fc-rl-lines">
+    <span class="fc-rl-label top">acción</span>
+    <span class="fc-rl-label mid">nuevo estado</span>
+    <span class="fc-rl-label bottom">recompensa o penalización</span>
+  </div>
+  <div class="fc-d-node fc-d-environment">
+    <div class="fc-d-icon">🌍</div>
+    <div>
+      <div class="fc-d-title">Entorno</div>
+      <div class="fc-d-sub">responde y cambia la situación</div>
+    </div>
+  </div>
+</div>
+<div class="family-quickfacts">
+  <div class="family-quickfacts-head">
+    <span class="family-icon">🎮</span>
+    <div>
+      <h4 class="family-title anchored">Cuando la IA aprende actuando</h4>
+    </div>
+  </div>
+  <div class="family-facts-grid">
+    <article class="family-fact">
+      <span class="family-fact-label">¿Para qué sirve?</span>
+      <p>Problemas donde no hay respuestas etiquetadas, pero sí un entorno para probar acciones y observar consecuencias.</p>
+    </article>
+    <article class="family-fact">
+      <span class="family-fact-label">¿Dónde lo ves?</span>
+      <p>Videojuegos, robótica, control industrial, optimización de rutas y simuladores complejos.</p>
+    </article>
+    <article class="family-fact">
+      <span class="family-fact-label">¿Cuál es su límite?</span>
+      <p>Necesita millones de intentos y, casi siempre, un simulador seguro. Pasar de simulación al mundo real sigue siendo difícil.</p>
+    </article>
+  </div>
+</div>
+<div class="demo-wrap" data-autoplay="">
+  <div class="demo-shell demo-tone-rl" id="rl-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Aprendizaje por refuerzo</p>
+        <h4 class="demo-title anchored">Mario aprende a saltar</h4>
+        <p class="demo-copy">Un agente aprende a jugar Mario repitiendo acciones y observando cuáles le resultan y cuáles no.</p>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div class="rl-panel rl-panel-preview">
+              <h5 class="anchored">La mecánica</h5>
+              <div class="rl-metrics">
+                <div class="rl-metric"><span class="rl-metric-label">Estado</span><span class="rl-metric-value">Agente + hueco + meta</span></div>
+                <div class="rl-metric"><span class="rl-metric-label">Acción</span><span class="rl-metric-value">Correr o saltar</span></div>
+                <div class="rl-metric"><span class="rl-metric-label">Recompensa</span><span class="rl-metric-value">Positiva o negativa</span></div>
+              </div>
+            </div>
+          </div>
+          <p class="demo-preview-title">Vista previa del ciclo de refuerzo</p>
+          <p class="demo-preview-copy">Verás tres intentos. Lo importante no es solo si cruza o no, sino cómo la recompensa modifica la política del agente.</p>
+        </div>
+      </div>
+
+      <div class="demo-stage-live">
+        <div class="rl-layout">
+          <div class="demo-plot-frame rl-canvas-frame">
+            <canvas id="rl-canvas" class="rl-canvas" width="460" height="240"></canvas>
+          </div>
+          <div class="rl-panel">
+            <h5 class="anchored">Panel del agente</h5>
+            <div class="rl-metrics">
+              <div class="rl-metric">
+                <span class="rl-metric-label">Intento</span>
+                <span id="rl-attempt-value" class="rl-metric-value"></span>
+              </div>
+              <div class="rl-metric">
+                <span class="rl-metric-label">Estado actual</span>
+                <span id="rl-state-value" class="rl-metric-value"></span>
+              </div>
+              <div class="rl-metric">
+                <span class="rl-metric-label">Acción</span>
+                <span id="rl-action-value" class="rl-metric-value"></span>
+              </div>
+              <div class="rl-metric">
+                <span class="rl-metric-label">Recompensa</span>
+                <span id="rl-reward-value" class="rl-metric-value"></span>
+              </div>
+              <div class="rl-metric">
+                <span class="rl-metric-label">Puntos acumulados</span>
+                <span id="rl-total-value" class="rl-metric-value"></span>
+              </div>
+              <div class="rl-metric">
+                <span class="rl-metric-label">Política</span>
+                <span id="rl-policy-value" class="rl-metric-value"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5 class="anchored">Qué estás viendo</h5>
+        <p id="rl-seeing"></p>
+      </div>
+      <div class="demo-insight">
+        <h5 class="anchored">Qué significa</h5>
+        <p id="rl-meaning"></p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <p id="rl-status" class="demo-status"></p>
+      <div class="demo-actions">
+        <button id="rl-start" class="demo-btn demo-btn-primary">Ver animación</button>
+        <button id="rl-reset" class="btn-restart" disabled="">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
 </section>
 </section>
-<section id="actividad-problema-método-límite" class="level2">
-<h2 class="anchored" data-anchor-id="actividad-problema-método-límite">Actividad: Problema → Método → Límite</h2>
-<p>Ahora te toca a ti. A continuación hay seis problemas que nos podemos encontrar en el día a día. Para cada uno, elige la familia de algoritmos que mejor encaja usando lo que viste en el mapa de métodos. Cuando hayas asignado todos, verifica tus respuestas.</p>
+</section>
+<section id="actividad" class="level2">
+<h2 class="anchored" data-anchor-id="actividad">Actividad</h2>
+<p>Ahora te toca a ti. A continuación hay seis problemas cotidianos. Para cada uno, elige la familia de algoritmos que mejor encaja usando el mapa de métodos. Cuando hayas asignado todos, verifica tus respuestas.</p>
 <div class="demo-wrap">
   <div class="demo-shell demo-tone-ranking" id="match-shell">
     <div class="demo-shell-head">
@@ -655,11 +905,11 @@ Repaso rápido — S1
     <div class="demo-insights">
       <div class="demo-insight">
         <h5 class="anchored">Qué estás viendo</h5>
-        <p id="match-seeing">6 problemas del mundo actual. Tu tarea es asignar la familia de IA más apropiada a cada uno.</p>
+        <p id="match-seeing">Seis problemas reales del mundo actual. Tu tarea es asignar la familia de IA más apropiada a cada uno.</p>
       </div>
       <div class="demo-insight">
         <h5 class="anchored">Qué significa</h5>
-        <p id="match-meaning">El objetivo no es memorizar nombres — es aprender a reconocer qué tipo de problema pide qué tipo de solución.</p>
+        <p id="match-meaning">El objetivo no es memorizar nombres, sino aprender a reconocer qué tipo de problema pide qué tipo de solución.</p>
       </div>
     </div>
 
@@ -672,15 +922,16 @@ Repaso rápido — S1
     </div>
   </div>
 </div>
-
-<script src="../interactives/sesion-03.js"></script>
 <hr>
-</section>
-<section id="cierre" class="level2">
-<h2 class="anchored" data-anchor-id="cierre">Cierre</h2>
+<div class="reflexion-prompt-pre">
+  <span class="reflexion-icon">💭</span>
+  <p>Antes de ver el resumen: ¿cuál sería la primera pregunta que harías antes de elegir un modelo de IA para un problema que encuentres en tu día a día?</p>
+</div>
 <section id="tabla-comparativa" class="level3">
 <h3 class="anchored" data-anchor-id="tabla-comparativa">Tabla comparativa</h3>
-<p>Aquí tienes un resumen de la sesión en formato tabla:</p>
+<p>Aquí tienes un resumen compacto de toda la sesión.</p>
+<div class="tabla-comparativa-wrap">
+  
 <table class="tabla-comparativa caption-top table" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
@@ -688,95 +939,119 @@ Repaso rápido — S1
 <th data-quarto-table-cell-role="th">Tipo de problema</th>
 <th data-quarto-table-cell-role="th">Analogía</th>
 <th data-quarto-table-cell-role="th">App que la usa</th>
-<th data-quarto-table-cell-role="th">Límite clave</th>
+<th data-quarto-table-cell-role="th">Límite</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Regresión lineal</strong> <span class="tag-conocido">S1</span></td>
+<td><strong>Regresión lineal</strong></td>
 <td>Predecir un número continuo</td>
-<td>Estimar calificación según horas de estudio</td>
-<td>DiDi (tiempo de llegada), Google Maps</td>
-<td>Solo relaciones lineales</td>
+<td>Estimar algo con una recta</td>
+<td>DiDi, Google Maps</td>
+<td>Solo captura relaciones lineales simples</td>
 </tr>
 <tr class="even">
-<td><strong>Árbol de decisión</strong> <span class="tag-nuevo">nuevo</span></td>
-<td>Clasificar en categorías con datos estructurados</td>
-<td>El juego de las 20 preguntas</td>
-<td>Filtros de spam, diagnóstico médico básico</td>
-<td>Sobreajuste; falla con datos muy diferentes</td>
+<td><strong>Árbol de decisión</strong></td>
+<td>Clasificar con datos estructurados</td>
+<td>Juego de preguntas de sí o no</td>
+<td>Spam, riesgo, triage</td>
+<td>Puede sobreajustarse y fallar fuera de distribución</td>
 </tr>
 <tr class="odd">
-<td><strong>K-Means</strong> <span class="tag-conocido">S1</span></td>
+<td><strong>K-Means</strong></td>
 <td>Agrupar sin etiquetas</td>
-<td>Spotify agrupando música sin decirle los géneros</td>
-<td>Mercado Libre (segmentación), Netflix (perfiles)</td>
-<td>Tú decides cuántos grupos quieres</td>
+<td>Buscar zonas parecidas en una nube de puntos</td>
+<td>Spotify, Netflix, segmentación</td>
+<td>Tú eliges cuántos grupos quieres</td>
 </tr>
 <tr class="even">
-<td><strong>CNN</strong> <span class="tag-nuevo">nuevo</span></td>
+<td><strong>CNN</strong></td>
 <td>Clasificar imágenes o video</td>
-<td>Capas de filtros que ven bordes → formas → objetos</td>
-<td>Face ID, filtros de Instagram, moderación TikTok</td>
-<td>Necesita millones de imágenes etiquetadas</td>
+<td>Capas que ven bordes → formas → objetos</td>
+<td>Face ID, filtros, moderación</td>
+<td>Necesita muchos datos visuales etiquetados</td>
 </tr>
 <tr class="odd">
-<td><strong>Transformer</strong> <span class="tag-nuevo">nuevo</span></td>
-<td>Entender o generar texto y secuencias</td>
-<td>Autocomplete que entiende el contexto completo</td>
-<td>ChatGPT, Google Translate, GitHub Copilot</td>
-<td>Muy caro de entrenar; puede alucinar</td>
+<td><strong>Transformer</strong></td>
+<td>Entender o generar secuencias</td>
+<td>Autocomplete que sí usa contexto</td>
+<td>ChatGPT, Translate, Copilot</td>
+<td>Es costoso y puede alucinar</td>
 </tr>
 <tr class="even">
-<td><strong>Refuerzo</strong> <span class="tag-conocido">S1</span></td>
+<td><strong>Refuerzo</strong></td>
 <td>Aprender a actuar por ensayo y error</td>
-<td>Aprender a patinar cayéndose mil veces</td>
-<td>Bots de videojuegos, robots, sistemas de control</td>
-<td>Necesita simulador; sim-to-real gap</td>
+<td>Practicar hasta que la recompensa mejore</td>
+<td>Videojuegos, robótica, control</td>
+<td>Necesita simulación y muchísimos intentos</td>
 </tr>
 </tbody>
 </table>
+
+</div>
+<hr>
+</section>
+<section id="para-reflexionar" class="level3">
+<h3 class="anchored" data-anchor-id="para-reflexionar">Para reflexionar</h3>
+<span class="reflexion-kicker">Reflexión · 5 min</span>
+<h3 class="reflexion-heading anchored">Actividad de reflexión</h3>
+<ol class="reflexion-list">
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">01</span>
+    <p class="reflexion-q"><strong>Elige una app que usas todos los días.</strong> ¿Qué tipo de problema resuelve su IA? Usa el mapa de las dos preguntas para ubicarla.</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">02</span>
+    <p class="reflexion-q"><strong>Piensa en un problema que quisieras resolver con IA.</strong> Puede ser algo de tu escuela, tu hobby o tu comunidad. ¿Qué familia usarías? ¿Qué datos necesitarías?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">03</span>
+    <p class="reflexion-q"><strong>Los límites importan.</strong> Si tuvieras que explicarle a alguien por qué un transformer no es la solución a todo, ¿qué le dirías?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">04</span>
+    <p class="reflexion-q"><strong>Condénsalo en una regla.</strong> Si tuvieras que resumir esta sesión en una frase práctica, ¿cómo decidirías qué algoritmo probar primero?</p>
+  </li>
+</ol>
+<p class="reflexion-close">No hay respuestas correctas o incorrectas. El objetivo es que el mapa empiece a vivir en tu cabeza, no solo en esta página.</p>
+<hr>
+</section>
+<section id="la-idea-central-de-esta-sesión" class="level3">
+<h3 class="anchored" data-anchor-id="la-idea-central-de-esta-sesión">La idea central de esta sesión</h3>
 <div class="central-idea">
   <span class="central-idea-label">Idea central · Sesión 3</span>
-  <p class="central-idea-text">El algoritmo correcto no es el más complejo ni el más famoso: es el que mejor encaja con el tipo de problema que tienes. Un transformer no es mejor que un árbol de decisión en absoluto; son herramientas para trabajos distintos. La habilidad no es saber todos los algoritmos de memoria, sino saber hacer las dos preguntas del mapa.</p>
+  <p class="central-idea-text">El algoritmo correcto no es el más complejo ni el más famoso. Es el que mejor encaja con el tipo de problema, la forma de la salida y los datos que tienes. La clave está en aprender a formular la pregunta adecuada para elegir la mejor herramienta.</p>
 </div>
 <hr>
 </section>
-</section>
-<section id="para-reflexionar" class="level2">
-<h2 class="anchored" data-anchor-id="para-reflexionar">Para reflexionar</h2>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Para pensar en casa
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Ahora que terminaste la sesión, responde para ti mismo estas preguntas:</p>
-<ol type="1">
-<li><p><strong>Elige una app que usas todos los días.</strong> ¿Qué tipo de problema resuelve su IA? Usa el mapa de las dos preguntas para ubicarla.</p></li>
-<li><p><strong>Piensa en un problema que quisieras resolver con IA</strong> — puede ser algo de tu escuela, tu hobby o algo que veas en tu comunidad. ¿Qué familia usarías? ¿Qué datos necesitarías?</p></li>
-<li><p><strong>Los límites importan.</strong> Si tuvieras que explicarle a alguien por qué los transformers no son la solución a todo (LLMs, ChatGPT), ¿qué le dirías?</p></li>
-</ol>
-<p>No hay respuestas correctas o incorrectas. El objetivo es que el mapa empiece a vivir en tu cabeza, no solo en esta página.</p>
-</div>
-</div>
-<hr>
 <section id="recursos-para-explorar-más-sobre-el-tema" class="level3">
 <h3 class="anchored" data-anchor-id="recursos-para-explorar-más-sobre-el-tema">Recursos para explorar más sobre el tema</h3>
-<div class="resource-list">
-<ul>
-<li><a href="https://r2d3.us/visual-intro-to-machine-learning-part-1/">R2D3 — Visual intro to machine learning</a> — el mejor scrollytelling sobre árboles de decisión que existe; sin código, en inglés con visulaes que se explican solos</li>
-<li><a href="https://mlu-explain.github.io/">MLU-Explain</a> — ensayos visuales e interactivos sobre algoritmos clave, de Amazon Machine Learning University</li>
-<li><a href="https://poloclub.github.io/transformer-explainer/">Transformer Explainer</a> — GPT-2 en vivo en tu navegador; observa el mecanismo de atención en acción</li>
-<li><a href="https://www.naftaliharris.com/blog/visualizing-k-means-clustering/">Visualizing K-Means</a> — demo interactiva del clustering paso a paso</li>
-<li><a href="https://playground.tensorflow.org/">TensorFlow Playground</a> — experimenta con redes neuronales cambiando parámetros en tiempo real</li>
-<li><a href="https://www.elementsofai.com/es">Elements of AI</a> — curso introductorio gratuito en español (Universidad de Helsinki), cubre varios de los algoritmos de esta sesión</li>
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://r2d3.us/visual-intro-to-machine-learning-part-1/" target="_blank" rel="noopener">R2D3 — Visual intro to machine learning <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Scrollytelling visual para entender cómo un árbol de decisión construye sus preguntas paso a paso.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://mlu-explain.github.io/" target="_blank" rel="noopener">MLU-Explain <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Colección de ensayos visuales sobre algoritmos clave de machine learning.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://poloclub.github.io/transformer-explainer/" target="_blank" rel="noopener">Transformer Explainer <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">GPT-2 en vivo en tu navegador para observar atención, contexto y predicción de tokens.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.naftaliharris.com/blog/visualizing-k-means-clustering/" target="_blank" rel="noopener">Visualizing K-Means <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Demo interactiva para ver cómo el clustering mueve centros y reagrupa puntos paso a paso.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://playground.tensorflow.org/" target="_blank" rel="noopener">TensorFlow Playground <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Experimenta con redes neuronales y observa cómo cambian sus fronteras de decisión.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.elementsofai.com/es" target="_blank" rel="noopener">Elements of AI <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Curso introductorio gratuito en español con contexto amplio sobre varios de los métodos que viste aquí.</p>
+  </li>
 </ul>
-</div>
 <hr>
 <nav class="sesion-nav">
   <a href="sesion-02.html" class="sesion-nav-btn prev">
@@ -1225,7 +1500,7 @@ Para pensar en casa
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com">
+    <a class="nav-link" href="https://github.com/michelleg06">
       <i class="bi bi-github" role="img">
 </i> 
     </a>

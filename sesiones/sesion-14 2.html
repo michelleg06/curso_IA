@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sesión 9: IA para Organización y Productividad Estudiantil – Intro a la IA</title>
+<title>Sesión 14: IA en Salud, Ciencia y Sociedad – Intro a la IA</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -113,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../sesiones/sesion-02.html">
- <span class="dropdown-text">S2 · Redes Neuronales Artificiales</span></a>
+ <span class="dropdown-text">S2 · Redes Neuronales — ¿Cómo ‘piensa’ la IA?</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../sesiones/sesion-03.html">
@@ -125,7 +125,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../sesiones/sesion-05.html">
- <span class="dropdown-text">S5 · Ética en la IA</span></a>
+ <span class="dropdown-text">S5 · Ética y problemas reales</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../sesiones/sesion-06.html">
@@ -196,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sesión 9: IA para Organización y Productividad Estudiantil</h1>
+<h1 class="title">Sesión 14: IA en Salud, Ciencia y Sociedad</h1>
 </div>
 
 
@@ -215,27 +215,27 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="sesion-banner">
   <div>
-    <span class="sesion-block-pill">Bloque 2 · Herramientas Prácticas</span>
+    <span class="sesion-block-pill">Bloque 3 · Creación, Aplicaciones y Futuro</span>
   </div>
   <div class="sesion-progress-wrap">
     <div class="sesion-progress-bar">
-      <div class="sesion-progress-fill sesion-progress-fill-9"></div>
+      <div class="sesion-progress-fill sesion-progress-fill-14"></div>
     </div>
-    <span class="sesion-progress-label">9 de 15</span>
+    <span class="sesion-progress-label">14 de 15</span>
   </div>
   <div class="sesion-meta">
-    <span class="sesion-meta-chip">📅 30 de junio de 2026</span>
-    <span class="sesion-meta-chip">⏱ 35 minutos</span>
+    <span class="sesion-meta-chip">📅 4 de agosto de 2026</span>
+    <span class="sesion-meta-chip">⏱ 40 minutos</span>
     <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
-<link rel="stylesheet" href="../styles/sessions/sesion-09.css">
-<script src="../interactives/sesion-09.js" defer=""></script>
+<link rel="stylesheet" href="../styles/sessions/sesion-14.css">
+<script src="../interactives/sesion-14.js" defer=""></script>
 <section id="introducción-a-la-ia" class="level2">
 <h2 class="anchored" data-anchor-id="introducción-a-la-ia">Introducción a la IA</h2>
 <div class="video-placeholder">
   <span class="vp-icon">▶</span>
-  <p class="vp-title">Video: IA para Organización y Productividad Estudiantil</p>
+  <p class="vp-title">Video: IA en Salud, Ciencia y Sociedad</p>
 </div>
 <hr>
 <p class="capsule-complement-note">
@@ -243,453 +243,345 @@ Los videos y el texto de esta sesión son complementarios. Los videos amplían e
 </p>
 <section id="introducción" class="level3">
 <h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
-<p>Era lunes por la noche. Valentina tenía tres parciales y una presentación en equipo en tan solo siete días. Química el jueves, Matemáticas el viernes, Historia el lunes siguiente y la presentación de Comunicación el miércoles. Tenía los apuntes regados entre cuadernos, el Drive del equipo y un grupo de WhatsApp donde nadie se ponía de acuerdo en qué había que estudiar para el examen.</p>
-<p>Revisó los grupos: 54 mensajes sin leer en cuatro chats distintos. Alguien decía que Química solo era hasta la unidad 3. Alguien más decía que también incluía la 4. El equipo de Comunicación había mandado cuatro versiones distintas del guión en las últimas dos horas.</p>
-<p>Valentina cerró el teléfono y pensó: <em>¿por dónde empiezo?</em></p>
-<p>Ese momento, el caos antes de poder estudiar, es exactamente donde la IA puede ayudarte más: poner tareas en orden, convertir una semana confusa en un primer plan y reorganizar material para estudiar.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<p>Imagina esta escena. Es de noche en una clínica de la Huasteca potosina. Una médica general atiende a muchas personas y no siempre tiene a un especialista cerca. Llega un paciente con diabetes y visión borrosa. La clínica usa una herramienta que analiza imágenes del ojo y sugiere si hace falta mandar a la persona con urgencia a un hospital más grande.</p>
+<p>Esa escena es hipotética para San Luis Potosí — todavía. Sin embargo, en otras regiones del mundo con contextos similares ya es una realidad. Si queremos integrar ese tipo de IA en el sector salud de México, tenemos que preguntarnos: ¿qué hace exactamente esa herramienta? ¿Cómo funciona? ¿Qué hay que saber para usarla bien, y para saber cuándo falla?</p>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-La pregunta central de esta sesión
+La pregunta que guiará esta sesión
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>¿Cómo puedes usar la IA para organizarte mejor?</p>
+<p>Si una herramienta de IA participa en decisiones sobre tu salud, ¿qué tendría que pasar para que eso sea justo, seguro y de utilidad?</p>
 </div>
 </div>
 <hr>
 </section>
-<section id="tres-usos-útiles-de-la-ia" class="level3">
-<h3 class="anchored" data-anchor-id="tres-usos-útiles-de-la-ia">Tres usos útiles de la IA</h3>
-<p>En esta sesión nos enfocaremos en tres tareas concretas que ayudan cuando tienes unos días ajetreados o agobiantes por delante.</p>
-<div class="modo-grid">
-  <div class="modo-card">
-    <span class="modo-icon">🧭</span>
-    <span class="modo-tag">Paso 1</span>
-    <h5 class="anchored">Hacer visible el caos</h5>
-    <p>Tomar fechas, materias, entregas y horas disponibles para convertirlas en una lista clara de restricciones concretas.</p>
-    <span class="modo-example">"Tengo una presentación el miércoles, Química el jueves y Matemáticas el viernes. Solo puedo estudiar 2 o 3 horas por tarde."</span>
-  </div>
-  <div class="modo-card">
-    <span class="modo-icon">📅</span>
-    <span class="modo-tag">Paso 2</span>
-    <h5 class="anchored">Proponer un primer plan</h5>
-    <p>Repartir el tiempo según la urgencia, dificultad y energía disponible. El plan es un borrador, no una orden automática.</p>
-    <span class="modo-example">"Dame una propuesta de semana priorizando Química porque es donde voy más atrasada."</span>
-  </div>
-  <div class="modo-card">
-    <span class="modo-icon">📝</span>
-    <span class="modo-tag">Paso 3</span>
-    <h5 class="anchored">Reorganizar material propio</h5>
-    <p>Resumir apuntes, ordenar ideas y convertir material de estudio extenso en una guía más manejable para estudiar.</p>
-    <span class="modo-example">"Aquí están mis apuntes del Porfiriato. Reorganízalos en 5 ideas clave y 4 preguntas de repaso."</span>
-  </div>
-</div>
-<p>La IA puede proponer, resumir y ordenar. El criterio para decidir si ese resultado sirve sigue siendo tuyo.</p>
+<section id="mini-diccionario" class="level3">
+<h3 class="anchored" data-anchor-id="mini-diccionario">Mini-Diccionario</h3>
+<p>Estas palabras aparecen en esta sesión. Aquí van en versión clara:</p>
+<ul>
+<li><strong>Diagnóstico:</strong> identificar qué problema de salud tiene una persona.</li>
+<li><strong>Triage:</strong> decidir qué paciente necesita atención urgente primero.</li>
+<li><strong>Sesgo:</strong> un error sistemático que perjudica más a unos grupos que a otros.</li>
+<li><strong>Proxy:</strong> una medida indirecta. Por ejemplo, usar “gasto médico” como sustituto de “qué tan enfermo está alguien”.</li>
+<li><strong>Consentimiento informado:</strong> aceptar algo después de recibir una explicación clara de qué es y qué implica.</li>
+</ul>
 <hr>
 </section>
-<section id="tres-herramientas-para-tres-tipos-de-problemas-de-organización" class="level3">
-<h3 class="anchored" data-anchor-id="tres-herramientas-para-tres-tipos-de-problemas-de-organización">Tres herramientas para tres tipos de problemas de organización</h3>
-<p>No todos los problemas de productividad se parecen. A veces necesitas centralizar fechas. A veces trabajar con tus propios apuntes. A veces solo convertir una tarea ambigua en acciones concretas.</p>
-<section id="notion-ai-notion-calendar-cuando-las-actividades-de-tu-semana-están-dispersas" class="level4">
-<h4 class="anchored" data-anchor-id="notion-ai-notion-calendar-cuando-las-actividades-de-tu-semana-están-dispersas"><strong>1. Notion AI + Notion Calendar: cuando las actividades de tu semana están dispersas</strong></h4>
-<p>Si ya tomas notas en formato digital, Notion puede servirte como <strong>tablero central</strong>: materias, tareas, fecha de entrega y estatus en un mismo lugar. La parte de <strong>Notion AI</strong> ayuda a resumir páginas largas, convertir apuntes en listas de tareas y proponer una primera organización. <strong>Notion Calendar</strong> sirve para organizar tus actividades diarias y tener el panorama semanal, incluso mensual, y detectar en qué días se te enciman las entregas.</p>
-<div class="toolspot-card">
-  <div class="toolspot-head">
-    <span class="toolspot-kicker">Organizar y calendarizar</span>
-    <div class="toolspot-logo-row">
-      <svg class="tool-logo" viewbox="0 0 335 350" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Notion"><path d="M21 15L215 1c24-2 30 0 45 11l62 43c10 7 13 9 13 18v238c0 15-5 24-24 25L86 349c-14 1-21-1-28-11L11 279C3 268 0 260 0 251V39c0-12 5-22 21-24z" fill="white"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M215 1L21 15C5 16 0 27 0 39v212c0 9 3 17 11 28l46 59c7 9 14 11 28 11l225-13c19-1 25-9 25-24V72c0-8-3-10-12-16L260 11C245 0 238-1 215 1zM91 68c-18 1-22 2-33-7L31 40c-3-3-1-6 7-7L223 20c15-2 23 3 29 7l32 23c1 1 5 5 1 5L93 68zm-21 240V106c0-9 3-13 11-14l221-12c7-1 10 4 10 12v201c0 8-1 16-13 17L87 323c-12 1-17-4-17-15zm208-192c1 6 0 12-6 13l-10 2v149c-9 5-17 7-24 7-11 0-13-3-22-14L150 171v101l21 5s0 12-17 12l-47 3c-1-3 0-10 5-11l12-4V143l-17-1c-1-6 3-15 12-15l50-3 69 106v-93l-17-3c-2-7 3-12 10-13l47-3z" fill="black"></path></svg>
-    </div>
-    <h4 class="toolspot-title anchored">Notion AI + Notion Calendar</h4>
-    <p class="toolspot-copy">Un mismo flujo: capturas tareas y apuntes en Notion, los resumes con IA y luego los ves como fechas y bloques de trabajo en el calendario.</p>
-    <a class="tool-demo-link" href="https://www.notion.com/product/ai" target="_blank" rel="noopener">▶ Ver Notion AI en acción →</a>
-  </div>
+<section id="dónde-está-la-ia-en-la-medicina" class="level3">
+<h3 class="anchored" data-anchor-id="dónde-está-la-ia-en-la-medicina">Dónde está la IA en la medicina</h3>
+<p>La IA tiene diversas aplicaciones para el sector salud. A veces se usa directamente en un paciente; a veces opera detrás de la consulta. A veces apoya decisiones clínicas; otras veces organiza trabajo administrativo. Esta tabla te ayuda a ubicar los usos más comunes:</p>
+<div class="typology-wrap">
+  <div class="typology-outer">
+    
+<table class="typology caption-top table" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="typology-corner" data-quarto-table-cell-role="th"></th>
+<th class="typology-colhead typology-col-admin" data-quarto-table-cell-role="th">Administrativa</th>
+<th class="typology-colhead typology-col-diag" data-quarto-table-cell-role="th">Diagnóstica / Clínica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="typology-rowhead">Contacto<br>
+directo con<br>
+el paciente</td>
+<td class="typology-cell"><ul>
+<li>Recordatorios de citas y medicamentos</li>
+<li>Asistentes para llenar formularios</li>
+<li>Transcripción de consultas <a href="#use-matilde" class="typology-tag typology-tag-mx">🇲🇽 Matilde</a></li>
+<li>Apoyo al triage en urgencias</li>
+</ul></td>
+<td class="typology-cell"><ul>
+<li>Análisis de radiografías y retinas <a href="#use-deepmind" class="typology-tag typology-tag-success">DeepMind →</a></li>
+<li>Herramientas de apoyo al diagnóstico</li>
+<li>Seguimiento de signos vitales</li>
+<li>Recomendaciones clínicas supervisadas</li>
+</ul></td>
+</tr>
+<tr class="even">
+<td class="typology-rowhead">Sin contacto<br>
+directo con<br>
+el paciente</td>
+<td class="typology-cell"><ul>
+<li>Asignación de camas y recursos</li>
+<li>Planeación de turnos</li>
+<li>Cálculo de riesgo para priorizar pacientes <a href="#use-obermeyer" class="typology-tag typology-tag-failure">Obermeyer →</a></li>
+<li>Detección de fraude y errores administrativos</li>
+</ul></td>
+<td class="typology-cell"><ul>
+<li>Diseño de fármacos y biología computacional <a href="#use-alphafold" class="typology-tag typology-tag-science">AlphaFold →</a></li>
+<li>Análisis de laboratorio clínico</li>
+<li>Predicción de estructuras de proteínas</li>
+<li>Investigación con grandes bases de datos</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
 
-  <div class="toolspot-layout">
-    <div class="toolshot-window">
-      <div class="toolshot-bar">
-        <span class="toolshot-dots"><span></span><span></span><span></span></span>
-        <span class="toolshot-title">Notion · Tareas de la semana</span>
-      </div>
-      <div class="toolshot-body">
-        <div class="notion-row notion-row-head">
-          <span>Materia</span><span>Entrega</span><span>Prioridad</span>
-        </div>
-        <div class="notion-row">
-          <span>Comunicación</span><span>Mié 11:00</span><span class="tool-badge tool-badge-high">Alta</span>
-        </div>
-        <div class="notion-row">
-          <span>Química</span><span>Jue 08:00</span><span class="tool-badge tool-badge-high">Alta</span>
-        </div>
-        <div class="notion-row">
-          <span>Matemáticas</span><span>Vie 08:00</span><span class="tool-badge tool-badge-mid">Media</span>
-        </div>
-        <div class="notion-ai-box">
-          <span class="tool-mini-kicker">Notion AI</span>
-          <p>Resumen automático: "Esta semana conviene cerrar Comunicación el lunes y reservar martes para Química."</p>
-        </div>
-      </div>
-    </div>
+  </div>
+  <p class="typology-source">Adaptado del marco IAC de Okolo y González Amador (2023)</p>
+</div>
 
-    <div class="toolshot-window">
-      <div class="toolshot-bar">
-        <span class="toolshot-dots"><span></span><span></span><span></span></span>
-        <span class="toolshot-title">Notion Calendar · Semana</span>
-      </div>
-      <div class="toolshot-body">
-        <div class="calendar-mini">
-          <div class="calendar-col">
-            <span class="calendar-day">Lun</span>
-            <span class="calendar-event calendar-event-task">Estructura de presentación</span>
-            <span class="calendar-event calendar-event-study">Química</span>
-          </div>
-          <div class="calendar-col">
-            <span class="calendar-day">Mar</span>
-            <span class="calendar-event calendar-event-study">Química</span>
-            <span class="calendar-event calendar-event-study">Matemáticas</span>
-          </div>
-          <div class="calendar-col">
-            <span class="calendar-day">Mié</span>
-            <span class="calendar-event calendar-event-talk">Presentación</span>
-            <span class="calendar-event calendar-event-light">Historia</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-<section id="notebooklm-cuando-quieres-estudiar-con-tus-propias-fuentes" class="level4">
-<h4 class="anchored" data-anchor-id="notebooklm-cuando-quieres-estudiar-con-tus-propias-fuentes">2. NotebookLM: cuando quieres estudiar con tus propias fuentes</h4>
-<p><strong>NotebookLM</strong> es muy útil cuando no quieres trabajar sobre un PDF, tus apuntes o una lectura concreta. Su ventaja principal es que responde con base en el material que <strong>tú subiste</strong>, lo que mantiene la sesión enfocada en síntesis basada en tus fuentes, no en información inventada. También puede generar una <strong>guía de estudio</strong> o un <strong>resumen en audio</strong> a partir de tus documentos.</p>
-<div class="toolspot-card">
-  <div class="toolspot-head">
-    <span class="toolspot-kicker">Estudiar desde tus fuentes</span>
-    <div class="toolspot-logo-row">
-      <img src="../assets/sesion-09/notebooklm-logo.svg" class="tool-logo" alt="NotebookLM" loading="lazy">
-    </div>
-    <h4 class="toolspot-title anchored">NotebookLM</h4>
-    <p class="toolspot-copy">Subes tus apuntes o un PDF, y la herramienta genera guías, preguntas o resúmenes anclados en ese material.</p>
-    <a class="tool-demo-link" href="https://notebooklm.google" target="_blank" rel="noopener">▶ Ver NotebookLM en acción →</a>
-  </div>
+<div class="usecase-grid">
 
-  <div class="toolspot-layout">
-    <div class="toolshot-window">
-      <div class="toolshot-bar">
-        <span class="toolshot-dots"><span></span><span></span><span></span></span>
-        <span class="toolshot-title">Fuentes cargadas</span>
-      </div>
-      <div class="toolshot-body">
-        <div class="source-pill">Apuntes de Historia.pdf</div>
-        <div class="source-pill">Capítulo 4 · Revolución Mexicana</div>
-        <div class="source-pill">Guía del examen.docx</div>
-        <div class="notion-ai-box notebook-note">
-          <span class="tool-mini-kicker">Pregunta</span>
-          <p>"¿Cuáles son los 5 conceptos más importantes y qué partes del material parecen más evaluables?"</p>
-        </div>
-      </div>
-    </div>
+  <a class="usecase-card usecase-card-mx" id="use-matilde" href="https://technonoticias.com/2026/03/09/ia-en-hospitales-como-matilde-ayuda-a-medicos-y-clinicas-a-gestionar-pacientes/" target="_blank" rel="noopener noreferrer">
+    <span class="usecase-meta">Administrativa · Contacto directo</span>
+    <h4 class="usecase-title anchored">Matilde — México (2026)</h4>
+    <p class="usecase-desc">Sistema de IA que transcribe consultas médico-paciente en tiempo real por dictado de voz, genera notas clínicas estructuradas y sugiere niveles de urgencia para el triage. Diseñada para reducir carga administrativa donde el personal médico es escaso.</p>
+  </a>
 
-    <div class="toolshot-window">
-      <div class="toolshot-bar">
-        <span class="toolshot-dots"><span></span><span></span><span></span></span>
-        <span class="toolshot-title">Guía de estudio generada</span>
-      </div>
-      <div class="toolshot-body">
-        <ul class="nb-guide">
-          <li>Porfiriato: estabilidad, modernización y desigualdad</li>
-          <li>Causas de la Revolución: políticas, económicas y sociales</li>
-          <li>Actores principales y sus diferencias</li>
-          <li>Constitución de 1917 y cambio institucional</li>
-        </ul>
-        <div class="citation-pill">Citas al material original</div>
-        <div class="audio-pill">Audio Overview disponible</div>
-      </div>
-    </div>
-  </div>
-</div>
-<p>Una forma útil de pedirlo sería:</p>
-<pre class="text"><code>Aquí están mis apuntes del Porfiriato. No inventes información nueva.
-1. Reorganízalos en 5 ideas clave.
-2. Señala qué conceptos aparecen repetidos.
-3. Cierra con 4 preguntas de repaso.
-Si algo no está claro en mis apuntes, márcalo como duda sin completarlo.</code></pre>
-</section>
-<section id="goblin.tools-cuando-el-problema-no-es-estudiar-sino-empezar" class="level4">
-<h4 class="anchored" data-anchor-id="goblin.tools-cuando-el-problema-no-es-estudiar-sino-empezar">3. Goblin.tools: cuando el problema no es estudiar, sino empezar</h4>
-<p>Hay semanas en las que el bloqueo no viene de la dificultad del contenido, sino de no saber por dónde empezar. <strong>Goblin.tools</strong> te ayuda con eso: escribe una tarea, aunque esté planteada de forma ambigua, y la herramienta la descompone en <strong>pasos accionables concretos</strong>. No reemplaza un calendario, pero sí destraba el primer movimiento.</p>
-<div class="goblin-mockup">
-  <div class="goblin-mockup-bar">
-    <span class="goblin-mockup-dots"><span></span><span></span><span></span></span>
-    <img src="../assets/sesion-09/goblin-logo.png" alt="Goblin.tools" style="width:18px;height:18px;object-fit:contain;border-radius:4px;flex-shrink:0;" loading="lazy">
-    <span class="goblin-mockup-title">goblin.tools · Magic ToDo</span>
-  </div>
-  <div class="goblin-mockup-body">
-    <div class="goblin-mockup-input-row">
-      <span class="goblin-mockup-input-label">Tarea</span>
-      <p class="goblin-mockup-input-text">Preparar la presentación de Comunicación para el miércoles</p>
-    </div>
-    <div class="goblin-mockup-arrow">↓ descomponer</div>
-    <ul class="goblin-mockup-tasks">
-      <li><span class="goblin-check">○</span> Revisar el guión actual y marcar las secciones sin terminar</li>
-      <li><span class="goblin-check">○</span> Confirmar con el equipo quién cubre cada parte</li>
-      <li><span class="goblin-check">○</span> Diseñar o revisar las diapositivas principales</li>
-      <li><span class="goblin-check">○</span> Hacer una prueba cronometrada del tiempo total</li>
-      <li><span class="goblin-check">○</span> Preparar respuestas para posibles preguntas del grupo</li>
-    </ul>
-  </div>
-  <div class="goblin-mockup-footer">
-    <span class="goblin-mockup-tag">goblin.tools — completamente gratuito · sin registro · en español</span>
-  </div>
-</div>
-<p>Además de <code>Magic ToDo</code>, Goblin incluye dos utilidades más:</p>
-<div class="goblin-tools-row">
-  <div class="goblin-mini">
-    <div class="goblin-mini-bar">
-      <span class="goblin-mini-dots"><span></span><span></span><span></span></span>
-      <span class="goblin-mini-title">goblin.tools · Compiler</span>
-    </div>
-    <div class="goblin-mini-body">
-      <div class="goblin-mini-input">
-        <span class="goblin-mini-label">Ideas sin ordenar</span>
-        <p>estudiar química, tarea de mate, llamarle a marcos del proyecto, revisar guión de comunicación, no olvidar cumple de lucía</p>
-      </div>
-      <div class="goblin-mini-arrow">↓ ordenar y priorizar</div>
-      <ul class="goblin-mini-tasks">
-        <li>🔴 Estudiar para Química</li>
-        <li>🔴 Tarea de Matemáticas</li>
-        <li>🟡 Revisar guión de Comunicación</li>
-        <li>🟡 Contactar a Marcos — proyecto</li>
-        <li>🟢 Cumple de Lucía</li>
-      </ul>
-    </div>
-  </div>
+  <a class="usecase-card usecase-card-success" id="use-deepmind" href="https://www.nature.com/articles/s41591-018-0107-6" target="_blank" rel="noopener noreferrer">
+    <span class="usecase-meta">Diagnóstica · Contacto directo</span>
+    <h4 class="usecase-title anchored">DeepMind + Moorfields Eye Hospital (2018)</h4>
+    <p class="usecase-desc">IA entrenada con imágenes del Hospital Moorfields de Londres para detectar más de 50 enfermedades oculares desde imágenes de retina. Su metodología es la base para aplicaciones en regiones con escasez de especialistas, como zonas rurales de India con 1 oftalmólogo por cada 50,000 personas. (Nature Medicine, 2018)</p>
+  </a>
 
-  <div class="goblin-mini">
-    <div class="goblin-mini-bar">
-      <span class="goblin-mini-dots"><span></span><span></span><span></span></span>
-      <span class="goblin-mini-title">goblin.tools · Estimator</span>
-    </div>
-    <div class="goblin-mini-body">
-      <div class="goblin-mini-input">
-        <span class="goblin-mini-label">Tarea</span>
-        <p>Preparar una exposición de 10 minutos sobre la Revolución Mexicana</p>
-      </div>
-      <div class="goblin-mini-arrow">↓ estimar tiempo</div>
-      <div class="goblin-estimate-block">
-        <div class="goblin-estimate-row">
-          <span>Investigar el tema</span>
-          <span class="goblin-time">45 min</span>
-        </div>
-        <div class="goblin-estimate-row">
-          <span>Hacer esquema y puntos clave</span>
-          <span class="goblin-time">30 min</span>
-        </div>
-        <div class="goblin-estimate-row">
-          <span>Preparar diapositivas</span>
-          <span class="goblin-time">60 min</span>
-        </div>
-        <div class="goblin-estimate-row">
-          <span>Practicar la presentación</span>
-          <span class="goblin-time">30 min</span>
-        </div>
-        <div class="goblin-estimate-total">
-          <span>Total estimado</span>
-          <span class="goblin-time goblin-time-total">~2 h 45 min</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<a class="tool-demo-link" href="https://goblin.tools" target="_blank" rel="noopener" style="display:inline-flex;margin-bottom:0.5rem;">▶ Probar Goblin.tools gratis →</a>
-<hr>
-</section>
-</section>
-<section id="cuando-hace-falta-investigar-algo-nuevo" class="level3">
-<h3 class="anchored" data-anchor-id="cuando-hace-falta-investigar-algo-nuevo">Cuando hace falta investigar algo nuevo</h3>
-<p>A veces tu problema de organización incluye una tarea de investigación: una presentación, una duda puntual o un dato que no está en tus apuntes. En ese caso, la IA puede ayudarte a <strong>encontrar fuentes</strong> o <strong>resumir fuentes</strong>, pero no a verificar por ti.</p>
-<p>Si necesitas investigar, vale la pena organizar las herramientas por función:</p>
-<div class="fuente-grid">
-  <div class="fuente-card">
-    <div class="fuente-card-header">
-      <span class="fuente-logo">🔎</span>
-      <div>
-        <p class="fuente-name">Perplexity</p>
-        <p class="fuente-subtitle">perplexity.ai</p>
-      </div>
-    </div>
-    <div class="fuente-row">
-      <span class="fuente-label">Sirve para:</span>
-      <span class="fuente-value">Preguntas generales donde quieres una respuesta inicial con enlaces para seguir leyendo</span>
-    </div>
-    <div class="fuente-row">
-      <span class="fuente-label">Aporta:</span>
-      <span class="fuente-value">Un resumen y rutas de lectura, no una verificación final</span>
-    </div>
-    <div class="fuente-row">
-      <span class="fuente-label">Cuidado:</span>
-      <span class="fuente-value">Abre la fuente. No cites solo el resumen que te devolvió la herramienta</span>
-    </div>
-    <span class="fuente-when-tag fuente-when-general">Punto de partida</span>
-  </div>
+  <a class="usecase-card usecase-card-failure" id="use-obermeyer" href="https://www.science.org/doi/10.1126/science.aax2342" target="_blank" rel="noopener noreferrer">
+    <span class="usecase-meta">Administrativa · Sin contacto directo</span>
+    <h4 class="usecase-title anchored">Algoritmo de riesgo clínico — EE.UU. (2019)</h4>
+    <p class="usecase-desc">Algoritmo ampliamente usado en hospitales de EE.UU. para priorizar atención intensiva. Investigadores documentaron que asignaba puntuaciones 26.3% más bajas a pacientes afroamericanos con la misma gravedad de enfermedad — por usar gasto médico histórico como proxy de necesidad. (Obermeyer et al., Science)</p>
+  </a>
 
-  <div class="fuente-card">
-    <div class="fuente-card-header">
-      <span class="fuente-logo">🧬</span>
-      <div>
-        <p class="fuente-name">Consensus</p>
-        <p class="fuente-subtitle">consensus.app</p>
-      </div>
-    </div>
-    <div class="fuente-row">
-      <span class="fuente-label">Sirve para:</span>
-      <span class="fuente-value">Preguntas que sí tienen literatura científica acumulada</span>
-    </div>
-    <div class="fuente-row">
-      <span class="fuente-label">Aporta:</span>
-      <span class="fuente-value">Acceso orientado a artículos científicos y síntesis de hallazgos reportados</span>
-    </div>
-    <div class="fuente-row">
-      <span class="fuente-label">Cuidado:</span>
-      <span class="fuente-value">No sustituye leer el artículo ni sirve para cualquier tema de cultura general</span>
-    </div>
-    <span class="fuente-when-tag fuente-when-science">Literatura científica</span>
-  </div>
+  <a class="usecase-card usecase-card-science" id="use-alphafold" href="https://www.nature.com/articles/s41586-021-03819-2" target="_blank" rel="noopener noreferrer">
+    <span class="usecase-meta">Diagnóstica · Sin contacto directo</span>
+    <h4 class="usecase-title anchored">AlphaFold 2 — DeepMind (2021)</h4>
+    <p class="usecase-desc">Predijo la estructura tridimensional de más de 200 millones de proteínas conocidas. Su base de datos es pública y gratuita. Aceleró décadas de trabajo en diseño de fármacos y biología computacional en todo el mundo. (Jumper et al., Nature)</p>
+  </a>
 
-  <div class="fuente-card">
-    <div class="fuente-card-header">
-      <span class="fuente-logo">📚</span>
-      <div>
-        <p class="fuente-name">Google Scholar</p>
-        <p class="fuente-subtitle">scholar.google.com</p>
-      </div>
-    </div>
-    <div class="fuente-row">
-      <span class="fuente-label">Sirve para:</span>
-      <span class="fuente-value">Buscar artículos científicos, tesis, libros y otras publicaciones académicas directamente</span>
-    </div>
-    <div class="fuente-row">
-      <span class="fuente-label">Aporta:</span>
-      <span class="fuente-value">Acceso directo a resultados académicos sin resumen generativo intermedio</span>
-    </div>
-    <div class="fuente-row">
-      <span class="fuente-label">Cuidado:</span>
-      <span class="fuente-value">Encontrar un artículo no significa haberlo entendido ni que sea la mejor fuente para tu caso</span>
-    </div>
-    <span class="fuente-when-tag fuente-when-all">Búsqueda directa</span>
-  </div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hábito a formar: nunca cites sin abrir la fuente
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Si una herramienta te da un resumen con enlaces, úsalo como punto de partida. La cita de tu trabajo debe salir de lo que la fuente realmente dice después de que la abriste y la revisaste tú.</p>
-</div>
 </div>
 <hr>
 </section>
-<section id="lista-de-verificación-productividad-responsable-con-ia" class="level3">
-<h3 class="anchored" data-anchor-id="lista-de-verificación-productividad-responsable-con-ia">Lista de verificación: Productividad responsable con IA</h3>
-<div class="checklist9-grid">
-  <div class="checklist9-col checklist9-col-ok">
-    <span class="checklist9-col-kicker">Puedes delegar esta parte</span>
-    <h5 class="anchored">Sí pedirle a la IA</h5>
-    <ul>
-      <li><span class="ch9-icon">✅</span> Convertir fechas, materias y horas disponibles en un primer borrador de semana</li>
-      <li><span class="ch9-icon">✅</span> Reorganizar tus apuntes en ideas clave, preguntas de repaso o listas de conceptos</li>
-      <li><span class="ch9-icon">✅</span> Sugerir cómo dividir una tarea grande en subtareas más manejables</li>
-    </ul>
+<section id="alphafold-ia-para-ciencia-un-caso-de-éxito-importantísimo" class="level3">
+<h3 class="anchored" data-anchor-id="alphafold-ia-para-ciencia-un-caso-de-éxito-importantísimo">AlphaFold: IA para ciencia, un caso de éxito importantísimo</h3>
+<p>Cuando se habla de IA en salud, mucha gente piensa de inmediato en hospitales. Pero una parte importantísima ocurre en los laboratorios.</p>
+<div class="story-card">
+  <div class="story-img-placeholder story-img-alphafold">
+    <span class="sip-emoji">🧬</span>
+    <span class="sip-journal">Nature</span>
+    <span class="sip-year">2021</span>
+  </div>
+  <div class="story-content">
+    <p class="story-kicker">CIENCIA · BIOLOGÍA COMPUTACIONAL</p>
+    <h3 class="story-title anchored"><a href="https://www.nature.com/articles/s41586-021-03819-2" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">AlphaFold 2: predecir la forma de las proteínas ↗</a></h3>
+    <p class="story-source">Jumper et al. — Nature, julio de 2021</p>
+    <p class="story-body">Las proteínas son moléculas que cumplen tareas esenciales en el cuerpo: transportar oxígeno, defenderte de infecciones o ayudar a que las células funcionen. Su forma tridimensional importa porque esa forma influye en lo que pueden hacer. En 2021, AlphaFold 2 mostró un salto enorme en la capacidad de predecir esas formas a partir de su secuencia de aminoácidos. La base de datos pública resultante incluye más de 200 millones de estructuras predichas — gratis, para cualquier investigador en el mundo. Esto no significa que la IA "curó enfermedades", pero sí aceleró trabajo científico que antes tomaba décadas.</p>
+  </div>
+</div>
+<hr>
+</section>
+<section id="comparando-dos-casos-del-uso-de-la-ia-en-el-sector-salud" class="level3">
+<h3 class="anchored" data-anchor-id="comparando-dos-casos-del-uso-de-la-ia-en-el-sector-salud">Comparando dos casos del uso de la IA en el sector salud</h3>
+<p>Para entender el rol de la IA en el sector salud, nada mejor que analizar casos concretos. Aquí hay dos: uno donde ayudó de manera notable, y uno donde produjo consecuencias injustas sin que nadie se diera cuenta durante años.</p>
+<div class="caso-flipper">
+
+  <div class="caso-tabs">
+    <button class="caso-tab active" data-target="caso-exito" data-variant="success">✓ Ayuda: detección ocular en India</button>
+    <button class="caso-tab" data-target="caso-falla" data-variant="failure">✗ Falla: sesgo racial en EE.UU.</button>
   </div>
 
-  <div class="checklist9-col checklist9-col-verify">
-    <span class="checklist9-col-kicker">Antes de aceptar el resultado</span>
-    <h5 class="anchored">Siempre verificar</h5>
-    <ul>
-      <li><span class="ch9-icon">⚠️</span> Si el plan es viable para tus tiempos, energía y compromisos de esa semana</li>
-      <li><span class="ch9-icon">⚠️</span> Si el resumen realmente conserva lo importante de tus apuntes</li>
-      <li><span class="ch9-icon">⚠️</span> Si las fuentes existen, son pertinentes y dicen lo que el resumen asegura</li>
-    </ul>
+  <div class="caso-panel" id="caso-exito">
+    <span class="caso-label caso-label-success">✓ CASO DE ÉXITO</span>
+    <h3 class="caso-title anchored">Detección de retinopatía diabética con IA</h3>
+    <p class="caso-subtitle">DeepMind + Moorfields Eye Hospital · Nature Medicine, 2018 · Con aplicaciones en regiones de escasos recursos en India</p>
+    <div class="caso-grid">
+      <div class="caso-fact">
+        <span class="caso-fact-label">Qué hacía la IA</span>
+        <span class="caso-fact-value">Analizaba imágenes de retina (OCT scans) y detectaba señales de más de 50 enfermedades oculares, incluyendo retinopatía diabética — que puede causar ceguera si no se detecta a tiempo.</span>
+      </div>
+      <div class="caso-fact">
+        <span class="caso-fact-label">Por qué importó</span>
+        <span class="caso-fact-value">En zonas rurales de la India, la relación oftalmólogo-paciente era de 1:50,000. Una herramienta que funciona desde una tablet con 4G permitía decidir quién necesitaba ser referido con urgencia, sin esperar al especialista (una espera que puede durar semanas).</span>
+      </div>
+      <div class="caso-fact">
+        <span class="caso-fact-label">Qué hizo posible el resultado</span>
+        <span class="caso-fact-value">El modelo se entrenó con datos de alta calidad del Hospital Moorfields de Londres, se validó en múltiples clínicas antes del despliegue y se usó para una tarea muy concreta: revisar imágenes, no reemplazar todo el juicio médico.</span>
+      </div>
+      <div class="caso-fact">
+        <span class="caso-fact-label">El resultado</span>
+        <span class="caso-fact-value">En el piloto publicado en Nature Medicine, el sistema concordó con el diagnóstico de especialistas en más del 90% de los casos. La metodología abrió la puerta a aplicaciones en clínicas rurales de India y otras regiones donde el acceso a especialistas es escaso.</span>
+      </div>
+    </div>
+    <div class="caso-insight caso-insight-success">Una herramienta de IA bien entrenada, validada y aplicada a una tarea específica puede ampliar el acceso a servicios donde son escasos; por ej. no hay especialistas.</div>
   </div>
 
-  <div class="checklist9-col checklist9-col-no">
-    <span class="checklist9-col-kicker">Esto sigue siendo tuyo</span>
-    <h5 class="anchored">No delegar a la IA</h5>
-    <ul>
-      <li><span class="ch9-icon">❌</span> Decidir qué tan bien entiendes un tema y qué necesitas volver a repasar</li>
-      <li><span class="ch9-icon">❌</span> Citar una fuente que no abriste o no entendiste</li>
-      <li><span class="ch9-icon">❌</span> Entregar como propio un texto que no revisaste críticamente</li>
-    </ul>
+  <div class="caso-panel" id="caso-falla" hidden="">
+    <span class="caso-label caso-label-failure">✗ CASO DE RIESGO</span>
+    <h3 class="caso-title anchored">Algoritmo de riesgo médico con sesgo racial</h3>
+    <p class="caso-subtitle">Obermeyer et al. — Science, octubre de 2019 · ~200 millones de pacientes anuales afectados</p>
+    <div class="caso-grid">
+      <div class="caso-fact">
+        <span class="caso-fact-label">Qué hacía la IA</span>
+        <span class="caso-fact-value">Ayudaba a decidir qué pacientes debían entrar a programas de atención intensiva para enfermedades crónicas. Era uno de los sistemas más usados en hospitales de EE.UU.</span>
+      </div>
+      <div class="caso-fact">
+        <span class="caso-fact-label">Qué salió mal</span>
+        <span class="caso-fact-value">A igual gravedad de enfermedad, pacientes afroamericanos recibían puntuaciones de riesgo 26.3% más bajas que pacientes blancos, quedando fuera de programas de atención que necesitaban.</span>
+      </div>
+      <div class="caso-fact">
+        <span class="caso-fact-label">Por qué falló</span>
+        <span class="caso-fact-value">El sistema usaba el gasto médico histórico como proxy de necesidad de salud (cuánto dinero invierte una persona en su salud). Pero gastar menos no significaba estar menos enfermo — también reflejaba décadas de desigualdad en acceso a atención médica.</span>
+      </div>
+      <div class="caso-fact">
+        <span class="caso-fact-label">La lección</span>
+        <span class="caso-fact-value">Si utilizas datos de entrenamiento con posibles sesgos, puedes construir una herramienta con buena apariencia técnica pero con consecuencias injustas sin que nadie lo note durante años.</span>
+      </div>
+    </div>
+    <div class="caso-insight caso-insight-failure">
+      La decisión de qué datos utilizar, y qué variables incluir en el modelo, es igual de importante que la selección del algoritmo o los avances matemáticos que mejoran su capacidad predictiva.</div>
   </div>
+
+</div>
+<hr>
+</section>
+<section id="y-méxico" class="level3">
+<h3 class="anchored" data-anchor-id="y-méxico">¿Y México?</h3>
+<p>En México, usar inteligencia artificial en el sector salud puede brindar grandes beneficios a la sociedad. Así como en el caso de la India, utilizar IA a nivel diagnóstico puede ser muy útil, en particular cuando no hay especialistas en la clínica y las distancias a hospitales mayores son largas. Este es el caso hipotético de la Huasteca potosina que presentamos al principio. En nuestro país, solo 560 de los aproximadamente 2,460 municipios del país tienen algún establecimiento hospitalario (<a href="https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2024/ESEP/ESEP2023.pdf">INEGI, 2023</a>); y en San Luis Potosí, el estado cuenta con menos de 1 cama de hospital por cada 1,000 habitantes, muy por debajo de lo que recomienda la OMS. Herramientas IA bien diseñadas pueden marcar la diferencia entre un sistema de salud saturado y uno que pueda cubrir las necesidades de su comunidad.</p>
+<p>Pero no olvidemos el caso Obermeyer: una herramienta entrenada con datos de hospitales en Boston o Londres no necesariamente funcionará igual en una clínica de Ciudad Valles, Matehuala o la Huasteca potosina en general. Los datos de entrenamiento importan tanto como el algoritmo — y los datos locales los tienen las instituciones locales.</p>
+<p>¡Y hay buenas noticias! En SLP ya se está haciendo IA. En el <strong>IPICYT</strong>, el Dr.&nbsp;Salvador Ruiz-Correa y su <a href="https://you-ilab-next.vercel.app/">You-i Lab</a> desarrollaron en 2020 <em>Centinela de la Salud</em>: una aplicación móvil que usó IA y crowdsourcing para rastrear brotes de COVID-19 en tiempo real en San Luis Potosí capital. El proyecto fue publicado en el <em>International Journal of Medical Informatics</em> (2021) y surgió de una colaboración entre IPICYT, la UASLP, la Universidad de Oxford y los Servicios de Salud del estado. La IA aplicada a la salud no solo se produce en Silicon Valley. También se produce en nuestro estado.</p>
+<hr>
+</section>
+<section id="qué-debemos-saber-antes-de-implementar-la-ia-en-el-sector-salud" class="level3">
+<h3 class="anchored" data-anchor-id="qué-debemos-saber-antes-de-implementar-la-ia-en-el-sector-salud">¿Qué debemos saber antes de implementar la IA en el sector Salud?</h3>
+<p>Hablemos de derechos, diseño, y responsabilidad.</p>
+<div class="pregunta-grid">
+
+  <div class="pregunta-card">
+    <span class="pregunta-icon">🔔</span>
+    <h4 class="pregunta-title anchored">El derecho a saber</h4>
+    <p class="pregunta-body">Si una herramienta de IA participa en tu atención clínica, deberían decírtelo de forma clara — no en letra chiquita, no al final, no con tecnicismos. Saber qué hace y qué datos usa es un derecho básico.</p>
+  </div>
+
+  <div class="pregunta-card">
+    <span class="pregunta-icon">✍️</span>
+    <h4 class="pregunta-title anchored">Consentir la atención medica no es consentir a todo</h4>
+    <p class="pregunta-body">Aceptar una consulta no significa automáticamente aceptar que tus datos de salud se usen para entrenar modelos futuros. Son decisiones distintas y deberían pedirse por separado.</p>
+  </div>
+
+  <div class="pregunta-card">
+    <span class="pregunta-icon">⚖️</span>
+    <h4 class="pregunta-title anchored">Responsabilidad clara</h4>
+    <p class="pregunta-body">Si una recomendación automática sale mal, debe haber alguien que responda: quien diseñó la herramienta, quien la compró, quien la supervisó. "El algoritmo decidió" no es una respuesta suficiente.</p>
+  </div>
+
+  <div class="pregunta-card">
+    <span class="pregunta-icon">🌱</span>
+    <h4 class="pregunta-title anchored">México puede construir esto bien</h4>
+    <p class="pregunta-body">Hacer las preguntas correctas desde el inicio — sobre datos, contexto y derechos — es lo que distingue una herramienta útil de una que amplifica desigualdades. Esas preguntas las pueden hacer investigadores, médicos y ciudadanos mexicanos.</p>
+  </div>
+
+</div>
+<p>Estas preguntas tienen respaldo académico: investigadoras del área de informática y economía formalizaron los principios de informar, evaluar y consentir en el marco <a href="https://arxiv.org/abs/2111.04456">IAC</a>, diseñado para proteger los derechos de los pacientes cuando la IA se usa en su atención médica.</p>
+<hr>
+</section>
+<section id="algunas-conclusiones-de-la-lección" class="level3">
+<h3 class="anchored" data-anchor-id="algunas-conclusiones-de-la-lección">Algunas conclusiones de la lección</h3>
+<p><strong>Sobre la tecnología:</strong></p>
+<ul>
+<li>La IA puede apoyar en consultas, a administrar hospitales o a acelerar investigación científica.</li>
+</ul>
+<p><strong>Sobre los riesgos:</strong></p>
+<ul>
+<li>Un sistema de IA puede parecer muy preciso y aun así ser injusto (sesgo de datos).</li>
+<li>Un modelo entrenado con datos de otro contexto puede fallar en México o en San Luis Potosí.</li>
+</ul>
+<p><strong>Sobre tus derechos:</strong></p>
+<ul>
+<li>Tienes derecho a saber si se usa IA en el servicio que te proporcionan.</li>
+<li>Tienes derecho a entender qué datos se están usando.</li>
+<li>Tienes derecho a preguntar si existe una alternativa o cómo se supervisa esa herramienta.</li>
+</ul>
+<hr>
+</section>
+<section id="recursos-para-explorar-más-sobre-el-tema" class="level3">
+<h3 class="anchored" data-anchor-id="recursos-para-explorar-más-sobre-el-tema">Recursos para explorar más sobre el tema</h3>
+<div class="resource-list">
+<div class="route-grid">
+
+  <a class="route-card" href="https://alphafold.ebi.ac.uk/" target="_blank" rel="noopener noreferrer">
+    <div class="route-card-header">
+      <span class="route-logo-emoji">🧬</span>
+      <h4 class="route-name anchored">AlphaFold Database</h4>
+    </div>
+    <p class="route-org">Google DeepMind / EMBL-EBI</p>
+    <p class="route-desc">La base de datos pública con más de 200 millones de estructuras proteínicas predichas. Puedes buscar cualquier proteína conocida.</p>
+    <div class="route-tags">
+      <span class="route-tag route-tag-free">Gratis</span>
+      <span class="route-tag route-tag-browser">Navegador</span>
+    </div>
+  </a>
+
+  <a class="route-card" href="https://www.who.int/publications/i/item/9789240029200" target="_blank" rel="noopener noreferrer">
+    <div class="route-card-header">
+      <span class="route-logo-emoji">🏥</span>
+      <h4 class="route-name anchored">OMS: ética e IA en salud</h4>
+    </div>
+    <p class="route-org">Organización Mundial de la Salud</p>
+    <p class="route-desc">El marco oficial de la OMS sobre ética e IA en salud: principios, riesgos y recomendaciones para sistemas de salud en todo el mundo.</p>
+    <div class="route-tags">
+      <span class="route-tag route-tag-free">Gratis</span>
+      <span class="route-tag route-tag-es">Política pública</span>
+    </div>
+  </a>
+
+  <a class="route-card" href="https://www.uaslp.mx/" target="_blank" rel="noopener noreferrer">
+    <div class="route-card-header">
+      <span class="route-logo-emoji">🎓</span>
+      <h4 class="route-name anchored">UASLP</h4>
+    </div>
+    <p class="route-org">Universidad Autónoma de San Luis Potosí</p>
+    <p class="route-desc">Ingenierías, ciencias y programas de posgrado donde la IA en salud puede ser parte de tu trayectoria académica — desde casa.</p>
+    <div class="route-tags">
+      <span class="route-tag route-tag-free">SLP</span>
+      <span class="route-tag route-tag-browser">Explorar</span>
+    </div>
+  </a>
+
+  <a class="route-card" href="https://www.ipicyt.edu.mx/" target="_blank" rel="noopener noreferrer">
+    <div class="route-card-header">
+      <span class="route-logo-emoji">🔬</span>
+      <h4 class="route-name anchored">IPICYT</h4>
+    </div>
+    <p class="route-org">Instituto Potosino de Investigación Científica y Tecnológica</p>
+    <p class="route-desc">Centro de investigación de clase mundial en San Luis Potosí. Bioinformática, ciencias de la computación, ciencias ambientales.</p>
+    <div class="route-tags">
+      <span class="route-tag route-tag-free">SLP</span>
+      <span class="route-tag route-tag-browser">Investigación</span>
+    </div>
+  </a>
+
+</div>
 </div>
 <hr>
 </section>
 <section id="la-idea-central-de-esta-sesión" class="level3">
 <h3 class="anchored" data-anchor-id="la-idea-central-de-esta-sesión">La idea central de esta sesión</h3>
 <div class="central-idea">
-  <span class="central-idea-label">Idea central · Sesión 9</span>
-  <p class="central-idea-text">La IA puede ayudarte a pasar del caos a una primera versión de orden. Lo que no puede hacer es sustituir tu criterio para priorizar, verificar y decidir qué te sirve de verdad.</p>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tres preguntas antes de usar IA para organizarte
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li><p><strong>¿Le di suficiente contexto?</strong> Fechas, horas disponibles, materia más difícil, compromisos fijos y estatus de cada tarea. Sin eso, la IA solo reparte tiempo de forma genérica.</p></li>
-<li><p><strong>¿Estoy usando la herramienta correcta?</strong> Una herramienta para resumir apuntes no reemplaza una búsqueda con fuentes. Una herramienta que encuentra artículos no organiza tu semana por ti.</p></li>
-<li><p><strong>¿Qué parte sigo teniendo que decidir yo?</strong> La priorización final, la verificación de fuentes y la decisión de si algo ya se entiende o no siguen siendo trabajo humano.</p></li>
-</ol>
-</div>
-</div>
-<hr>
-</section>
-<section id="recursos-para-explorar-más-sobre-el-tema" class="level3">
-<h3 class="anchored" data-anchor-id="recursos-para-explorar-más-sobre-el-tema">Recursos para explorar más sobre el tema</h3>
-<div class="resource-list">
-<p><strong>Organizar y planificar</strong></p>
-<ul>
-<li><a href="https://www.notion.com/product/ai">Notion AI</a> — resumir notas y convertir páginas en listas o esquemas</li>
-<li><a href="https://www.notion.com/product/calendar">Notion Calendar</a> — ver tareas y fechas límite dentro de la semana</li>
-<li><a href="https://goblin.tools/">Goblin.tools</a> — completamente gratuito, sin registro, descompone tareas grandes en pasos concretos</li>
-</ul>
-<p><strong>Sintetizar material propio</strong></p>
-<ul>
-<li><a href="https://notebooklm.google/">NotebookLM</a> — gratuito de Google, trabaja solo con los documentos que tú subes, sin inventar</li>
-<li><a href="https://gamma.app/">Gamma</a> — estructura visual rápida para esquemas o presentaciones que luego debes editar</li>
-</ul>
-<p><strong>Investigar con fuentes</strong></p>
-<ul>
-<li><a href="https://www.perplexity.ai/">Perplexity</a> — respuestas iniciales con enlaces para seguir investigando</li>
-<li><a href="https://consensus.app/">Consensus</a> — búsqueda orientada a literatura científica</li>
-<li><a href="https://scholar.google.com/">Google Scholar</a> — búsqueda directa de publicaciones académicas</li>
-</ul>
+  <span class="central-idea-label">Idea central · Sesión 14</span>
+  <p class="central-idea-text">La IA en salud, ciencia y sociedad puede ser muy útil, pero nunca es neutral ni automática. Su valor depende de cómo se entrena, en qué contexto se despliega, qué supervisión tiene y si protege realmente a las personas a quienes dice ayudar.</p>
 </div>
 <hr>
 <nav class="sesion-nav">
-  <a href="sesion-08.html" class="sesion-nav-btn prev">
+  <a href="sesion-13.html" class="sesion-nav-btn prev">
     <span class="nav-label">← Anterior</span>
-    <span class="nav-title">S8: IA para Creatividad</span>
+    <span class="nav-title">S13: Robótica e IA</span>
   </a>
   <div class="sesion-nav-center">
-    <span class="sesion-nav-progress">Sesión 9 de 15</span>
+    <span class="sesion-nav-progress">Sesión 14 de 15</span>
   </div>
-  <a href="sesion-10.html" class="sesion-nav-btn next">
+  <a href="sesion-15.html" class="sesion-nav-btn next">
     <span class="nav-label">Siguiente →</span>
-    <span class="nav-title">S10: Tutor Académico</span>
+    <span class="nav-title">S15: EN VIVO: Educación Global</span>
   </a>
 </nav>
 
@@ -1109,7 +1001,7 @@ Tres preguntas antes de usar IA para organizarte
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/michelleg06">
+    <a class="nav-link" href="https://github.com">
       <i class="bi bi-github" role="img">
 </i> 
     </a>
