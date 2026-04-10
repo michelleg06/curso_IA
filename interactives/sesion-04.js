@@ -78,16 +78,16 @@ function initTokenizer() {
         "Art", "ificial", " intelligence",
         " is", " fascinating", "."
       ],
-      note: "6 tokens para la misma idea en inglés."
+      note: "6 tokens para la misma frase en inglés."
     },
     {
-      label: "Español: pregunta cotidiana",
+      label: "Español: pregunta cualquiera",
       text: "¿Cómo puedo usar ChatGPT para mi tarea?",
       tokens: [
         "¿", "C", "ómo", " puedo", " usar",
         " Chat", "GPT", " para", " mi", " tarea", "?"
       ],
-      note: "11 tokens — palabras comunes en español aún se fragmentan."
+      note: "11 tokens: incluso palabras comunes en español se fragmentan."
     }
   ];
 
@@ -96,12 +96,13 @@ function initTokenizer() {
     { bg: "#dcfce7", border: "#86efac", text: "#166534" },
     { bg: "#fef3c7", border: "#fcd34d", text: "#92400e" },
     { bg: "#fce7f3", border: "#f9a8d4", text: "#9d174d" },
-    { bg: "#ede9fe", border: "#c4b5fd", text: "#5b21b6" },
+    { bg: "#eef2fd", border: "#a8c2f5", text: "#2b5ab8" },
     { bg: "#d1fae5", border: "#6ee7b7", text: "#065f46" },
   ];
 
   let currentExample = 0;
   let busy = false;
+  let runToken = 0;
 
   function renderExampleButtons() {
     const wrap = $("tok-example-btns");
@@ -123,6 +124,7 @@ function initTokenizer() {
   async function animateTokens() {
     if (busy) return;
     busy = true;
+    const thisRun = ++runToken;
     const ex = EXAMPLES[currentExample];
     const output = $("tok-output");
     const stats = $("tok-stats");
@@ -135,6 +137,10 @@ function initTokenizer() {
 
     const delay = prefersReducedMotion() ? 0 : 90;
     for (let i = 0; i < ex.tokens.length; i++) {
+      if (thisRun !== runToken) {
+        busy = false;
+        return;
+      }
       const c = CHIP_COLORS[i % CHIP_COLORS.length];
       const chip = document.createElement("span");
       chip.className = "tok-chip tok-chip-enter";
@@ -149,6 +155,11 @@ function initTokenizer() {
       await sleep(delay);
     }
 
+    if (thisRun !== runToken) {
+      busy = false;
+      return;
+    }
+
     if (stats) {
       stats.textContent = `${ex.tokens.length} tokens · ${ex.note}`;
     }
@@ -158,20 +169,25 @@ function initTokenizer() {
       "tok",
       `El texto <em>"${ex.text}"</em> se divide en <strong>${ex.tokens.length} fragmentos</strong>. Cada fragmento es un token.`,
       isSpanish
-        ? "El español se fragmenta más que el inglés para ideas equivalentes. Esto importa porque los modelos cobran y limitan por tokens, no por palabras."
-        : "El inglés necesita menos tokens para la misma información. Esa diferencia afecta el costo y los límites de contexto en la práctica."
+        ? "El español se fragmenta en más tokens que el inglés para frases equivalentes. Esto importa porque los modelos cobran y limitan su uso por tokens, no por palabras."
+        : "El inglés suele necesitar menos tokens para transmitir la misma información. Esa diferencia afecta el costo y los límites de contexto en la práctica."
     );
     setText("tok-status", `${ex.tokens.length} tokens en total.`);
     busy = false;
   }
 
   function resetTok() {
+    runToken++;
     busy = false;
     deactivateShell("tok");
+    setHTML("tok-example-btns", "");
+    setText("tok-original", "");
+    setHTML("tok-output", "");
+    setText("tok-stats", "");
     setInsights(
       "tok",
-      "Tres ejemplos para comparar: frase corta en español, su equivalente en inglés y una pregunta cotidiana.",
-      "El punto clave: el modelo no ve palabras completas, sino fragmentos. Eso explica por qué algunas palabras 'raras' o en otros idiomas se rompen más."
+      "Tres ejemplos para comparar: una frase corta en español, su equivalente en inglés y una pregunta sencilla.",
+      "El modelo no ve palabras completas, sino fragmentos. Eso explica por qué algunas palabras 'raras' o en otros idiomas se rompen en más tokens."
     );
     setText("tok-status", "Selecciona un ejemplo para ver cómo se tokeniza.");
   }
@@ -240,13 +256,22 @@ function initPredictor() {
   ];
 
   const FINAL = "Los científicos descubrieron que el cerebro humano puede aprender nuevas habilidades";
+  let runToken = 0;
+  let running = false;
 
   async function runPredictor() {
+    if (running) return;
+    running = true;
+    const thisRun = ++runToken;
     activateShell("pred");
-    setInsights("pred", "Observa cómo el modelo calcula qué token es más probable.", "Cada barra representa cuántas veces ese fragmento suele aparecer en este contexto, según el entrenamiento.");
+    setInsights("pred", "Observa cómo el modelo calcula qué token es más probable.", "Cada barra muestra cuántas veces ese fragmento apareció en contextos parecidos al entrenar el modelo.");
     setText("pred-status", "Calculando…");
 
     for (let s = 0; s < STEPS.length; s++) {
+      if (thisRun !== runToken) {
+        running = false;
+        return;
+      }
       const step = STEPS[s];
 
       // Mostrar la oración actual
@@ -269,6 +294,11 @@ function initPredictor() {
 
       await wait(300);
 
+      if (thisRun !== runToken) {
+        running = false;
+        return;
+      }
+
       // Animar barras
       candidatesEl?.querySelectorAll(".pred-bar-fill").forEach((bar) => {
         const pct = bar.dataset.pct;
@@ -280,6 +310,11 @@ function initPredictor() {
 
       await wait(prefersReducedMotion() ? 200 : 1400);
 
+      if (thisRun !== runToken) {
+        running = false;
+        return;
+      }
+
       // Resaltar ganador
       candidatesEl?.querySelectorAll(".pred-bar-row").forEach((row, i) => {
         if (i === step.pick) row.classList.add("pred-bar-selected");
@@ -289,22 +324,33 @@ function initPredictor() {
       await wait(prefersReducedMotion() ? 200 : 900);
     }
 
+    if (thisRun !== runToken) {
+      running = false;
+      return;
+    }
+
     // Mostrar resultado final
     setHTML("pred-sentence", `<span class="pred-sentence-text pred-sentence-done">${FINAL}</span>`);
-    $("pred-candidates").innerHTML = `
-      <div class="pred-final-msg">
-        Oración completa. El modelo nunca "pensó" el significado — eligió token por token lo más probable en cada paso.
-      </div>
-    `;
+    const candidatesEl = $("pred-candidates");
+    if (candidatesEl) {
+      candidatesEl.innerHTML = `
+        <div class="pred-final-msg">
+          La oración completa no nació de un "pensamiento" del modelo, sino de la elección, token por token, de lo más probable en cada paso.
+        </div>
+      `;
+    }
     setText("pred-status", "¡Listo!");
     setInsights(
       "pred",
       `La oración <em>"${FINAL}"</em> se construyó en 4 pasos, eligiendo el token más probable en cada uno.`,
       "Esto explica las alucinaciones: si el modelo nunca vio que '2 + 2 = 5' es falso, puede predecirlo con confianza si estadísticamente encaja en el contexto."
     );
+    running = false;
   }
 
   function resetPredictor() {
+    runToken++;
+    running = false;
     deactivateShell("pred");
     setHTML("pred-sentence", `<span class="pred-sentence-placeholder">La oración aparecerá aquí token por token…</span>`);
     setHTML("pred-candidates", "");
@@ -312,7 +358,7 @@ function initPredictor() {
     setInsights(
       "pred",
       "4 pasos de predicción, cada uno con 5 opciones y sus probabilidades.",
-      "La clave: el modelo no escribe la oración de un golpe. La construye un fragmento a la vez, evaluando probabilidades en cada punto."
+      "Ojo: el modelo no escribe la oración de un golpe. La construye un fragmento a la vez, evaluando probabilidades en cada paso."
     );
   }
 
@@ -427,7 +473,7 @@ function initPromptComparator() {
     setInsights(
       "pcomp",
       `Prompt ambiguo (izquierda) vs. prompt específico (derecha) para el mismo caso: <strong>${sc.label}</strong>.`,
-      "Un prompt específico no es 'más largo', es más informativo. Contexto, restricciones y un ejemplo de lo que quieres son las tres variables que más mejoran una respuesta."
+      "Un prompt específico no es 'más largo', es más informativo. Contexto, restricciones y un ejemplo de lo que quieres son las tres variables que mejoran una respuesta."
     );
   }
 
@@ -442,9 +488,8 @@ function initPromptComparator() {
     setInsights(
       "pcomp",
       "Tres escenarios: receta, correo y resumen. Cada uno con el mismo tipo de petición hecha de forma ambigua y de forma específica.",
-      "El punto no es que el prompt perfecto exista — es entender que la calidad de la respuesta depende en parte de la calidad de la instrucción."
+      "La calidad de la respuesta depende en parte de la calidad de la instrucción."
     );
-    setText("pcomp-status", "Haz clic en «Ver comparativa» para comenzar.");
   }
 
   $("pcomp-start")?.addEventListener("click", startPcomp);

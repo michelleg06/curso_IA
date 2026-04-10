@@ -226,8 +226,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="sesion-progress-label">4 de 15</span>
   </div>
   <div class="sesion-meta">
-    <span class="sesion-meta-chip">📅 26 de mayo de 2026</span>
-    <span class="sesion-meta-chip">⏱ 40 minutos</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 26 de mayo de 2026</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 40 minutos</span>
     <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
@@ -246,57 +246,142 @@ Los videos y el texto de esta sesión son complementarios. Los videos amplían e
 </p>
 <section id="introducción" class="level3">
 <h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
-<p>Son las 11 de la noche. Estás en tu cuarto, a punto de dormir, cuando de repente recuerdas: mañana tienes que entregar una investigación sobre la mitosis para Biología. Abres Google y buscas. Aparecen diez enlaces: Wikipedia, Khan Academy, una página de una prepa de Guadalajara, un PDF de hace ocho años. Tienes que abrir varios, leer y armar algo coherente con lo que encuentras.</p>
-<p>Ahora decides hacer la misma búsqueda, pero en ChatGPT: “Explícame qué es la mitosis como si tuviera que explicárselo a alguien de mi edad”. En veinte segundos recibes una explicación clara, con las fases en orden y ejemplos concretos.</p>
-<p>¿Cuál prefieres a las 11 de la noche? Probablemente el segundo 😉. Pero antes de copiar y pegar esa respuesta en tu tarea, hay algo que deberías saber sobre cómo funciona un LLM.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<p>Son las 10 de la noche. Ya estás acostado y piensas en dormir, pero te acuerdas: mañana tienes que explicar la mitosis en clase. Tienes tu celular a la mano, así que buscas “qué es la mitosis” en Google. Aparecen miles de resultados: Wikipedia, videos largos, PDFs antiguos, páginas que se tardan en cargar. Tocas varios enlaces, lees, eliges lo útil y tratas de armar algo coherente.</p>
+<p>Ahora imagina hacer la misma pregunta, pero en ChatGPT: “Explícame qué es la mitosis como si tuviera que presentarla en clase”. En segundos recibes una explicación clara, con las fases en orden y ejemplos fáciles de entender. Si fueran las 10 pm y tuvieras sueño… ¿cuál preferirías? Probablemente el segundo 😴. Pero antes de confiarle tu tarea a una app, vale la pena saber cómo piensa realmente una inteligencia artificial de ese tipo.</p>
+<p>Un <strong>buscador clásico</strong> te muestra documentos que ya existen. En cambio, un modelo de <strong>IA generativa</strong> crea una respuesta nueva, palabra por palabra (y token por token), basándose en patrones que aprendió durante su entrenamiento.</p>
+<p>En 2026, muchas herramientas combinan ambas cosas, pero la diferencia sigue siendo importante: una se enfoca en recuperar contenido; la otra en generar texto. Y ambas estrategias pueden fallar, solo que de maneras distintas. Google podría darte información vieja o una fuente poco confiable. ChatGPT podría inventarse datos y decirlos de manera muy convincente. Ese tipo de error tiene nombre propio: <strong>alucinación.</strong></p>
+<style>
+#chatdemo{padding:0.5rem 0;display:flex;justify-content:center}
+#chatdemo-inner{width:100%;max-width:400px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif}
+.cdlid{background:linear-gradient(170deg,#dce3ed,#c8d2df);border-radius:12px 12px 0 0;padding:7px 7px 0;box-shadow:0 2px 20px rgba(0,0,0,0.13),inset 0 1px 0 rgba(255,255,255,0.55)}
+.cdcam{width:5px;height:5px;border-radius:50%;background:#a8b5c2;margin:0 auto 5px;box-shadow:inset 0 1px 2px rgba(0,0,0,0.18)}
+.cdscreen{background:#fff;border-radius:7px;height:240px;overflow:hidden;display:flex;flex-direction:column}
+.cdhinge{height:5px;background:linear-gradient(to bottom,#b8c4d0,#cdd4de)}
+.cdbase{background:linear-gradient(to bottom,#cbd3df,#bcc4cf);height:15px;border-radius:0 0 6px 6px;margin:0 -10px;box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+.cdfoot{height:4px;background:#adb6c2;border-radius:0 0 5px 5px;margin:0 -20px}
+.cdh{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid #e2e8f0;flex-shrink:0}
+.cdh-ico{width:24px;height:24px;background:#10a37f;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:12px;flex-shrink:0}
+.cdh-t{font-weight:700;color:#1a365d;font-size:12px;line-height:1.2}
+.cdh-s{font-size:9.5px;color:#64748b}
+#cd-msgs{flex:1;padding:11px 12px;display:flex;flex-direction:column;gap:9px;overflow:hidden;transition:opacity 0.4s}
+#cd-user{align-self:flex-end;background:#2780e3;color:#fff;border-radius:14px 14px 3px 14px;padding:7px 12px;font-size:12px;max-width:72%;line-height:1.4;display:none}
+#cd-dots{align-self:flex-start;background:#f1f5f9;border-radius:14px 14px 14px 3px;padding:8px 13px;display:none;gap:5px;align-items:center}
+.cdot{width:6px;height:6px;border-radius:50%;background:#94a3b8}
+#cd-ai{align-self:flex-start;background:#f1f5f9;color:#1e3a5f;border-radius:14px 14px 14px 3px;padding:7px 12px;font-size:11.5px;line-height:1.55;max-width:88%;display:none}
+.cdcur{display:inline-block;width:2px;height:0.88em;margin-left:2px;vertical-align:text-bottom;border-radius:1px;animation:cdblink 0.65s step-end infinite}
+@keyframes cdblink{0%,100%{opacity:1}50%{opacity:0}}
+.cdinput{border-top:1px solid #e2e8f0;padding:8px 10px;display:flex;align-items:center;gap:6px;flex-shrink:0}
+.cdinput-f{flex:1;background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:6px 12px;font-size:11px;color:#94a3b8;font-family:inherit}
+.cdinput-s{width:24px;height:24px;background:#2780e3;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+</style>
+<div id="chatdemo">
+  <div id="chatdemo-inner">
+    <div class="cdlid">
+      <div class="cdcam"></div>
+      <div class="cdscreen">
+        <div class="cdh">
+          <div class="cdh-ico">G</div>
+          <div><div class="cdh-t">ChatGPT</div><div class="cdh-s">GPT-4o · en línea</div></div>
+        </div>
+        <div id="cd-msgs">
+          <div id="cd-user"></div>
+          <div id="cd-dots"><div class="cdot"></div><div class="cdot"></div><div class="cdot"></div></div>
+          <div id="cd-ai"></div>
+        </div>
+        <div class="cdinput">
+          <div class="cdinput-f">Escribe un mensaje…</div>
+          <div class="cdinput-s"><svg width="11" height="11" viewbox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></div>
+        </div>
+      </div>
+    </div>
+    <div class="cdhinge"></div>
+    <div class="cdbase"></div>
+    <div class="cdfoot"></div>
+  </div>
 </div>
-<div class="callout-title-container flex-fill">
-La distinción crucial
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Un buscador clásico</strong> te devuelve documentos que ya existen. <strong>Un modelo generativo</strong> redacta una respuesta nueva token por token basándose en patrones aprendidos durante su entrenamiento.</p>
-<p>En 2026 muchas herramientas mezclan ambas cosas, pero la diferencia conceptual sigue siendo útil: una prioriza recuperar fuentes; la otra prioriza generar una salida.</p>
-</div>
-</div>
-<p>Ambos pueden equivocarse, pero se equivocan de formas distintas. Google puede devolverte información desactualizada o un sitio poco confiable. ChatGPT puede inventarse datos con total confianza. Y ese segundo tipo de error tiene nombre propio: <strong>alucinación</strong>.</p>
+<script>
+(function(){
+  var PROMPT='Expl\u00edcame qu\u00e9 es la mitosis';
+  var RESPONSE='Claro. La mitosis es el proceso por el cual una c\u00e9lula se divide en dos c\u00e9lulas hijas id\u00e9nticas, cada una con el mismo n\u00famero de cromosomas que la c\u00e9lula madre.';
+  var msgsEl=document.getElementById('cd-msgs');
+  var userEl=document.getElementById('cd-user');
+  var dotsEl=document.getElementById('cd-dots');
+  var aiEl=document.getElementById('cd-ai');
+  var dotEls=dotsEl.querySelectorAll('.cdot');
+  var dotTimer=null,charIdx=0,dotTick=0;
+  function resetMsgs(){
+    msgsEl.style.opacity='0';
+    setTimeout(function(){
+      userEl.style.display='none';userEl.innerHTML='';
+      dotsEl.style.display='none';
+      aiEl.style.display='none';aiEl.innerHTML='';
+      charIdx=0;dotTick=0;
+      msgsEl.style.opacity='1';
+      setTimeout(typeUser,500);
+    },450);
+  }
+  function cur(c){return '<span class="cdcur" style="background:'+c+'"></span>';}
+  function startDots(){
+    clearInterval(dotTimer);dotTick=0;
+    dotEls.forEach(function(d){d.style.opacity='0.25';});
+    dotTimer=setInterval(function(){
+      dotTick=(dotTick+1)%3;
+      dotEls.forEach(function(d,i){d.style.opacity=i===dotTick?'1':'0.25';});
+    },350);
+  }
+  function typeUser(){
+    if(charIdx===0) userEl.style.display='block';
+    if(charIdx>PROMPT.length){
+      userEl.innerHTML=PROMPT;
+      dotsEl.style.display='flex';startDots();
+      setTimeout(showAI,1500);
+      return;
+    }
+    userEl.innerHTML=PROMPT.slice(0,charIdx)+cur('rgba(255,255,255,0.85)');
+    charIdx++;setTimeout(typeUser,60);
+  }
+  function showAI(){
+    clearInterval(dotTimer);dotsEl.style.display='none';
+    aiEl.style.display='block';charIdx=0;typeAI();
+  }
+  function typeAI(){
+    if(charIdx>RESPONSE.length){
+      aiEl.innerHTML=RESPONSE;
+      setTimeout(resetMsgs,2200);
+      return;
+    }
+    aiEl.innerHTML=RESPONSE.slice(0,charIdx)+cur('#10a37f');
+    charIdx++;setTimeout(typeAI,22);
+  }
+  setTimeout(typeUser,800);
+})();
+</script>
 <hr>
 </section>
 <section id="qué-es-un-modelo-de-lenguaje-grande-llm" class="level3">
 <h3 class="anchored" data-anchor-id="qué-es-un-modelo-de-lenguaje-grande-llm">¿Qué es un modelo de lenguaje grande (LLM)?</h3>
-<p>Un LLM (<em>Large Language Model</em>) es un sistema entrenado con cantidades masivas de texto — artículos, libros, páginas web, código, conversaciones — para estimar qué fragmento de texto es más plausible después de otro en un contexto dado.</p>
-<p>No aprende hechos como tal. Aprende <strong>patrones estadísticos entre fragmentos de texto</strong>. Si vio millones de veces que después de “el agua hierve a” viene “100 grados Celsius”, aprenderá a predecir eso. Si vio pocas veces (o ninguna) que un dato es falso, puede predecir ese dato incorrecto con la misma confianza que uno correcto.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-La idea crucial
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Un LLM no verifica automáticamente si algo es verdad. Genera la continuación más plausible en un contexto dado. A veces eso coincide con la verdad. A veces no.</p>
-</div>
-</div>
-<p>Esta distinción explica por qué los modelos generativos son tan útiles y, al mismo tiempo, tan peligrosos si no los usas con criterio.</p>
+<p>Un <strong>LLM</strong> (<em>Large Language Model</em>, o modelo de lenguaje grande) es un tipo de inteligencia artificial diseñada para entender y generar texto. Se entrena con cantidades masivas de información escrita — artículos, libros, páginas web, código, mensajes, entre muchos otros — para aprender cómo se relacionan las palabras entre sí en distintos contextos.</p>
+<p>Durante ese entrenamiento, el modelo no memoriza hechos como si fuera una enciclopedia. En realidad, aprende patrones estadísticos del lenguaje: observa millones de ejemplos y calcula qué palabra o frase es más probable que aparezca después de otra. Por ejemplo, si encuentra millones de veces la frase “el agua hierve a”, aprenderá que la continuación más probable es “100 grados Celsius”. Pero si el modelo se topa con ejemplos incorrectos o confusos, también puede predecir un dato falso con la misma seguridad que uno cierto.</p>
+<p>Un LLM <strong>no tiene capacidad de comprensión ni verificación automática</strong>. Cuando genera una respuesta, produce la continuación más plausible según los patrones que ha aprendido, no necesariamente la más precisa en términos de conocimiento científico o factual. A veces coincide con la verdad; otras veces, simplemente “suenan” bien.</p>
+<p>Por eso los modelos generativos como ChatGPT son tan poderosos: pueden escribir como humanos, resumir textos o crear ideas nuevas. Pero esa misma capacidad implica un riesgo si los usamos sin criterio, porque pueden <strong>alucinar</strong>, es decir, inventar datos o afirmaciones que parecen reales pero no lo son.</p>
 <hr>
 </section>
-<section id="los-tokens-la-unidad-de-trabajo-de-un-llm" class="level3">
-<h3 class="anchored" data-anchor-id="los-tokens-la-unidad-de-trabajo-de-un-llm">Los tokens: la unidad de trabajo de un LLM</h3>
-<p>Antes de entender cómo genera texto un LLM, necesitas entender con qué trabaja. No con palabras completas. Con <strong>tokens</strong>: fragmentos de texto que pueden ser palabras enteras, partes de palabras, puntuación o incluso caracteres individuales.</p>
-<p>Una regla general: una palabra en inglés suele corresponder a ~1 token; una palabra en español puede necesitar 1.5–3 tokens. Eso no es un detalle menor: los modelos cobran por tokens, imponen límites por tokens y “ven” los documentos en tokens.</p>
+<section id="cómo-escribe-un-llm-tokens-y-predicción-paso-a-paso" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-escribe-un-llm-tokens-y-predicción-paso-a-paso">Cómo escribe un LLM: tokens y predicción paso a paso</h3>
+<p>Para entender cómo un modelo genera texto, primero hay que saber con qué piezas trabaja. Un LLM no opera directamente con palabras completas, sino con <strong>tokens</strong>: fragmentos de texto que pueden ser una palabra entera, una parte de una palabra, un signo de puntuación o incluso un espacio. Dicho simple: los tokens son las piezas pequeñas con las que el modelo va armando una respuesta.</p>
+<p>Una regla práctica:</p>
+<ul>
+<li><p>En inglés, una palabra suele equivaler aproximadamente a 1 token.</p></li>
+<li><p>En español, como muchas palabras son más largas o tienen más variaciones, una sola palabra puede ocupar entre 1.5 y 3 tokens.</p></li>
+</ul>
+<p>Esto importa porque los modelos no miden el texto en palabras, sino en tokens. Cada token suma al costo y al límite de uso, así que, si quieres ahorrar dinero al trabajar con LLMs, conviene escribir en inglés: con las mismas ideas, suelen hacer falta menos tokens.</p>
 <div class="demo-wrap">
   <div class="demo-shell demo-tone-gen" id="tok-shell">
     <div class="demo-shell-head">
       <div class="demo-shell-copy">
         <p class="demo-eyebrow">Tokens y vocabulario</p>
-        <h4 class="demo-title anchored">¿Cómo divide el modelo el texto?</h4>
-        <p class="demo-copy">Selecciona un ejemplo y observa cómo el mismo texto se fragmenta en unidades más pequeñas que las palabras. Los colores no tienen significado, solo ayudan a distinguir los límites.</p>
+        <h4 class="demo-title anchored">¿Cómo divide el LLM el texto?</h4>
+        <p class="demo-copy">Selecciona un ejemplo para ver cómo el modelo fragmenta el texto en tokens: unidades que pueden ser palabras completas, partes de palabras, signos de puntuación o espacios.</p>
       </div>
     </div>
 
@@ -346,20 +431,15 @@ La idea crucial
     </div>
   </div>
 </div>
-<p>Para ver cómo se tokeniza texto real en distintos idiomas, puedes usar <a href="https://tiktokenizer.vercel.app">Tiktokenizer</a> — una herramienta gratuita que usa el mismo tokenizador de GPT-4.</p>
-<hr>
-</section>
-<section id="cómo-se-genera-texto-la-predicción-token-por-token" class="level3">
-<h3 class="anchored" data-anchor-id="cómo-se-genera-texto-la-predicción-token-por-token">Cómo se genera texto: la predicción token por token</h3>
-<p>Con eso en mente, ahora puedes entender el mecanismo completo. Un LLM genera texto haciendo lo siguiente, repetidamente:</p>
+<p>Una vez que el texto está dividido en tokens, el mecanismo base es este:</p>
 <ol type="1">
-<li>Toma el texto que ya existe (tu prompt + lo que ha generado hasta ahora).</li>
-<li>Asigna una probabilidad a cada token que podría seguir — una palabra, una sílaba, un signo de puntuación — basándose en todo lo que ya existe en el texto.</li>
-<li>Selecciona o muestrea una opción entre las más plausibles. Esa elección depende tanto del contexto como de la configuración del sistema, que puede hacerlo más conservador o más creativo.</li>
-<li>Lo agrega al texto.</li>
-<li>Repite.</li>
+<li>El modelo lee tu prompt y el texto que ya lleva escrito.</li>
+<li>Calcula qué tokens podrían venir después.</li>
+<li>Les asigna una probabilidad según el contexto.</li>
+<li>Elige uno de los tokens más plausibles.</li>
+<li>Lo agrega al texto y repite el proceso.</li>
 </ol>
-<p>Eso es el mecanismo base. No hay un chequeo interno de verdad detrás de cada frase. Hay un proceso matemático muy sofisticado que, dado un texto de entrada, calcula qué continuaciones encajan mejor con los patrones que aprendió.</p>
+<p>Eso pasa una y otra vez, muy rápido. Por eso parece que el modelo “va pensando” mientras escribe, pero en realidad va construyendo la respuesta paso a paso a partir de probabilidades.</p>
 <div class="demo-wrap">
   <div class="demo-shell demo-tone-gen" id="pred-shell">
     <div class="demo-shell-head">
@@ -431,127 +511,112 @@ La idea crucial
 </div>
 <hr>
 </section>
-<section id="las-tres-limitaciones-que-más-importan" class="level3">
-<h3 class="anchored" data-anchor-id="las-tres-limitaciones-que-más-importan">Las tres limitaciones que más importan</h3>
-<p>Entender cómo funciona un LLM hace que sus limitaciones sean obvias.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-  <div class="callout-header d-flex align-content-center">
-    <div class="callout-icon-container"><i class="callout-icon"></i></div>
-    <div class="callout-title-container flex-fill">Alucinaciones</div>
+<section id="por-qué-la-misma-pregunta-puede-producir-respuestas-distintas" class="level3">
+<h3 class="anchored" data-anchor-id="por-qué-la-misma-pregunta-puede-producir-respuestas-distintas">¿Por qué la misma pregunta puede producir respuestas distintas?</h3>
+<p>Si un LLM siempre eligiera la opción más obvia, todas sus respuestas sonarían casi iguales. Pero en muchos casos no existe una sola continuación posible: hay varias que tienen sentido y el modelo puede escoger cualquiera de ellas.</p>
+<p>Por ejemplo, al pedirle al modelo: <em>“Explícame qué es la gravedad”</em>, en ese momento puede continuar de varias maneras: con una explicación simple, con un ejemplo, con analogías o con un enfoque científico. El modelo decide entre esas opciones según los patrones que aprendió en su entrenamiento y cuál continuación resulta más plausible en ese contexto. La respuesta que recibes es el resultado de muchas elecciones sucesivas, token por token.</p>
+<p>Por eso una IA puede responder distinto aunque la pregunta sea casi la misma. No es que “cambie de opinión”; más bien, está recorriendo uno de varios caminos posibles dentro del lenguaje.</p>
+<p>Esto también nos ayuda a entender dos cosas importantes:</p>
+<ul>
+<li><p>Si el sistema está configurado para ser más conservador, tenderá a elegir opciones más comunes y predecibles.</p></li>
+<li><p>Si está configurado para permitir más variedad, puede producir respuestas más originales, pero también menos precisas o más raras.</p></li>
+</ul>
+<p>En otras palabras: <strong>que un modelo sea más creativo no significa que diga la verdad</strong>, y una respuesta que suena muy segura tampoco garantiza que sea correcta.</p>
+<hr>
+</section>
+<section id="las-tres-limitaciones-cruciales-de-un-llm" class="level3">
+<h3 class="anchored" data-anchor-id="las-tres-limitaciones-cruciales-de-un-llm">Las tres limitaciones cruciales de un LLM</h3>
+<p>Entender cómo funciona un LLM hace que sus limitaciones dejen de ser sorprendentes y se vuelvan casi inevitables: el modelo no tiene memoria de eventos posteriores a su entrenamiento, no distingue confiablemente entre verdad y ficción, y percibe el mundo solo a través del sesgo estadístico de los textos que vio. Su poder está en la fluidez, no en la verdad; y su mayor riesgo no es equivocarse, sino hacerlo con la misma seguridad con la que un humano escribiría algo correcto.</p>
+<div class="llm-limits-stack">
+
+  <div class="llm-limit-card">
+    <span class="llm-limit-num">01</span>
+    <h4 class="llm-limit-title anchored">Alucinaciones</h4>
+    <div class="llm-limit-body">
+      <p>El modelo no distingue entre un dato verdadero y uno falso, solo entre un token probable y uno improbable. Si el contexto hace que una afirmación falsa parezca plausible, la generará con la misma confianza que si fuera cierta.</p>
+      <p><strong>Ejemplo clásico:</strong> pedirle a un LLM que cite fuentes académicas. Puede inventar títulos, autores y DOIs perfectamente plausibles que simplemente no existen.</p>
+      <p><strong>Solución:</strong> verifica siempre los datos que el modelo presente como hechos, especialmente números, fechas, citas y afirmaciones específicas.</p>
+      <details class="llm-foldout">
+        <summary>
+          <span><span class="llm-foldout-label">Casos verídicos</span>Cuando la IA alucina: tres ejemplos verídicos</span>
+          <svg class="llm-foldout-chevron" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </summary>
+        <div class="llm-foldout-body">
+          <div class="hi-cases">
+
+            <div class="hi-case">
+              <div class="hi-case-head">
+                <span class="hi-num">01</span>
+                <span class="hi-loc">EE.UU. · 2023</span>
+              </div>
+              <p class="hi-title">El abogado y las citas inventadas</p>
+              <p class="hi-copy">Un abogado de Nueva York usó ChatGPT para buscar precedentes legales. El modelo inventó 6 casos judiciales con nombres de jueces, fechas y citas que sonaban completamente reales. Los presentó ante un juez federal sin verificar ninguno.</p>
+              <div class="hi-result"><span class="hi-result-tag">Consecuencia</span>Multado con $5,000 USD. Tuvo que enviar cartas de disculpa a cada juez nombrado falsamente. El caso <em>Mata v. Avianca</em> se convirtió en referencia mundial sobre el uso irresponsable de IA en contextos legales.</div>
+            </div>
+
+            <div class="hi-case">
+              <div class="hi-case-head">
+                <span class="hi-num">02</span>
+                <span class="hi-loc">EE.UU. · 2023</span>
+              </div>
+              <p class="hi-title">Google Bard y los $100,000 millones perdidos</p>
+              <p class="hi-copy">En febrero de 2023, Google presentó Bard con un video donde el chatbot afirmaba que el Telescopio James Webb había tomado <em>las primeras fotografías</em> de un exoplaneta — dato incorrecto. Astrónomos y periodistas detectaron el error de inmediato.</p>
+              <div class="hi-result"><span class="hi-result-tag">Consecuencia</span>Las acciones de Alphabet cayeron <strong>7.7%</strong> en un solo día, borrando aproximadamente <strong>$100,000 millones de dólares</strong> en capitalización de mercado.</div>
+            </div>
+
+            <div class="hi-case">
+              <div class="hi-case-head">
+                <span class="hi-num">03</span>
+                <span class="hi-loc">Global · 2023–2024</span>
+              </div>
+              <p class="hi-title">Las citas académicas fantasma</p>
+              <p class="hi-copy">Un estudio en <a href="https://www.nature.com/articles/s41598-023-41032-5" target="_blank" rel="noopener"><em>Scientific Reports</em> (Nature, 2023)</a> analizó 636 citas generadas por ChatGPT. Con GPT-3.5, el <strong>55% eran completamente inventadas</strong>; con GPT-4 bajó al 18%, pero incluso las citas reales contenían errores frecuentes.</p>
+              <div class="hi-result"><span class="hi-result-tag">Consecuencia</span>Varios trabajos académicos tuvieron que corregirse o retractarse. Si usas ChatGPT para una tarea, nunca copies sus citas sin verificarlas una por una.</div>
+            </div>
+
+          </div>
+        </div>
+      </details>
+    </div>
   </div>
-  <div class="callout-body-container callout-body">
-    <p>El modelo no distingue entre un dato verdadero y uno falso, solo distingue entre un token probable y uno improbable. Si el contexto hace probable una afirmación falsa, la generará con confianza.</p>
-    <p><strong>Ejemplo clásico:</strong> pedirle a un LLM que cite fuentes académicas. Puede inventar títulos, autores y DOIs perfectamente plausibles que simplemente no existen.</p>
-    <p><strong>Solución:</strong> verifica siempre los datos que el modelo presente como hechos, especialmente números, fechas, citas y afirmaciones específicas.</p>
-    <details class="foldout foldout-panel foldout-warning">
-      <summary class="foldout-summary">
-        <span>📋 Cuando la IA alucina: tres casos verídicos</span>
-        <span class="foldout-summary-hint">Ejemplos</span>
-      </summary>
-      <div class="foldout-body hallucination-foldout-body">
-        <div class="hallucination-cases">
-        <div class="hallucination-case hallucination-case-red">
-          <div class="hallucination-case-row">
-            <div class="hallucination-case-icon">⚖️</div>
-            <div>
-              <p class="hallucination-case-meta">Caso 1 · EE.UU., 2023</p>
-              <p class="hallucination-case-title">El abogado y las citas inventadas</p>
-              <p class="hallucination-case-copy">Un abogado de Nueva York usó ChatGPT para buscar precedentes legales. El modelo inventó 6 casos judiciales con nombres de jueces, fechas y citas que sonaban completamente reales. El abogado los presentó ante un juez federal sin verificar ninguno.</p>
-              <div class="hallucination-case-result hallucination-case-result-danger"><strong>Consecuencia:</strong> Multado con $5,000 USD. Tuvo que enviar cartas de disculpa a cada juez nombrado falsamente. El caso <em>Mata v. Avianca</em> se convirtió en referencia mundial sobre el uso irresponsable de IA en contextos legales.</div>
-            </div>
-          </div>
-        </div>
-        <div class="hallucination-case hallucination-case-orange">
-          <div class="hallucination-case-row">
-            <div class="hallucination-case-icon">📉</div>
-            <div>
-              <p class="hallucination-case-meta">Caso 2 · EE.UU., 2023</p>
-              <p class="hallucination-case-title">Google Bard y los $100,000 millones perdidos</p>
-              <p class="hallucination-case-copy">En febrero de 2023, Google presentó Bard con un video donde el chatbot afirmaba que el Telescopio James Webb había tomado <em>las primeras fotografías</em> de un exoplaneta — dato incorrecto (esa hazaña la realizó el VLT del Observatorio Europeo Austral en 2004). Astrónomos y periodistas detectaron el error de inmediato.</p>
-              <div class="hallucination-case-result hallucination-case-result-danger"><strong>Consecuencia:</strong> Las acciones de Alphabet cayeron <strong>7.7%</strong> en un solo día, borrando aproximadamente <strong>$100,000 millones de dólares</strong> en capitalización de mercado.</div>
-            </div>
-          </div>
-        </div>
-        <div class="hallucination-case hallucination-case-amber">
-          <div class="hallucination-case-row">
-            <div class="hallucination-case-icon">📚</div>
-            <div>
-              <p class="hallucination-case-meta">Caso 3 · Global, 2023–2024</p>
-              <p class="hallucination-case-title">Las citas académicas fantasma</p>
-              <p class="hallucination-case-copy">Un estudio en <a href="https://www.nature.com/articles/s41598-023-41032-5" target="_blank" rel="noopener" class="hallucination-case-link"><em>Scientific Reports</em> (Nature, 2023)</a> analizó 636 citas generadas por ChatGPT en 84 textos sobre 42 temas distintos. Con GPT-3.5, el <strong>55% de las citas eran completamente inventadas</strong>; con GPT-4 el porcentaje bajó al 18%, pero incluso las citas reales también contenían errores frecuentes.</p>
-              <div class="hallucination-case-result hallucination-case-result-caution"><strong>Consecuencia:</strong> Varios trabajos académicos tuvieron que corregirse o retractarse. Si usas ChatGPT para una tarea, nunca copies sus citas sin verificarlas una por una.</div>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-    </details>
+
+  <div class="llm-limit-card">
+    <span class="llm-limit-num">02</span>
+    <h4 class="llm-limit-title anchored">Límite de conocimiento <em style="font-size:0.8em;font-weight:500;opacity:0.65">(knowledge cutoff)</em></h4>
+    <div class="llm-limit-body">
+      <p>El modelo fue entrenado con textos disponibles hasta cierta fecha. Todo lo que ocurrió después simplemente no existe para él, a menos que tú se lo des en el prompt o el modelo tenga acceso a una búsqueda en tiempo real.</p>
+      <p><strong>Implicación:</strong> para preguntas sobre eventos recientes, usa herramientas con búsqueda activa (como Perplexity) o verifica la información con fuentes actualizadas.</p>
+    </div>
   </div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Límite de conocimiento (<em>knowledge cutoff</em>)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>El modelo fue entrenado con texto hasta cierta fecha. Todo lo que ocurrió después no existe para él, a menos que se lo proporciones tú en el prompt, o que el modelo tenga acceso a búsqueda web.</p>
-<p><strong>Implicación:</strong> para preguntas sobre eventos recientes, usa herramientas con búsqueda activa (como Perplexity) o verifica la información con fuentes actualizadas.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Sesgos del entrenamiento
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Los LLMs aprenden de texto humano, y el texto humano contiene sesgos: de género, raza, geografía, clase social. Un modelo entrenado principalmente con texto en inglés tendrá perspectivas distintas a las de una comunidad mexicana.</p>
-<p><strong>Implicación:</strong> el modelo no es neutral. Sus respuestas reflejan los sesgos de los datos con los que fue entrenado.</p>
-</div>
+
+  <div class="llm-limit-card">
+    <span class="llm-limit-num">03</span>
+    <h4 class="llm-limit-title anchored">Sesgos del entrenamiento</h4>
+    <div class="llm-limit-body">
+      <p>Los LLMs aprenden a partir de textos escritos por humanos, y el texto humano está lleno de sesgos: de género, raza, origen geográfico y clase social. Además, un modelo entrenado sobre todo con texto en inglés va a reflejar visiones del mundo distintas a las de una comunidad mexicana.</p>
+      <p><strong>Implicación:</strong> el modelo no es neutral. Sus respuestas reflejan los sesgos de los datos con los que fue entrenado.</p>
+    </div>
+  </div>
+
 </div>
 <hr>
 </section>
-<section id="generación-de-imágenes-un-mecanismo-diferente" class="level3">
-<h3 class="anchored" data-anchor-id="generación-de-imágenes-un-mecanismo-diferente">Generación de imágenes: un mecanismo diferente</h3>
-<p>Hasta aquí hemos hablado de texto. Las imágenes generativas funcionan de forma distinta. El mecanismo principal detrás de esta tarea se llama <strong>difusión</strong> (<em>diffusion</em>):</p>
-<ol type="1">
-<li><p>El modelo parte de ruido visual puro, algo así como la estática en una televisión vieja.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/statictv.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:30.0%"></p>
-</figure>
-</div></li>
-<li><p>En pasos sucesivos, va “limpiando” ese ruido guiado por una descripción de texto.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/static.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:25.0%"></p>
-</figure>
-</div></li>
-<li><p>Después de cientos de pasos, emerge una imagen coherente.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/static2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:25.0%"></p>
-</figure>
-</div></li>
-</ol>
-<p>El proceso no “dibuja”, elimina ruido de manera controlada hasta que lo que queda es coherente con la descripción.</p>
-<p>Si quieres profundizar en cómo funciona este proceso:</p>
-<a href="https://jalammar.github.io/illustrated-stable-diffusion/" target="_blank" rel="noopener" class="resource-card">
-  <div class="resource-card-icon">🎨</div>
-  <div class="resource-card-body">
-    <p class="resource-card-kicker">Recurso externo · Lectura ilustrada</p>
-    <p class="resource-card-title">The Illustrated Stable Diffusion — Jay Alammar</p>
-    <p class="resource-card-copy">Explicación visual paso a paso de cómo funciona la difusión: desde el ruido hasta la imagen final. Muy bien ilustrado. <strong>Nota:</strong> está en inglés y es más detallado y técnico que lo que vimos aquí — ideal si ya entendiste la idea general y quieres adentrarte en las partes técnicas del proceso.</p>
+<section id="generación-de-imágenes" class="level3">
+<h3 class="anchored" data-anchor-id="generación-de-imágenes">Generación de imágenes</h3>
+<p>Hasta aquí hemos hablado de texto. En un LLM, la respuesta se construye token por token. En cambio, las IAs que generan imágenes parten de ruido visual y lo van transformando poco a poco, guiadas por el prompt. Ese proceso se llama <strong>difusión</strong> (<em>diffusion</em>).</p>
+<div class="diffusion-card">
+  <img src="../assets/sesion-04/diffusion-sequence.svg" alt="Infografía de tres pasos que muestra cómo una IA de imágenes pasa de ruido inicial a una imagen final guiada por un prompt" class="diffusion-diagram">
+
+  <div class="diffusion-note">
+    <strong>Idea general:</strong> la IA parte de ruido visual y lo reorganiza hasta que aparece una imagen que coincide con el prompt.
   </div>
-  <span class="resource-card-arrow">→</span>
-</a>
+</div>
+<p>Esto ayuda a entender dos cosas importantes:</p>
+<ul>
+<li><p>El prompt no contiene la imagen exacta, pero sí orienta el proceso: le dice al modelo qué rasgos debería ir haciendo visibles.</p></li>
+<li><p>El mismo prompt puede producir imágenes distintas, porque si el ruido inicial cambia, el resultado final también puede cambiar.</p></li>
+</ul>
+<p>Igual que con la generación de texto, aquí tampoco hay una “respuesta única”. Hay un proceso probabilístico que avanza por etapas, solo que ahora trabaja sobre pixeles en lugar de tokens.</p>
 <hr>
 </section>
 </section>
@@ -583,7 +648,6 @@ Sesgos del entrenamiento
               </div>
             </div>
           </div>
-          <p class="demo-preview-title">Vista previa del comparador</p>
           <p class="demo-preview-copy">Tres escenarios: receta, correo y resumen. En cada uno verás cómo cambia la respuesta según la precisión del prompt.</p>
         </div>
       </div>
@@ -643,13 +707,13 @@ Sesgos del entrenamiento
 </section>
 <section id="chatgpt-gemini-y-perplexity-cuándo-usar-cada-uno" class="level2">
 <h2 class="anchored" data-anchor-id="chatgpt-gemini-y-perplexity-cuándo-usar-cada-uno">ChatGPT, Gemini y Perplexity: ¿cuándo usar cada uno?</h2>
-<p>Las tres herramientas usan modelos generativos, pero no están pensadas para exactamente el mismo tipo de tarea. La comparación útil no es “cuál es mejor en general”, sino “qué modo de trabajo me conviene para este problema”.</p>
+<p>Las tres herramientas utilizan modelos generativos, pero no están diseñadas para el mismo tipo de tarea. Más que preguntarse cuál es mejor, conviene reflexionar sobre cuál se adapta mejor a lo que necesitas resolver en ese momento.</p>
 <div class="tools-grid">
 
   <!-- ChatGPT -->
   <div class="tool-card tool-chatgpt">
     <div class="tool-card-header">
-      <div class="tool-logo">💬</div>
+      <div class="tool-logo"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
       <div>
         <p class="tool-name">ChatGPT</p>
         <p class="tool-maker">OpenAI</p>
@@ -666,11 +730,11 @@ Sesgos del entrenamiento
         <span class="tool-tag tag-strength">Iteración</span>
       </div>
       <div class="tool-row">
-        <span class="tool-row-label">Límite principal</span>
+        <span class="tool-row-label">Limitación principal</span>
         <span class="tool-row-value">Puede sonar muy convincente incluso cuando se equivoca. No debe usarse como verificador de hechos por sí solo.</span>
       </div>
       <div class="tool-row">
-        <span class="tool-row-label">Regla práctica</span>
+        <span class="tool-row-label">Regla general</span>
         <span class="tool-row-value">Úsalo para pensar, redactar y reorganizar ideas; luego verifica por separado los hechos importantes.</span>
       </div>
     </div>
@@ -679,7 +743,7 @@ Sesgos del entrenamiento
   <!-- Gemini -->
   <div class="tool-card tool-gemini">
     <div class="tool-card-header">
-      <div class="tool-logo">✨</div>
+      <div class="tool-logo"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-1 3-3.5 4-6 5 2.5 1 5 2 6 5 1-3 3.5-4 6-5-2.5-1-5-2-6-5z"></path><path d="M5 3c-.5 1.5-1.5 2-3 2.5 1.5.5 2.5 1 3 2.5.5-1.5 1.5-2 3-2.5-1.5-.5-2.5-1-3-2.5z"></path></svg></div>
       <div>
         <p class="tool-name">Gemini</p>
         <p class="tool-maker">Google</p>
@@ -692,16 +756,16 @@ Sesgos del entrenamiento
       </div>
       <div class="tool-row">
         <span class="tool-row-label">Fortaleza</span>
-        <span class="tool-row-value">Suele encajar bien cuando ya trabajas entre Drive, Docs, Gmail o herramientas de Google.</span>
+        <span class="tool-row-value">Suele funcionar muy bien cuando ya trabajas entre Drive, Docs, Gmail o herramientas de Google.</span>
         <span class="tool-tag tag-multi">Ecosistema</span>
       </div>
       <div class="tool-row">
-        <span class="tool-row-label">Límite principal</span>
-        <span class="tool-row-value">Que una herramienta tenga acceso a servicios o búsqueda no elimina por sí sola los errores: sigue haciendo falta revisar resultados clave.</span>
+        <span class="tool-row-label">Limitación principal</span>
+        <span class="tool-row-value">Que una herramienta tenga acceso a ciertos servicios o a búsquedas en internet no garantiza por sí mismo resultados correctos; es necesario revisar con cuidado la información más importante.</span>
       </div>
       <div class="tool-row">
-        <span class="tool-row-label">Regla práctica</span>
-        <span class="tool-row-value">Úsalo cuando la tarea ya vive en tu flujo con Google o cuando te conviene trabajar con varios formatos en una misma conversación.</span>
+        <span class="tool-row-label">Regla general</span>
+        <span class="tool-row-value">Úsalo cuando la tarea ya forme parte de tu flujo de trabajo con Google o cuando te resulte útil manejar distintos formatos dentro de una misma conversación.</span>
       </div>
     </div>
   </div>
@@ -709,7 +773,7 @@ Sesgos del entrenamiento
   <!-- Perplexity -->
   <div class="tool-card tool-perplexity">
     <div class="tool-card-header">
-      <div class="tool-logo">🔎</div>
+      <div class="tool-logo"><svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></div>
       <div>
         <p class="tool-name">Perplexity</p>
         <p class="tool-maker">Perplexity AI</p>
@@ -722,16 +786,16 @@ Sesgos del entrenamiento
       </div>
       <div class="tool-row">
         <span class="tool-row-label">Fortaleza</span>
-        <span class="tool-row-value">Te obliga a mirar documentos y enlaces, no solo la respuesta final del modelo.</span>
+        <span class="tool-row-value">Te facilita revisar documentos y enlaces, no solo la respuesta que genera el modelo.</span>
         <span class="tool-tag tag-search">Búsqueda + fuentes</span>
       </div>
       <div class="tool-row">
-        <span class="tool-row-label">Límite principal</span>
-        <span class="tool-row-value">Citar una fuente no garantiza que la interpretación sea correcta. Hay que abrir el documento y comprobar que sí respalda la afirmación.</span>
+        <span class="tool-row-label">Limitación principal</span>
+        <span class="tool-row-value">Citar una fuente no garantiza que la interpretación sea correcta. Hay que abrir el documento y comprobar que efectivamente respalde la afirmación.</span>
       </div>
       <div class="tool-row">
-        <span class="tool-row-label">Regla práctica</span>
-        <span class="tool-row-value">Úsalo cuando importa la actualidad o cuando necesitas una ruta clara para verificar una afirmación en fuentes reales.</span>
+        <span class="tool-row-label">Regla general</span>
+        <span class="tool-row-value">Úsalo cuando sea importante contar con información actualizada o cuando necesites una forma clara de comprobar una afirmación con fuentes externas.</span>
       </div>
     </div>
   </div>
@@ -739,42 +803,64 @@ Sesgos del entrenamiento
 </div>
 
 <div class="tools-note">
-  <strong>La lección no depende de una marca:</strong> el criterio importante es distinguir entre herramientas orientadas a conversar, herramientas orientadas a trabajar dentro de un ecosistema y herramientas orientadas a responder con fuentes visibles. Los nombres comerciales pueden cambiar; esa lógica de uso no.
+  <strong>Hay que aprender a distinguir</strong> entre herramientas orientadas a conversar, herramientas orientadas a trabajar dentro de un ecosistema y herramientas orientadas a responder con fuentes visibles. Los nombres comerciales pueden cambiar; la lógica de uso no.
 </div>
 <hr>
 <section id="criterios-para-usar-ia-generativa-con-juicio-crítico" class="level3">
 <h3 class="anchored" data-anchor-id="criterios-para-usar-ia-generativa-con-juicio-crítico">Criterios para usar IA generativa con juicio crítico</h3>
-<p>Con todo lo que vimos hoy, puedes hacerte una lista mental antes de confiar en una respuesta generada:</p>
-<p><strong>Antes de usar o compartir una respuesta de IA…</strong></p>
-<ol type="1">
-<li><strong>¿El dato es verificable?</strong> Si el modelo afirma algo específico (fecha, número, nombre, cita), búscalo en una fuente primaria.</li>
-<li><strong>¿El tema requiere información reciente?</strong> En ese caso, usa una herramienta con búsqueda activa o verifica por tu cuenta.</li>
-<li><strong>¿Qué tan importante es que sea correcto?</strong> Para una lluvia de ideas, la precisión importa menos. Para un trabajo académico o una decisión de salud, importa mucho.</li>
-<li><strong>¿El prompt fue suficientemente específico?</strong> Si la respuesta es genérica, antes de asumir que el modelo es malo, revisa si tu instrucción fue clara.</li>
-<li><strong>¿Hay perspectivas que el modelo podría estar ignorando?</strong> Recuerda el sesgo del entrenamiento.</li>
-</ol>
+<p>Antes de usar o compartir información generada con IA, intenta preguntarte lo siguiente:</p>
+<div class="crit-card">
+  <div class="crit-list">
+    <div class="crit-item">
+      <span class="crit-num" aria-hidden="true">✅</span>
+      <p class="crit-q"><strong>¿Importa mucho que esté correcta?</strong> No es lo mismo pedir ideas para un proyecto que usar la respuesta para una tarea, una decisión de salud o una información que vas a compartir con otras personas.</p>
+    </div>
+    <div class="crit-item">
+      <span class="crit-num" aria-hidden="true">🗞️</span>
+      <p class="crit-q"><strong>¿La información puede haber cambiado recientemente?</strong> Si preguntas por noticias, fechas, convocatorias, precios o eventos actuales, no confíes solo en el modelo: verifica con fuentes actualizadas.</p>
+    </div>
+    <div class="crit-item">
+      <span class="crit-num" aria-hidden="true">🔎</span>
+      <p class="crit-q"><strong>¿Puedo comprobar lo que afirma?</strong> Si aparecen datos concretos como números, citas, nombres o fechas, revísalos en una fuente confiable antes de usarlos.</p>
+    </div>
+    <div class="crit-item">
+      <span class="crit-num" aria-hidden="true">✍🏼</span>
+      <p class="crit-q"><strong>¿Mi prompt fue claro?</strong> Una respuesta que deja mucho que desear no es el resultado de un “mal modelo”, sino de una instrucción ambigua o demasiado general.</p>
+    </div>
+    <div class="crit-item">
+      <span class="crit-num" aria-hidden="true">📖</span>
+      <p class="crit-q"><strong>¿Qué perspectiva podría faltar aquí?</strong> Recuerda que los modelos aprenden de textos humanos, y esos textos también tienen sesgos y puntos ciegos.</p>
+    </div>
+  </div>
+  <div class="crit-footer">
+    <p class="crit-footer-copy">Usa la IA para pensar, explorar, resumir o empezar un borrador. No para reemplazar tu criterio ni para dar por sentado algo importante sin revisarlo.</p>
+  </div>
+</div>
 <hr>
 </section>
-<section id="actividad-de-reflexión" class="level3">
-<h3 class="anchored" data-anchor-id="actividad-de-reflexión">Actividad de reflexión</h3>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Para pensar
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li><p><strong>Piensa en la última vez que usaste un buscador para algo importante.</strong> ¿Habrías obtenido el mismo resultado con un LLM? ¿Cuáles serían las ventajas y los riesgos de usar uno en ese caso?</p></li>
-<li><p><strong>¿En qué situaciones preferirías siempre usar un buscador</strong> en lugar de un modelo generativo? ¿Por qué?</p></li>
-<li><p><strong>Si el modelo predice token por token sin “entender”,</strong> ¿qué implica eso para tareas como diagnósticos médicos, asesoría legal o información de emergencias?</p></li>
-<li><p><strong>¿Usaste alguna IA generativa esta semana?</strong> Ahora que entiendes cómo funciona, ¿cambiarías algo de cómo la usaste?</p></li>
+<section id="para-reflexionar" class="level3">
+<h3 class="anchored" data-anchor-id="para-reflexionar">Para reflexionar</h3>
+<span class="reflexion-kicker">Reflexión · 5 min</span>
+<h3 class="reflexion-heading anchored">Actividad de reflexión</h3>
+<ol class="reflexion-list">
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">01</span>
+    <p class="reflexion-q"><strong>Piensa en la última vez que usaste un buscador para algo importante.</strong> ¿Habrías obtenido el mismo resultado con un LLM? ¿Cuáles serían las ventajas y los riesgos de usar uno en ese caso?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">02</span>
+    <p class="reflexion-q"><strong>¿En qué situaciones preferirías usar un buscador</strong> en lugar de un modelo generativo? ¿Por qué?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">03</span>
+    <p class="reflexion-q"><strong>Si el modelo predice token por token sin "entender",</strong> ¿qué implica eso para tareas como diagnósticos médicos, asesoría legal o información de emergencias?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">04</span>
+    <p class="reflexion-q"><strong>¿Usaste alguna IA generativa esta semana?</strong> Ahora que entiendes cómo funciona, ¿cambiarías algo de cómo la usaste?</p>
+  </li>
 </ol>
-</div>
-</div>
+<p class="reflexion-close">No hay respuestas únicas. Lo importante es que empieces a hacerte estas preguntas antes de confiar ciegamente en una herramienta generativa.</p>
 <hr>
 </section>
 <section id="la-idea-central-de-esta-sesión" class="level3">
@@ -787,13 +873,24 @@ Para pensar
 </section>
 <section id="recursos-para-explorar-más-sobre-el-tema" class="level3">
 <h3 class="anchored" data-anchor-id="recursos-para-explorar-más-sobre-el-tema">Recursos para explorar más sobre el tema</h3>
-<div class="resource-list">
-<ul>
-<li><a href="https://tiktokenizer.vercel.app">Tiktokenizer</a> — pega cualquier texto y ve cómo lo divide GPT-4 en tokens; puedes comparar el conteo entre español e inglés en tiempo real</li>
-<li><a href="https://poloclub.github.io/transformer-explainer/">Transformer Explainer — Georgia Tech</a> — visualización interactiva de cómo funciona GPT-2 en tu navegador, sin instalación; ideal para ver la atención y la predicción de tokens en tiempo real</li>
-<li><a href="https://bbycroft.net/llm">LLM Visualization — Brendan Bycroft</a> — navega por un transformer en 3D: cada capa, cada operación, la inferencia completa</li>
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://tiktokenizer.vercel.app" target="_blank" rel="noopener">Tiktokenizer <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Pega cualquier texto y ve cómo lo divide GPT-4 en tokens; puedes comparar el conteo entre español e inglés en tiempo real.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://poloclub.github.io/transformer-explainer/" target="_blank" rel="noopener">Transformer Explainer — Georgia Tech <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Visualización interactiva de cómo funciona GPT-2 en tu navegador, sin instalación; ideal para ver la atención y la predicción de tokens en tiempo real.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://bbycroft.net/llm" target="_blank" rel="noopener">LLM Visualization — Brendan Bycroft <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Navega por un transformer en 3D: cada capa, cada operación, la inferencia completa.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://jalammar.github.io/illustrated-stable-diffusion/" target="_blank" rel="noopener">The Illustrated Stable Diffusion — Jay Alammar <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Explicación visual paso a paso de cómo funciona la difusión: desde el ruido hasta la imagen final. Muy bien ilustrado. En inglés; ideal si ya entendiste la idea general y quieres adentrarte en las partes técnicas del proceso.</p>
+  </li>
 </ul>
-</div>
 <hr>
 <nav class="sesion-nav">
   <a href="sesion-03.html" class="sesion-nav-btn prev">
