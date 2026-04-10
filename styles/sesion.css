@@ -964,9 +964,9 @@ h4 {
 }
 
 .demo-tone-unsupervised {
-  --demo-accent: #14b8a6;
-  --demo-accent-soft: rgba(20, 184, 166, 0.12);
-  --demo-accent-strong: rgba(20, 184, 166, 0.22);
+  --demo-accent: #6495ED;
+  --demo-accent-soft: rgba(100, 149, 237, 0.12);
+  --demo-accent-strong: rgba(100, 149, 237, 0.22);
 }
 
 .demo-tone-rl {

@@ -71,39 +71,42 @@ function replacePlot(targetId, plot) {
 function initKMeansDemo() {
   if (!$("km-shell") || !$("km-plot")) return;
 
+  // Clusters form a triangle, not a diagonal — shows K-Means works on any shape
+  // Grupo A (reggaeton): upper-right  · Grupo B (pop): lower-right  · Grupo C (acoustic): left
   const songs = [
-    { artist: "Bad Bunny", x: 8.5, y: 8.8, cluster: 0 },
-    { artist: "Karol G", x: 8.8, y: 8.2, cluster: 0 },
-    { artist: "J Balvin", x: 7.8, y: 8.6, cluster: 0 },
-    { artist: "Daddy Yankee", x: 9.0, y: 9.0, cluster: 0 },
-    { artist: "Maluma", x: 7.5, y: 8.0, cluster: 0 },
-    { artist: "The Weeknd", x: 6.2, y: 5.8, cluster: 1 },
-    { artist: "Dua Lipa", x: 6.8, y: 6.5, cluster: 1 },
-    { artist: "Harry Styles", x: 5.5, y: 5.2, cluster: 1 },
-    { artist: "Taylor Swift", x: 6.5, y: 6.0, cluster: 1 },
-    { artist: "Doja Cat", x: 5.8, y: 6.3, cluster: 1 },
-    { artist: "Ed Sheeran", x: 3.2, y: 3.5, cluster: 2 },
-    { artist: "Coldplay", x: 4.0, y: 4.2, cluster: 2 },
-    { artist: "Billie Eilish", x: 2.5, y: 3.0, cluster: 2 },
-    { artist: "Olivia Rodrigo", x: 3.8, y: 4.0, cluster: 2 },
-    { artist: "Adele", x: 2.2, y: 2.8, cluster: 2 }
+    { artist: "Bad Bunny",     x: 8.5, y: 8.8, cluster: 0 },
+    { artist: "Karol G",       x: 9.1, y: 8.3, cluster: 0 },
+    { artist: "J Balvin",      x: 8.2, y: 9.0, cluster: 0 },
+    { artist: "Daddy Yankee",  x: 9.3, y: 8.6, cluster: 0 },
+    { artist: "Maluma",        x: 7.8, y: 8.1, cluster: 0 },
+    { artist: "The Weeknd",    x: 7.1, y: 4.0, cluster: 1 },
+    { artist: "Dua Lipa",      x: 7.8, y: 5.2, cluster: 1 },
+    { artist: "Harry Styles",  x: 6.5, y: 4.5, cluster: 1 },
+    { artist: "Taylor Swift",  x: 7.4, y: 3.5, cluster: 1 },
+    { artist: "Doja Cat",      x: 6.9, y: 4.8, cluster: 1 },
+    { artist: "Ed Sheeran",    x: 2.0, y: 6.8, cluster: 2 },
+    { artist: "Coldplay",      x: 2.8, y: 7.5, cluster: 2 },
+    { artist: "Billie Eilish", x: 1.5, y: 5.9, cluster: 2 },
+    { artist: "Olivia Rodrigo",x: 3.2, y: 6.2, cluster: 2 },
+    { artist: "Adele",         x: 1.8, y: 7.1, cluster: 2 }
   ];
 
-  const colors = ["#2563eb", "#14b8a6", "#f59e0b"];
+  const colors = ["#2563eb", "#228b22", "#f59e0b"];  // A=blue, B=forestgreen, C=amber
   const initialCenters = [
-    { x: 6.9, y: 4.5, color: colors[0] },
-    { x: 4.0, y: 7.2, color: colors[1] },
-    { x: 5.6, y: 3.4, color: colors[2] }
+    { x: 5.5, y: 7.5, color: colors[0] },   // starts upper-center (far from all clusters)
+    { x: 8.2, y: 6.5, color: colors[1] },   // starts right-center (between A and B)
+    { x: 4.8, y: 3.5, color: colors[2] }    // starts lower-center (near B but off)
   ];
   const finalCenters = [
-    { x: 8.32, y: 8.52, color: colors[0] },
-    { x: 6.16, y: 5.96, color: colors[1] },
-    { x: 3.14, y: 3.5, color: colors[2] }
+    { x: 8.58, y: 8.56, color: colors[0] }, // centroid of Grupo A
+    { x: 7.14, y: 4.40, color: colors[1] }, // centroid of Grupo B
+    { x: 2.26, y: 6.70, color: colors[2] }  // centroid of Grupo C
   ];
 
   let runId = 0;
   let shown = 0;
   let colorized = false;
+  let colorRevealStep = 0;   // 0–15: drives the color-wash animation
   let centersVisible = false;
   let centers = initialCenters.map((center) => ({ ...center }));
 
@@ -129,10 +132,14 @@ function initKMeansDemo() {
         Plot.dot(visibleSongs, {
           x: "x",
           y: "y",
-          r: 6,
-          fill: (song) => (colorized ? colors[song.cluster] : "#cbd5e1"),
+          r: colorized ? 8 : 7,
+          fill: (song) => {
+            if (!colorized) return "#6495ED";
+            const t = Math.min(1, colorRevealStep / 15);
+            return d3.interpolateRgb("#6495ED", colors[song.cluster])(t);
+          },
           stroke: "#ffffff",
-          strokeWidth: 1.5
+          strokeWidth: 2
         }),
         centersVisible
           ? Plot.text(centers, {
@@ -156,6 +163,7 @@ function initKMeansDemo() {
     runId += 1;
     shown = 0;
     colorized = false;
+    colorRevealStep = 0;
     centersVisible = false;
     centers = initialCenters.map((center) => ({ ...center }));
     deactivateShell("km");
@@ -165,7 +173,7 @@ function initKMeansDemo() {
     setInsights(
       "km",
       "Una nube de canciones sin etiquetas visibles. Cada punto representa una canción descrita por dos características numéricas.",
-      "En aprendizaje no supervisado no hay respuestas correctas entregadas por humanos. El algoritmo solo recibe datos e intenta encontrar estructura."
+      "En el aprendizaje no supervisado no hay etiquetas previas creadas por personas. El algoritmo solo recibe datos e intenta descubrir una estructura."
     );
   }
 
@@ -179,11 +187,11 @@ function initKMeansDemo() {
     setHTML("km-tags", "");
     renderClusterPlot();
 
-    setText("km-status", "Paso 1 — Aparecen canciones descritas por energía y ritmo, pero sin géneros escritos.");
+    setText("km-status", "Paso 1 — Paso 1 — Aparecen canciones descritas por su energía y su ritmo, pero sin géneros identificados.");
     setInsights(
       "km",
-      "Los puntos grises son canciones sin clasificar. Solo tienen atributos medibles: qué tan intensas suenan y qué ritmo tienen.",
-      "K-Means no empieza con categorías como 'pop' o 'reggaetón'. Empieza con geometría en un espacio de características."
+      "Los puntos grises representan canciones que todavía no tienen etiqueta. Cada uno solo conserva sus características medibles, como la energía y el ritmo.",
+      "K-Means no empieza con categorías como 'pop' o 'reggaetón'. Primero ubica los datos en un espacio de características y busca qué puntos quedan más cerca entre sí."
     );
 
     for (let index = 1; index <= songs.length; index += 1) {
@@ -196,22 +204,29 @@ function initKMeansDemo() {
     if (token !== runId) return;
     centersVisible = true;
     renderClusterPlot();
-    setText("km-status", "Paso 2 — El algoritmo coloca centros iniciales y empieza a probar agrupaciones.");
+    setText("km-status", "Paso 2 — El algoritmo coloca centros iniciales y comienza a formar agrupaciones.");
     setInsights(
       "km",
-      "Las cruces son centros provisionales. No son géneros: son posiciones iniciales desde las que el algoritmo empieza a ordenar puntos.",
-      "K-Means alterna dos operaciones: asignar cada punto al centro más cercano y mover cada centro al promedio de su grupo."
+      "Las cruces representan centros provisionales. Marcan los puntos de partida desde los que el algoritmo empieza a organizar los datos.",
+      "K-Means alterna dos pasos: asigna cada punto al centro más cercano y luego recalcula cada centro con el promedio de los puntos de su grupo."
     );
     await wait(900);
 
     if (token !== runId) return;
     colorized = true;
-    renderClusterPlot();
-    setText("km-status", "Paso 3 — Cada canción se pinta según el centro que le queda más cerca.");
+    colorRevealStep = 0;
+    const revealSteps = prefersReducedMotion() ? 15 : 15;
+    for (let s = 1; s <= revealSteps; s++) {
+      if (token !== runId) return;
+      colorRevealStep = s;
+      renderClusterPlot();
+      await wait(28);
+    }
+    setText("km-status", "Paso 3 — Cada canción se pinta con el color del centro que tiene más cerca.");
     setInsights(
       "km",
-      "Los colores muestran la asignación temporal de cada canción a uno de los tres centros actuales.",
-      "El grupo no aparece porque alguien lo nombró. Aparece porque ciertas canciones quedan más cerca entre sí en este espacio numérico."
+      "Los colores muestran, de forma provisional, a qué centro se asigna cada canción en este momento.",
+      "El grupo surge porque algunas canciones quedan más cerca entre sí dentro de este espacio numérico."
     );
     await wait(900);
 
@@ -231,17 +246,15 @@ function initKMeansDemo() {
     if (token !== runId) return;
     setHTML(
       "km-tags",
-      `
-        <span class="km-cluster-tag km-cluster-a">Grupo A: alta energía</span>
-        <span class="km-cluster-tag km-cluster-b">Grupo B: pop / dance intermedio</span>
-        <span class="km-cluster-tag km-cluster-c">Grupo C: acústico / chill</span>
-      `
+      `<span class="km-cluster-tag km-cluster-a" style="animation-delay:0ms">Grupo A: alta energía</span>` +
+      `<span class="km-cluster-tag km-cluster-b" style="animation-delay:110ms">Grupo B: pop / dance</span>` +
+      `<span class="km-cluster-tag km-cluster-c" style="animation-delay:220ms">Grupo C: acústico / chill</span>`
     );
-    setText("km-status", "Resultado — Los centros convergen y recién después un humano interpreta qué tipo de grupo encontró.");
+    setText("km-status", "Resultado — Los centros se estabilizan y, a partir de ahí, una persona interpreta qué género representan los grupos.");
     setInsights(
       "km",
-      "Las etiquetas de abajo son una lectura humana posterior. El algoritmo solo encontró tres zonas densas; nosotros interpretamos qué podrían significar.",
-      "Eso evita una confusión común: clustering descubre estructura, pero el nombre del grupo lo pone una persona después."
+      "Las etiquetas de abajo son una lectura humana posterior. El algoritmo solo identificó tres zonas densas; después, nosotros interpretamos qué podrían significar.",
+      "Esto evita una confusión común: el clustering descubre una estructura en los datos, pero el nombre de cada grupo se lo damos nosotros después."
     );
   }
 
@@ -540,13 +553,13 @@ function initRLDemo() {
       frame: frames.stand,
       x: 12,
       y: groundY - charHeight,
-      status: "Intento 1 — El agente observa el problema y todavía no tiene una política útil.",
-      seeing: "Mismo entorno, mismo hueco y misma meta. Lo único que cambiará entre escenas será la estrategia.",
-      meaning: "En refuerzo importa la relación entre estado, acción y recompensa, no la animación continua del personaje.",
+      status: "Intento 1 — El agente observa la situación y todavía no ha aprendido una política eficaz.",
+      seeing: "Mismo entorno, mismo hueco y misma meta. Lo que cambia entre escenas es la estrategia que prueba el agente.",
+      meaning: "En aprendizaje por refuerzo importa la relación entre estado, acción y recompensa, no la animación continua del personaje.",
       panelState: { attempt: "1 / 3", state: "Inicio frente al hueco" },
       action: "Esperar",
       reward: "0 pts",
-      policy: "Todavía no se ha aprendido una política"
+      policy: "Todavía no se ha aprendido una política eficaz"
     });
     await wait(700);
     if (token !== runId) return;
@@ -574,7 +587,7 @@ function initRLDemo() {
       x: 276,
       y: groundY + 26,
       message: { text: "-5 pts", color: "#f97316", x: 288, y: groundY + 8 },
-      status: "Resultado 2 — La política mejora, pero aún se queda corta cerca del borde.",
+      status: "Resultado 2 — La política mejora, pero aún se queda corta.",
       seeing: "El segundo intento llega más lejos. El error es menor, pero sigue siendo un fracaso.",
       meaning: "Eso también es aprendizaje: comparar recompensas y ajustar la política gradualmente.",
       panelState: { attempt: "2 / 3", state: "Casi llega" },
@@ -593,7 +606,7 @@ function initRLDemo() {
       message: { text: "+100 pts", color: "#10b981", x: gapX2 + 48, y: groundY - 12 },
       status: "Resultado 3 — Recompensa alta. El agente cruza el hueco y refuerza esa política.",
       seeing: "Mismo entorno, pero ahora el agente ejecuta una secuencia de acciones que sí supera el hueco.",
-      meaning: "Aprendizaje por refuerzo es exactamente esto: prueba, error, recompensa y ajuste iterativo de la estrategia.",
+      meaning: "El aprendizaje por refuerzo es exactamente esto: prueba, error, recompensa y ajuste iterativo de la estrategia.",
       panelState: { attempt: "3 / 3", state: "Meta alcanzada" },
       action: "Saltar",
       reward: "+100 pts",
@@ -867,8 +880,8 @@ function initMatchDemo() {
     {
       id: "p1",
       emoji: "🚗",
-      scenario: "¿Cuánto tarda tu DiDi en llegar?",
-      context: "Tienes el historial de miles de viajes: distancia, hora del día, tráfico y tiempo real de llegada.",
+      scenario: "¿Cuánto tarda tu Uber en llegar?",
+      context: "Tienes el historial de miles de viajes: distancia, hora del día, tráfico y tiempo de llegada.",
       correct: "regression",
       limit: "Solo funciona bien cuando la relación entre variables es aproximadamente lineal o cuasi-lineal."
     },
@@ -892,7 +905,7 @@ function initMatchDemo() {
       id: "p4",
       emoji: "📸",
       scenario: "¿Este video tiene contenido inapropiado?",
-      context: "Tienes millones de frames de video etiquetados como apropiado o inapropiado.",
+      context: "Tienes millones de fotogramas de video etiquetados como apropiado o inapropiado.",
       correct: "cnn",
       limit: "Necesita enormes cantidades de imágenes etiquetadas y puede ser engañada por ataques adversariales."
     },
@@ -908,7 +921,7 @@ function initMatchDemo() {
       id: "p6",
       emoji: "🎮",
       scenario: "¿Cómo aprende un bot a jugar Free Fire?",
-      context: "No hay datos etiquetados. El bot solo puede probar acciones y recibir puntos si le va bien en partida.",
+      context: "No hay datos etiquetados. El bot solo puede probar acciones y recibir puntos si le va bien en la partida.",
       correct: "rl",
       limit: "Necesita un simulador y millones de intentos. Transferirlo al mundo real sigue siendo difícil."
     }
@@ -1030,6 +1043,52 @@ function initMatchDemo() {
   });
 }
 
+function initSearchDemo() {
+  const QUERY   = "¿Qué algoritmo debería usar?";
+  const typedEl = document.getElementById("search-typed");
+  const handEl  = document.getElementById("search-hand");
+  if (!typedEl || !handEl) return;
+
+  const rm = prefersReducedMotion;
+
+  async function loop() {
+    typedEl.textContent = "";
+
+    // Hand slides up from below
+    handEl.classList.add("hand-visible");
+    await sleep(rm() ? 80 : 950);
+
+    // Subtle tap
+    handEl.classList.add("hand-tap");
+    await sleep(rm() ? 50 : 400);
+    handEl.classList.remove("hand-tap");
+    await sleep(rm() ? 30 : 140);
+
+    // Type text letter by letter
+    for (const char of QUERY) {
+      typedEl.textContent += char;
+      await sleep(rm() ? 12 : 80);
+    }
+
+    // Hold with full text visible
+    await sleep(rm() ? 150 : 1800);
+
+    // Clear text
+    typedEl.textContent = "";
+    await sleep(rm() ? 50 : 420);
+
+    // Hand retreats
+    handEl.classList.remove("hand-visible");
+    await sleep(rm() ? 100 : 950);
+
+    // Brief pause then loop
+    await sleep(rm() ? 100 : 550);
+    loop();
+  }
+
+  sleep(800).then(loop);
+}
+
 function initAutoPlayDemos() {
   const autoPlayWrappers = document.querySelectorAll(".demo-wrap[data-autoplay]");
   if (!autoPlayWrappers.length || typeof IntersectionObserver === "undefined") return;
@@ -1050,6 +1109,7 @@ function initAutoPlayDemos() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  initSearchDemo();
   initKMeansDemo();
   initRLDemo();
   initMatchDemo();
