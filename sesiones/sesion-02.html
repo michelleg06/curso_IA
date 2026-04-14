@@ -612,16 +612,48 @@ z = (0.7)(0.6) + (1.0)(1.2) + (0.8)(0.7) - 0.8 = 1.38
       <p class="pixel-flow-copy">Si usamos dos rasgos como ejes, una imagen se convierte en una coordenada. En este ejemplo, usamos <strong>bigotes</strong> en el eje horizontal y <strong>orejas</strong> en el eje vertical.</p>
       <div class="pixel-graph-card">
         <svg viewbox="0 0 220 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Vertical grid lines (0.2, 0.4, 0.6, 0.8) -->
+          <line x1="62" y1="22" x2="62" y2="128" stroke="#e5eef7" stroke-width="1"></line>
+          <line x1="95" y1="22" x2="95" y2="128" stroke="#e5eef7" stroke-width="1"></line>
+          <line x1="129" y1="22" x2="129" y2="128" stroke="#e5eef7" stroke-width="1"></line>
+          <line x1="162" y1="22" x2="162" y2="128" stroke="#e5eef7" stroke-width="1"></line>
+          <!-- Horizontal grid lines (0.2, 0.4, 0.6, 0.8) -->
+          <line x1="28" y1="107" x2="196" y2="107" stroke="#e5eef7" stroke-width="1"></line>
+          <line x1="28" y1="86" x2="196" y2="86" stroke="#e5eef7" stroke-width="1"></line>
+          <line x1="28" y1="64" x2="196" y2="64" stroke="#e5eef7" stroke-width="1"></line>
+          <line x1="28" y1="43" x2="196" y2="43" stroke="#e5eef7" stroke-width="1"></line>
+          <!-- Axes -->
           <line x1="28" y1="128" x2="196" y2="128" stroke="#cbd5e1" stroke-width="2"></line>
           <line x1="28" y1="128" x2="28" y2="22" stroke="#cbd5e1" stroke-width="2"></line>
-          <text x="112" y="148" text-anchor="middle" fill="#94a3b8" font-size="10">bigotes</text>
-          <text x="12" y="78" text-anchor="middle" fill="#94a3b8" font-size="10" transform="rotate(-90,12,78)">orejas</text>
-          <line x1="145" y1="56" x2="145" y2="128" stroke="#bfdbfe" stroke-width="2" stroke-dasharray="4 4"></line>
-          <line x1="28" y1="56" x2="145" y2="56" stroke="#bfdbfe" stroke-width="2" stroke-dasharray="4 4"></line>
-          <circle cx="145" cy="56" r="8" fill="#2780e3"></circle>
-          <text x="153" y="52" fill="#1a365d" font-size="10" font-weight="700">(0.9, 0.7)</text>
-          <text x="145" y="120" text-anchor="middle" fill="#2780e3" font-size="9" font-weight="700">bigotes = 0.9</text>
-          <text x="66" y="50" fill="#2780e3" font-size="9" font-weight="700">orejas = 0.7</text>
+          <!-- X axis tick marks -->
+          <line x1="62" y1="128" x2="62" y2="132" stroke="#cbd5e1" stroke-width="1"></line>
+          <line x1="95" y1="128" x2="95" y2="132" stroke="#cbd5e1" stroke-width="1"></line>
+          <line x1="129" y1="128" x2="129" y2="132" stroke="#cbd5e1" stroke-width="1"></line>
+          <line x1="162" y1="128" x2="162" y2="132" stroke="#cbd5e1" stroke-width="1"></line>
+          <!-- Y axis tick marks -->
+          <line x1="28" y1="107" x2="24" y2="107" stroke="#cbd5e1" stroke-width="1"></line>
+          <line x1="28" y1="86" x2="24" y2="86" stroke="#cbd5e1" stroke-width="1"></line>
+          <line x1="28" y1="64" x2="24" y2="64" stroke="#cbd5e1" stroke-width="1"></line>
+          <line x1="28" y1="43" x2="24" y2="43" stroke="#cbd5e1" stroke-width="1"></line>
+          <!-- X tick labels -->
+          <text x="62" y="140" text-anchor="middle" fill="#94a3b8" font-size="7">0.2</text>
+          <text x="95" y="140" text-anchor="middle" fill="#94a3b8" font-size="7">0.4</text>
+          <text x="129" y="140" text-anchor="middle" fill="#94a3b8" font-size="7">0.6</text>
+          <text x="162" y="140" text-anchor="middle" fill="#94a3b8" font-size="7">0.8</text>
+          <!-- Y tick labels -->
+          <text x="22" y="110" text-anchor="end" fill="#94a3b8" font-size="7">0.2</text>
+          <text x="22" y="89" text-anchor="end" fill="#94a3b8" font-size="7">0.4</text>
+          <text x="22" y="67" text-anchor="end" fill="#94a3b8" font-size="7">0.6</text>
+          <text x="22" y="46" text-anchor="end" fill="#94a3b8" font-size="7">0.8</text>
+          <!-- Dashed coordinate guide lines -->
+          <line x1="179" y1="54" x2="179" y2="128" stroke="#bfdbfe" stroke-width="2" stroke-dasharray="4 4"></line>
+          <line x1="28" y1="54" x2="179" y2="54" stroke="#bfdbfe" stroke-width="2" stroke-dasharray="4 4"></line>
+          <!-- Data point -->
+          <circle class="scatter-dot" cx="179" cy="54" r="8" fill="#2780e3"></circle>
+          <!-- Coordinate labels -->
+          <text x="176" y="48" text-anchor="end" fill="#1a365d" font-size="10" font-weight="700">(0.9, 0.7)</text>
+          <text x="179" y="120" text-anchor="middle" fill="#2780e3" font-size="9" font-weight="700">bigotes = 0.9</text>
+          <text x="33" y="51" fill="#2780e3" font-size="9" font-weight="700">orejas = 0.7</text>
         </svg>
       </div>
       <p class="pixel-flow-note"><strong>Qué estás viendo:</strong> un solo punto que representa una sola imagen. Ese punto junta dos medidas de la misma foto: cuánto se detectan los bigotes y cuánto se detectan las orejas.</p>
@@ -635,24 +667,58 @@ z = (0.7)(0.6) + (1.0)(1.2) + (0.8)(0.7) - 0.8 = 1.38
 <section id="de-neurona-a-red-neuronal-artificial" class="level3">
 <h3 class="anchored" data-anchor-id="de-neurona-a-red-neuronal-artificial">De neurona a red neuronal artificial</h3>
 <p>En la sesión 1 vimos que una máquina podía aprender una <strong>línea recta</strong> para encontrar patrones en una gráfica. Aquí pasa algo parecido, pero con una diferencia importante: ahora cada punto no representa un dato cualquiera, sino una <strong>imagen resumida en dos rasgos</strong>.</p>
-<div style="display:flex;justify-content:center;margin:1.2rem 0;">
-  <svg viewbox="0 0 260 200" width="280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<div class="scatter-frame">
+  <svg viewbox="0 0 260 200" width="260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Vertical grid lines (x = 2, 4, 6, 8) -->
+    <line x1="72" y1="24" x2="72" y2="148" stroke="#e5eef7" stroke-width="1"></line>
+    <line x1="112" y1="24" x2="112" y2="148" stroke="#e5eef7" stroke-width="1"></line>
+    <line x1="152" y1="24" x2="152" y2="148" stroke="#e5eef7" stroke-width="1"></line>
+    <line x1="192" y1="24" x2="192" y2="148" stroke="#e5eef7" stroke-width="1"></line>
+    <!-- Horizontal grid lines (y = 2, 4, 6, 8) -->
+    <line x1="32" y1="123" x2="232" y2="123" stroke="#e5eef7" stroke-width="1"></line>
+    <line x1="32" y1="98" x2="232" y2="98" stroke="#e5eef7" stroke-width="1"></line>
+    <line x1="32" y1="74" x2="232" y2="74" stroke="#e5eef7" stroke-width="1"></line>
+    <line x1="32" y1="49" x2="232" y2="49" stroke="#e5eef7" stroke-width="1"></line>
+    <!-- Axes -->
     <line x1="32" y1="148" x2="232" y2="148" stroke="#cbd5e1" stroke-width="2"></line>
     <line x1="32" y1="148" x2="32" y2="24" stroke="#cbd5e1" stroke-width="2"></line>
-    <text x="132" y="166" text-anchor="middle" fill="#475569" font-size="10" font-style="italic">bigotes</text>
+    <!-- X axis tick marks -->
+    <line x1="72" y1="148" x2="72" y2="152" stroke="#cbd5e1" stroke-width="1"></line>
+    <line x1="112" y1="148" x2="112" y2="152" stroke="#cbd5e1" stroke-width="1"></line>
+    <line x1="152" y1="148" x2="152" y2="152" stroke="#cbd5e1" stroke-width="1"></line>
+    <line x1="192" y1="148" x2="192" y2="152" stroke="#cbd5e1" stroke-width="1"></line>
+    <!-- Y axis tick marks -->
+    <line x1="32" y1="123" x2="28" y2="123" stroke="#cbd5e1" stroke-width="1"></line>
+    <line x1="32" y1="98" x2="28" y2="98" stroke="#cbd5e1" stroke-width="1"></line>
+    <line x1="32" y1="74" x2="28" y2="74" stroke="#cbd5e1" stroke-width="1"></line>
+    <line x1="32" y1="49" x2="28" y2="49" stroke="#cbd5e1" stroke-width="1"></line>
+    <!-- X tick labels -->
+    <text x="72" y="160" text-anchor="middle" fill="#94a3b8" font-size="7">2</text>
+    <text x="112" y="160" text-anchor="middle" fill="#94a3b8" font-size="7">4</text>
+    <text x="152" y="160" text-anchor="middle" fill="#94a3b8" font-size="7">6</text>
+    <text x="192" y="160" text-anchor="middle" fill="#94a3b8" font-size="7">8</text>
+    <!-- Y tick labels -->
+    <text x="26" y="126" text-anchor="end" fill="#94a3b8" font-size="7">2</text>
+    <text x="26" y="101" text-anchor="end" fill="#94a3b8" font-size="7">4</text>
+    <text x="26" y="77" text-anchor="end" fill="#94a3b8" font-size="7">6</text>
+    <text x="26" y="52" text-anchor="end" fill="#94a3b8" font-size="7">8</text>
+    <!-- Axis labels -->
+    <text x="132" y="172" text-anchor="middle" fill="#475569" font-size="10" font-style="italic">bigotes</text>
     <text x="14" y="90" text-anchor="middle" fill="#475569" font-size="10" font-style="italic" transform="rotate(-90,14,90)">orejas</text>
-    <circle cx="62" cy="118" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
-    <circle cx="80" cy="104" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
-    <circle cx="98" cy="112" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
-    <circle cx="72" cy="130" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
-    <circle cx="148" cy="72" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
-    <circle cx="170" cy="54" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
-    <circle cx="192" cy="40" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
-    <circle cx="158" cy="88" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
-    <circle cx="48" cy="182" r="5" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
-    <text x="59" y="186" fill="#22c55e" font-size="10" font-weight="700">no gato</text>
-    <circle cx="158" cy="182" r="5" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
-    <text x="169" y="186" fill="#2780e3" font-size="10" font-weight="700">gato</text>
+    <!-- Data points -->
+    <circle class="scatter-dot" cx="62" cy="118" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
+    <circle class="scatter-dot" cx="80" cy="104" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
+    <circle class="scatter-dot" cx="98" cy="112" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
+    <circle class="scatter-dot" cx="72" cy="130" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
+    <circle class="scatter-dot" cx="148" cy="72" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
+    <circle class="scatter-dot" cx="170" cy="54" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
+    <circle class="scatter-dot" cx="192" cy="40" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
+    <circle class="scatter-dot" cx="158" cy="88" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
+    <!-- Legend -->
+    <circle cx="48" cy="184" r="5" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
+    <text x="59" y="188" fill="#22c55e" font-size="10" font-weight="700">no gato</text>
+    <circle cx="158" cy="184" r="5" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
+    <text x="169" y="188" fill="#2780e3" font-size="10" font-weight="700">gato</text>
   </svg>
 </div>
 <p>Cada punto en la gráfica representa una imagen. Cuando llega una imagen nueva, ¿cómo decide la neurona de qué grupo forma parte? Necesita una <strong>regla</strong>, así como la ecuación de la recta: una manera de predecir en qué grupo cae cualquier ejemplo nuevo.</p>
@@ -671,56 +737,113 @@ z = (0.7)(0.6) + (1.0)(1.2) + (0.8)(0.7) - 0.8 = 1.38
     <p class="limite-kicker">Caso fácil</p>
     <h4 class="limite-title anchored">Una sola neurona sí alcanza</h4>
     <svg viewbox="0 0 180 155" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Grid lines -->
+      <line x1="52" y1="10" x2="52" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="80" y1="10" x2="80" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="108" y1="10" x2="108" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="136" y1="10" x2="136" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="100" x2="164" y2="100" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="77" x2="164" y2="77" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="55" x2="164" y2="55" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="32" x2="164" y2="32" stroke="#e5eef7" stroke-width="1"></line>
+      <!-- Axes -->
       <line x1="24" y1="10" x2="24" y2="122" stroke="#cbd5e1" stroke-width="2"></line>
       <line x1="24" y1="122" x2="164" y2="122" stroke="#cbd5e1" stroke-width="2"></line>
-      <text x="94" y="136" text-anchor="middle" fill="#475569" font-size="9" font-style="italic">bigotes</text>
-      <text x="10" y="68" text-anchor="middle" fill="#475569" font-size="9" font-style="italic" transform="rotate(-90,10,68)">orejas</text>
-      <polygon points="24,18 82,18 144,118 24,118" fill="#dcfce7" opacity="0.55"></polygon>
-      <polygon points="82,18 164,18 164,118 144,118" fill="#dbeafe" opacity="0.7"></polygon>
-      <circle cx="56" cy="94" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
-      <circle cx="72" cy="76" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
-      <circle cx="92" cy="86" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
-      <circle cx="112" cy="52" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
-      <circle cx="130" cy="40" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
-      <circle cx="146" cy="28" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
-      <line class="limite-line" x1="80" y1="18" x2="142" y2="118" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"></line>
-      <text x="88" y="14" fill="#f59e0b" font-size="8" font-weight="700">frontera de decisión</text>
-      <text x="112" y="56" fill="#2780e3" font-size="8.5" font-weight="700">lado gato</text>
-      <text x="34" y="112" fill="#16a34a" font-size="8.5" font-weight="700">lado no gato</text>
-      <circle cx="30" cy="148" r="5" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
-      <text x="38" y="152" fill="#22c55e" font-size="10" font-weight="700">no gato</text>
-      <circle cx="85" cy="148" r="5" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
-      <text x="93" y="152" fill="#2780e3" font-size="10" font-weight="700">gato</text>
+      <!-- X tick marks -->
+      <line x1="52" y1="122" x2="52" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="80" y1="122" x2="80" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="108" y1="122" x2="108" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="136" y1="122" x2="136" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <!-- Y tick marks -->
+      <line x1="24" y1="100" x2="21" y2="100" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="24" y1="77" x2="21" y2="77" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="24" y1="55" x2="21" y2="55" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="24" y1="32" x2="21" y2="32" stroke="#cbd5e1" stroke-width="1"></line>
+      <!-- X tick labels -->
+      <text x="52" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.2</text>
+      <text x="80" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.4</text>
+      <text x="108" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.6</text>
+      <text x="136" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.8</text>
+      <!-- Y tick labels -->
+      <text x="19" y="103" text-anchor="end" fill="#94a3b8" font-size="6">0.2</text>
+      <text x="19" y="80" text-anchor="end" fill="#94a3b8" font-size="6">0.4</text>
+      <text x="19" y="58" text-anchor="end" fill="#94a3b8" font-size="6">0.6</text>
+      <text x="19" y="35" text-anchor="end" fill="#94a3b8" font-size="6">0.8</text>
+      <!-- Data points -->
+      <circle cx="56" cy="94" r="5" fill="#22c55e" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="72" cy="76" r="5" fill="#22c55e" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="92" cy="86" r="5" fill="#22c55e" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="112" cy="52" r="5" fill="#2780e3" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="130" cy="40" r="5" fill="#2780e3" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="146" cy="28" r="5" fill="#2780e3" stroke="#fff" stroke-width="1"></circle>
+      <!-- Decision boundary -->
+      <line class="limite-line" x1="80" y1="18" x2="142" y2="118" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"></line>
+      <text x="82" y="16" fill="#f59e0b" font-size="7" font-weight="400" font-style="italic">frontera de decisión</text>
+      <!-- Legend -->
+      <circle cx="30" cy="141" r="4" fill="#22c55e" stroke="#fff" stroke-width="1"></circle>
+      <text x="37" y="145" fill="#22c55e" font-size="9" font-weight="700">no gato</text>
+      <circle cx="86" cy="141" r="4" fill="#2780e3" stroke="#fff" stroke-width="1"></circle>
+      <text x="93" y="145" fill="#2780e3" font-size="9" font-weight="700">gato</text>
     </svg>
-    <p class="limite-copy">Aquí sí existe una recta que deja a todos los gatos de un lado y a todos los no gatos del otro. La línea funciona como una frontera clara entre dos regiones del plano.</p>
+    <p class="limite-copy">Aquí sí existe una recta que deja a todos los gatos de un lado y a todos los "no gatos" del otro. La línea funciona como una frontera clara entre dos regiones del plano.</p>
   </div>
 
   <div class="limite-card">
     <p class="limite-kicker">Caso difícil</p>
     <h4 class="limite-title anchored">Una sola neurona ya no alcanza</h4>
     <svg viewbox="0 0 180 155" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Grid lines -->
+      <line x1="52" y1="10" x2="52" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="80" y1="10" x2="80" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="108" y1="10" x2="108" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="136" y1="10" x2="136" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="100" x2="164" y2="100" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="77" x2="164" y2="77" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="55" x2="164" y2="55" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="32" x2="164" y2="32" stroke="#e5eef7" stroke-width="1"></line>
+      <!-- Axes -->
       <line x1="24" y1="10" x2="24" y2="122" stroke="#cbd5e1" stroke-width="2"></line>
       <line x1="24" y1="122" x2="164" y2="122" stroke="#cbd5e1" stroke-width="2"></line>
-      <text x="94" y="136" text-anchor="middle" fill="#475569" font-size="9" font-style="italic">bigotes</text>
-      <text x="10" y="68" text-anchor="middle" fill="#475569" font-size="9" font-style="italic" transform="rotate(-90,10,68)">orejas</text>
-      <circle cx="56" cy="94" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
-      <circle cx="132" cy="36" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
-      <circle cx="56" cy="36" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
-      <circle cx="132" cy="94" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
-      <line class="limite-line delay" x1="38" y1="98" x2="150" y2="42" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 6"></line>
-      <text x="105" y="38" fill="#f59e0b" font-size="8" font-weight="700">frontera de decisión</text>
-      <text x="36" y="32" fill="#2780e3" font-size="8" font-weight="700">gato</text>
-      <text x="35" y="108" fill="#22c55e" font-size="8" font-weight="700">no gato</text>
-      <circle cx="132" cy="36" r="11" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 2"></circle>
-      <circle cx="132" cy="94" r="11" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 2"></circle>
-      <text x="145" y="33" fill="#dc2626" font-size="10" font-weight="900">✗</text>
-      <text x="145" y="91" fill="#dc2626" font-size="10" font-weight="900">✗</text>
-      <circle cx="30" cy="148" r="5" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
-      <text x="38" y="152" fill="#22c55e" font-size="10" font-weight="700">no gato</text>
-      <circle cx="85" cy="148" r="5" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
-      <text x="93" y="152" fill="#2780e3" font-size="10" font-weight="700">gato</text>
+      <!-- X tick marks -->
+      <line x1="52" y1="122" x2="52" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="80" y1="122" x2="80" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="108" y1="122" x2="108" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="136" y1="122" x2="136" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <!-- Y tick marks -->
+      <line x1="24" y1="100" x2="21" y2="100" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="24" y1="77" x2="21" y2="77" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="24" y1="55" x2="21" y2="55" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="24" y1="32" x2="21" y2="32" stroke="#cbd5e1" stroke-width="1"></line>
+      <!-- X tick labels -->
+      <text x="52" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.2</text>
+      <text x="80" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.4</text>
+      <text x="108" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.6</text>
+      <text x="136" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.8</text>
+      <!-- Y tick labels -->
+      <text x="19" y="103" text-anchor="end" fill="#94a3b8" font-size="6">0.2</text>
+      <text x="19" y="80" text-anchor="end" fill="#94a3b8" font-size="6">0.4</text>
+      <text x="19" y="58" text-anchor="end" fill="#94a3b8" font-size="6">0.6</text>
+      <text x="19" y="35" text-anchor="end" fill="#94a3b8" font-size="6">0.8</text>
+      <!-- Data points -->
+      <circle cx="56" cy="94" r="5" fill="#22c55e" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="132" cy="36" r="5" fill="#22c55e" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="56" cy="36" r="5" fill="#2780e3" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="132" cy="94" r="5" fill="#2780e3" stroke="#fff" stroke-width="1"></circle>
+      <!-- Decision boundary -->
+      <line class="limite-line delay" x1="38" y1="98" x2="150" y2="42" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="6 4"></line>
+      <text x="38" y="18" fill="#f59e0b" font-size="7" font-weight="400" font-style="italic">frontera de decisión</text>
+      <!-- Error marker: single large dashed rectangle enclosing both misclassified dots -->
+      <rect x="122" y="26" width="20" height="78" rx="3" fill="none" stroke="#dc2626" stroke-width="1" stroke-dasharray="3 2"></rect>
+      <!-- Single error X mark (upper-right corner of rectangle) -->
+      <line x1="144" y1="19" x2="150" y2="25" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"></line>
+      <line x1="150" y1="19" x2="144" y2="25" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"></line>
+      <!-- Legend -->
+      <circle cx="30" cy="141" r="4" fill="#22c55e" stroke="#fff" stroke-width="1"></circle>
+      <text x="37" y="145" fill="#22c55e" font-size="9" font-weight="700">no gato</text>
+      <circle cx="86" cy="141" r="4" fill="#2780e3" stroke="#fff" stroke-width="1"></circle>
+      <text x="93" y="145" fill="#2780e3" font-size="9" font-weight="700">gato</text>
     </svg>
-    <p class="limite-copy">Aquí los ejemplos están mezclados. No importa dónde traces una recta, siempre habrá algunos puntos del lado equivocado. El problema no es encontrar “la línea correcta”, sino que ninguna recta será capaz de separar este patrón complejo. Por eso, una sola neurona no es suficiente.</p>
+    <p class="limite-copy">Aquí los ejemplos están mezclados. No importa dónde dibujes la recta, siempre habrá algunos puntos del lado equivocado. El problema no es encontrar “la línea correcta”, sino que ninguna recta será capaz de separar este patrón, con un grado mayo de complejidad. Por eso, una sola neurona no es suficiente.</p>
   </div>
 </div>
 <p>Cuando nos encontramos en una situación como el Caso Difícil, una neurona ha llegado a su límite. Necesitaremos muchas neuronas, y empezaremos a construir una <em>red neuronal</em>.</p>

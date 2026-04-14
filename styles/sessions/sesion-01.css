@@ -446,9 +446,9 @@
   margin-bottom: 0.5rem;
   padding: 0.34rem 0.72rem;
   border-radius: 999px;
-  background: rgba(37, 99, 235, 0.08);
-  border: 1px solid rgba(37, 99, 235, 0.16);
-  color: #1d4ed8;
+  background: rgba(100, 149, 237, 0.10);
+  border: 1px solid rgba(100, 149, 237, 0.22);
+  color: #6495ED;
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -535,8 +535,8 @@
 }
 
 .km-cluster-a {
-  border-color: rgba(37, 99, 235, 0.2);
-  color: #2563eb;
+  border-color: rgba(39, 128, 227, 0.2);
+  color: #2780e3;
 }
 
 .km-cluster-b {
@@ -899,14 +899,14 @@
 }
 
 .tt-profile-btn:hover {
-  border-color: #0ea5e9;
-  color: #0369a1;
+  border-color: #6495ED;
+  color: #1a365d;
 }
 
 .tt-profile-btn.is-active {
-  background: #e0f2fe;
-  border-color: #0ea5e9;
-  color: #0369a1;
+  background: rgba(100, 149, 237, 0.12);
+  border-color: #6495ED;
+  color: #1a365d;
 }
 
 @media (max-width: 640px) {

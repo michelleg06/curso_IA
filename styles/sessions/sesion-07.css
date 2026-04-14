@@ -3,11 +3,11 @@
    Lectura, Escritura e Idiomas
 ================================================ */
 
-/* Tone: emerald (aprendizaje, lenguaje) */
+/* Tone: brand blue (aprendizaje, lenguaje) */
 .demo-tone-lang {
-  --demo-accent: #059669;
-  --demo-accent-soft: rgba(5, 150, 105, 0.10);
-  --demo-accent-strong: rgba(5, 150, 105, 0.20);
+  --demo-accent: #2780e3;
+  --demo-accent-soft: rgba(39, 128, 227, 0.10);
+  --demo-accent-strong: rgba(39, 128, 227, 0.20);
 }
 
 /* ---- Tutor vs. Autor distinction ---- */
@@ -121,11 +121,11 @@
 .reading-type-prompt {
   font-size: 0.78rem;
   font-family: 'Courier New', monospace;
-  background: #f0fdf4;
-  border: 1px solid #a7f3d0;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
   border-radius: 8px;
   padding: 0.38rem 0.6rem;
-  color: #065f46;
+  color: #1a365d;
   margin: 0.4rem 0;
   line-height: 1.45;
 }
@@ -167,19 +167,19 @@
 }
 
 .rd-prompt-btn {
-  background: #f0fdf4;
-  border: 1.5px solid #a7f3d0;
+  background: #eff6ff;
+  border: 1.5px solid #bfdbfe;
   border-radius: 99px;
   padding: 0.38rem 0.9rem;
   font-size: 0.82rem;
   font-weight: 600;
-  color: #065f46;
+  color: #1a365d;
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s;
 }
 
-.rd-prompt-btn:hover { background: #d1fae5; border-color: #059669; }
-.rd-prompt-btn.is-active { background: #d1fae5; border-color: #059669; }
+.rd-prompt-btn:hover { background: #dbeafe; border-color: #2780e3; }
+.rd-prompt-btn.is-active { background: #dbeafe; border-color: #2780e3; }
 .rd-prompt-btn:disabled { opacity: 0.45; cursor: not-allowed; }
 
 .rd-result-area {
@@ -191,14 +191,14 @@
   transition: border-color 0.2s;
 }
 
-.rd-result-area.has-content { border-color: #a7f3d0; }
+.rd-result-area.has-content { border-color: #bfdbfe; }
 
 .rd-result-eyebrow {
   font-size: 0.63rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #059669;
+  color: #2780e3;
   margin: 0 0 0.4rem;
   display: block;
 }
@@ -224,13 +224,13 @@
 }
 
 .rd-preview-chip {
-  background: #ecfdf5;
-  border: 1px solid #a7f3d0;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
   border-radius: 99px;
   padding: 0.25rem 0.7rem;
   font-size: 0.78rem;
   font-weight: 600;
-  color: #065f46;
+  color: #1a365d;
 }
 
 /* ---- Writing support cards ---- */
@@ -270,11 +270,11 @@
 .ws-prompt {
   font-size: 0.78rem;
   font-family: 'Courier New', monospace;
-  background: #f0fdf4;
-  border: 1px solid #a7f3d0;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
   border-radius: 8px;
   padding: 0.38rem 0.6rem;
-  color: #065f46;
+  color: #1a365d;
   margin: 0.4rem 0;
   line-height: 1.45;
 }
@@ -306,18 +306,18 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #059669;
+  color: #2780e3;
   margin: 0 0 0.3rem;
 }
 
 .idiom-prompt {
   font-family: 'Courier New', monospace;
   font-size: 0.82rem;
-  background: #f0fdf4;
-  border: 1px solid #a7f3d0;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
   border-radius: 8px;
   padding: 0.38rem 0.65rem;
-  color: #065f46;
+  color: #1a365d;
   line-height: 1.45;
   margin: 0.3rem 0 0.4rem;
   display: block;
@@ -352,11 +352,11 @@
   transition: border-color 0.15s, background 0.15s, color 0.15s;
 }
 
-.pl-tab-btn:hover { border-color: #059669; color: #059669; }
+.pl-tab-btn:hover { border-color: #2780e3; color: #2780e3; }
 .pl-tab-btn.is-active {
-  background: #ecfdf5;
-  border-color: #059669;
-  color: #065f46;
+  background: #eff6ff;
+  border-color: #2780e3;
+  color: #1a365d;
 }
 
 .pl-cards {
@@ -372,7 +372,7 @@
   transition: border-color 0.18s;
 }
 
-.pl-card:hover { border-color: #6ee7b7; }
+.pl-card:hover { border-color: #93c5fd; }
 
 .pl-card-header {
   padding: 0.75rem 1rem;
@@ -405,9 +405,9 @@
 .pl-toggle {
   font-size: 0.68rem;
   font-weight: 700;
-  color: #059669;
-  background: #ecfdf5;
-  border: 1px solid #a7f3d0;
+  color: #2780e3;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
   border-radius: 99px;
   padding: 0.22rem 0.7rem;
   white-space: nowrap;
@@ -417,8 +417,8 @@
   user-select: none;
 }
 
-.pl-toggle:hover { background: #d1fae5; }
-.pl-card.is-open .pl-toggle { background: #d1fae5; }
+.pl-toggle:hover { background: #dbeafe; }
+.pl-card.is-open .pl-toggle { background: #dbeafe; }
 
 .pl-output {
   display: none;
@@ -434,7 +434,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #059669;
+  color: #2780e3;
   margin: 0 0 0.35rem;
   display: block;
 }
@@ -456,8 +456,8 @@
 }
 
 .pl-preview-col {
-  background: #ecfdf5;
-  border: 1px solid #a7f3d0;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
   border-radius: 10px;
   padding: 0.55rem 0.6rem;
   text-align: center;
@@ -466,14 +466,14 @@
 .pl-preview-col-label {
   font-size: 0.74rem;
   font-weight: 700;
-  color: #065f46;
+  color: #1a365d;
   display: block;
   margin-bottom: 0.15rem;
 }
 
 .pl-preview-col-count {
   font-size: 0.65rem;
-  color: #047857;
+  color: #1d4ed8;
 }
 
 /* ---- Language tools comparison ---- */
@@ -544,9 +544,9 @@
   font-weight: 700;
   padding: 0.1rem 0.45rem;
   border-radius: 99px;
-  background: #ecfdf5;
-  color: #065f46;
-  border: 1px solid #a7f3d0;
+  background: #eff6ff;
+  color: #1a365d;
+  border: 1px solid #bfdbfe;
   white-space: nowrap;
   margin-top: 0.1rem;
 }

@@ -54,7 +54,7 @@
   gap: 1.5rem;
   background: #fff;
   border: 1.5px solid #e2e8f0;
-  border-left: 4px solid #0891b2;
+  border-left: 4px solid #6495ED;
   border-radius: 12px;
   padding: 1.5rem;
   margin: 0.5rem 0 2rem;
@@ -66,9 +66,9 @@
   height: 80px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2.5px solid #a5f3fc;
+  border: 2.5px solid #bfdbfe;
   /* fallback for initials div */
-  background: linear-gradient(135deg, #0891b2, #0e7490);
+  background: linear-gradient(135deg, #2780e3, #1a365d);
   color: #fff;
   font-size: 1.2rem;
   font-weight: 700;
@@ -114,9 +114,9 @@
 }
 
 .guest-tag {
-  background: #ecfeff;
-  color: #0e7490;
-  border: 1px solid #a5f3fc;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
   border-radius: 99px;
   font-size: 0.68rem;
   font-weight: 600;

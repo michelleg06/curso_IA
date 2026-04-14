@@ -2,161 +2,6 @@
    SESION 03 - estilos
 ================================================ */
 
-/* ---- Intro: texto + maletín de herramientas ---- */
-.intro-two-col {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 2.6rem;
-  align-items: center;
-  margin: 0.4rem 0 1.5rem;
-}
-
-.intro-text-col p {
-  line-height: 1.78;
-  margin-bottom: 1rem;
-}
-
-.intro-text-col p:last-child {
-  margin-bottom: 0;
-}
-
-/* Columna del maletín */
-.intro-maletin-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
-  flex-shrink: 0;
-}
-
-.maletin-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Handle superior */
-.maletin-handle {
-  width: 64px;
-  height: 18px;
-  border: 3px solid #c4875d;
-  border-bottom: none;
-  border-radius: 24px 24px 0 0;
-  margin-bottom: -2px;
-  position: relative;
-  z-index: 1;
-}
-
-/* Cuerpo del maletín */
-.maletin-case {
-  width: 262px;
-  background: #fdf4ee;
-  border: 2.5px solid #c4875d;
-  border-radius: 14px;
-  padding: 0.5rem 0.7rem 0.75rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow:
-    0 20px 40px rgba(150, 80, 30, 0.12),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
-}
-
-/* Tapa que se desliza hacia arriba */
-.maletin-lid {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(160deg, #f5ddc8 0%, #edcaaa 100%);
-  border-radius: 11px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  animation: maletin-lid-open 0.65s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
-}
-
-.maletin-lid-label {
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #7c4824;
-}
-
-@keyframes maletin-lid-open {
-  0%   { transform: translateY(0);     opacity: 1; }
-  80%  {                               opacity: 1; }
-  100% { transform: translateY(-108%); opacity: 0; pointer-events: none; }
-}
-
-/* Barra de cierre / bisagra */
-.maletin-clasp-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 22px;
-  border-bottom: 1px solid #e8c4a0;
-  margin: 0 -0.7rem 0.5rem;
-  padding: 0 0.7rem;
-  background: #f7ead9;
-}
-
-.maletin-clasp-dot {
-  display: block;
-  width: 22px;
-  height: 10px;
-  border: 2px solid #c4875d;
-  border-radius: 6px;
-  background: #fdf4ee;
-}
-
-/* Rejilla de herramientas */
-.maletin-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.45rem;
-}
-
-.maletin-tool {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-  background: #fef8f2;
-  border: 1px solid #e8c4a0;
-  border-radius: 10px;
-  padding: 0.65rem 0.25rem 0.55rem;
-  opacity: 0;
-  animation: maletin-tool-appear 0.35s ease-out calc(1.3s + var(--i) * 0.1s) forwards;
-}
-
-.maletin-icon {
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
-.maletin-label {
-  font-size: 0.57rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #8b5535;
-  text-align: center;
-}
-
-@keyframes maletin-tool-appear {
-  from { opacity: 0; transform: translateY(5px); }
-  to   { opacity: 1; transform: translateY(0);   }
-}
-
-/* Nota debajo */
-.maletin-note {
-  max-width: 262px;
-  margin: 0;
-  text-align: center;
-  font-size: 0.72rem;
-  line-height: 1.5;
-  color: #8b6040;
-}
-
 /* ---- Search bar animation (Introducción) ---- */
 .search-anim-figure {
   margin: 1.5rem 0 0.5rem;
@@ -405,7 +250,7 @@ h3 {
 }
 
 .worked-step-result .worked-step-num {
-  color: #1d4ed8;
+  color: #6495ED;
 }
 
 /* ---- CNN: flujo horizontal bordes→formas→objeto ---- */
@@ -465,7 +310,7 @@ h3 {
 }
 
 .family-quickfacts.is-new {
-  --family-accent: #1d4ed8;
+  --family-accent: #6495ED;
   --family-bg: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
 }
 
@@ -625,8 +470,8 @@ h3 {
 }
 
 .km-cluster-a {
-  border-color: rgba(37, 99, 235, 0.2);
-  color: #2563eb;
+  border-color: rgba(39, 128, 227, 0.2);
+  color: #2780e3;
 }
 
 .km-cluster-b {
@@ -826,8 +671,8 @@ h3 {
 }
 
 .match-algo-btn:hover {
-  background: #dbeafe;
-  border-color: #93c5fd;
+  background: rgba(100, 149, 237, 0.12);
+  border-color: rgba(100, 149, 237, 0.4);
 }
 
 .match-algo-btn.is-selected {
@@ -919,8 +764,8 @@ h3 {
 }
 
 .tag-nuevo {
-  background: #dbeafe;
-  color: #1d4ed8;
+  background: #eff3fd;
+  color: #6495ED;
 }
 
 .tag-conocido {
@@ -930,19 +775,9 @@ h3 {
 
 /* ---- Responsive ---- */
 @media (max-width: 900px) {
-  .intro-two-col,
   .two-question-grid,
   .family-facts-grid {
     grid-template-columns: 1fr;
-  }
-
-  .intro-phone-col {
-    order: -1;
-  }
-
-  .intro-phone-frame,
-  .intro-phone-note {
-    max-width: 100%;
   }
 }
 
@@ -965,10 +800,6 @@ h3 {
     padding: 0.95rem;
   }
 
-  .intro-phone-frame {
-    width: min(100%, 280px);
-  }
-
   .rl-canvas-frame ~ .rl-panel .rl-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -988,8 +819,6 @@ h3 {
   .match-card,
   .algo-family-card,
   .two-question-card,
-  .maletin-lid,
-  .maletin-tool,
   .km-cluster-tags-live .km-cluster-tag,
   .search-hand,
   .search-caret {

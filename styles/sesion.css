@@ -30,6 +30,8 @@ h4 {
   --c-primary-hover: #1a6fc4;
   --c-accent:        #0ea5e9;
   --c-navy:          #1a365d;
+  --c-text:          #334155;
+  --c-text-secondary:#475569;
   --c-muted:         #64748b;
   --c-border:        #e2e8f0;
   --c-border-blue:   #dbeafe;
@@ -476,9 +478,9 @@ h4 {
 }
 
 /* Node tones */
-.fc-d-input       { background: #2563eb; box-shadow: 0 4px 18px rgba(37, 99, 235, 0.22); }
+.fc-d-input       { background: #2780e3; box-shadow: 0 4px 18px rgba(39, 128, 227, 0.22); }
 .fc-d-process     { background: #0d9488; box-shadow: 0 4px 18px rgba(13, 148, 136, 0.22); }
-.fc-d-agent       { background: #2563eb; box-shadow: 0 4px 18px rgba(37, 99, 235, 0.22); }
+.fc-d-agent       { background: #2780e3; box-shadow: 0 4px 18px rgba(39, 128, 227, 0.22); }
 .fc-d-environment { background: #f59e0b; box-shadow: 0 4px 18px rgba(245, 158, 11, 0.22); }
 
 /* Group outputs */
@@ -952,15 +954,15 @@ h4 {
 }
 
 .demo-tone-ranking {
-  --demo-accent: #0ea5e9;
-  --demo-accent-soft: rgba(14, 165, 233, 0.12);
-  --demo-accent-strong: rgba(14, 165, 233, 0.22);
+  --demo-accent: #6495ED;
+  --demo-accent-soft: rgba(100, 149, 237, 0.12);
+  --demo-accent-strong: rgba(100, 149, 237, 0.22);
 }
 
 .demo-tone-supervised {
-  --demo-accent: #2563eb;
-  --demo-accent-soft: rgba(37, 99, 235, 0.12);
-  --demo-accent-strong: rgba(37, 99, 235, 0.2);
+  --demo-accent: #2780e3;
+  --demo-accent-soft: rgba(39, 128, 227, 0.12);
+  --demo-accent-strong: rgba(39, 128, 227, 0.2);
 }
 
 .demo-tone-unsupervised {
@@ -1354,7 +1356,7 @@ h4 {
 }
 
 .formula-highlight {
-  color: #2563eb;
+  color: #2780e3;
 }
 
 .formula-box-preview {
@@ -1676,7 +1678,7 @@ h4 {
 
 .nn-node-input {
   background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-  border-color: rgba(37, 99, 235, 0.22);
+  border-color: rgba(39, 128, 227, 0.22);
 }
 
 .nn-node-hidden {
@@ -1699,7 +1701,7 @@ h4 {
   width: 100%;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, rgba(148, 163, 184, 0.25), rgba(37, 99, 235, 0.42));
+  background: linear-gradient(90deg, rgba(148, 163, 184, 0.25), rgba(39, 128, 227, 0.42));
 }
 
 .nn-stack-caption {
@@ -2040,7 +2042,7 @@ h4 {
   justify-content: center;
 }
 
-.ai-prop-icon-wrap-blue { background: #eff6ff; color: #2563eb; }
+.ai-prop-icon-wrap-blue { background: #eff6ff; color: #2780e3; }
 .ai-prop-icon-wrap-teal { background: #f0fdfa; color: #0f766e; }
 
 .ai-prop-content {
@@ -2371,3 +2373,57 @@ h4 {
   color: var(--c-muted);
   line-height: 1.55;
 }
+
+/* ---- Callout replacement card ---- */
+/* Replaces Quarto ::: {.callout-*} blocks for consistent cross-session styling */
+.callout-card {
+  background: #ffffff;
+  border: 1.5px solid var(--c-border, #e2e8f0);
+  border-radius: var(--radius, 8px);
+  padding: 1rem 1.25rem;
+  margin: 1.4rem 0;
+}
+.callout-card-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #6495ED;
+  margin: 0 0 0.55rem;
+}
+.callout-card > p,
+.callout-card > ol,
+.callout-card > ul {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 0.88rem;
+  color: var(--c-text, #334155);
+  line-height: 1.65;
+}
+.callout-card > *:last-child { margin-bottom: 0; }
+.callout-card ol li,
+.callout-card ul li { padding: 0.2rem 0; }
+
+/* Table inside .callout-card */
+.callout-card-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  margin: 0.65rem 0 0.8rem;
+}
+.callout-card-table th {
+  text-align: left;
+  padding: 0.4rem 0.65rem;
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  border-bottom: 1.5px solid #e2e8f0;
+  font-weight: 600;
+}
+.callout-card-table td {
+  padding: 0.45rem 0.65rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: top;
+  color: #334155;
+  line-height: 1.5;
+}
+.callout-card-table tr:last-child td { border-bottom: none; }

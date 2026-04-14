@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -187,66 +222,26 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#uxui-and-structure-guide-for-session-pages" id="toc-uxui-and-structure-guide-for-session-pages" class="nav-link active" data-scroll-target="#uxui-and-structure-guide-for-session-pages">UX/UI and Structure Guide for Session Pages</a>
+  <li><a href="#guía-de-diseño-uiux-intro-a-la-ia" id="toc-guía-de-diseño-uiux-intro-a-la-ia" class="nav-link active" data-scroll-target="#guía-de-diseño-uiux-intro-a-la-ia">Guía de Diseño UI/UX — Intro a la IA</a>
   <ul class="collapse">
-  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
-  <li><a href="#core-design-principles" id="toc-core-design-principles" class="nav-link" data-scroll-target="#core-design-principles">Core Design Principles</a>
+  <li><a href="#estructura-de-archivos" id="toc-estructura-de-archivos" class="nav-link" data-scroll-target="#estructura-de-archivos">Estructura de archivos</a></li>
+  <li><a href="#encabezado-obligatorio-de-cada-.qmd" id="toc-encabezado-obligatorio-de-cada-.qmd" class="nav-link" data-scroll-target="#encabezado-obligatorio-de-cada-.qmd">Encabezado obligatorio de cada .qmd</a></li>
+  <li><a href="#tipografía" id="toc-tipografía" class="nav-link" data-scroll-target="#tipografía">Tipografía</a></li>
+  <li><a href="#sistema-de-color-para-interactivos-demo-tones" id="toc-sistema-de-color-para-interactivos-demo-tones" class="nav-link" data-scroll-target="#sistema-de-color-para-interactivos-demo-tones">Sistema de color para interactivos (demo tones)</a></li>
+  <li><a href="#regla-quarto-callouts-.callout-card-automatizable" id="toc-regla-quarto-callouts-.callout-card-automatizable" class="nav-link" data-scroll-target="#regla-quarto-callouts-.callout-card-automatizable">Regla: Quarto callouts → <code>.callout-card</code> ✅ AUTOMATIZABLE</a>
   <ul class="collapse">
-  <li><a href="#story-first-definition-second" id="toc-story-first-definition-second" class="nav-link" data-scroll-target="#story-first-definition-second">1. Story first, definition second</a></li>
-  <li><a href="#concrete-to-abstract-to-concrete" id="toc-concrete-to-abstract-to-concrete" class="nav-link" data-scroll-target="#concrete-to-abstract-to-concrete">2. Concrete to abstract to concrete</a></li>
-  <li><a href="#one-visual-idea-per-block" id="toc-one-visual-idea-per-block" class="nav-link" data-scroll-target="#one-visual-idea-per-block">3. One visual idea per block</a></li>
-  <li><a href="#interaction-is-explanatory-not-decorative" id="toc-interaction-is-explanatory-not-decorative" class="nav-link" data-scroll-target="#interaction-is-explanatory-not-decorative">4. Interaction is explanatory, not decorative</a></li>
-  <li><a href="#repetition-of-structure-builds-confidence" id="toc-repetition-of-structure-builds-confidence" class="nav-link" data-scroll-target="#repetition-of-structure-builds-confidence">5. Repetition of structure builds confidence</a></li>
+  <li><a href="#estructura" id="toc-estructura" class="nav-link" data-scroll-target="#estructura">Estructura</a></li>
+  <li><a href="#sección-para-reflexionar-automatizable-estructura-contenido-humano" id="toc-sección-para-reflexionar-automatizable-estructura-contenido-humano" class="nav-link" data-scroll-target="#sección-para-reflexionar-automatizable-estructura-contenido-humano">3. Sección “Para reflexionar” ✅ AUTOMATIZABLE (estructura); contenido = humano</a></li>
   </ul></li>
-  <li><a href="#structural-template-for-session-pages" id="toc-structural-template-for-session-pages" class="nav-link" data-scroll-target="#structural-template-for-session-pages">Structural Template for Session Pages</a>
+  <li><a href="#estándar-de-scatter-plots-svg" id="toc-estándar-de-scatter-plots-svg" class="nav-link" data-scroll-target="#estándar-de-scatter-plots-svg">Estándar de scatter plots SVG</a>
   <ul class="collapse">
-  <li><a href="#a.-frontmatter" id="toc-a.-frontmatter" class="nav-link" data-scroll-target="#a.-frontmatter">A. Frontmatter</a></li>
-  <li><a href="#b.-session-banner" id="toc-b.-session-banner" class="nav-link" data-scroll-target="#b.-session-banner">B. Session Banner</a></li>
-  <li><a href="#c.-page-assets" id="toc-c.-page-assets" class="nav-link" data-scroll-target="#c.-page-assets">C. Page Assets</a></li>
-  <li><a href="#d.-opening-capsule-sequence" id="toc-d.-opening-capsule-sequence" class="nav-link" data-scroll-target="#d.-opening-capsule-sequence">D. Opening Capsule Sequence</a></li>
-  <li><a href="#e.-videotext-complement-disclaimer" id="toc-e.-videotext-complement-disclaimer" class="nav-link" data-scroll-target="#e.-videotext-complement-disclaimer">E. Video/Text Complement Disclaimer</a></li>
-  <li><a href="#f.-text-content-section" id="toc-f.-text-content-section" class="nav-link" data-scroll-target="#f.-text-content-section">F. Text Content Section</a></li>
-  <li><a href="#g.-reflection-and-closure" id="toc-g.-reflection-and-closure" class="nav-link" data-scroll-target="#g.-reflection-and-closure">G. Reflection and Closure</a></li>
+  <li><a href="#contenedor-css-.scatter-frame" id="toc-contenedor-css-.scatter-frame" class="nav-link" data-scroll-target="#contenedor-css-.scatter-frame">Contenedor CSS (<code>.scatter-frame</code>)</a></li>
+  <li><a href="#hover-de-puntos-de-datos" id="toc-hover-de-puntos-de-datos" class="nav-link" data-scroll-target="#hover-de-puntos-de-datos">Hover de puntos de datos</a></li>
+  <li><a href="#anatomía-del-svg-interno" id="toc-anatomía-del-svg-interno" class="nav-link" data-scroll-target="#anatomía-del-svg-interno">Anatomía del SVG interno</a></li>
   </ul></li>
-  <li><a href="#visual-language" id="toc-visual-language" class="nav-link" data-scroll-target="#visual-language">Visual Language</a>
-  <ul class="collapse">
-  <li><a href="#typography" id="toc-typography" class="nav-link" data-scroll-target="#typography">Typography</a></li>
-  <li><a href="#color" id="toc-color" class="nav-link" data-scroll-target="#color">Color</a></li>
-  <li><a href="#cards-and-surfaces" id="toc-cards-and-surfaces" class="nav-link" data-scroll-target="#cards-and-surfaces">Cards and Surfaces</a></li>
-  <li><a href="#motion" id="toc-motion" class="nav-link" data-scroll-target="#motion">Motion</a></li>
-  <li><a href="#mobile-and-tablet-behavior" id="toc-mobile-and-tablet-behavior" class="nav-link" data-scroll-target="#mobile-and-tablet-behavior">Mobile and Tablet Behavior</a></li>
-  </ul></li>
-  <li><a href="#content-and-pedagogical-patterns-to-reuse" id="toc-content-and-pedagogical-patterns-to-reuse" class="nav-link" data-scroll-target="#content-and-pedagogical-patterns-to-reuse">Content and Pedagogical Patterns to Reuse</a>
-  <ul class="collapse">
-  <li><a href="#intro-hook-with-a-familiar-interface" id="toc-intro-hook-with-a-familiar-interface" class="nav-link" data-scroll-target="#intro-hook-with-a-familiar-interface">1. Intro hook with a familiar interface</a></li>
-  <li><a href="#definition-card-after-the-hook" id="toc-definition-card-after-the-hook" class="nav-link" data-scroll-target="#definition-card-after-the-hook">2. Definition card after the hook</a></li>
-  <li><a href="#repeated-headers-create-cohesion" id="toc-repeated-headers-create-cohesion" class="nav-link" data-scroll-target="#repeated-headers-create-cohesion">2.5. Repeated headers create cohesion</a></li>
-  <li><a href="#key-moment-block" id="toc-key-moment-block" class="nav-link" data-scroll-target="#key-moment-block">3. “Key moment” block</a></li>
-  <li><a href="#demo-shell-pattern" id="toc-demo-shell-pattern" class="nav-link" data-scroll-target="#demo-shell-pattern">4. Demo shell pattern</a></li>
-  <li><a href="#qué-estás-viendo-qué-significa" id="toc-qué-estás-viendo-qué-significa" class="nav-link" data-scroll-target="#qué-estás-viendo-qué-significa">5. “Qué estás viendo / Qué significa”</a></li>
-  <li><a href="#reflection-as-numbered-prompts" id="toc-reflection-as-numbered-prompts" class="nav-link" data-scroll-target="#reflection-as-numbered-prompts">6. Reflection as numbered prompts</a></li>
-  </ul></li>
-  <li><a href="#structural-and-stylistic-elements-that-should-be-standardized-across-all-15-sessions" id="toc-structural-and-stylistic-elements-that-should-be-standardized-across-all-15-sessions" class="nav-link" data-scroll-target="#structural-and-stylistic-elements-that-should-be-standardized-across-all-15-sessions">Structural and Stylistic Elements That Should Be Standardized Across All 15 Sessions</a>
-  <ul class="collapse">
-  <li><a href="#safe-batch-updates" id="toc-safe-batch-updates" class="nav-link" data-scroll-target="#safe-batch-updates">Safe Batch Updates</a></li>
-  <li><a href="#safe-style-updates" id="toc-safe-style-updates" class="nav-link" data-scroll-target="#safe-style-updates">Safe Style Updates</a></li>
-  </ul></li>
-  <li><a href="#elements-that-need-manual-review-and-should-not-be-mass-converted-blindly" id="toc-elements-that-need-manual-review-and-should-not-be-mass-converted-blindly" class="nav-link" data-scroll-target="#elements-that-need-manual-review-and-should-not-be-mass-converted-blindly">Elements That Need Manual Review and Should Not Be Mass-Converted Blindly</a>
-  <ul class="collapse">
-  <li><a href="#manual-content-review" id="toc-manual-content-review" class="nav-link" data-scroll-target="#manual-content-review">Manual Content Review</a></li>
-  <li><a href="#manual-ux-review" id="toc-manual-ux-review" class="nav-link" data-scroll-target="#manual-ux-review">Manual UX Review</a></li>
-  <li><a href="#manual-technical-review" id="toc-manual-technical-review" class="nav-link" data-scroll-target="#manual-technical-review">Manual Technical Review</a></li>
-  <li><a href="#important-pitfall-to-avoid" id="toc-important-pitfall-to-avoid" class="nav-link" data-scroll-target="#important-pitfall-to-avoid">Important Pitfall to Avoid</a></li>
-  </ul></li>
-  <li><a href="#what-to-keep-plain-instead-of-designing-more" id="toc-what-to-keep-plain-instead-of-designing-more" class="nav-link" data-scroll-target="#what-to-keep-plain-instead-of-designing-more">What to Keep Plain Instead of “Designing More”</a></li>
-  <li><a href="#recommended-migration-strategy-for-sessions-215" id="toc-recommended-migration-strategy-for-sessions-215" class="nav-link" data-scroll-target="#recommended-migration-strategy-for-sessions-215">Recommended Migration Strategy for Sessions 2–15</a>
-  <ul class="collapse">
-  <li><a href="#pass-1-safe-structural-alignment" id="toc-pass-1-safe-structural-alignment" class="nav-link" data-scroll-target="#pass-1-safe-structural-alignment">Pass 1: Safe structural alignment</a></li>
-  <li><a href="#pass-2-demo-shell-normalization" id="toc-pass-2-demo-shell-normalization" class="nav-link" data-scroll-target="#pass-2-demo-shell-normalization">Pass 2: Demo-shell normalization</a></li>
-  <li><a href="#pass-3-session-specific-visual-and-pedagogical-refinement" id="toc-pass-3-session-specific-visual-and-pedagogical-refinement" class="nav-link" data-scroll-target="#pass-3-session-specific-visual-and-pedagogical-refinement">Pass 3: Session-specific visual and pedagogical refinement</a></li>
-  </ul></li>
-  <li><a href="#suggested-prompt-for-batch-updating-the-other-session-files" id="toc-suggested-prompt-for-batch-updating-the-other-session-files" class="nav-link" data-scroll-target="#suggested-prompt-for-batch-updating-the-other-session-files">Suggested Prompt for Batch Updating the Other Session Files</a></li>
-  <li><a href="#short-version" id="toc-short-version" class="nav-link" data-scroll-target="#short-version">Short Version</a></li>
+  <li><a href="#orden-estándar-de-secciones-en-un-.qmd" id="toc-orden-estándar-de-secciones-en-un-.qmd" class="nav-link" data-scroll-target="#orden-estándar-de-secciones-en-un-.qmd">Orden estándar de secciones en un .qmd</a></li>
+  <li><a href="#qué-puede-hacer-un-agente-de-ia-en-un-solo-pase" id="toc-qué-puede-hacer-un-agente-de-ia-en-un-solo-pase" class="nav-link" data-scroll-target="#qué-puede-hacer-un-agente-de-ia-en-un-solo-pase">Qué puede hacer un agente de IA en un solo pase</a></li>
+  <li><a href="#notas-de-consistencia-cross-página" id="toc-notas-de-consistencia-cross-página" class="nav-link" data-scroll-target="#notas-de-consistencia-cross-página">Notas de consistencia cross-página</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -257,288 +252,513 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="uxui-and-structure-guide-for-session-pages" class="level1">
-<h1>UX/UI and Structure Guide for Session Pages</h1>
-<p>Reference analyzed: <a href="./Users/michellegonzalez/Documents/GitHub/curso_IA/sesiones/sesion-01.qmd">sesiones/sesion-01.qmd</a></p>
-<p>This document explains the UX, UI, structural, and pedagogical patterns used in <code>sesion-01.qmd</code> so the same language can be applied across <code>sesion-02.qmd</code> through <code>sesion-15.qmd</code>.</p>
-<p>Use this file as: - a style guide - a migration checklist - a prompt/spec for batch-updating the other session files</p>
-<section id="goal" class="level2">
-<h2 class="anchored" data-anchor-id="goal">Goal</h2>
-<p>The goal of the session pages is not just to look polished. The design is doing teaching work.</p>
-<p>The reference session uses a consistent structure that: - lowers intimidation - makes abstract AI ideas feel concrete - alternates explanation with interaction - gives students repeated orientation cues - ends with reflection and synthesis</p>
-<p>The right standard is not “make every page pretty.” The right standard is:</p>
-<p>“Make every page feel like an intentional learning experience with the same visual grammar, pacing, and pedagogical scaffolding as Session 1.”</p>
-</section>
-<section id="core-design-principles" class="level2">
-<h2 class="anchored" data-anchor-id="core-design-principles">Core Design Principles</h2>
-<section id="story-first-definition-second" class="level3">
-<h3 class="anchored" data-anchor-id="story-first-definition-second">1. Story first, definition second</h3>
-<p>The session begins with a real-world, high-recognition hook before defining the concept.</p>
-<p>Pattern: - start with apps or behaviors students already know - then define the concept - then show how the concept works</p>
-<p>Pedagogical reason: - students engage faster when they first recognize the phenomenon - once relevance is established, formal definitions become easier to absorb</p>
-</section>
-<section id="concrete-to-abstract-to-concrete" class="level3">
-<h3 class="anchored" data-anchor-id="concrete-to-abstract-to-concrete">2. Concrete to abstract to concrete</h3>
-<p>Session 1 repeatedly follows this loop: - show a familiar example - explain the underlying concept - return to a familiar example or interactive</p>
-<p>Pedagogical reason: - students retain abstractions better when they can bounce between concept and example</p>
-</section>
-<section id="one-visual-idea-per-block" class="level3">
-<h3 class="anchored" data-anchor-id="one-visual-idea-per-block">3. One visual idea per block</h3>
-<p>Each content block has a clear job: - banner for orientation - intro phone for relevance - definition card for shared language - key-moment formula for conceptual compression - demo shells for interaction - central-idea card for synthesis</p>
-<p>Pedagogical reason: - each block reduces cognitive load by answering one question at a time</p>
-</section>
-<section id="interaction-is-explanatory-not-decorative" class="level3">
-<h3 class="anchored" data-anchor-id="interaction-is-explanatory-not-decorative">4. Interaction is explanatory, not decorative</h3>
-<p>The interactive demos are not “extras.” They are part of the explanation.</p>
-<p>Each demo follows the same pattern: - preview of what the student is about to see - live stage where the interaction happens - “Qué estás viendo” - “Qué significa” - status line - actions</p>
-<p>Pedagogical reason: - students need interpretation, not just animation - the explanation must stay close to the action</p>
-</section>
-<section id="repetition-of-structure-builds-confidence" class="level3">
-<h3 class="anchored" data-anchor-id="repetition-of-structure-builds-confidence">5. Repetition of structure builds confidence</h3>
-<p>Session 1 reuses a consistent shell for interactive content. This is important to preserve across all sessions.</p>
-<p>Pedagogical reason: - when layout stays stable, students can focus on ideas instead of re-learning the interface every time</p>
-</section>
-</section>
-<section id="structural-template-for-session-pages" class="level2">
-<h2 class="anchored" data-anchor-id="structural-template-for-session-pages">Structural Template for Session Pages</h2>
-<p>This is the structural pattern to replicate across sessions where appropriate.</p>
-<section id="a.-frontmatter" class="level3">
-<h3 class="anchored" data-anchor-id="a.-frontmatter">A. Frontmatter</h3>
-<p>Each session should keep a lightweight Quarto frontmatter: - title - <code>format: html</code> - <code>toc: true</code> - <code>toc-depth: 2</code> - <code>number-sections: false</code></p>
-</section>
-<section id="b.-session-banner" class="level3">
-<h3 class="anchored" data-anchor-id="b.-session-banner">B. Session Banner</h3>
-<p>The page opens with a banner that includes: - block label - progress bar - session number out of 15 - date - duration - link back to syllabus</p>
-<p>Purpose: - gives orientation immediately - makes the course feel like a coherent sequence</p>
-</section>
-<section id="c.-page-assets" class="level3">
-<h3 class="anchored" data-anchor-id="c.-page-assets">C. Page Assets</h3>
-<p>Near the top, the page links: - the session-specific stylesheet in <code>styles/sessions/</code> - the session-specific JS in <code>interactives/</code></p>
-<p>Pattern: - keep shared global styling in <code>styles/sesion.css</code> - keep session-specific additions in <code>styles/sessions/sesion-XX.css</code> - keep per-session interactivity in <code>interactives/sesion-XX.js</code></p>
-</section>
-<section id="d.-opening-capsule-sequence" class="level3">
-<h3 class="anchored" data-anchor-id="d.-opening-capsule-sequence">D. Opening Capsule Sequence</h3>
-<p>Session 1 now uses a specific opening sequence that should be treated as a repeated course-wide convention.</p>
-<p>Canonical order: - <code>## Introducción a la IA</code> - opening video capsule or placeholder - the complement/disclaimer note - <code>### Introducción</code> - the written teaching sequence</p>
-<p>This order matters because it makes the first learning unit feel consistent from session to session.</p>
-<p>If a session has a real video: - embed it in the opening capsule slot</p>
-<p>If a session does not yet have a real video: - keep the same opening slot - use a polished placeholder instead of omitting the section - preserve the complement/disclaimer note anyway so the learning logic stays consistent</p>
-</section>
-<section id="e.-videotext-complement-disclaimer" class="level3">
-<h3 class="anchored" data-anchor-id="e.-videotext-complement-disclaimer">E. Video/Text Complement Disclaimer</h3>
-<p>This note should be standardized across sessions.</p>
-<p>Requirements: - same class: <code>capsule-complement-note</code> - same structural placement, between the opening capsule and the written introduction - ideally the exact same wording</p>
-<p>Reference wording from Session 1:</p>
-<p>“Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!”</p>
-<p>Purpose: - tells students the video and text are complementary, not redundant - reduces confusion about why both exist - creates a repeated course rhythm students can trust</p>
-</section>
-<section id="f.-text-content-section" class="level3">
-<h3 class="anchored" data-anchor-id="f.-text-content-section">F. Text Content Section</h3>
-<p>After the opening capsule and disclaimer, the page shifts to full text and interactive content.</p>
-<p>Typical order in Session 1: - introduction hook - core definition - myth correction / conceptual clarification - key explanatory sequence - interactive demos - reflection - central idea - resources - next/previous navigation</p>
-</section>
-<section id="g.-reflection-and-closure" class="level3">
-<h3 class="anchored" data-anchor-id="g.-reflection-and-closure">G. Reflection and Closure</h3>
-<p>Every session should end with: - a reflection block - a central idea block - a curated resources list - previous/next session nav</p>
-<p>Purpose: - reflection consolidates learning - the central idea compresses the session into one memorable takeaway - resources extend learning without cluttering the body</p>
-<p>Non-negotiable closing conventions: - the heading must be exactly <code>### La idea central de esta sesión</code> - the summary block must use the <code>central-idea</code> class - the resources heading must be exactly <code>### Recursos para explorar más sobre el tema</code> - the resources block must use the <code>resource-list</code> class</p>
-<p>These four items should be standardized across all sessions even if the inner text and links change.</p>
-</section>
-</section>
-<section id="visual-language" class="level2">
-<h2 class="anchored" data-anchor-id="visual-language">Visual Language</h2>
-<section id="typography" class="level3">
-<h3 class="anchored" data-anchor-id="typography">Typography</h3>
-<p>Session 1 uses a clear typography hierarchy: - body: readable and friendly - headings: geometric and assertive - occasional serif or display accents for emphasis</p>
-<p>Effect: - body text feels accessible - headings feel intentional and course-like - emphasis moments feel special without turning gimmicky</p>
-</section>
-<section id="color" class="level3">
-<h3 class="anchored" data-anchor-id="color">Color</h3>
-<p>The visual palette is: - blue-forward - light backgrounds - navy text - subtle accent tones for block-specific demos</p>
-<p>Do: - use color to group concepts and demo states - use soft gradients and tinted backgrounds - preserve strong contrast for text</p>
-<p>Do not: - use flat generic white cards everywhere - introduce random new palettes per section - use color only decoratively with no semantic role</p>
-</section>
-<section id="cards-and-surfaces" class="level3">
-<h3 class="anchored" data-anchor-id="cards-and-surfaces">Cards and Surfaces</h3>
-<p>Session 1 uses several card types, each with a distinct role: - session banner - definition card - demo preview card - demo live shell - insight cards - reflection list - resource cards/list</p>
-<p>Rule: - every card should have a job - avoid adding more cards if plain Markdown can do the job better</p>
-<p>Important example: - the 8-student table works better as a plain Quarto table than as another decorative card</p>
-</section>
-<section id="motion" class="level3">
-<h3 class="anchored" data-anchor-id="motion">Motion</h3>
-<p>Motion is present but restrained: - reveal on scroll - state changes inside demos - annotation emphasis</p>
-<p>Rule: - motion should support explanation, not compete with it - always respect reduced-motion behavior</p>
-</section>
-<section id="mobile-and-tablet-behavior" class="level3">
-<h3 class="anchored" data-anchor-id="mobile-and-tablet-behavior">Mobile and Tablet Behavior</h3>
-<p>Session 1 is designed to collapse meaningfully on small screens.</p>
-<p>Rules: - stack columns into a clear reading order - keep the main concept object first - move secondary or reference material below - avoid horizontal dependency between explanation and interaction</p>
-<p>Pedagogical rule for small screens: - the thing students must understand first should appear first</p>
-</section>
-</section>
-<section id="content-and-pedagogical-patterns-to-reuse" class="level2">
-<h2 class="anchored" data-anchor-id="content-and-pedagogical-patterns-to-reuse">Content and Pedagogical Patterns to Reuse</h2>
-<section id="intro-hook-with-a-familiar-interface" class="level3">
-<h3 class="anchored" data-anchor-id="intro-hook-with-a-familiar-interface">1. Intro hook with a familiar interface</h3>
-<p>Session 1 uses a TikTok-like phone mockup next to the opening text.</p>
-<p>Pattern to reuse: - pair opening copy with a concrete visual metaphor from student life</p>
-<p>Good fits: - chat UI - map UI - inbox UI - playlist UI - robot/game UI</p>
-</section>
-<section id="definition-card-after-the-hook" class="level3">
-<h3 class="anchored" data-anchor-id="definition-card-after-the-hook">2. Definition card after the hook</h3>
-<p>Definitions should not open the page. They should stabilize language after relevance has been established.</p>
-</section>
-<section id="repeated-headers-create-cohesion" class="level3">
-<h3 class="anchored" data-anchor-id="repeated-headers-create-cohesion">2.5. Repeated headers create cohesion</h3>
-<p>Session 1 now relies more strongly on repeated headers and repeated content transitions. These should be preserved across the course wherever the same structural role exists.</p>
-<p>Important repeated headers: - <code>## Introducción a la IA</code> - <code>### Introducción</code> - <code>### La idea central de esta sesión</code> - <code>### Recursos para explorar más sobre el tema</code></p>
-<p>This consistency helps students quickly understand where they are in the learning arc of each session.</p>
-</section>
-<section id="key-moment-block" class="level3">
-<h3 class="anchored" data-anchor-id="key-moment-block">3. “Key moment” block</h3>
-<p>This is a signature teaching move.</p>
-<p>Pattern: - compress the core concept into one memorable phrase, formula, or visual</p>
-<p>Examples: - “La IA más simple empieza con una recta” - “Una red neuronal ajusta pesos” - “Un prompt no programa, orienta”</p>
-<p>Purpose: - gives students a durable anchor</p>
-</section>
-<section id="demo-shell-pattern" class="level3">
-<h3 class="anchored" data-anchor-id="demo-shell-pattern">4. Demo shell pattern</h3>
-<p>This is one of the most reusable structural elements in Session 1.</p>
-<p>Every major interactive tends to have: - <code>.demo-wrap</code> - <code>.demo-shell</code> - <code>.demo-shell-head</code> - preview stage - live stage - insights - footer/status/actions</p>
-<p>This pattern should be reused as a course-wide convention.</p>
-</section>
-<section id="qué-estás-viendo-qué-significa" class="level3">
-<h3 class="anchored" data-anchor-id="qué-estás-viendo-qué-significa">5. “Qué estás viendo / Qué significa”</h3>
-<p>This explanatory pair is pedagogically excellent and should be preserved.</p>
-<p>Purpose: - separates observation from interpretation - teaches students how to read models, not just watch them</p>
-</section>
-<section id="reflection-as-numbered-prompts" class="level3">
-<h3 class="anchored" data-anchor-id="reflection-as-numbered-prompts">6. Reflection as numbered prompts</h3>
-<p>The reflection block uses: - short numbered prompts - one clear question each - no over-explaining</p>
-<p>Purpose: - helps students retrieve and connect ideas - works well in class discussion or written follow-up</p>
-</section>
-</section>
-<section id="structural-and-stylistic-elements-that-should-be-standardized-across-all-15-sessions" class="level2">
-<h2 class="anchored" data-anchor-id="structural-and-stylistic-elements-that-should-be-standardized-across-all-15-sessions">Structural and Stylistic Elements That Should Be Standardized Across All 15 Sessions</h2>
-<p>These are safe to apply broadly in one pass.</p>
-<section id="safe-batch-updates" class="level3">
-<h3 class="anchored" data-anchor-id="safe-batch-updates">Safe Batch Updates</h3>
-<ul>
-<li>Add the session banner at the top of every session.</li>
-<li>Standardize the page asset block that links session CSS and JS.</li>
-<li>Standardize the opening capsule sequence:</li>
-<li><code>## Introducción a la IA</code></li>
-<li>video embed or polished placeholder</li>
-<li>the exact complement/disclaimer note using <code>capsule-complement-note</code></li>
-<li><code>### Introducción</code></li>
-<li>Standardize section rhythm with <code>---</code> separators between major phases.</li>
-<li>Use the same interactive shell pattern for demos.</li>
-<li>Add “Qué estás viendo” and “Qué significa” to interactive sections where missing.</li>
-<li>Add the reflection block near the end of each session.</li>
-<li>Add the exact heading <code>### La idea central de esta sesión</code> near the end using <code>central-idea</code>.</li>
-<li>Add the exact heading <code>### Recursos para explorar más sobre el tema</code> using <code>resource-list</code>.</li>
-<li>Add the previous/next session navigation footer.</li>
-<li>Maintain consistent wording for time/progress metadata.</li>
-<li>Keep Quarto TOC settings aligned with Session 1.</li>
-</ul>
-</section>
-<section id="safe-style-updates" class="level3">
-<h3 class="anchored" data-anchor-id="safe-style-updates">Safe Style Updates</h3>
-<ul>
-<li>Use the same banner styling.</li>
-<li>Reuse the same card radius and border softness.</li>
-<li>Reuse the same heading and body typography.</li>
-<li>Reuse the same visual hierarchy for demo titles, eyebrows, and copy.</li>
-<li>Reuse the same footer/action layout for demos.</li>
-<li>Reuse the same reflection and resource patterns.</li>
-</ul>
-</section>
-</section>
-<section id="elements-that-need-manual-review-and-should-not-be-mass-converted-blindly" class="level2">
-<h2 class="anchored" data-anchor-id="elements-that-need-manual-review-and-should-not-be-mass-converted-blindly">Elements That Need Manual Review and Should Not Be Mass-Converted Blindly</h2>
-<p>These require human judgment or session-specific design work.</p>
-<section id="manual-content-review" class="level3">
-<h3 class="anchored" data-anchor-id="manual-content-review">Manual Content Review</h3>
-<ul>
-<li>Opening hook copy</li>
-<li>Session-specific examples</li>
-<li>Definition language</li>
-<li>Reflection questions</li>
-<li>Central idea wording</li>
-<li>Resource links</li>
-</ul>
-</section>
-<section id="manual-ux-review" class="level3">
-<h3 class="anchored" data-anchor-id="manual-ux-review">Manual UX Review</h3>
-<ul>
-<li>Which sections deserve interactives</li>
-<li>Whether a table should be a plain Markdown table or a custom card</li>
-<li>Whether a concept needs a phone UI, diagram, chart, or simple callout</li>
-<li>Whether a demo should be preview + live, or just one static explanatory object</li>
-</ul>
-</section>
-<section id="manual-technical-review" class="level3">
-<h3 class="anchored" data-anchor-id="manual-technical-review">Manual Technical Review</h3>
-<ul>
-<li>JS demo logic</li>
-<li>session-specific assets</li>
-<li>logos and local image paths</li>
-<li>hidden wrappers like <code>::: {.content-hidden}</code></li>
-<li>raw HTML blocks</li>
-<li>annotation scripts</li>
-<li>autoplay behavior</li>
-</ul>
-</section>
-<section id="important-pitfall-to-avoid" class="level3">
-<h3 class="anchored" data-anchor-id="important-pitfall-to-avoid">Important Pitfall to Avoid</h3>
-<p>When editing raw HTML inside <code>.qmd</code> files: - always use plain ASCII quotes, never smart quotes - check that comments are properly closed - check that <code>```{=html}</code> blocks close correctly - check that <code>::: ...</code> blocks close correctly</p>
-<p>Several rendering bugs in Session 1 came from markup issues of exactly this kind.</p>
-</section>
-</section>
-<section id="what-to-keep-plain-instead-of-designing-more" class="level2">
-<h2 class="anchored" data-anchor-id="what-to-keep-plain-instead-of-designing-more">What to Keep Plain Instead of “Designing More”</h2>
-<p>A key lesson from Session 1 is that not everything should become a card.</p>
-<p>Use plain Markdown when: - the content is just setup context - a table is only reference material - a short list already reads clearly - extra decoration would distract from the next interactive</p>
-<p>Good example: - the 8-student dataset works better as a simple Quarto table before the regression challenge than as a decorated card inside the interactive</p>
-</section>
-<section id="recommended-migration-strategy-for-sessions-215" class="level2">
-<h2 class="anchored" data-anchor-id="recommended-migration-strategy-for-sessions-215">Recommended Migration Strategy for Sessions 2–15</h2>
-<section id="pass-1-safe-structural-alignment" class="level3">
-<h3 class="anchored" data-anchor-id="pass-1-safe-structural-alignment">Pass 1: Safe structural alignment</h3>
-<p>Apply these to every session: - top banner - stylesheet and JS asset block - opening capsule sequence: - <code>## Introducción a la IA</code> - video embed or placeholder - the exact complement/disclaimer note - <code>### Introducción</code> - reflection block - central idea block with exact heading and <code>central-idea</code> - resources block with exact heading and <code>resource-list</code> - session navigation block</p>
-</section>
-<section id="pass-2-demo-shell-normalization" class="level3">
-<h3 class="anchored" data-anchor-id="pass-2-demo-shell-normalization">Pass 2: Demo-shell normalization</h3>
-<p>Where sessions already contain interactives: - move them into the Session 1 demo-shell structure - add preview/live split if it makes pedagogical sense - add the insights pair - add status/actions footer</p>
-</section>
-<section id="pass-3-session-specific-visual-and-pedagogical-refinement" class="level3">
-<h3 class="anchored" data-anchor-id="pass-3-session-specific-visual-and-pedagogical-refinement">Pass 3: Session-specific visual and pedagogical refinement</h3>
-<p>Review manually: - opening hook visual - strongest “key moment” - right metaphor for the topic - where plain text beats extra UI</p>
-</section>
-</section>
-<section id="suggested-prompt-for-batch-updating-the-other-session-files" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-prompt-for-batch-updating-the-other-session-files">Suggested Prompt for Batch Updating the Other Session Files</h2>
-<p>Use the following prompt as the base instruction for updating <code>sesion-02.qmd</code> through <code>sesion-15.qmd</code>:</p>
+<section id="guía-de-diseño-uiux-intro-a-la-ia" class="level1">
+<h1>Guía de Diseño UI/UX — Intro a la IA</h1>
+<blockquote class="blockquote">
+<p>Referencia para humanos y agentes de IA trabajando en sesiones 05–15. Basada en los estándares establecidos en sesiones 01–04.</p>
+</blockquote>
 <hr>
-<p>Update these session <code>.qmd</code> files so they match the UX/UI and pedagogical style of <code>sesion-01.qmd</code>.</p>
-<p>Goals: - preserve each session’s actual content and learning objectives - align the visual structure, pacing, and interaction grammar with Session 1 - standardize what is safe to standardize - skip or flag anything that requires manual pedagogical judgment</p>
-<p>Apply these patterns from <code>sesion-01.qmd</code>: - session banner with block, progress, date, duration, and syllabus link - session-specific CSS/JS include block - opening capsule sequence in this order: - <code>## Introducción a la IA</code> - video embed or polished placeholder - the exact complement/disclaimer note in <code>capsule-complement-note</code> - <code>### Introducción</code> - strong opening hook before formal definition - clear content rhythm with separators and section hierarchy - “key moment” style concept-compression block where appropriate - demo-shell structure for interactives: <code>.demo-wrap</code> -&gt; <code>.demo-shell</code> -&gt; head -&gt; preview/live -&gt; insights -&gt; footer - “Qué estás viendo / Qué significa” explanatory pair for interactive sections - reflection block near the end - exact heading <code>### La idea central de esta sesión</code> using the <code>central-idea</code> class - exact heading <code>### Recursos para explorar más sobre el tema</code> using the <code>resource-list</code> class - previous/next session navigation</p>
-<p>Do standardize: - structure - layout conventions - visual hierarchy - recurring UI components - spacing rhythm - card language - footer patterns</p>
-<p>Do not blindly standardize: - examples - metaphors - datasets - logos - interactive logic - diagrams whose content needs redesign - sections intentionally hidden for later sessions</p>
-<p>Important implementation rules: - prefer plain Markdown for simple tables and setup lists - only use custom cards when they add pedagogical value - keep mobile stacking logical - preserve repeated course headers exactly where they serve the same structural role - preserve the complement/disclaimer note and its <code>capsule-complement-note</code> class - preserve the exact heading <code>La idea central de esta sesión</code> - preserve the <code>central-idea</code> class for that block - preserve the exact heading <code>Recursos para explorar más sobre el tema</code> - preserve the <code>resource-list</code> class for that block - use plain ASCII quotes inside raw HTML - avoid broken HTML comments and unclosed <code>:::</code> - preserve accessibility labels and reduced-motion behavior</p>
-<p>When in doubt: - choose clarity over decoration - choose a reusable structure over one-off styling - choose teaching value over visual novelty</p>
+<section id="estructura-de-archivos" class="level2">
+<h2 class="anchored" data-anchor-id="estructura-de-archivos">Estructura de archivos</h2>
+<pre><code>curso_IA/
+├── _quarto.yml                         # Config global: navbar, tema, CSS global
+├── styles/
+│   ├── sesion.css                      # CSS GLOBAL — cargado automáticamente en todas las páginas
+│   └── sessions/
+│       ├── sesion-01.css               # CSS específico de S1 (layouts únicos de esa sesión)
+│       ├── sesion-02.css               # CSS específico de S2
+│       └── ...                         # una por sesión
+├── interactives/
+│   ├── sesion-01.js                    # JS interactivo de S1 (ES modules)
+│   ├── sesion-02.js
+│   └── ...
+└── sesiones/
+    ├── sesion-01.qmd
+    ├── sesion-02.qmd
+    └── ...</code></pre>
+<p><strong>Regla cardinal:</strong> <code>styles/sesion.css</code> contiene todos los componentes reutilizables. Los archivos <code>sesion-XX.css</code> solo contienen layouts y componentes únicos de esa sesión. <strong>No duplicar</strong> en sesion-XX.css lo que ya existe en sesion.css.</p>
 <hr>
 </section>
-<section id="short-version" class="level2">
-<h2 class="anchored" data-anchor-id="short-version">Short Version</h2>
-<p>If the team only remembers five things from this guide, they should be:</p>
+<section id="encabezado-obligatorio-de-cada-.qmd" class="level2">
+<h2 class="anchored" data-anchor-id="encabezado-obligatorio-de-cada-.qmd">Encabezado obligatorio de cada .qmd</h2>
+<p>Los primeros ~35 líneas de cada sesión siguen este orden fijo:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Sesión N: [Título]"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Seguido del <strong>banner</strong> (ver sección Banner), luego:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>```{=html}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"../styles/sessions/sesion-XX.css"</span><span class="dt">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> type=</span><span class="st">"module"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"../interactives/sesion-XX.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>
+Nota: sesiones 01–04 usan `type="module"`; algunos skeletons posteriores usan `defer`. Usar `type="module"` como estándar.
+
+---
+
+## Variables CSS globales (`:root` en `styles/sesion.css`)
+
+```css
+:root {
+  --c-primary:        #2780e3;   /* azul marca — botones, links, bordes de énfasis */
+  --c-primary-hover:  #1a6fc4;   /* hover del azul primario */
+  --c-accent:         #0ea5e9;   /* azul cielo — gradientes, detalles secundarios */
+  --c-navy:           #1a365d;   /* azul marino oscuro — títulos, texto de énfasis */
+  --c-text:           #334155;   /* texto cuerpo principal */
+  --c-text-secondary: #475569;   /* texto secundario / párrafos de apoyo */
+  --c-muted:          #64748b;   /* texto terciario / metadatos */
+  --c-border:         #e2e8f0;   /* borde gris neutro estándar */
+  --c-border-blue:    #dbeafe;   /* borde azul suave — cards temáticas */
+  --c-bg-blue:        #f0f7ff;   /* fondo azul muy suave */
+  --c-gray-50:        #f8fafc;   /* fondo gris casi blanco — banners, backgrounds */
+  --c-gray-400:       #94a3b8;   /* texto deshabilitado / tick labels de SVG */
+  --radius:           8px;       /* radio de borde base */
+}</code></pre>
+<p><strong>Color adicional — azul aciano (cornflower) <code>#6495ED</code>:</strong> No está en <code>:root</code> pero es parte del sistema de color. Se usa para interactivos de tipo “ranking” y “no supervisado”. Si se necesita en sesion-XX.css, referenciarlo como valor fijo <code>#6495ED</code>.</p>
+<hr>
+</section>
+<section id="tipografía" class="level2">
+<h2 class="anchored" data-anchor-id="tipografía">Tipografía</h2>
+<p>Tres fuentes cargadas en <code>styles/sesion.css</code> (Google Fonts):</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 42%">
+<col style="width: 26%">
+<col style="width: 31%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fuente</th>
+<th>Uso</th>
+<th>Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Atkinson Hyperlegible</strong></td>
+<td>Cuerpo — <code>body, p, li, td, th</code></td>
+<td>400, 700</td>
+</tr>
+<tr class="even">
+<td><strong>Space Grotesk</strong></td>
+<td>Titulares — <code>h1, h2, h3, h4</code></td>
+<td>700</td>
+</tr>
+<tr class="odd">
+<td><strong>Fraunces</strong></td>
+<td>Decorativo — <code>.reflexion-heading</code>, <code>.reflexion-num</code>, <code>.central-idea</code> (comillas)</td>
+<td>700–800</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="sistema-de-color-para-interactivos-demo-tones" class="level2">
+<h2 class="anchored" data-anchor-id="sistema-de-color-para-interactivos-demo-tones">Sistema de color para interactivos (demo tones)</h2>
+<p>Cada interactive <code>demo-shell</code> lleva una clase de tono que sobreescribe <code>--demo-accent</code>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 29%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Clase</th>
+<th>Color</th>
+<th>Hex</th>
+<th>Uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>.demo-tone-supervised</code></td>
+<td>Azul primario</td>
+<td><code>#2780e3</code></td>
+<td>Aprendizaje supervisado, álgebra</td>
+</tr>
+<tr class="even">
+<td><code>.demo-tone-ranking</code></td>
+<td>Azul aciano</td>
+<td><code>#6495ED</code></td>
+<td>Sistemas de recomendación</td>
+</tr>
+<tr class="odd">
+<td><code>.demo-tone-unsupervised</code></td>
+<td>Azul aciano</td>
+<td><code>#6495ED</code></td>
+<td>Aprendizaje no supervisado</td>
+</tr>
+<tr class="even">
+<td><code>.demo-tone-rl</code></td>
+<td>Ámbar</td>
+<td><code>#f59e0b</code></td>
+<td>Aprendizaje por refuerzo (Mario)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Regla:</strong> Cualquier interactivo que originalmente era azul (no el de Mario que es ámbar) debe usar <code>#6495ED</code> (cornflower) o <code>#2780e3</code> (brand blue) según el tono apropiado — <strong>nunca</strong> <code>#0ea5e9</code> (sky blue) como color primario de un interactivo.</p>
+<hr>
+</section>
+<section id="regla-quarto-callouts-.callout-card-automatizable" class="level2">
+<h2 class="anchored" data-anchor-id="regla-quarto-callouts-.callout-card-automatizable">Regla: Quarto callouts → <code>.callout-card</code> ✅ AUTOMATIZABLE</h2>
+<p><strong>Nunca usar</strong> <code>::: {.callout-note}</code>, <code>::: {.callout-tip}</code>, <code>::: {.callout-important}</code>, ni ningún bloque callout de Quarto. Sustituir siempre por un <code>{=html}</code> block con <code>.callout-card</code>.</p>
+<section id="estructura" class="level3">
+<h3 class="anchored" data-anchor-id="estructura">Estructura</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>```{=html}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"callout-card"</span><span class="dt">&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">h5</span><span class="ot"> class</span><span class="op">=</span><span class="st">"callout-card-title"</span><span class="dt">&gt;</span>[Título del callout]<span class="dt">&lt;/</span><span class="kw">h5</span><span class="dt">&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>[Contenido en párrafos, listas, etc.]<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>
+**Reglas de estilo:**
+- Fondo: `#ffffff` (blanco sólido)
+- Borde: `1.5px solid var(--c-border)` — sin colores especiales por tipo
+- Título `.callout-card-title`: siempre en `#6495ED` (cornflower blue), `font-size: 0.88rem`, `font-weight: 700`
+- Sin franjas laterales de color, sin iconos de tipo (⚠ ℹ 💡), sin fondo de color
+
+**Si el callout contiene una tabla Markdown**, convertirla a HTML con clase `.callout-card-table` (definida en `sesion.css`).
+
+**Si el callout contiene bloques `{=html}` anidados**, integrar ese HTML directamente dentro del `&lt;div class="callout-card"&gt;` en un único bloque `{=html}`.
+
+### Conversión de tipo de callout
+
+Todos los tipos (`note`, `tip`, `important`, `warning`, `caution`) se convierten al mismo componente `.callout-card`. El tipo original no afecta el resultado visual.
+
+---
+
+## Componentes reutilizables (todos en `sesion.css`)
+
+---
+
+### 1. Banner de sesión ✅ AUTOMATIZABLE
+
+Aparece al inicio de **todas** las sesiones, justo después del YAML frontmatter. Es idéntico en estructura; solo cambian: bloque, número de progreso, fecha y duración.
+
+```html
+```{=html}
+&lt;div class="sesion-banner"&gt;
+  &lt;div&gt;
+    &lt;span class="sesion-block-pill"&gt;[BLOQUE_PILL]&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="sesion-progress-wrap"&gt;
+    &lt;div class="sesion-progress-bar"&gt;
+      &lt;div class="sesion-progress-fill sesion-progress-fill-[N]"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;span class="sesion-progress-label"&gt;[N] de 15&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="sesion-meta"&gt;
+    &lt;span class="sesion-meta-chip"&gt;&lt;svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;rect x="3" y="4" width="18" height="18" rx="2" ry="2"/&gt;&lt;line x1="16" y1="2" x2="16" y2="6"/&gt;&lt;line x1="8" y1="2" x2="8" y2="6"/&gt;&lt;line x1="3" y1="10" x2="21" y2="10"/&gt;&lt;/svg&gt; [FECHA]&lt;/span&gt;
+    &lt;span class="sesion-meta-chip"&gt;&lt;svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;circle cx="12" cy="12" r="10"/&gt;&lt;polyline points="12 6 12 12 16 14"/&gt;&lt;/svg&gt; 45 minutos&lt;/span&gt;
+    &lt;a href="../syllabus.html"&gt;Ver programa completo →&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code>
+**Valores de `[BLOQUE_PILL]` según sesión:**
+
+| Sesiones | Texto del pill |
+|----------|----------------|
+| S1–S6 | `Bloque 1 · Fundamentos + Ética` |
+| S7–S11 | `Bloque 2 · Herramientas Prácticas` |
+| S12–S15 | `Bloque 3 · Creación, Aplicaciones y Futuro` |
+
+**Clase de progreso (`sesion-progress-fill-N`):** Usar el número de sesión literal, ej. `sesion-progress-fill-7`. Clases del 1 al 15 están definidas en `sesion.css`.
+
+**Fechas del calendario 2026:**
+
+| S | Fecha |
+|---|-------|
+| 5 | 2 de junio de 2026 |
+| 6 | 9 de junio de 2026 |
+| 7 | 16 de junio de 2026 |
+| 8 | 23 de junio de 2026 |
+| 9 | 30 de junio de 2026 |
+| 10 | 7 de julio de 2026 |
+| 11 | 14 de julio de 2026 |
+| 12 | 21 de julio de 2026 |
+| 13 | 28 de julio de 2026 |
+| 14 | 4 de agosto de 2026 |
+| 15 | 11 de agosto de 2026 |
+
+**Importante:** usar iconos SVG en `.sesion-meta-chip`, NO emojis (📅 ⏱). Las sesiones 01–04 usan SVG. Las skeletons de sesiones posteriores tienen emojis — corregir al completar.
+
+---
+
+### 2. Video / placeholder de video
+
+Sesiones con video publicado usan `.video-capsule` con iframe de Descript:
+
+```html
+```{=html}
+&lt;div class="video-capsule"&gt;
+  &lt;iframe src="https://share.descript.com/embed/[ID]" width="640" height="360" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;</code></pre>
+<pre><code>
+Sesiones pendientes de video usan `.video-placeholder`:
+
+```html
+```{=html}
+&lt;div class="video-placeholder"&gt;
+  &lt;span class="vp-icon"&gt;▶&lt;/span&gt;
+  &lt;p class="vp-title"&gt;Video: [Título de la sesión]&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<pre><code>
+Siempre seguido de la nota complementaria:
+
+```html
+&lt;p class="capsule-complement-note"&gt;Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!&lt;/p&gt;</code></pre>
+<hr>
+</section>
+<section id="sección-para-reflexionar-automatizable-estructura-contenido-humano" class="level3">
+<h3 class="anchored" data-anchor-id="sección-para-reflexionar-automatizable-estructura-contenido-humano">3. Sección “Para reflexionar” ✅ AUTOMATIZABLE (estructura); contenido = humano</h3>
+<p>Aparece cerca del final de la sesión, antes de “La idea central” y “Recursos”.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>```{=html}</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-kicker"</span><span class="dt">&gt;</span>Reflexión · 5 min<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">h3</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-heading"</span><span class="dt">&gt;</span>Actividad de reflexión<span class="dt">&lt;/</span><span class="kw">h3</span><span class="dt">&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">ol</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-list"</span><span class="dt">&gt;</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-item"</span><span class="dt">&gt;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-num"</span><span class="ot"> aria-hidden</span><span class="op">=</span><span class="st">"true"</span><span class="dt">&gt;</span>01<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-q"</span><span class="dt">&gt;&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>[Pregunta en negrita]<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span> [Texto de apoyo que invita a la reflexión personal.]<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-item"</span><span class="dt">&gt;</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-num"</span><span class="ot"> aria-hidden</span><span class="op">=</span><span class="st">"true"</span><span class="dt">&gt;</span>02<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-q"</span><span class="dt">&gt;&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>[Pregunta en negrita]<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span> [Texto de apoyo.]<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-item"</span><span class="dt">&gt;</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-num"</span><span class="ot"> aria-hidden</span><span class="op">=</span><span class="st">"true"</span><span class="dt">&gt;</span>03<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-q"</span><span class="dt">&gt;&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>[Pregunta en negrita]<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span> [Texto de apoyo.]<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">li</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-item"</span><span class="dt">&gt;</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-num"</span><span class="ot"> aria-hidden</span><span class="op">=</span><span class="st">"true"</span><span class="dt">&gt;</span>04<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-q"</span><span class="dt">&gt;&lt;</span><span class="kw">strong</span><span class="dt">&gt;</span>[Pregunta en negrita]<span class="dt">&lt;/</span><span class="kw">strong</span><span class="dt">&gt;</span> [Texto de apoyo.]<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">ol</span><span class="dt">&gt;</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"reflexion-close"</span><span class="dt">&gt;</span>No hay respuestas correctas o incorrectas. El objetivo es que empieces a ver [X] con otros ojos.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>
+**Guía de contenido para el humano:** 3–4 preguntas. La primera suele ser de conexión personal ("¿en tu vida...?"), la segunda de analogía ("¿en qué se parece...?"), la tercera de aplicación ("¿cuándo usarías...?"), y la cuarta de síntesis ("Explícalo en dos oraciones"). El cierre `reflexion-close` siempre termina con la frase sobre "ver con otros ojos".
+
+---
+
+### 4. "La idea central de esta sesión" ✅ AUTOMATIZABLE (estructura); contenido = humano
+
+Va después de "Para reflexionar", antes de "Recursos".
+
+```html
+```{=html}
+&lt;div class="central-idea"&gt;
+  &lt;span class="central-idea-label"&gt;Idea central · Sesión [N]&lt;/span&gt;
+  &lt;p class="central-idea-text"&gt;[1–3 oraciones que resumen el concepto clave de la sesión. Usar &lt;strong&gt;negrita&lt;/strong&gt; para los términos más importantes.]&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+<pre><code>
+---
+
+### 5. "Recursos para explorar más sobre el tema" ✅ AUTOMATIZABLE (estructura); URLs/descripciones = humano
+
+Siempre con el encabezado Markdown `### Recursos para explorar más sobre el tema`, seguido del bloque HTML.
+
+```html
+```{=html}
+&lt;ul class="resource-list"&gt;
+  &lt;li class="resource-list-item"&gt;
+    &lt;a class="resource-list-link" href="[URL]" target="_blank" rel="noopener"&gt;[Nombre del recurso] &lt;svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/&gt;&lt;polyline points="15 3 21 3 21 9"/&gt;&lt;line x1="10" y1="14" x2="21" y2="3"/&gt;&lt;/svg&gt;&lt;/a&gt;
+    &lt;p class="resource-list-desc"&gt;[Una oración que explica qué es y por qué vale la pena.]&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;!-- repetir para 3–5 recursos --&gt;
+&lt;/ul&gt;</code></pre>
+<pre><code>
+El SVG del icono de enlace externo es siempre el mismo; copiar tal cual. No usar texto "(link externo)" ni otros reemplazos.
+
+---
+
+### 6. Navegación entre sesiones ✅ AUTOMATIZABLE
+
+Va al final de cada sesión, después de los recursos.
+
+```html
+```{=html}
+&lt;nav class="sesion-nav"&gt;
+  &lt;a href="sesion-[N-1].html" class="sesion-nav-btn prev"&gt;
+    &lt;span class="nav-label"&gt;← Anterior&lt;/span&gt;
+    &lt;span class="nav-title"&gt;S[N-1]: [Título de la sesión anterior]&lt;/span&gt;
+  &lt;/a&gt;
+  &lt;div class="sesion-nav-center"&gt;
+    &lt;div class="sesion-nav-dots"&gt;
+      &lt;!-- 15 spans: 'published' para sesiones ya publicadas antes de esta,
+           'active' para la sesión actual, sin clase para las futuras --&gt;
+      &lt;span class="sesion-nav-dot published" title="Sesión 1"&gt;&lt;/span&gt;
+      &lt;span class="sesion-nav-dot published" title="Sesión 2"&gt;&lt;/span&gt;
+      &lt;!-- ... --&gt;
+      &lt;span class="sesion-nav-dot active" title="Sesión [N]"&gt;&lt;/span&gt;
+      &lt;span class="sesion-nav-dot" title="Sesión [N+1]"&gt;&lt;/span&gt;
+      &lt;!-- ... hasta Sesión 15 --&gt;
+    &lt;/div&gt;
+    &lt;span class="sesion-nav-progress"&gt;Sesión [N] de 15&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;a href="sesion-[N+1].html" class="sesion-nav-btn next"&gt;
+    &lt;span class="nav-label"&gt;Siguiente →&lt;/span&gt;
+    &lt;span class="nav-title"&gt;S[N+1]: [Título de la sesión siguiente]&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+<pre><code>
+Si es la primera sesión, el botón `prev` lleva class `disabled` y `href="#"`. Si es la última, igual para `next`.
+
+---
+
+## Arquitectura de interactivos JS (demo-shell)
+
+Todo interactivo JS sigue esta estructura HTML en el `.qmd`:
+
+```html
+```{=html}
+&lt;div class="demo-wrap"&gt;
+  &lt;div class="demo-shell demo-tone-[TONO]" id="[id-unico]"&gt;
+
+    &lt;!-- Encabezado del interactivo --&gt;
+    &lt;div class="demo-shell-head"&gt;
+      &lt;div class="demo-shell-copy"&gt;
+        &lt;p class="demo-eyebrow"&gt;[Categoría del interactivo, ej. "Aprendizaje supervisado"]&lt;/p&gt;
+        &lt;h4 class="demo-title"&gt;[Título del reto o actividad]&lt;/h4&gt;
+        &lt;p class="demo-copy"&gt;[1–2 oraciones explicando qué hace el usuario.]&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Área de visualización --&gt;
+    &lt;div class="demo-stage"&gt;
+      &lt;div class="demo-stage-preview"&gt;
+        &lt;!-- Previsualización estática antes de que el usuario inicie (opcional).
+             Si no se usa, añadir clase 'demo-shell-live-only' al demo-shell. --&gt;
+      &lt;/div&gt;
+      &lt;div class="demo-stage-live"&gt;
+        &lt;!-- El JS inyecta el contenido interactivo aquí --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Controles --&gt;
+    &lt;div class="demo-footer"&gt;
+      &lt;p id="[id]-status" class="demo-status"&gt;&lt;/p&gt;
+      &lt;div class="demo-actions"&gt;
+        &lt;button id="[id]-start" class="demo-btn demo-btn-primary"&gt;Ver animación&lt;/button&gt;
+        &lt;button id="[id]-reset" class="btn-restart" disabled&gt;Reiniciar&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code>
+**Si el interactivo no tiene preview y va directo al estado activo**, usar `demo-shell-live-only`:
+```html
+&lt;div class="demo-shell demo-tone-[TONO] demo-shell-live-only" id="..."&gt;</code></pre>
+<p><strong>El JS correspondiente</strong> (<code>interactives/sesion-XX.js</code>) es un ES module. Estructura típica: - Espera <code>DOMContentLoaded</code> o usa <code>document.readyState</code> - Selecciona elementos por <code>id</code> - Maneja el botón de inicio y el de reiniciar - Usa <code>requestAnimationFrame</code> para animaciones</p>
+<hr>
+</section>
+</section>
+<section id="estándar-de-scatter-plots-svg" class="level2">
+<h2 class="anchored" data-anchor-id="estándar-de-scatter-plots-svg">Estándar de scatter plots SVG</h2>
+<p>Todos los scatter plots siguen el mismo estilo visual para consistencia cross-sesión.</p>
+<section id="contenedor-css-.scatter-frame" class="level3">
+<h3 class="anchored" data-anchor-id="contenedor-css-.scatter-frame">Contenedor CSS (<code>.scatter-frame</code>)</h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.scatter-frame</span> {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">px</span> <span class="dv">solid</span> <span class="fu">var(</span><span class="va">--c-border</span><span class="op">,</span> <span class="cn">#e2e8f0</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span><span class="ch">:</span> <span class="dv">16</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#ffffff</span><span class="op">;</span>           <span class="co">/* blanco sólido, NO gradientes grises */</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">1</span><span class="dt">rem</span> <span class="dv">1.25</span><span class="dt">rem</span><span class="op">;</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">360</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">1.4</span><span class="dt">rem</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">flex</span><span class="op">;</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">align-items</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">justify-content</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="kw">box-shadow</span><span class="ch">:</span> <span class="dv">0</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">8</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">15</span><span class="op">,</span> <span class="dv">23</span><span class="op">,</span> <span class="dv">42</span><span class="op">,</span> <span class="dv">0.05</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">overflow</span><span class="ch">:</span> <span class="dv">visible</span><span class="op">;</span>             <span class="co">/* crítico: evita que border-radius corte el hover */</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="fu">.scatter-frame</span> svg {</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">display</span><span class="ch">:</span> <span class="dv">block</span><span class="op">;</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">max-width</span><span class="ch">:</span> <span class="dv">100</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">height</span><span class="ch">:</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">overflow</span><span class="ch">:</span> <span class="dv">visible</span><span class="op">;</span>             <span class="co">/* permite que scale() del hover se renderice */</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="hover-de-puntos-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="hover-de-puntos-de-datos">Hover de puntos de datos</h3>
+<div class="sourceCode" id="cb17"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">.scatter-dot</span> {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="kw">transition</span><span class="ch">:</span> <span class="dv">transform 0.18</span><span class="dt">s</span> <span class="dv">ease</span><span class="op">,</span> <span class="dv">filter 0.18</span><span class="dt">s</span> <span class="dv">ease</span><span class="op">;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">transform-box</span><span class="ch">:</span> <span class="dv">fill-box</span><span class="op">;</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">transform-origin</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="kw">cursor</span><span class="ch">:</span> <span class="dv">pointer</span><span class="op">;</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">.scatter-dot</span><span class="in">:hover</span> {</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">transform</span><span class="ch">:</span> <span class="fu">scale(</span><span class="dv">1.4</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="kw">filter</span><span class="ch">:</span> <span class="fu">drop-shadow(</span><span class="dv">0</span> <span class="dv">0</span> <span class="dv">6</span><span class="dt">px</span> <span class="fu">rgba(</span><span class="dv">15</span><span class="op">,</span> <span class="dv">23</span><span class="op">,</span> <span class="dv">42</span><span class="op">,</span> <span class="dv">0.32</span><span class="fu">))</span><span class="op">;</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="anatomía-del-svg-interno" class="level3">
+<h3 class="anchored" data-anchor-id="anatomía-del-svg-interno">Anatomía del SVG interno</h3>
+<pre><code>viewBox: variable según contenido (ej. "0 0 260 200")
+
+Capas en orden (de abajo a arriba):
+1. Grid lines:        stroke="#e5eef7"  stroke-width="1"
+2. Ejes (x, y):       stroke="#cbd5e1"  stroke-width="2"
+3. Tick marks:        stroke="#cbd5e1"  stroke-width="1"  largo 3–4px
+4. Tick labels:       font-size="7"    fill="#94a3b8"
+5. Puntos de datos:   class="scatter-dot"  r=5–7
+6. Frontera/líneas:   stroke="#f59e0b"  (ámbar para fronteras de decisión)
+7. Leyenda:           posicionada en la parte baja, por debajo de los ejes</code></pre>
+<p><strong>Reglas específicas:</strong> - No usar texto de etiquetas dentro del área del gráfico (ej. “gato”, “no gato” sobre los puntos) — usar solo la leyenda externa - Si hay zonas coloreadas (clasificación), mantener <code>opacity ≤ 0.15</code> o eliminarlas del todo - Errores de clasificación: un único rectángulo punteado (<code>stroke-dasharray="3 2"</code>) que englobe todos los puntos erróneos, más una sola X roja en la esquina superior derecha del rectángulo</p>
+<hr>
+</section>
+</section>
+<section id="orden-estándar-de-secciones-en-un-.qmd" class="level2">
+<h2 class="anchored" data-anchor-id="orden-estándar-de-secciones-en-un-.qmd">Orden estándar de secciones en un .qmd</h2>
+<pre><code>1. YAML frontmatter
+2. Banner de sesión          [html]
+3. Link CSS + script JS      [html]
+4. ## Video                  [html: .video-capsule o .video-placeholder]
+5. ---
+6. Nota complementaria       [html: .capsule-complement-note]
+7. ---
+8. ### Introducción
+   [contenido: texto + interactivos + SVGs + CSS cards]
+9. ### [Sección temática 1]
+   [contenido]
+10. ### [Sección temática N]
+    [contenido]
+11. ---
+12. ### Para reflexionar      [html: estructura estándar]
+13. ---
+14. ### La idea central...    [html: .central-idea]
+15. ---
+16. ### Recursos para explorar [html: .resource-list]
+17. ---
+18. Navegación entre sesiones  [html: .sesion-nav]</code></pre>
+<hr>
+</section>
+<section id="qué-puede-hacer-un-agente-de-ia-en-un-solo-pase" class="level2">
+<h2 class="anchored" data-anchor-id="qué-puede-hacer-un-agente-de-ia-en-un-solo-pase">Qué puede hacer un agente de IA en un solo pase</h2>
+<p>Las siguientes secciones son <strong>completamente mecánicas</strong> y pueden generarse o corregirse automáticamente a partir del número de sesión, sin necesidad de input humano sobre el contenido:</p>
 <ol type="1">
-<li>Start from a familiar student-world example before defining the concept.</li>
-<li>Reuse the Session 1 shell structure so every page feels like the same course.</li>
-<li>Keep interactions explanatory, with “Qué estás viendo / Qué significa.”</li>
-<li>Do not over-card simple content that can stay plain.</li>
-<li>Standardize structure in batch, but review metaphors, examples, and demo logic manually.</li>
+<li><strong>Banner completo</strong> — bloque pill, clase de progreso, número de sesión, fecha del calendario, link al syllabus, iconos SVG de calendario y reloj</li>
+<li><strong>Estructura vacía de “Para reflexionar”</strong> — kicker, heading, lista con 4 ítems skeleton, closing text. El <em>contenido</em> de las preguntas lo escribe el humano.</li>
+<li><strong>Estructura vacía de “La idea central”</strong> — label con número de sesión. El <em>texto</em> lo escribe el humano.</li>
+<li><strong>Estructura de “Recursos”</strong> con 3–4 ítems skeleton con el SVG de enlace externo correcto. Las <em>URLs y descripciones</em> las pone el humano.</li>
+<li><strong>Navegación entre sesiones</strong> — todos los dots, URLs, títulos (conocidos del <code>_quarto.yml</code>), progreso</li>
+<li><strong>Corrección de emojis a SVG</strong> en <code>.sesion-meta-chip</code></li>
+<li><strong>Link de CSS y script JS</strong> con la ruta correcta según número de sesión</li>
 </ol>
+<p>Lo que <strong>requiere criterio humano</strong> para cada sesión: - El contenido y estructura pedagógica de las secciones temáticas - Las preguntas de reflexión (conectadas al tema específico) - El texto de la idea central - Los recursos (URLs relevantes y sus descripciones) - El diseño de cada interactivo JS (qué hace, cómo funciona, qué muestra) - Los diagramas SVG y CSS cards específicos del tema</p>
+<hr>
+</section>
+<section id="notas-de-consistencia-cross-página" class="level2">
+<h2 class="anchored" data-anchor-id="notas-de-consistencia-cross-página">Notas de consistencia cross-página</h2>
+<ul>
+<li><strong>No usar emojis como iconos UI</strong> — usar SVG (Heroicons/Lucide inline). Emojis solo en contenido textual cuando el tema lo amerite.</li>
+<li><strong>Fondo de cards:</strong> siempre <code>#ffffff</code> sólido o el gradient de <code>demo-shell</code>. Nunca <code>#f8fafc</code> dentro de un scatter plot.</li>
+<li><strong>Azul primario de interactivos:</strong> <code>#6495ED</code> (cornflower) para ranking/unsupervised; <code>#2780e3</code> (brand) para supervised; <code>#f59e0b</code> (amber) para RL.</li>
+<li><strong><code>overflow: visible</code></strong> es obligatorio en cualquier contenedor flex/grid con <code>border-radius</code> que contenga SVG con efectos hover <code>scale()</code>.</li>
+<li><strong>Todos los títulos de sesión</strong> en el navbar están definidos en <code>_quarto.yml</code> — no cambiarlos manualmente en los <code>.qmd</code>.</li>
+</ul>
 
 
 </section>

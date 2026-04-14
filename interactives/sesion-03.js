@@ -91,7 +91,7 @@ function initKMeansDemo() {
     { artist: "Adele",         x: 1.8, y: 7.1, cluster: 2 }
   ];
 
-  const colors = ["#2563eb", "#228b22", "#f59e0b"];  // A=blue, B=forestgreen, C=amber
+  const colors = ["#2780e3", "#228b22", "#f59e0b"];  // A=blue, B=forestgreen, C=amber
   const initialCenters = [
     { x: 5.5, y: 7.5, color: colors[0] },   // starts upper-center (far from all clusters)
     { x: 8.2, y: 6.5, color: colors[1] },   // starts right-center (between A and B)

@@ -222,7 +222,7 @@ function initAppTour() {
       logoBg: "linear-gradient(135deg, #ffffff 0%, #eef6ff 100%)",
       logoBorder: "rgba(66, 133, 244, 0.24)",
       fallbackBg: "linear-gradient(135deg, #dbeafe 0%, #dcfce7 100%)",
-      fallbackColor: "#2563eb",
+      fallbackColor: "#2780e3",
       fallback: "GM",
       kind: "Predicción",
       aiType: "Series temporales + optimización",
@@ -649,7 +649,7 @@ function initRegressionDemo() {
   }
 
   function regressionPlot() {
-    const lineColor = mode === "machine" || mode === "fitting" ? "#2563eb" : "#0ea5e9";
+    const lineColor = mode === "machine" || mode === "fitting" ? "#2780e3" : "#0ea5e9";
     const lineData = d3.range(0, 9.1, 0.25).map((x) => ({ x, y: currentSlope * x + currentIntercept }));
     const residuals = students.map((point) => ({
       x1: point.x,
@@ -977,7 +977,7 @@ function initKMeansDemo() {
     { artist: "Adele", x: 2.2, y: 2.8, cluster: 2 }
   ];
 
-  const colors = ["#2563eb", "#14b8a6", "#f59e0b"];
+  const colors = ["#2780e3", "#14b8a6", "#f59e0b"];
   const initialCenters = [
     { x: 6.9, y: 4.5, color: colors[0] },
     { x: 4.0, y: 7.2, color: colors[1] },

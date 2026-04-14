@@ -64,35 +64,35 @@ function initReadingDemo() {
       label: "Simplifica",
       prompt: "Explícame este texto como si tuviera 15 años",
       response:
-`La fotosíntesis es cómo las plantas fabrican su propio alimento usando la luz del sol.
+`La fotosíntesis es el proceso por el que las plantas producen su propio alimento usando la luz del sol.
 
-Piénsalo así: la planta es una fábrica que toma tres ingredientes — agua del suelo, CO₂ del aire y luz solar — y los convierte en azúcar (glucosa). Esa glucosa es su fuente de energía para crecer.
+Puedes imaginarlo así: la planta funciona como una fábrica que toma tres ingredientes — agua del suelo, CO₂ del aire y luz solar — y los transforma en azúcar (glucosa). Esa glucosa es la energía que necesita para crecer y mantenerse viva.
 
-Los animales no podemos hacer eso: necesitamos comer a otros organismos porque no tenemos la maquinaria química para usar la luz solar directamente.`,
+Los animales no podemos hacer esto: necesitamos alimentarnos de otros seres vivos porque no podemos convertir la luz solar en energía directamente.`,
     },
     {
       label: "Resume en puntos",
       prompt: "Dame los 3 puntos más importantes de este texto",
       response:
-`1. Solo organismos autótrofos (como las plantas) pueden hacer fotosíntesis. Los animales no.
+`1. La fotosíntesis es un proceso que realizan organismos autótrofos, como las plantas.
 
-2. Necesita 3 ingredientes: luz solar, agua y CO₂ del aire.
+2. Requiere tres elementos principales: luz solar, agua y dióxido de carbono (CO₂).
 
-3. El resultado es glucosa — el azúcar que la planta usa como energía para vivir y crecer.`,
+3. Como resultado, se produce glucosa, que la planta utiliza como fuente de energía para vivir y crecer.`,
     },
     {
       label: "Preguntas de comprensión",
-      prompt: "Haz 3 preguntas sobre este texto para que yo las responda",
+      prompt: "Genera 3 preguntas sobre este texto para que yo las responda",
       response:
-`Responde estas preguntas con tus propias palabras antes de revisar el texto:
+`Responde estas preguntas con tus propias palabras antes de volver al texto:
 
 1. ¿Por qué los animales no pueden realizar la fotosíntesis?
 
-2. ¿Cuáles son los tres ingredientes que necesita la planta para llevar a cabo este proceso?
+2. ¿Qué tres elementos necesita una planta para llevar a cabo este proceso?
 
-3. ¿Para qué usa la planta la glucosa que produce?
+3. ¿Para qué utiliza la planta la glucosa que produce?
 
-(Cuando termines, compara tus respuestas con el texto original.)`,
+Cuando termines, compara tus respuestas con el texto original.`,
     },
   ];
 
@@ -104,7 +104,7 @@ Los animales no podemos hacer eso: necesitamos comer a otros organismos porque n
     const area = $("rd-result-area");
     if (!text || !area) return;
     area.classList.remove("has-content");
-    text.textContent = "Elige un tipo de prompt arriba para ver cómo respondería la IA.";
+    text.textContent = "Elige un tipo de prompt para ver cómo respondería una IA generativa.";
     text.classList.add("is-empty");
     setHTML("rd-result-eyebrow", "");
   }
@@ -144,8 +144,8 @@ Los animales no podemos hacer eso: necesitamos comer a otros organismos porque n
 
     setInsights(
       "rd",
-      `Estás viendo cómo el mismo texto produce respuestas completamente distintas según el tipo de prompt que uses.`,
-      `No es magia: el modelo sigue instrucciones. Un prompt vago da una respuesta genérica; un prompt específico da exactamente lo que necesitas.`
+      `Estás viendo cómo el mismo texto puede generar respuestas distintas según el tipo de prompt que uses.`,
+      `No es magia: el modelo sigue instrucciones. Un prompt ambiguo produce una respuesta genérica; uno específico te da exactamente lo que necesitas.`
     );
     setText("rd-status", `Mostrando: "${p.label}". Prueba los otros tipos de prompt.`);
   }
@@ -160,7 +160,7 @@ Los animales no podemos hacer eso: necesitamos comer a otros organismos porque n
       <div class="rd-prompt-btns" id="rd-prompt-btns"></div>
       <div class="rd-result-area" id="rd-result-area">
         <span class="rd-result-eyebrow" id="rd-result-eyebrow"></span>
-        <p class="rd-result-text is-empty" id="rd-result-text">Elige un tipo de prompt arriba para ver cómo respondería la IA.</p>
+        <p class="rd-result-text is-empty" id="rd-result-text">Elige un tipo de prompt para ver cómo respondería una IA generativa.</p>
       </div>
     `;
 
@@ -187,8 +187,8 @@ Los animales no podemos hacer eso: necesitamos comer a otros organismos porque n
     setText("rd-status", "Elige un tipo de prompt para ver cómo responde el modelo.");
     setInsights(
       "rd",
-      "Un texto académico real y tres tipos de prompt distintos.",
-      "El tipo de prompt determina qué tipo de ayuda obtienes. Aprender a pedir es la mitad del trabajo."
+      "Un texto académico y tres tipos de prompt distintos.",
+      "El tipo de prompt determina qué tipo de ayuda recibes. Aprender a pedir ayuda es la mitad del trabajo."
     );
   });
 
@@ -220,7 +220,7 @@ function initPromptLibrary() {
           use: "Para simplificar párrafos académicos o científicos densos.",
           output:
 `Ejemplo de respuesta del modelo:
-"En palabras simples, el texto dice que [idea central en lenguaje sencillo]. Una forma de pensarlo es [analogía cotidiana]. Lo importante es que [punto clave] — sin todo el vocabulario técnico que lo complica."`,
+"En palabras simples, el texto dice que [idea principal en lenguaje claro]. Puedes imaginarlo como [analogía cotidiana]. Lo más importante es entender que [punto clave], sin necesidad de usar todo el vocabulario técnico."`,
         },
         {
           prompt: "¿Cuál es la idea principal de este párrafo? Dame solo un enunciado: [pega el párrafo]",
