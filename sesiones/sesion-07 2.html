@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sesión 7: IA como Tutor de Lenguaje: Lectura, Escritura e Idiomas – Intro a la IA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/logo.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles/sesion.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/logo.svg" alt="Intro a la IA" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Intro a la IA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">Programa</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sesiones" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Sesiones</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-sesiones">    
+        <li class="dropdown-header">— Bloque 1: Fundamentos + Ética —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-01.html">
+ <span class="dropdown-text">S1 · ¿Qué es la IA?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-02.html">
+ <span class="dropdown-text">S2 · Redes Neuronales Artificiales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-03.html">
+ <span class="dropdown-text">S3 · Algoritmos de IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-04.html">
+ <span class="dropdown-text">S4 · IA Generativa</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-05.html">
+ <span class="dropdown-text">S5 · Ética en la IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-06.html">
+ <span class="dropdown-text">S6 · EN VIVO: IA en México</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 2: Herramientas Prácticas —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-07.html">
+ <span class="dropdown-text">S7 · Tutor de Lenguaje</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-08.html">
+ <span class="dropdown-text">S8 · IA para Creatividad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-09.html">
+ <span class="dropdown-text">S9 · IA para Organización</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-10.html">
+ <span class="dropdown-text">S10 · Tutor Académico</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-11.html">
+ <span class="dropdown-text">S11 · EN VIVO: Política Pública</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 3: Creación, Aplicaciones y Futuro —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-12.html">
+ <span class="dropdown-text">S12 · Programación con IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-13.html">
+ <span class="dropdown-text">S13 · Robótica e IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-14.html">
+ <span class="dropdown-text">S14 · IA en Salud, Ciencia y Sociedad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-15.html">
+ <span class="dropdown-text">S15 · EN VIVO: Educación Global</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#video" id="toc-video" class="nav-link active" data-scroll-target="#video">Video</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sesión 7: IA como Tutor de Lenguaje: Lectura, Escritura e Idiomas</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 2 · Herramientas Prácticas</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-7"></div>
+    </div>
+    <span class="sesion-progress-label">7 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 16 de junio de 2026</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 40 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+<link rel="stylesheet" href="../styles/sessions/sesion-07.css">
+<script type="module" src="../interactives/sesion-07.js"></script>
+<section id="video" class="level2">
+<h2 class="anchored" data-anchor-id="video">Video</h2>
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video: IA como Tutor de Lenguaje</p>
+</div>
+<hr>
+<p class="capsule-complement-note">
+Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!
+</p>
+<section id="introducción" class="level3">
+<h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
+<p>Imagina que tienes que leer un artículo académico sobre política monetaria para mañana. El texto tiene veinte páginas, está lleno de términos que no reconoces y sientes que llevas media hora leyendo el mismo párrafo sin entender nada. Antes de la IA, tus opciones eran limitadas: buscar en Google palabra por palabra, pedirle a alguien que te explicara, o avanzar a ciegas.</p>
+<p>Hoy puedes copiar el párrafo que no entiendes, pegarlo en una herramienta conversacional como ChatGPT o Gemini y escribir: <em>“Explícame esto como si tuviera 15 años.”</em> En treinta segundos tienes una explicación con analogías cotidianas.</p>
+<p>Ese es el poder de la IA como tutor de lenguaje. Pero hay una distinción crítica que vale la pena dejar clara desde el principio:</p>
+<div class="tutor-vs-autor">
+  <div class="tva-col tva-col-bad">
+    <p class="tva-col-kicker">❌ Usar la IA como autor</p>
+    <h5 class="anchored">La IA produce el trabajo</h5>
+    <p class="tva-prompt">"Escríbeme un ensayo sobre el cambio climático de 500 palabras."</p>
+    <p class="tva-consequence">El texto resultante no es tuyo. No aprendiste nada. Si lo entregas como propio en un contexto académico, es una forma de deshonestidad intelectual, y también te priva del aprendizaje que tenías que hacer.</p>
+  </div>
+  <div class="tva-col tva-col-good">
+    <p class="tva-col-kicker">✅ Usar la IA como tutor</p>
+    <h5 class="anchored">La IA potencia tu trabajo</h5>
+    <p class="tva-prompt">"¿Este argumento tiene lógica? ¿Qué le falta? No lo reescribas."</p>
+    <p class="tva-consequence">Tu texto sigue siendo tuyo. La IA actúa como un editor o un asesor que señala qué mejorar sin hacerlo por ti. Sigues siendo el autor responsable del resultado final.</p>
+  </div>
+</div>
+<p>Esta distinción no es arbitraria: marca la diferencia entre construir una habilidad y depender de una herramienta para evitar el proceso. Hoy vamos a explorar cómo usar la IA de la segunda forma: como apoyo que fortalece tu comprensión, mejora tu escritura y te ayuda a avanzar en el aprendizaje de un idioma.</p>
+<p><strong>¿Cómo puedo usar la IA para aprender, sin que aprenda por mí?</strong></p>
+<hr>
+</section>
+<section id="lectura-asistida-con-ia" class="level3">
+<h3 class="anchored" data-anchor-id="lectura-asistida-con-ia">Lectura asistida con IA</h3>
+<p>Leer no es solo pasar los ojos por las palabras: es desentrañar ideas principales, distingquie entre argumentos y ejemplos, cuestionar al autor y tejer conexiones con lo que ya sabes. La IA puede acercarte al texto más rápido, pero la comprensión profunda, esa sigue siendo tuya.</p>
+<section id="tres-maneras-de-usar-ia-para-leer-mejor" class="level4">
+<h4 class="anchored" data-anchor-id="tres-maneras-de-usar-ia-para-leer-mejor">Tres maneras de usar IA para leer mejor</h4>
+<div class="reading-types-grid">
+  <div class="reading-type-card">
+    <div class="reading-type-header">
+      <span class="reading-type-emoji">🔬</span>
+      <h5 class="reading-type-title anchored">Simplificar vocabulario</h5>
+    </div>
+    <p class="reading-type-prompt">Explícame este texto como si tuviera 15 años: [pega el párrafo]</p>
+    <p class="reading-type-body">Útil para textos con términos técnicos o lenguaje denso. La IA puede reformularlos con ejemplos o analogías más cercanas. Después puedes volver al texto original con mayor claridad.</p>
+  </div>
+  <div class="reading-type-card">
+    <div class="reading-type-header">
+      <span class="reading-type-emoji">📌</span>
+      <h5 class="reading-type-title anchored">Extraer la idea central</h5>
+    </div>
+    <p class="reading-type-prompt">¿Cuál es la idea principal de este párrafo? Responde con un solo un enunciado: [pega el párrafo]</p>
+    <p class="reading-type-body">Útil al estudiar o hacer resúmenes. Te da una síntesis inicial que puedes contrastar con tu propia interpretación.</p>
+  </div>
+  <div class="reading-type-card">
+    <div class="reading-type-header">
+      <span class="reading-type-emoji">🧪</span>
+      <h5 class="reading-type-title anchored">Estudiar activamente</h5>
+    </div>
+    <p class="reading-type-prompt">Genera 3 preguntas de comprensión sobre este texto para que yo las responda: [pega el texto]</p>
+    <p class="reading-type-body">En lugar de releer de forma pasiva, te obliga a recuperar lo que entendiste. <a href="https://www.science.org/doi/10.1126/science.1152408">Un estudio en Science</a> encontró que intentar recordar activamente fortalece el aprendizaje más que simplemente volver a leer.</p>
+  </div>
+</div>
+<p>Fíjate en el patrón: tú eliges el texto, defines la tarea y estableces el límite de acción. La IA no sustituye la lectura; funciona como una herramienta para abordarla mejor.</p>
+<p>Este uso se apoya en dos ideas bien estudiadas. Por un lado, la <strong><a href="https://www.science.org/doi/10.1126/science.1152408">práctica de recuperación</a></strong> mejora la retención a largo plazo. Por otro, la <strong><a href="https://doi.org/10.1207/s15516709cog1302_1">autoexplicación</a></strong> ayuda a construir comprensión más profunda. Por eso no basta con pedirle al modelo que simplifique un texto: también conviene usarlo para generar preguntas o para obligarte a explicar, con tus propias palabras, lo que entendiste.</p>
+</section>
+<section id="tres-formas-de-preguntar-tres-resultados-distintos" class="level4">
+<h4 class="anchored" data-anchor-id="tres-formas-de-preguntar-tres-resultados-distintos"><strong>Tres formas de preguntar, tres resultados distintos</strong></h4>
+<p>El siguiente ejercicio presenta un mismo texto académico y tres tipos de prompt distintos. Ejecuta el demo y compara las respuestas: verás cómo el resultado cambia según la forma en que se formula la pregunta.</p>
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-lang" id="rd-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Demo interactivo</p>
+        <h4 class="demo-title anchored">El mismo texto, tres tipos de prompt distintos</h4>
+        <p class="demo-copy">Un texto sobre fotosíntesis: denso, académico. Elige un tipo de prompt y observa cómo cambia la respuesta del modelo. El texto no cambia. Solo cambia cómo formulas la pregunta.</p>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div class="rd-preview-chips">
+              <span class="rd-preview-chip">Simplifica</span>
+              <span class="rd-preview-chip">Resume en puntos</span>
+              <span class="rd-preview-chip">Preguntas de comprensión</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="demo-stage-live">
+        <!-- Populated by sesion-07.js initReadingDemo() -->
+      </div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5 class="anchored">Qué estás viendo</h5>
+        <p id="rd-seeing">Inicia el demo para explorar los distintos tipos de prompt.</p>
+      </div>
+      <div class="demo-insight">
+        <h5 class="anchored">Qué significa</h5>
+        <p id="rd-meaning">La forma en que planteas el prompt influye directamente en la ayuda que recibes. Por eso, aprender a pedir ayuda es la mitad del trabajo.</p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <div class="demo-actions">
+        <button id="rd-start" class="demo-btn demo-btn-primary">Iniciar demo</button>
+        <button id="rd-reset" class="btn-restart" disabled="">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<blockquote class="blockquote">
+<p>En lectura, la IA te ayuda a acercarte a ideas que aún no dominas. En escritura, el reto es distinto: ya no se trata de comprender un texto ajeno, sino de mejorar uno propio sin delegar el pensamiento en la IA.</p>
+</blockquote>
+<hr>
+</section>
+</section>
+<section id="escritura-sin-delegar-la-autoría" class="level3">
+<h3 class="anchored" data-anchor-id="escritura-sin-delegar-la-autoría">Escritura sin delegar la autoría</h3>
+<p>Escribir bien no es solo cuestión de estilo, sino de claridad mental. Cada vez que redactas, tomas decisiones: qué ideas incluir, cómo organizarlas y qué tan sólido es tu argumento. Ese proceso es parte del aprendizaje.</p>
+<p>Si la IA escribe por ti, esas decisiones desaparecen. Por eso, en escritura, su mejor uso no es como autora, sino como <strong>editora</strong> que te ayuda a mejorar lo que ya escribiste. La diferencia está en el tipo de ayuda que decides pedir:</p>
+<div class="writing-support-grid">
+  <div class="writing-support-card">
+    <div class="ws-header">
+      <span class="ws-emoji">🔎</span>
+      <h5 class="ws-title anchored">Retroalimentación sin reescritura</h5>
+    </div>
+    <p class="ws-prompt">Revisa este párrafo y señala qué debería mejorar, sin reescribirlo: [pega tu párrafo]</p>
+    <p class="ws-desc">El modelo identifica problemas específicos: transiciones débiles, oraciones demasiado largas o cierres poco claros. Tú decides qué cambiar y cómo. La voz sigue siendo la tuya.</p>
+  </div>
+  <div class="writing-support-card">
+    <div class="ws-header">
+      <span class="ws-emoji">🧱</span>
+      <h5 class="ws-title anchored">Revisión lógica del argumento</h5>
+    </div>
+    <p class="ws-prompt">¿El argumento de este texto es sólido? ¿Qué le falta? No lo reescribas: [pega tu texto]</p>
+    <p class="ws-desc">Útil antes de entregar un ensayo. El modelo puede detectar afirmaciones sin evidencia, saltos lógicos o conclusiones que no se derivan claramente de las premisas.</p>
+  </div>
+  <div class="writing-support-card">
+    <div class="ws-header">
+      <span class="ws-emoji">✏️</span>
+      <h5 class="ws-title anchored">Lista de errores sin corrección</h5>
+    </div>
+    <p class="ws-prompt">Haz una lista de los errores de gramática o puntuación en este texto. Solo la lista, sin corregirlos: [pega tu texto]</p>
+    <p class="ws-desc">Tú revisas la lista y corriges los errores por tu cuenta. Así identificas patrones en tu escritura en lugar de dejar que la IA los resuelva automáticamente.</p>
+  </div>
+</div>
+<p>Hay una pregunta que muchos estudiantes se hacen: <em>¿cuándo deja de ser apoyo y empieza a ser trampa?</em> Una forma útil de pensarlo es esta: si la IA señala problemas, sugiere opciones o te da retroalimentación, sigue siendo una herramienta de apoyo. En cambio, si redacta las ideas centrales, organiza el argumento por ti o produce el texto que vas a entregar, deja de ser tutor y pasa a ocupar el lugar del autor.</p>
+<p>Esta distinción también coincide con lo que la ciencia dice sobre la <a href="https://doi.org/10.3102/003465430298487">retroalimentación efectiva</a>: es más útil cuando orienta qué mejorar que cuando sustituye el trabajo intelectual del estudiante.</p>
+<p><strong>Prueba de autoría</strong></p>
+<p>Una forma práctica de comprobar si el trabajo es realmente tuyo es leerlo en voz alta y preguntarte si podrías defenderlo en una conversación. Si no puedes explicar el argumento con tus propias palabras, es probable que no lo hayas comprendido del todo, y también que la IA haya hecho más trabajo del que debería.</p>
+<hr>
+<blockquote class="blockquote">
+<p>Si en escritura la IA funciona como editor, en el aprendizaje de idiomas se vuelve sobre todo un compañero de práctica: responde, corrige y te permite intentar de nuevo sin tener que esperar a la siguiente clase.</p>
+</blockquote>
+<hr>
+</section>
+<section id="práctica-de-idiomas" class="level3">
+<h3 class="anchored" data-anchor-id="práctica-de-idiomas">Práctica de Idiomas</h3>
+<p>Aprender un idioma requiere tres cosas: práctica constante, retroalimentación inmediata y un espacio donde puedas equivocarte sin sentirte juzgado/a. La IA cumple bien con las tres: está disponible en cualquier momento, corrige al instante y te permite repetir sin presión, incluso si cometes el mismo error varias veces.</p>
+<section id="tres-usos-concretos-para-practicar-idiomas" class="level4">
+<h4 class="anchored" data-anchor-id="tres-usos-concretos-para-practicar-idiomas">Tres usos concretos para practicar idiomas</h4>
+<div class="idiom-grid">
+  <div class="idiom-card">
+    <p class="idiom-kicker">Para conversación</p>
+    <code class="idiom-prompt">Practiquemos inglés. Yo escribo, tú me corriges si me equivoco y me explicas por qué.</code>
+    <p class="idiom-desc">El modelo responde en el idioma que practicas, señala errores específicos y explica la regla. Puedes practicar unos minutos al día con cualquier tema.</p>
+  </div>
+  <div class="idiom-card">
+    <p class="idiom-kicker">Para vocabulario coloquial</p>
+    <code class="idiom-prompt">¿Cómo se dice "no tengo ni idea" en inglés informal? Dame un ejemplo en contexto.</code>
+    <p class="idiom-desc">Los diccionarios suelen dar traducciones literales. La IA puede ofrecer expresiones más naturales, con ejemplos en contexto y notas sobre el uso y el registro.</p>
+  </div>
+  <div class="idiom-card">
+    <p class="idiom-kicker">Para preparar un examen oral</p>
+    <code class="idiom-prompt">Hazme 5 preguntas de práctica sobre [tema] en inglés para que yo las responda.</code>
+    <p class="idiom-desc">En lugar de solo repasar apuntes, practicas respondiendo en el idioma que te interesa aprender. El modelo puede revisar tus respuestas y sugerir mejoras.</p>
+  </div>
+</div>
+<p>Dos advertencias importantes sobre el uso de IA en el aprendizaje de idiomas. <strong>Primero</strong>, los modelos pueden cometer errores sutiles, especialmente en expresiones idiomáticas o en el uso del registro formal e informal. Cuando el contexto importe, conviene contrastar con diccionarios, corpus, profesores, materiales oficiales o hablantes competentes. <strong>Segundo</strong>, practicar con IA no sustituye la interacción con personas reales. El objetivo es ampliar tu tiempo de práctica, no reemplazarla.</p>
+<p>El uso de prompts de corrección y explicación no es solo intuición. La investigación científica sobre la <strong><a href="https://www.cambridge.org/core/journals/studies-in-second-language-acquisition/article/oral-feedback-in-classroom-sla/4999EE1C8379B2BF026B148EAF373CA1">retroalimentación correctiva</a></strong> en el aprendizaje de lenguas nos dice que tiene efectos positivos y duraderos, especialmente cuando te obliga a identificar y corregir tus propios errores.</p>
+<hr>
+<!-- ### Qué herramienta conviene para qué tarea
+
+No hace falta memorizar una lista larga de apps. Lo importante es distinguir **qué tipo de ayuda necesitas**: conversar, estudiar con fuentes, corregir un texto o practicar un idioma.
+
+```{=html}
+<div class="tools7-grid">
+  <div class="tool7-card">
+    <div class="tool7-header">
+      <span class="tool7-logo">💬</span>
+      <div>
+        <p class="tool7-name">Tutor conversacional general</p>
+        <p class="tool7-maker">ChatGPT · Gemini · Claude</p>
+      </div>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Sirve para:</span>
+      <span class="tool7-value">hacer preguntas, pedir explicaciones, practicar conversación, recibir retroalimentación inicial</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Fortaleza:</span>
+      <span class="tool7-value">flexibilidad: un mismo chat puede servir para lectura, escritura o idiomas</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Ojo:</span>
+      <span class="tool7-value">son buenos para conversar, pero no siempre citan fuentes ni siguen reglas normativas del español</span>
+    </div>
+  </div>
+
+  <div class="tool7-card">
+    <div class="tool7-header">
+      <span class="tool7-logo">📚</span>
+      <div>
+        <p class="tool7-name">Lectura con fuentes</p>
+        <p class="tool7-maker">NotebookLM · Perplexity</p>
+      </div>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Sirve para:</span>
+      <span class="tool7-value">estudiar documentos largos, hacer preguntas sobre tus fuentes, generar guías de estudio y respuestas con citas</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Fortaleza:</span>
+      <span class="tool7-value">reduce el riesgo de inventar porque trabaja sobre materiales concretos y te deja verificar de dónde salió la respuesta</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Ojo:</span>
+      <span class="tool7-value">ideal para estudiar textos y apuntes, menos útil si lo que quieres es conversación libre o corrección fina de estilo</span>
+    </div>
+  </div>
+
+  <div class="tool7-card">
+    <div class="tool7-header">
+      <span class="tool7-logo">✍️</span>
+      <div>
+        <p class="tool7-name">Escritura en español</p>
+        <p class="tool7-maker">LanguageTool · DeepL Write · RAE · FundéuRAE</p>
+      </div>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Sirve para:</span>
+      <span class="tool7-value">corregir ortografía y puntuación, detectar errores de estilo y resolver dudas normativas del español</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Fortaleza:</span>
+      <span class="tool7-value">es la combinación más útil si escribes trabajos en español y quieres apoyo sin depender de una sola IA generalista</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Ojo:</span>
+      <span class="tool7-value">una IA puede sugerir mejor redacción; RAE y Fundéu ayudan más cuando la duda es de uso correcto</span>
+    </div>
+  </div>
+
+  <div class="tool7-card">
+    <div class="tool7-header">
+      <span class="tool7-logo">🌐</span>
+      <div>
+        <p class="tool7-name">Idiomas y traducción en contexto</p>
+        <p class="tool7-maker">Cambridge Write & Improve · WordReference · Reverso Context · DeepL</p>
+      </div>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Sirve para:</span>
+      <span class="tool7-value">practicar escritura en otro idioma, revisar gramática, consultar expresiones naturales y comparar traducciones con contexto</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Fortaleza:</span>
+      <span class="tool7-value">combina práctica, corrección y ejemplos reales de uso, en lugar de depender de una sola respuesta generada</span>
+    </div>
+    <div class="tool7-row">
+      <span class="tool7-label">Ojo:</span>
+      <span class="tool7-value">una traducción correcta no garantiza que sonarás natural al hablar; eso solo mejora con práctica sostenida</span>
+    </div>
+  </div>
+</div>
+```
+
+La elección depende de tres preguntas: ¿necesitas conversación o fuentes?, ¿estás trabajando en español o en otro idioma?, y ¿tu problema es de comprensión, corrección o vocabulario? Esa lógica te ayuda más que memorizar nombres de apps.
+
+```{=html}
+<div class="callout-card">
+  <h5 class="callout-card-title">Regla práctica para elegir</h5>
+  <p>Si quieres conversar o pedir explicaciones, usa un tutor conversacional. Si quieres estudiar un PDF o un conjunto de apuntes, usa una herramienta basada en fuentes. Si tienes una duda de corrección en español, combina IA con recursos normativos como RAE o Fundéu. Si estás practicando otro idioma, combina corrección con ejemplos reales de uso.</p>
+</div>
+``` -->
+</section>
+</section>
+<section id="uso-ético-de-la-ia-para" class="level3">
+<h3 class="anchored" data-anchor-id="uso-ético-de-la-ia-para">Uso ético de la IA para</h3>
+<p>Hasta aquí hemos visto cómo pedir ayuda, es decir, qué tipo de prompts me pueden apoyar, y cómo mantenerte en control de la lectura, práctica, y redacción. Falta una última pregunta, y es la más importante: ¿este uso me ayuda a aprender o está reemplazando el aprendizaje que debería ocurrir?</p>
+<div class="ethics7-cards">
+  <div class="ethics7-card ethics7-card-verde">
+    <span class="ethics7-card-kicker">✅ Permitido</span>
+    <p class="ethics7-card-title">Adelante</p>
+    <ul>
+      <li>Pedirle que explique un concepto difícil con otras palabras</li>
+      <li>Recibir retroalimentación sobre la estructura de tu ensayo</li>
+      <li>Practicar conversación en otro idioma como si fuera un interlocutor</li>
+      <li>Generar preguntas de comprensión para estudiar activamente</li>
+      <li>Detectar errores de gramática para que tú los corrijas</li>
+      <li>Verificar si tu argumento es claro y tiene lógica antes de entregarlo</li>
+    </ul>
+  </div>
+  <div class="ethics7-card ethics7-card-amarillo">
+    <span class="ethics7-card-kicker">⚠️ Reflexiona</span>
+    <p class="ethics7-card-title">Depende del contexto</p>
+    <ul>
+      <li>Pedirle que sugiera una estructura para un texto que tú desarrollarás</li>
+      <li>Pedirle opciones de redacción para una idea que ya es tuya</li>
+      <li>Usarla para reorganizar párrafos que ya redactaste</li>
+      <li>Pedirle ejemplos para ilustrar un argumento propio</li>
+    </ul>
+  </div>
+  <div class="ethics7-card ethics7-card-rojo">
+    <span class="ethics7-card-kicker">🚫 No lo hagas</span>
+    <p class="ethics7-card-title">Fuera de límites</p>
+    <ul>
+      <li>Copiar la respuesta del modelo y presentarla como trabajo propio</li>
+      <li>Pedirle que escriba tu ensayo y entregarlo como si fuera tuyo</li>
+      <li>Usarla para responder por ti en un examen o evaluación</li>
+      <li>Pedirle respuestas a preguntas de comprensión sin intentar responderlas tú primero</li>
+      <li>Pedirle que construya el argumento y presentar esas ideas como propias</li>
+    </ul>
+  </div>
+</div>
+<p>Si no tienes claro si cierto uso de la IA está permitido en un examen, una tarea o un proyecto, lo más responsable es consultarlo antes. Las reglas cambian mucho según la institución, el profesor y el tipo de evaluación.</p>
+<hr>
+</section>
+<section id="la-idea-central-de-esta-sesión" class="level3">
+<h3 class="anchored" data-anchor-id="la-idea-central-de-esta-sesión">La idea central de esta sesión</h3>
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 7</span>
+  <p class="central-idea-text">La IA puede convertirse en uno de los mejores apoyos para desarrollar habilidades de lenguaje, o en un obstáculo que te impida desarrollarlas por completo. La diferencia no está en la herramienta, sino en cómo la usas y con qué propósito.</p>
+</div>
+<hr>
+</section>
+<section id="recursos-para-explorar-más-sobre-el-tema" class="level3">
+<h3 class="anchored" data-anchor-id="recursos-para-explorar-más-sobre-el-tema">Recursos para explorar más sobre el tema</h3>
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://notebooklm.google.com/" target="_blank" rel="noopener">NotebookLM <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Para estudiar PDFs, apuntes y fuentes subidas por ti con preguntas y citas.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Tutor conversacional general para explicación, retroalimentación y práctica.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Alternativa generalista, útil si ya trabajas en el ecosistema de Google.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Búsqueda y síntesis con fuentes citadas; reduce el riesgo de respuestas inventadas.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://languagetool.org/es" target="_blank" rel="noopener">LanguageTool <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Corrección y revisión de estilo para textos en español.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.deepl.com/write" target="_blank" rel="noopener">DeepL Write <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Mejora de redacción en español e inglés con sugerencias de reescritura.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.rae.es/dpd/" target="_blank" rel="noopener">RAE: Diccionario panhispánico de dudas <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Referencia normativa para dudas de uso del español; autoridad frente a cualquier IA.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.fundeu.es/dudas/" target="_blank" rel="noopener">FundéuRAE <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Recomendaciones claras y prácticas sobre uso actual del español.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.wordreference.com/" target="_blank" rel="noopener">WordReference <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Diccionario bilingüe con foros de uso y matices de registro.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://context.reverso.net/translation/" target="_blank" rel="noopener">Reverso Context <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Ejemplos de traducción en contexto real extraídos de textos publicados.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.cambridgeenglish.org/es/learning-english/free-resources/write-and-improve/" target="_blank" rel="noopener">Cambridge Write &amp; Improve <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Práctica guiada de escritura en inglés con retroalimentación iterativa.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://recursoseducativos.unam.mx/handle/123456789/27425" target="_blank" rel="noopener">UNAM: Andamiajes para la escritura académica <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Recurso gratuito de la UNAM para escribir trabajos académicos en español con estructura.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://recursoseducativos.unam.mx/handle/123456789/23428" target="_blank" rel="noopener">UNAM: ¿Cómo citar bibliografía? <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Guía breve de la UNAM para referencias y citas en trabajos académicos.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.elementsofai.com/es" target="_blank" rel="noopener">Elements of AI <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Curso gratuito en español sobre IA con contexto de uso ético y conceptos clave.</p>
+  </li>
+</ul>
+<hr>
+<nav class="sesion-nav">
+  <a href="sesion-06.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S6: EN VIVO: IA en México</span>
+  </a>
+  <div class="sesion-nav-center">
+    <div class="sesion-nav-dots">
+      <span class="sesion-nav-dot published" title="Sesión 1"></span>
+      <span class="sesion-nav-dot published" title="Sesión 2"></span>
+      <span class="sesion-nav-dot published" title="Sesión 3"></span>
+      <span class="sesion-nav-dot published" title="Sesión 4"></span>
+      <span class="sesion-nav-dot published" title="Sesión 5"></span>
+      <span class="sesion-nav-dot published" title="Sesión 6"></span>
+      <span class="sesion-nav-dot active" title="Sesión 7"></span>
+      <span class="sesion-nav-dot" title="Sesión 8"></span>
+      <span class="sesion-nav-dot" title="Sesión 9"></span>
+      <span class="sesion-nav-dot" title="Sesión 10"></span>
+      <span class="sesion-nav-dot" title="Sesión 11"></span>
+      <span class="sesion-nav-dot" title="Sesión 12"></span>
+      <span class="sesion-nav-dot" title="Sesión 13"></span>
+      <span class="sesion-nav-dot" title="Sesión 14"></span>
+      <span class="sesion-nav-dot" title="Sesión 15"></span>
+    </div>
+    <span class="sesion-nav-progress">Sesión 7 de 15</span>
+  </div>
+  <a href="sesion-08.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S8: IA para Creatividad</span>
+  </a>
+</nav>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.curso-ia-slp\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Intro a la IA · San Luis Potosí · 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/michelleg06">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

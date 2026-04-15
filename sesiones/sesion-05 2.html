@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sesión 5: Ética y Riesgos con la IA – Intro a la IA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/logo.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles/sesion.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/logo.svg" alt="Intro a la IA" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Intro a la IA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">Programa</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sesiones" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Sesiones</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-sesiones">    
+        <li class="dropdown-header">— Bloque 1: Fundamentos + Ética —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-01.html">
+ <span class="dropdown-text">S1 · ¿Qué es la IA?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-02.html">
+ <span class="dropdown-text">S2 · Redes Neuronales Artificiales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-03.html">
+ <span class="dropdown-text">S3 · Algoritmos de IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-04.html">
+ <span class="dropdown-text">S4 · IA Generativa</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-05.html">
+ <span class="dropdown-text">S5 · Ética en la IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-06.html">
+ <span class="dropdown-text">S6 · EN VIVO: IA en México</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 2: Herramientas Prácticas —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-07.html">
+ <span class="dropdown-text">S7 · Tutor de Lenguaje</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-08.html">
+ <span class="dropdown-text">S8 · IA para Creatividad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-09.html">
+ <span class="dropdown-text">S9 · IA para Organización</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-10.html">
+ <span class="dropdown-text">S10 · Tutor Académico</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-11.html">
+ <span class="dropdown-text">S11 · EN VIVO: Política Pública</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 3: Creación, Aplicaciones y Futuro —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-12.html">
+ <span class="dropdown-text">S12 · Programación con IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-13.html">
+ <span class="dropdown-text">S13 · Robótica e IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-14.html">
+ <span class="dropdown-text">S14 · IA en Salud, Ciencia y Sociedad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-15.html">
+ <span class="dropdown-text">S15 · EN VIVO: Educación Global</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#video" id="toc-video" class="nav-link active" data-scroll-target="#video">Video</a></li>
+  <li><a href="#actividad-de-debate" id="toc-actividad-de-debate" class="nav-link" data-scroll-target="#actividad-de-debate">Actividad de debate</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sesión 5: Ética y Riesgos con la IA</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 1 · Fundamentos + Ética</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-5"></div>
+    </div>
+    <span class="sesion-progress-label">5 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 2 de junio de 2026</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 45 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+<link rel="stylesheet" href="../styles/sessions/sesion-05.css">
+<script type="module" src="../interactives/sesion-05.js"></script>
+<section id="video" class="level2">
+<h2 class="anchored" data-anchor-id="video">Video</h2>
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video: Ética en la IA</p>
+</div>
+<hr>
+<p class="capsule-complement-note">
+Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!
+</p>
+<section id="introducción" class="level3">
+<h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
+<p>Empezaremos esta sesión con un evento histórico. Era 2014. Amazon, una de las empresas más grandes del mundo, decidió desarrollar una herramienta que parecía prometedora: un sistema de IA que leyera currículums automáticamente y les diera una puntuación del 1 al 5. Sin reclutador humano. Sin tiempo perdido leyendo cientos de currículums. Solo el algoritmo.</p>
+<p>Cuatro años después, Amazon cerró el proyecto silenciosamente.</p>
+<p><strong>¿El motivo?</strong> El sistema había aprendido a discriminar contra las mujeres. No porque alguien lo programara así. Sino porque fue entrenado con diez años de currículums de empleados ya contratados en Amazon… y la mayoría eran hombres. La máquina aprendió que <em>“hombre = buena contratación”</em> y empezó a penalizar automáticamente cualquier currículum que contuviera palabras como <em>“equipo femenino de robótica”</em> o el nombre de una universidad exclusivamente para mujeres.</p>
+<p>El modelo no entendía el significado de esas palabras. Solo aprendió que históricamente esos patrones aparecían menos en los currículums de quienes fueron contratados.</p>
+<p>En la sesión 4 vimos que los modelos generativos aprenden patrones estadísticos del texto y pueden reproducir sesgos de sus datos. Hoy ampliamos esa idea: no solo los LLMs, sino muchos sistemas de IA, heredan la estructura y las desigualdades de los datos con los que fueron construidos.</p>
+<p>En esta sesión nos enfocaremos en tres fuentes de riesgo:</p>
+<ol type="1">
+<li><strong>Decisiones injustas:</strong> cuando un sistema clasifica o selecciona personas de forma desigual.</li>
+<li><strong>Vigilancia y datos:</strong> cuando la IA se usa para observar, perfilar o rastrear a la población.</li>
+<li><strong>Contenido sintético engañoso:</strong> cuando la IA fabrica imágenes, audio o video suficientemente convincentes para manipular al público.</li>
+</ol>
+<p>Al final volveremos a una pregunta práctica: cómo decidir si un sistema de IA debería usarse, bajo qué condiciones y quién debe responder si causa daño.</p>
+<div class="cv-scanner-demo" id="cv-scanner">
+  <div class="cvs-header-bar">
+    <span class="cvs-chip">Preselección automática de CVs</span>
+  </div>
+
+  <div class="cvs-deck" aria-label="Carrusel de currículums casi idénticos">
+
+    <div class="cvs-card" data-name="Carlos Ramírez" data-gender="male">
+      <div class="cvs-resume-layout">
+        <div class="cvs-sidebar">
+          <div class="cvs-photo">🧑</div>
+          <div class="cvs-side-section">
+            <h6 class="anchored">Contacto</h6>
+            <p>444 321 8890</p>
+            <p>c.ramirez@mail.mx</p>
+            <p>San Luis Potosí</p>
+          </div>
+          <div class="cvs-side-section">
+            <h6 class="anchored">Idiomas</h6>
+            <div class="cvs-lang-item"><span class="cvs-lang-name">Español</span><div class="cvs-bar-track"><div class="cvs-bar-fill" style="width:100%"></div></div></div>
+            <div class="cvs-lang-item"><span class="cvs-lang-name">Inglés</span><div class="cvs-bar-track"><div class="cvs-bar-fill" style="width:66%"></div></div></div>
+          </div>
+          <div class="cvs-side-section">
+            <h6 class="anchored">Habilidades</h6>
+            <p>Python</p><p>SQL</p><p>Power BI</p><p>Tableau</p>
+          </div>
+        </div>
+        <div class="cvs-main">
+          <div class="cvs-name-block">
+            <div class="cvs-cv-name">Carlos Ramírez</div>
+            <div class="cvs-cv-headline">Analista de Datos Jr.</div>
+          </div>
+          <hr class="cvs-divider">
+          <div class="cvs-main-section">
+            <h6 class="anchored">Perfil</h6>
+            <p>Egresado de Ingeniería en Sistemas con experiencia en análisis de datos, visualización y automatización de reportes.</p>
+          </div>
+          <div class="cvs-main-section">
+            <h6 class="anchored">Experiencia</h6>
+            <div class="cvs-exp-entry">
+              <p class="cvs-exp-role">Analista de Datos — Prácticas Profesionales</p>
+              <p class="cvs-exp-date">Ene–Jun 2023 · TechSLP, S.A.</p>
+              <p>Dashboards y automatización de reportes con Python y Power BI.</p>
+            </div>
+            <div class="cvs-exp-entry">
+              <p class="cvs-exp-role">Equipo universitario de robótica</p>
+              <p class="cvs-exp-date">2022 · UASLP · 2.° lugar nacional</p>
+              <p>Coordinación técnica y presentación de prototipo ante jurado.</p>
+            </div>
+          </div>
+          <div class="cvs-main-section">
+            <h6 class="anchored">Educación</h6>
+            <p class="cvs-exp-role">Ing. en Sistemas Computacionales · UASLP</p>
+            <p class="cvs-exp-date">2019–2023 · Promedio 9.2 / 10</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cvs-card" data-name="Valeria Ramírez" data-gender="female">
+      <div class="cvs-resume-layout">
+        <div class="cvs-sidebar">
+          <div class="cvs-photo">👩</div>
+          <div class="cvs-side-section">
+            <h6 class="anchored">Contacto</h6>
+            <p>444 321 8890</p>
+            <p>v.ramirez@mail.mx</p>
+            <p>San Luis Potosí</p>
+          </div>
+          <div class="cvs-side-section">
+            <h6 class="anchored">Idiomas</h6>
+            <div class="cvs-lang-item"><span class="cvs-lang-name">Español</span><div class="cvs-bar-track"><div class="cvs-bar-fill" style="width:100%"></div></div></div>
+            <div class="cvs-lang-item"><span class="cvs-lang-name">Inglés</span><div class="cvs-bar-track"><div class="cvs-bar-fill" style="width:66%"></div></div></div>
+          </div>
+          <div class="cvs-side-section">
+            <h6 class="anchored">Habilidades</h6>
+            <p>Python</p><p>SQL</p><p>Power BI</p><p>Tableau</p>
+          </div>
+        </div>
+        <div class="cvs-main">
+          <div class="cvs-name-block">
+            <div class="cvs-cv-name">Valeria Ramírez</div>
+            <div class="cvs-cv-headline">Analista de Datos Jr.</div>
+          </div>
+          <hr class="cvs-divider">
+          <div class="cvs-main-section">
+            <h6 class="anchored">Perfil</h6>
+            <p>Egresada de Ingeniería en Sistemas con experiencia en análisis de datos, visualización y automatización de reportes.</p>
+          </div>
+          <div class="cvs-main-section">
+            <h6 class="anchored">Experiencia</h6>
+            <div class="cvs-exp-entry">
+              <p class="cvs-exp-role">Analista de Datos — Prácticas Profesionales</p>
+              <p class="cvs-exp-date">Ene–Jun 2023 · TechSLP, S.A.</p>
+              <p>Dashboards y automatización de reportes con Python y Power BI.</p>
+            </div>
+            <div class="cvs-exp-entry">
+              <p class="cvs-exp-role">Equipo femenino de robótica</p>
+              <p class="cvs-exp-date">2022 · UASLP · 2.° lugar nacional</p>
+              <p>Coordinación técnica y presentación de prototipo ante jurado.</p>
+            </div>
+          </div>
+          <div class="cvs-main-section">
+            <h6 class="anchored">Educación</h6>
+            <p class="cvs-exp-role">Ing. en Sistemas Computacionales · UASLP</p>
+            <p class="cvs-exp-date">2019–2023 · Promedio 9.2 / 10</p>
+          </div>
+        </div>
+      </div>
+      <div class="cvs-stamp">REJECTED</div>
+    </div>
+
+    <div class="cvs-card" data-name="Miguel Torres" data-gender="male">
+      <div class="cvs-resume-layout">
+        <div class="cvs-sidebar">
+          <div class="cvs-photo">🧑</div>
+          <div class="cvs-side-section">
+            <h6 class="anchored">Contacto</h6>
+            <p>444 198 7732</p>
+            <p>m.torres@mail.mx</p>
+            <p>San Luis Potosí</p>
+          </div>
+          <div class="cvs-side-section">
+            <h6 class="anchored">Idiomas</h6>
+            <div class="cvs-lang-item"><span class="cvs-lang-name">Español</span><div class="cvs-bar-track"><div class="cvs-bar-fill" style="width:100%"></div></div></div>
+            <div class="cvs-lang-item"><span class="cvs-lang-name">Inglés</span><div class="cvs-bar-track"><div class="cvs-bar-fill" style="width:66%"></div></div></div>
+          </div>
+          <div class="cvs-side-section">
+            <h6 class="anchored">Habilidades</h6>
+            <p>Python</p><p>SQL</p><p>Power BI</p><p>Tableau</p>
+          </div>
+        </div>
+        <div class="cvs-main">
+          <div class="cvs-name-block">
+            <div class="cvs-cv-name">Miguel Torres</div>
+            <div class="cvs-cv-headline">Analista de Datos Jr.</div>
+          </div>
+          <hr class="cvs-divider">
+          <div class="cvs-main-section">
+            <h6 class="anchored">Perfil</h6>
+            <p>Egresado de Ingeniería en Sistemas con experiencia en análisis de datos, visualización y automatización de reportes.</p>
+          </div>
+          <div class="cvs-main-section">
+            <h6 class="anchored">Experiencia</h6>
+            <div class="cvs-exp-entry">
+              <p class="cvs-exp-role">Analista de Datos — Prácticas Profesionales</p>
+              <p class="cvs-exp-date">Feb–Jul 2023 · DataMX, S.A.</p>
+              <p>Dashboards y automatización de reportes con Python y Power BI.</p>
+            </div>
+            <div class="cvs-exp-entry">
+              <p class="cvs-exp-role">Equipo universitario de robótica</p>
+              <p class="cvs-exp-date">2022 · UASLP · 2.° lugar nacional</p>
+              <p>Coordinación técnica y presentación de prototipo ante jurado.</p>
+            </div>
+          </div>
+          <div class="cvs-main-section">
+            <h6 class="anchored">Educación</h6>
+            <p class="cvs-exp-role">Ing. en Sistemas Computacionales · UASLP</p>
+            <p class="cvs-exp-date">2019–2023 · Promedio 9.1 / 10</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cvs-card" data-name="Daniela Flores" data-gender="female">
+      <div class="cvs-resume-layout">
+        <div class="cvs-sidebar">
+          <div class="cvs-photo">👩</div>
+          <div class="cvs-side-section">
+            <h6 class="anchored">Contacto</h6>
+            <p>444 198 7732</p>
+            <p>d.flores@mail.mx</p>
+            <p>San Luis Potosí</p>
+          </div>
+          <div class="cvs-side-section">
+            <h6 class="anchored">Idiomas</h6>
+            <div class="cvs-lang-item"><span class="cvs-lang-name">Español</span><div class="cvs-bar-track"><div class="cvs-bar-fill" style="width:100%"></div></div></div>
+            <div class="cvs-lang-item"><span class="cvs-lang-name">Inglés</span><div class="cvs-bar-track"><div class="cvs-bar-fill" style="width:66%"></div></div></div>
+          </div>
+          <div class="cvs-side-section">
+            <h6 class="anchored">Habilidades</h6>
+            <p>Python</p><p>SQL</p><p>Power BI</p><p>Tableau</p>
+          </div>
+        </div>
+        <div class="cvs-main">
+          <div class="cvs-name-block">
+            <div class="cvs-cv-name">Daniela Flores</div>
+            <div class="cvs-cv-headline">Analista de Datos Jr.</div>
+          </div>
+          <hr class="cvs-divider">
+          <div class="cvs-main-section">
+            <h6 class="anchored">Perfil</h6>
+            <p>Egresada de Ingeniería en Sistemas con experiencia en análisis de datos, visualización y automatización de reportes.</p>
+          </div>
+          <div class="cvs-main-section">
+            <h6 class="anchored">Experiencia</h6>
+            <div class="cvs-exp-entry">
+              <p class="cvs-exp-role">Analista de Datos — Prácticas Profesionales</p>
+              <p class="cvs-exp-date">Feb–Jul 2023 · DataMX, S.A.</p>
+              <p>Dashboards y automatización de reportes con Python y Power BI.</p>
+            </div>
+            <div class="cvs-exp-entry">
+              <p class="cvs-exp-role">Equipo femenino de robótica</p>
+              <p class="cvs-exp-date">2022 · UASLP · 2.° lugar nacional</p>
+              <p>Coordinación técnica y presentación de prototipo ante jurado.</p>
+            </div>
+          </div>
+          <div class="cvs-main-section">
+            <h6 class="anchored">Educación</h6>
+            <p class="cvs-exp-role">Ing. en Sistemas Computacionales · UASLP</p>
+            <p class="cvs-exp-date">2019–2023 · Promedio 9.1 / 10</p>
+          </div>
+        </div>
+      </div>
+      <div class="cvs-stamp">REJECTED</div>
+    </div>
+
+  </div>
+  <p class="cvs-caption">El mismo algoritmo. Las mismas calificaciones. Una sola diferencia.</p>
+</div>
+<hr>
+</section>
+<section id="decisiones-injustas-hablemos-del-sesgo-algorítmico" class="level3">
+<h3 class="anchored" data-anchor-id="decisiones-injustas-hablemos-del-sesgo-algorítmico">¿Decisiones injustas? Hablemos del sesgo algorítmico</h3>
+<p>El <strong>sesgo algorítmico</strong> ocurre cuando un sistema de IA produce resultados sistemáticamente injustos para ciertos grupos de personas.</p>
+<p>La palabra clave aquí es <em>sistemáticamente</em>. Un error aleatorio no es sesgo, el sistema se equivoca por igual con todos. El sesgo algorítmico sucede cuando los errores se concentran de forma desproporcionada en ciertos grupos, y generalmente en grupos que ya están en desventaja social.</p>
+<p>Un sesgo algorítmico proviene de tres fuentes principales:</p>
+<ul>
+<li><strong>Datos históricos sesgados:</strong> si entrenas un modelo con datos del pasado, aprende los prejuicios del pasado.</li>
+<li><strong>Características proxy:</strong> la IA puede usar variables aparentemente neutrales (código postal, nombre, institución educativa) que se correlacionan con <em>raza</em>, género o clase social. En México, por ejemplo, un código postal puede ser un indicador indirecto del nivel socioeconómico. En otros países, puede vincularse con el origen étnico. Así, aunque el sistema “ignore” explícitamente la raza o el género, puede seguir discriminando a través de variables sustitutas.</li>
+<li><strong>Bucles de retroalimentación:</strong> un sistema sesgado produce resultados que refuerzan el sesgo. Si la policía patrulla más ciertos barrios porque el algoritmo lo sugiere, encontrará más delitos ahí — no necesariamente porque haya más delitos, sino porque fueron a buscarlos. En los barrios donde no patrullaron, los delitos simplemente no se registran. El resultado: más datos de delitos en los barrios patrullados → el algoritmo concluye que son más peligrosos → manda más patrullas ahí → se registran más delitos → y el ciclo se repite. Este tipo de retroalimentación también ocurre en plataformas digitales, donde los algoritmos recomiendan con mayor frecuencia el contenido o los usuarios más visibles, reforzando desigualdades de exposición o trato.</li>
+</ul>
+<section id="los-tres-casos-que-debes-conocer" class="level4">
+<h4 class="anchored" data-anchor-id="los-tres-casos-que-debes-conocer">Los tres casos que debes conocer</h4>
+<div class="caso-grid">
+  <div class="caso-card">
+    <div class="caso-card-header">
+      <span class="caso-card-emoji">⚖️</span>
+      <h5 class="caso-card-title anchored">COMPAS</h5>
+      <span class="caso-card-badge">EE.UU. · 2016</span>
+    </div>
+    <p class="caso-card-body">En varios tribunales de Estados Unidos, jueces y fiscales usaron el sistema COMPAS para estimar el riesgo de que una persona acusada volviera a cometer un delito. Ese puntaje influía en decisiones sobre fianzas, libertad condicional o sentencias.</p>
+  <p class="caso-card-body">Una investigación de ProPublica reveló que COMPAS asignaba calificaciones de “alto riesgo” con el doble de frecuencia a personas negras no reincidentes que a personas blancas en la misma situación.</p>
+  <div class="caso-card-key"><strong>Consecuencia:</strong> cuando un puntaje sesgado entra en el proceso judicial, puede llevar a decisiones más severas contra ciertos grupos, incluso si el juez conserva la última palabra.</div>
+  </div>
+  <div class="caso-card">
+    <div class="caso-card-header">
+      <span class="caso-card-emoji">👁</span>
+      <h5 class="caso-card-title anchored">Gender Shades</h5>
+      <span class="caso-card-badge">MIT · 2018</span>
+    </div>
+    <p class="caso-card-body">La investigadora Joy Buolamwini, del MIT, analizó los sistemas de reconocimiento facial de Microsoft, IBM y Face++. Descubrió que su precisión variaba drásticamente según el género y el tono de piel.</p>
+    <p class="caso-card-body">Los modelos identificaban correctamente a hombres de piel clara en más del 99 % de los casos, pero fallaban hasta en un 34.7 % con mujeres de piel más oscura.</p>
+    <div class="caso-card-key"><strong>Consecuencia:</strong> si estos sistemas se aplican en contextos de seguridad o vigilancia, las personas con mayor tasa de error son también las más expuestas a falsos positivos e identificaciones erróneas.</div>
+  </div>
+  <div class="caso-card">
+    <div class="caso-card-header">
+      <span class="caso-card-emoji">📋</span>
+      <h5 class="caso-card-title anchored">Amazon Hiring Tool</h5>
+      <span class="caso-card-badge">EE.UU. · 2018</span>
+    </div>
+    <p class="caso-card-body">Amazon entrenó una herramienta de IA para filtrar currículums de candidatos. El modelo aprendió a partir de datos de contrataciones pasadas (10 años), donde la mayoría de empleados eran hombres.</p>
+    <p class="caso-card-body">El resultado: el sistema pautomáticamente palabras como “mujeres” o menciones a universidades femeninas. Nadie lo programó para discriminar; simplemente reflejó los patrones del pasado.</p>
+    <div class="caso-card-key"><strong>Consecuencia:</strong> el modelo no evaluó quién era más apto, sino a quién se contrató con mayor frecuencia. Amazon descartó la herramienta en 2018, pero el caso evidenció cómo los sesgos históricos pueden transformarse en reglas automáticas.</div>
+  </div>
+</div>
+<p>Los tres ejemplos comparten el mismo problema de fondo: los sistemas no parten de una visión completa de la realidad, sino de datos incompletos o desbalanceados. Cuando eso ocurre, lo que hacen no es solo “equivocarse”, sino reproducir y amplificar esas diferencias, con impactos concretos en oportunidades, derechos y trato hacia las personas.</p>
+<p><strong>¿Cómo se corrige un sesgo algorítmico?</strong></p>
+<figure class="algo-gif-break figure">
+  <img src="https://media.giphy.com/media/3o6Yg4GUVgIUg3bf7W/giphy.gif" alt="Escena de película: hombre haciendo cálculos matemáticos a gran velocidad" loading="lazy" width="480" height="360" class="figure-img">
+</figure>
+<p>No hay una fórmula universal, pero hay pasos concretos: auditar los datos de entrenamiento, medir tasas de error desagregadas por grupos, involucrar a las comunidades afectadas en el diseño de los algoritmos, y establecer revisiones humanas para decisiones de alto impacto. La solución técnica siempre viene acompañada de una solución organizacional.</p>
+<div class="callout-card">
+  <h5 class="callout-card-title anchored">¿Cómo evaluamos si una IA es justa?</h5>
+  <p>Para responder esta pregunta, primero hay que decidir <strong>qué vamos a comparar</strong>. Un mismo sistema puede parecer justo con una regla e injusto con otra.</p>
+  <p>Imagina una IA que ayuda a decidir quién recibe una beca. Sobre ese mismo sistema, podemos hacer al menos tres preguntas distintas:</p>
+  
+  
+<table class="callout-card-table caption-top table" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">Si preguntas...</th>
+<th data-quarto-table-cell-role="th">Entonces comparas...</th>
+<th data-quarto-table-cell-role="th">Métrica técnica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>¿Se aceptó a proporciones parecidas de cada grupo?</td>
+<td>Al total de aspirantes</td>
+<td>Paridad demográfica</td>
+</tr>
+<tr class="even">
+<td>Entre quienes sí cumplían los requisitos, ¿ambos grupos tuvieron la misma probabilidad de pasar?</td>
+<td>Solo a las personas realmente cualificadas</td>
+<td>Igualdad de oportunidad</td>
+</tr>
+<tr class="odd">
+<td>Entre quienes la IA marcó como "alto potencial", ¿esa predicción fue igual de confiable en ambos grupos?</td>
+<td>Solo a las personas que el sistema marcó positivamente</td>
+<td>Paridad predictiva</td>
+</tr>
+</tbody>
+</table>
+
+
+  <div class="fairness-mini">
+    <div class="fairness-mini-card is-demo">
+      <h4 class="fairness-mini-title anchored">Paridad demográfica</h4>
+      <p class="fairness-mini-copy">Mira el resultado final. Pregunta si, del total de aspirantes, ambos grupos terminaron aceptados en proporciones parecidas.</p>
+      <span class="fairness-mini-label">Se compara el total</span>
+    </div>
+    <div class="fairness-mini-card is-opportunity">
+      <h4 class="fairness-mini-title anchored">Igualdad de oportunidad</h4>
+      <p class="fairness-mini-copy">Mira solo a quienes sí cumplían los requisitos. Pregunta si ambos grupos tuvieron la misma oportunidad de ser aceptados.</p>
+      <span class="fairness-mini-label">Se compara a los aspirantes cualificados</span>
+    </div>
+    <div class="fairness-mini-card is-predictive">
+      <h4 class="fairness-mini-title anchored">Paridad predictiva</h4>
+      <p class="fairness-mini-copy">Mira solo a quienes la IA eligió. Pregunta si esa selección fue igual de confiable para ambos grupos.</p>
+      <span class="fairness-mini-label">Se compara a los seleccionados</span>
+    </div>
+  </div>
+
+  <p>Ninguna de estas preguntas es incorrecta. El reto es que <strong>no siempre se pueden cumplir al mismo tiempo</strong>: a veces, al mejorar una, otra empeora.</p>
+  
+  <p><strong>Ejemplo COMPAS:</strong> La empresa defendía una idea de justicia cercana a la <em>paridad predictiva</em>: cuando el sistema marcaba a alguien como "alto riesgo", esa alerta parecía igual de confiable en distintos grupos. ProPublica observó otra cosa: cómo se repartían los errores. Encontró que personas negras que no reincidían eran marcadas como "alto riesgo" con más frecuencia que personas blancas en la misma situación. Así, un sistema podía verse aceptable con una métrica y problemático con otra. Las dos evaluaciones podían coexistir porque no estaban midiendo lo mismo.</p>
+  
+  <p>Por eso, crear sistemas "justos" no es solo una decisión técnica. También exige una <strong>decisión social</strong>: ¿qué definición de justicia vamos a priorizar?</p>
+</div>
+<hr>
+</section>
+</section>
+<section id="privacidad-y-vigilancia" class="level3">
+<h3 class="anchored" data-anchor-id="privacidad-y-vigilancia">Privacidad y Vigilancia</h3>
+<p>Hasta ahora nos hemos enfocamos en cuestiones éticas de gran visibilidad: decisiones automatizadas que pueden tratar de forma injusta a las personas. Pero hay otra dimensión menos evidente: el proceso previo en el que se capturan y analizan datos personales para clasificar a la gente, inferir lo que podrían hacer o incluso monitorear su vida cotidiana.</p>
+<p>Cada vez que usas TikTok, Google Maps, WhatsApp o cualquier otra plataforma digital, estás generando datos. Mucho más de lo que probablemente te imaginas.</p>
+<p>Pero generar datos no es lo mismo que <em>consentir</em> a compartir esos datos. Lo que el sistema de IA construye a partir de tus datos va mucho más allá de lo que has autorizado de manera explícita.</p>
+<div class="inference-reveal" id="inference-reveal">
+  <div class="inference-table" aria-label="Cinco ejemplos de acciones cotidianas y las inferencias que el sistema deriva de ellas">
+
+    <div class="inf-hdr is-action-hdr">Lo que hiciste</div>
+    <div class="inf-hdr-sep" aria-hidden="true"></div>
+    <div class="inf-hdr is-deduce-hdr">Lo que el sistema deduce</div>
+
+    <div class="inf-cell is-action" style="--row-i:0">
+      <span class="inf-icon" aria-hidden="true"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg></span>
+      <p class="inf-text">Pausaste 4 veces el mismo clip sobre ansiedad</p>
+    </div>
+    <div class="inf-sep" style="--row-i:0" aria-hidden="true"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div>
+    <div class="inf-cell is-deduce" style="--row-i:0">
+      <p class="inf-text">Interés marcado en salud mental</p>
+    </div>
+
+    <div class="inf-cell is-action" style="--row-i:1">
+      <span class="inf-icon" aria-hidden="true"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+      <p class="inf-text">Tu GPS se detuvo 11 minutos frente a una clínica</p>
+    </div>
+    <div class="inf-sep" style="--row-i:1" aria-hidden="true"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div>
+    <div class="inf-cell is-deduce" style="--row-i:1">
+      <p class="inf-text">Posiblemente buscas atención médica</p>
+    </div>
+
+    <div class="inf-cell is-action" style="--row-i:2">
+      <span class="inf-icon" aria-hidden="true"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+      <p class="inf-text">Mandas mensajes después de la 1am con regularidad</p>
+    </div>
+    <div class="inf-sep" style="--row-i:2" aria-hidden="true"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div>
+    <div class="inf-cell is-deduce" style="--row-i:2">
+      <p class="inf-text">Patrón de insomnio o estrés nocturno</p>
+    </div>
+
+    <div class="inf-cell is-action" style="--row-i:3">
+      <span class="inf-icon" aria-hidden="true"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg></span>
+      <p class="inf-text">Deslizaste lento en un anuncio de préstamos</p>
+    </div>
+    <div class="inf-sep" style="--row-i:3" aria-hidden="true"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div>
+    <div class="inf-cell is-deduce" style="--row-i:3">
+      <p class="inf-text">Posible presión financiera activa</p>
+    </div>
+
+    <div class="inf-cell is-action" style="--row-i:4">
+      <span class="inf-icon" aria-hidden="true"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+      <p class="inf-text">Buscaste vuelos pero no completaste la compra</p>
+    </div>
+    <div class="inf-sep" style="--row-i:4" aria-hidden="true"><svg width="14" height="14" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></div>
+    <div class="inf-cell is-deduce" style="--row-i:4">
+      <p class="inf-text">Sensible al precio: mostrar descuentos agresivos</p>
+    </div>
+
+  </div>
+</div>
+<p>La recolección de datos puede ser aceptable cuando está bien comunicada, tiene sustento legal y se mantiene dentro de límites previamente definidos con los usuarios. El problema surge cuando esas prácticas se desbordan: operan con poca claridad, colocan a las personas en situaciones donde no hay otra alternativa más que aceptar, o se implementan en espacios públicos sin que la gente siquiera lo note.</p>
+<section id="reconocimiento-facial-en-espacios-públicos" class="level4">
+<h4 class="anchored" data-anchor-id="reconocimiento-facial-en-espacios-públicos"><strong>Reconocimiento facial en espacios públicos</strong></h4>
+<div class="facial-split">
+  <div class="facial-text-col">
+    <p>El reconocimiento facial en espacios públicos transforma radicalmente la vigilancia y seguridad ciudadana. Convierte la identificación individual en un proceso automático y continuo. En lugares como aeropuertos, conciertos o el metro, una cámara puede comparar rostros en segundos para detectar a algún individuo sospechado de ser criminal. Esto permite reaccionar más rápido ante posibles riesgos y reforzar la seguridad en espacios con mucha gente.</p>
+    <p>Sin embargo, ese mismo mecanismo desplaza el riesgo hacia las personas. Cuando el sistema se equivoca, y sabemos que no lo hace de manera uniforme, las consecuencias no se reparten al azar. Como vimos con el caso de <em>Gender Shades</em>, los errores son más frecuentes en ciertos grupos, lo que significa que algunas personas tienen más probabilidades de ser identificadas incorrectamente.</p>
+    <p>La diferencia no está solo en la precisión del algoritmo, sino en el impacto social. Imagina que vas saliendo del metro o entrando a un estadio y una cámara te confunde con alguien en una lista de sospechosos. No es un error que pase desapercibido: puede traducirse en que te detengan, te interroguen o te expongan frente a otros. Y aunque después se aclare, no es algo que simplemente se borre: el momento, la incomodidad y sus posibles consecuencias permanecen.</p>
+  </div>
+  <div class="facial-robot-col" id="facial-robot-col" aria-hidden="true">
+    <div class="facial-robot-wrap">
+      <img class="facial-robot-media" src="../assets/robot_eyes.gif" alt="">
+    </div>
+  </div>
+</div>
+<!--
+#### **México y el marco legal**
+
+```{=html}
+<div class="privacidad-compare">
+  <div class="priv-card">
+    <div class="priv-card-header">
+      <span class="priv-card-flag">🇲🇽</span>
+      <h5>México</h5>
+    </div>
+    <ul class="priv-list">
+      <li>México sí cuenta con leyes de protección de datos personales: una para el sector privado y otra para sujetos obligados del sector público.</li>
+      <li>Esas leyes regulan el tratamiento de datos, pero no equivalen a una ley federal integral y específica sobre IA.</li>
+      <li>Al <strong>13 de abril de 2026</strong>, México no tiene en vigor una ley federal general de IA comparable al AI Act europeo.</li>
+      <li>En reconocimiento facial y vigilancia biométrica, el marco aplicable sigue siendo fragmentario y depende de protección de datos, seguridad pública y criterios judiciales.</li>
+    </ul>
+  </div>
+  <div class="priv-card">
+    <div class="priv-card-header">
+      <span class="priv-card-flag">🇪🇺</span>
+      <h5>Unión Europea</h5>
+    </div>
+    <ul class="priv-list">
+      <li>El <strong>EU AI Act</strong> entró en vigor el <strong>1 de agosto de 2024</strong> y la mayor parte de sus obligaciones generales será exigible desde el <strong>2 de agosto de 2026</strong>.</li>
+      <li>Algunas reglas ya aplican antes, incluyendo las prohibiciones de prácticas de riesgo inaceptable desde el <strong>2 de febrero de 2025</strong>.</li>
+      <li>Restringe fuertemente ciertos usos de identificación biométrica remota en tiempo real por fuerzas del orden en espacios públicos, con excepciones limitadas.</li>
+      <li>También impone obligaciones diferenciadas según el nivel de riesgo del sistema y prevé multas elevadas por incumplimiento.</li>
+    </ul>
+  </div>
+</div>
+```
+-->
+<hr>
+</section>
+</section>
+<section id="deepfakes" class="level3">
+<h3 class="anchored" data-anchor-id="deepfakes">Deepfakes</h3>
+<p>Los dos bloques anteriores abordaron sobre sistemas que clasifican o vigilan. Este tercer bloque cambia la lógica: ya no se trata de cómo la IA interpreta la realidad, sino de su capacidad para <strong>crear algo que parece real sin serlo.</strong></p>
+<p>En la sesión 4 vimos que los modelos de difusión generan imágenes a partir de ruido y las van refinando paso a paso hasta que tienen sentido. Esa misma idea ahora se usa para producir videos y audios. Por ejemplo, es posible generar un video donde una persona “dice” algo que nunca dijo, o un audio que imita su voz con bastante precisión. A este tipo de contenido se le conoce como <strong>deepfakes.</strong></p>
+<p>Hace algunos años, estos contenidos tenían fallas evidentes: movimientos raros, voces poco naturales o detalles extraños. Hoy, en muchos casos, esas señales ya no son tan visibles. Sin contexto, como saber de dónde viene el archivo, cuándo se grabó o si hay una fuente confiable detrás de su distribución, cualquiera puede dudar si lo que ve o escucha es auténtico. Y esto abre un nuevo tipo de riesgo: ya no solo podemos ser mal identificados por un sistema, sino también aparecer en situaciones que nunca ocurrieron, con consecuencias que pueden afectar nuestra reputación, confianza o incluso decisiones importantes sobre el futuro de nuestra vida laboral.</p>
+<section id="cuatro-formas-en-las-que-se-puede-romper-la-confiaza" class="level4">
+<h4 class="anchored" data-anchor-id="cuatro-formas-en-las-que-se-puede-romper-la-confiaza">Cuatro formas en las que se puede romper la confiaza</h4>
+<div class="df-quiz-grid">
+  <div class="df-quiz-card">
+    <div class="df-quiz-thumb">🏛️</div>
+    <div class="df-quiz-body">
+      <p class="df-quiz-question">Confianza en la democracia</p>
+      <p class="df-quiz-desc">Circula un video donde un candidato afirma que las elecciones ya están arregladas. Se vuelve viral justo antes de votar.</p>
+      <details class="foldout foldout-inline df-quiz-reveal">
+        <summary class="foldout-summary">¿Qué está en riesgo y qué hacer?</summary>
+        <div class="foldout-body df-quiz-answer fake">
+          <strong>Riesgo:</strong> desincentivar la participación y sembrar dudas sobre el proceso electoral, incluso si luego se desmiente.<br><br>
+          <strong>Qué hacer:</strong> no reaccionar de inmediato; buscar si el video aparece en canales oficiales, consultar a expertos y revisar si otros medios confiables reportan lo mismo.
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="df-quiz-card">
+    <div class="df-quiz-thumb">📞</div>
+    <div class="df-quiz-body">
+      <p class="df-quiz-question">Confianza personal</p>
+      <p class="df-quiz-desc">Recibes una llamada con la voz de un familiar pidiendo ayuda urgente tras un accidente.</p>
+      <details class="foldout foldout-inline df-quiz-reveal">
+        <summary class="foldout-summary">¿Qué está en riesgo y qué hacer?</summary>
+        <div class="foldout-body df-quiz-answer fake">
+          <strong>Riesgo:</strong> manipulación emocional para obtener dinero o información aprovechando la urgencia.<br><br>
+          <strong>Qué hacer:</strong> cortar la llamada y contactar por un medio ya conocido; usar preguntas o claves que solo esa persona podría responder.
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="df-quiz-card">
+    <div class="df-quiz-thumb">🎬</div>
+    <div class="df-quiz-body">
+      <p class="df-quiz-question">Confianza en la identidad</p>
+      <p class="df-quiz-desc">Se difunde un video comprometedor de alguien que asegura que nunca participó en esa grabación.</p>
+      <details class="foldout foldout-inline df-quiz-reveal">
+        <summary class="foldout-summary">¿Qué está en riesgo y qué hacer?</summary>
+        <div class="foldout-body df-quiz-answer fake">
+          <strong>Riesgo:</strong> daño a la reputación, acoso y consecuencias para la salud mental de la persona, especialmente cuando el contenido se viraliza.<br><br>
+          <strong>Qué hacer:</strong> no compartir, reportar el contenido y buscar fuentes que confirmen o desmientan su autenticidad.
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <div class="df-quiz-card">
+    <div class="df-quiz-thumb">📰</div>
+    <div class="df-quiz-body">
+      <p class="df-quiz-question">Confianza en la evidencia</p>
+      <p class="df-quiz-desc">En un juicio aparece un video que podría demostrar una coartada, pero no está claro si es real.</p>
+      <details class="foldout foldout-inline df-quiz-reveal">
+        <summary class="foldout-summary">¿Qué está en riesgo y qué hacer?</summary>
+        <div class="foldout-body df-quiz-answer fake">
+          <strong>Riesgo:</strong> que imágenes o audios dejen de ser pruebas confiables, afectando decisiones legales importantes.<br><br>
+          <strong>Qué hacer:</strong> recurrir a análisis técnicos, revisar el origen del archivo y contrastar con otra evidencia independiente.
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+<p><strong>Pensemos en implementar un protocolo de verificación:</strong></p>
+<p>Antes de compartir cualquier video o audio que te genere una reacción fuerte (indignación, urgencia, sorpresa), hazte tres preguntas:</p>
+<ul>
+<li><p><strong>¿de dónde viene?</strong> (¿hay fuente original verificable?),</p></li>
+<li><p><strong>¿quién se beneficia de que esto circule?</strong></p></li>
+<li><p><strong>¿hay una segunda fuente que lo confirme?</strong></p></li>
+</ul>
+<p>Si no puedes responder las tres preguntas con certeza, es preferible que no compartas el contenido.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="actividad-de-debate" class="level2">
+<h2 class="anchored" data-anchor-id="actividad-de-debate">Actividad de debate</h2>
+<p>Ahora que ya tienes un marco para reflexionar sobre sesgos algorítmicos, vigilancia, métricas de justicia y responsabilidad, es momento de aplicarlo a un caso concreto. Lee el escenario, elige un rol y construye dos argumentos desde esa perspectiva.</p>
+<div class="debate-scenario">
+  <div class="debate-scenario-header">
+    <span class="debate-scenario-icon">🚌</span>
+    <div>
+      <p class="debate-scenario-kicker">Escenario para debatir</p>
+      <h4 class="debate-scenario-title anchored">Propuesta: Reconocimiento facial en el transporte público de SLP</h4>
+    </div>
+  </div>
+  <p class="debate-scenario-body">El gobierno del estado de San Luis Potosí propone instalar cámaras con reconocimiento facial en los camiones urbanos. El sistema permitiría identificar en tiempo real a personas con órdenes de aprehensión activas. La empresa proveedora asegura una tasa de acierto del 95% en condiciones de laboratorio. La inversión inicial sería de 80 millones de pesos.</p>
+</div>
+<p>Hay al menos cuatro perspectivas en este debate. Elige la que más te interese explorar:</p>
+<div class="stakeholder-grid">
+  <div class="stakeholder-card tone-neutral">
+    <div class="stakeholder-card-header">
+      <span class="stakeholder-card-icon">🧑‍🎓</span>
+      <div>
+        <p class="stakeholder-card-name">Estudiante universitario</p>
+        <p class="stakeholder-card-role">Usuario diario del transporte público</p>
+      </div>
+    </div>
+    <div class="stakeholder-card-body">
+      <p><strong>Tu situación:</strong> Usas el camión todos los días para ir a la universidad. Te importa tanto la seguridad como tu privacidad. En el pasado has sido detenido brevemente por presentar un “perfil sospechoso” sin haber hecho nada malo.</p>
+      <p><strong>Pregunta guía:</strong> ¿Qué nivel de vigilancia estarías dispuesto a aceptar a cambio de una mejora en la seguridad? (¡Cámara, ya se la saben!)</p>
+    </div>
+  </div>
+
+  <div class="stakeholder-card tone-pro">
+    <div class="stakeholder-card-header">
+      <span class="stakeholder-card-icon">👮</span>
+      <div>
+        <p class="stakeholder-card-name">Secretaria de Seguridad Pública</p>
+        <p class="stakeholder-card-role">Autoridad estatal</p>
+      </div>
+    </div>
+    <div class="stakeholder-card-body">
+      <p><strong>Tu situación:</strong> Tienes 300 órdenes de aprehensión activas sin ejecutar. El año pasado hubo 12 asaltos en el transporte público que quedaron impunes. Tu responsabilidad es reducir el delito con los recursos disponibles.</p>
+      <p><strong>Pregunta guía:</strong> ¿Cómo justificas el costo y los posibles riesgos del sistema ante la población que podría verse más afectada?</p>
+    </div>
+  </div>
+
+  <div class="stakeholder-card tone-con">
+    <div class="stakeholder-card-header">
+      <span class="stakeholder-card-icon">⚖️</span>
+      <div>
+        <p class="stakeholder-card-name">Activista de derechos digitales</p>
+        <p class="stakeholder-card-role">Organización de sociedad civil</p>
+      </div>
+    </div>
+    <div class="stakeholder-card-body">
+      <p><strong>Tu situación:</strong> Sabes que estos sistemas tienen tasas de error más altas en ciertos grupos (*Gender Shades*). También sabes que un “95% de precisión” en el laboratorio no permite estimar el impacto real sin datos por grupo, condiciones de uso y tasa base de personas buscadas.</p>
+      <p><strong>Pregunta guía:</strong> ¿Cómo argumentas que los riesgos y posibles daños superan los beneficios prometidos?</p>
+    </div>
+  </div>
+
+  <div class="stakeholder-card tone-mixed">
+    <div class="stakeholder-card-header">
+      <span class="stakeholder-card-icon">💼</span>
+      <div>
+        <p class="stakeholder-card-name">Directora técnica de la empresa</p>
+        <p class="stakeholder-card-role">Proveedora del sistema de IA</p>
+      </div>
+    </div>
+    <div class="stakeholder-card-body">
+      <p><strong>Tu situación:</strong> Tu empresa invirtió 3 años en desarrollar este sistema. Reconoces que el 95% de precisión es en laboratorio y que en condiciones reales (iluminación, movimiento, calidad de cámaras) disminuye. Aun así, consideras que, con supervisión humana, puede ser útil.</p>
+      <p><strong>Pregunta guía:</strong> ¿Qué medidas técnicas y legales propones para reducir riesgos y hacer el sistema viable?</p>
+    </div>
+  </div>
+</div>
+<p>Desde la perspectiva que más te interese abordar, responde lo siguiente:</p>
+<ul>
+<li><p>¿Quién se beneficia directamente de implementar este sistema? ¿Quién asume los riesgos?</p></li>
+<li><p>¿Qué datos necesitarías para tomar una decisión informada? ¿Están disponibles?</p></li>
+<li><p>¿Qué pasaría si el sistema comete un error contigo o con alguien que conoces? ¿A quién le reclamarías?</p></li>
+<li><p>¿Hay una alternativa que logre el mismo objetivo con menor riesgo para los derechos de las personas?</p></li>
+<li><p>Si el sistema se aprueba, ¿quién debería ser responsable de auditarlo, de corregirlo y de compensar a quienes hayan sido perjudicados?</p></li>
+</ul>
+<hr>
+<section id="para-reflexionar" class="level3">
+<h3 class="anchored" data-anchor-id="para-reflexionar">Para reflexionar</h3>
+<span class="reflexion-kicker">Reflexión · 5 min</span>
+<h3 class="reflexion-heading anchored">Actividad de reflexión</h3>
+<ol class="reflexion-list">
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">01</span>
+    <p class="reflexion-q"><strong>Conexión personal:</strong> piensa en una situación cotidiana en la que una regla aparentemente neutral haya afectado de forma desigual a distintas personas. ¿En qué se parece eso al sesgo algorítmico?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">02</span>
+    <p class="reflexion-q"><strong>Impacto:</strong> elige uno de los casos de la sesión. ¿Quién se beneficia directamente del sistema y quién asume el costo de sus errores?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">03</span>
+    <p class="reflexion-q"><strong>Datos:</strong> en ese mismo caso, ¿los datos representan de manera adecuada a todas las personas afectadas o hay grupos que podrían estar subrepresentados?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">04</span>
+    <p class="reflexion-q"><strong>Responsabilidad:</strong> si el sistema se equivoca, ¿existe una persona o institución capaz de explicarlo, corregirlo y responder por el daño?</p>
+  </li>
+</ol>
+<p class="reflexion-close">Si puedes responder estas cuatro preguntas con claridad, ya tienes una base sólida para evaluar críticamente cualquier sistema de IA.</p>
+<hr>
+</section>
+<section id="la-idea-central-de-esta-sesión" class="level3">
+<h3 class="anchored" data-anchor-id="la-idea-central-de-esta-sesión">La idea central de esta sesión</h3>
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 5</span>
+  <p class="central-idea-text">Los problemas éticos de la IA no son accidentes ni descuidos técnicos menores. Hoy viste tres formas concretas en que aparecen: decisiones injustas, vigilancia basada en datos y contenido sintético engañoso. Las tres surgen cuando entrenamos sistemas con datos sesgados, los desplegamos sin supervisión adecuada y no preguntamos desde el principio a quién afectan y cómo.</p>
+</div>
+<hr>
+</section>
+<section id="recursos-para-explorar-más-sobre-el-tema" class="level3">
+<h3 class="anchored" data-anchor-id="recursos-para-explorar-más-sobre-el-tema">Recursos para explorar más sobre el tema</h3>
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing" target="_blank" rel="noopener">Machine Bias — ProPublica <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">El análisis original del caso COMPAS que detonó el debate sobre sesgo en sistemas de justicia criminal.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="http://gendershades.org/" target="_blank" rel="noopener">Gender Shades — MIT Media Lab <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">El proyecto de Joy Buolamwini que documentó las tasas de error diferencial en reconocimiento facial por género y tono de piel.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.ajl.org/" target="_blank" rel="noopener">Algorithmic Justice League <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Organización fundada por Buolamwini que trabaja en auditorías de sistemas de IA y advocacy por equidad algorítmica.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="http://detectfakes.media.mit.edu/" target="_blank" rel="noopener">Detect Fakes — MIT <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Pon a prueba tu capacidad para distinguir videos reales de deepfakes con este ejercicio interactivo.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://ainowinstitute.org/" target="_blank" rel="noopener">AI Now Institute <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Reportes anuales sobre el impacto social y político de la IA, con foco en rendición de cuentas.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.elementsofai.com/es" target="_blank" rel="noopener">Elements of AI <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Curso gratuito en español que incluye una sección sobre ética de la IA, accesible sin conocimientos técnicos previos.</p>
+  </li>
+</ul>
+<hr>
+<nav class="sesion-nav">
+  <a href="sesion-04.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S4: IA Generativa</span>
+  </a>
+  <div class="sesion-nav-center">
+    <div class="sesion-nav-dots">
+      <span class="sesion-nav-dot published" title="Sesión 1"></span>
+      <span class="sesion-nav-dot published" title="Sesión 2"></span>
+      <span class="sesion-nav-dot published" title="Sesión 3"></span>
+      <span class="sesion-nav-dot published" title="Sesión 4"></span>
+      <span class="sesion-nav-dot active" title="Sesión 5"></span>
+      <span class="sesion-nav-dot" title="Sesión 6"></span>
+      <span class="sesion-nav-dot" title="Sesión 7"></span>
+      <span class="sesion-nav-dot" title="Sesión 8"></span>
+      <span class="sesion-nav-dot" title="Sesión 9"></span>
+      <span class="sesion-nav-dot" title="Sesión 10"></span>
+      <span class="sesion-nav-dot" title="Sesión 11"></span>
+      <span class="sesion-nav-dot" title="Sesión 12"></span>
+      <span class="sesion-nav-dot" title="Sesión 13"></span>
+      <span class="sesion-nav-dot" title="Sesión 14"></span>
+      <span class="sesion-nav-dot" title="Sesión 15"></span>
+    </div>
+    <span class="sesion-nav-progress">Sesión 5 de 15</span>
+  </div>
+  <a href="sesion-06.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S6: EN VIVO: IA en México</span>
+  </a>
+</nav>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.curso-ia-slp\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Intro a la IA · San Luis Potosí · 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/michelleg06">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

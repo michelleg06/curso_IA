@@ -26,22 +26,21 @@
 }
 
 .creative-process-step {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 999px;
-  background: #db2777;
-  color: #fff;
-  font-size: 0.78rem;
-  font-weight: 700;
-  margin-bottom: 0.6rem;
+  display: block;
+  font-family: 'Fraunces', Georgia, serif;
+  font-optical-sizing: auto;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #db2777;
+  opacity: 0.25;
+  margin-bottom: 0.5rem;
 }
 
 .creative-process-card h5 {
   font-size: 0.92rem;
-  color: #1a365d;
+  font-weight: 700;
+  color: #db2777;
   margin: 0 0 0.35rem;
 }
 
