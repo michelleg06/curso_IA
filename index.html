@@ -68,6 +68,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script defer="" src="https://cloud.umami.is/script.js" data-website-id="225b59d4-82fc-4df6-9c47-98afac4a8c13"></script>
 
 
 <link rel="stylesheet" href="styles/sesion.css">
@@ -227,10 +228,7 @@ ul.task-list li input[type="checkbox"] {
       0 32px 80px rgba(10, 22, 54, 0.32),
       0 0 0 1px rgba(39, 128, 227, 0.10);
     padding: 2.4rem 2.6rem;
-    width: min(480px, 88vw);
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+    width: min(420px, 88vw);
     animation: pw-card-in 0.5s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
   @keyframes pw-card-in {
@@ -238,8 +236,8 @@ ul.task-list li input[type="checkbox"] {
     to   { opacity: 1; transform: scale(1)    translateY(0);    }
   }
 
-  /* ---- Form section (left) ---- */
-  #pw-form { flex: 1; min-width: 0; }
+  /* ---- Form section ---- */
+  #pw-form { width: 100%; }
 
   #pw-eyebrow {
     font-family: 'Space Grotesk', system-ui, sans-serif;
@@ -336,14 +334,6 @@ ul.task-list li input[type="checkbox"] {
   }
   #pw-btn:active { transform: translateY(0); }
 
-  /* ---- Logo (far right) ---- */
-  #pw-logo {
-    width: 68px;
-    flex-shrink: 0;
-    border-radius: 10px;
-    object-fit: contain;
-  }
-
   /* ---- Flying favicon ---- */
   #pw-plane {
     position: fixed;
@@ -371,8 +361,7 @@ ul.task-list li input[type="checkbox"] {
 
   @media (max-width: 600px) {
     #pw-plane { display: none; }
-    #pw-card  { gap: 1.2rem; padding: 2rem 1.6rem; }
-    #pw-logo  { width: 50px; }
+    #pw-card  { padding: 2rem 1.6rem; }
   }
 </style>
 
@@ -390,8 +379,6 @@ ul.task-list li input[type="checkbox"] {
       <p id="pw-err">Contraseña incorrecta. Intenta de nuevo.</p>
       <button id="pw-btn">Entrar →</button>
     </div>
-    <!-- Right: logo -->
-    <img id="pw-logo" src="assets/ml4pp_logo.png" alt="ML4PP">
   </div>
 </div>
 
