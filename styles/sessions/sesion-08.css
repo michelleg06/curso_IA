@@ -708,6 +708,267 @@
   margin: 0;
 }
 
+/* ---- Design format frames ---- */
+.design8-frame {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+}
+
+.design8-frame-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f1f5f9;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.design8-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+
+.design8-mock-bar {
+  height: 6px;
+  width: 70%;
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.design8-mock-bar.short {
+  width: 45%;
+}
+
+.design8-mock-bar.xshort {
+  width: 28%;
+}
+
+.design8-mock-bar.wide {
+  width: 90%;
+}
+
+.design8-mock-block {
+  height: 22px;
+  width: 70%;
+  background: #e2e8f0;
+  border-radius: 4px;
+}
+
+.design8-mock-block.wide {
+  width: 90%;
+}
+
+/* Story – tall phone frame (fine grey border, like banner web) */
+.design8-story .design8-frame-inner {
+  width: 72px;
+  height: 130px;
+  border-radius: 16px;
+  border: 1.5px solid #94a3b8;
+  background: #fff;
+  position: relative;
+}
+
+.design8-story .design8-notch {
+  display: none;
+}
+
+.design8-story .design8-screen {
+  background: #fff;
+  border-radius: 14px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0;
+  gap: 0;
+}
+
+/* CSS Instagram logo — outer rounded square */
+.design8-story .design8-screen::before {
+  content: "";
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #8134af 100%);
+  animation: ig-pulse 3s ease-in-out infinite;
+}
+
+/* Lens circle + flash dot */
+.design8-story .design8-screen::after {
+  content: "";
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border: 2.5px solid #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 7px -7px 0 -5px #fff;
+  animation: ig-pulse 3s ease-in-out infinite;
+}
+
+/* Instagram logo fade in/out every 3s */
+@keyframes ig-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Hide generic mock elements inside story */
+.design8-story .design8-mock-bar,
+.design8-story .design8-mock-block {
+  display: none;
+}
+
+/* Banner – wide browser window with dots */
+.design8-banner .design8-frame-inner {
+  width: 100%;
+  max-width: 180px;
+  height: 80px;
+  border-radius: 8px;
+  border-color: #94a3b8;
+  background: #fff;
+}
+
+.design8-browser-dots {
+  display: flex;
+  gap: 4px;
+  padding: 5px 7px 3px;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+  width: 100%;
+}
+
+.design8-browser-dots i {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #cbd5e1;
+}
+
+.design8-browser-dots i:first-child {
+  background: #fca5a5;
+}
+
+.design8-browser-dots i:nth-child(2) {
+  background: #fcd34d;
+}
+
+.design8-browser-dots i:last-child {
+  background: #86efac;
+}
+
+.design8-banner .design8-screen {
+  flex: 1;
+  padding: 6px 10px;
+  gap: 4px;
+  justify-content: center;
+}
+
+.design8-banner .design8-mock-bar.wide {
+  width: 60%;
+  height: 5px;
+}
+
+.design8-banner .design8-mock-block.wide {
+  width: 85%;
+  height: 18px;
+  background: linear-gradient(90deg, #bfdbfe, #c4b5fd);
+}
+
+/* Print – paper document with fold line */
+.design8-print .design8-frame-inner {
+  width: 80px;
+  height: 100px;
+  border-radius: 2px;
+  border-color: #94a3b8;
+  background: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.design8-print .design8-screen {
+  padding: 10px 8px;
+  gap: 5px;
+  flex: 1;
+}
+
+.design8-print .design8-mock-bar {
+  height: 4px;
+  background: #64748b;
+}
+
+.design8-print .design8-mock-bar.short {
+  background: #94a3b8;
+}
+
+.design8-print .design8-mock-bar.xshort {
+  background: #cbd5e1;
+}
+
+/* Sign – outdoor sign panel with post */
+.design8-sign .design8-frame {
+  flex-direction: column;
+  align-items: center;
+}
+
+.design8-sign .design8-frame-inner {
+  width: 120px;
+  height: auto;
+  border-radius: 4px;
+  border: 2.5px solid #475569;
+  background: #1e293b;
+  overflow: visible;
+}
+
+.design8-sign .design8-screen {
+  padding: 10px 14px 10px;
+  gap: 6px;
+  align-items: center;
+}
+
+.design8-sign .design8-mock-block.wide {
+  width: 80%;
+  height: 18px;
+  background: #fbbf24;
+  border-radius: 2px;
+}
+
+.design8-sign .design8-mock-bar {
+  width: 55%;
+  height: 5px;
+  background: #f1f5f9;
+  border-radius: 2px;
+}
+
+.design8-sign-post {
+  display: block;
+  width: 8px;
+  height: 32px;
+  background: linear-gradient(180deg, #475569, #64748b);
+  margin: 0 auto;
+  border-radius: 0 0 3px 3px;
+  position: relative;
+}
+
+.design8-sign-post::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 4px;
+  background: #94a3b8;
+  border-radius: 2px;
+}
+
 /* ---- Music audio players ---- */
 .music8-players {
   margin: 1.1rem 0;

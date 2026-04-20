@@ -50,7 +50,7 @@ function initCreativeIteration() {
   const OBJETIVO = {
     goal: "Cartel para un festival de cine en San Luis Potosí.",
     audience: "Preparatoria y universidad; difusión en redes y pantallas del campus.",
-    constraint: "Debe sentirse local, legible en cualquier celular y menos genérico que un cartel de ciencia ficción cualquiera.",
+    constraint: "Debe reflejar la identidad de la ciudad, leerse bien en cualquier celular y no verse tan genérico como un cartel de ciencia ficción cualquiera.",
   };
 
   const ROUNDS = [
@@ -69,7 +69,7 @@ function initCreativeIteration() {
       critique:
         "La primera generación se ve apantallante, pero el problema no es técnico: falta identidad local y jerarquía visual.",
       next:
-        "Decisión humana: especificar referencias de lugar, formato concreto y uso del cartel.",
+        "Especificar referencias del lugar, formato y uso del cartel.",
     },
     {
       name: "Ronda 2",
@@ -78,7 +78,7 @@ function initCreativeIteration() {
         "Cartel vertical para festival de cine en San Luis Potosí, texturas de cantera rosa, área de título contundente, jerarquía clara, paleta de atardecer cálido, legible en espacio público",
       result: {
         title: "Más local, mejor jerarquía",
-        copy: "La referencia a la cantera rosa y el formato vertical le dan carácter propio. El resultado mejora no por escribir más palabras, sino por una dirección más específica.",
+        copy: "La referencia a la cantera rosa y el formato vertical le dan carácter propio. El resultado mejora gracias a la dirección más específica en el prompt.",
         format: "poster",
         tone: "amber",
         img: "../assets/sesion-08/cartel2.png",
@@ -86,15 +86,15 @@ function initCreativeIteration() {
       critique:
         "Ahora hay dirección creativa. Ya aparecen contexto, materialidad y un objetivo claro de lectura.",
       next:
-        "Decisión humana: priorizar claridad sobre espectacularidad, pensando en el uso práctico de la pieza.",
+        "Priorizar claridad sobre espectacularidad, pensando en el uso práctico de la pieza.",
     },
     {
       name: "Ronda 3",
-      kicker: "Con uso y restricciones reales",
+      kicker: "Con uso y restricciones",
       prompt:
         "Cartel de festival de cine para estudiantes de San Luis Potosí, formato vertical, cantera rosa y luz de farol, título centrado en negrita, espacio negativo generoso, legible desde celular y pantallas del campus",
       result: {
-        title: "La más cercana a una propuesta legítima",
+        title: "La más cercana a una propuesta final",
         copy: "Combina identidad, claridad y atmósfera. Ya se siente como la base de un trabajo práctico e intencionado, no solo como imagen llamativa.",
         format: "poster",
         tone: "cobalt",
