@@ -1,0 +1,1312 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sesión 13: Robótica e IA en el Mundo Físico – Intro a la IA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/logo.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script defer="" src="https://cloud.umami.is/script.js" data-website-id="225b59d4-82fc-4df6-9c47-98afac4a8c13"></script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles/sesion.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/logo.svg" alt="Intro a la IA" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Intro a la IA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">Programa</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sesiones" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Sesiones</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-sesiones">    
+        <li class="dropdown-header">— Bloque 1: Fundamentos + Ética —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-01.html">
+ <span class="dropdown-text">S1 · ¿Qué es la IA?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-02.html">
+ <span class="dropdown-text">S2 · Redes Neuronales Artificiales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-03.html">
+ <span class="dropdown-text">S3 · Algoritmos de IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-04.html">
+ <span class="dropdown-text">S4 · IA Generativa</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-05.html">
+ <span class="dropdown-text">S5 · Ética en la IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-06.html">
+ <span class="dropdown-text">S6 · EN VIVO: IA en México</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 2: Herramientas Prácticas —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-07.html">
+ <span class="dropdown-text">S7 · Tutor de Lenguaje</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-08.html">
+ <span class="dropdown-text">S8 · IA para Creatividad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-09.html">
+ <span class="dropdown-text">S9 · IA para Organización</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-10.html">
+ <span class="dropdown-text">S10 · Tutor Académico</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-11.html">
+ <span class="dropdown-text">S11 · EN VIVO: Política Pública</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 3: Creación, Aplicaciones y Futuro —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-12.html">
+ <span class="dropdown-text">S12 · Programación con IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-13.html">
+ <span class="dropdown-text">S13 · Robótica e IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-14.html">
+ <span class="dropdown-text">S14 · IA en Salud, Ciencia y Sociedad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-15.html">
+ <span class="dropdown-text">S15 · EN VIVO: Educación Global</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#introducción-a-la-ia" id="toc-introducción-a-la-ia" class="nav-link active" data-scroll-target="#introducción-a-la-ia">Introducción a la IA</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sesión 13: Robótica e IA en el Mundo Físico</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 3 · Creación, Aplicaciones y Futuro</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-13"></div>
+    </div>
+    <span class="sesion-progress-label">13 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip">📅 28 de julio de 2026</span>
+    <span class="sesion-meta-chip">⏱ 40 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+<link rel="stylesheet" href="../styles/sessions/sesion-13.css">
+<script src="../interactives/sesion-13.js" defer=""></script>
+<section id="introducción-a-la-ia" class="level2">
+<h2 class="anchored" data-anchor-id="introducción-a-la-ia">Introducción a la IA</h2>
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video: Robótica e IA en el Mundo Físico</p>
+</div>
+<hr>
+<p class="capsule-complement-note">
+Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!
+</p>
+<section id="introducción" class="level3">
+<h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
+<p>El 11 de marzo de 2011, un terremoto de magnitud 9.0 y el tsunami que le siguió averiaron los reactores de la planta nuclear Fukushima Daiichi, en Japón. En cuestión de horas, los niveles de radiación hicieron imposible que cualquier persona entrara a ciertas zonas. Las autoridades desplegaron robots PackBot de iRobot —diseñados originalmente para misiones militares del ejército de EE. UU.— en los edificios de los reactores 1, 2 y 3. Transmitieron video en vivo, midieron temperaturas, detectaron escombros y registraron niveles de radiación: tareas que habrían resultado letales para un ser humano en cuestión de minutos.</p>
+<p><em>Fuentes: IEEE Spectrum, “iRobot’s PackBot in Fukushima” (2011); Robin Murphy, Disaster Robotics, MIT Press (2014); informes de TEPCO e IAEA sobre los niveles de radiación durante la emergencia.</em></p>
+<p>Este ejemplo es importante por una razón muy concreta: nos obliga a separar dos cosas que suelen mezclarse. Una cosa es <strong>tener una máquina con ruedas, cámaras y motores</strong>. Otra cosa es lograr que esa máquina <strong>interprete lo que ve, tome decisiones y logre un objetivo fijo</strong>.</p>
+<p>Esa misión de 2011 nos da el contexto que necesitamos para hacernos una pregunta más precisa:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+La pregunta central de esta sesión
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En robótica, ¿qué parte se resuelve con hardware y reglas fijas, y qué parte necesita IA para percibir, decidir o aprender?</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="construyendo-un-robot" class="level3">
+<h3 class="anchored" data-anchor-id="construyendo-un-robot">Construyendo un robot</h3>
+<p>Antes de hablar de IA conviene armar la imagen básica de un robot. Si lo simplificamos mucho, un robot necesita dos cosas:</p>
+<ul>
+<li>una parte que <strong>se mueve</strong>,</li>
+<li>y una parte que <strong>detecta</strong> lo que pasa alrededor.</li>
+</ul>
+<p>Algo importante desde el principio: <strong>no todo robot usa IA</strong> y <strong>no toda IA está dentro de un robot</strong>. Un brazo industrial puede repetir el mismo movimiento sin aprender nada. En cambio, un dron que debe evitar obstáculos en un entorno cambiante sí puede necesitar IA.</p>
+<section id="construyendo-un-robot-los-músculos" class="level4">
+<h4 class="anchored" data-anchor-id="construyendo-un-robot-los-músculos"><strong>Construyendo un robot: Los Músculos</strong></h4>
+<p>Los <strong>actuadores</strong> son la parte que convierte una orden en movimiento físico. Si quieres una analogía simple, son los músculos del robot.</p>
+<ul>
+<li><strong>Motor de DC:</strong> gira continuamente. Sirve para ruedas, hélices y ventiladores.</li>
+<li><strong>Servomotor:</strong> se coloca en un ángulo preciso. Muy útil en brazos robóticos.</li>
+<li><strong>Motor paso a paso:</strong> avanza en incrementos exactos. Aparece mucho en impresoras 3D y máquinas de fabricación.</li>
+<li><strong>Actuador hidráulico:</strong> da mucha fuerza. Se usa en maquinaria pesada o robots industriales grandes.</li>
+</ul>
+<p>La idea clave aquí es muy simple: los actuadores <strong>ejecutan</strong>, pero no <strong>deciden</strong>. Un motor puede mover una rueda, pero no sabe por sí mismo cuándo frenar, a dónde girar o qué camino conviene.</p>
+</section>
+<section id="construyendo-un-robot-los-sentidos" class="level4">
+<h4 class="anchored" data-anchor-id="construyendo-un-robot-los-sentidos"><strong>Construyendo un robot: Los Sentidos</strong></h4>
+<p>Los <strong>sensores</strong> recogen información del mundo físico. Si los actuadores son los músculos, los sensores son los sentidos.</p>
+<p>Y aquí está la parte interesante: <strong>los sensores recuperan datos, y esos datos alimentan el “cerebro” del robot</strong>. Todavía no hay inteligencia ahí. Una cámara solo entrega píxeles; un LiDAR solo entrega distancias. Pero sin esos datos, el robot no tendría con qué interpretar el entorno ni con qué tomar decisiones.</p>
+<p>No hace falta memorizar veinte tipos de sensores. Para esta sesión basta con cuatro:</p>
+<div class="sensor-grid">
+
+  <div class="sensor-card">
+    <span class="sensor-icon">📷</span>
+    <h4 class="sensor-name anchored">Cámara</h4>
+    <p class="sensor-what">Detecta color, forma, texto y movimiento. Es el sensor más parecido al ojo humano.</p>
+    <p class="sensor-limit">⚠ Necesita luz · se confunde con reflejos · es lenta con objetos muy rápidos</p>
+    <p class="sensor-use">Visión por computadora, lectura de señales y etiquetas</p>
+  </div>
+
+  <div class="sensor-card">
+    <span class="sensor-icon">🟢</span>
+    <h4 class="sensor-name anchored">LiDAR</h4>
+    <p class="sensor-what">Emite pulsos de láser y mide cuánto tardan en regresar. Da distancias precisas en 360°.</p>
+    <p class="sensor-limit">⚠ Costoso · no detecta color · la lluvia o niebla lo degradan</p>
+    <p class="sensor-use">Vehículos autónomos, mapeo de espacios interiores</p>
+  </div>
+
+  <div class="sensor-card">
+    <span class="sensor-icon">📡</span>
+    <h4 class="sensor-name anchored">Ultrasonido</h4>
+    <p class="sensor-what">Emite ondas de sonido y mide el rebote para detectar la distancia a un obstáculo.</p>
+    <p class="sensor-limit">⚠ Rango corto · no da dirección exacta · se confunde con superficies blandas</p>
+    <p class="sensor-use">Sensores de reversa en autos, robots domésticos básicos</p>
+  </div>
+
+  <div class="sensor-card">
+    <span class="sensor-icon">🛰</span>
+    <h4 class="sensor-name anchored">GPS</h4>
+    <p class="sensor-what">Calcula la posición geográfica usando señales de satélites en órbita.</p>
+    <p class="sensor-limit">⚠ Solo funciona al aire libre · error de ± 2-5 metros</p>
+    <p class="sensor-use">Drones de agricultura, vehículos autónomos en exteriores</p>
+  </div>
+
+</div>
+<p>Ningún sensor es perfecto: generan ruido, tienen errores de calibración y condiciones en las que fallan. Por eso los sistemas modernos suelen combinar varios al mismo tiempo.</p>
+<p><strong>Cada sensor ve una parte distinta del mundo</strong>. La cámara reconoce mejor qué hay; el LiDAR mide mejor dónde está.</p>
+<div class="center">
+<div class="sensor-visual">
+
+  <div class="sensor-visual-panel">
+    <span class="sensor-visual-label">Cámara</span>
+    <svg viewbox="0 0 140 140" width="140" height="140" xmlns="http://www.w3.org/2000/svg">
+      <rect width="140" height="140" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"></rect>
+      <!-- camera body -->
+      <rect x="53" y="16" width="34" height="24" rx="5" fill="#1d4ed8"></rect>
+      <circle cx="70" cy="28" r="9" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2"></circle>
+      <circle cx="70" cy="28" r="4" fill="#1d4ed8"></circle>
+      <!-- FOV cone -->
+      <polygon points="70,40 15,125 125,125" fill="#3b82f6" opacity="0.14"></polygon>
+      <line x1="70" y1="40" x2="15" y2="125" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,3"></line>
+      <line x1="70" y1="40" x2="125" y2="125" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,3"></line>
+      <!-- labels inside -->
+      <text x="70" y="80" text-anchor="middle" font-size="9" fill="#1d4ed8" font-weight="600">ve colores,</text>
+      <text x="70" y="93" text-anchor="middle" font-size="9" fill="#1d4ed8" font-weight="600">formas, texto</text>
+      <!-- blind zone labels -->
+      <text x="8" y="75" font-size="8" fill="#94a3b8">zona</text>
+      <text x="8" y="84" font-size="8" fill="#94a3b8">ciega</text>
+      <text x="103" y="75" font-size="8" fill="#94a3b8">zona</text>
+      <text x="103" y="84" font-size="8" fill="#94a3b8">ciega</text>
+      <text x="70" y="136" text-anchor="middle" font-size="8" fill="#94a3b8">campo visual frontal</text>
+    </svg>
+    <span class="sensor-visual-caption">Ve bien hacia adelante, pero tiene ángulos ciegos</span>
+  </div>
+
+  <div class="sensor-visual-panel">
+    <span class="sensor-visual-label">LiDAR</span>
+    <svg viewbox="0 0 140 140" width="140" height="140" xmlns="http://www.w3.org/2000/svg">
+      <rect width="140" height="140" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"></rect>
+      <!-- coverage circle -->
+      <circle cx="70" cy="70" r="56" fill="none" stroke="#22c55e" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"></circle>
+      <!-- 12 rays at 30° intervals (radius=56, center=70,70) -->
+      <line x1="70" y1="70" x2="70" y2="14" stroke="#22c55e" stroke-width="1.3" opacity="0.75"></line>
+      <line x1="70" y1="70" x2="98" y2="21" stroke="#22c55e" stroke-width="1.3" opacity="0.75"></line>
+      <line x1="70" y1="70" x2="119" y2="42" stroke="#22c55e" stroke-width="1.3" opacity="0.75"></line>
+      <line x1="70" y1="70" x2="126" y2="70" stroke="#22c55e" stroke-width="1.3" opacity="0.75"></line>
+      <line x1="70" y1="70" x2="119" y2="98" stroke="#22c55e" stroke-width="1.3" opacity="0.75"></line>
+      <line x1="70" y1="70" x2="98" y2="119" stroke="#22c55e" stroke-width="1.3" opacity="0.75"></line>
+      <line x1="70" y1="70" x2="70" y2="126" stroke="#22c55e" stroke-width="1.3" opacity="0.75"></line>
+      <line x1="70" y1="70" x2="42" y2="119" stroke="#22c55e" stroke-width="1.3" opacity="0.75"></line>
+      <line x1="70" y1="70" x2="21" y2="98" stroke="#22c55e" stroke-width="1.3" opacity="0.75"></line>
+      <line x1="70" y1="70" x2="14" y2="70" stroke="#22c55e" stroke-width="1.3" opacity="0.75"></line>
+      <line x1="70" y1="70" x2="21" y2="42" stroke="#22c55e" stroke-width="1.3" opacity="0.75"></line>
+      <line x1="70" y1="70" x2="42" y2="21" stroke="#22c55e" stroke-width="1.3" opacity="0.75"></line>
+      <!-- endpoint dots -->
+      <circle cx="70" cy="14" r="3" fill="#16a34a" opacity="0.8"></circle>
+      <circle cx="126" cy="70" r="3" fill="#16a34a" opacity="0.8"></circle>
+      <circle cx="70" cy="126" r="3" fill="#16a34a" opacity="0.8"></circle>
+      <circle cx="14" cy="70" r="3" fill="#16a34a" opacity="0.8"></circle>
+      <!-- robot center -->
+      <circle cx="70" cy="70" r="13" fill="#22c55e" opacity="0.15"></circle>
+      <circle cx="70" cy="70" r="8" fill="#16a34a"></circle>
+      <text x="70" y="74" text-anchor="middle" font-size="8" fill="white" font-weight="bold">R</text>
+      <text x="70" y="136" text-anchor="middle" font-size="8" fill="#94a3b8">cobertura 360°</text>
+    </svg>
+    <span class="sensor-visual-caption">Detecta distancias en todas las direcciones</span>
+  </div>
+
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+En resumen
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Los sensores no “entienden” el mundo: lo miden. La IA aparece cuando el sistema tiene que convertir esas mediciones en algo útil, por ejemplo distinguir una persona de una sombra, reconocer un obstáculo o elegir una ruta segura.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="cómo-pasa-un-robot-de-observar-el-mundo-a-la-acción" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-pasa-un-robot-de-observar-el-mundo-a-la-acción">Cómo pasa un robot de observar el mundo a la acción</h3>
+<p>Ya tenemos el cuerpo básico: músculos para moverse y sensores para recoger datos. Ahora falta lo más importante: <strong>¿cómo pasa el robot de medir el mundo a actuar sobre él?</strong></p>
+<p>Simplificando el proceso: un robot repite un ciclo una y otra vez <span class="math inline">\(\rightarrow\)</span></p>
+<div class="loop-diagram">
+
+  <div class="loop-step loop-step-perceive">
+    <span class="loop-step-icon">👁</span>
+    <span class="loop-step-num">Paso 1</span>
+    <h4 class="loop-step-title anchored">Percibir</h4>
+    <p class="loop-step-example">Cámaras, GPS, LiDAR, micrófonos o sensores de distancia convierten el mundo físico en datos.</p>
+  </div>
+
+  <div class="loop-step loop-step-process">
+    <span class="loop-step-icon">🧠</span>
+    <span class="loop-step-num">Paso 2</span>
+    <h4 class="loop-step-title anchored">Procesar</h4>
+    <p class="loop-step-example">El sistema interpreta esos datos: detecta objetos, calcula posiciones, reconoce patrones o estima riesgos. Aquí suele entrar la IA.</p>
+  </div>
+
+  <div class="loop-step loop-step-decide">
+    <span class="loop-step-icon">⚡</span>
+    <span class="loop-step-num">Paso 3</span>
+    <h4 class="loop-step-title anchored">Decidir</h4>
+    <p class="loop-step-example">El robot elige una acción posible: frenar, girar, subir, bajar, esperar, cambiar de ruta. Aquí también puede entrar la IA.</p>
+  </div>
+
+  <div class="loop-step loop-step-act">
+    <span class="loop-step-icon">⚙️</span>
+    <span class="loop-step-num">Paso 4</span>
+    <h4 class="loop-step-title anchored">Actuar</h4>
+    <p class="loop-step-example">Motores, ruedas, hélices o brazos convierten la decisión en movimiento.</p>
+  </div>
+
+</div>
+<video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius:12px; margin:1.2rem 0; box-shadow:0 2px 14px rgba(0,0,0,0.07);">
+  <source src="../assets/sesion-13/robot-phases.mp4" type="video/mp4">
+</video>
+<p>Si falla en uno de estos pasos, el robot puede equivocarse aunque los demás pasos funcionen bien. Por eso no basta con preguntarnos “el robot usa IA?”. Hay que preguntar <strong>en qué parte del ciclo entra la IA</strong>.</p>
+<p>La respuesta corta es esta:</p>
+<ul>
+<li>En <strong>percibir</strong>, la IA puede ayudar a interpretar datos crudos: reconocer personas, objetos, señales o peligros.</li>
+<li>En <strong>decidir</strong>, la IA puede ayudar a elegir entre varias acciones posibles cuando el entorno cambia.</li>
+<li>En <strong>aprender</strong>, la IA puede mejorar el comportamiento del robot con datos, simulaciones o experiencia acumulada.</li>
+</ul>
+<p>En situaciones simples, los pasos 2 y 3 se resuelven con reglas fijas. Pero cuando la tarea es ambigua o cambiante, esos dos pasos son justo donde la IA puede hacer la diferencia.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+La conexión con IA, en una frase
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Los sensores ponen los datos, los actuadores ponen el movimiento, y la IA puede entrar en medio para convertir esos datos en decisiones.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="actividad-breve-tú-eres-el-controlador" class="level3">
+<h3 class="anchored" data-anchor-id="actividad-breve-tú-eres-el-controlador">Actividad breve: tú eres el controlador</h3>
+<p>Ya no hay que imaginar: aquí tienes un robot en un mapa de 6×6. Tu tarea es guiarlo del inicio (🤖, esquina superior izquierda) hasta la meta (⭐, esquina inferior derecha), evitando obstáculos con batería limitada.</p>
+<p>Mientras lo controlas, observa el panel de sensores: cada lectura muestra cuántos pasos libres hay en esa dirección antes de un obstáculo o el borde del mapa. <strong>0 significa obstruido</strong> — igual a como un sensor que detecta una pared a cero distancia.</p>
+<div class="robot-sim" id="robot-sim">
+
+  <div class="sim-header">
+    <div class="sim-status" id="sim-status">Usa los botones para guiar al robot 🤖 hasta la meta ⭐</div>
+    <div class="sim-stats">
+      <div class="sim-battery-wrap">
+        <span class="sim-stat-label">Batería</span>
+        <div class="sim-battery-row">
+          <div class="sim-battery-bar">
+            <div class="sim-battery-fill" id="sim-battery-fill" style="width:100%"></div>
+          </div>
+          <span class="sim-battery-pct" id="sim-battery-pct">100%</span>
+        </div>
+      </div>
+      <div class="sim-moves-wrap">
+        <span class="sim-stat-label">Pasos</span>
+        <span class="sim-moves-count" id="sim-moves-count">0</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sim-body">
+
+    <div class="sim-grid-wrap">
+      <div class="sim-grid" id="sim-grid"></div>
+    </div>
+
+    <div class="sim-side">
+
+      <div class="sim-sensors">
+        <div class="sim-sensors-title">📡 Sensor de distancia</div>
+        <div class="sim-sensor-row">
+          <span class="sim-sensor-dir">Norte</span>
+          <div class="sim-sensor-bar-wrap"><div class="sim-sensor-bar" id="sim-s-n" style="width:0%"></div></div>
+          <span class="sim-sensor-val" id="sim-v-n">—</span>
+        </div>
+        <div class="sim-sensor-row">
+          <span class="sim-sensor-dir">Sur</span>
+          <div class="sim-sensor-bar-wrap"><div class="sim-sensor-bar" id="sim-s-s" style="width:0%"></div></div>
+          <span class="sim-sensor-val" id="sim-v-s">—</span>
+        </div>
+        <div class="sim-sensor-row">
+          <span class="sim-sensor-dir">Este</span>
+          <div class="sim-sensor-bar-wrap"><div class="sim-sensor-bar" id="sim-s-e" style="width:0%"></div></div>
+          <span class="sim-sensor-val" id="sim-v-e">—</span>
+        </div>
+        <div class="sim-sensor-row">
+          <span class="sim-sensor-dir">Oeste</span>
+          <div class="sim-sensor-bar-wrap"><div class="sim-sensor-bar" id="sim-s-o" style="width:0%"></div></div>
+          <span class="sim-sensor-val" id="sim-v-o">—</span>
+        </div>
+      </div>
+
+      <div class="sim-controls">
+        <div class="sim-controls-title">🎮 Control</div>
+        <div class="sim-dpad">
+          <button class="sim-btn" id="sim-up">↑</button>
+          <div class="sim-dpad-mid">
+            <button class="sim-btn" id="sim-left">←</button>
+            <div class="sim-dpad-center"></div>
+            <button class="sim-btn" id="sim-right">→</button>
+          </div>
+          <button class="sim-btn" id="sim-down">↓</button>
+        </div>
+        <button class="sim-btn sim-btn-reset" id="sim-reset">↺ Reiniciar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="sim-legend">
+    <div class="sim-legend-item"><div class="sim-legend-dot sim-legend-dot-robot"></div>Tú (🤖)</div>
+    <div class="sim-legend-item"><div class="sim-legend-dot sim-legend-dot-goal"></div>Meta (⭐)</div>
+    <div class="sim-legend-item"><div class="sim-legend-dot sim-legend-dot-obstacle"></div>Obstáculo</div>
+    <div class="sim-legend-item"><div class="sim-legend-dot sim-legend-dot-free"></div>Espacio libre</div>
+  </div>
+
+</div>
+<p>En este mapa, donde cada movimiento consume un 12% de batería, la ruta óptima se siente sencilla. En el mundo real todo llega mezclado, incompleto y con ruido. Ese es el desafío central de la robótica: <strong>decidir con información imperfecta, en tiempo real, cuando los errores tienen consecuencias físicas</strong>.</p>
+<p>Y aquí está el puente con la IA: mientras tú juegas, tú haces el trabajo de percepción y decisión. Tú lees el entorno, interpretas las señales y eliges el siguiente paso. Pero, <strong>¿cómo haríamos para que el robot hiciera eso solo?</strong></p>
+<p>Hay tres caminos posibles:</p>
+<ul>
+<li>escribir reglas a mano para cada situación,</li>
+<li>usar modelos de IA para interpretar sensores o elegir acciones,</li>
+<li>combinar ambas cosas.</li>
+</ul>
+<p>Esa combinación es, en la práctica, gran parte de la robótica moderna.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Reglas fijas vs.&nbsp;modelo de IA
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Imagina el simulador de esta página.</p>
+<ul>
+<li><strong>Regla fija:</strong> “si hay un obstáculo al frente, gira a la derecha”. Funciona bien en mapas simples, pero en situaciones más complejas se puede quedar atorado o tomar rutas innecesariamente largas.</li>
+<li><strong>Modelo de IA:</strong> aprende, a partir de muchos intentos o ejemplos, qué movimiento aumenta las probabilidades de llegar a la meta cometiendo el menor número de errores posibles.</li>
+</ul>
+<p>La diferencia no está en que uno sea “inteligente” y el otro no. Está en que la <strong>regla fija</strong> depende de instrucciones escritas a mano, mientras que el <strong>modelo de IA</strong> ajusta su comportamiento a partir de datos o experiencia acumulada.</p>
+</div>
+</div>
+<hr>
+</section>
+<section id="de-control-remoto-a-autonomía" class="level3">
+<h3 class="anchored" data-anchor-id="de-control-remoto-a-autonomía">De control remoto a autonomía</h3>
+<p>No todas las máquinas inteligentes tienen el mismo nivel de autonomía — y este punto genera mucha confusión, sobre todo porque en la publicidad y los medios se mezclan sin distinción niveles muy diferentes.</p>
+<p>Mientras más autonomía le pides a un sistema, más importante se vuelve que pueda percibir bien y decidir sin depender de una persona en cada segundo. Aunque la autonomía de una máquina y la IA no son lo mismo, sí están muy conectadas.</p>
+<p>La escala que sigue es una <strong>adaptación</strong> de la propuesta general de niveles de autonomía. Nació en el contexto de vehículos, pero aquí la usamos en un lenguaje más amplio para pensar en robots de distintos tipos.</p>
+<div class="autonomy-diagram">
+  <div class="autonomy-scale">
+    <div class="autonomy-step autonomy-step-0">
+      <span class="autonomy-badge autonomy-badge-0">0</span>
+      <h4 class="autonomy-step-title anchored">Manual o teleoperado</h4>
+      <p class="autonomy-step-body">La persona toma todas las decisiones importantes y controla el movimiento.</p>
+      <p class="autonomy-step-example">Ejemplo: dron pilotado a mano o robot manejado a control remoto.</p>
+    </div>
+
+    <div class="autonomy-step autonomy-step-1">
+      <span class="autonomy-badge autonomy-badge-1">1</span>
+      <h4 class="autonomy-step-title anchored">Asistencia puntual</h4>
+      <p class="autonomy-step-body">El sistema ayuda con una tarea específica, pero no lleva la misión completa.</p>
+      <p class="autonomy-step-example">Ejemplo: estabilización automática o frenado ante choque inminente.</p>
+    </div>
+
+    <div class="autonomy-step autonomy-step-2">
+      <span class="autonomy-badge autonomy-badge-2">2</span>
+      <h4 class="autonomy-step-title anchored">Automatización parcial</h4>
+      <p class="autonomy-step-body">Puede ejecutar varias acciones seguidas, pero necesita vigilancia humana constante.</p>
+      <p class="autonomy-step-example">Ejemplo: robot móvil que sigue una ruta conocida con supervisión cercana.</p>
+    </div>
+
+    <div class="autonomy-step autonomy-step-3">
+      <span class="autonomy-badge autonomy-badge-3">3</span>
+      <h4 class="autonomy-step-title anchored">Autonomía condicionada</h4>
+      <p class="autonomy-step-body">Opera solo por momentos en contextos previstos, pero espera intervención humana si aparece algo fuera de lo normal.</p>
+      <p class="autonomy-step-example">Ejemplo: robot de almacén que trabaja solo mientras el entorno siga dentro de ciertos límites.</p>
+      <span class="autonomy-ai-badge">IA: empieza a ser necesaria</span>
+    </div>
+
+    <div class="autonomy-step autonomy-step-4">
+      <span class="autonomy-badge autonomy-badge-4">4</span>
+      <h4 class="autonomy-step-title anchored">Alta autonomía delimitada</h4>
+      <p class="autonomy-step-body">Cumple una misión completa por sí mismo, pero solo en zonas, rutas o escenarios muy definidos.</p>
+      <p class="autonomy-step-example">Ejemplo: dron de entrega o robot de inspección en un entorno controlado.</p>
+      <span class="autonomy-ai-badge autonomy-ai-badge-high">IA: muy importante</span>
+    </div>
+
+    <div class="autonomy-step autonomy-step-5">
+      <span class="autonomy-badge autonomy-badge-5">5</span>
+      <h4 class="autonomy-step-title anchored">Autonomía general</h4>
+      <p class="autonomy-step-body">Podría operar solo en casi cualquier entorno, sin depender de límites predefinidos.</p>
+      <p class="autonomy-step-example">Ejemplo: este nivel todavía no existe en robótica real.</p>
+      <span class="autonomy-ai-badge autonomy-ai-badge-high">IA: imprescindible (en teoría)</span>
+    </div>
+  </div>
+
+<p class="autonomy-source">
+Adaptado de SAE J3016, originalmente propuesta para vehículos, aquí reformulada para pensar en aplicaciones para robótica en general.
+</p>
+<div class="autonomy-question">
+  <p class="autonomy-question-prompt">Antes de seguir — un momento para reflexionar</p>
+  <p class="autonomy-question-text">¿Cuál de estos dos robots usa <strong>más IA</strong>?</p>
+  <div class="autonomy-question-cards">
+    <div class="autonomy-question-card">
+      <span class="autonomy-question-icon">🤖</span>
+      <strong>Roomba (2002)</strong>
+      <p>Opera completamente solo: mapea la habitación, esquiva obstáculos y regresa a su base. No necesita de nadie durante la misión.</p>
+    </div>
+    <div class="autonomy-question-card">
+      <span class="autonomy-question-icon">🦾</span>
+      <strong>Brazo robótico de almacén</strong>
+      <p>Usa visión por computadora para reconocer cajas de formas y tamaños distintos. Un humano supervisa la misión completa.</p>
+    </div>
+  </div>
+  <div class="autonomy-question-reveal">
+    <strong>El brazo robótico usa más IA</strong> — aunque la Roomba es más autónomo.<br>
+    Autonomía y uso de IA no son la misma escala. Eso es exactamente lo que exploraremos aquí.
+  </div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ojo con el lenguaje
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Una palabra exagerada puede hacer mucho daño. Si llamas “autónomo” a algo que en realidad necesita supervisión constante, podemos confiar de más en la máquina, usarla de forma érronea, y cometer errores graves. En robótica, una mala expectativa también es un problema de seguridad.</p>
+</div>
+</div>
+<hr>
+</div></section>
+<section id="cómo-aprende-un-robot-sin-romperse" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-aprende-un-robot-sin-romperse">¿Cómo aprende un robot sin romperse?</h3>
+<p>Hasta ahora hablamos de robots que perciben y deciden. Aquí aparece otra pregunta importante: <strong>¿cómo aprenden a hacerlo sin romperse en el intento?</strong></p>
+<p>Como viste en la <a href="sesion-03.html">sesión 3</a>, el <strong>aprendizaje por refuerzo</strong> es una familia de métodos donde un agente prueba acciones, recibe una recompensa y ajusta su comportamiento. En robótica, esa idea se vuelve mucho más delicada, porque ahora los errores no ocurren en una pantalla: ocurren en el mundo físico.</p>
+<p>Por ello, siempre debemos <strong>simular antes de desplegar</strong>.</p>
+<div class="story-card">
+  <div class="rl-anim-wrap">
+    <canvas id="rl-canvas" width="190" height="222"></canvas>
+  </div>
+  <div class="story-content">
+    <p class="story-kicker">APRENDIZAJE POR REFUERZO</p>
+    <h3 class="story-title anchored">Primero falla mil veces en formato virtual, y así evita cometer ese error en la calle</h3>
+    <p class="story-source">Idea central de la robótica moderna</p>
+    <p class="story-body">Con aprendizaje por refuerzo, el agente prueba acciones, recibe recompensas y ajusta su comportamiento. En simuladores eso es barato y repetible. En el mundo físico, un error puede romper el robot, desperdiciar materiales o lastimar a alguien. Por eso muchas aplicaciones entrenan primero en mundos virtuales y solo después pasan a pruebas reales. Esto no elimina el riesgo, pero sí reduce muchísimo el costo de aprender.</p>
+  </div>
+</div>
+<p>En robótica, la simulación no es un adorno; es una medida de seguridad y de reducción de costos. Aprender por prueba y error en formato virtual es mucho más barato que aprender con impactos reales. Aun así, pasar de la simulación a mundo físico sigue siendo difícil porque el mundo real es más desordenado.</p>
+<hr>
+</section>
+<section id="robots-con-ia-qué-problemas-resuelven" class="level3">
+<h3 class="anchored" data-anchor-id="robots-con-ia-qué-problemas-resuelven">Robots con IA: ¿qué problemas resuelven?</h3>
+<p>No empieces por el robot — empieza por el problema. Cada uno de los tres casos que siguen tiene los mismos ingredientes: una situación que un humano no podía resolver solo, una máquina que responde con sensores y movimiento, y un momento exacto donde la IA convierte el “no se puede” en “ya funciona”.</p>
+<div class="route-grid">
+
+  <a class="route-card" href="https://bostondynamics.com/products/spot/" target="_blank" rel="noopener noreferrer">
+    <div class="route-card-header">
+      <span class="route-logo-emoji">🏭</span>
+      <h4 class="route-name route-name-featured anchored">SPOT</h4>
+    </div>
+    <p class="route-org">Boston Dynamics</p>
+    <p class="route-problem">
+      <span class="route-zone-label">El problema</span>
+      Inspeccionar una planta química, una mina activa o un edificio dañado puede ser letal. El entorno cambia: el suelo es irregular, el aire puede ser tóxico, y los instrumentos son difíciles de leer a distancia.
+    </p>
+    <p class="route-summary">Robot cuadrúpedo que navega espacios industriales y de riesgo de forma autónoma, recoge lecturas de sensores y transmite datos en tiempo real sin exponer a nadie.</p>
+    <p class="route-ai-role">
+      <span class="route-zone-label">La IA hace posible</span>
+      Visión por computadora que detecta anomalías: equipos con temperatura fuera de rango, estructuras dañadas, lecturas de gas inusuales. Planificación de trayectoria que se adapta cada paso al terreno sin instrucciones manuales.
+    </p>
+    <div class="route-tags">
+      <span class="route-tag route-tag-free">Visión por computadora</span>
+      <span class="route-tag route-tag-browser">Planificación de ruta</span>
+    </div>
+  </a>
+
+  <a class="route-card" href="https://www.technologyreview.com/2017/06/08/151339/blood-from-the-sky-ziplines-ambitious-medical-drone-delivery-in-africa/" target="_blank" rel="noopener noreferrer">
+    <div class="route-card-header">
+      <span class="route-logo-emoji">📦</span>
+      <h4 class="route-name route-name-featured anchored">ZIPLINE</h4>
+    </div>
+    <p class="route-org">MIT Technology Review · 2017</p>
+    <p class="route-problem">
+      <span class="route-zone-label">El problema</span>
+      En zonas rurales de Ruanda, las clínicas no recibían sangre ni vacunas a tiempo: las carreteras eran intransitables o no existían. El tiempo entre pedido y entrega podía medirse en horas. En medicina, un lapso de ese tamaño puede ser la diferencia entre la vida y la muerte.
+    </p>
+    <p class="route-summary">Red de drones que entrega sangre, vacunas y medicamentos en menos de 30 minutos a clínicas remotas, sin carreteras ni pilotos humanos.</p>
+    <p class="route-ai-role">
+      <span class="route-zone-label">La IA hace posible</span>
+      Navegación autónoma que corrige la ruta en vuelo según el viento y el terreno. El sistema calcula el punto exacto de entrega y ajusta la trayectoria en tiempo real, sin intervención humana desde tierra.
+    </p>
+    <div class="route-tags">
+      <span class="route-tag route-tag-free">Navegación autónoma</span>
+      <span class="route-tag route-tag-browser">Decisión en tiempo real</span>
+    </div>
+  </a>
+
+  <a class="route-card" href="https://www.nucleares.unam.mx/boletin_icnoticias/2024_01/nct_noticia_destacada.html" target="_blank" rel="noopener noreferrer">
+    <div class="route-card-header">
+      <span class="route-logo-emoji">🇲🇽</span>
+      <h4 class="route-name route-name-featured anchored">COLMENA</h4>
+    </div>
+    <p class="route-org">UNAM · Instituto de Ciencias Nucleares</p>
+    <p class="route-problem">
+      <span class="route-zone-label">El problema</span>
+      Enviar un robot grande a explorar la Luna es costoso y concentra todo el riesgo en un solo punto de falla: si algo sale mal, se pierde la misión completa. Un robot solo puede cubrir un área limitada.
+    </p>
+    <p class="route-summary">Cinco microrrobots de decenas de gramos cada uno, diseñados en la UNAM, pensados para desplegarse juntos desde un módulo lunar y explorar de forma independiente.</p>
+    <p class="route-ai-role">
+      <span class="route-zone-label">La IA hace posible</span>
+      Comportamiento coordinado sin controlador central: cada robot es simple por diseño, pero el conjunto puede cubrir más superficie que un solo vehículo y seguir operando aunque alguno falle.
+    </p>
+    <div class="route-tags">
+      <span class="route-tag route-tag-es">México · UNAM</span>
+      <span class="route-tag route-tag-browser">Robótica de enjambre</span>
+    </div>
+  </a>
+
+</div>
+<hr>
+</section>
+<section id="recursos-para-explorar-más-sobre-el-tema" class="level3">
+<h3 class="anchored" data-anchor-id="recursos-para-explorar-más-sobre-el-tema">Recursos para explorar más sobre el tema</h3>
+<div class="resource-list">
+<div class="route-grid">
+
+  <a class="route-card" href="https://bostondynamics.com/video/spot-watches-its-step/" target="_blank" rel="noopener noreferrer">
+    <div class="route-card-header">
+      <span class="route-logo-emoji">🐕</span>
+      <h4 class="route-name anchored">Spot Watches Its Step</h4>
+    </div>
+    <p class="route-org">Boston Dynamics · Video oficial</p>
+    <p class="route-desc">Buen recurso para aprender sobre locomoción, percepción y adaptación. Pregúntate: ¿qué detecta Spot y qué decide por sí mismo?</p>
+    <div class="route-tags">
+      <span class="route-tag route-tag-free">Video</span>
+      <span class="route-tag route-tag-en">Inglés</span>
+    </div>
+  </a>
+
+  <a class="route-card" href="https://waymo.com/waymo-driver/" target="_blank" rel="noopener noreferrer">
+    <div class="route-card-header">
+      <span class="route-logo-emoji">🚗</span>
+      <h4 class="route-name anchored">Waymo Driver</h4>
+    </div>
+    <p class="route-org">Waymo · Explicación oficial</p>
+    <p class="route-desc">Sirve para enseñar sensores, autonomía y límites del sistema. Pregúntate: ¿qué parte parece percepción y qué parte parece decisión?</p>
+    <div class="route-tags">
+      <span class="route-tag route-tag-free">Explainer</span>
+      <span class="route-tag route-tag-en">Visual</span>
+    </div>
+  </a>
+
+  <a class="route-card" href="https://www.zipline.com/" target="_blank" rel="noopener noreferrer">
+    <div class="route-card-header">
+      <span class="route-logo-emoji">📦</span>
+      <h4 class="route-name anchored">Zipline: entrega con drones</h4>
+    </div>
+    <p class="route-org">Zipline · Sitio oficial</p>
+    <p class="route-desc">¿Crees que una red de entrega autónoma tendría sentido en comunidades rurales de México o de San Luis Potosí?</p>
+    <div class="route-tags">
+      <span class="route-tag route-tag-free">Caso Especial</span>
+      <span class="route-tag route-tag-en">Contexto</span>
+    </div>
+  </a>
+
+  <a class="route-card" href="https://conecta.tec.mx/en/news/national/education/remarkable-mexican-team-final-2024-first-world-championship" target="_blank" rel="noopener noreferrer">
+    <div class="route-card-header">
+      <span class="route-logo-emoji">🤖</span>
+      <h4 class="route-name anchored">LamBot 3478 — PrepaTec SLP</h4>
+    </div>
+    <p class="route-org">Tec de Monterrey · FIRST Robotics</p>
+    <p class="route-desc">Equipo de preparatoria de San Luis Potosí que llegó a finales del Campeonato Mundial FIRST 2024 en Houston — el primero de América Latina.</p>
+    <div class="route-tags">
+      <span class="route-tag route-tag-free">México · SLP</span>
+      <span class="route-tag route-tag-en">Artículo</span>
+    </div>
+  </a>
+
+  <a class="route-card" href="https://vr.vex.com" target="_blank" rel="noopener noreferrer">
+    <div class="route-card-header">
+      <span class="route-logo-emoji">🕹</span>
+      <h4 class="route-name anchored">VEX VR</h4>
+    </div>
+    <p class="route-org">VEX Robotics · Simulador en navegador</p>
+    <p class="route-desc">Programa un robot virtual en Python o en bloques, directamente en el navegador, sin instalar nada. Uno de los mejores puntos de entrada para experimentar con robótica sin hardware.</p>
+    <div class="route-tags">
+      <span class="route-tag route-tag-free">Gratis</span>
+      <span class="route-tag route-tag-browser">Sin instalación necesaria</span>
+    </div>
+  </a>
+
+</div>
+</div>
+<hr>
+</section>
+<section id="la-idea-central-de-esta-sesión" class="level3">
+<h3 class="anchored" data-anchor-id="la-idea-central-de-esta-sesión">La idea central de esta sesión</h3>
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 13</span>
+  <p class="central-idea-text">Un robot no se vuelve inteligente solo por tener motores y sensores. La IA entra cuando esa máquina debe percibir, decidir o adaptarse en un entorno cambiante. Por eso, en robótica, la pregunta importante no es solo qué se mueve, sino qué problema se intenta resolver y con qué margen de seguridad.</p>
+</div>
+<hr>
+<nav class="sesion-nav">
+  <a href="sesion-12.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S12: Programación con IA</span>
+  </a>
+  <div class="sesion-nav-center">
+    <span class="sesion-nav-progress">Sesión 13 de 15</span>
+  </div>
+  <a href="sesion-14.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S14: IA en Salud y Ciencia</span>
+  </a>
+</nav>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.curso-ia-slp\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Intro a la IA · San Luis Potosí · 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/michelleg06">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

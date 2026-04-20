@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sesión 2: Redes neuronales – Intro a la IA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/logo.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script defer="" src="https://cloud.umami.is/script.js" data-website-id="225b59d4-82fc-4df6-9c47-98afac4a8c13"></script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles/sesion.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/logo.svg" alt="Intro a la IA" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Intro a la IA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">Programa</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sesiones" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Sesiones</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-sesiones">    
+        <li class="dropdown-header">— Bloque 1: Fundamentos + Ética —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-01.html">
+ <span class="dropdown-text">S1 · ¿Qué es la IA?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-02.html">
+ <span class="dropdown-text">S2 · Redes Neuronales Artificiales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-03.html">
+ <span class="dropdown-text">S3 · Algoritmos de IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-04.html">
+ <span class="dropdown-text">S4 · IA Generativa</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-05.html">
+ <span class="dropdown-text">S5 · Ética en la IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-06.html">
+ <span class="dropdown-text">S6 · EN VIVO: IA en México</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 2: Herramientas Prácticas —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-07.html">
+ <span class="dropdown-text">S7 · Tutor de Lenguaje</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-08.html">
+ <span class="dropdown-text">S8 · IA para Creatividad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-09.html">
+ <span class="dropdown-text">S9 · IA para Organización</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-10.html">
+ <span class="dropdown-text">S10 · Tutor Académico</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-11.html">
+ <span class="dropdown-text">S11 · EN VIVO: Política Pública</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 3: Creación, Aplicaciones y Futuro —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-12.html">
+ <span class="dropdown-text">S12 · Programación con IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-13.html">
+ <span class="dropdown-text">S13 · Robótica e IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-14.html">
+ <span class="dropdown-text">S14 · IA en Salud, Ciencia y Sociedad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-15.html">
+ <span class="dropdown-text">S15 · EN VIVO: Educación Global</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#introducción-a-las-redes-neuronales-artificiales" id="toc-introducción-a-las-redes-neuronales-artificiales" class="nav-link active" data-scroll-target="#introducción-a-las-redes-neuronales-artificiales">Introducción a las Redes Neuronales Artificiales</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sesión 2: Redes neuronales</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 1 · Fundamentos + Ética</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-2"></div>
+    </div>
+    <span class="sesion-progress-label">2 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Mayo de 2026</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 45 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+<link rel="stylesheet" href="../styles/sessions/sesion-02.css">
+<script src="../interactives/sesion-02.js"></script>
+<section id="introducción-a-las-redes-neuronales-artificiales" class="level2">
+<h2 class="anchored" data-anchor-id="introducción-a-las-redes-neuronales-artificiales">Introducción a las Redes Neuronales Artificiales</h2>
+<p>Antes de empezar con el tema que nos compete el día de hoy, iniciemos con un video que nos brinda más claridad sobre los tipos de Aprendizaje de Máquinas. Tema con el cuál cerramos la primera sesión de este curso.</p>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/eSPk2x05QSg" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
+</div>
+<hr>
+<p class="capsule-complement-note">Recuerda: los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
+<hr>
+<section id="introducción" class="level3">
+<h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
+<div class="intro-two-col">
+  <div class="intro-text-col">
+    <p>Si conoces los teléfonos smartphone, entonces sabrás que algunos utilizan reconocimiento facial para desbloquearse. Lo que quizá no sepas es qué sucede tras bambalinas. Cada vez que tu teléfono reconoce tu cara, o un filtro sigue tus ojos en tiempo real, detrás hay un sistema que hoy vamos a estudiar: una red neuronal. Las redes neuronales están por todos lados; se usan en filtros de TikTok e Instagram, en aplicaciones que generan texto como el Traductor de Google, e incluso para darle color a fotografías del siglo pasado.</p>
+    <p>En la sesión pasada vimos cómo una máquina puede aprender a partir de datos y una ecuación muy sencilla: la recta. Para problemas de predicción simple, eso es todo lo que necesitamos. Pero cuando los datos presentan muchos patrones y éstos se mezclan entre sí, necesitamos más que trazar una sola línea para conectar los puntos.</p>
+    <p>En esta sesión vamos a ver, de manera intuitiva, cómo funciona una neurona y por qué muchas neuronas juntas resuelven lo que una recta no puede resolver. También aprenderemos a distinguir dos momentos clave en la vida de cualquier red neuronal: cuando aprende (entrenarla) y cuando ya aprendió (usarla). Las redes neuronales son un puente: con ellas, el aprendizaje supervisado escala hasta problemas que antes parecían inalcanzables, y también se abre la puerta al aprendizaje no supervisado, donde la máquina descubre estructura y patrones sin que nadie le indique exactamente qué buscar.</p>
+  </div>
+  <div class="intro-phone-col">
+    <div style="width:280px;height:560px;border-radius:46px;overflow:hidden;display:inline-block;">
+      <video autoplay="" loop="" muted="" playsinline="" style="width:280px;height:560px;display:block;">
+        <source src="img/sesion-02-intro.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+<hr>
+<p>En este video, resumimos, de manera general e intuitiva, qué es una red neuronal. Lo que verás en el resto de esta sesión es exactamente eso; pero armado paso a paso, desde la pieza más pequeña: la neurona.</p>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/ARqeQ2GCLKj" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
+</div>
+<hr>
+</section>
+<section id="una-neurona-artificial" class="level3">
+<h3 class="anchored" data-anchor-id="una-neurona-artificial">Una neurona artificial</h3>
+<p>Si queremos entender lo que hace una red neuronal artificial, primero debemos aprender sobre su elemento más pequeño: la neurona artificial. La neurona, también conocida como nodo, es una función matemática relativamente sencilla, y el componente fundamental de una red neuronal. Su rol en el sistema es el de un interruptor; ella decide si se activa (produce una señal de salida) o se apaga (no produce nada). ¿Cómo es que logra esto?</p>
+<p>Imagina que una computadora recibe una imagen y quiere reconocerla. Su misión es decidir si en la imagen se encuentra un gato, u otro animal. Para ello, necesita convertir la imagen en señales númericas - el lenguaje de las máquinas - y trabajar a partir de esos datos.</p>
+<p>Cada rasgo de la imagen se vuelve una señal numérica. Por ejemplo, si en efecto hay un gato, entonces el tamaño y rasgo de sus ojos, la existencia de bigotes, o qué tan puntiagudas están las orejas se vuelven señales que ayudan a identificar al felino. La neurona recibe cada señal y le asigna un peso (o ponderación). Despues, suma todas las señales y decide: ¿hay evidencia suficiente para identificar a un gato? Si la evidencia - el total de las señales - alcanza cierto nivel, se activa. Si no, se apaga.</p>
+<div class="neurona-storyboard">
+  <div class="neurona-story-item">
+    <div class="neurona-story-num" aria-hidden="true">1</div>
+    <article class="neurona-story-card">
+      <p class="neurona-story-kicker">Lo que entra</p>
+      <h4 class="neurona-story-title anchored">Imagen de entrada</h4>
+      <p class="neurona-story-copy">La máquina recibe una imagen. Para ella, esto todavía no significa “gato”: es solo un dato de entrada.</p>
+      <div class="neurona-photo-card">
+        <img src="img/cat.jpg" alt="Foto de un gato" class="neurona-photo">
+        <span class="neurona-photo-chip">dato de entrada</span>
+      </div>
+    </article>
+  </div>
+
+  <div class="neurona-story-item">
+    <div class="neurona-story-num" aria-hidden="true">2</div>
+    <article class="neurona-story-card">
+      <p class="neurona-story-kicker">Lo que la máquina busca</p>
+      <h4 class="neurona-story-title anchored">Rasgos o señales</h4>
+      <p class="neurona-story-copy">Busca patrones simples que pueden ayudar a reconocer al animal: orejas puntiagudas, bigotes y ojos al frente.</p>
+      <div class="neurona-photo-card neurona-photo-annotated">
+        <img src="img/cat.jpg" alt="Foto de un gato con rasgos destacados" class="neurona-photo">
+        <span class="neurona-sketch sketch-ears"></span>
+        <span class="neurona-sketch sketch-whiskers"></span>
+        <span class="neurona-sketch sketch-eyes"></span>
+        <span class="neurona-tag tag-ears">orejas</span>
+        <span class="neurona-tag tag-whiskers">bigotes</span>
+        <span class="neurona-tag tag-eyes">ojos</span>
+      </div>
+    </article>
+  </div>
+
+  <div class="neurona-story-item">
+    <div class="neurona-story-num" aria-hidden="true">3</div>
+    <article class="neurona-story-card">
+      <p class="neurona-story-kicker">Cómo lo convierte en valores</p>
+      <h4 class="neurona-story-title anchored">De rasgos a números</h4>
+      <p class="neurona-story-copy">Cada rasgo se transforma en un valor que indica qué tan presente está.</p>
+      <div class="neurona-values-card">
+        <div class="neurona-value-row">
+          <span>orejas</span>
+          <strong>0.7</strong>
+        </div>
+        <div class="neurona-value-row">
+          <span>bigotes</span>
+          <strong>1.0</strong>
+        </div>
+        <div class="neurona-value-row">
+          <span>ojos</span>
+          <strong>0.8</strong>
+        </div>
+      </div>
+      <p class="neurona-story-note">Para simplificar, aquí usamos valores entre 0 y 1.</p>
+    </article>
+  </div>
+
+  <div class="neurona-story-item">
+    <div class="neurona-story-num" aria-hidden="true">4</div>
+    <article class="neurona-story-card">
+      <p class="neurona-story-kicker">Cómo suma la evidencia</p>
+      <h4 class="neurona-story-title anchored">La neurona combina señales</h4>
+      <p class="neurona-story-copy">No todas las señales tienen la misma importancia: cada una se multiplica por un peso y luego se suma. Piensa por ejemplo, en que un zorro también tiene orejas puntiagudas, así que ese rasgo no es único del gato. No puede tener tanto peso como otros rasgos que quizá sí sean únicos de un gato. Aquí es importante distinguir dos cosas: los valores <strong>salen de la imagen</strong>; los pesos y el sesgo <strong>no salen de la foto</strong>, sino que la red neuronal los aprendió antes durante el entrenamiento.</p>
+      <div class="neurona-score-card">
+        <div class="neurona-score-row">
+          <span>orejas x peso aprendido</span>
+          <code>0.7 × 0.6</code>
+        </div>
+        <div class="neurona-score-row">
+          <span>bigotes x peso aprendido</span>
+          <code>1.0 × 1.2</code>
+        </div>
+        <div class="neurona-score-row">
+          <span>ojos x peso aprendido</span>
+          <code>0.8 × 0.7</code>
+        </div>
+        <div class="neurona-score-row">
+          <span>sesgo aprendido</span>
+          <code>-0.8</code>
+        </div>
+        <div class="neurona-score-total">evidencia total = 1.38</div>
+      </div>
+      <p class="neurona-story-note">En otras palabras: esta foto aporta las señales; el entrenamiento previo aporta qué tan importantes son y dónde queda el umbral de activación de la neurona.</p>
+    </article>
+  </div>
+
+  <div class="neurona-story-item">
+    <div class="neurona-story-num" aria-hidden="true">5</div>
+    <article class="neurona-story-card neurona-story-card-final">
+      <p class="neurona-story-kicker">La decisión</p>
+      <h4 class="neurona-story-title anchored">La neurona se activa</h4>
+      <p class="neurona-story-copy">Si la evidencia supera cierto umbral, produce una señal de salida.</p>
+      <div class="neurona-decision-card">
+        <div class="neurona-threshold-wrap">
+          <div class="neurona-threshold-track">
+            <span class="neurona-threshold-fill"></span>
+            <span class="neurona-threshold-marker"></span>
+          </div>
+          <div class="neurona-threshold-labels">
+            <span>umbral 1.0</span>
+            <strong>evidencia 1.38</strong>
+          </div>
+        </div>
+        <div class="neurona-decision-badge">Se activa</div>
+      </div>
+    </article>
+  </div>
+</div>
+<p>Ahora ya entiendes la intuición detrás de una neurona y su activación. Los valores que recibe la neurona vienen de los datos: dependen de qué tan presente está cada rasgo en la imagen. Un rasgo no siempre vale exactamente <code>1</code>; puede valer <code>0.7</code> u <code>0.8</code>, y representa qué tan claro o menos claro se distingue el rasgo en la imagen.</p>
+<p>Si te interesa verlo en lenguaje matemático, esta idea suele escribirse así: <span class="math display">\[
+z = w_1x_1 + w_2x_2 + w_3x_3 + b
+\]</span></p>
+<p>En nuestro ejemplo, los símbolos se pueden reemplazar con los valores observados:</p>
+<p><span class="math display">\[
+z = (0.7)(0.6) + (1.0)(1.2) + (0.8)(0.7) - 0.8 = 1.38
+\]</span></p>
+<p>Con esto basta para hacernos una nueva pregunta: si una sola neurona puede decidir a partir de unos cuantos rasgos ya identificados, ¿cómo se resume una imagen completa en rasgos que la neurona pueda usar?</p>
+<hr>
+</section>
+<section id="de-píxeles-a-números-el-idioma-de-la-máquina" class="level3">
+<h3 class="anchored" data-anchor-id="de-píxeles-a-números-el-idioma-de-la-máquina">De píxeles a números: el idioma de la máquina</h3>
+<p>Acabas de ver cómo una neurona toma algunos rasgos de una imagen y produce una decisión. Pero una computadora no recibe una foto ya convertida en “orejas” o “bigotes”. Recibe muchísimos píxeles: números que describen color e intensidad.</p>
+<p>Entonces, ¿cómo pasamos de todos esos píxeles a unos pocos valores numéricos que una neurona puede interpretar?</p>
+<p>En la sección anterior usamos <strong>tres rasgos</strong> para explicar cómo funciona una neurona. Aquí vamos a usar <strong>solo dos</strong> porque queremos representarlos en una gráfica (plano cartesiano): <strong>orejas</strong> y <strong>bigotes</strong>.</p>
+<p>No vamos a explicar todavía todo el mecanismo de una red neuronal. Vamos a construir una intuición: cómo una imagen completa pasa de píxeles a rasgos medibles, y cómo esos rasgos se convierten en un punto en una gráfica que una neurona puede interpetar.</p>
+<div class="pixel-flow-list">
+  <div class="pixel-flow-item">
+    <div class="pixel-flow-num" aria-hidden="true">1</div>
+    <article class="pixel-flow-card">
+      <p class="pixel-flow-kicker">Lo que entra</p>
+      <h4 class="pixel-flow-title anchored">Una imagen completa</h4>
+      <p class="pixel-flow-copy">La máquina recibe una imagen completa. Todavía no hay un “gato”, solo hay información visual.</p>
+      <div class="pixel-photo-card">
+        <img src="img/cat.jpg" alt="Foto de un gato" class="pixel-photo">
+        <span class="pixel-photo-chip">datos visuales</span>
+      </div>
+    </article>
+  </div>
+
+  <div class="pixel-flow-item">
+    <div class="pixel-flow-num" aria-hidden="true">2</div>
+    <article class="pixel-flow-card">
+      <p class="pixel-flow-kicker">Para la máquina</p>
+      <h4 class="pixel-flow-title anchored">La imagen son píxeles</h4>
+      <p class="pixel-flow-copy">La computadora observs muchísimos píxeles. Cada píxel guarda valores de color e intensidad. En este punto todavía no hay “rasgos”; solo hay muchos números.</p>
+      <div class="pixel-grid-card">
+        <svg viewbox="0 0 220 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="16" y="16" width="188" height="88" rx="14" fill="#f8fafc" stroke="#e2e8f0"></rect>
+          <g transform="translate(34 28)">
+            <rect x="0" y="0" width="16" height="16" fill="#d9c5a1"></rect>
+            <rect x="18" y="0" width="16" height="16" fill="#c4ab84"></rect>
+            <rect x="36" y="0" width="16" height="16" fill="#8c6b4f"></rect>
+            <rect x="54" y="0" width="16" height="16" fill="#f2efe8"></rect>
+            <rect x="72" y="0" width="16" height="16" fill="#7d5f48"></rect>
+            <rect x="90" y="0" width="16" height="16" fill="#b18a65"></rect>
+            <rect x="108" y="0" width="16" height="16" fill="#d7c1a1"></rect>
+            <rect x="0" y="18" width="16" height="16" fill="#d8c9b1"></rect>
+            <rect x="18" y="18" width="16" height="16" fill="#6b4f3a"></rect>
+            <rect x="36" y="18" width="16" height="16" fill="#4a3529"></rect>
+            <rect x="54" y="18" width="16" height="16" fill="#f8f6f1"></rect>
+            <rect x="72" y="18" width="16" height="16" fill="#3f2a1e"></rect>
+            <rect x="90" y="18" width="16" height="16" fill="#77563f"></rect>
+            <rect x="108" y="18" width="16" height="16" fill="#d9c5a3"></rect>
+            <rect x="0" y="36" width="16" height="16" fill="#d9c5a3"></rect>
+            <rect x="18" y="36" width="16" height="16" fill="#4b3627"></rect>
+            <rect x="36" y="36" width="16" height="16" fill="#0f172a"></rect>
+            <rect x="54" y="36" width="16" height="16" fill="#f5f5f4"></rect>
+            <rect x="72" y="36" width="16" height="16" fill="#0f172a"></rect>
+            <rect x="90" y="36" width="16" height="16" fill="#5e4332"></rect>
+            <rect x="108" y="36" width="16" height="16" fill="#d7b892"></rect>
+            <rect x="0" y="54" width="16" height="16" fill="#cfb08a"></rect>
+            <rect x="18" y="54" width="16" height="16" fill="#7f5f45"></rect>
+            <rect x="36" y="54" width="16" height="16" fill="#f6ede4"></rect>
+            <rect x="54" y="54" width="16" height="16" fill="#fef3c7"></rect>
+            <rect x="72" y="54" width="16" height="16" fill="#f7efe8"></rect>
+            <rect x="90" y="54" width="16" height="16" fill="#6d4d37"></rect>
+            <rect x="108" y="54" width="16" height="16" fill="#caa079"></rect>
+          </g>
+          <text x="110" y="104" text-anchor="middle" fill="#64748b" font-size="10">cada píxel = números de color e intensidad</text>
+        </svg>
+      </div>
+      <p class="pixel-flow-note"><strong>Importante:</strong> el paso que sigue consiste en resumir todos esos píxeles en medidas que la neurona pueda interpretar.</p>
+    </article>
+  </div>
+
+  <div class="pixel-flow-item">
+    <div class="pixel-flow-num" aria-hidden="true">3</div>
+    <article class="pixel-flow-card">
+      <p class="pixel-flow-kicker">Cada píxel ya es un número</p>
+      <h4 class="pixel-flow-title anchored">Una región se vuelve una matriz</h4>
+      <p class="pixel-flow-copy">Si haces zoom en una pequeña región de la imagen, ves cuadritos. A cada píxel se le asigna un número según su brillo o color. Para simplificar, aquí imaginamos primero la claridad en una escala de <strong>0 a 255</strong>: <strong>oscuro = valor bajo</strong>, <strong>claro = valor alto</strong>.</p>
+      <div class="pixel-number-bridge">
+        <div class="pixel-number-panel">
+          <span class="pixel-number-label">región de la imagen</span>
+          <svg viewbox="0 0 92 92" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="88" height="88" rx="12" fill="#f8fafc" stroke="#e2e8f0"></rect>
+            <rect x="10" y="10" width="14" height="14" fill="#d9c5a1"></rect>
+            <rect x="26" y="10" width="14" height="14" fill="#b18a65"></rect>
+            <rect x="42" y="10" width="14" height="14" fill="#7d5f48"></rect>
+            <rect x="58" y="10" width="14" height="14" fill="#d9c5a1"></rect>
+            <rect x="10" y="26" width="14" height="14" fill="#f2efe8"></rect>
+            <rect x="26" y="26" width="14" height="14" fill="#8c6b4f"></rect>
+            <rect x="42" y="26" width="14" height="14" fill="#4a3529"></rect>
+            <rect x="58" y="26" width="14" height="14" fill="#8c6b4f"></rect>
+            <rect x="10" y="42" width="14" height="14" fill="#f8f6f1"></rect>
+            <rect x="26" y="42" width="14" height="14" fill="#d9c5a3"></rect>
+            <rect x="42" y="42" width="14" height="14" fill="#0f172a"></rect>
+            <rect x="58" y="42" width="14" height="14" fill="#5e4332"></rect>
+            <rect x="10" y="58" width="14" height="14" fill="#fef3c7"></rect>
+            <rect x="26" y="58" width="14" height="14" fill="#f7efe8"></rect>
+            <rect x="42" y="58" width="14" height="14" fill="#6d4d37"></rect>
+            <rect x="58" y="58" width="14" height="14" fill="#caa079"></rect>
+            <path d="M18 60 C22 40, 30 22, 44 14" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"></path>
+            <path d="M44 14 C56 20, 62 34, 60 56" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"></path>
+            <path d="M22 58 C34 52, 48 50, 58 54" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"></path>
+          </svg>
+        </div>
+        <span class="pixel-number-arrow" aria-hidden="true">→</span>
+        <div class="pixel-number-panel">
+          <span class="pixel-number-label">los mismos píxeles, pero ya como valores</span>
+          <div class="pixel-number-grid" aria-hidden="true">
+            <span>210</span><span>165</span><span>92</span><span>210</span>
+            <span>244</span><span>131</span><span>54</span><span>131</span>
+            <span>248</span><span>217</span><span>15</span><span>88</span>
+            <span>254</span><span>247</span><span>77</span><span>192</span>
+          </div>
+          <p class="pixel-number-scale">0 = muy oscuro | 255 = muy claro</p>
+        </div>
+      </div>
+      <p class="pixel-flow-note"><strong>Idea clave:</strong> antes de detectar una “oreja”, la máquina ya tradujo esa parte de la imagen a una pequeña matriz de números.</p>
+      <p class="pixel-flow-note"><strong>Ojo:</strong> esos números no “son” una oreja y no basta con sumarlos todos. Lo importante es el patrón que forman juntos.</p>
+    </article>
+  </div>
+
+  <div class="pixel-flow-item">
+    <div class="pixel-flow-num" aria-hidden="true">4</div>
+    <article class="pixel-flow-card">
+      <p class="pixel-flow-kicker">La red busca patrones</p>
+      <h4 class="pixel-flow-title anchored">De muchos píxeles a un rasgo</h4>
+      <p class="pixel-flow-copy">La red no usa cada píxel por separado para decidir. Primero, capas o detectores anteriores leen muchos valores juntos y buscan patrones visuales. Por ejemplo: una combinación de números puede parecerse más o menos a <strong>orejas</strong>; otra puede parecerse más o menos a <strong>bigotes</strong>.</p>
+      <div class="pixel-detector-flow">
+        <div class="pixel-detector-source">
+          <svg viewbox="0 0 92 82" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="88" height="78" rx="10" fill="#f8fafc" stroke="#e2e8f0"></rect>
+            <rect x="10" y="10" width="14" height="14" fill="#d9c5a1"></rect>
+            <rect x="26" y="10" width="14" height="14" fill="#8c6b4f"></rect>
+            <rect x="42" y="10" width="14" height="14" fill="#f2efe8"></rect>
+            <rect x="58" y="10" width="14" height="14" fill="#7d5f48"></rect>
+            <rect x="10" y="26" width="14" height="14" fill="#6b4f3a"></rect>
+            <rect x="26" y="26" width="14" height="14" fill="#4a3529"></rect>
+            <rect x="42" y="26" width="14" height="14" fill="#f8f6f1"></rect>
+            <rect x="58" y="26" width="14" height="14" fill="#3f2a1e"></rect>
+            <rect x="10" y="42" width="14" height="14" fill="#d9c5a3"></rect>
+            <rect x="26" y="42" width="14" height="14" fill="#0f172a"></rect>
+            <rect x="42" y="42" width="14" height="14" fill="#f5f5f4"></rect>
+            <rect x="58" y="42" width="14" height="14" fill="#0f172a"></rect>
+            <rect x="10" y="58" width="14" height="14" fill="#7f5f45"></rect>
+            <rect x="26" y="58" width="14" height="14" fill="#f6ede4"></rect>
+            <rect x="42" y="58" width="14" height="14" fill="#fef3c7"></rect>
+            <rect x="58" y="58" width="14" height="14" fill="#6d4d37"></rect>
+          </svg>
+          <span class="pixel-detector-source-label">muchos píxeles</span>
+        </div>
+        <div class="pixel-detector-column">
+          <div class="pixel-detector-box">
+            <div class="pixel-detector-top">
+              <span class="pixel-detector-name">detector de orejas</span>
+              <span class="pixel-detector-state">respuesta media</span>
+            </div>
+            <div class="pixel-detector-meter">
+              <span class="pixel-detector-fill pixel-detector-fill-mid"></span>
+            </div>
+          </div>
+          <div class="pixel-detector-box">
+            <div class="pixel-detector-top">
+              <span class="pixel-detector-name">detector de bigotes</span>
+              <span class="pixel-detector-state">respuesta alta</span>
+            </div>
+            <div class="pixel-detector-meter">
+              <span class="pixel-detector-fill pixel-detector-fill-high"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="pixel-flow-note"><strong>En la práctica:</strong> estos rasgos no aparecen “solos”. El detector combina muchos de esos valores con pesos y produce una respuesta: baja, media o alta. Eso es lo que luego se convierte en una entrada más manejable para la neurona.</p>
+    </article>
+  </div>
+
+  <div class="pixel-flow-item">
+    <div class="pixel-flow-num" aria-hidden="true">5</div>
+    <article class="pixel-flow-card">
+      <p class="pixel-flow-kicker">Cada rasgo recibe un puntaje</p>
+      <h4 class="pixel-flow-title anchored">Dos medidas resumidas</h4>
+      <p class="pixel-flow-copy">Esos detectores producen puntajes entre 0 y 1. No son coordenadas escondidas en la foto: son valores resumidos que indican qué tan fuerte apareció cada rasgo.</p>
+      <div class="pixel-metric-card">
+        <div class="pixel-metric-row">
+          <span>orejas puntiagudas</span>
+          <strong>0.7</strong>
+        </div>
+        <div class="pixel-metric-row">
+          <span>bigotes visibles</span>
+          <strong>0.9</strong>
+        </div>
+      </div>
+      <p class="pixel-flow-note"><strong>Ojo:</strong> estos valores no salen “mágicamente” de la foto. Son el resultado resumido de un proceso previo que leyó muchos píxeles.</p>
+    </article>
+  </div>
+
+  <div class="pixel-flow-item">
+    <div class="pixel-flow-num" aria-hidden="true">6</div>
+    <article class="pixel-flow-card">
+      <p class="pixel-flow-kicker">Una imagen se vuelve un punto</p>
+      <h4 class="pixel-flow-title anchored">Dos valores, una coordenada</h4>
+      <p class="pixel-flow-copy">Si usamos dos rasgos como ejes, una imagen se convierte en una coordenada. En este ejemplo, usamos <strong>bigotes</strong> en el eje horizontal y <strong>orejas</strong> en el eje vertical.</p>
+      <div class="pixel-graph-card">
+        <svg viewbox="0 0 220 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Vertical grid lines (0.2, 0.4, 0.6, 0.8) -->
+          <line x1="62" y1="22" x2="62" y2="128" stroke="#e5eef7" stroke-width="1"></line>
+          <line x1="95" y1="22" x2="95" y2="128" stroke="#e5eef7" stroke-width="1"></line>
+          <line x1="129" y1="22" x2="129" y2="128" stroke="#e5eef7" stroke-width="1"></line>
+          <line x1="162" y1="22" x2="162" y2="128" stroke="#e5eef7" stroke-width="1"></line>
+          <!-- Horizontal grid lines (0.2, 0.4, 0.6, 0.8) -->
+          <line x1="28" y1="107" x2="196" y2="107" stroke="#e5eef7" stroke-width="1"></line>
+          <line x1="28" y1="86" x2="196" y2="86" stroke="#e5eef7" stroke-width="1"></line>
+          <line x1="28" y1="64" x2="196" y2="64" stroke="#e5eef7" stroke-width="1"></line>
+          <line x1="28" y1="43" x2="196" y2="43" stroke="#e5eef7" stroke-width="1"></line>
+          <!-- Axes -->
+          <line x1="28" y1="128" x2="196" y2="128" stroke="#cbd5e1" stroke-width="2"></line>
+          <line x1="28" y1="128" x2="28" y2="22" stroke="#cbd5e1" stroke-width="2"></line>
+          <!-- X axis tick marks -->
+          <line x1="62" y1="128" x2="62" y2="132" stroke="#cbd5e1" stroke-width="1"></line>
+          <line x1="95" y1="128" x2="95" y2="132" stroke="#cbd5e1" stroke-width="1"></line>
+          <line x1="129" y1="128" x2="129" y2="132" stroke="#cbd5e1" stroke-width="1"></line>
+          <line x1="162" y1="128" x2="162" y2="132" stroke="#cbd5e1" stroke-width="1"></line>
+          <!-- Y axis tick marks -->
+          <line x1="28" y1="107" x2="24" y2="107" stroke="#cbd5e1" stroke-width="1"></line>
+          <line x1="28" y1="86" x2="24" y2="86" stroke="#cbd5e1" stroke-width="1"></line>
+          <line x1="28" y1="64" x2="24" y2="64" stroke="#cbd5e1" stroke-width="1"></line>
+          <line x1="28" y1="43" x2="24" y2="43" stroke="#cbd5e1" stroke-width="1"></line>
+          <!-- X tick labels -->
+          <text x="62" y="140" text-anchor="middle" fill="#94a3b8" font-size="7">0.2</text>
+          <text x="95" y="140" text-anchor="middle" fill="#94a3b8" font-size="7">0.4</text>
+          <text x="129" y="140" text-anchor="middle" fill="#94a3b8" font-size="7">0.6</text>
+          <text x="162" y="140" text-anchor="middle" fill="#94a3b8" font-size="7">0.8</text>
+          <!-- Y tick labels -->
+          <text x="22" y="110" text-anchor="end" fill="#94a3b8" font-size="7">0.2</text>
+          <text x="22" y="89" text-anchor="end" fill="#94a3b8" font-size="7">0.4</text>
+          <text x="22" y="67" text-anchor="end" fill="#94a3b8" font-size="7">0.6</text>
+          <text x="22" y="46" text-anchor="end" fill="#94a3b8" font-size="7">0.8</text>
+          <!-- Dashed coordinate guide lines -->
+          <line x1="179" y1="54" x2="179" y2="128" stroke="#bfdbfe" stroke-width="2" stroke-dasharray="4 4"></line>
+          <line x1="28" y1="54" x2="179" y2="54" stroke="#bfdbfe" stroke-width="2" stroke-dasharray="4 4"></line>
+          <!-- Data point -->
+          <circle class="scatter-dot" cx="179" cy="54" r="8" fill="#2780e3"></circle>
+          <!-- Coordinate labels -->
+          <text x="176" y="48" text-anchor="end" fill="#1a365d" font-size="10" font-weight="700">(0.9, 0.7)</text>
+          <text x="179" y="120" text-anchor="middle" fill="#2780e3" font-size="9" font-weight="700">bigotes = 0.9</text>
+          <text x="33" y="51" fill="#2780e3" font-size="9" font-weight="700">orejas = 0.7</text>
+        </svg>
+      </div>
+      <p class="pixel-flow-note"><strong>Qué estás viendo:</strong> un solo punto que representa una sola imagen. Ese punto junta dos medidas de la misma foto: cuánto se detectan los bigotes y cuánto se detectan las orejas.</p>
+      <p class="pixel-flow-note"><strong>Importante:</strong> los puntos no son neuronas. Cada punto representa una imagen distinta. Las neuronas son las que después usan esos valores para intentar separar ejemplos.</p>
+    </article>
+  </div>
+</div>
+<p>Hasta aquí, una sola imagen ya se convirtió en un punto en una gráfica. <strong>¿Qué pasa cuando hacemos esto mismo con muchas imágenes distintas?</strong></p>
+<hr>
+</section>
+<section id="de-neurona-a-red-neuronal-artificial" class="level3">
+<h3 class="anchored" data-anchor-id="de-neurona-a-red-neuronal-artificial">De neurona a red neuronal artificial</h3>
+<p>En la sesión 1 vimos que una máquina podía aprender una <strong>línea recta</strong> para encontrar patrones en una gráfica. Aquí pasa algo parecido, pero con una diferencia importante: ahora cada punto no representa un dato cualquiera, sino una <strong>imagen resumida en dos rasgos</strong>.</p>
+<div class="scatter-frame">
+  <svg viewbox="0 0 260 200" width="260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Vertical grid lines (x = 2, 4, 6, 8) -->
+    <line x1="72" y1="24" x2="72" y2="148" stroke="#e5eef7" stroke-width="1"></line>
+    <line x1="112" y1="24" x2="112" y2="148" stroke="#e5eef7" stroke-width="1"></line>
+    <line x1="152" y1="24" x2="152" y2="148" stroke="#e5eef7" stroke-width="1"></line>
+    <line x1="192" y1="24" x2="192" y2="148" stroke="#e5eef7" stroke-width="1"></line>
+    <!-- Horizontal grid lines (y = 2, 4, 6, 8) -->
+    <line x1="32" y1="123" x2="232" y2="123" stroke="#e5eef7" stroke-width="1"></line>
+    <line x1="32" y1="98" x2="232" y2="98" stroke="#e5eef7" stroke-width="1"></line>
+    <line x1="32" y1="74" x2="232" y2="74" stroke="#e5eef7" stroke-width="1"></line>
+    <line x1="32" y1="49" x2="232" y2="49" stroke="#e5eef7" stroke-width="1"></line>
+    <!-- Axes -->
+    <line x1="32" y1="148" x2="232" y2="148" stroke="#cbd5e1" stroke-width="2"></line>
+    <line x1="32" y1="148" x2="32" y2="24" stroke="#cbd5e1" stroke-width="2"></line>
+    <!-- X axis tick marks -->
+    <line x1="72" y1="148" x2="72" y2="152" stroke="#cbd5e1" stroke-width="1"></line>
+    <line x1="112" y1="148" x2="112" y2="152" stroke="#cbd5e1" stroke-width="1"></line>
+    <line x1="152" y1="148" x2="152" y2="152" stroke="#cbd5e1" stroke-width="1"></line>
+    <line x1="192" y1="148" x2="192" y2="152" stroke="#cbd5e1" stroke-width="1"></line>
+    <!-- Y axis tick marks -->
+    <line x1="32" y1="123" x2="28" y2="123" stroke="#cbd5e1" stroke-width="1"></line>
+    <line x1="32" y1="98" x2="28" y2="98" stroke="#cbd5e1" stroke-width="1"></line>
+    <line x1="32" y1="74" x2="28" y2="74" stroke="#cbd5e1" stroke-width="1"></line>
+    <line x1="32" y1="49" x2="28" y2="49" stroke="#cbd5e1" stroke-width="1"></line>
+    <!-- X tick labels -->
+    <text x="72" y="160" text-anchor="middle" fill="#94a3b8" font-size="7">2</text>
+    <text x="112" y="160" text-anchor="middle" fill="#94a3b8" font-size="7">4</text>
+    <text x="152" y="160" text-anchor="middle" fill="#94a3b8" font-size="7">6</text>
+    <text x="192" y="160" text-anchor="middle" fill="#94a3b8" font-size="7">8</text>
+    <!-- Y tick labels -->
+    <text x="26" y="126" text-anchor="end" fill="#94a3b8" font-size="7">2</text>
+    <text x="26" y="101" text-anchor="end" fill="#94a3b8" font-size="7">4</text>
+    <text x="26" y="77" text-anchor="end" fill="#94a3b8" font-size="7">6</text>
+    <text x="26" y="52" text-anchor="end" fill="#94a3b8" font-size="7">8</text>
+    <!-- Axis labels -->
+    <text x="132" y="172" text-anchor="middle" fill="#475569" font-size="10" font-style="italic">bigotes</text>
+    <text x="14" y="90" text-anchor="middle" fill="#475569" font-size="10" font-style="italic" transform="rotate(-90,14,90)">orejas</text>
+    <!-- Data points -->
+    <circle class="scatter-dot" cx="62" cy="118" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
+    <circle class="scatter-dot" cx="80" cy="104" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
+    <circle class="scatter-dot" cx="98" cy="112" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
+    <circle class="scatter-dot" cx="72" cy="130" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
+    <circle class="scatter-dot" cx="148" cy="72" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
+    <circle class="scatter-dot" cx="170" cy="54" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
+    <circle class="scatter-dot" cx="192" cy="40" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
+    <circle class="scatter-dot" cx="158" cy="88" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
+    <!-- Legend -->
+    <circle cx="48" cy="184" r="5" fill="#22c55e" stroke="#fff" stroke-width="1.5"></circle>
+    <text x="59" y="188" fill="#22c55e" font-size="10" font-weight="700">no gato</text>
+    <circle cx="158" cy="184" r="5" fill="#2780e3" stroke="#fff" stroke-width="1.5"></circle>
+    <text x="169" y="188" fill="#2780e3" font-size="10" font-weight="700">gato</text>
+  </svg>
+</div>
+<p>Cada punto en la gráfica representa una imagen. Cuando llega una imagen nueva, ¿cómo decide la neurona de qué grupo forma parte? Necesita una <strong>regla</strong>, así como la ecuación de la recta: una manera de predecir en qué grupo cae cualquier ejemplo nuevo.</p>
+<p>En este caso, la neurona intenta aprender una <strong>recta</strong> que divida la gráfica en dos zonas. Si el punto cae de un lado, responderá “gato”; si cae del otro, responderá “no gato”. A esta nueva recta la llamamos <strong>frontera de decisión</strong>.</p>
+<p>La frontera de decisión no la dibuja una persona: la neurona la aprende durante su entrenamiento. Es la versión geométrica de la regla que encontró para clasificar ejemplos nuevos.</p>
+<p>Sin embargo, <strong>una neurona solo puede aprender una frontera recta</strong>. Y, a veces, eso no es suficiente. Entre más patrones entrelazados o más complejas las imágenes, menos eficaz se vuelve la neurona.</p>
+<details class="math-bridge">
+  <summary>Continuidad matemática</summary>
+  <p>Si quieres verlo como continuidad con la sesión 1, piensa en esto: la ecuación de la recta, <code>y = mx + b</code>, fue nuestra regla matemática. Aquí la neurona hace algo parecido, pero usando rasgos de entrada: calcula un valor <code>z = w_1x_1 + w_2x_2 + b</code>.</p>
+  <p>Después entra una función de activación. Una de las más conocidas es la <strong>función sigmoide</strong>, escrita como <code>\sigma(z)</code>, que suele expresarse así: <code>\sigma(z) = 1 / (1 + e<sup>-z</sup>)</code>.</p>
+  <p>La idea intuitiva es simple: toma el valor <code>z</code> y lo convierte en un número entre <code>0</code> y <code>1</code>. Si <code>z</code> es muy grande y positivo, la salida se acerca a <code>1</code>; si es muy negativo, se acerca a <code>0</code>. Eso permite interpretar la respuesta de la neurona como una activación más baja o más alta. Si <code>z &gt; 0.5</code>, la neurona se activa. Si es menor, no se activa. Esa es nuestra frontera de decisión</p>
+  <p>No vamos a profundizar en estas matemáticas en el curso, pero vale la pena tener esta secuencia en mente: la neurona combina entradas, obtiene un valor <code>z</code> y luego una función como <code>\sigma(z)</code> transforma ese cálculo en una respuesta.</p>
+</details>
+<div class="limite-grid">
+  <div class="limite-card">
+    <p class="limite-kicker">Caso fácil</p>
+    <h4 class="limite-title anchored">Una sola neurona sí alcanza</h4>
+    <svg viewbox="0 0 180 155" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Grid lines -->
+      <line x1="52" y1="10" x2="52" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="80" y1="10" x2="80" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="108" y1="10" x2="108" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="136" y1="10" x2="136" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="100" x2="164" y2="100" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="77" x2="164" y2="77" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="55" x2="164" y2="55" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="32" x2="164" y2="32" stroke="#e5eef7" stroke-width="1"></line>
+      <!-- Axes -->
+      <line x1="24" y1="10" x2="24" y2="122" stroke="#cbd5e1" stroke-width="2"></line>
+      <line x1="24" y1="122" x2="164" y2="122" stroke="#cbd5e1" stroke-width="2"></line>
+      <!-- X tick marks -->
+      <line x1="52" y1="122" x2="52" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="80" y1="122" x2="80" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="108" y1="122" x2="108" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="136" y1="122" x2="136" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <!-- Y tick marks -->
+      <line x1="24" y1="100" x2="21" y2="100" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="24" y1="77" x2="21" y2="77" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="24" y1="55" x2="21" y2="55" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="24" y1="32" x2="21" y2="32" stroke="#cbd5e1" stroke-width="1"></line>
+      <!-- X tick labels -->
+      <text x="52" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.2</text>
+      <text x="80" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.4</text>
+      <text x="108" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.6</text>
+      <text x="136" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.8</text>
+      <!-- Y tick labels -->
+      <text x="19" y="103" text-anchor="end" fill="#94a3b8" font-size="6">0.2</text>
+      <text x="19" y="80" text-anchor="end" fill="#94a3b8" font-size="6">0.4</text>
+      <text x="19" y="58" text-anchor="end" fill="#94a3b8" font-size="6">0.6</text>
+      <text x="19" y="35" text-anchor="end" fill="#94a3b8" font-size="6">0.8</text>
+      <!-- Data points -->
+      <circle cx="56" cy="94" r="5" fill="#22c55e" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="72" cy="76" r="5" fill="#22c55e" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="92" cy="86" r="5" fill="#22c55e" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="112" cy="52" r="5" fill="#2780e3" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="130" cy="40" r="5" fill="#2780e3" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="146" cy="28" r="5" fill="#2780e3" stroke="#fff" stroke-width="1"></circle>
+      <!-- Decision boundary -->
+      <line class="limite-line" x1="80" y1="18" x2="142" y2="118" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round"></line>
+      <text x="82" y="16" fill="#f59e0b" font-size="7" font-weight="400" font-style="italic">frontera de decisión</text>
+      <!-- Legend -->
+      <circle cx="30" cy="141" r="4" fill="#22c55e" stroke="#fff" stroke-width="1"></circle>
+      <text x="37" y="145" fill="#22c55e" font-size="9" font-weight="700">no gato</text>
+      <circle cx="86" cy="141" r="4" fill="#2780e3" stroke="#fff" stroke-width="1"></circle>
+      <text x="93" y="145" fill="#2780e3" font-size="9" font-weight="700">gato</text>
+    </svg>
+    <p class="limite-copy">Aquí sí existe una recta que deja a todos los gatos de un lado y a todos los "no gatos" del otro. La línea funciona como una frontera clara entre dos regiones del plano.</p>
+  </div>
+
+  <div class="limite-card">
+    <p class="limite-kicker">Caso difícil</p>
+    <h4 class="limite-title anchored">Una sola neurona ya no alcanza</h4>
+    <svg viewbox="0 0 180 155" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Grid lines -->
+      <line x1="52" y1="10" x2="52" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="80" y1="10" x2="80" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="108" y1="10" x2="108" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="136" y1="10" x2="136" y2="122" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="100" x2="164" y2="100" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="77" x2="164" y2="77" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="55" x2="164" y2="55" stroke="#e5eef7" stroke-width="1"></line>
+      <line x1="24" y1="32" x2="164" y2="32" stroke="#e5eef7" stroke-width="1"></line>
+      <!-- Axes -->
+      <line x1="24" y1="10" x2="24" y2="122" stroke="#cbd5e1" stroke-width="2"></line>
+      <line x1="24" y1="122" x2="164" y2="122" stroke="#cbd5e1" stroke-width="2"></line>
+      <!-- X tick marks -->
+      <line x1="52" y1="122" x2="52" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="80" y1="122" x2="80" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="108" y1="122" x2="108" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="136" y1="122" x2="136" y2="125" stroke="#cbd5e1" stroke-width="1"></line>
+      <!-- Y tick marks -->
+      <line x1="24" y1="100" x2="21" y2="100" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="24" y1="77" x2="21" y2="77" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="24" y1="55" x2="21" y2="55" stroke="#cbd5e1" stroke-width="1"></line>
+      <line x1="24" y1="32" x2="21" y2="32" stroke="#cbd5e1" stroke-width="1"></line>
+      <!-- X tick labels -->
+      <text x="52" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.2</text>
+      <text x="80" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.4</text>
+      <text x="108" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.6</text>
+      <text x="136" y="130" text-anchor="middle" fill="#94a3b8" font-size="6">0.8</text>
+      <!-- Y tick labels -->
+      <text x="19" y="103" text-anchor="end" fill="#94a3b8" font-size="6">0.2</text>
+      <text x="19" y="80" text-anchor="end" fill="#94a3b8" font-size="6">0.4</text>
+      <text x="19" y="58" text-anchor="end" fill="#94a3b8" font-size="6">0.6</text>
+      <text x="19" y="35" text-anchor="end" fill="#94a3b8" font-size="6">0.8</text>
+      <!-- Data points -->
+      <circle cx="56" cy="94" r="5" fill="#22c55e" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="132" cy="36" r="5" fill="#22c55e" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="56" cy="36" r="5" fill="#2780e3" stroke="#fff" stroke-width="1"></circle>
+      <circle cx="132" cy="94" r="5" fill="#2780e3" stroke="#fff" stroke-width="1"></circle>
+      <!-- Decision boundary -->
+      <line class="limite-line delay" x1="38" y1="98" x2="150" y2="42" stroke="#f59e0b" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="6 4"></line>
+      <text x="38" y="18" fill="#f59e0b" font-size="7" font-weight="400" font-style="italic">frontera de decisión</text>
+      <!-- Error marker: single large dashed rectangle enclosing both misclassified dots -->
+      <rect x="122" y="26" width="20" height="78" rx="3" fill="none" stroke="#dc2626" stroke-width="1" stroke-dasharray="3 2"></rect>
+      <!-- Single error X mark (upper-right corner of rectangle) -->
+      <line x1="144" y1="19" x2="150" y2="25" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"></line>
+      <line x1="150" y1="19" x2="144" y2="25" stroke="#dc2626" stroke-width="1.5" stroke-linecap="round"></line>
+      <!-- Legend -->
+      <circle cx="30" cy="141" r="4" fill="#22c55e" stroke="#fff" stroke-width="1"></circle>
+      <text x="37" y="145" fill="#22c55e" font-size="9" font-weight="700">no gato</text>
+      <circle cx="86" cy="141" r="4" fill="#2780e3" stroke="#fff" stroke-width="1"></circle>
+      <text x="93" y="145" fill="#2780e3" font-size="9" font-weight="700">gato</text>
+    </svg>
+    <p class="limite-copy">Aquí los ejemplos están mezclados. No importa dónde dibujes la recta, siempre habrá algunos puntos del lado equivocado. El problema no es encontrar “la línea correcta”, sino que ninguna recta será capaz de separar este patrón, con un grado mayo de complejidad. Por eso, una sola neurona no es suficiente.</p>
+  </div>
+</div>
+<p>Cuando nos encontramos en una situación como el Caso Difícil, una neurona ha llegado a su límite. Necesitaremos muchas neuronas, y empezaremos a construir una <em>red neuronal</em>.</p>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/Q7YPe6edtEZ" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
+</div>
+<hr>
+<section id="red-neuronal-artificial" class="level4">
+<h4 class="anchored" data-anchor-id="red-neuronal-artificial"><strong>Red Neuronal Artificial</strong></h4>
+<p>Ahora que sabemos que necesitamos muchas neuronas para problemas complejos, el siguiente paso es <em>encadenarlas</em>. Es decir que, la salida de unas neuronas (la decisión que tomaron) se convierte en la entrada de otras. Así es como una red neuronal puede construir ideas complejas a partir de señales simples.</p>
+<p>Para ello, organizamos las neuronas en capas:</p>
+<ul>
+<li>La <strong>capa de entrada</strong> recibe las señales directas: en nuestro ejemplo, “orejas”, “bigotes” y “ojos”.</li>
+<li>Las <strong>capas ocultas</strong> combinan esas señales para detectar patrones más abstractos. En lugar de preguntar “¿hay orejas?”, preguntan cosas como “¿hay cara felina?” o “¿la silueta es de un animal?”.</li>
+<li>La <strong>capa de salida</strong> toma esos conceptos combinados y produce la respuesta final.</li>
+</ul>
+<p>Entre más capas tenga la red, más complejas pueden ser las ideas que construye. Una red con muchas capas puede reconocer una cara en una foto, entender un idioma o generar texto. De ahí viene la palabra <strong>deep</strong> (profundo) en <strong>deep learning</strong>: hace referencia a la profundidad de esas capas.</p>
+<div class="red-stage-card">
+  <svg viewbox="0 0 760 250" xmlns="http://www.w3.org/2000/svg" aria-label="Red neuronal simple">
+    <defs>
+      <lineargradient id="red-link" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#93c5fd" stop-opacity="0.35"></stop>
+        <stop offset="50%" stop-color="#2780e3" stop-opacity="0.9"></stop>
+        <stop offset="100%" stop-color="#93c5fd" stop-opacity="0.35"></stop>
+      </lineargradient>
+      <path id="flow-1" d="M120 58 C210 58, 240 78, 330 88"></path>
+      <path id="flow-2" d="M120 122 C210 122, 240 122, 330 122"></path>
+      <path id="flow-3" d="M120 186 C210 186, 240 166, 330 156"></path>
+      <path id="flow-4" d="M390 88 C470 88, 500 102, 590 122"></path>
+      <path id="flow-5" d="M390 156 C470 156, 500 140, 590 122"></path>
+    </defs>
+
+    <text x="70" y="26" fill="#1a365d" font-size="14" font-weight="700">Entrada</text>
+    <text x="300" y="26" fill="#1a365d" font-size="14" font-weight="700">Capa oculta</text>
+    <text x="560" y="26" fill="#1a365d" font-size="14" font-weight="700">Salida</text>
+
+    <path d="M120 58 C210 58, 240 78, 330 88" fill="none" stroke="url(#red-link)" stroke-width="4" stroke-linecap="round"></path>
+    <path d="M120 58 C210 58, 240 112, 330 156" fill="none" stroke="url(#red-link)" stroke-width="4" stroke-linecap="round" opacity="0.55"></path>
+    <path d="M120 122 C210 122, 240 122, 330 122" fill="none" stroke="url(#red-link)" stroke-width="4" stroke-linecap="round"></path>
+    <path d="M120 122 C210 122, 240 144, 330 156" fill="none" stroke="url(#red-link)" stroke-width="4" stroke-linecap="round" opacity="0.55"></path>
+    <path d="M120 186 C210 186, 240 166, 330 156" fill="none" stroke="url(#red-link)" stroke-width="4" stroke-linecap="round"></path>
+    <path d="M120 186 C210 186, 240 130, 330 88" fill="none" stroke="url(#red-link)" stroke-width="4" stroke-linecap="round" opacity="0.55"></path>
+    <path d="M390 88 C470 88, 500 102, 590 122" fill="none" stroke="url(#red-link)" stroke-width="5" stroke-linecap="round"></path>
+    <path d="M390 156 C470 156, 500 140, 590 122" fill="none" stroke="url(#red-link)" stroke-width="5" stroke-linecap="round"></path>
+
+    <circle cx="120" cy="58" r="22" fill="#ffffff" stroke="#2780e3" stroke-width="3"></circle>
+    <circle cx="120" cy="122" r="22" fill="#ffffff" stroke="#2780e3" stroke-width="3"></circle>
+    <circle cx="120" cy="186" r="22" fill="#ffffff" stroke="#2780e3" stroke-width="3"></circle>
+    <circle cx="330" cy="88" r="24" fill="#eff6ff" stroke="#0ea5e9" stroke-width="3"></circle>
+    <circle cx="330" cy="156" r="24" fill="#eff6ff" stroke="#0ea5e9" stroke-width="3"></circle>
+    <rect x="590" y="96" width="118" height="52" rx="18" fill="#1a365d"></rect>
+
+    <text x="120" y="62" text-anchor="middle" fill="#1a365d" font-size="11" font-weight="700">orejas</text>
+    <text x="120" y="126" text-anchor="middle" fill="#1a365d" font-size="11" font-weight="700">bigotes</text>
+    <text x="120" y="190" text-anchor="middle" fill="#1a365d" font-size="11" font-weight="700">ojos</text>
+    <text x="330" y="88" text-anchor="middle" fill="#1a365d" font-size="10" font-weight="700">cara</text>
+    <text x="330" y="100" text-anchor="middle" fill="#1a365d" font-size="10">felina</text>
+    <text x="330" y="152" text-anchor="middle" fill="#1a365d" font-size="10" font-weight="700">silueta</text>
+    <text x="330" y="164" text-anchor="middle" fill="#1a365d" font-size="10">animal</text>
+    <text x="649" y="127" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="700">¿es gato?</text>
+
+    <circle r="5" fill="#f59e0b">
+      <animatemotion dur="2.8s" repeatcount="indefinite" path="M120 58 C210 58, 240 78, 330 88"></animatemotion>
+    </circle>
+    <circle r="5" fill="#f59e0b">
+      <animatemotion dur="2.8s" begin="0.9s" repeatcount="indefinite" path="M120 122 C210 122, 240 122, 330 122"></animatemotion>
+    </circle>
+    <circle r="5" fill="#f59e0b">
+      <animatemotion dur="2.8s" begin="1.7s" repeatcount="indefinite" path="M390 88 C470 88, 500 102, 590 122"></animatemotion>
+    </circle>
+  </svg>
+
+  <div class="red-legend">
+    <div class="red-legend-item">
+      <h5 class="anchored">Capa de entrada</h5>
+      <p>Recibe señales concretas: palabras, píxeles, sonidos, números.</p>
+    </div>
+    <div class="red-legend-item">
+      <h5 class="anchored">Capas ocultas</h5>
+      <p>Construyen ideas intermedias: de "orejas + bigotes" pasan a "cara felina".</p>
+    </div>
+    <div class="red-legend-item">
+      <h5 class="anchored">Salida</h5>
+      <p>Produce una clase, una acción o la siguiente palabra.</p>
+    </div>
+  </div>
+</div>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/fZMktqhEBxK" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
+</div>
+<hr>
+</section>
+</section>
+<section id="entrenamiento-vs.-inferencia" class="level3">
+<h3 class="anchored" data-anchor-id="entrenamiento-vs.-inferencia">Entrenamiento vs.&nbsp;inferencia</h3>
+<p>Hay dos momentos clave en la vida de cualquier red neuronal: cuando aprende (<strong>entrenamiento</strong>) y cuando ya aprendió (<strong>inferencia</strong>).</p>
+<p>Imagina que tienes 50,000 imágenes, cada una etiquetada como “gato” o “no gato”. La red empieza con pesos completamente aleatorios: no sabe absolutamente nada. El entrenamiento es el proceso por el cual esos pesos cambian, poco a poco, hasta que la red aprende a distinguir los dos grupos. No ocurre de golpe: es un ciclo que se repite miles de veces, imagen por imagen.</p>
+<p>Ese ciclo siempre tiene los mismos cuatro pasos:</p>
+<div class="learning-loop">
+  <div class="learning-step">
+    <p class="learning-step-num" aria-hidden="true">1</p>
+    <h5 class="anchored"><strong>Forward pass</strong> — la imagen entra a la red</h5>
+    <p>La imagen viaja capa por capa hasta producir una predicción. Al inicio, con pesos aleatorios.</p>
+  </div>
+  <div class="learning-step">
+    <p class="learning-step-num" aria-hidden="true">2</p>
+    <h5 class="anchored"><strong>Loss</strong> — se mide el error</h5>
+    <p>Se compara la predicción con la etiqueta correcta usando una función matemática. El resultado es un número —el <em>loss</em>— que nos dice qué tan equivocada estuvo la red. Mientras más alto, peor.</p>
+  </div>
+  <div class="learning-step">
+    <p class="learning-step-num" aria-hidden="true">3</p>
+    <h5 class="anchored"><strong>Backpropagation</strong> — el error regresa por la red</h5>
+    <p>El error viaja de nuevo por todas las capas e indica a cada peso cuánto y en qué dirección debe ajustarse. A eso le llamamos <em>backpropagation</em>: la señal de corrección que hace que la red aprenda.</p>
+  </div>
+  <div class="learning-step">
+    <p class="learning-step-num" aria-hidden="true">4</p>
+    <h5 class="anchored"><strong>Epoch</strong> — una vuelta completa por los datos</h5>
+    <p>Cuando la red ha procesado todas las imágenes del conjunto al menos una vez, decimos que completó una <em>época</em>. El entrenamiento puede durar decenas o cientos de épocas, dependiendo de qué tan difícil es el problema.</p>
+  </div>
+</div>
+<p>Cuando el error deja de bajar de manera significativa, el entrenamiento termina y los pesos quedan fijos. A partir de ese momento, la red entra en modo <strong>inferencia</strong>: recibe imágenes nuevas, nunca antes vistas, y produce predicciones. Los pesos ya no cambian; la red solo usa lo que aprendió.</p>
+<hr>
+<span class="reflexion-kicker">Reflexión · 5 min</span>
+<h3 class="reflexion-heading anchored">Actividad de reflexión</h3>
+<ol class="reflexion-list">
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">01</span>
+    <p class="reflexion-q"><strong>¿En qué se parece una neurona a ti?</strong> Una neurona acumula señales y solo se activa si la evidencia supera un umbral. ¿Se te ocurre alguna decisión que tomes así, donde busques señales y solo actúes si hay suficiente evidencia de algo?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">02</span>
+    <p class="reflexion-q"><strong>¿En qué se parece tu forma de aprender al entrenamiento de una neurona?</strong> Una red aprende ajustando sus pesos a partir de sus errores, ciclo tras ciclo. ¿En qué se parece eso a cómo aprendes tú algo nuevo? ¿En qué es diferente?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">03</span>
+    <p class="reflexion-q"><strong>¿Cambia algo saber cómo funcionan los LLMs?</strong> ChatGPT no "entiende" de emociones: aprendió patrones en millones de textos. ¿Cambia eso la manera en que lo usarías, o la confianza que le tendrías a sus respuestas?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">04</span>
+    <p class="reflexion-q"><strong>Explícalo en dos oraciones.</strong> Si tuvieras que describirle a alguien de tu familia qué es una red neuronal, sin tecnicismos, ¿qué dirías?</p>
+  </li>
+</ol>
+<p class="reflexion-close">No hay respuestas correctas o incorrectas. El objetivo es que empieces a ver la tecnología con otros ojos.</p>
+<hr>
+</section>
+<section id="la-idea-central-de-esta-sesión" class="level3">
+<h3 class="anchored" data-anchor-id="la-idea-central-de-esta-sesión">La idea central de esta sesión</h3>
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 2</span>
+  <p class="central-idea-text">Una neurona artificial recibe señales, les asigna pesos y decide si activarse. Una red conecta muchas neuronas para trazar fronteras de decisión cuando el problema es complejo. Esa misma lógica está detrás del reconocimiento facial y de los LLMs que generan texto: la tarea cambia, pero el mecanismo es el mismo.</p>
+</div>
+<hr>
+</section>
+<section id="recursos-para-explorar-más-sobre-el-tema" class="level3">
+<h3 class="anchored" data-anchor-id="recursos-para-explorar-más-sobre-el-tema">Recursos para explorar más sobre el tema</h3>
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://playground.tensorflow.org/" target="_blank" rel="noopener">TensorFlow Playground <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Experimenta con redes neuronales en el navegador y observa cómo cambian las fronteras de decisión sin escribir código.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener">Teachable Machine <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Entrena modelos sencillos con imágenes, sonidos o poses para ver cómo se comporta una red con datos reales.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://quickdraw.withgoogle.com/" target="_blank" rel="noopener">Quick, Draw! <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Juega con una red que intenta reconocer tus dibujos y observa cómo la clasificación depende de patrones aprendidos.</p>
+  </li>
+</ul>
+<hr>
+<nav class="sesion-nav">
+  <a href="sesion-01.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S1: ¿Qué es la IA y dónde está en tu vida?</span>
+  </a>
+  <div class="sesion-nav-center">
+    <div class="sesion-nav-dots">
+      <span class="sesion-nav-dot published" title="Sesión 1"></span>
+      <span class="sesion-nav-dot active" title="Sesión 2"></span>
+      <span class="sesion-nav-dot" title="Sesión 3"></span>
+      <span class="sesion-nav-dot" title="Sesión 4"></span>
+      <span class="sesion-nav-dot" title="Sesión 5"></span>
+      <span class="sesion-nav-dot" title="Sesión 6"></span>
+      <span class="sesion-nav-dot" title="Sesión 7"></span>
+      <span class="sesion-nav-dot" title="Sesión 8"></span>
+      <span class="sesion-nav-dot" title="Sesión 9"></span>
+      <span class="sesion-nav-dot" title="Sesión 10"></span>
+      <span class="sesion-nav-dot" title="Sesión 11"></span>
+      <span class="sesion-nav-dot" title="Sesión 12"></span>
+      <span class="sesion-nav-dot" title="Sesión 13"></span>
+      <span class="sesion-nav-dot" title="Sesión 14"></span>
+      <span class="sesion-nav-dot" title="Sesión 15"></span>
+    </div>
+    <span class="sesion-nav-progress">Sesión 2 de 15</span>
+  </div>
+  <a href="sesion-03.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S3: Algoritmos de IA</span>
+  </a>
+</nav>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.curso-ia-slp\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Intro a la IA · San Luis Potosí · 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/michelleg06">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

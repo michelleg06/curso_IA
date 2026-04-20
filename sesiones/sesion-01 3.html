@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sesión 1: ¿Qué es la IA y dónde está en tu vida? – Intro a la IA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/logo.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script defer="" src="https://cloud.umami.is/script.js" data-website-id="225b59d4-82fc-4df6-9c47-98afac4a8c13"></script>
+
+
+<link rel="stylesheet" href="../styles/sesion.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/logo.svg" alt="Intro a la IA" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Intro a la IA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">Programa</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sesiones" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Sesiones</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-sesiones">    
+        <li class="dropdown-header">— Bloque 1: Fundamentos + Ética —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-01.html">
+ <span class="dropdown-text">S1 · ¿Qué es la IA?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-02.html">
+ <span class="dropdown-text">S2 · Redes Neuronales Artificiales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-03.html">
+ <span class="dropdown-text">S3 · Algoritmos de IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-04.html">
+ <span class="dropdown-text">S4 · IA Generativa</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-05.html">
+ <span class="dropdown-text">S5 · Ética en la IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-06.html">
+ <span class="dropdown-text">S6 · EN VIVO: IA en México</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 2: Herramientas Prácticas —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-07.html">
+ <span class="dropdown-text">S7 · Tutor de Lenguaje</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-08.html">
+ <span class="dropdown-text">S8 · IA para Creatividad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-09.html">
+ <span class="dropdown-text">S9 · IA para Organización</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-10.html">
+ <span class="dropdown-text">S10 · Tutor Académico</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-11.html">
+ <span class="dropdown-text">S11 · EN VIVO: Política Pública</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 3: Creación, Aplicaciones y Futuro —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-12.html">
+ <span class="dropdown-text">S12 · Programación con IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-13.html">
+ <span class="dropdown-text">S13 · Robótica e IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-14.html">
+ <span class="dropdown-text">S14 · IA en Salud, Ciencia y Sociedad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-15.html">
+ <span class="dropdown-text">S15 · EN VIVO: Educación Global</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#introducción-a-la-ia" id="toc-introducción-a-la-ia" class="nav-link active" data-scroll-target="#introducción-a-la-ia">Introducción a la IA</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sesión 1: ¿Qué es la IA y dónde está en tu vida?</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 1 · Fundamentos + Ética</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-1"></div>
+    </div>
+    <span class="sesion-progress-label">1 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 5 de mayo de 2026</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 45 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+<link rel="stylesheet" href="../styles/sessions/sesion-01.css">
+<script type="module" src="../interactives/sesion-01.js"></script>
+<section id="introducción-a-la-ia" class="level2">
+<h2 class="anchored" data-anchor-id="introducción-a-la-ia">Introducción a la IA</h2>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/oEnlDhVJWh0" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
+</div>
+<hr>
+</section>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
+<hr>
+<section id="introducción" class="level3">
+<h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
+<div class="intro-two-col">
+  <div class="intro-text-col">
+    <p>Abre TikTok ahora mismo. Lo que ves en los primeros tres segundos (ese primer video, ese primer audio) lo decidió una inteligencia artificial. No fue un humano. No fue un editor. Fue un algoritmo que lleva semanas observándote: cuánto tiempo te quedas en cada video, qué tipo de contenido pausas, cuándo deslizas rápido, cuándo vuelves a ver algo. Tres segundos en la pantalla. Millones de cálculos.</p>
+    <p>TikTok no es la única aplicación que usa Inteligencia Artificial. Cada vez que abres Spotify en modo aleatorio, una IA decidió qué canción reproducir a continuación. Cuando escribes una dirección en Google Maps, una IA calculó no solo la ruta más corta sino la que tiene menos tráfico en ese momento. Cuando Gmail mueve un correo directamente a tu carpeta de spam, una IA leyó ese mensaje y decidió que no merecía tu atención.</p>
+    <p>Vivimos rodeados de inteligencia artificial. Pero muy pocos sabemos realmente qué es, cómo funciona, y qué puede y qué no puede hacer.</p>
+    <p>Eso es exactamente lo que vamos a explorar en este curso. Y empezamos en esta primera sesión con la pregunta más fundamental…</p>
+  </div>
+  <div class="intro-phone-col">
+    <div class="intro-phone-frame">
+      <div class="intro-phone-topbar">
+        <span>Siguiendo</span>
+        <strong>Para ti</strong>
+        <span>🔍</span>
+      </div>
+      <div class="intro-phone-feed-wrap">
+        <div class="intro-phone-feed" aria-hidden="true">
+          <div class="intro-feed-item">
+            <div class="intro-feed-side"><span>❤</span><span>💬</span><span>↗</span></div>
+            <div class="intro-feed-info">
+              <p class="intro-feed-user">@bailarina_mx</p>
+              <p class="intro-feed-caption">este baile me tiene 💀💀</p>
+            </div>
+          </div>
+          <div class="intro-feed-item">
+            <div class="intro-feed-side"><span>❤</span><span>💬</span><span>↗</span></div>
+            <div class="intro-feed-info">
+              <p class="intro-feed-user">@chef_slp</p>
+              <p class="intro-feed-caption">pasta en 5 min que quedó 🔥</p>
+            </div>
+          </div>
+          <div class="intro-feed-item">
+            <div class="intro-feed-side"><span>❤</span><span>💬</span><span>↗</span></div>
+            <div class="intro-feed-info">
+              <p class="intro-feed-user">@futbol_mexico</p>
+              <p class="intro-feed-caption">GOL DEL AÑO 😱😱</p>
+            </div>
+          </div>
+          <div class="intro-feed-item">
+            <div class="intro-feed-side"><span>❤</span><span>💬</span><span>↗</span></div>
+            <div class="intro-feed-info">
+              <p class="intro-feed-user">@memes_reales</p>
+              <p class="intro-feed-caption">no hay como Soraya para expresarme 🫢</p>
+            </div>
+          </div>
+          <div class="intro-feed-item">
+            <div class="intro-feed-side"><span>❤</span><span>💬</span><span>↗</span></div>
+            <div class="intro-feed-info">
+              <p class="intro-feed-user">@gamer_potosino</p>
+              <p class="intro-feed-caption">¡ámonos! 🎯🎯</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div hidden="" aria-hidden="true"><!-- DEMO COMENTADO — mover a sección de tipos de ML una vez revisada -->
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-ranking" id="tt-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Sistema de recomendación</p>
+        <h4 class="demo-title anchored">Cómo decide TikTok qué poner primero en tu “Para ti”</h4>
+        <p class="demo-copy">Elige un perfil de usuario y observa cómo el mismo algoritmo ordena los videos de forma distinta para cada tipo de audiencia.</p>
+      </div>
+    </div>
+
+    <div class="tt-profile-row">
+      <span class="tt-profile-label">Perfil de usuario:</span>
+      <button class="tt-profile-btn is-active" data-profile="neutral">🎯 Mixto</button>
+      <button class="tt-profile-btn" data-profile="sports">⚽ Deportes</button>
+      <button class="tt-profile-btn" data-profile="food">🍳 Cocina</button>
+      <button class="tt-profile-btn" data-profile="dance">💃 Entretenimiento</button>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <!-- COMMENTED OUT: old skeleton preview (phone shell + loading slabs)
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual tt-preview-stack">
+            <div class="demo-phone-preview">
+              <div class="tt-phone-screen"></div>
+            </div>
+            <div class="tt-preview-slab"></div>
+            <div class="tt-preview-slab tt-preview-slab-wide"></div>
+            <div class="tt-preview-slab tt-preview-slab-mid"></div>
+          </div>
+          <p class="demo-preview-title">Vista previa del ranking</p>
+          <p class="demo-preview-copy">Selecciona un perfil arriba, luego inicia la animación para ver cómo el algoritmo puntúa y ordena los candidatos según las señales de ese usuario.</p>
+        </div>
+        -->
+
+        <!-- NEW: populated TikTok preview — phone + candidate cards -->
+        <div class="tt-preview-layout">
+          <div class="tt-preview-candidates">
+            <p class="tt-preview-hint">Videos candidatos</p>
+            <div class="tt-preview-candidate-card">
+              <span class="tt-preview-candidate-emoji">🎵</span>
+              <span class="tt-preview-candidate-label">Baile viral</span>
+              <span class="tt-preview-score-pill">?</span>
+            </div>
+            <div class="tt-preview-candidate-card">
+              <span class="tt-preview-candidate-emoji">🍳</span>
+              <span class="tt-preview-candidate-label">Receta rápida</span>
+              <span class="tt-preview-score-pill">?</span>
+            </div>
+            <div class="tt-preview-candidate-card">
+              <span class="tt-preview-candidate-emoji">⚽</span>
+              <span class="tt-preview-candidate-label">Gol del día</span>
+              <span class="tt-preview-score-pill">?</span>
+            </div>
+            <div class="tt-preview-candidate-card">
+              <span class="tt-preview-candidate-emoji">😂</span>
+              <span class="tt-preview-candidate-label">Meme trending</span>
+              <span class="tt-preview-score-pill">?</span>
+            </div>
+          </div>
+
+          <div class="demo-phone-preview">
+            <div class="tt-phone-screen">
+              <div class="tt-phone-topbar">
+                <span>Siguiendo</span>
+                <strong>Para ti</strong>
+                <span>🔍</span>
+              </div>
+              <div class="tt-preview-video-area">
+                <span class="tt-preview-video-emoji">🤔</span>
+                <p class="tt-preview-video-msg">¿Qué va primero?</p>
+              </div>
+              <div class="tt-phone-actions">
+                <span>❤</span>
+                <span>💬</span>
+                <span>↗</span>
+              </div>
+              <div class="tt-phone-caption">
+                <span class="tt-preview-deciding">⟳ el algoritmo está decidiendo…</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="tt-preview-copy-below">Selecciona un perfil arriba, luego inicia la animación para ver cómo el algoritmo puntúa y ordena los candidatos según las señales de ese usuario.</p>
+      </div>
+
+      <div class="demo-stage-live">
+        <div class="tt-layout">
+          <div id="tt-card-list" class="tt-signal-list"></div>
+
+          <div class="demo-phone-stage">
+            <div class="tt-phone-screen">
+              <div class="tt-phone-topbar">
+                <span>Siguiendo</span>
+                <strong>Para ti</strong>
+                <span>Buscar</span>
+              </div>
+              <div id="tt-phone-video" class="tt-phone-video"></div>
+              <div class="tt-phone-actions">
+                <span>❤</span>
+                <span>💬</span>
+                <span>↗</span>
+              </div>
+              <div id="tt-phone-caption" class="tt-phone-caption"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5 class="anchored">Qué estás viendo</h5>
+        <p id="tt-seeing"></p>
+      </div>
+      <div class="demo-insight">
+        <h5 class="anchored">Qué significa</h5>
+        <p id="tt-meaning"></p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <p id="tt-status" class="demo-status"></p>
+      <div class="demo-actions">
+        <button id="tt-start" class="demo-btn demo-btn-primary">Ver animación</button>
+        <button id="tt-reset" class="btn-restart" disabled="">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div><!-- end demo comentado -->
+<hr>
+<!-- TODO: replace TODO_C2_ID with the actual Descript embed ID for Cápsula 2 -->
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/U6oQWyrMF4j" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</section>
+<section id="qué-es-la-inteligencia-artificial" class="level3">
+<h3 class="anchored" data-anchor-id="qué-es-la-inteligencia-artificial">¿Qué es la Inteligencia Artificial?</h3>
+<p>Todo el mundo habla de inteligencia artificial, pero casi nadie la define igual. Para algunos es ciencia ficción; para otros, la tecnología detrás de sus apps favoritas. Hay un chiste entre investigadores de la informática que lo explica bien: <em>“la IA es lo que las computadoras todavía no pueden hacer”</em>. Es decir que, en cuanto las computadoras resuelven un problema, el método deja de llamarse IA y se convierte en tecnología normal. El GPS era IA; ahora es solo un elemento de tu mapa digital. El corrector ortográfico era IA; ahora es solo es parte de tu procesador de palabras. Por eso el término se mueve constantemente, y por eso tanta gente lo usa para cosas distintas. Empecemos por ponernos de acuerdo:</p>
+<div class="ai-definition">
+  <div class="ai-def-icon">🤖</div>
+  <div class="ai-def-body">
+    <span class="ai-def-kicker">Definición</span>
+    <h5 class="ai-def-term anchored">Inteligencia Artificial</h5>
+    <p class="ai-def-copy">La inteligencia artificial es un conjunto de tecnologías que permite a las computadoras aprender de datos, identificar patrones y realizar tareas que antes requerían capacidades humanas, como comprender lenguaje, analizar información, reconocer imágenes, tomar decisiones o generar sugerencias.</p>
+  </div>
+</div>
+<p>Y ahora, armados de una definición sencilla de la IA, enfoquémonos en lo que <strong>no</strong> es la inteligencia artificial. En particular, aclaremos algunos mitos sobre el tema:</p>
+<section id="mitos-y-realidades-sobre-la-inteligencia-artificial" class="level4">
+<h4 class="anchored" data-anchor-id="mitos-y-realidades-sobre-la-inteligencia-artificial"><strong>Mitos y realidades sobre la inteligencia artificial</strong></h4>
+<div class="ia-myths" aria-label="Mitos y realidades sobre la inteligencia artificial">
+  <details class="ia-myth">
+    <summary class="ia-myth-summary">
+      <span class="ia-myth-kicker">Mito</span>
+      <span class="ia-myth-title">La IA es magia 🔮</span>
+      <span class="ia-myth-hint"> Realidad</span>
+    </summary>
+    <div class="ia-myth-body">
+      <p><strong>Realidad:</strong> La IA puede parecer sorprendente, pero no funciona como por arte de magia. En realidad, opera con modelos matemáticos entrenados con grandes cantidades de datos para detectar patrones y estimar respuestas probables.</p>
+    </div>
+  </details>
+
+  <details class="ia-myth">
+    <summary class="ia-myth-summary">
+      <span class="ia-myth-kicker">Mito</span>
+      <span class="ia-myth-title">La IA piensa y siente como una persona 🧠</span>
+      <span class="ia-myth-hint">Realidad</span>
+    </summary>
+    <div class="ia-myth-body">
+      <p><strong>Realidad:</strong> Aunque los sistemas de inteligencia artificial pueden procesar y producir texto emocional, o mantener conversaciones convincentes, no tienen conciencia, intenciones ni emociones propias. Las películas de robots humanoides que adquieren consciencia y emociones son, en efecto, ciencia ficción.</p>
+    </div>
+  </details>
+
+  <details class="ia-myth">
+    <summary class="ia-myth-summary">
+      <span class="ia-myth-kicker">Mito</span>
+      <span class="ia-myth-title">La IA siempre sabe de lo que habla 🤓</span>
+      <span class="ia-myth-hint">Realidad</span>
+    </summary>
+    <div class="ia-myth-body">
+      <p><strong>Realidad:</strong> Un sistema de IA puede generar explicaciones fluidas sin comprender el mundo como lo hace un ser humano. No tiene experiencia, sentido común, ni criterio propio; por eso a veces responde con seguridad incluso cuando se equivoca.</p>
+    </div>
+  </details>
+
+  <details class="ia-myth">
+    <summary class="ia-myth-summary">
+      <span class="ia-myth-kicker">Mito</span>
+      <span class="ia-myth-title">La IA siempre es neutral y correcta ✅</span>
+      <span class="ia-myth-hint">Realidad</span>
+    </summary>
+    <div class="ia-myth-body">
+      <p><strong>Realidad:</strong> La calidad de una IA depende de sus datos, su diseño y el contexto en el que se usa. Si los datos contienen errores o sesgos, el sistema puede repetirlos. Por eso la IA no reemplaza el juicio humano: necesita supervisión, verificación y preguntas críticas.</p>
+    </div>
+  </details>
+</div>
+</section>
+<section id="del-mito-al-mecanismo" class="level4">
+<h4 class="anchored" data-anchor-id="del-mito-al-mecanismo"><strong>Del mito al mecanismo</strong></h4>
+<p>Ahora que ya sabes lo que la inteligencia artificial <strong>no</strong> es, veamos lo que <strong>sí</strong> es, y cómo opera. Dos rasgos distinguen a un sistema de IA de un programa computacional convencional:</p>
+<div class="ai-properties">
+  <div class="ai-prop">
+    <div class="ai-prop-icon-wrap ai-prop-icon-wrap-blue" aria-hidden="true">
+      <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+    </div>
+    <div class="ai-prop-content">
+      <strong class="ai-prop-name">Autonomía</strong>
+      <p class="ai-prop-copy">Puede actuar sin instrucciones constantes.</p>
+    </div>
+  </div>
+  <div class="ai-prop">
+    <div class="ai-prop-icon-wrap ai-prop-icon-wrap-teal" aria-hidden="true">
+      <svg width="18" height="18" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+    </div>
+    <div class="ai-prop-content">
+      <strong class="ai-prop-name">Adaptabilidad</strong>
+      <p class="ai-prop-copy">Mejora con la experiencia, no con reprogramación manual.</p>
+    </div>
+  </div>
+</div>
+<p>Aquí viene una sorpresa. Lo que te parece fácil a ti es, computacionalmente, lo más difícil. Levantar un vaso de agua no requiere ningún pensamiento consciente — pero implica percepción tridimensional, calibración de fuerza, correcciones de postura en tiempo real: millones de años de evolución comprimidos en un gesto. Jugar ajedrez, en cambio, parece exigir inteligencia elevada, pero para una computadora es relativamente sencillo: seguir reglas y explorar millones de movimientos por segundo. Por ejemplo, <strong>Deep Blue</strong> - la supercomputadora diseñada por IBM para jugadar ajedrez - venció al campeón mundial en 1997. El problema más difícil para esta IA resultó ser el mover las piezas físicamente sin tirar el tablero. Por eso la autonomía — actuar en entornos físicos complejos sin instrucciones constantes — sigue siendo uno de los problemas más difíciles en el campo de la IA.</p>
+<p>¿Y cómo consigue esos dos rasgos? La respuesta es siempre la misma: <strong>ecuaciones matemáticas aplicadas a muchísimos datos</strong>. Una ecuación es una regla de cálculo — a partir de lo que ya conoces, produce algo que todavía no sabes. Cuando buscas la mejor ruta en Google Maps, una ecuación estima el tiempo de llegada a partir del tráfico actual. Cuando Spotify te sugiere una canción, otra ecuación calcula qué tan probable es que te guste según lo que has escuchado antes. Los datos son la materia prima: entre más ejemplos tenga la ecuación — más rutas recorridas, más canciones escuchadas — más precisos se vuelven sus cálculos.</p>
+<p>Una IA puede ser tan sencilla como una ecuación con dos variables, o tan compleja como miles de millones de variables entrelazadas. Lo que cambia con la complejidad es el tamaño del problema, no el mecanismo. En todos los casos, la lógica es la misma: una regla matemática y suficientes datos para que esa regla funcione bien.</p>
+</section>
+<section id="spoiler-alert-ya-sabes-programar-una-ia" class="level4">
+<h4 class="anchored" data-anchor-id="spoiler-alert-ya-sabes-programar-una-ia">Spoiler alert: <span class="spoiler-circle">¡ya sabes programar una IA!</span></h4>
+<p>Piensa en esto. Si estudias 0 horas para un examen, ¿cuánto crees que sacarías? Quizás un 60. ¿Y con 2 horas, un 70? ¿Con 4 horas, un 80?</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Horas de estudio</th>
+<th style="text-align: center;">Calificación esperada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0 h</td>
+<td style="text-align: center;">60</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2 h</td>
+<td style="text-align: center;">70</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4 h</td>
+<td style="text-align: center;">80</td>
+</tr>
+</tbody>
+</table>
+<p>¿Ves el patrón? Cada hora extra de estudio sube 5 puntos a tu calificación en el examen. Al principio, cuando no estudiaste nada, te sacaste un 60. Pero, poco a poco, fuiste esforzándote, estudiante un poco más, y subiendo tu calificación. Este patrón se puede resumir en una regla lógica a partir de datos. Y esta regla tiene nombre:</p>
+<div class="key-moment">
+  <p class="key-moment-eyebrow">La idea clave de esta sesión</p>
+  <p class="key-moment-headline">La IA más simple<br>empieza con una recta.</p>
+  <p class="key-moment-formula">ŷ&nbsp;=&nbsp;<span>m</span>&nbsp;·&nbsp;x&nbsp;+&nbsp;<span>b</span></p>
+  <p class="key-moment-sub">Esto es lo que verás funcionar en los próximos minutos.</p>
+</div>
+<p>Es la <strong>ecuación de la recta</strong>, la misma que viste en secundaria en un plano cartesiano. En machine learning se le conoce como <strong>regresión lineal</strong> — pero es exactamente la misma idea. Los dos números que acabas de intuir describen la lógica de la ecuación de la recta:</p>
+<ul>
+<li><strong>m = 5</strong> — la pendiente: cuánto sube la calificación por cada hora extra de estudio.</li>
+<li><strong>b = 60</strong> — la intersección: la calificación inicial, cuando no estudiaste nada.</li>
+</ul>
+<p>Hasta aquí, tú encontraste <code>m</code> y <code>b</code> observando tres filas. Pero imagina que hay 500 estudiantes y todos con datos distintos y un poco “ruidosos” — ya no es tan fácil distinguir el patrón a simple vista. Una máquina aprende esos valores de la siguiente manera:</p>
+<div id="learn-list-mount" class="learn-list"></div>
+<p><strong>Ahora te toca a ti:</strong> intenta ajustar una recta antes que la máquina.</p>
+<p>Iniciaremos este reto con datos concretos: <strong>8</strong> estudiantes, cada uno con horas de estudio y calificación distintas.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Estudiante</th>
+<th style="text-align: center;">x — Horas</th>
+<th style="text-align: center;">y — Calificación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Ana</td>
+<td style="text-align: center;">1 h</td>
+<td style="text-align: center;">55</td>
+</tr>
+<tr class="even">
+<td>Carlos</td>
+<td style="text-align: center;">2 h</td>
+<td style="text-align: center;">60</td>
+</tr>
+<tr class="odd">
+<td>María</td>
+<td style="text-align: center;">3 h</td>
+<td style="text-align: center;">65</td>
+</tr>
+<tr class="even">
+<td>Diego</td>
+<td style="text-align: center;">4 h</td>
+<td style="text-align: center;">72</td>
+</tr>
+<tr class="odd">
+<td>Sofía</td>
+<td style="text-align: center;">5 h</td>
+<td style="text-align: center;">75</td>
+</tr>
+<tr class="even">
+<td>Luis</td>
+<td style="text-align: center;">6 h</td>
+<td style="text-align: center;">82</td>
+</tr>
+<tr class="odd">
+<td>Fernanda</td>
+<td style="text-align: center;">7 h</td>
+<td style="text-align: center;">88</td>
+</tr>
+<tr class="even">
+<td>Emilio</td>
+<td style="text-align: center;">8 h</td>
+<td style="text-align: center;">90</td>
+</tr>
+</tbody>
+</table>
+<p>En el reto verás estos mismos datos como puntos azules en un plano cartesiano. Tu tarea será encontrar una recta que se acerque lo mejor posible a todos los puntos.</p>
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-supervised demo-shell-live-only" id="lr-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Álgebra + Machine Learning</p>
+        <h4 class="demo-title anchored">Reto: ajusta una recta antes que la máquina</h4>
+        <p class="demo-copy">Empieza con una recta imperfecta, mueve la pendiente y la intersección, y trata de acercarte a los puntos. Después deja que la máquina haga el ajuste final.</p>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div class="formula-box formula-box-preview">
+              ŷ = <strong>m</strong> · x + <strong>b</strong>
+            </div>
+          </div>
+          <p class="demo-preview-title">Vista previa del reto</p>
+          <p class="demo-preview-copy">Primero ajustas tú la recta con álgebra básica. Luego ves cómo la máquina hace lo mismo, pero mucho más rápido.</p>
+        </div>
+      </div>
+
+      <div class="demo-stage-live">
+        <div class="demo-body-grid lr-live-grid">
+          <div>
+            <div class="demo-plot-frame" id="lr-plot"></div>
+            <p id="lr-equation" class="formula-inline"></p>
+            <div id="lr-prediction-card" class="demo-slider-card lr-prediction-card" hidden="">
+              <p>Paso final: ya con la recta aprendida, pide una predicción nueva</p>
+              <div class="demo-slider-row">
+                <input id="lr-predict-slider" type="range" min="1" max="10" step="0.5" value="5">
+                <span class="demo-kv"><strong id="lr-predict-value">5.0 h</strong></span>
+                <span class="demo-kv">→ <strong id="lr-predict-score"></strong></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lr-side">
+            <div class="demo-slider-card lr-fit-card">
+              <p>Los dos números que la máquina va a aprender</p>
+              <div class="lr-slider-block">
+                <label for="lr-slope-slider">Pendiente m</label>
+                <div class="demo-slider-row">
+                  <input id="lr-slope-slider" type="range" min="1" max="8" step="0.1" value="3.4">
+                  <span class="demo-kv"><strong id="lr-slope-value">3.4</strong></span>
+                </div>
+              </div>
+              <div class="lr-slider-block">
+                <label for="lr-intercept-slider">Intersección b</label>
+                <div class="demo-slider-row">
+                  <input id="lr-intercept-slider" type="range" min="40" max="65" step="0.5" value="57">
+                  <span class="demo-kv"><strong id="lr-intercept-value">57.0</strong></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="lr-metric-grid">
+              <div class="lr-mini-card">
+                <span class="lr-mini-label">Sube por +1 hora</span>
+                <strong id="lr-rise-value">+3.4 pts</strong>
+              </div>
+              <div class="lr-mini-card">
+                <span class="lr-mini-label">Error promedio</span>
+                <strong id="lr-error-value">—</strong>
+              </div>
+              <div class="lr-mini-card">
+                <span class="lr-mini-label">Lectura</span>
+                <strong id="lr-feedback-value">—</strong>
+              </div>
+            </div>
+
+            <div class="lr-rise-card" id="lr-rise-card" hidden="">
+              <p class="lr-card-kicker">Elevación sobre pendiente</p>
+              <p>En palabras simples: cuando estudias <strong>1 hora</strong> más (mueves la recta 1h a la derecha), la recta (tu calificación) sube <strong id="lr-rise-chip">+3.4 puntos</strong>.</p>
+              <p class="lr-rise-note">Ese “sube / avanza” es exactamente la pendiente que ya conocías de tus clases de álgebra.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5 class="anchored">Qué estás viendo</h5>
+        <p id="lr-seeing"></p>
+      </div>
+      <div class="demo-insight">
+        <h5 class="anchored">Qué significa</h5>
+        <p id="lr-meaning"></p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <p id="lr-status" class="demo-status"></p>
+      <div class="demo-actions">
+        <button id="lr-auto" class="demo-btn demo-btn-secondary" disabled="">Ahora deja que la máquina aprenda</button>
+        <button id="lr-reset" class="btn-restart" disabled="">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+<!--
+  <details class="foldout foldout-panel">
+    <summary class="foldout-summary">
+      <span>🔢 Laboratorio corto — de dónde sale la línea azul</span>
+      <span class="foldout-summary-hint">Haz clic para enterarte</span>
+    </summary>
+    <div class="foldout-body">
+      <div class="lab-card">
+        <div class="lab-card-grid">
+          <div class="lab-card-section">
+            <h5>La idea</h5>
+            <p>La regresión lineal simple busca la recta que deja los errores verticales entre los datos reales y la predicción <em>lo más pequeños posible</em>.</p>
+            <p class="formula-inline">ŷ = m · x + b</p>
+          </div>
+          <div class="lab-card-section">
+            <h5>Qué significan</h5>
+            <ul>
+              <li><strong>m</strong>: cuánto sube la predicción por cada hora extra.</li>
+              <li><strong>b</strong>: valor estimado cuando x = 0.</li>
+              <li><strong>ŷ</strong>: la calificación predicha.</li>
+            </ul>
+          </div>
+          <div class="lab-card-section">
+            <h5>La traducción importante</h5>
+            <p>Aquí aprender no significa “pensar”. Significa encontrar los números <strong>m</strong> y <strong>b</strong> que mejor explican los datos.</p>
+            <p class="formula-inline">ŷ = 5.23 · x + 49.86</p>
+          </div>
+        </div>
+
+        <div class="formula-box lab-formula">
+          m = Σ(xᵢ − x̄)(yᵢ − ȳ) / Σ(xᵢ − x̄)² &nbsp;&nbsp;&nbsp; b = ȳ − m·x̄
+        </div>
+
+        <p class="lab-note">Es importante recalcar que, aunque el ejemplo usa solo 8 puntos, entre más puntos (más datos, más estudiantes) tengamos, más precisa será nuestra predicción.</p>
+
+        **Código de Python**
+        <pre class="code-dark lab-code"><code>import numpy as np
+
+# Datos: horas de estudio (x) → calificación (y)
+x = np.array([1, 2, 3, 4, 5, 6, 7, 8])
+y = np.array([55, 60, 65, 72, 75, 82, 88, 90])
+
+# numpy obtiene la misma recta
+m, b = np.polyfit(x, y, 1)
+print(f"ŷ = {m:.2f}·x + {b:.2f}")</code></pre>
+      </div>
+    </div>
+  </details>
+-->
+</div>
+<p>Esto que acabas de hacer es machine learning en miniatura: probaste distintos valores para <code>m</code> y <code>b</code>, observaste el error promedio, y buscaste una recta que minimizara este error. La máquina hace exactamente lo mismo, pero más rápido, con más datos y con modelos mucho más complejos.</p>
+</section>
+<section id="ia-machine-learning-y-deep-learning-cuál-es-la-diferencia" class="level4">
+<h4 class="anchored" data-anchor-id="ia-machine-learning-y-deep-learning-cuál-es-la-diferencia"><strong>IA, Machine Learning y Deep Learning: ¿cuál es la diferencia?</strong></h4>
+<p>La recta que ajustaste es un modelo de machine learning. Pero espera — ¿machine learning es lo mismo que inteligencia artificial? ¿Y el deep learning que todos mencionan, qué es? Entender la diferencia entre estos conceptos nos ayudará a saber qué tipo de IA está detrás de cada herramienta, cuántos datos necesita, y qué tan lejos puede llegar. Los tres términos se usan como sinónimos constantemente, aunque no siempre es así. Lee la jerarquía de conceptos explicada acá abajo para saber un poco más de inteligencia artificial.</p>
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-ranking concept-shell demo-shell-live-only" id="concept-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Jerarquía de conceptos</p>
+        <h4 class="demo-title anchored">IA, Machine Learning y Deep Learning</h4>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div class="concept-preview-stack">
+              <div class="concept-preview-layer">
+                <strong>Inteligencia Artificial</strong>
+                <span>El término paraguas</span>
+              </div>
+              <div class="concept-preview-layer">
+                <strong>Machine Learning</strong>
+                <span>Aprende de datos</span>
+              </div>
+              <div class="concept-preview-layer">
+                <strong>Deep Learning</strong>
+                <span>Redes neuronales profundas</span>
+              </div>
+            </div>
+          </div>
+          <p class="demo-preview-title">Vista previa del mapa conceptual</p>
+          <p class="demo-preview-copy">Abre el bloque para explorar cada capa y ver cómo se relacionan sin mezclar o confundir definiciones.</p>
+        </div>
+      </div>
+
+      <div class="demo-stage-live">
+        <p class="fig-caption">Tres conceptos anidados: cada uno es una versión más específica del anterior.</p>
+
+        <div class="concept-map-card">
+          <div class="concept-map-stage" role="group" aria-label="Relación entre inteligencia artificial, machine learning y deep learning">
+            <button type="button" class="concept-layer concept-layer-ia" data-ring="ia" aria-pressed="false">
+              <span class="concept-layer-kicker">Campo más amplio</span>
+              <span class="concept-layer-title">Inteligencia Artificial</span>
+              <span class="concept-layer-note">Sistemas que realizan tareas asociadas con inteligencia humana</span>
+            </button>
+
+            <button type="button" class="concept-layer concept-layer-ml" data-ring="ml" aria-pressed="false">
+              <span class="concept-layer-kicker">Subcampo</span>
+              <span class="concept-layer-title">Machine Learning</span>
+              <span class="concept-layer-note">Modelos que aprenden patrones a partir de datos</span>
+            </button>
+
+            <button type="button" class="concept-layer concept-layer-dl" data-ring="dl" aria-pressed="false">
+              <span class="concept-layer-kicker">Subcampo más específico</span>
+              <span class="concept-layer-title">Deep Learning</span>
+              <span class="concept-layer-note">Redes neuronales con muchas capas</span>
+            </button>
+          </div>
+
+          <p class="concept-map-hint">Haz clic en cada capa para cambiar la explicación y los ejemplos del panel.</p>
+        </div>
+
+        <div id="concept-panel" class="concept-panel" data-tone="ia"></div>
+      </div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5 class="anchored">Qué estás viendo</h5>
+        <p id="concept-seeing"></p>
+      </div>
+      <div class="demo-insight">
+        <h5 class="anchored">Qué significa</h5>
+        <p id="concept-meaning"></p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <p id="concept-status" class="demo-status"></p>
+      <div class="demo-actions">
+        <button id="concept-reset" class="btn-restart" disabled="">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<p>La regresión lineal que programaste es machine learning (ML): encontró las ecuaciones por sí sola, a partir de datos. Es así como la IA consigue la <strong>adaptabilidad</strong> que vimos antes. El deep learning hace lo mismo, pero con redes de millones de nodos — eso es lo que le da a la IA la capacidad de ver imágenes, entender voz, y enfrentarse a los problemas que parecen “fáciles” para los humanos pero son computacionalmente complejos. Ahora que ya vimos el mapa y que tenemos más claridad sobre estos conceptos, veamos cómo aparece cada campo en las apps que ya usas todos los días.</p>
+<hr>
+</section>
+</section>
+<section id="la-ia-en-tu-vida-diaria-recorrido-de-apps" class="level3">
+<h3 class="anchored" data-anchor-id="la-ia-en-tu-vida-diaria-recorrido-de-apps">La IA en tu vida diaria: recorrido de apps</h3>
+<p>Volvamos a las apps del inicio, pero ahora con un enfoque más claro: ya sabes que “IA” puede referirse a distintas estrategias computacionales, y que una parte de ella incluso empieza con las matemáticas que ves en un a clase de álgebra de tu secundaria y/o preparatoria.</p>
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-ranking app-tour-shell demo-shell-live-only" id="apps-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Recorrido de apps</p>
+        <h4 class="demo-title anchored">La IA cotidiana se ve distinta según la app, pero responde al mismo patrón</h4>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual app-tour-preview-grid">
+            <div class="app-tour-preview-card">
+              <strong>TikTok</strong>
+              <span>Ranking de videos</span>
+            </div>
+            <div class="app-tour-preview-card">
+              <strong>Spotify</strong>
+              <span>Descubrimiento musical</span>
+            </div>
+            <div class="app-tour-preview-card">
+              <strong>Maps</strong>
+              <span>Predicción de tráfico</span>
+            </div>
+            <div class="app-tour-preview-card">
+              <strong>Instagram</strong>
+              <span>Visión por computadora</span>
+            </div>
+            <div class="app-tour-preview-card">
+              <strong>Gmail</strong>
+              <span>Clasificación de texto</span>
+            </div>
+            <div class="app-tour-preview-card">
+              <strong>Uber</strong>
+              <span>Optimización dinámica</span>
+            </div>
+          </div>
+          <p class="demo-preview-title">Vista previa del recorrido</p>
+          <p class="demo-preview-copy">Abre el bloque para comparar las apps con una misma interfaz y así detectar mejor qué problema resuelve la IA en cada caso.</p>
+        </div>
+      </div>
+
+      <div class="demo-stage-live">
+        <div class="app-tour-grid">
+          <div id="app-tour-list" class="app-tour-list" role="group" aria-label="Aplicaciones con ejemplos de inteligencia artificial"></div>
+          <div id="app-tour-detail" class="app-tour-detail" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5 class="anchored">Qué estás viendo</h5>
+        <p id="apps-seeing"></p>
+      </div>
+      <div class="demo-insight">
+        <h5 class="anchored">Qué significa</h5>
+        <p id="apps-meaning"></p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <p id="apps-status" class="demo-status"></p>
+      <div class="demo-actions">
+        <button id="apps-reset" class="btn-restart" disabled="">Reiniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<!-- TODO: replace TODO_C3_ID with the actual Descript embed ID for Cápsula 3 -->
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/bt2c9Ze4iQ0" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
+</div>
+</section>
+<section id="cómo-más-puede-aprender-una-máquina" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-más-puede-aprender-una-máquina">¿Cómo más puede aprender una máquina?</h3>
+<p>Ya viste el caso más fácil de explicar: <strong>aprendizaje supervisado</strong>. Le damos al modelo ejemplos donde sí conocemos la respuesta correcta, y el sistema intenta encontrar un patrón que conecte entrada y salida.</p>
+<p>En la recta de arriba, eso significó ajustar <code>m</code> y <code>b</code>. El mismo paradigma sirve para dos problemas muy comunes:</p>
+<div class="supervised-pair">
+  <div class="supervised-card">
+    <p class="supervised-card-type">Regresión</p>
+    <p class="supervised-card-def">Predecir un <strong>número continuo</strong></p>
+    <ul class="supervised-card-examples">
+      <li>Precio de una casa según sus metros cuadrados</li>
+      <li>Cuánta energía consumirá una ciudad mañana</li>
+      <li>La hora exacta en que llega tu Uber</li>
+    </ul>
+  </div>
+  <div class="supervised-card">
+    <p class="supervised-card-type">Clasificación</p>
+    <p class="supervised-card-def">Predecir una <strong>categoría</strong></p>
+    <ul class="supervised-card-examples">
+      <li>Filtro de spam (¿correo basura o no?)</li>
+      <li>Detección de tumor en una radiografía (¿tumor, o no tumor?)</li>
+      <li>Reconocimiento facial en tu celular (¿eres tú, o no eres tú?)</li>
+    </ul>
+  </div>
+</div>
+<p>El aprendizaje supervisado es solo uno de varios paradigmas del ML — el video de esta sesión menciona cuatro, incluyendo el aprendizaje auto-supervisado. En este curso nos enfocamos en los tres más fundamentales; los verás con más detalle en la Sesión 3. Por otro lado, en la Sesión 2 exploraremos el mecanismo interno del algoritmo más popular del aprendizaje de máquinas: cómo funcionan las redes neuronales.</p>
+<div class="paradigm-cards">
+  <div class="paradigm-card paradigm-card-seen">
+    <span class="paradigm-card-badge badge-seen">Visto hoy</span>
+    <p class="paradigm-card-name">Supervisado</p>
+    <p class="paradigm-card-desc">Datos con etiquetas → el modelo aprende a predecir.</p>
+  </div> 
+  <div class="paradigm-card paradigm-card-coming">
+    <span class="paradigm-card-badge badge-coming">Sesión 3</span>
+    <p class="paradigm-card-name">No supervisado</p>
+    <p class="paradigm-card-desc">Sin etiquetas → el modelo agrupa datos por similitud.</p>
+  </div>
+  <div class="paradigm-card paradigm-card-coming">
+    <span class="paradigm-card-badge badge-coming">Sesión 3</span>
+    <p class="paradigm-card-name">Por refuerzo</p>
+    <p class="paradigm-card-desc">Sin etiquetas → el modelo aprende por ensayo, error y recompensa.</p>
+  </div>
+</div>
+<p><strong>¿Puede la IA ir más allá de encontrar patrones y hacer predicciones?</strong> Esta es una pregunta que aún no tiene respuesta: Judea Pearl, ganador del Premio Turing, argumenta que la IA del futuro necesitará razonar sobre causas y contrafactuales, no solo predecir. Lo viste en el video de esta sección. Aunque este razonamiento es de suma importancia para el futuro de la inteligencia artificial, no lo desarrollaremos en este curso. Sin embargo, valdría la pena tener la idea en mente mientras vamos aprendiendo sobre el proceso de aprendizaje, predicción, y simulación de la inteligencia artificial.</p>
+<hr>
+<span class="reflexion-kicker">Reflexión · 5 min</span>
+<h3 class="reflexion-heading anchored">Actividad de reflexión</h3>
+<ol class="reflexion-list">
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">01</span>
+    <p class="reflexion-q"><strong>¿Qué herramientas de IA usaste hoy</strong> antes de entrar a esta sesión? Sé específico — no solo "el celular", sino qué apps y en qué momento.</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">02</span>
+    <p class="reflexion-q"><strong>¿En qué momento de la sesión te cayó el veinte</strong> de que una parte del machine learning empieza con matemáticas que ya conocías?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">03</span>
+    <p class="reflexion-q"><strong>¿Cuál de los tres tipos de aprendizaje</strong> puedes reconocer ahora en alguna app que uses seguido?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">04</span>
+    <p class="reflexion-q"><strong>¿Hay algo que antes pensabas que era "magia"</strong> de la tecnología que ahora tiene una explicación diferente?</p>
+  </li>
+</ol>
+<p class="reflexion-close">No hay respuestas correctas o incorrectas. El objetivo es que empieces a ver el mundo con otros ojos.</p>
+<hr>
+</section>
+<section id="la-idea-central-de-esta-sesión" class="level3">
+<h3 class="anchored" data-anchor-id="la-idea-central-de-esta-sesión">La idea central de esta sesión</h3>
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 1</span>
+  <p class="central-idea-text">La inteligencia artificial no es magia ni consciencia. En su versión más simple, puede empezar con algo tan familiar como lo es la ecuación de la recta: <strong>datos, error, pendiente e intersección</strong>. Cuando entiendes eso, la IA deja de verse como magia inexplicable y empieza a verse como <strong>matemáticas aplicadas a reconocer patrones.</strong>.</p>
+</div>
+<hr>
+</section>
+<section id="recursos-para-explorar-más-sobre-el-tema" class="level3">
+<h3 class="anchored" data-anchor-id="recursos-para-explorar-más-sobre-el-tema">Recursos para explorar más sobre el tema</h3>
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://teachablemachine.withgoogle.com" target="_blank" rel="noopener">Teachable Machine <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Entrena tu propio modelo directamente en el navegador — sin código.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://quickdraw.withgoogle.com" target="_blank" rel="noopener">Quick, Draw! <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Juega a que una red neuronal adivine tus dibujos.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.elementsofai.com/es" target="_blank" rel="noopener">Elements of AI <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Curso introductorio gratuito en español — Universidad de Helsinki.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://experiments.withgoogle.com/collection/ai" target="_blank" rel="noopener">Google AI Experiments <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Colección de demos interactivos y gratuitos de Google.</p>
+  </li>
+</ul>
+<hr>
+<script type="module">
+import { annotate } from 'https://unpkg.com/rough-notation/lib/rough-notation.esm.js';
+
+function initAnnotations() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const defTerm      = document.querySelector('.ai-def-term');
+  const formula      = document.querySelector('.key-moment-formula');
+  const spoilerCirc  = document.querySelector('.spoiler-circle');
+
+  const items = [];
+  if (defTerm)     items.push({ el: defTerm,     ann: annotate(defTerm,     { type: 'underline', color: '#2780e3', strokeWidth: 2,   animationDuration: 500, padding: 2 }) });
+  if (formula)     items.push({ el: formula,     ann: annotate(formula,     { type: 'bracket',   color: '#0ea5e9', strokeWidth: 3, animationDuration: 600, brackets: ['left','right'], padding: 10 }) });
+  if (spoilerCirc) items.push({ el: spoilerCirc, ann: annotate(spoilerCirc, { type: 'circle',    color: '#2780e3', strokeWidth: 2.5, animationDuration: 700, padding: 6 }) });
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const item = items.find(i => i.el === entry.target);
+      if (item) { item.ann.show(); obs.unobserve(entry.target); }
+    });
+  }, { threshold: 0.6 });
+
+  items.forEach(i => obs.observe(i.el));
+}
+
+document.readyState === 'loading'
+  ? document.addEventListener('DOMContentLoaded', initAnnotations)
+  : initAnnotations();
+</script>
+<nav class="sesion-nav">
+  <a href="../index.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Inicio</span>
+    <span class="nav-title">Página principal</span>
+  </a>
+  <div class="sesion-nav-center">
+    <div class="sesion-nav-dots">
+      <span class="sesion-nav-dot active" title="Sesión 1"></span>
+      <span class="sesion-nav-dot" title="Sesión 2"></span>
+      <span class="sesion-nav-dot" title="Sesión 3"></span>
+      <span class="sesion-nav-dot" title="Sesión 4"></span>
+      <span class="sesion-nav-dot" title="Sesión 5"></span>
+      <span class="sesion-nav-dot" title="Sesión 6"></span>
+      <span class="sesion-nav-dot" title="Sesión 7"></span>
+      <span class="sesion-nav-dot" title="Sesión 8"></span>
+      <span class="sesion-nav-dot" title="Sesión 9"></span>
+      <span class="sesion-nav-dot" title="Sesión 10"></span>
+      <span class="sesion-nav-dot" title="Sesión 11"></span>
+      <span class="sesion-nav-dot" title="Sesión 12"></span>
+      <span class="sesion-nav-dot" title="Sesión 13"></span>
+      <span class="sesion-nav-dot" title="Sesión 14"></span>
+      <span class="sesion-nav-dot" title="Sesión 15"></span>
+    </div>
+    <span class="sesion-nav-progress">Sesión 1 de 15</span>
+  </div>
+  <a href="sesion-02.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S2: Redes neuronales — ¿Cómo “piensa” la IA?</span>
+  </a>
+</nav>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.curso-ia-slp\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Intro a la IA · San Luis Potosí · 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/michelleg06">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
