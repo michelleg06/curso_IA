@@ -2,11 +2,11 @@
    SESIÓN 09 — IA para Organización y Productividad Estudiantil
 ================================================ */
 
-/* Tone: indigo (productividad, foco) */
+/* Tone: brand blue (productividad, foco) */
 .demo-tone-productivity {
-  --demo-accent: #6366f1;
-  --demo-accent-soft: rgba(99, 102, 241, 0.10);
-  --demo-accent-strong: rgba(99, 102, 241, 0.20);
+  --demo-accent: #2780e3;
+  --demo-accent-soft: rgba(39, 128, 227, 0.10);
+  --demo-accent-strong: rgba(39, 128, 227, 0.20);
 }
 
 /* ---- Tres modos de uso ---- */
@@ -18,17 +18,24 @@
 }
 
 .modo-card {
-  background: linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
-  border: 1.5px solid #c7d2fe;
+  background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);
+  border: 1.5px solid #dbeafe;
   border-radius: 16px;
   padding: 1rem;
-  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.06);
+  box-shadow: 0 8px 24px rgba(39, 128, 227, 0.06);
 }
 
 .modo-icon {
-  font-size: 1.8rem;
-  margin-bottom: 0.45rem;
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #2780e3;
+  opacity: 0.22;
+  margin-bottom: 0.15rem;
   display: block;
+  user-select: none;
+  letter-spacing: -0.02em;
 }
 
 .modo-tag {
@@ -37,9 +44,9 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: #e0e7ff;
-  color: #4338ca;
-  border: 1px solid #c7d2fe;
+  background: #dbeafe;
+  color: #1a6fc4;
+  border: 1px solid #dbeafe;
   border-radius: 99px;
   padding: 0.1rem 0.5rem;
   margin-bottom: 0.4rem;
@@ -61,14 +68,14 @@
 .modo-example {
   font-family: "Courier New", monospace;
   font-size: 0.75rem;
-  color: #4338ca;
-  background: #eef2ff;
+  color: #1a6fc4;
+  background: #f0f7ff;
   border-radius: 6px;
   padding: 0.25rem 0.5rem;
   display: block;
   margin-top: 0.3rem;
   line-height: 1.5;
-  border: 1px solid #c7d2fe;
+  border: 1px solid #dbeafe;
 }
 
 /* ---- Study plan demo (sp) ---- */
@@ -116,12 +123,12 @@
 
 .sp-selector:focus {
   outline: none;
-  border-color: #6366f1;
+  border-color: #2780e3;
 }
 
 .sp-generate-btn {
   align-self: flex-end;
-  background: #6366f1;
+  background: #2780e3;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -134,13 +141,13 @@
 }
 
 .sp-generate-btn:hover {
-  background: #4338ca;
+  background: #1a6fc4;
   transform: translateY(-1px);
 }
 
 .sp-output-box {
-  background: #eef2ff;
-  border: 1.5px solid #c7d2fe;
+  background: #f0f7ff;
+  border: 1.5px solid #dbeafe;
   border-radius: 14px;
   padding: 1rem 1.05rem;
   margin-top: 0.6rem;
@@ -151,7 +158,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #6366f1;
+  color: #2780e3;
   display: block;
   margin-bottom: 0.2rem;
 }
@@ -166,9 +173,9 @@
 .sp-prompt-box {
   font-family: "Courier New", monospace;
   font-size: 0.81rem;
-  color: #4338ca;
+  color: #1a6fc4;
   background: #fff;
-  border: 1px solid #c7d2fe;
+  border: 1px solid #dbeafe;
   border-radius: 8px;
   padding: 0.6rem 0.75rem;
   margin-bottom: 0.8rem;
@@ -184,7 +191,7 @@
 
 .sp-day-block {
   background: #fff;
-  border: 1px solid #c7d2fe;
+  border: 1px solid #dbeafe;
   border-radius: 10px;
   padding: 0.65rem 0.8rem;
 }
@@ -194,7 +201,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #6366f1;
+  color: #2780e3;
   margin: 0 0 0.3rem;
   display: block;
 }
@@ -216,7 +223,7 @@
 
 .sp-day-tasks li::before {
   content: "→";
-  color: #6366f1;
+  color: #2780e3;
   font-weight: 700;
   position: absolute;
   left: 0;
@@ -224,7 +231,7 @@
 
 .sp-tip-box {
   background: #fff;
-  border-left: 3px solid #6366f1;
+  border-left: 3px solid #2780e3;
   padding: 0.55rem 0.75rem;
   border-radius: 0 8px 8px 0;
   margin-top: 0.75rem;
@@ -238,7 +245,7 @@
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #6366f1;
+  color: #2780e3;
   display: block;
   margin-bottom: 0.2rem;
 }
@@ -294,13 +301,13 @@
 }
 
 .sp-preview-chip {
-  background: #eef2ff;
-  border: 1px solid #c7d2fe;
+  background: #f0f7ff;
+  border: 1px solid #dbeafe;
   border-radius: 99px;
   padding: 0.25rem 0.75rem;
   font-size: 0.78rem;
   font-weight: 600;
-  color: #4338ca;
+  color: #1a6fc4;
 }
 
 /* ---- Fuentes de investigación ---- */
@@ -401,9 +408,9 @@
   gap: 0.35rem;
   font-size: 0.75rem;
   font-weight: 700;
-  color: #4338ca;
-  background: #eef2ff;
-  border: 1px solid #c7d2fe;
+  color: #1a6fc4;
+  background: #f0f7ff;
+  border: 1px solid #dbeafe;
   border-radius: 99px;
   padding: 0.22rem 0.75rem;
   text-decoration: none;
@@ -413,17 +420,17 @@
 }
 
 .tool-demo-link:hover {
-  background: #c7d2fe;
-  color: #3730a3;
+  background: #dbeafe;
+  color: #1a365d;
 }
 
 /* ---- Tool spotlights ---- */
 .toolspot-card {
-  background: linear-gradient(180deg, #ffffff 0%, #f8faff 100%);
-  border: 1.5px solid #dbe4ff;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  border: 1.5px solid #dbeafe;
   border-radius: 18px;
   padding: 1rem 1.05rem;
-  box-shadow: 0 10px 24px rgba(99, 102, 241, 0.07);
+  box-shadow: 0 10px 24px rgba(39, 128, 227, 0.07);
   margin: 1rem 0 1.15rem;
 }
 
@@ -437,9 +444,9 @@
   font-weight: 700;
   letter-spacing: 0.11em;
   text-transform: uppercase;
-  color: #4338ca;
-  background: #eef2ff;
-  border: 1px solid #c7d2fe;
+  color: #1a6fc4;
+  background: #f0f7ff;
+  border: 1px solid #dbeafe;
   border-radius: 999px;
   padding: 0.15rem 0.55rem;
   margin-bottom: 0.45rem;
@@ -472,7 +479,7 @@
 
 .toolshot-window {
   background: #ffffff;
-  border: 1.5px solid #dbe4ff;
+  border: 1.5px solid #dbeafe;
   border-radius: 16px;
   overflow: hidden;
 }
@@ -481,8 +488,8 @@
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  background: #eef2ff;
-  border-bottom: 1px solid #dbe4ff;
+  background: #f0f7ff;
+  border-bottom: 1px solid #dbeafe;
   padding: 0.55rem 0.8rem;
 }
 
@@ -495,14 +502,14 @@
   width: 0.45rem;
   height: 0.45rem;
   border-radius: 50%;
-  background: #c7d2fe;
+  background: #93c5fd;
   display: inline-block;
 }
 
 .toolshot-title {
   font-size: 0.74rem;
   font-weight: 700;
-  color: #4338ca;
+  color: #1a6fc4;
 }
 
 .toolshot-body {
@@ -551,8 +558,8 @@
 
 .notion-ai-box {
   margin-top: 0.7rem;
-  background: #eef2ff;
-  border: 1px solid #c7d2fe;
+  background: #f0f7ff;
+  border: 1px solid #dbeafe;
   border-radius: 12px;
   padding: 0.7rem 0.8rem;
 }
@@ -563,7 +570,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #4338ca;
+  color: #1a6fc4;
   margin-bottom: 0.2rem;
 }
 
@@ -607,13 +614,13 @@
 }
 
 .calendar-event-task {
-  background: #eef2ff;
-  color: #4338ca;
+  background: #f0f7ff;
+  color: #1a6fc4;
 }
 
 .calendar-event-study {
-  background: #ede9fe;
-  color: #6d28d9;
+  background: #dbeafe;
+  color: #1d4ed8;
 }
 
 .calendar-event-talk {
@@ -665,8 +672,8 @@
 }
 
 .audio-pill {
-  background: #ede9fe;
-  color: #5b21b6;
+  background: #dbeafe;
+  color: #1e40af;
 }
 
 /* ---- Herramientas explorer (ht) ---- */
@@ -689,12 +696,12 @@
   transition: border-color 0.15s, background 0.15s, color 0.15s;
 }
 
-.ht-tab-btn:hover { border-color: #6366f1; color: #6366f1; }
+.ht-tab-btn:hover { border-color: #2780e3; color: #2780e3; }
 
 .ht-tab-btn.is-active {
-  background: #eef2ff;
-  border-color: #6366f1;
-  color: #4338ca;
+  background: #f0f7ff;
+  border-color: #2780e3;
+  color: #1a6fc4;
 }
 
 .ht-cards { display: grid; gap: 0.7rem; }
@@ -781,8 +788,8 @@
 
 /* ---- Actividad scenario ---- */
 .actividad9-scenario {
-  background: linear-gradient(135deg, #eef2ff 0%, #f8faff 100%);
-  border: 2px solid #c7d2fe;
+  background: linear-gradient(135deg, #f0f7ff 0%, #f8fbff 100%);
+  border: 2px solid #dbeafe;
   border-radius: 16px;
   padding: 1.2rem 1.3rem;
   margin: 1.2rem 0;
@@ -793,7 +800,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #6366f1;
+  color: #2780e3;
   margin: 0 0 0.3rem;
   display: block;
 }
@@ -822,7 +829,7 @@
 
 .actividad9-exam-card {
   background: #fff;
-  border: 1px solid #c7d2fe;
+  border: 1px solid #dbeafe;
   border-radius: 10px;
   padding: 0.65rem 0.8rem;
 }
@@ -832,7 +839,7 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #6366f1;
+  color: #2780e3;
   display: block;
   margin-bottom: 0.15rem;
 }
@@ -918,7 +925,7 @@
   margin: 1.2rem 0 0.5rem;
   border-radius: 14px;
   border: 1.5px solid #e2e8f0;
-  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.06);
+  box-shadow: 0 2px 12px rgba(39, 128, 227, 0.06);
 }
 
 .herr-table {
@@ -931,7 +938,7 @@
 }
 
 .herr-table thead tr {
-  background: linear-gradient(90deg, #eef2ff 0%, #f5f3ff 100%);
+  background: linear-gradient(90deg, #f0f7ff 0%, #f0f7ff 100%);
 }
 
 .herr-table th {
@@ -941,8 +948,8 @@
   font-weight: 700;
   letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: #4338ca;
-  border-bottom: 2px solid #c7d2fe;
+  color: #1a6fc4;
+  border-bottom: 2px solid #dbeafe;
   white-space: nowrap;
 }
 
@@ -1011,8 +1018,8 @@
 .herr-badge-freemium { background: #eff6ff; color: #1d4ed8; border: 1px solid #93c5fd; }
 .herr-badge-paid     { background: #fff7ed; color: #c2410c; border: 1px solid #fdba74; }
 .herr-badge-yes      { background: #f0fdf4; color: #16a34a; border: 1px solid #86efac; }
-.herr-badge-easy     { background: #eef2ff; color: #4338ca; border: 1px solid #c7d2fe; }
-.herr-badge-medium   { background: #faf5ff; color: #7c3aed; border: 1px solid #d8b4fe; }
+.herr-badge-easy     { background: #f0f7ff; color: #1a6fc4; border: 1px solid #dbeafe; }
+.herr-badge-medium   { background: #eff6ff; color: #2563eb; border: 1px solid #93c5fd; }
 
 .herr-table-note {
   font-size: 0.72rem;
@@ -1099,7 +1106,7 @@
 
 .goblin-mockup-arrow {
   font-size: 0.72rem;
-  color: #6366f1;
+  color: #2780e3;
   font-weight: 700;
   text-align: center;
   margin: 0.3rem 0;
@@ -1128,21 +1135,21 @@
 }
 
 .goblin-check {
-  color: #c7d2fe;
+  color: #93c5fd;
   font-size: 1rem;
   flex-shrink: 0;
   margin-top: 0.05rem;
 }
 
 .goblin-mockup-footer {
-  background: #eef2ff;
-  border-top: 1px solid #c7d2fe;
+  background: #f0f7ff;
+  border-top: 1px solid #dbeafe;
   padding: 0.4rem 0.85rem;
 }
 
 .goblin-mockup-tag {
   font-size: 0.7rem;
-  color: #4338ca;
+  color: #1a6fc4;
   font-weight: 600;
 }
 
@@ -1231,7 +1238,7 @@
 
 .goblin-mini-arrow {
   font-size: 0.69rem;
-  color: #6366f1;
+  color: #2780e3;
   font-weight: 700;
   text-align: center;
   margin: 0.22rem 0;
@@ -1280,8 +1287,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.38rem 0.65rem;
-  background: #eef2ff;
-  border-top: 1.5px solid #c7d2fe;
+  background: #f0f7ff;
+  border-top: 1.5px solid #dbeafe;
   font-size: 0.8rem;
   font-weight: 700;
   color: #1a365d;
@@ -1290,14 +1297,14 @@
 .goblin-time {
   font-family: "Courier New", monospace;
   font-size: 0.74rem;
-  color: #6366f1;
+  color: #2780e3;
   font-weight: 700;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .goblin-time-total {
-  color: #4338ca;
+  color: #1a6fc4;
   font-size: 0.82rem;
 }
 
@@ -1323,7 +1330,7 @@
   width: 1.9rem;
   height: 1.9rem;
   border-radius: 50%;
-  background: #6366f1;
+  background: #2780e3;
   color: #fff;
   font-size: 0.8rem;
   font-weight: 700;

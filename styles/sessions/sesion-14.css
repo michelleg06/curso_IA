@@ -309,6 +309,17 @@
   color: #881337;
 }
 
+.caso-note {
+  font-size: 0.78rem;
+  line-height: 1.65;
+  color: #475569;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.7rem 0.85rem;
+  margin: 0.1rem 0 0;
+}
+
 /* ================================================
    PREGUNTA GRID — 4 preguntas difíciles
 ================================================ */
@@ -581,96 +592,136 @@ a.route-card:hover .route-name {
 }
 
 /* ================================================
-   TYPOLOGY TABLE — AI en medicina (2×2)
+   TYPOLOGY MAP — AI en medicina (2×2 cards)
 ================================================ */
 
 .typology-wrap {
   margin: 1.2rem 0 1.8rem;
-  overflow-x: auto;
 }
 
-.typology-outer {
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1.5px solid #e2e8f0;
+.typology-header {
+  border-top: 1.5px solid var(--c-border, #e2e8f0);
+  padding: 1rem 0 0.85rem;
 }
 
-.typology {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.82rem;
-}
-
-.typology-corner {
-  background: #f8fafc;
-  width: 110px;
-  min-width: 90px;
-}
-
-.typology-colhead {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+.typology-kicker {
+  display: inline-block;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 0.65rem 1rem;
-  text-align: left;
-  border-bottom: 1.5px solid #e2e8f0;
+  color: #6495ED;
+  margin-bottom: 0.25rem;
 }
 
-.typology-col-admin {
-  background: #f0f9ff;
-  color: #0369a1;
-}
-
-.typology-col-diag {
-  background: #f5f3ff;
-  color: #7c3aed;
-}
-
-.typology-rowhead {
-  background: #f8fafc;
-  font-size: 0.68rem;
+.typology-heading {
+  font-size: 1rem;
   font-weight: 700;
-  color: #64748b;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 0.8rem 0.6rem;
-  border-top: 1px solid #f1f5f9;
-  vertical-align: middle;
-  line-height: 1.6;
-}
-
-.typology-cell {
-  padding: 0.75rem 1rem;
-  border-top: 1px solid #f1f5f9;
-  vertical-align: top;
-}
-
-.typology-list {
+  color: var(--c-navy, #1a365d);
+  line-height: 1.25;
   margin: 0;
-  padding-left: 1rem;
+}
+
+.typology-lead {
+  max-width: 62ch;
+  font-size: 0.84rem;
+  color: var(--c-text-secondary, #475569);
+  line-height: 1.65;
+  margin: 0.4rem 0 0;
+}
+
+.typology-map {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.typology-card {
+  background: #ffffff;
+  border: 1.5px solid var(--c-border, #e2e8f0);
+  border-radius: 8px;
+  padding: 1rem 1rem 0.95rem;
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
-  list-style: disc;
+  gap: 0.45rem;
+  min-height: 220px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.035);
+  transition: border-color 0.18s, box-shadow 0.18s;
 }
 
-.typology-list li {
+.typology-card:hover {
+  border-color: var(--c-border-blue, #dbeafe);
+  box-shadow: 0 6px 18px rgba(39, 128, 227, 0.08);
+}
+
+.typology-axis-pill {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border-radius: 999px;
+  background: var(--c-bg-blue, #f0f7ff);
+  border: 1px solid var(--c-border-blue, #dbeafe);
+  color: var(--c-navy, #1a365d);
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  padding: 0.15rem 0.55rem;
+  text-transform: uppercase;
+}
+
+.typology-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--c-navy, #1a365d);
+  line-height: 1.28;
+  margin: 0.05rem 0 0;
+}
+
+.typology-card-body {
   font-size: 0.79rem;
-  color: #374151;
-  line-height: 1.5;
+  color: var(--c-text-secondary, #475569);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.typology-card-list {
+  margin: 0.05rem 0 0;
+  padding-left: 1rem;
+}
+
+.typology-card-list li {
+  font-size: 0.79rem;
+  color: var(--c-text, #334155);
+  line-height: 1.55;
+  margin: 0.18rem 0;
+}
+
+.typology-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: auto;
 }
 
 .typology-tag {
-  display: inline-block;
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
   font-size: 0.6rem;
-  font-weight: 700;
+  font-weight: 800;
   border-radius: 999px;
-  padding: 0.06rem 0.4rem;
-  margin-left: 0.2rem;
-  vertical-align: middle;
+  padding: 0.12rem 0.5rem;
   white-space: nowrap;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+
+a.typology-tag:hover {
+  background: #ffffff;
+  border-color: #6495ED;
+  color: var(--c-primary, #2780e3);
 }
 
 .typology-tag-success {
@@ -697,91 +748,9 @@ a.route-card:hover .route-name {
   border: 1px solid #c7d2fe;
 }
 
-a.typology-tag {
-  text-decoration: none;
-  cursor: pointer;
-  transition: opacity 0.15s;
-}
-
-a.typology-tag:hover {
-  opacity: 0.72;
-}
-
-a.usecase-card {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}
-
-a.usecase-card:hover {
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
-  border-color: #cbd5e1;
-  transition: box-shadow 0.2s, border-color 0.2s;
-}
-
-a.usecase-card .usecase-title {
-  color: #1d4ed8;
-}
-
-a.usecase-card:hover .usecase-title {
-  text-decoration: underline;
-}
-
-/* ================================================
-   USE CASE MINI-CARDS — below typology table
-================================================ */
-
-.usecase-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.7rem;
-  margin: 1rem 0 0;
-}
-
-.usecase-card {
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-left: 4px solid;
-  border-radius: 10px;
-  padding: 0.85rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
-  scroll-margin-top: 1rem;
-}
-
-.usecase-card-mx      { border-left-color: #f59e0b; }
-.usecase-card-success { border-left-color: #22c55e; }
-.usecase-card-failure { border-left-color: #f43f5e; }
-.usecase-card-science { border-left-color: #6366f1; }
-
-.usecase-meta {
-  font-size: 0.6rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #94a3b8;
-  display: block;
-}
-
-.usecase-title {
-  font-size: 0.87rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin: 0;
-  line-height: 1.3;
-}
-
-.usecase-desc {
-  font-size: 0.77rem;
-  color: #475569;
-  line-height: 1.6;
-  margin: 0;
-}
-
 .typology-source {
   font-size: 0.68rem;
-  color: #94a3b8;
+  color: var(--c-gray-400, #94a3b8);
   font-style: italic;
   margin: 0.45rem 0 0;
   text-align: right;
@@ -926,7 +895,11 @@ html {
     border-left-color: #fbbf24;
   }
 
-  .usecase-grid {
+  .typology-map {
     grid-template-columns: 1fr;
+  }
+
+  .typology-card {
+    min-height: 0;
   }
 }

@@ -4,6 +4,36 @@
 ================================================ */
 
 /* ================================================
+   INTRO VIDEO — robot de inspección
+================================================ */
+
+.intro-video-figure {
+  margin: 1rem 0 1.55rem;
+}
+
+.intro-video-frame {
+  background: #fff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.intro-video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.intro-video-caption {
+  color: #94a3b8;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  margin-top: 0.45rem;
+  text-align: right;
+}
+
+/* ================================================
    LOOP DIAGRAM — Percibir → Procesar → Decidir → Actuar
 ================================================ */
 
@@ -147,36 +177,15 @@
 }
 
 /* ── Autonomy: cognitive dissonance block ───────────────── */
-.autonomy-question {
-  background: linear-gradient(135deg, #f0f9ff 0%, #eff6ff 100%);
-  border: 1.5px solid #bae6fd;
-  border-radius: 14px;
-  padding: 1.4rem 1.6rem;
-  margin: 1.4rem 0;
-}
-.autonomy-question-prompt {
-  font-size: 0.72rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #0369a1;
-  margin: 0 0 0.5rem;
-}
-.autonomy-question-text {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: #0f172a;
-  margin: 0 0 1rem;
-}
 .autonomy-question-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.9rem;
-  margin-bottom: 1rem;
+  margin: 0.95rem 0 1rem;
 }
 .autonomy-question-card {
   background: white;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 0.9rem 1rem;
   border: 1.5px solid #e2e8f0;
 }
@@ -196,15 +205,6 @@
   font-size: 0.82rem;
   color: #64748b;
   line-height: 1.5;
-}
-.autonomy-question-reveal {
-  background: #fef3c7;
-  border-left: 3.5px solid #f59e0b;
-  padding: 0.75rem 1.1rem;
-  border-radius: 0 8px 8px 0;
-  font-size: 0.9rem;
-  color: #78350f;
-  line-height: 1.6;
 }
 
 /* ── Autonomy: AI badge on scale steps ───────────────────── */
@@ -837,6 +837,22 @@ a.route-card:hover .route-name {
 .route-tag-en       { background: #fef9c3; color: #92400e; border: 1px solid #fde68a; }
 .route-tag-browser  { background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; }
 
+.route-media-wrap {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-top: auto;
+  overflow: hidden;
+}
+
+.route-media {
+  aspect-ratio: 16 / 9;
+  display: block;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
 .route-problem {
   font-size: 0.76rem;
   color: #78350f;
@@ -949,6 +965,288 @@ html {
 
   .route-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ================================================
+   ROBOT ANATOMY — sensores → controlador → actuadores
+================================================ */
+
+.robot-anatomy {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 0.7rem;
+  align-items: stretch;
+  margin: 1.3rem 0 1.5rem;
+}
+
+.robot-part-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-height: 170px;
+  position: relative;
+}
+
+.robot-part-card-core {
+  border-color: #bfdbfe;
+  box-shadow: inset 0 0 0 1px rgba(100, 149, 237, 0.12);
+}
+
+.robot-part-num {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #94a3b8;
+}
+
+.robot-part-icon {
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.robot-part-card h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #1f2937;
+}
+
+.robot-part-card p {
+  margin: 0;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: #475569;
+}
+
+.robot-part-role {
+  margin-top: auto;
+  align-self: flex-start;
+  border: 1px solid #dbeafe;
+  border-radius: 999px;
+  padding: 0.14rem 0.5rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #6495ED;
+  background: #ffffff;
+}
+
+.robot-anatomy-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6495ED;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* ================================================
+   ACTUATOR CARDS — músculos del robot
+================================================ */
+
+.actuator-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 0.7rem;
+  margin: 1.1rem 0;
+}
+
+.actuator-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.85rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.actuator-icon {
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #dbeafe;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #6495ED;
+  font-weight: 700;
+  font-size: 1rem;
+  background: #ffffff;
+  margin-bottom: 0.15rem;
+}
+
+.actuator-card h4 {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.actuator-card p {
+  font-size: 0.74rem;
+  color: #374151;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.actuator-card span:last-child {
+  font-size: 0.7rem;
+  color: #64748b;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.actuator-photo-card {
+  display: grid;
+  grid-template-columns: minmax(150px, 220px) 1fr;
+  gap: 1rem;
+  align-items: center;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.9rem;
+  margin: 1.1rem 0;
+}
+
+.actuator-photo-frame {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+}
+
+.actuator-photo-frame img {
+  display: block;
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+}
+
+.actuator-photo-card figcaption {
+  margin: 0;
+  color: #475569;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.actuator-photo-card figcaption strong {
+  color: #1f2937;
+}
+
+.actuator-photo-card figcaption a {
+  display: inline-block;
+  margin-top: 0.35rem;
+  color: #6495ED;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.actuator-photo-card figcaption a:hover {
+  text-decoration: underline;
+}
+
+/* ================================================
+   CONTROLLER FLOW — estado → acción → feedback
+================================================ */
+
+.controller-visual {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.25fr) minmax(220px, 0.9fr);
+  gap: 1rem;
+  align-items: stretch;
+  margin: 1.05rem 0 1rem;
+}
+
+.controller-board {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.controller-board svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.controller-svg-muted circle {
+  fill: #f8fafc;
+  stroke: #94a3b8;
+  stroke-width: 2;
+}
+
+.controller-svg-muted text {
+  fill: #64748b;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.controller-flow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.65rem;
+  align-items: stretch;
+  margin: 0;
+}
+
+.controller-node {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.85rem 0.8rem;
+}
+
+.controller-node-label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #6495ED;
+  margin-bottom: 0.25rem;
+}
+
+.controller-node p {
+  margin: 0;
+  color: #475569;
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.controller-flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6495ED;
+  font-weight: 700;
+}
+
+@media (max-width: 680px) {
+  .robot-anatomy,
+  .actuator-photo-card,
+  .controller-visual,
+  .controller-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .robot-anatomy-arrow {
+    transform: rotate(90deg);
+    min-height: 1rem;
+  }
+
+  .robot-part-card {
+    min-height: 0;
   }
 }
 

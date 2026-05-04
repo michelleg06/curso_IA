@@ -392,6 +392,11 @@
    CODE ANNOTATOR (interactive)
 ================================================ */
 
+.tree-diagram-title,
+.confusion-matrix-title {
+  color: #6495ED;
+}
+
 .ca-wrap {
   display: grid;
   grid-template-columns: 1fr;
@@ -594,9 +599,9 @@
   gap: 0.4rem;
 }
 
-.copilot-card-safe    { background: #f0fdf4; border-color: #86efac; }
-.copilot-card-debug   { background: #eff6ff; border-color: #93c5fd; }
-.copilot-card-gen     { background: #fffbeb; border-color: #fde68a; }
+.copilot-card-safe    { background: #ffffff; border-color: #86efac; }
+.copilot-card-debug   { background: #ffffff; border-color: #93c5fd; }
+.copilot-card-gen     { background: #ffffff; border-color: #fde68a; }
 
 .copilot-tag {
   display: inline-block;

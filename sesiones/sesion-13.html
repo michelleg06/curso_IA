@@ -70,35 +70,6 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <script defer="" src="https://cloud.umami.is/script.js" data-website-id="225b59d4-82fc-4df6-9c47-98afac4a8c13"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles/sesion.css">
 </head>
@@ -217,7 +188,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#introducción-a-la-ia" id="toc-introducción-a-la-ia" class="nav-link active" data-scroll-target="#introducción-a-la-ia">Introducción a la IA</a></li>
+  <li><a href="#robótica-e-ia-en-el-mundo-físico" id="toc-robótica-e-ia-en-el-mundo-físico" class="nav-link active" data-scroll-target="#robótica-e-ia-en-el-mundo-físico">Robótica e IA en el mundo físico</a></li>
   </ul>
 </nav>
     </div>
@@ -254,18 +225,17 @@ window.Quarto = {
     <span class="sesion-progress-label">13 de 15</span>
   </div>
   <div class="sesion-meta">
-    <span class="sesion-meta-chip">📅 28 de julio de 2026</span>
-    <span class="sesion-meta-chip">⏱ 40 minutos</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 28 de julio de 2026</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 40 minutos</span>
     <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
 <link rel="stylesheet" href="../styles/sessions/sesion-13.css">
-<script src="../interactives/sesion-13.js" defer=""></script>
-<section id="introducción-a-la-ia" class="level2">
-<h2 class="anchored" data-anchor-id="introducción-a-la-ia">Introducción a la IA</h2>
-<div class="video-placeholder">
-  <span class="vp-icon">▶</span>
-  <p class="vp-title">Video: Robótica e IA en el Mundo Físico</p>
+<script type="module" src="../interactives/sesion-13.js"></script>
+<section id="robótica-e-ia-en-el-mundo-físico" class="level2">
+<h2 class="anchored" data-anchor-id="robótica-e-ia-en-el-mundo-físico">Robótica e IA en el mundo físico</h2>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/eYO5CQ9vXt2" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
 </div>
 <hr>
 <p class="capsule-complement-note">
@@ -273,48 +243,94 @@ Los videos y el texto de esta sesión son complementarios. Los videos amplían e
 </p>
 <section id="introducción" class="level3">
 <h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
-<p>El 11 de marzo de 2011, un terremoto de magnitud 9.0 y el tsunami que le siguió averiaron los reactores de la planta nuclear Fukushima Daiichi, en Japón. En cuestión de horas, los niveles de radiación hicieron imposible que cualquier persona entrara a ciertas zonas. Las autoridades desplegaron robots PackBot de iRobot —diseñados originalmente para misiones militares del ejército de EE. UU.— en los edificios de los reactores 1, 2 y 3. Transmitieron video en vivo, midieron temperaturas, detectaron escombros y registraron niveles de radiación: tareas que habrían resultado letales para un ser humano en cuestión de minutos.</p>
-<p><em>Fuentes: IEEE Spectrum, “iRobot’s PackBot in Fukushima” (2011); Robin Murphy, Disaster Robotics, MIT Press (2014); informes de TEPCO e IAEA sobre los niveles de radiación durante la emergencia.</em></p>
+<figure class="intro-video-figure figure">
+  <div class="intro-video-frame">
+    <video class="intro-video" autoplay="" loop="" muted="" playsinline="" aria-label="Animación de un robot de inspección moviéndose en una zona de alto riesgo">
+      <source src="../assets/sesion-13/intro-robot.mp4" type="video/mp4">
+    </video>
+  </div>
+  <figcaption class="intro-video-caption">Robot de inspección en una zona de alto riesgo.</figcaption>
+</figure>
+<p>El 11 de marzo de 2011, un terremoto de magnitud 9.0 y el tsunami que le siguió averiaron los reactores de la planta nuclear Fukushima Daiichi, en Japón. En cuestión de horas, los niveles de radiación hicieron imposible que cualquier persona entrara a ciertas zonas. Las autoridades desplegaron robots PackBot de iRobot, diseñados originalmente para misiones militares del ejército de Estados Unidos, en los edificios de los reactores 1, 2 y 3. Transmitieron video en vivo, midieron temperaturas, detectaron escombros y registraron niveles de radiación: tareas que habrían resultado letales para un ser humano en cuestión de minutos.</p>
 <p>Este ejemplo es importante por una razón muy concreta: nos obliga a separar dos cosas que suelen mezclarse. Una cosa es <strong>tener una máquina con ruedas, cámaras y motores</strong>. Otra cosa es lograr que esa máquina <strong>interprete lo que ve, tome decisiones y logre un objetivo fijo</strong>.</p>
 <p>Esa misión de 2011 nos da el contexto que necesitamos para hacernos una pregunta más precisa:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-La pregunta central de esta sesión
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>En robótica, ¿qué parte se resuelve con hardware y reglas fijas, y qué parte necesita IA para percibir, decidir o aprender?</p>
-</div>
-</div>
+<p>En robótica, <strong>¿qué parte se resuelve con hardware y reglas fijas, y qué parte necesita IA para percibir, decidir o aprender?</strong></p>
 <hr>
 </section>
 <section id="construyendo-un-robot" class="level3">
 <h3 class="anchored" data-anchor-id="construyendo-un-robot">Construyendo un robot</h3>
-<p>Antes de hablar de IA conviene armar la imagen básica de un robot. Si lo simplificamos mucho, un robot necesita dos cosas:</p>
-<ul>
-<li>una parte que <strong>se mueve</strong>,</li>
-<li>y una parte que <strong>detecta</strong> lo que pasa alrededor.</li>
-</ul>
-<p>Algo importante desde el principio: <strong>no todo robot usa IA</strong> y <strong>no toda IA está dentro de un robot</strong>. Un brazo industrial puede repetir el mismo movimiento sin aprender nada. En cambio, un dron que debe evitar obstáculos en un entorno cambiante sí puede necesitar IA.</p>
-<section id="construyendo-un-robot-los-músculos" class="level4">
-<h4 class="anchored" data-anchor-id="construyendo-un-robot-los-músculos"><strong>Construyendo un robot: Los Músculos</strong></h4>
+<p>Antes de hablar de IA conviene armar la imagen básica de un robot. Si lo simplificamos mucho, un robot necesita tres piezas conectadas:</p>
+<div class="robot-anatomy" aria-label="Tres piezas básicas de un robot">
+  <div class="robot-part-card">
+    <span class="robot-part-num">01</span>
+    <span class="robot-part-icon">📡</span>
+    <h4 class="anchored">Sensores</h4>
+    <p>Miden lo que pasa alrededor: luz, distancia, posición, sonido o movimiento.</p>
+    <span class="robot-part-role">Entrada de datos</span>
+  </div>
+  <div class="robot-anatomy-arrow" aria-hidden="true">→</div>
+  <div class="robot-part-card robot-part-card-core">
+    <span class="robot-part-num">02</span>
+    <span class="robot-part-icon">🧠</span>
+    <h4 class="anchored">Controlador</h4>
+    <p>Interpreta datos, elige una acción y corrige con nueva información.</p>
+    <span class="robot-part-role">Decisión</span>
+  </div>
+  <div class="robot-anatomy-arrow" aria-hidden="true">→</div>
+  <div class="robot-part-card">
+    <span class="robot-part-num">03</span>
+    <span class="robot-part-icon">⚙️</span>
+    <h4 class="anchored">Actuadores</h4>
+    <p>Convierten la decisión en movimiento: girar, empujar, levantar o frenar.</p>
+    <span class="robot-part-role">Acción física</span>
+  </div>
+</div>
+<p>Además, es importante recalcar que <strong>no todo robot usa IA</strong> y <strong>no toda IA está dentro de un robot</strong>. Un brazo industrial puede repetir el mismo movimiento sin aprender nada. En cambio, un dron que debe evitar obstáculos en un entorno cambiante sí puede necesitar de la IA.</p>
+<section id="los-músculos-del-robot" class="level4">
+<h4 class="anchored" data-anchor-id="los-músculos-del-robot"><strong>Los músculos del robot</strong></h4>
 <p>Los <strong>actuadores</strong> son la parte que convierte una orden en movimiento físico. Si quieres una analogía simple, son los músculos del robot.</p>
-<ul>
-<li><strong>Motor de DC:</strong> gira continuamente. Sirve para ruedas, hélices y ventiladores.</li>
-<li><strong>Servomotor:</strong> se coloca en un ángulo preciso. Muy útil en brazos robóticos.</li>
-<li><strong>Motor paso a paso:</strong> avanza en incrementos exactos. Aparece mucho en impresoras 3D y máquinas de fabricación.</li>
-<li><strong>Actuador hidráulico:</strong> da mucha fuerza. Se usa en maquinaria pesada o robots industriales grandes.</li>
-</ul>
+<div class="actuator-grid">
+  <div class="actuator-card">
+    <span class="actuator-icon">↻</span>
+    <h4 class="anchored">Motor DC</h4>
+    <p>Giro continuo</p>
+    <span>Ruedas, hélices y ventiladores</span>
+  </div>
+  <div class="actuator-card">
+    <span class="actuator-icon">◔</span>
+    <h4 class="anchored">Servomotor</h4>
+    <p>Ángulo preciso</p>
+    <span>Brazos robóticos y pinzas</span>
+  </div>
+  <div class="actuator-card">
+    <span class="actuator-icon">▦</span>
+    <h4 class="anchored">Motor paso a paso</h4>
+    <p>Incrementos exactos</p>
+    <span>Impresoras 3D y fabricación</span>
+  </div>
+  <div class="actuator-card">
+    <span class="actuator-icon">⇅</span>
+    <h4 class="anchored">Actuador hidráulico</h4>
+    <p>Mucha fuerza</p>
+    <span>Maquinaria pesada e industria</span>
+  </div>
+</div>
+<figure class="actuator-photo-card figure">
+  <div class="actuator-photo-frame">
+    <img src="https://image.chukouplus.com/upload/C_6319/file/20250418/b51281302f9b8130b73718ddf95fd44b.png?1" alt="Actuador rotativo compacto para articulaciones robóticas" class="figure-img">
+  </div>
+  <br>
+  <figcaption>
+    <strong>Actuador rotativo:</strong> en un robot, muchas articulaciones esconden piezas como esta. Reciben una señal del controlador y la convierten en giro, fuerza o posición.
+    <br><a href="https://es.xrobotek.com/news/medical-robotics-actuator-trends.html" target="_blank" rel="noopener">Fuente: Xrobotek/Xmotion</a>
+  </figcaption>
+</figure>
 <p>La idea clave aquí es muy simple: los actuadores <strong>ejecutan</strong>, pero no <strong>deciden</strong>. Un motor puede mover una rueda, pero no sabe por sí mismo cuándo frenar, a dónde girar o qué camino conviene.</p>
 </section>
-<section id="construyendo-un-robot-los-sentidos" class="level4">
-<h4 class="anchored" data-anchor-id="construyendo-un-robot-los-sentidos"><strong>Construyendo un robot: Los Sentidos</strong></h4>
+<section id="los-sentidos-del-robot" class="level4">
+<h4 class="anchored" data-anchor-id="los-sentidos-del-robot"><strong>Los sentidos del robot</strong></h4>
 <p>Los <strong>sensores</strong> recogen información del mundo físico. Si los actuadores son los músculos, los sensores son los sentidos.</p>
-<p>Y aquí está la parte interesante: <strong>los sensores recuperan datos, y esos datos alimentan el “cerebro” del robot</strong>. Todavía no hay inteligencia ahí. Una cámara solo entrega píxeles; un LiDAR solo entrega distancias. Pero sin esos datos, el robot no tendría con qué interpretar el entorno ni con qué tomar decisiones.</p>
+<p>Y aquí está la parte interesante: <strong>los sensores recuperan datos, y esos datos alimentan el “cerebro” del robot</strong>. Aunque todavía no hay inteligencia ahí. Una cámara solo entrega píxeles; un LiDAR solo entrega distancias. Pero sin esos datos, el robot no tendría con qué interpretar el entorno ni con qué tomar decisiones.</p>
 <p>No hace falta memorizar veinte tipos de sensores. Para esta sesión basta con cuatro:</p>
 <div class="sensor-grid">
 
@@ -322,7 +338,7 @@ La pregunta central de esta sesión
     <span class="sensor-icon">📷</span>
     <h4 class="sensor-name anchored">Cámara</h4>
     <p class="sensor-what">Detecta color, forma, texto y movimiento. Es el sensor más parecido al ojo humano.</p>
-    <p class="sensor-limit">⚠ Necesita luz · se confunde con reflejos · es lenta con objetos muy rápidos</p>
+    <p class="sensor-limit">Necesita luz · se confunde con reflejos · es lenta con objetos muy rápidos</p>
     <p class="sensor-use">Visión por computadora, lectura de señales y etiquetas</p>
   </div>
 
@@ -330,7 +346,7 @@ La pregunta central de esta sesión
     <span class="sensor-icon">🟢</span>
     <h4 class="sensor-name anchored">LiDAR</h4>
     <p class="sensor-what">Emite pulsos de láser y mide cuánto tardan en regresar. Da distancias precisas en 360°.</p>
-    <p class="sensor-limit">⚠ Costoso · no detecta color · la lluvia o niebla lo degradan</p>
+    <p class="sensor-limit">Costoso · no detecta color · la lluvia o niebla lo degradan</p>
     <p class="sensor-use">Vehículos autónomos, mapeo de espacios interiores</p>
   </div>
 
@@ -338,7 +354,7 @@ La pregunta central de esta sesión
     <span class="sensor-icon">📡</span>
     <h4 class="sensor-name anchored">Ultrasonido</h4>
     <p class="sensor-what">Emite ondas de sonido y mide el rebote para detectar la distancia a un obstáculo.</p>
-    <p class="sensor-limit">⚠ Rango corto · no da dirección exacta · se confunde con superficies blandas</p>
+    <p class="sensor-limit">Rango corto · no da dirección exacta · se confunde con superficies blandas</p>
     <p class="sensor-use">Sensores de reversa en autos, robots domésticos básicos</p>
   </div>
 
@@ -346,12 +362,12 @@ La pregunta central de esta sesión
     <span class="sensor-icon">🛰</span>
     <h4 class="sensor-name anchored">GPS</h4>
     <p class="sensor-what">Calcula la posición geográfica usando señales de satélites en órbita.</p>
-    <p class="sensor-limit">⚠ Solo funciona al aire libre · error de ± 2-5 metros</p>
+    <p class="sensor-limit">Solo funciona al aire libre · error de ± 2-5 metros</p>
     <p class="sensor-use">Drones de agricultura, vehículos autónomos en exteriores</p>
   </div>
 
 </div>
-<p>Ningún sensor es perfecto: generan ruido, tienen errores de calibración y condiciones en las que fallan. Por eso los sistemas modernos suelen combinar varios al mismo tiempo.</p>
+<p>Ningún sensor es perfecto: todos generan ruido, tienen errores de calibración y fallan bajo ciertas condiciones. Por eso los sistemas modernos suelen combinar varios sensores al mismo tiempo.</p>
 <p><strong>Cada sensor ve una parte distinta del mundo</strong>. La cámara reconoce mejor qué hay; el LiDAR mide mejor dónde está.</p>
 <div class="center">
 <div class="sensor-visual">
@@ -416,86 +432,127 @@ La pregunta central de esta sesión
 
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+</section>
+<section id="el-controlador-del-robot" class="level4">
+<h4 class="anchored" data-anchor-id="el-controlador-del-robot"><strong>El controlador del robot</strong></h4>
+<p>El <strong>controlador</strong> es la parte que conecta sensores y actuadores. Recibe datos, calcula qué está pasando y manda una instrucción: avanzar, frenar, girar, esperar o cambiar de ruta.</p>
+<p>Para entenderlo sin meternos en electrónica, piensa en este mini ciclo:</p>
+<div class="controller-visual" aria-label="Diagrama del controlador del robot">
+  <div class="controller-board">
+    <svg viewbox="0 0 420 232" role="img" aria-label="Sensores entran al controlador, el controlador manda acciones a actuadores y recibe retroalimentación">
+      <rect x="10" y="14" width="400" height="204" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"></rect>
+      <g class="controller-svg-muted">
+        <circle cx="48" cy="62" r="8"></circle>
+        <circle cx="48" cy="104" r="8"></circle>
+        <circle cx="48" cy="146" r="8"></circle>
+        <text x="48" y="180" text-anchor="middle">sensores</text>
+      </g>
+      <g>
+        <rect x="155" y="56" width="110" height="92" rx="14" fill="#eff6ff" stroke="#6495ED" stroke-width="2"></rect>
+        <text x="210" y="93" text-anchor="middle" fill="#1f2937" font-weight="700" font-size="13">Controlador</text>
+        <text x="210" y="116" text-anchor="middle" fill="#64748b" font-size="10">estado → acción</text>
+        <line x1="145" y1="72" x2="155" y2="72" stroke="#6495ED" stroke-width="2"></line>
+        <line x1="145" y1="92" x2="155" y2="92" stroke="#6495ED" stroke-width="2"></line>
+        <line x1="145" y1="112" x2="155" y2="112" stroke="#6495ED" stroke-width="2"></line>
+        <line x1="145" y1="132" x2="155" y2="132" stroke="#6495ED" stroke-width="2"></line>
+        <line x1="265" y1="72" x2="275" y2="72" stroke="#6495ED" stroke-width="2"></line>
+        <line x1="265" y1="92" x2="275" y2="92" stroke="#6495ED" stroke-width="2"></line>
+        <line x1="265" y1="112" x2="275" y2="112" stroke="#6495ED" stroke-width="2"></line>
+        <line x1="265" y1="132" x2="275" y2="132" stroke="#6495ED" stroke-width="2"></line>
+      </g>
+      <g class="controller-svg-muted">
+        <circle cx="372" cy="62" r="8"></circle>
+        <circle cx="372" cy="104" r="8"></circle>
+        <circle cx="372" cy="146" r="8"></circle>
+        <text x="372" y="180" text-anchor="middle">actuadores</text>
+      </g>
+      <g fill="none" stroke="#6495ED" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M60 62 C95 62 112 74 145 84"></path>
+        <path d="M60 104 C95 104 112 104 145 104"></path>
+        <path d="M60 146 C95 146 112 134 145 124"></path>
+        <path d="M275 84 C312 72 334 62 360 62"></path>
+        <path d="M275 104 C314 104 334 104 360 104"></path>
+        <path d="M275 124 C312 136 334 146 360 146"></path>
+        <path d="M342 166 C272 192 148 192 78 166" stroke-dasharray="5 5"></path>
+      </g>
+      <text x="210" y="211" text-anchor="middle" fill="#6495ED" font-size="10" font-weight="700">retroalimentación: vuelve a medir después de actuar</text>
+    </svg>
+  </div>
+  <div class="controller-flow">
+    <div class="controller-node">
+      <span class="controller-node-label">Estado</span>
+      <p>Lo que el robot cree que está pasando ahora.</p>
+    </div>
+    <div class="controller-node">
+      <span class="controller-node-label">Acción</span>
+      <p>Lo que el robot decide hacer después.</p>
+    </div>
+    <div class="controller-node">
+      <span class="controller-node-label">Retroalimentación</span>
+      <p>Después de actuar, vuelve a medir y corrige.</p>
+    </div>
+  </div>
 </div>
-<div class="callout-title-container flex-fill">
-En resumen
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Los sensores no “entienden” el mundo: lo miden. La IA aparece cuando el sistema tiene que convertir esas mediciones en algo útil, por ejemplo distinguir una persona de una sombra, reconocer un obstáculo o elegir una ruta segura.</p>
-</div>
-</div>
+<p>Ese controlador puede ser una regla fija, un modelo de IA o una mezcla de ambos. Aquí es donde suele aparecer la parte más interesante de la robótica moderna.</p>
+<p><span style="color:#6495ED;"><strong>En resumen:</strong></span> Los sensores no entienden el mundo; solo lo registran como datos. Los actuadores tampoco deciden; solo ejecutan movimiento. La IA entra en juego cuando el controlador usa esos datos para tomar decisiones: distinguir a una persona de una sombra, reconocer un obstáculo o elegir una ruta segura.</p>
 <hr>
 </section>
 </section>
 <section id="cómo-pasa-un-robot-de-observar-el-mundo-a-la-acción" class="level3">
 <h3 class="anchored" data-anchor-id="cómo-pasa-un-robot-de-observar-el-mundo-a-la-acción">Cómo pasa un robot de observar el mundo a la acción</h3>
-<p>Ya tenemos el cuerpo básico: músculos para moverse y sensores para recoger datos. Ahora falta lo más importante: <strong>¿cómo pasa el robot de medir el mundo a actuar sobre él?</strong></p>
-<p>Simplificando el proceso: un robot repite un ciclo una y otra vez <span class="math inline">\(\rightarrow\)</span></p>
+<p>Ya tenemos el cuerpo básico: sensores para recoger datos, un controlador para decidir y actuadores para moverse. Ahora falta verlo como un ciclo: <strong>¿cómo pasa el robot de medir el mundo a actuar sobre él, y luego corregirse con nueva información?</strong></p>
+<p>Simplificando el proceso, un robot repite este ciclo una y otra vez:</p>
+<!--
+```{=html}
 <div class="loop-diagram">
 
   <div class="loop-step loop-step-perceive">
     <span class="loop-step-icon">👁</span>
     <span class="loop-step-num">Paso 1</span>
-    <h4 class="loop-step-title anchored">Percibir</h4>
+    <h4 class="loop-step-title">Percibir</h4>
     <p class="loop-step-example">Cámaras, GPS, LiDAR, micrófonos o sensores de distancia convierten el mundo físico en datos.</p>
   </div>
 
   <div class="loop-step loop-step-process">
     <span class="loop-step-icon">🧠</span>
     <span class="loop-step-num">Paso 2</span>
-    <h4 class="loop-step-title anchored">Procesar</h4>
-    <p class="loop-step-example">El sistema interpreta esos datos: detecta objetos, calcula posiciones, reconoce patrones o estima riesgos. Aquí suele entrar la IA.</p>
+    <h4 class="loop-step-title">Interpretar</h4>
+    <p class="loop-step-example">El controlador convierte datos crudos en algo útil: detecta objetos, calcula posiciones, reconoce patrones o estima riesgos. Aquí suele entrar la IA.</p>
   </div>
 
   <div class="loop-step loop-step-decide">
     <span class="loop-step-icon">⚡</span>
     <span class="loop-step-num">Paso 3</span>
-    <h4 class="loop-step-title anchored">Decidir</h4>
-    <p class="loop-step-example">El robot elige una acción posible: frenar, girar, subir, bajar, esperar, cambiar de ruta. Aquí también puede entrar la IA.</p>
+    <h4 class="loop-step-title">Decidir</h4>
+    <p class="loop-step-example">El controlador elige una acción posible: frenar, girar, subir, bajar, esperar, cambiar de ruta. Aquí también puede entrar la IA.</p>
   </div>
 
   <div class="loop-step loop-step-act">
     <span class="loop-step-icon">⚙️</span>
     <span class="loop-step-num">Paso 4</span>
-    <h4 class="loop-step-title anchored">Actuar</h4>
-    <p class="loop-step-example">Motores, ruedas, hélices o brazos convierten la decisión en movimiento.</p>
+    <h4 class="loop-step-title">Actuar</h4>
+    <p class="loop-step-example">Motores, ruedas, hélices o brazos convierten la decisión en movimiento. Después, el robot vuelve a percibir.</p>
   </div>
 
 </div>
+```
+-->
 <video autoplay="" loop="" muted="" playsinline="" style="width:100%; border-radius:12px; margin:1.2rem 0; box-shadow:0 2px 14px rgba(0,0,0,0.07);">
   <source src="../assets/sesion-13/robot-phases.mp4" type="video/mp4">
 </video>
-<p>Si falla en uno de estos pasos, el robot puede equivocarse aunque los demás pasos funcionen bien. Por eso no basta con preguntarnos “el robot usa IA?”. Hay que preguntar <strong>en qué parte del ciclo entra la IA</strong>.</p>
+<p>Si falla en uno de estos pasos, el robot puede equivocarse aunque los demás pasos funcionen bien. Por eso no basta con preguntarnos: “¿el robot usa IA?”. Hay que preguntar <strong>en qué parte del ciclo entra la IA</strong>.</p>
 <p>La respuesta corta es esta:</p>
 <ul>
 <li>En <strong>percibir</strong>, la IA puede ayudar a interpretar datos crudos: reconocer personas, objetos, señales o peligros.</li>
 <li>En <strong>decidir</strong>, la IA puede ayudar a elegir entre varias acciones posibles cuando el entorno cambia.</li>
 <li>En <strong>aprender</strong>, la IA puede mejorar el comportamiento del robot con datos, simulaciones o experiencia acumulada.</li>
 </ul>
-<p>En situaciones simples, los pasos 2 y 3 se resuelven con reglas fijas. Pero cuando la tarea es ambigua o cambiante, esos dos pasos son justo donde la IA puede hacer la diferencia.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-La conexión con IA, en una frase
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Los sensores ponen los datos, los actuadores ponen el movimiento, y la IA puede entrar en medio para convertir esos datos en decisiones.</p>
-</div>
-</div>
+<p>En situaciones simples, interpretar y decidir se puede resolver con reglas fijas. Pero cuando la tarea es ambigua o cambiante, esas dos partes del ciclo son justo donde la IA puede hacer la diferencia.</p>
 <hr>
 </section>
 <section id="actividad-breve-tú-eres-el-controlador" class="level3">
 <h3 class="anchored" data-anchor-id="actividad-breve-tú-eres-el-controlador">Actividad breve: tú eres el controlador</h3>
-<p>Ya no hay que imaginar: aquí tienes un robot en un mapa de 6×6. Tu tarea es guiarlo del inicio (🤖, esquina superior izquierda) hasta la meta (⭐, esquina inferior derecha), evitando obstáculos con batería limitada.</p>
+<p>Aquí tienes un robot en un mapa de 6×6. Tu tarea es guiarlo del inicio (🤖, esquina superior izquierda) hasta la meta (⭐, esquina inferior derecha), evitando los obstáculos con pero batería limitada.</p>
 <p>Mientras lo controlas, observa el panel de sensores: cada lectura muestra cuántos pasos libres hay en esa dirección antes de un obstáculo o el borde del mapa. <strong>0 significa obstruido</strong> — igual a como un sensor que detecta una pared a cero distancia.</p>
 <div class="robot-sim" id="robot-sim">
 
@@ -575,8 +632,7 @@ La conexión con IA, en una frase
   </div>
 
 </div>
-<p>En este mapa, donde cada movimiento consume un 12% de batería, la ruta óptima se siente sencilla. En el mundo real todo llega mezclado, incompleto y con ruido. Ese es el desafío central de la robótica: <strong>decidir con información imperfecta, en tiempo real, cuando los errores tienen consecuencias físicas</strong>.</p>
-<p>Y aquí está el puente con la IA: mientras tú juegas, tú haces el trabajo de percepción y decisión. Tú lees el entorno, interpretas las señales y eliges el siguiente paso. Pero, <strong>¿cómo haríamos para que el robot hiciera eso solo?</strong></p>
+<p>En este mapa, donde cada movimiento consume un 12% de batería, la ruta óptima se siente sencilla. En el mundo físico toda la información llega al mismo tiempo, con ruido. Ese es el desafío central de la robótica, <strong>decidir con información imperfecta, en tiempo real, cuando los errores tienen consecuencias físicas</strong>. Y aquí está el puente con la IA: mientras tú juegas, tú eres el controlador. Lees el entorno, interpretas las señales y eliges el siguiente paso. Pero, <strong>¿cómo haríamos para que el robot hiciera eso solo?</strong></p>
 <p>Hay tres caminos posibles:</p>
 <ul>
 <li>escribir reglas a mano para cada situación,</li>
@@ -584,31 +640,23 @@ La conexión con IA, en una frase
 <li>combinar ambas cosas.</li>
 </ul>
 <p>Esa combinación es, en la práctica, gran parte de la robótica moderna.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Reglas fijas vs.&nbsp;modelo de IA
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Imagina el simulador de esta página.</p>
-<ul>
-<li><strong>Regla fija:</strong> “si hay un obstáculo al frente, gira a la derecha”. Funciona bien en mapas simples, pero en situaciones más complejas se puede quedar atorado o tomar rutas innecesariamente largas.</li>
-<li><strong>Modelo de IA:</strong> aprende, a partir de muchos intentos o ejemplos, qué movimiento aumenta las probabilidades de llegar a la meta cometiendo el menor número de errores posibles.</li>
-</ul>
-<p>La diferencia no está en que uno sea “inteligente” y el otro no. Está en que la <strong>regla fija</strong> depende de instrucciones escritas a mano, mientras que el <strong>modelo de IA</strong> ajusta su comportamiento a partir de datos o experiencia acumulada.</p>
-</div>
-</div>
+<!--
+#### **Reglas fijas vs. modelo de IA**
+Imagina el simulador de esta página
+
+- **Regla fija:** "si hay un obstáculo al frente, gira a la derecha". Funciona bien en mapas simples, pero en situaciones más complejas se puede quedar atorado o tomar rutas innecesariamente largas.</li>
+
+- **Modelo de IA:** aprende, a partir de muchos intentos o ejemplos, qué movimiento aumenta la probabilidad de llegar a la meta con menos choques, menos pasos o menos gasto de batería.
+
+La diferencia es que la **regla fija** depende de instrucciones escritas a mano, mientras que el **modelo de IA** ajusta su comportamiento a partir de datos o experiencia acumulada.
+-->
 <hr>
 </section>
 <section id="de-control-remoto-a-autonomía" class="level3">
 <h3 class="anchored" data-anchor-id="de-control-remoto-a-autonomía">De control remoto a autonomía</h3>
-<p>No todas las máquinas inteligentes tienen el mismo nivel de autonomía — y este punto genera mucha confusión, sobre todo porque en la publicidad y los medios se mezclan sin distinción niveles muy diferentes.</p>
-<p>Mientras más autonomía le pides a un sistema, más importante se vuelve que pueda percibir bien y decidir sin depender de una persona en cada segundo. Aunque la autonomía de una máquina y la IA no son lo mismo, sí están muy conectadas.</p>
-<p>La escala que sigue es una <strong>adaptación</strong> de la propuesta general de niveles de autonomía. Nació en el contexto de vehículos, pero aquí la usamos en un lenguaje más amplio para pensar en robots de distintos tipos.</p>
+<p>No todas las máquinas inteligentes tienen el mismo nivel de autonomía. En este contexto, <strong>autonomía</strong> significa qué tanto puede completar una tarea sin que una persona le diga cada paso: avanzar, detenerse, girar, corregir la ruta o pedir ayuda.</p>
+<p>Eso no es exactamente lo mismo que usar IA. Un robot puede ser bastante autónomo si trabaja en un entorno muy controlado y sigue reglas simples. También puede pasar lo contrario: un robot puede usar modelos de IA para reconocer objetos, pero seguir dependiendo de una persona para autorizar cada movimiento importante. Por eso <strong>más autonomía no siempre significa más IA</strong>.</p>
+<p>La escala a continuación es una adaptación didáctica de los niveles de autonomía propuestos para vehículos. Aquí no la usamos para clasificar autos, sino como un mapa para comparar robots de distintos tipos y preguntarnos quién decide en cada caso: la persona, una regla fija, un modelo de IA o una combinación de los tres.</p>
 <div class="autonomy-diagram">
   <div class="autonomy-scale">
     <div class="autonomy-step autonomy-step-0">
@@ -652,71 +700,40 @@ Reglas fijas vs.&nbsp;modelo de IA
       <span class="autonomy-badge autonomy-badge-5">5</span>
       <h4 class="autonomy-step-title anchored">Autonomía general</h4>
       <p class="autonomy-step-body">Podría operar solo en casi cualquier entorno, sin depender de límites predefinidos.</p>
-      <p class="autonomy-step-example">Ejemplo: este nivel todavía no existe en robótica real.</p>
+      <p class="autonomy-step-example">Ejemplo: este nivel todavía no existe actualmente.</p>
       <span class="autonomy-ai-badge autonomy-ai-badge-high">IA: imprescindible (en teoría)</span>
     </div>
   </div>
-
+</div>
 <p class="autonomy-source">
 Adaptado de SAE J3016, originalmente propuesta para vehículos, aquí reformulada para pensar en aplicaciones para robótica en general.
 </p>
-<div class="autonomy-question">
-  <p class="autonomy-question-prompt">Antes de seguir — un momento para reflexionar</p>
-  <p class="autonomy-question-text">¿Cuál de estos dos robots usa <strong>más IA</strong>?</p>
-  <div class="autonomy-question-cards">
-    <div class="autonomy-question-card">
-      <span class="autonomy-question-icon">🤖</span>
-      <strong>Roomba (2002)</strong>
-      <p>Opera completamente solo: mapea la habitación, esquiva obstáculos y regresa a su base. No necesita de nadie durante la misión.</p>
-    </div>
-    <div class="autonomy-question-card">
-      <span class="autonomy-question-icon">🦾</span>
-      <strong>Brazo robótico de almacén</strong>
-      <p>Usa visión por computadora para reconocer cajas de formas y tamaños distintos. Un humano supervisa la misión completa.</p>
-    </div>
+<!--
+#### **Antes de seguir: un momento para reflexionar**
+**¿Cuál de estos dos robots usa más IA?**
+
+```{=html}
+<div class="autonomy-question-cards">
+  <div class="autonomy-question-card">
+    <span class="autonomy-question-icon">🤖</span>
+    <strong>Aspiradora robot básica</strong>
+    <p>Puede limpiar sin que la manejes: detecta choques, cambia de dirección y sigue patrones simples durante la misión.</p>
   </div>
-  <div class="autonomy-question-reveal">
-    <strong>El brazo robótico usa más IA</strong> — aunque la Roomba es más autónomo.<br>
-    Autonomía y uso de IA no son la misma escala. Eso es exactamente lo que exploraremos aquí.
+  <div class="autonomy-question-card">
+    <span class="autonomy-question-icon">🦾</span>
+    <strong>Brazo robótico de almacén</strong>
+    <p>Usa visión por computadora para reconocer cajas de formas y tamaños distintos. Un humano supervisa la misión completa.</p>
   </div>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Ojo con el lenguaje
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Una palabra exagerada puede hacer mucho daño. Si llamas “autónomo” a algo que en realidad necesita supervisión constante, podemos confiar de más en la máquina, usarla de forma érronea, y cometer errores graves. En robótica, una mala expectativa también es un problema de seguridad.</p>
-</div>
-</div>
-<hr>
-</div></section>
-<section id="cómo-aprende-un-robot-sin-romperse" class="level3">
-<h3 class="anchored" data-anchor-id="cómo-aprende-un-robot-sin-romperse">¿Cómo aprende un robot sin romperse?</h3>
-<p>Hasta ahora hablamos de robots que perciben y deciden. Aquí aparece otra pregunta importante: <strong>¿cómo aprenden a hacerlo sin romperse en el intento?</strong></p>
-<p>Como viste en la <a href="sesion-03.html">sesión 3</a>, el <strong>aprendizaje por refuerzo</strong> es una familia de métodos donde un agente prueba acciones, recibe una recompensa y ajusta su comportamiento. En robótica, esa idea se vuelve mucho más delicada, porque ahora los errores no ocurren en una pantalla: ocurren en el mundo físico.</p>
-<p>Por ello, siempre debemos <strong>simular antes de desplegar</strong>.</p>
-<div class="story-card">
-  <div class="rl-anim-wrap">
-    <canvas id="rl-canvas" width="190" height="222"></canvas>
-  </div>
-  <div class="story-content">
-    <p class="story-kicker">APRENDIZAJE POR REFUERZO</p>
-    <h3 class="story-title anchored">Primero falla mil veces en formato virtual, y así evita cometer ese error en la calle</h3>
-    <p class="story-source">Idea central de la robótica moderna</p>
-    <p class="story-body">Con aprendizaje por refuerzo, el agente prueba acciones, recibe recompensas y ajusta su comportamiento. En simuladores eso es barato y repetible. En el mundo físico, un error puede romper el robot, desperdiciar materiales o lastimar a alguien. Por eso muchas aplicaciones entrenan primero en mundos virtuales y solo después pasan a pruebas reales. Esto no elimina el riesgo, pero sí reduce muchísimo el costo de aprender.</p>
-  </div>
-</div>
-<p>En robótica, la simulación no es un adorno; es una medida de seguridad y de reducción de costos. Aprender por prueba y error en formato virtual es mucho más barato que aprender con impactos reales. Aun así, pasar de la simulación a mundo físico sigue siendo difícil porque el mundo real es más desordenado.</p>
+```
+-->
 <hr>
 </section>
 <section id="robots-con-ia-qué-problemas-resuelven" class="level3">
 <h3 class="anchored" data-anchor-id="robots-con-ia-qué-problemas-resuelven">Robots con IA: ¿qué problemas resuelven?</h3>
-<p>No empieces por el robot — empieza por el problema. Cada uno de los tres casos que siguen tiene los mismos ingredientes: una situación que un humano no podía resolver solo, una máquina que responde con sensores y movimiento, y un momento exacto donde la IA convierte el “no se puede” en “ya funciona”.</p>
+<p>Ya vimos que autonomía e IA no son lo mismo. Ahora conviene mirar para qué sirve esa diferencia en la práctica: <strong>¿qué tipo de problema requiere que un robot perciba, decida y actúe en el mundo físico?</strong></p>
+<p>El uso de la IA tiene sentido cuando el robot se enfrenta a condiciones difíciles de controlar: un lugar peligroso, un camino que cambia, objetos que no siempre se ven igual o una tarea que no se puede dirigir paso a paso desde una consola. En esos casos, reconocer patrones, ajustar una ruta o coordinar varias acciones puede hacer que el robot deje solo de moverse y empiece a resolver algún problema para el cual un humano no está calificado.</p>
+<p>Los tres casos que siguen muestran esa idea desde distintos ángulos: primero aparece un problema complicado para una persona; después, una máquina con sensores y movimiento; finalmente, una parte donde la IA ayuda a convertir datos del mundo físico en una acción concreta.</p>
 <div class="route-grid">
 
   <a class="route-card" href="https://bostondynamics.com/products/spot/" target="_blank" rel="noopener noreferrer">
@@ -737,6 +754,9 @@ Ojo con el lenguaje
     <div class="route-tags">
       <span class="route-tag route-tag-free">Visión por computadora</span>
       <span class="route-tag route-tag-browser">Planificación de ruta</span>
+    </div>
+    <div class="route-media-wrap">
+      <img class="route-media" src="https://media2.giphy.com/media/5I7xML0oZ7DMrAXCtu/giphy.gif" alt="Robot Spot de Boston Dynamics caminando en un entorno industrial" loading="lazy" decoding="async">
     </div>
   </a>
 
@@ -759,6 +779,9 @@ Ojo con el lenguaje
       <span class="route-tag route-tag-free">Navegación autónoma</span>
       <span class="route-tag route-tag-browser">Decisión en tiempo real</span>
     </div>
+    <div class="route-media-wrap">
+      <video class="route-media" src="../assets/sesion-13/zipline.webm" autoplay="" loop="" muted="" playsinline="" preload="metadata" aria-label="Video de un dron de Zipline en vuelo"></video>
+    </div>
   </a>
 
   <a class="route-card" href="https://www.nucleares.unam.mx/boletin_icnoticias/2024_01/nct_noticia_destacada.html" target="_blank" rel="noopener noreferrer">
@@ -780,98 +803,95 @@ Ojo con el lenguaje
       <span class="route-tag route-tag-es">México · UNAM</span>
       <span class="route-tag route-tag-browser">Robótica de enjambre</span>
     </div>
+    <div class="route-media-wrap">
+      <img class="route-media" src="../assets/sesion-13/colmena.jpg" alt="Microrrobots del proyecto COLMENA de la UNAM" loading="lazy" decoding="async">
+    </div>
   </a>
 
 </div>
 <hr>
 </section>
-<section id="recursos-para-explorar-más-sobre-el-tema" class="level3">
-<h3 class="anchored" data-anchor-id="recursos-para-explorar-más-sobre-el-tema">Recursos para explorar más sobre el tema</h3>
-<div class="resource-list">
-<div class="route-grid">
-
-  <a class="route-card" href="https://bostondynamics.com/video/spot-watches-its-step/" target="_blank" rel="noopener noreferrer">
-    <div class="route-card-header">
-      <span class="route-logo-emoji">🐕</span>
-      <h4 class="route-name anchored">Spot Watches Its Step</h4>
-    </div>
-    <p class="route-org">Boston Dynamics · Video oficial</p>
-    <p class="route-desc">Buen recurso para aprender sobre locomoción, percepción y adaptación. Pregúntate: ¿qué detecta Spot y qué decide por sí mismo?</p>
-    <div class="route-tags">
-      <span class="route-tag route-tag-free">Video</span>
-      <span class="route-tag route-tag-en">Inglés</span>
-    </div>
-  </a>
-
-  <a class="route-card" href="https://waymo.com/waymo-driver/" target="_blank" rel="noopener noreferrer">
-    <div class="route-card-header">
-      <span class="route-logo-emoji">🚗</span>
-      <h4 class="route-name anchored">Waymo Driver</h4>
-    </div>
-    <p class="route-org">Waymo · Explicación oficial</p>
-    <p class="route-desc">Sirve para enseñar sensores, autonomía y límites del sistema. Pregúntate: ¿qué parte parece percepción y qué parte parece decisión?</p>
-    <div class="route-tags">
-      <span class="route-tag route-tag-free">Explainer</span>
-      <span class="route-tag route-tag-en">Visual</span>
-    </div>
-  </a>
-
-  <a class="route-card" href="https://www.zipline.com/" target="_blank" rel="noopener noreferrer">
-    <div class="route-card-header">
-      <span class="route-logo-emoji">📦</span>
-      <h4 class="route-name anchored">Zipline: entrega con drones</h4>
-    </div>
-    <p class="route-org">Zipline · Sitio oficial</p>
-    <p class="route-desc">¿Crees que una red de entrega autónoma tendría sentido en comunidades rurales de México o de San Luis Potosí?</p>
-    <div class="route-tags">
-      <span class="route-tag route-tag-free">Caso Especial</span>
-      <span class="route-tag route-tag-en">Contexto</span>
-    </div>
-  </a>
-
-  <a class="route-card" href="https://conecta.tec.mx/en/news/national/education/remarkable-mexican-team-final-2024-first-world-championship" target="_blank" rel="noopener noreferrer">
-    <div class="route-card-header">
-      <span class="route-logo-emoji">🤖</span>
-      <h4 class="route-name anchored">LamBot 3478 — PrepaTec SLP</h4>
-    </div>
-    <p class="route-org">Tec de Monterrey · FIRST Robotics</p>
-    <p class="route-desc">Equipo de preparatoria de San Luis Potosí que llegó a finales del Campeonato Mundial FIRST 2024 en Houston — el primero de América Latina.</p>
-    <div class="route-tags">
-      <span class="route-tag route-tag-free">México · SLP</span>
-      <span class="route-tag route-tag-en">Artículo</span>
-    </div>
-  </a>
-
-  <a class="route-card" href="https://vr.vex.com" target="_blank" rel="noopener noreferrer">
-    <div class="route-card-header">
-      <span class="route-logo-emoji">🕹</span>
-      <h4 class="route-name anchored">VEX VR</h4>
-    </div>
-    <p class="route-org">VEX Robotics · Simulador en navegador</p>
-    <p class="route-desc">Programa un robot virtual en Python o en bloques, directamente en el navegador, sin instalar nada. Uno de los mejores puntos de entrada para experimentar con robótica sin hardware.</p>
-    <div class="route-tags">
-      <span class="route-tag route-tag-free">Gratis</span>
-      <span class="route-tag route-tag-browser">Sin instalación necesaria</span>
-    </div>
-  </a>
-
-</div>
-</div>
+<section id="para-reflexionar" class="level3">
+<h3 class="anchored" data-anchor-id="para-reflexionar">Para reflexionar</h3>
+<span class="reflexion-kicker">Reflexión · 5 min</span>
+<h3 class="reflexion-heading anchored">Actividad de reflexión</h3>
+<ol class="reflexion-list">
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">01</span>
+    <p class="reflexion-q"><strong>¿Has interactuado con algún robot en tu vida cotidiana?</strong> Una aspiradora robot, un dron, un asistente automático o incluso una máquina que dispensa algo en la escuela. ¿Qué parte de esa interacción te pareció "inteligente" y qué parte se sentía como un serie de instrucciones fijas?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">02</span>
+    <p class="reflexion-q"><strong>¿En qué se parece el ciclo percibir → interpretar → decidir → actuar a cómo tú navegas un lugar que no conoces?</strong> Cuando llegas a un edificio nuevo, ¿qué información recoges, cómo eliges por dónde ir, y qué pasa cuando un dato falla (un letrero confuso, una puerta cerrada)?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">03</span>
+    <p class="reflexion-q"><strong>Si pudieras poner un robot al servicio de tu colonia, escuela o ciudad,</strong> ¿qué tarea le pedirías? ¿Qué parte de esa tarea sería percepción (sensores), qué parte sería control o decisión (reglas fijas, IA o ambas) y dónde estaría el mayor riesgo si se equivoca?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">04</span>
+    <p class="reflexion-q"><strong>Explícale a alguien menor que tú, en dos oraciones,</strong> por qué un robot puede ser muy autónomo sin usar IA, y por qué otro puede usar IA aunque siempre necesite un humano supervisándolo.</p>
+  </li>
+</ol>
+<p class="reflexion-close">No hay respuestas correctas o incorrectas. El objetivo es que empieces a ver los robots y la IA desde una nueva perspectiva.</p>
 <hr>
 </section>
 <section id="la-idea-central-de-esta-sesión" class="level3">
 <h3 class="anchored" data-anchor-id="la-idea-central-de-esta-sesión">La idea central de esta sesión</h3>
 <div class="central-idea">
   <span class="central-idea-label">Idea central · Sesión 13</span>
-  <p class="central-idea-text">Un robot no se vuelve inteligente solo por tener motores y sensores. La IA entra cuando esa máquina debe percibir, decidir o adaptarse en un entorno cambiante. Por eso, en robótica, la pregunta importante no es solo qué se mueve, sino qué problema se intenta resolver y con qué margen de seguridad.</p>
+  <p class="central-idea-text">Un robot no es "inteligente" solo porque se mueve. Para entenderlo hay que seguir la cadena completa: qué mide con sus sensores, cómo interpreta esos datos, qué decisión toma y qué movimiento ejecuta. <strong>La IA aparece cuando esa decisión ya no se puede resolver con instrucciones fijas, porque el entorno cambia, hay información incompleta o el robot necesita adaptarse.</strong> Por eso, en robótica, la pregunta de fondo no es qué tan espectacular se ve la máquina, sino qué problema está resolviendo, quién toma las decisiones y qué pasa si se equivoca.</p>
 </div>
+<hr>
+</section>
+<section id="recursos-para-explorar-más-sobre-el-tema" class="level3">
+<h3 class="anchored" data-anchor-id="recursos-para-explorar-más-sobre-el-tema">Recursos para explorar más sobre el tema</h3>
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://bostondynamics.com/video/spot-watches-its-step/" target="_blank" rel="noopener">Spot Watches Its Step — Boston Dynamics <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Video oficial sobre locomoción, percepción y adaptación. Mientras lo ves, pregúntate: ¿qué detecta Spot y qué decide por sí mismo?</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://waymo.com/waymo-driver/" target="_blank" rel="noopener">Waymo Driver — explicación oficial <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Recorrido visual sobre sensores, autonomía y límites del sistema. ¿Qué parte parece percepción y qué parte parece decisión?</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.zipline.com/" target="_blank" rel="noopener">Zipline — entrega autónoma con drones <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Caso real de logística médica autónoma. ¿Crees que una red así tendría sentido en comunidades rurales de México o de San Luis Potosí?</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://conecta.tec.mx/en/news/national/education/remarkable-mexican-team-final-2024-first-world-championship" target="_blank" rel="noopener">LamBot 3478 — PrepaTec SLP en FIRST 2024 <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Equipo de preparatoria de San Luis Potosí que llegó a finales del Campeonato Mundial FIRST 2024 en Houston — el primero de América Latina.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://vr.vex.com" target="_blank" rel="noopener">VEX VR — simulador de robótica en el navegador <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Programa un robot virtual en Python o en bloques, directo en el navegador, sin instalar nada. Excelente punto de entrada para experimentar con robótica sin hardware.</p>
+  </li>
+</ul>
 <hr>
 <nav class="sesion-nav">
   <a href="sesion-12.html" class="sesion-nav-btn prev">
     <span class="nav-label">← Anterior</span>
-    <span class="nav-title">S12: Programación con IA</span>
+    <span class="nav-title">S12: Tu primer modelo de ML</span>
   </a>
   <div class="sesion-nav-center">
+    <div class="sesion-nav-dots">
+      <span class="sesion-nav-dot published" title="Sesión 1"></span>
+      <span class="sesion-nav-dot published" title="Sesión 2"></span>
+      <span class="sesion-nav-dot published" title="Sesión 3"></span>
+      <span class="sesion-nav-dot published" title="Sesión 4"></span>
+      <span class="sesion-nav-dot published" title="Sesión 5"></span>
+      <span class="sesion-nav-dot published" title="Sesión 6"></span>
+      <span class="sesion-nav-dot published" title="Sesión 7"></span>
+      <span class="sesion-nav-dot published" title="Sesión 8"></span>
+      <span class="sesion-nav-dot published" title="Sesión 9"></span>
+      <span class="sesion-nav-dot published" title="Sesión 10"></span>
+      <span class="sesion-nav-dot published" title="Sesión 11"></span>
+      <span class="sesion-nav-dot published" title="Sesión 12"></span>
+      <span class="sesion-nav-dot active" title="Sesión 13"></span>
+      <span class="sesion-nav-dot" title="Sesión 14"></span>
+      <span class="sesion-nav-dot" title="Sesión 15"></span>
+    </div>
     <span class="sesion-nav-progress">Sesión 13 de 15</span>
   </div>
   <a href="sesion-14.html" class="sesion-nav-btn next">

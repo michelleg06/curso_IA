@@ -188,7 +188,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#introducción-a-la-ia" id="toc-introducción-a-la-ia" class="nav-link active" data-scroll-target="#introducción-a-la-ia">Introducción a la IA</a></li>
+  <li><a href="#modelos-algoritmos-y-arquitecturas-de-ia" id="toc-modelos-algoritmos-y-arquitecturas-de-ia" class="nav-link active" data-scroll-target="#modelos-algoritmos-y-arquitecturas-de-ia">Modelos, algoritmos, y arquitecturas de IA</a></li>
   <li><a href="#actividad" id="toc-actividad" class="nav-link" data-scroll-target="#actividad">Actividad</a></li>
   </ul>
 </nav>
@@ -233,12 +233,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <link rel="stylesheet" href="../styles/sessions/sesion-03.css">
 <script type="module" src="../interactives/sesion-03.js"></script>
-<section id="introducción-a-la-ia" class="level2">
-<h2 class="anchored" data-anchor-id="introducción-a-la-ia">Introducción a la IA</h2>
-<div class="video-placeholder">
-  <span class="vp-icon">▶</span>
-  <p class="vp-title">Video de la sesión</p>
-  <p>En desarrollo.</p>
+<section id="modelos-algoritmos-y-arquitecturas-de-ia" class="level2">
+<h2 class="anchored" data-anchor-id="modelos-algoritmos-y-arquitecturas-de-ia">Modelos, algoritmos, y arquitecturas de IA</h2>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/Mcvn2SMDMLT" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
 </div>
 <hr>
 <p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
@@ -246,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="introducción" class="level3">
 <h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
 <p>En esta sesión nos enfocaremos en darte un panorama global de los algoritmos más conocidos de la inteligencia artificial, y te ofreceremos una guía para saber cuándo debes usar cada uno de ellos, y <em>por qué</em>.</p>
-<p>¿Por qué es importante aprender sobre distintos algoritmos? Empecemos con una analogía: cuando un carpintero va a la obra, lleva consigo una caja con múltiples herramientas. Del mismo modo, un médico recurre a distintos análisis según la sintomatología del paciente y el tipo de información que necesita obtener. Con la inteligencia artificial ocurre algo similar: existen muchos algoritmos y métodos, y cada uno resulta especialmente útil para ciertos tipos de problemas.</p>
+<p>¿Por qué es importante aprender sobre distintos algoritmos? Empecemos con una analogía: cuando un carpintero va a la obra, lleva consigo una caja con múltiples herramientas. Del mismo modo, un médico recurre a distintos análisis según la sintomatología del paciente y el tipo de información que necesita obtener. Con la inteligencia artificial ocurre algo similar: existen muchos modelos, algoritmos, métodos, y cada uno resulta especialmente útil para ciertos tipos de problemas.</p>
 <p>En esta sesión nos enfocaremos en 6 ejemplos representativos de modelos, algoritmos y arquitecturas de aprendizaje automático, con el objetivo de ofrecerte una visión general de cómo se organizan y para qué sirve cada uno.</p>
 <p>Antes de elegir un método, es fundamental reconocer la naturaleza del desafío. Algunos sirven para predecir números, otros para clasificar imágenes o descubrir grupos en datos sin etiquetas. Entender qué tipo de problema tienes delante es lo que marca la diferencia al trabajar con IA.</p>
 <figure class="search-anim-figure figure">
@@ -272,16 +270,15 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="por-qué-no-existe-un-solo-algoritmo-para-todo" class="level3">
 <h3 class="anchored" data-anchor-id="por-qué-no-existe-un-solo-algoritmo-para-todo">¿Por qué no existe un solo algoritmo para todo?</h3>
-<p>En inteligencia artificial, la elección del método influye directamente en el tipo de resultado que podemos obtener. Algunos algoritmos están pensados para prever valores, otros para reconocer patrones, otros para reunir datos con rasgos similares en grupos. Cada uno responde mejor a ciertos problemas y presenta limitaciones en otros.</p>
-<p>Por eso, conocer distintas clases de algoritmos no consiste solo memorizar sus nombres. También implica entender qué hace cada uno, qué tipo de datos necesita y qué clase de respuesta puede ofrecer. Esa diferencia es importante porque, en la práctica, un método adecuado puede simplificar el análisis, mientras que uno poco apropiado puede volverlo más difícil o menos fiable.</p>
-<p>Pensemos, por ejemplo, en la regresión lineal. Este método es útil cuando se quiere estimar una cantidad continua, como el precio de una vivienda o la evolución de una variable económica. En cambio, si el objetivo es separar correos entre “spam” y “no spam”, lo adecuado es un enfoque de clasificación. Y si lo que buscamos es descubrir grupos dentro de un conjunto de datos sin etiquetas, entonces tiene más sentido recurrir a técnicas de agrupamiento, como K-Means.</p>
+<p>En inteligencia artificial, la elección del método influye directamente en el tipo de resultado que podemos obtener. Algunos algoritmos están pensados para prever valores, otros para reconocer patrones, otros más para agrupar datos con rasgos similares. Cada uno responde mejor a ciertos problemas y presenta limitaciones en otros.</p>
+<p>Pensemos, por ejemplo, en la regresión lineal. Este método es útil cuando se quiere estimar una cantidad continua, como el precio de una vivienda o la evolución de una variable económica. En cambio, si el objetivo es separar correos entre “spam” y “no spam”, lo más eficaz es un algoritmo de clasificación. Y si lo que buscamos es descubrir grupos dentro de un conjunto de datos sin etiquetas, entonces tiene más sentido recurrir a técnicas de agrupamiento, como K-Means.</p>
 <p>También hay casos en los que algunos modelos resultan desproporcionados para el tipo de tarea a resolver. Un transformer puede ser una opción potente para procesar texto, pero no siempre es la elección más sensata cuando se trata de problemas sencillos, estructurados y con pocos datos. En esos casos, un modelo más simple puede ofrecer resultados igual de buenos, con menos costo de entrenamiento, menos complejidad y mayor facilidad de interpretación.</p>
-<p>A lo largo de esta sesión revisaremos precisamente eso: qué tipo de problemas resuelve mejor cada enfoque y qué criterios ayudan a elegir entre ellos. Comprender esa relación entre problema y método es la base para trabajar con inteligencia artificial de forma más rigurosa y más eficaz.</p>
+<p>A lo largo de esta sesión revisaremos precisamente eso: qué tipo de problemas resuelve mejor cada enfoque algorítmico y qué criterios nos ayudan a elegir entre ellos. Comprender esa relación entre problema y método es la base para trabajar con la inteligencia artificial de forma rigurosa y eficaz.</p>
 <hr>
 </section>
 <section id="un-mapa-de-métodos" class="level3">
 <h3 class="anchored" data-anchor-id="un-mapa-de-métodos">Un mapa de métodos</h3>
-<p>Antes de elegir un algoritmo, conviene detenerse un momento y mirar el problema con calma. En inteligencia artificial, la selección del método depende sobre todo de dos cosas: si los datos ya tienen respuestas correctas y qué tipo de resultado queremos obtener.</p>
+<p>Antes de elegir un algoritmo, conviene detenerse un momento y mirar el problema con calma. La selección del método depende sobre todo de dos cosas: si los datos ya tienen respuestas correctas y qué tipo de resultado queremos obtener.</p>
 <p>Esta distinción puede parecer simple, pero en realidad organiza gran parte del campo. No es lo mismo trabajar con ejemplos ya clasificados que con datos sin etiquetar, ni es igual predecir una cantidad continua que identificar una categoría, descubrir grupos ocultos o decidir una acción dentro de un entorno.</p>
 <p>Por eso, una buena forma de orientarse es empezar con dos preguntas básicas:</p>
 <div class="two-question-grid">
@@ -420,6 +417,10 @@ ul.task-list li input[type="checkbox"] {
       <p><strong>Regresión lineal.</strong> Predice un número a partir de datos etiquetados.</p>
     </div>
   </div>
+</div>
+<hr>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/YU5naup1FRF" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
 </div>
 <hr>
 </section>
@@ -695,6 +696,10 @@ ul.task-list li input[type="checkbox"] {
       <p>Es costoso de entrenar, puede alucinar y hereda sesgos del texto con el que aprendió.</p>
     </article>
   </div>
+</div>
+<hr>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/hY61MaAQr3u" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
 </div>
 <hr>
 </section>
