@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Sesión 14: IA en Salud, Ciencia y Sociedad – Intro a la IA</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/logo.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script defer="" src="https://cloud.umami.is/script.js" data-website-id="225b59d4-82fc-4df6-9c47-98afac4a8c13"></script>
+
+
+<link rel="stylesheet" href="../styles/sesion.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/logo.svg" alt="Intro a la IA" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Intro a la IA</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html"> 
+<span class="menu-text">Programa</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-sesiones" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Sesiones</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-sesiones">    
+        <li class="dropdown-header">— Bloque 1: Fundamentos + Ética —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-01.html">
+ <span class="dropdown-text">S1 · ¿Qué es la IA?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-02.html">
+ <span class="dropdown-text">S2 · Redes Neuronales Artificiales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-03.html">
+ <span class="dropdown-text">S3 · Algoritmos de IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-04.html">
+ <span class="dropdown-text">S4 · IA Generativa</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-05.html">
+ <span class="dropdown-text">S5 · Ética en la IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-06.html">
+ <span class="dropdown-text">S6 · EN VIVO: IA en México</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 2: Herramientas Prácticas —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-07.html">
+ <span class="dropdown-text">S7 · Tutor de Lenguaje</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-08.html">
+ <span class="dropdown-text">S8 · IA para Creatividad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-09.html">
+ <span class="dropdown-text">S9 · IA para Organización</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-10.html">
+ <span class="dropdown-text">S10 · Tutor Académico</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-11.html">
+ <span class="dropdown-text">S11 · EN VIVO: Política Pública</span></a>
+  </li>  
+        <li class="dropdown-header">— Bloque 3: Creación, Aplicaciones y Futuro —</li>
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-12.html">
+ <span class="dropdown-text">S12 · Programación con IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-13.html">
+ <span class="dropdown-text">S13 · Robótica e IA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-14.html">
+ <span class="dropdown-text">S14 · IA en Salud, Ciencia y Sociedad</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../sesiones/sesion-15.html">
+ <span class="dropdown-text">S15 · EN VIVO: Educación Global</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#ia-en-salud-ciencia-y-sociedad" id="toc-ia-en-salud-ciencia-y-sociedad" class="nav-link active" data-scroll-target="#ia-en-salud-ciencia-y-sociedad">IA en Salud, Ciencia y Sociedad</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Sesión 14: IA en Salud, Ciencia y Sociedad</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="sesion-banner">
+  <div>
+    <span class="sesion-block-pill">Bloque 3 · Creación, Aplicaciones y Futuro</span>
+  </div>
+  <div class="sesion-progress-wrap">
+    <div class="sesion-progress-bar">
+      <div class="sesion-progress-fill sesion-progress-fill-14"></div>
+    </div>
+    <span class="sesion-progress-label">14 de 15</span>
+  </div>
+  <div class="sesion-meta">
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> 4 de agosto de 2026</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 40 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
+  </div>
+</div>
+<link rel="stylesheet" href="../styles/sessions/sesion-14.css">
+<script type="module" src="../interactives/sesion-14.js"></script>
+<section id="ia-en-salud-ciencia-y-sociedad" class="level2">
+<h2 class="anchored" data-anchor-id="ia-en-salud-ciencia-y-sociedad">IA en Salud, Ciencia y Sociedad</h2>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/VgZcxFEwcYt" width="640" height="360" frameborder="0" allowfullscreen=""></iframe>
+</div>
+<hr>
+<p class="capsule-complement-note">
+Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!
+</p>
+<section id="introducción" class="level3">
+<h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
+<p>Imagina esta escena. Es de noche en una clínica de la Huasteca potosina. Una médica general atiende a muchas personas y no siempre tiene a un especialista cerca. Llega un paciente con diabetes y visión borrosa. La clínica usa una herramienta que analiza imágenes del ojo y sugiere si hace falta mandar a la persona con urgencia a un hospital más grande.</p>
+<p>Esa es una escena hipotética para San Luis Potosí. Sin embargo, en otras regiones del mundo con contextos similares ya es una realidad. Si queremos integrar ese tipo de IA en el sector salud en México, tenemos que preguntarnos: ¿qué hace exactamente esa herramienta? ¿Cómo funciona? ¿Qué hay que saber para usarla bien, y para saber cuándo falla?</p>
+<p>Es decir, si una herramienta de IA participa en decisiones sobre tu salud, <strong>¿qué tendría que pasar para que eso sea justo, seguro y de utilidad?</strong></p>
+<hr>
+</section>
+<section id="dónde-está-la-ia-en-el-sector-salud" class="level3">
+<h3 class="anchored" data-anchor-id="dónde-está-la-ia-en-el-sector-salud">¿Dónde está la IA en el sector salud?</h3>
+<p>Cuando una clínica, un hospital o un laboratorio dice que usa IA, puede estar hablando de cosas muy distintas. A veces la IA ayuda a orientar un <strong>diagnóstico</strong>: identificar qué problema de salud podría tener una persona. Otras veces apoya el <strong>triage</strong>, que significa decidir qué casos necesitan atención primero (priorizar urgencias). También puede ordenar citas, resumir notas clínicas, asignar recursos o acelerar investigación científica.</p>
+<p>El mapa de abajo nos ayuda a ordenar los usos más comunes.</p>
+<div class="typology-wrap">
+  <div class="typology-header">
+    <span class="typology-kicker">Mapa</span>
+    <h4 class="typology-heading anchored">Dos preguntas para ubicar una IA en el sector salud</h4>
+    <p class="typology-lead">Primero identifica si la herramienta se utiliza de manera directa o indirecta en un paciente. Después identifica si apoya una decisión clínica, una operación del sistema o investigación científica.</p>
+  </div>
+
+  <div class="typology-map" aria-label="Mapa de usos de IA en salud">
+    <article class="typology-card typology-card-clinical">
+      <span class="typology-axis-pill">Paciente + decisión clínica</span>
+      <h5 class="typology-card-title anchored">Apoyar diagnóstico o referencia</h5>
+      <p class="typology-card-body">Analiza señales del paciente para orientar una decisión médica supervisada.</p>
+      <ul class="typology-card-list">
+        <li>OCT, radiografías o fotos de retina</li>
+        <li>Seguimiento de signos vitales</li>
+        <li>Apoyo al triage clínico</li>
+      </ul>
+      <div class="typology-links" aria-label="Fuentes sobre imagenología ocular">
+        <a class="typology-tag typology-tag-success" href="https://www.nature.com/articles/s41591-018-0107-6" target="_blank" rel="noopener noreferrer">Moorfields</a>
+        <a class="typology-tag typology-tag-success" href="https://research.google/pubs/performance-of-a-deep-learning-algorithm-vs-manual-grading-for-detecting-diabetic-retinopathy-in-india/" target="_blank" rel="noopener noreferrer">India</a>
+      </div>
+    </article>
+
+    <article class="typology-card typology-card-admin">
+      <span class="typology-axis-pill">Paciente + operación</span>
+      <h5 class="typology-card-title anchored">Quitar carga administrativa</h5>
+      <p class="typology-card-body">Acompaña la consulta o el seguimiento, pero no decide por sí sola el tratamiento.</p>
+      <ul class="typology-card-list">
+        <li>Recordatorios de citas o medicamentos</li>
+        <li>Formularios y notas clínicas</li>
+        <li>Transcripción de consultas</li>
+      </ul>
+      <div class="typology-links" aria-label="Fuente sobre Matilde">
+        <a class="typology-tag typology-tag-mx" href="https://technonoticias.com/2026/03/09/ia-en-hospitales-como-matilde-ayuda-a-medicos-y-clinicas-a-gestionar-pacientes/" target="_blank" rel="noopener noreferrer">🇲🇽 Matilde</a>
+      </div>
+    </article>
+
+    <article class="typology-card typology-card-risk">
+      <span class="typology-axis-pill">Sistema + priorización</span>
+      <h5 class="typology-card-title anchored">Ordenar recursos escasos</h5>
+      <p class="typology-card-body">Trabaja detrás de la consulta, pero puede afectar quién recibe atención primero.</p>
+      <ul class="typology-card-list">
+        <li>Asignación de camas o turnos</li>
+        <li>Modelos de riesgo clínico</li>
+        <li>Priorización de programas intensivos</li>
+      </ul>
+      <div class="typology-links" aria-label="Fuente sobre el caso Obermeyer">
+        <a class="typology-tag typology-tag-failure" href="https://www.science.org/doi/10.1126/science.aax2342" target="_blank" rel="noopener noreferrer">Obermeyer</a>
+      </div>
+    </article>
+
+    <article class="typology-card typology-card-science">
+      <span class="typology-axis-pill">Ciencia + laboratorio</span>
+      <h5 class="typology-card-title anchored">Acelerar investigación biomédica</h5>
+      <p class="typology-card-body">No atiende directamente a una persona, pero puede abrir rutas para nuevos tratamientos.</p>
+      <ul class="typology-card-list">
+        <li>Predicción de estructuras de proteínas</li>
+        <li>Diseño de fármacos</li>
+        <li>Análisis de grandes bases biológicas</li>
+      </ul>
+      <div class="typology-links" aria-label="Fuente sobre AlphaFold">
+        <a class="typology-tag typology-tag-science" href="https://www.nature.com/articles/s41586-021-03819-2" target="_blank" rel="noopener noreferrer">AlphaFold</a>
+      </div>
+    </article>
+  </div>
+
+  <p class="typology-source">Adaptado del marco IAC de Okolo y González Amador (2023)</p>
+</div>
+<p>Este mapa funciona además como un compás: ayuda a ubicar en qué momento entra la IA a la relación entre paciente, personal de salud e institución. Esa ubicación importa porque cada uso abre preguntas éticas distintas: qué debe regularse, cuánto entiende el paciente, cómo se pide consentimiento y qué tanta agencia conserva la persona sobre su atención. Usar IA para resumir notas clínicas no implica los mismos riesgos que usarla para priorizar pacientes o sugerir una referencia médica.</p>
+<hr>
+</section>
+<section id="alphafold-ia-para-ciencia-fuera-del-hospital" class="level3">
+<h3 class="anchored" data-anchor-id="alphafold-ia-para-ciencia-fuera-del-hospital">AlphaFold: IA para ciencia fuera del hospital</h3>
+<p>Mucha gente piensa en IA en salud como una herramienta que aparece durante una consulta, frente a una persona enferma. Sin embargo, la inteligencia artificial ha tenido un gran impacto en la investigación que ayuda a entender enfermedades, explorar tratamientos y acelerar trabajo científico que antes tomaba años.</p>
+<p>Un ejemplo de ello es el modelo de inteligencia artificial AlphaFold 2, que ayuda a estudiar la forma de las proteínas, que son piezas centrales para entender cómo funciona el cuerpo y cómo podrían diseñarse nuevos medicamentos. Al estar disponible para la comunidad científica, investigadoras e investigadores de más de 190 países ya lo usan para estudiar problemas como resistencia antimicrobiana, enfermedades del corazón, padecimientos tropicales desatendidos y diseño de fármacos; el modelo nos ha ayudado a acortar el camino entre una pregunta biológica y una posible línea de tratamiento.</p>
+<div class="story-card">
+  <div class="story-img-placeholder story-img-alphafold">
+    <span class="sip-emoji">🧬</span>
+    <span class="sip-journal">Nature</span>
+    <span class="sip-year">2021</span>
+  </div>
+  <div class="story-content">
+    <p class="story-kicker">CIENCIA · BIOLOGÍA COMPUTACIONAL</p>
+    <h3 class="story-title anchored"><a href="https://www.nature.com/articles/s41586-021-03819-2" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">AlphaFold 2: predecir la forma de las proteínas ↗</a></h3>
+    <p class="story-source">Jumper et al., Nature, julio de 2021</p>
+    <p class="story-body">Las proteínas son moléculas que cumplen tareas esenciales en el cuerpo: transportar oxígeno, defendernos de infecciones o ayudar a que las células funcionen. Su forma tridimensional importa porque influye en lo que pueden hacer. Durante décadas, conocer esa forma podía requerir mucho trabajo experimental. En 2021, AlphaFold 2 mostró un avance enorme: predecir esas formas a partir de la secuencia de aminoácidos. Su base de datos pública reúne más de 200 millones de estructuras predichas y puede consultarse gratis.</p>
+  </div>
+</div>
+<hr>
+</section>
+<section id="beneficios-y-riesgos-de-la-ia-en-el-sector-salud" class="level3">
+<h3 class="anchored" data-anchor-id="beneficios-y-riesgos-de-la-ia-en-el-sector-salud">Beneficios y Riesgos de la IA en el sector salud</h3>
+<p>Después de AlphaFold, pasemos a un terreno más cercano a la consulta médica. En esta parte, la IA puede influir en quién recibe atención primero, qué caso se considera urgente o quién [qué paciente] entra a un programa de seguimiento.</p>
+<p>Para ello, analizaremos dos casos en donde la inteligencia artificial se usó de manera directa en los pacientes. En uno de ellos, la IA ayudó a ordenar una tarea clínica muy específica. En el otro, un algoritmo que parecía eficiente terminó reproduciendo sesgos históricos.</p>
+<div class="caso-flipper">
+
+  <div class="caso-tabs">
+    <button class="caso-tab active" data-target="caso-exito" data-variant="success">✓ Beneficio: canalización ocular</button>
+    <button class="caso-tab" data-target="caso-falla" data-variant="failure">✗ Riesgo: sesgo racial en EE. UU.</button>
+  </div>
+
+  <div class="caso-panel" id="caso-exito">
+    <span class="caso-label caso-label-success">✓ CASO DE ÉXITO</span>
+    <h3 class="caso-title anchored">Apoyo para canalizar casos de retina</h3>
+    <p class="caso-subtitle">DeepMind + Moorfields Eye Hospital · Nature Medicine, 2018</p>
+    <div class="caso-grid">
+      <div class="caso-fact">
+        <span class="caso-fact-label">Qué hacía la IA</span>
+        <span class="caso-fact-value">Analizaba tomografías de coherencia óptica, conocidas como OCT: imágenes tridimensionales de la retina. A partir de esas imágenes, sugería si la persona necesitaba atención urgente, prioritaria, de rutina o solo seguimiento.</span>
+      </div>
+      <div class="caso-fact">
+        <span class="caso-fact-label">Por qué se buscó apoyo de la IA</span>
+        <span class="caso-fact-value">En oftalmología se revisan muchísimas imágenes y no siempre hay suficientes especialistas para interpretarlas rápido. Una herramienta bien diseñada puede ayudar a ordenar prioridades cuando el tiempo y la capacidad clínica son limitados.</span>
+      </div>
+      <div class="caso-fact">
+        <span class="caso-fact-label">Qué hizo posible el resultado</span>
+        <span class="caso-fact-value">El modelo se entrenó con datos clínicos de alta calidad del Hospital Moorfields de Londres y se evaluó para una tarea bien delimitada: apoyar decisiones de canalización a partir de imágenes OCT.</span>
+      </div>
+      <div class="caso-fact">
+        <span class="caso-fact-label">El resultado</span>
+        <span class="caso-fact-value">En el estudio publicado en <em>Nature Medicine</em>, el sistema alcanzó o superó el desempeño de expertos en varias recomendaciones de canalización. La lección es clara: una IA médica se evalúa dentro de una ruta clínica concreta.</span>
+      </div>
+    </div>
+    <p class="caso-note">En la India, sucedió algo similar. Se evaluó una herramienta para detectar retinopatía diabética en fotos de fondo de ojo, con pacientes de Aravind Eye Hospital y Sankara Nethralaya. Los resultados fueron positivos.</p>
+    <div class="caso-insight caso-insight-success">Una herramienta de IA puede ampliar el acceso a los servicios de salud cuando está entrenada con datos de calidad, validada en pacientes y usada para una tarea específica bajo supervisión clínica.</div>
+  </div>
+
+  <div class="caso-panel" id="caso-falla" hidden="">
+    <span class="caso-label caso-label-failure">✗ CASO DE RIESGO</span>
+    <h3 class="caso-title anchored">Algoritmo de riesgo médico con sesgo racial</h3>
+    <p class="caso-subtitle">Obermeyer et al., Science, octubre de 2019 · sistema usado a gran escala en EE. UU.</p>
+    <div class="caso-grid">
+      <div class="caso-fact">
+        <span class="caso-fact-label">Qué hacía la IA</span>
+        <span class="caso-fact-value">Ayudaba a decidir qué pacientes debían entrar a programas de seguimiento intensivo para enfermedades crónicas. Se usaba ampliamente en hospitales de EE. UU.</span>
+      </div>
+      <div class="caso-fact">
+        <span class="caso-fact-label">Qué salió mal</span>
+        <span class="caso-fact-value">Con una gravedad similar, pacientes afroamericanos recibían puntuaciones de riesgo 26.3% más bajas que pacientes blancos. Eso podía dejarlos fuera de programas de atención que realmente necesitaban.</span>
+      </div>
+      <div class="caso-fact">
+        <span class="caso-fact-label">Por qué falló</span>
+        <span class="caso-fact-value">El sistema usaba el gasto médico histórico como indicador indirecto de necesidad de atención médica. Gastar menos no significaba estar menos enfermo; también podía reflejar décadas de desigualdad en acceso a atención médica.</span>
+      </div>
+      <div class="caso-fact">
+        <span class="caso-fact-label">La lección</span>
+        <span class="caso-fact-value">Cuando los datos arrastran desigualdades históricas, un modelo puede verse correcto en métricas generales y aun así producir decisiones injustas para ciertos grupos.</span>
+      </div>
+    </div>
+    <div class="caso-insight caso-insight-failure">
+      Elegir qué datos se usan, qué variable se intenta predecir y cómo se revisan los resultados puede ser tan importante como elegir el modelo de IA.</div>
+  </div>
+
+</div>
+<hr>
+</section>
+<section id="antes-de-usar-la-ia-con-pacientes" class="level3">
+<h3 class="anchored" data-anchor-id="antes-de-usar-la-ia-con-pacientes">Antes de usar la IA con pacientes…</h3>
+<p>Los dos casos anteriores nos dejan en claro que una herramienta [IA] puede verse prometedora en una prueba y aun así necesitar muchas revisiones antes de entrar a una clínica. Cuando se trata de la salud de una persona, no podemos guiarnos sólo por una métrica de evaluación como el porcentaje de aciertos. También debemos cuestionarnos si la herramienta está solucionando un problema que no puede resolver un humano, si funciona con la población que la va a usar y qué ocurre cuando se equivoca.</p>
+<p>La lista a continuación sirve para evaluar una herramienta de IA antes de adoptarla en un hospital, una clínica o un programa público. La pueden usar equipos médicos, directivos, responsables de política pública o cualquier persona que quiera hacer mejores preguntas cuando escucha que “van a usar IA” en salud.</p>
+<ol type="1">
+<li><strong>Tarea exacta.</strong> ¿La IA detecta una enfermedad, prioriza pacientes, resume una consulta, recomienda una canalización o solo organiza información?</li>
+<li><strong>Utilidad clínica.</strong> Su recomendación cambia algo crucial en la práctica clínica o solo produce un número interesante?</li>
+<li><strong>Validación local.</strong> ¿Se ha utilizado con personas parecidas a quienes la van a usar en la vida real?</li>
+<li><strong>Supervisión humana.</strong> ¿Quién revisa la recomendación y cómo se evita que el personal médico obedezca a la IA por inercia?</li>
+<li><strong>Monitoreo.</strong> ¿Alguien revisa si el desempeño baja con el tiempo, si cambia el perfil de los pacientes, los equipos médicos o la forma de capturar datos?</li>
+</ol>
+<p>La <strong>IA generativa</strong> agrega otro nivel de complejidad. Puede ayudar a redactar notas clínicas, resumir expedientes, preparar instrucciones para pacientes o traducir lenguaje técnico a palabras más claras. Eso no la convierte automáticamente en una herramienta de diagnóstico. Un chatbot que “suena convincente” puede inventar datos, omitir señales importantes o dar una explicación demasiado segura. Por eso necesita límites claros: privacidad, revisión humana, registro de errores y una forma sencilla de escalar el caso a una persona.</p>
+<p>Esta lógica coincide con recomendaciones internacionales recientes: la <a href="https://www.who.int/publications/i/item/9789240078871">OMS</a> insiste en seguridad, eficacia, transparencia y gestión de riesgos; la <a href="https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-software-medical-device">FDA</a> habla de administrar estas tecnologías durante todo su ciclo de vida, no solo antes de venderlas.</p>
+<hr>
+</section>
+<section id="y-méxico" class="level3">
+<h3 class="anchored" data-anchor-id="y-méxico">¿Y México?</h3>
+<p>En México, usar inteligencia artificial en el sector salud puede brindar beneficios de gran impacto social, sobre todo cuando no hay suficientes especialistas o las distancias a hospitales más grandes son largas.</p>
+<p>Las Estadísticas de Salud en Establecimientos Particulares de INEGI reportaron que, en 2023, los establecimientos particulares de salud con camas censables se distribuyeron en 560 municipios y demarcaciones territoriales (<a href="https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2024/ESEP/ESEP2023.pdf">INEGI, 2023</a>). Ese dato no describe todo el sistema público, aunque sí nos dice algo importante: la infraestructura de salud está concentrada en unas zonas particulates. Esto sugiere que hay zonas desatendidas, y con menor facilidad de acceso a recursos, infraestructura y atención médica.</p>
+<p>Una herramienta de IA bien diseñada puede marcar la diferencia entre un sistema concentrado y saturado, y uno que atiende mejor a su comunidad.</p>
+<p><strong>La buena noticia:</strong> en SLP ya se está haciendo IA. En el <strong>IPICYT</strong>, el Dr.&nbsp;Salvador Ruiz-Correa y su <a href="https://you-ilab-next.vercel.app/">You-i Lab</a> desarrollaron en 2020 <em>Centinela de la Salud</em>: una aplicación móvil que usó IA y crowdsourcing para rastrear brotes de COVID-19 en tiempo real en San Luis Potosí capital. El proyecto fue publicado en el <em>International Journal of Medical Informatics</em> (2021) y surgió de una colaboración entre IPICYT, la UASLP, la Universidad de Oxford y los Servicios de Salud del estado. La IA aplicada a la salud no solo se produce en Silicon Valley. También se produce en nuestro estado.</p>
+<hr>
+</section>
+<section id="uso-de-la-ia-desde-la-perspectiva-del-paciente" class="level3">
+<h3 class="anchored" data-anchor-id="uso-de-la-ia-desde-la-perspectiva-del-paciente">Uso de la IA desde la perspectiva del paciente</h3>
+<p>Hasta ahora hemos visto la IA desde el lado de la tecnología, los hospitales y la investigación. Pero cuando la IA entra a una consulta, la experiencia también cambia para la persona que recibe atención. Un paciente debería poder saber si una herramienta automática participó en su diagnóstico, en la prioridad que recibió o en el uso de sus datos personales.</p>
+<div class="pregunta-grid">
+
+  <div class="pregunta-card">
+    <span class="pregunta-icon">🔔</span>
+    <h4 class="pregunta-title anchored">El derecho a saber</h4>
+    <p class="pregunta-body">Si una herramienta de IA participa en tu atención clínica, deberían decírtelo con claridad: qué hace, qué no hace, qué datos usa y quién revisa sus recomendaciones.</p>
+  </div>
+
+  <div class="pregunta-card">
+    <span class="pregunta-icon">✍️</span>
+    <h4 class="pregunta-title anchored">Consentimiento informado</h4>
+    <p class="pregunta-body">Aceptar una consulta no significa aceptar automáticamente que tus datos se usen para entrenar modelos futuros. Son decisiones distintas y deberían explicarse por separado.</p>
+  </div>
+
+  <div class="pregunta-card">
+    <span class="pregunta-icon">🧭</span>
+    <h4 class="pregunta-title anchored">Supervisión humana</h4>
+    <p class="pregunta-body">La IA puede influir mucho aunque "solo recomiende". El personal médico necesita tiempo, criterio y autoridad para cuestionarla; si no, aparece el sesgo de automatización: creerle demasiado porque viene de una máquina.</p>
+  </div>
+
+  <div class="pregunta-card">
+    <span class="pregunta-icon">⚖️</span>
+    <h4 class="pregunta-title anchored">Responsabilidad y monitoreo</h4>
+    <p class="pregunta-body">Si una recomendación automática sale mal, debe quedar claro quién responde y cómo se detecta el problema. Alguien tiene que ser responsable de revisar errores, cambios de desempeño y posibles riesgos.</p>
+  </div>
+
+</div>
+<p>Estas preguntas tienen respaldo académico: investigadoras del área de informática y economía formalizaron los principios de informar, evaluar y consentir en el marco <a href="https://arxiv.org/abs/2111.04456">IAC</a>, diseñado para proteger los derechos de los pacientes cuando la IA se usa en su atención médica.</p>
+<hr>
+</section>
+<section id="para-reflexionar" class="level3">
+<h3 class="anchored" data-anchor-id="para-reflexionar">Para reflexionar</h3>
+<span class="reflexion-kicker">Reflexión · 5 min</span>
+<h3 class="reflexion-heading anchored">Actividad de reflexión</h3>
+<ol class="reflexion-list">
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">01</span>
+    <p class="reflexion-q"><strong>¿Has dependido de una herramienta digital para algo importante en tu salud o la de un familiar?</strong> Por ejemplo, una app de recordatorios de medicamentos, una plataforma de citas, un asistente automático...</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">02</span>
+    <p class="reflexion-q"><strong>¿En qué se parece el sesgo del algoritmo Obermeyer a sesgos que has visto en otros lugares?</strong> ¿Qué tienen en común esos errores y por qué a veces tardan años en detectarse?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">03</span>
+    <p class="reflexion-q"><strong>Si una clínica de tu comunidad quisiera adoptar una herramienta de IA</strong> - para apoyo al diagnóstico, triage o resumen de consultas — ¿qué tres preguntas harías antes de aceptar usarla? Piensa en datos, contexto local, supervisión y monitoreo.</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">04</span>
+    <p class="reflexion-q"><strong>Explícale a alguien menor que tú, en dos oraciones,</strong> por qué un sistema de IA puede tener un alto porcentaje de aciertos y, al mismo tiempo, producir consecuencias injustas para un grupo específico de personas.</p>
+  </li>
+</ol>
+<p class="reflexion-close">No hay respuestas correctas o incorrectas. Esto es solo un ejercicio de reflexión.</p>
+<hr>
+</section>
+<section id="la-idea-central-de-esta-sesión" class="level3">
+<h3 class="anchored" data-anchor-id="la-idea-central-de-esta-sesión">La idea central de esta sesión</h3>
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 14</span>
+  <p class="central-idea-text">La IA puede acelerar descubrimientos científicos y ampliar el acceso a la salud, pero también conlleva riesgos. Para minimizarlos, debemos tener claro para qué tarea se ha diseñado, qué datos se usaron para su entrenamiento, en qué contexto, y cómo se salvaduarga la agencia de los pacientes.
+  </p>
+</div>
+<hr>
+</section>
+<section id="recursos-para-explorar-más-sobre-el-tema" class="level3">
+<h3 class="anchored" data-anchor-id="recursos-para-explorar-más-sobre-el-tema">Recursos para explorar más sobre el tema</h3>
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://alphafold.ebi.ac.uk/" target="_blank" rel="noopener">AlphaFold Database — Google DeepMind / EMBL-EBI <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Base de datos pública con más de 200 millones de estructuras proteínicas predichas. Puedes buscar cualquier proteína conocida — gratis y en el navegador.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.who.int/publications/i/item/9789240029200" target="_blank" rel="noopener">OMS — Ética e IA en salud <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Marco oficial de la Organización Mundial de la Salud sobre ética e IA en salud: principios, riesgos y recomendaciones para sistemas de salud.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.fda.gov/medical-devices/software-medical-device-samd/artificial-intelligence-enabled-medical-devices" target="_blank" rel="noopener">FDA — Dispositivos médicos con IA <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Lista pública de dispositivos médicos autorizados en EE.UU. que incorporan IA. Útil para ver cómo aparece la regulación en productos reales.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.coursera.org/learn/evaluations-ai-applications-healthcare" target="_blank" rel="noopener">Stanford — Evaluación de IA en salud <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Curso sobre utilidad clínica, integración en flujo de trabajo, sesgo, regulación y monitoreo continuo de aplicaciones de IA en salud.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://research.google/pubs/performance-of-a-deep-learning-algorithm-vs-manual-grading-for-detecting-diabetic-retinopathy-in-india/" target="_blank" rel="noopener">Google Research — Retinopatía diabética en India <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Validación prospectiva de un sistema para detectar retinopatía diabética con fotos de fondo de ojo en dos centros de India.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.uaslp.mx/" target="_blank" rel="noopener">UASLP — Universidad Autónoma de San Luis Potosí <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Ingenierías, ciencias y posgrados donde la IA en salud puede ser parte de tu trayectoria académica — desde casa.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.ipicyt.edu.mx/" target="_blank" rel="noopener">IPICYT — Instituto Potosino de Investigación Científica y Tecnológica <svg aria-hidden="true" width="12" height="12" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+    <p class="resource-list-desc">Centro de investigación de clase mundial en San Luis Potosí. Trabajo activo en bioinformática, ciencias de la computación y ciencias ambientales.</p>
+  </li>
+</ul>
+<hr>
+<nav class="sesion-nav">
+  <a href="sesion-13.html" class="sesion-nav-btn prev">
+    <span class="nav-label">← Anterior</span>
+    <span class="nav-title">S13: Robótica e IA</span>
+  </a>
+  <div class="sesion-nav-center">
+    <div class="sesion-nav-dots">
+      <span class="sesion-nav-dot published" title="Sesión 1"></span>
+      <span class="sesion-nav-dot published" title="Sesión 2"></span>
+      <span class="sesion-nav-dot published" title="Sesión 3"></span>
+      <span class="sesion-nav-dot published" title="Sesión 4"></span>
+      <span class="sesion-nav-dot published" title="Sesión 5"></span>
+      <span class="sesion-nav-dot published" title="Sesión 6"></span>
+      <span class="sesion-nav-dot published" title="Sesión 7"></span>
+      <span class="sesion-nav-dot published" title="Sesión 8"></span>
+      <span class="sesion-nav-dot published" title="Sesión 9"></span>
+      <span class="sesion-nav-dot published" title="Sesión 10"></span>
+      <span class="sesion-nav-dot published" title="Sesión 11"></span>
+      <span class="sesion-nav-dot published" title="Sesión 12"></span>
+      <span class="sesion-nav-dot published" title="Sesión 13"></span>
+      <span class="sesion-nav-dot active" title="Sesión 14"></span>
+      <span class="sesion-nav-dot" title="Sesión 15"></span>
+    </div>
+    <span class="sesion-nav-progress">Sesión 14 de 15</span>
+  </div>
+  <a href="sesion-15.html" class="sesion-nav-btn next">
+    <span class="nav-label">Siguiente →</span>
+    <span class="nav-title">S15: EN VIVO: Educación Global</span>
+  </a>
+</nav>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.curso-ia-slp\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Intro a la IA · San Luis Potosí · 2026</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/michelleg06">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
