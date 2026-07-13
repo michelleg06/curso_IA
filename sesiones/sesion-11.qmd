@@ -77,7 +77,7 @@ Entender la IA como asunto ciudadano y no solo tecnológico, conocer cómo se es
 ```{=html}
 <div class="central-idea">
   <span class="central-idea-label">Idea central · Sesión 11</span>
-  <p class="central-idea-text">La IA no es solo una tecnología: también es un tema de ciudadanía, regulación y decisiones públicas. Entender cómo se gobierna y quién diseña esas reglas es parte de entender su impacto en México y en América Latina.</p>
+  <p class="central-idea-text">La IA no es solo una tecnología, también es un tema de ciudadanía, regulación y decisiones públicas. Entender cómo se gobierna y quién diseña esas reglas es parte de entender su impacto en México y en América Latina.</p>
 </div>
 ```
 
