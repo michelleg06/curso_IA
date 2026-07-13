@@ -1275,7 +1275,7 @@ details.sy-info[open] summary .sy-chevron { transform: rotate(90deg); }
     </summary>
     <div class="sy-sess-body">
       <div class="sy-live-note">
-        <strong>Invitada:</strong> Mtra. Cristina Martínez Pinto, fundadora y CEO de PIT Policy Lab. La sesión será grabada.
+        <strong>Invitada:</strong> Mtra. Alejandra Sánchez, especialista en política pública y gobernanza digital. La sesión será grabada.
       </div>
       <ul class="sy-objectives-list">
         <li>Entender la IA como asunto ciudadano, no solo tecnológico</li>
@@ -1296,11 +1296,11 @@ details.sy-info[open] summary .sy-chevron { transform: rotate(90deg); }
         </ul>
       </div>
       <div class="sy-tags">
-        <span class="sy-tag">Mtra. Cristina Martínez Pinto</span>
-        <span class="sy-tag">PIT Policy Lab</span>
-        <span class="sy-tag">IA2030Mx</span>
-        <span class="sy-tag">Gobernanza tecnológica</span>
-        <span class="sy-tag">Derechos digitales</span>
+        <span class="sy-tag">Mtra. Alejandra Sánchez</span>
+        <span class="sy-tag">Gobernanza digital</span>
+        <span class="sy-tag">Ética de la IA</span>
+        <span class="sy-tag">Cooperación internacional</span>
+        <span class="sy-tag">Política pública</span>
         <span class="sy-tag">Sesión grabada</span>
       </div>
       <a href="sesiones/sesion-11.html" class="sy-sess-link">Ver sesión completa →</a>
@@ -1534,7 +1534,7 @@ details.sy-info[open] summary .sy-chevron { transform: rotate(90deg); }
           </thead>
           <tbody>
             <tr><td>IPICYT (San Luis Potosí)</td><td>1 junio</td><td><strong>Dr. Salvador Ruiz Correa</strong></td></tr>
-            <tr><td>PIT Policy Lab</td><td>14 julio</td><td><strong>Mtra. Cristina Martínez Pinto</strong></td></tr>
+            <tr><td>Política pública y gobernanza digital</td><td>14 julio</td><td><strong>Mtra. Alejandra Sánchez</strong></td></tr>
             <tr><td>Boston College (online)</td><td>11 agosto</td><td><strong>Dr. Francisco Marmolejo-Cossio</strong></td></tr>
           </tbody>
         </table>

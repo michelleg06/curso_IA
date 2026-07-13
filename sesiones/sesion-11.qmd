@@ -41,19 +41,19 @@ format:
 
 ```{=html}
 <div class="guest-card">
-  <img class="guest-avatar" src="img/cristina-martinez-pinto.jpg" alt="Mtra. Cristina Martínez Pinto">
+  <img class="guest-avatar" src="img/alejandra-sanchez.jpeg" alt="Mtra. Alejandra Sánchez">
   <div class="guest-content">
-    <h3 class="guest-name">Mtra. Cristina Martínez Pinto</h3>
-    <p class="guest-title">Fundadora y CEO · PIT Policy Lab (Public Interest Technology Policy Lab)</p>
-    <p class="guest-institution">PIT Policy Lab · México</p>
+    <h3 class="guest-name">Mtra. Alejandra Sánchez</h3>
+    <p class="guest-title">Especialista en política pública y gobernanza digital</p>
+    <p class="guest-institution">México · América Latina y el Caribe</p>
     <div class="guest-tags">
-      <span class="guest-tag">Política pública de IA</span>
-      <span class="guest-tag">Gobernanza tecnológica</span>
+      <span class="guest-tag">Gobernanza digital</span>
+      <span class="guest-tag">Ética de la IA</span>
+      <span class="guest-tag">Política pública</span>
+      <span class="guest-tag">Cooperación internacional</span>
       <span class="guest-tag">América Latina</span>
-      <span class="guest-tag">Derechos digitales</span>
-      <span class="guest-tag">Tecnología de interés público</span>
     </div>
-    <p class="guest-bio">La Mtra. Cristina Martínez Pinto es Maestra en Políticas Públicas por la Universidad de Georgetown y licenciada en Relaciones Internacionales por el Tecnológico de Monterrey. Fundó el <strong>PIT Policy Lab</strong> para impulsar el desarrollo tecnológico centrado en las personas en América Latina y el Caribe, trabajando en la intersección entre tecnología de interés público y políticas ágiles. Fue consultora en Transformación Digital del Banco Mundial y dirigió el AI for Good Lab de C Minds. Co-fundó la Coalición Nacional de IA de México (<strong>IA2030Mx</strong>). Es miembro de la comunidad Global Shapers del Foro Económico Mundial. En 2023 fue reconocida como DEI Leader of the Year por Women in AI North America y ganadora del premio Equals in Tech por la ITU, ONU Mujeres y GSMA. En 2025, fue incluida en la lista global de <strong>100 Women in AI Ethics</strong> y en las 30 Promesas de Negocios en México por Expansión.</p>
+    <p class="guest-bio">La Mtra. Alejandra Sánchez cuenta con más de ocho años de experiencia en investigación, cooperación internacional y diseño de políticas públicas en México, Centroamérica, el Caribe y Estados Unidos. Ha liderado proyectos de <strong>gobernanza digital</strong>, <strong>ética de la inteligencia artificial</strong>, inversión pública, emprendimiento social y desarrollo regional, colaborando con gobiernos, organismos internacionales, el sector privado y la sociedad civil. Es Maestra en Administración y Políticas Públicas por el <strong>Centro de Investigación y Docencia Económicas (CIDE)</strong>.</p>
   </div>
 </div>
 ```
@@ -86,7 +86,7 @@ Entender la IA como asunto ciudadano y no solo tecnológico, conocer cómo se es
 ```{=html}
 <ul class="resource-list">
   <li class="resource-list-item">
-    <p class="recursos-placeholder">Los recursos que la Mtra. Martínez Pinto comparta durante la sesión: reportes, iniciativas, herramientas de política pública, instituciones, etc., se publicarán aquí después del Zoom.</p>
+    <p class="recursos-placeholder">Los recursos que la Mtra. Sánchez comparta durante la sesión: reportes, iniciativas, herramientas de política pública, instituciones, etc., se publicarán aquí después del Zoom.</p>
   </li>
 </ul>
 ```
