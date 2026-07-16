@@ -28,6 +28,7 @@ format:
 
 ```{=html}
 <link rel="stylesheet" href="../styles/sessions/sesion-06.css">
+<link rel="stylesheet" href="../styles/sessions/sesion-11.css">
 ```
 
 ```{=html}
@@ -84,11 +85,185 @@ Entender la IA como asunto ciudadano y no solo tecnológico, conocer cómo se es
 ### Recursos para explorar más sobre el tema
 
 ```{=html}
-<ul class="resource-list">
-  <li class="resource-list-item">
-    <p class="recursos-placeholder">Los recursos que la Mtra. Sánchez comparta durante la sesión: reportes, iniciativas, herramientas de política pública, instituciones, etc., se publicarán aquí después del Zoom.</p>
-  </li>
-</ul>
+<p class="recursos-intro">Materiales que la Mtra. Sánchez compartió durante la sesión en vivo: su presentación descargable y recursos organizados en cuatro temas para seguir explorando la política pública de la IA.</p>
+
+<div class="recurso-cards">
+
+  <article class="recurso-card">
+    <div class="recurso-icon">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
+    </div>
+    <div class="recurso-body">
+      <span class="recurso-kind">Presentación · Descargable</span>
+      <h4 class="recurso-title">Inteligencia artificial con propósito</h4>
+      <p class="recurso-desc">Las diapositivas que la Mtra. Sánchez presentó durante la sesión: quién decide cómo funciona la tecnología, la Tecnología de Interés Público, la regulación en México y América Latina, los riesgos de la IA y las habilidades que más van a importar.</p>
+      <a class="recurso-action" href="../assets/sesion-11/ia-con-proposito.pdf" download="Inteligencia artificial con propósito - Mtra Alejandra Sánchez.pdf">
+        <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Descargar presentación <span class="recurso-file-meta">· PDF, 4.2 MB</span>
+      </a>
+    </div>
+  </article>
+
+</div>
+
+<p class="recurso-group-title">01 · Instituciones y marcos regulatorios</p>
+
+<div class="recurso-cards">
+
+  <article class="recurso-card">
+    <div class="recurso-icon">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg>
+    </div>
+    <div class="recurso-body">
+      <span class="recurso-kind">Laboratorio de políticas · Sitio web</span>
+      <h4 class="recurso-title">PIT Policy Lab</h4>
+      <p class="recurso-desc">Laboratorio de políticas públicas especializado en gobernanza digital y ética de la IA, que trabaja con diversos sectores para asegurar que la tecnología esté centrada en las personas.</p>
+      <a class="recurso-action" href="https://www.policylab.tech/" target="_blank" rel="noopener">
+        Visitar el sitio
+        <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </article>
+
+  <article class="recurso-card">
+    <div class="recurso-icon">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>
+    </div>
+    <div class="recurso-body">
+      <span class="recurso-kind">Regulación · Unión Europea</span>
+      <h4 class="recurso-title">EU AI Act (Ley de IA de la Unión Europea)</h4>
+      <p class="recurso-desc">Uno de los primeros marcos integrales que regula los sistemas de IA según su nivel de riesgo. Es fundamental para entender cómo se están estableciendo estándares globales de seguridad y derechos.</p>
+      <a class="recurso-action" href="https://artificialintelligenceact.eu/" target="_blank" rel="noopener">
+        Explorar la ley
+        <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </article>
+
+  <article class="recurso-card">
+    <div class="recurso-icon">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+    </div>
+    <div class="recurso-body">
+      <span class="recurso-kind">Política nacional · Chile</span>
+      <h4 class="recurso-title">Estrategia Nacional de Inteligencia Artificial de Chile</h4>
+      <p class="recurso-desc">Un ejemplo regional de cómo los países latinoamericanos están trazando sus propios caminos para aprovechar la IA reduciendo sus riesgos.</p>
+      <a class="recurso-action" href="https://www.minciencia.gob.cl/areas/inteligencia-artificial/politica-nacional-de-inteligencia-artificial/" target="_blank" rel="noopener">
+        Conocer la estrategia
+        <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </article>
+
+  <article class="recurso-card">
+    <div class="recurso-icon">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+    </div>
+    <div class="recurso-body">
+      <span class="recurso-kind">Documento oficial · PDF</span>
+      <h4 class="recurso-title">Marco Ético para la IA en Colombia</h4>
+      <p class="recurso-desc">Documento que detalla las políticas de innovación y uso responsable de la IA del gobierno colombiano.</p>
+      <a class="recurso-action" href="https://minciencias.gov.co/sites/default/files/marco-etico-ia-colombia-2021.pdf" target="_blank" rel="noopener">
+        <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Abrir el PDF <span class="recurso-file-meta">· descarga externa</span>
+      </a>
+    </div>
+  </article>
+
+</div>
+
+<p class="recurso-group-title">02 · Conceptos de tecnología de interés público</p>
+
+<div class="recurso-cards">
+
+  <article class="recurso-card">
+    <div class="recurso-icon">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    </div>
+    <div class="recurso-body">
+      <span class="recurso-kind">Red global · Sitio web</span>
+      <h4 class="recurso-title">Public Interest Technology (New America)</h4>
+      <p class="recurso-desc">Red global de recursos sobre cómo profesionales de diversas disciplinas pueden aplicar la tecnología al bienestar social.</p>
+      <a class="recurso-action" href="https://www.newamerica.org/programs/public-interest-technology/" target="_blank" rel="noopener">
+        Visitar el sitio
+        <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </article>
+
+  <article class="recurso-card">
+    <div class="recurso-icon">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    </div>
+    <div class="recurso-body">
+      <span class="recurso-kind">Estándar internacional · UNESCO</span>
+      <h4 class="recurso-title">Recomendación sobre la Ética de la IA (UNESCO)</h4>
+      <p class="recurso-desc">Un estándar mundial que profundiza en la protección de los derechos humanos y la privacidad frente a la IA.</p>
+      <a class="recurso-action" href="https://www.unesco.org/es/articles/recomendacion-sobre-la-etica-de-la-inteligencia-artificial" target="_blank" rel="noopener">
+        Leer la recomendación
+        <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </article>
+
+</div>
+
+<p class="recurso-group-title">03 · Mitigación de riesgos y sesgos</p>
+
+<div class="recurso-cards">
+
+  <article class="recurso-card">
+    <div class="recurso-icon">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    </div>
+    <div class="recurso-body">
+      <span class="recurso-kind">Organización · Sociedad civil</span>
+      <h4 class="recurso-title">Algorithmic Justice League (AJL)</h4>
+      <p class="recurso-desc">Una organización que documenta los riesgos de sesgo y discriminación en el reconocimiento facial y la contratación. Ofrece herramientas para entender cómo los datos pueden amplificar desigualdades.</p>
+      <a class="recurso-action" href="https://www.ajl.org/" target="_blank" rel="noopener">
+        Visitar el sitio
+        <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </article>
+
+  <article class="recurso-card">
+    <div class="recurso-icon">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+    </div>
+    <div class="recurso-body">
+      <span class="recurso-kind">Guía · PDF en español</span>
+      <h4 class="recurso-title">Principios de IA de la OCDE</h4>
+      <p class="recurso-desc">Proporciona un marco, adoptado por decenas de países, para que los sistemas de IA sean transparentes y responsables.</p>
+      <a class="recurso-action" href="https://legalinstruments.oecd.org/api/download/?uri=/public/db5053b5-93e0-4cf5-a7cf-edce5ee6e893.pdf&amp;name=OECD-LEGAL-0449%20-%20Spanish%20(as%20amended%20on%2003052024).pdf" target="_blank" rel="noopener">
+        <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Abrir el PDF <span class="recurso-file-meta">· descarga externa</span>
+      </a>
+    </div>
+  </article>
+
+</div>
+
+<p class="recurso-group-title">04 · Habilidades y futuro del trabajo</p>
+
+<div class="recurso-cards">
+
+  <article class="recurso-card">
+    <div class="recurso-icon">
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+    </div>
+    <div class="recurso-body">
+      <span class="recurso-kind">Curso gratuito · En línea</span>
+      <h4 class="recurso-title">Elements of AI</h4>
+      <p class="recurso-desc">Un curso gratuito, disponible en español, que ayuda a democratizar el conocimiento técnico y ético sobre la IA. Un gran siguiente paso cuando termines este curso.</p>
+      <a class="recurso-action" href="https://www.elementsofai.com/es/" target="_blank" rel="noopener">
+        Empezar el curso
+        <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </article>
+
+</div>
 ```
 
 ---

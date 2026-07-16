@@ -1,0 +1,28 @@
+/* ============================================
+   Sesión 11 — EN VIVO: IA, Política Pública y Ciudadanía
+   Componentes base (.live-session-header, .guest-card,
+   .recurso-card, etc.) vienen de sesion-06.css, que esta
+   sesión reutiliza. Aquí solo va lo de la S11.
+   ============================================ */
+
+/* ── Títulos de grupo en la sección de recursos ── */
+
+.recurso-group-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #6495ED;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin: 2rem 0 0;
+}
+
+.recurso-group-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--c-border, #e2e8f0);
+}
