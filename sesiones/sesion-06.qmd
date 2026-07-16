@@ -61,10 +61,8 @@ format:
 ## Video / Grabación
 
 ```{=html}
-<div class="video-placeholder">
-  <span class="vp-icon">▶</span>
-  <p class="vp-title">Grabación de la sesión — próximamente</p>
-  <p>Aquí se publicará el replay del Zoom una vez que termine la sesión en vivo.</p>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/n2nWa31hZCE" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 </div>
 ```
 
