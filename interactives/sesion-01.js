@@ -1745,11 +1745,12 @@ function initRLDemo() {
     animationFrame = requestAnimationFrame(step);
   }
 
+  // The RL demo sits in a hidden block on the session page. Without its canvas,
+  // stop here: rendering would throw and halt the inits that run after this one.
   canvas = $("rl-canvas");
-  if (canvas) {
-    ctx = canvas.getContext("2d");
-    resizeCanvas();
-  }
+  if (!canvas) return;
+  ctx = canvas.getContext("2d");
+  resizeCanvas();
 
   $("rl-start")?.addEventListener("click", start);
   $("rl-reset")?.addEventListener("click", resetPreview);

@@ -35,7 +35,7 @@ format:
 
 ```{=html}
 <div class="video-capsule">
-  <iframe src="https://www.youtube-nocookie.com/embed/5dPa1JrB7Ok" title="Sesión 10 - Cápsula 1: La IA como tutor acádemico y de matemáticas" width="640" height="360" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/5dPa1JrB7Ok" title="Sesión 10 - Cápsula 1: La IA como tutor académico y de matemáticas" width="640" height="360" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 ```
 
