@@ -201,15 +201,19 @@ Aparece al inicio de **todas** las sesiones, justo después del YAML frontmatter
 
 ### 2. Video / placeholder de video
 
-Sesiones con video publicado usan `.video-capsule` con iframe de Descript:
+Sesiones con video publicado usan `.video-capsule` con un iframe de YouTube (canal ML4PP). `[ID]` son los 11 caracteres después de `youtu.be/`:
 
 ```html
 ```{=html}
 <div class="video-capsule">
-  <iframe src="https://share.descript.com/embed/[ID]" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/[ID]" title="[Título del video]" width="640" height="360" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 ```
 ```
+
+- `youtube-nocookie.com` evita cookies de seguimiento hasta que el estudiante reproduce el video.
+- No quitar `referrerpolicy`: sin él, YouTube puede negarse a reproducir el video incrustado.
+- El video en YouTube debe permitir la inserción (Studio → Detalles → Mostrar más → "Permitir inserción").
 
 Sesiones pendientes de video usan `.video-placeholder`:
 

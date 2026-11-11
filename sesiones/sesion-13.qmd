@@ -35,7 +35,7 @@ format:
 
 ```{=html}
 <div class="video-capsule">
-  <iframe src="https://share.descript.com/embed/eYO5CQ9vXt2" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/GuSPCkP3Dy4" title="Sesión 13 - Cápsula 1: Robótica e IA en el mundo físico." width="640" height="360" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 ```
 

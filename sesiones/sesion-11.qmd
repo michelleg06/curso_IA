@@ -63,7 +63,7 @@ format:
 
 ```{=html}
 <div class="video-capsule">
-  <iframe src="https://share.descript.com/embed/tn1MWaZ1A3z" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/X8-6_qOYAPs" title="Sesión 11 - Cápsula 1: Tecnología de interés público. Perspectiva social y ética." width="640" height="360" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 ```
 

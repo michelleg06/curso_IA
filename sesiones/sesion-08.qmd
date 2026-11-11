@@ -35,7 +35,7 @@ format:
 
 ```{=html}
 <div class="video-capsule">
-  <iframe src="https://share.descript.com/embed/5t4gEuOzE96" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/vG7nl3kuMaQ" title="Sesión 8 - Cápsula 1: IA para la creatividad, arte, música y diseño." width="640" height="360" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 ```
 

@@ -33,7 +33,7 @@ format:
 
 ```{=html}
 <div class="video-capsule">
-  <iframe src="https://share.descript.com/embed/0U5xGeXtXPm" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/dwcxG4UpjKU" title="Sesión 4 - Cápsula 1: IA Generativa" width="640" height="360" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 ```
 
@@ -163,7 +163,7 @@ En 2026, muchas herramientas combinan ambas cosas, pero la diferencia sigue sien
 
 ```{=html}
 <div class="video-capsule">
-  <iframe src="https://share.descript.com/embed/bvvLW1HJ7A7" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube-nocookie.com/embed/ZwajLrZqKnc" title="Sesión 4 - Cápsula 2: LLMs" width="640" height="360" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 ```
 
